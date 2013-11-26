@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2013-11-25 00:20+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2013-11-25 20:56+0000\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/quassel/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1049,22 +1049,22 @@ msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>The Quassel Core you are trying to connect to is too old!</b><br>We need "
 "at least protocol v%1, but the core speaks v%2 only."
-msgstr ""
+msgstr "<b>Ядро Quassel, з яким ви намагаєтеся встановити з’єднання, є занадто старим!</b><br>Для встановлення з’єднання потрібна принаймні версія протоколу %1, але ядро може працювати лише з версією %2."
 
 #: ../src/client/clientauthhandler.cpp:169
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
-msgstr ""
+msgstr "Несумісна версія протоколу, у з’єднанні з ядром відмовлено"
 
 #: ../src/client/clientauthhandler.cpp:176
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Ядром відмовлено у з’єднанні цьому клієнту"
 
 #: ../src/client/clientauthhandler.cpp:207
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Скасовано нешифроване з’єднання"
 
 #: ../src/client/clientauthhandler.cpp:275
 #, qt-format
@@ -1418,7 +1418,7 @@ msgstr "Виклик restoreState(), хоча вже існує активний
 #: ../src/core/core.cpp:287
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
-msgstr ""
+msgstr "Ядро вже налаштовано! Повторне налаштовування скасовано…"
 
 #: ../src/core/core.cpp:290
 msgctxt "Core|"
@@ -1489,7 +1489,7 @@ msgstr "Завершення роботи сервера для базового
 #: ../src/core/core.cpp:560
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
-msgstr ""
+msgstr "З’єднання з нерозпізнаним клієнтом розірвано:"
 
 #: ../src/core/core.cpp:592
 msgctxt "Core|"
@@ -1654,12 +1654,12 @@ msgid ""
 "<b>Your Quassel Client is too old!</b><br>This core needs at least "
 "client/core protocol version %1 (got: %2).<br>Please consider upgrading your"
 " client."
-msgstr ""
+msgstr "<b>Ваша версія клієнтської частини Quassel є застарілою!</b><br>Для роботи з цим ядром потрібно користуватися клієнтською частиною/протоколом ядра версії %1 (маємо %2).<br>Будь ласка, оновіть вашу клієнтську частину."
 
 #: ../src/core/coreauthhandler.cpp:69
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
-msgstr ""
+msgstr "Розпочинаємо шифрування для клієнта:"
 
 #: ../src/core/coreauthhandler.cpp:90
 msgctxt "CoreAuthHandler|"
@@ -1678,7 +1678,7 @@ msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>Потрібне шифрування SSL!</b><br>Для встановлення з’єднання з цим ядром вам потрібно скористатися SSL."
 
 #: ../src/core/coreauthhandler.cpp:146
 msgctxt "CoreAuthHandler|"
@@ -1692,7 +1692,7 @@ msgstr "<b>Некоректні ім’я користувача і пароль
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
-msgstr ""
+msgstr "Клієнтську частину %1 ініціалізовано і успішно розпізнано як «%2» (Користувач: %3)."
 
 #: ../src/qtui/coreconfigwizard.cpp:69
 msgctxt "CoreConfigWizard|"
@@ -3936,13 +3936,13 @@ msgstr "Перепризначити"
 #: ../src/common/protocols/legacy/legacypeer.cpp:175
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Некоректне повідомлення щодо встановлення з’єднання!"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:246
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Невідоме повідомлення протоколу типу %1"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:295
 #, qt-format
@@ -5464,7 +5464,7 @@ msgstr "Список каналів IRC, до яких ви автоматичн
 #: ../src/qtui/snorenotificationbackend.cpp:100
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Конфіденційне повідомлення"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5474,17 +5474,17 @@ msgstr "Форма"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Snore"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:41
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Backend:"
-msgstr ""
+msgstr "Модуль:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:64
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Timeout:"
-msgstr ""
+msgstr "Час очікування:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:80
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5494,7 +5494,7 @@ msgstr " с"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:96
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "0 means infinite"
-msgstr ""
+msgstr "0 — без обмежень"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
