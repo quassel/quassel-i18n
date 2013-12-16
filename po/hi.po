@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2013-11-25 00:08+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2013-12-15 11:00+0000\n"
+"Last-Translator: libregeekingkid <rajuvindane@gmail.com>\n"
 "Language-Team: Hindi (http://www.transifex.com/projects/p/quassel/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,7 +120,7 @@ msgstr ""
 #: ../src/core/abstractsqlstorage.cpp:129
 msgctxt "AbstractSqlStorage|"
 msgid "Upgrade failed..."
-msgstr ""
+msgstr "सुधारना असफल हई"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:57
 msgctxt "AliasesModel|"
@@ -148,27 +148,27 @@ msgstr ""
 #: ../src/qtui/settingspages/aliasesmodel.cpp:185
 msgctxt "AliasesModel|"
 msgid "Alias"
-msgstr ""
+msgstr "कल्पित नाम"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:186
 msgctxt "AliasesModel|"
 msgid "Expansion"
-msgstr ""
+msgstr "विस्तार"
 
 #: ../src/qtui/settingspages/aliasessettingspage.ui:13
 msgctxt "AliasesSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/aliasessettingspage.ui:27
 msgctxt "AliasesSettingsPage|"
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 #: ../src/qtui/settingspages/aliasessettingspage.ui:41
 msgctxt "AliasesSettingsPage|"
 msgid "Delete"
-msgstr ""
+msgstr "मिटाना"
 
 #: ../src/qtui/settingspages/aliasessettingspage.cpp:29
 msgctxt "AliasesSettingsPage|"
@@ -178,12 +178,12 @@ msgstr ""
 #: ../src/qtui/settingspages/aliasessettingspage.cpp:29
 msgctxt "AliasesSettingsPage|"
 msgid "Aliases"
-msgstr ""
+msgstr "दुसरे नाम"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:14
 msgctxt "AppearanceSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:22
 msgctxt "AppearanceSettingsPage|"
@@ -309,7 +309,7 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.ui:14
 msgctxt "BacklogSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:22
 msgctxt "BacklogSettingsPage|"
@@ -473,7 +473,7 @@ msgstr ""
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:14
 msgctxt "BufferViewSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:31
 msgctxt "BufferViewSettingsPage|"
@@ -705,7 +705,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:14
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:22
 msgctxt "ChatMonitorSettingsPage|"
@@ -814,7 +814,7 @@ msgstr ""
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:19
 #: ../src/qtui/ui/chatviewsearchbar.ui:33
@@ -846,7 +846,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:14
 msgctxt "ChatViewSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:22
 msgctxt "ChatViewSettingsPage|"
@@ -1614,7 +1614,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:67
 msgctxt "CoreAccountSettingsPage|"
 msgid "Delete"
-msgstr ""
+msgstr "मिटाना"
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:96
 msgctxt "CoreAccountSettingsPage|"
@@ -1721,7 +1721,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:14
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:22
 msgctxt "CoreConfigWizardAdminUserPage|"
@@ -1753,7 +1753,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconfigwizardintropage.ui:13
 msgctxt "CoreConfigWizardIntroPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/coreconfigwizardintropage.ui:19
 msgctxt "CoreConfigWizardIntroPage|"
@@ -1809,7 +1809,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:13
 msgctxt "CoreConfigWizardStorageSelectionPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:21
 msgctxt "CoreConfigWizardStorageSelectionPage|"
@@ -1829,7 +1829,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:13
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:19
 msgctxt "CoreConfigWizardSyncPage|"
@@ -1961,7 +1961,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:14
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:20
 msgctxt "CoreConnectionSettingsPage|"
@@ -2035,7 +2035,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconnectionstatuswidget.ui:14
 msgctxt "CoreConnectionStatusWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/coreconnectionstatuswidget.ui:32
 msgctxt "CoreConnectionStatusWidget|"
@@ -2731,7 +2731,7 @@ msgstr ""
 #: ../src/qtui/settingspages/highlightsettingspage.ui:14
 msgctxt "HighlightSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:20
 msgctxt "HighlightSettingsPage|"
@@ -3426,17 +3426,17 @@ msgstr ""
 #: ../src/qtui/settingspages/ignorelistsettingspage.ui:14
 msgctxt "IgnoreListSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.ui:28
 msgctxt "IgnoreListSettingsPage|"
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.ui:42
 msgctxt "IgnoreListSettingsPage|"
 msgid "Delete"
-msgstr ""
+msgstr "मिटाना"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.ui:56
 msgctxt "IgnoreListSettingsPage|"
@@ -3470,7 +3470,7 @@ msgstr ""
 #: ../src/qtui/ui/indicatornotificationconfigwidget.ui:14
 msgctxt "IndicatorNotificationConfigWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/indicatornotificationconfigwidget.ui:20
 msgctxt "IndicatorNotificationConfigWidget|"
@@ -3487,7 +3487,7 @@ msgstr ""
 #: ../src/qtui/ui/inputwidget.ui:26
 msgctxt "InputWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
@@ -3582,7 +3582,7 @@ msgstr ""
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:14
 msgctxt "InputWidgetSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:22
 msgctxt "InputWidgetSettingsPage|"
@@ -3720,7 +3720,7 @@ msgstr ""
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:22
 msgctxt "ItemViewSettingsPage|"
@@ -4367,7 +4367,7 @@ msgstr ""
 #: ../src/qtui/ui/msgprocessorstatuswidget.ui:19
 msgctxt "MsgProcessorStatusWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/msgprocessorstatuswidget.ui:34
 msgctxt "MsgProcessorStatusWidget|"
@@ -4539,7 +4539,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:14
 msgctxt "NetworksSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:48
 msgctxt "NetworksSettingsPage|"
@@ -4855,7 +4855,7 @@ msgstr ""
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:14
 msgctxt "PhononNotificationConfigWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:20
 msgctxt "PhononNotificationConfigWidget|"
@@ -5333,7 +5333,7 @@ msgstr ""
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:14
 msgctxt "ShortcutsSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:22
 msgctxt "ShortcutsSettingsPage|"
@@ -5464,7 +5464,7 @@ msgstr ""
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5803,7 +5803,7 @@ msgstr ""
 #: ../src/qtui/ui/topicwidget.ui:32
 msgctxt "TopicWidget|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/ui/topicwidget.ui:79
 msgctxt "TopicWidget|"
@@ -5825,7 +5825,7 @@ msgstr ""
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:14
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Form"
-msgstr ""
+msgstr "फार्म"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:22
 msgctxt "TopicWidgetSettingsPage|"
