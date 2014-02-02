@@ -1,11 +1,12 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
+# A S Alam <apreet.alam@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2013-12-03 14:20+0000\n"
+"PO-Revision-Date: 2014-02-02 02:50+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -207,13 +208,13 @@ msgstr ""
 #: ../src/qtui/settingspages/appearancesettingspage.ui:47
 msgctxt "AppearanceSettingsPage|"
 msgid "<Untranslated>"
-msgstr ""
+msgstr "<Untranslated>"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:52
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:76
 msgctxt "AppearanceSettingsPage|"
 msgid "<System Default>"
-msgstr ""
+msgstr "<System Default>"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:75
 msgctxt "AppearanceSettingsPage|"
@@ -238,7 +239,7 @@ msgstr "ਸਿਸਟਮ ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:184
 msgctxt "AppearanceSettingsPage|"
 msgid "Hide to tray on close button"
-msgstr ""
+msgstr "ਬੰਦ ਬਟਨ ਨਾਲ ਟਰੇ ਵਿਚ ਭੇਜੋ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:216
 msgctxt "AppearanceSettingsPage|"
@@ -268,12 +269,12 @@ msgstr ""
 #: ../src/qtui/settingspages/appearancesettingspage.ui:301
 msgctxt "AppearanceSettingsPage|"
 msgid "Status Window"
-msgstr ""
+msgstr "ਹਾਲਤ ਵਿੰਡੋ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:308
 msgctxt "AppearanceSettingsPage|"
 msgid "Current Chat"
-msgstr ""
+msgstr "ਮੌਜੂਦਾ ਗੱਲਬਾਤ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:315
 msgctxt "AppearanceSettingsPage|"
@@ -298,7 +299,7 @@ msgstr ""
 #: ../src/qtui/awaylogview.cpp:46
 msgctxt "AwayLogView|"
 msgid "Show Network Name"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਨਾਂ ਵੇਖਾਓ"
 
 #: ../src/qtui/awaylogview.cpp:51
 msgctxt "AwayLogView|"
@@ -467,7 +468,7 @@ msgstr ""
 #: ../src/uisupport/bufferviewfilter.cpp:54
 msgctxt "BufferViewFilter|"
 msgid "Show / Hide Chats"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਵੇਖਾਓ/ਓਹਲੇ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:14
 msgctxt "BufferViewSettingsPage|"
@@ -515,12 +516,12 @@ msgstr ""
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:114
 msgctxt "BufferViewSettingsPage|"
 msgid "Show status window"
-msgstr ""
+msgstr "ਹਾਲਤ ਵਿੰਡੋ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:121
 msgctxt "BufferViewSettingsPage|"
 msgid "Show channels"
-msgstr ""
+msgstr "ਚੈਨਲ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:128
 msgctxt "BufferViewSettingsPage|"
@@ -768,7 +769,7 @@ msgstr "ਇੰਟਰਫੇਸ"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨਿਗਰਾਨ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
 msgctxt "ChatMonitorSettingsPage|"
@@ -793,7 +794,7 @@ msgstr ""
 #: ../src/qtui/chatmonitorview.cpp:61
 msgctxt "ChatMonitorView|"
 msgid "Show Network Name"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਨਾਂ ਵੇਖਾਓ"
 
 #: ../src/qtui/chatmonitorview.cpp:66
 msgctxt "ChatMonitorView|"
@@ -850,7 +851,7 @@ msgstr "ਫਾਰਮ"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:22
 msgctxt "ChatViewSettingsPage|"
 msgid "Timestamp format:"
-msgstr ""
+msgstr "ਸਮਾਂ-ਮੋਹਰ:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:29
 msgctxt "ChatViewSettingsPage|"
@@ -1208,12 +1209,12 @@ msgstr ""
 #: ../src/uisupport/contextmenuactionprovider.cpp:45
 msgctxt "ContextMenuActionProvider|"
 msgid "Go to Chat"
-msgstr ""
+msgstr "ਗੱਲ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins"
-msgstr ""
+msgstr "ਜੁਆਇੰਨ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2880,7 +2881,7 @@ msgstr ""
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:210
 msgctxt "IdentitiesSettingsPage|"
 msgid "</ul>"
-msgstr ""
+msgstr "</ul>"
 
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:211
 msgctxt "IdentitiesSettingsPage|"
@@ -3651,7 +3652,7 @@ msgstr ""
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:235
 msgctxt "InputWidgetSettingsPage|"
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:262
 msgctxt "InputWidgetSettingsPage|"
@@ -3708,7 +3709,7 @@ msgstr ""
 #, qt-format
 msgctxt "IrcUserItem|"
 msgid "login time: %1"
-msgstr ""
+msgstr "ਲਾਗਇਣ ਸਮਾਂ: %1"
 
 #: ../src/client/networkmodel.cpp:935
 #, qt-format
@@ -3729,12 +3730,12 @@ msgstr "ਕਸਟਮ ਫੋਂਟ:"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:50
 msgctxt "ItemViewSettingsPage|"
 msgid "Show icons"
-msgstr ""
+msgstr "ਆਈਕਾਨ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:66
 msgctxt "ItemViewSettingsPage|"
 msgid "Chat List"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:72
 msgctxt "ItemViewSettingsPage|"
@@ -4249,7 +4250,7 @@ msgstr "ਨਾਂ ਪੱਟੀ ਵੇਖੋ"
 #: ../src/qtui/mainwin.cpp:862
 msgctxt "MainWin|"
 msgid "Chat Monitor"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨਿਗਰਾਨ"
 
 #: ../src/qtui/mainwin.cpp:874
 msgctxt "MainWin|"
@@ -4794,7 +4795,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.cpp:186
 msgctxt "NetworksSettingsPage|"
 msgid "</ul>"
-msgstr ""
+msgstr "</ul>"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:187
 msgctxt "NetworksSettingsPage|"
@@ -5096,7 +5097,7 @@ msgstr "ਸਕਿੰਟ"
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "<b>Query with %1</b>"
-msgstr ""
+msgstr "<b>%1 ਨਾਲ ਕਿਊਰੀ</b>"
 
 #: ../src/client/networkmodel.cpp:500
 #, qt-format
@@ -5108,7 +5109,7 @@ msgstr ""
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "login time: %1"
-msgstr ""
+msgstr "ਲਾਗਇਣ ਸਮਾਂ: %1"
 
 #: ../src/client/networkmodel.cpp:506
 #, qt-format
@@ -5445,7 +5446,7 @@ msgstr ""
 #: ../src/qtui/ui/simplenetworkeditor.ui:226
 msgctxt "SimpleNetworkEditor|"
 msgid "Join Channels Automatically"
-msgstr ""
+msgstr "ਚੈਨਲ ਆਪਣੇ-ਆਪ ਹੀ ਜੁਆਇੰਨ ਕਰੋ"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:250
 msgctxt "SimpleNetworkEditor|"
@@ -5871,14 +5872,14 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #. Action Message
 #: ../src/uisupport/uistyle.cpp:671
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %2"
-msgstr ""
+msgstr "%DN%1%DN %2"
 
 #. Nick Message
 #: ../src/uisupport/uistyle.cpp:675
@@ -5963,13 +5964,13 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "[%1]"
-msgstr ""
+msgstr "[%1]"
 
 #: ../src/uisupport/uistyle.cpp:806
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "<%1>"
-msgstr ""
+msgstr "<%1>"
 
 #: ../src/client/networkmodel.cpp:786
 #, qt-format
