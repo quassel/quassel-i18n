@@ -2,12 +2,12 @@
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
 # Yuri Chornoivan <yurchor@gmail.com>, 2010
-# Yuri Chornoivan <yurchor@ukr.net>, 2011-2013
+# Yuri Chornoivan <yurchor@ukr.net>, 2011-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-02-19 00:02+0000\n"
+"PO-Revision-Date: 2014-02-22 09:00+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/quassel/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>Сучасний розподілений клієнт IRC</b><br><br>&copy; Проект Quassel, 2005–2014<br><a href=\"http://quassel-irc.org\">http://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> на <a href=\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC випущено за подвійного ліцензування <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> та <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br>Авторські права на піктограми належать <a href=\"http://www.oxygen-icons.org\">Команді Oxygen</a> і використовуються за умов ліцензування <a href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Будь ласка, скористайтеся для звітування щодо вад сторінкою <a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a>."
 
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
@@ -2225,39 +2225,39 @@ msgstr "Не вдалося обробити DH1080_FINISH. Спроба обм�
 #: ../src/core/coresessioneventprocessor.cpp:1056
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
-msgstr ""
+msgstr "Підтримки зворотного DCC SEND не передбачено"
 
 #: ../src/core/coresessioneventprocessor.cpp:1074
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "Підтримки DCC %1 не передбачено"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr ""
+msgstr "Сокет було закрито під час передавання даних!"
 
 #: ../src/core/coretransfer.cpp:70
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
-msgstr ""
+msgstr "Помилка з’єднання DCC: %1"
 
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr ""
+msgstr "Підтримки зворотного DCC не передбачено!"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
-msgstr ""
+msgstr "Отримання DCC: отримано більше даних, ніж очікувалося!"
 
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
-msgstr ""
+msgstr "Отримання DCC: клієнт Quassel від’єднано під час передавання даних!"
 
 #: ../src/core/coreuserinputhandler.cpp:88
 msgctxt "CoreUserInputHandler|"
@@ -5161,13 +5161,13 @@ msgstr "сервер: %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "Вхідне передавання даних"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> хоче надіслати вам файл:<br>%2 (%3 байтів)"
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
