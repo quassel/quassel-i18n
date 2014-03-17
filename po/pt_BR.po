@@ -1,6 +1,7 @@
 # 
 # Translators:
 # André Gondim <andregondim@ubuntu.com>, 2010
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2014
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # Pad <pedroaraujo@colorlesscube.com>, 2013
@@ -9,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-02-22 09:00+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-03-17 03:00+0000\n"
+"Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/quassel/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
 msgid "About Quassel"
-msgstr "Sobre Quassel"
+msgstr "Sobre o Quassel"
 
 #: ../src/qtui/ui/aboutdlg.ui:59
 msgctxt "AboutDlg|"
@@ -82,7 +83,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>Um moderno, cliente de IRC distribuído</b><br><br>&copy;2005-2014 pelo projeto Quassel<br><a href=\"http://quassel-irc.org\">http://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> no <a href=\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC está duplamente licenciado sobre <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> e <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br>A maioria dos ícones são &copy; pelo <a href=\"http://www.oxygen-icons.org\">Oxygen Team</a> e utilizado sob a <a href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Por favor, use <a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> para relatar um erro."
 
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
@@ -146,7 +147,7 @@ msgid ""
 "semicolons<br /><br /><b>Example:</b> \"Test $1; Test $2; Test All $0\" will"
 " be expanded to three separate messages \"Test 1\", \"Test 2\" and \"Test "
 "All 1 2 3\" when called like /test 1 2 3"
-msgstr "<b>A seqüência do atalho será expandido para</b><br /><b>variáveis especiais:</b><br /> - <b>$i</b> representa o parâmetro i'th.<br /> - <b>$i..j</b> representa o i'th parâmetro para j'th separadas por espaços.<br /> - <b>$i..</b> representa todos os parâmetros de i separado por espaços.<br /> - <b>$i:hostname</b> representa o nome da máquina do usuário identificado pelo parâmetro i'th ou um desconhecido * if.<br /> - <b>$0</b> conjunto de string.<br /> - <b>$nick</b> o seu apelido<br /> - <b>$channel</b> o nome do canal selecionado<br /><br />Múltiplos comandos podem ser separados por ponto-e-vírgula<br /><br /><b>Exemplo:</b> \"Teste $1; Teste $2; Testar todos $0\" será ampliado para três mensagens distintas  \"Teste 1\", \"Teste 2\" e \"Testar  Todos 1 2 3\"quando chamado como / teste 1 2 3"
+msgstr "<b>A sequência do atalho será expandido para</b><br /><b>variáveis especiais:</b><br /> - <b>$i</b> representa o parâmetro i'th.<br /> - <b>$i..j</b> representa o i'th parâmetro para j'th separadas por espaços.<br /> - <b>$i..</b> representa todos os parâmetros de i separado por espaços.<br /> - <b>$i:hostname</b> representa o nome da máquina do usuário identificado pelo parâmetro i'th ou um desconhecido * if.<br /> - <b>$0</b> conjunto de string.<br /> - <b>$nick</b> o seu apelido<br /> - <b>$channel</b> o nome do canal selecionado<br /><br />Múltiplos comandos podem ser separados por ponto-e-vírgula<br /><br /><b>Exemplo:</b> \"Teste $1; Teste $2; Testar todos $0\" será ampliado para três mensagens distintas  \"Teste 1\", \"Teste 2\" e \"Testar  Todos 1 2 3\"quando chamado como / teste 1 2 3"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:185
 msgctxt "AliasesModel|"
@@ -272,7 +273,7 @@ msgstr "Alvo padrão"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:301
 msgctxt "AppearanceSettingsPage|"
 msgid "Status Window"
-msgstr "janela de status"
+msgstr "Janela de status"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:308
 msgctxt "AppearanceSettingsPage|"
@@ -358,7 +359,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "amount of messages per buffer that are requested after the core connection "
 "has been established."
-msgstr "quantia de mensagens por buffer que são requisitads após a conexão com o núcleo ser estabelecida."
+msgstr "quantidade de mensagens por buffer que são requisitadas após a conexão com o núcleo ser estabelecida."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:141
 msgctxt "BacklogSettingsPage|"
@@ -461,7 +462,7 @@ msgstr "Diálogo"
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:22
 msgctxt "BufferViewEditDlg|"
 msgid "Please enter a name for the chat list:"
-msgstr "Por favor insira um nome para a lista de bate-papo:"
+msgstr "Por favor, insira um nome para a lista de bate-papo:"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:575
 msgctxt "BufferViewEditDlg|"
@@ -1612,7 +1613,7 @@ msgstr "Editar..."
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:56
 msgctxt "CoreAccountSettingsPage|"
 msgid "Add..."
-msgstr "Adiconar..."
+msgstr "Adicionar..."
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:67
 msgctxt "CoreAccountSettingsPage|"
@@ -1790,7 +1791,7 @@ msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
 msgid ""
 "Please select a database backend for the Quassel Core storage to store the "
 "backlog and other data in."
-msgstr "Por favor selecione uma infraestrutura de banco de dados para o armazenamento do núcleo Quassel  para armazenar o histórico e outros dados dentro."
+msgstr "Por favor, selecione uma infraestrutura de banco de dados para o armazenamento do núcleo Quassel  para armazenar o histórico e outros dados dentro."
 
 #: ../src/qtui/coreconfigwizard.cpp:300
 msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
@@ -1862,7 +1863,7 @@ msgstr "bar"
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:102
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Please wait while your settings are being transmitted to the core..."
-msgstr "Por favor aguarde enquanto as suas configurações estão sendo transmitidas para o núcleo..."
+msgstr "Por favor, aguarde enquanto as suas configurações estão sendo transmitidas para o núcleo..."
 
 #: ../src/qtui/ui/coreconnectauthdlg.ui:14
 msgctxt "CoreConnectAuthDlg|"
@@ -1872,7 +1873,7 @@ msgstr "Autenticação requerida"
 #: ../src/qtui/ui/coreconnectauthdlg.ui:20
 msgctxt "CoreConnectAuthDlg|"
 msgid "Please enter your account data:"
-msgstr "Por favor entre com os dados da sua conta:"
+msgstr "Por favor, entre com os dados da sua conta:"
 
 #: ../src/qtui/ui/coreconnectauthdlg.ui:35
 msgctxt "CoreConnectAuthDlg|"
@@ -1893,7 +1894,7 @@ msgstr "Lembrar senha"
 #, qt-format
 msgctxt "CoreConnectAuthDlg|"
 msgid "Please enter your credentials for %1:"
-msgstr "Por favor entre com suas credenciais para %1:"
+msgstr "Por favor, entre com suas credenciais para %1:"
 
 #: ../src/qtui/coreconnectdlg.cpp:41
 msgctxt "CoreConnectDlg|"
@@ -2001,7 +2002,7 @@ msgstr "Ping após tempo limite"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:157
 msgctxt "CoreConnectionSettingsPage|"
 msgid " seconds"
-msgstr " segundos"
+msgstr "segundos"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:100
 msgctxt "CoreConnectionSettingsPage|"
@@ -2043,7 +2044,7 @@ msgstr "Formulário"
 #: ../src/qtui/ui/coreconnectionstatuswidget.ui:32
 msgctxt "CoreConnectionStatusWidget|"
 msgid "Message"
-msgstr "Menssagem"
+msgstr "Mensagem"
 
 #: ../src/qtui/coreconnectionstatuswidget.cpp:66
 msgctxt "CoreConnectionStatusWidget|seconds"
@@ -2309,7 +2310,7 @@ msgid ""
 "support for the Qt Cryptographic Architecture (QCA2) library. Contact your "
 "distributor about a Quassel package with QCA2 support, or rebuild Quassel "
 "with QCA2 present."
-msgstr "Erro: Definir uma chave de encriptação requer que o Quassel tenha sido construído com suporte à biblioteca de arquitetura criptográfica do QT (QAC2). Contate o seu distribuidor sobre um pacote Quassel com suporte a QAC2, ou recompile o Quassel com QCA2 presente."
+msgstr "Erro: Definir uma chave de encriptação requer que o Quassel tenha sido construído com suporte à biblioteca de arquitetura criptográfica do QT (QCA2). Contate o seu distribuidor sobre um pacote Quassel com suporte a QCA2, ou recompile o Quassel com QCA2 presente."
 
 #: ../src/core/coreuserinputhandler.cpp:371
 msgctxt "CoreUserInputHandler|"
@@ -2369,7 +2370,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
-msgstr "[uso] /delkey <apelido|canal> remove a chave de encriptação para um apelido ou canal ou apenas /delkey quando em um canal ou consulta."
+msgstr "[uso] /showkey <apelido|canal> remove a chave de encriptação para um apelido ou canal ou apenas /showkey quando em um canal ou consulta."
 
 #: ../src/core/coreuserinputhandler.cpp:666
 #, qt-format
@@ -2706,7 +2707,7 @@ msgstr "enviar CTCP-%1 solicitar a %2"
 #: ../src/core/eventstringifier.cpp:717
 msgctxt "EventStringifier|"
 msgid "unknown"
-msgstr ""
+msgstr "desconhecido"
 
 #: ../src/core/eventstringifier.cpp:718
 #, qt-format
@@ -2873,7 +2874,7 @@ msgstr "Adicionar identidade"
 #: ../src/qtui/settingspages/identitiessettingspage.ui:54
 msgctxt "IdentitiesSettingsPage|"
 msgid "Add..."
-msgstr "Adiconar..."
+msgstr "Adicionar..."
 
 #: ../src/qtui/settingspages/identitiessettingspage.ui:74
 msgctxt "IdentitiesSettingsPage|"
@@ -2967,7 +2968,7 @@ msgstr "Não aqui. Não, realmente. não aqui!"
 #: ../src/common/identity.cpp:190
 msgctxt "Identity|"
 msgid "All Quassel clients vanished from the face of the earth..."
-msgstr "Todos os clientes quassel desapareceram da face da terra ..."
+msgstr "Todos os clientes Quassel desapareceram da face da terra ..."
 
 #: ../src/common/identity.cpp:193
 msgctxt "Identity|"
@@ -3156,7 +3157,7 @@ msgctxt "IdentityEditWidget|"
 msgid ""
 "Warning: you are not connected with a secured connection to the Quassel Core!\n"
 "Proceeding will cause an unencrypted transfer of your SSL Key and SSL Certificate!"
-msgstr "Aviso: você não está conectado com uma conexão segura ao núcleo do Quassel!\nProcesso poderá causar  uma transferência sem criptografia da sua chave SSL e certificado SSL."
+msgstr "Aviso: você não está conectado com uma conexão segura ao núcleo do Quassel!\nProcesso poderá causar uma transferência sem criptografia da sua chave SSL e certificado SSL."
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:546
 msgctxt "IdentityEditWidget|"
@@ -3314,7 +3315,7 @@ msgstr "Remetente"
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:79
 msgctxt "IgnoreListEditDlg|"
 msgid "Message"
-msgstr "Menssagem"
+msgstr "Mensagem"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:86
 msgctxt "IgnoreListEditDlg|"
@@ -3352,7 +3353,7 @@ msgid ""
 "<p> *: representing \"any amount of any character\"\n"
 "<br />\n"
 "?: representing \"exactly one character\"</p>"
-msgstr "<p><b>Usar expressões regulares:</b></p>\n<p>Se habilitado, regras seguem a sintaxe de expressões regulares.</p>\n<p>Caso contrário, as regras permitem comparações com caracteres especiais, como:</p>\n<p> *: representando \"qualquer quantidade de caracteres\"\n<br />\n?: representando \"exatamente um caracter\"</p>"
+msgstr "<p><b>Usar expressões regulares:</b></p>\n<p>Se habilitado, regras seguem a sintaxe de expressões regulares.</p>\n<p>Caso contrário, as regras permitem comparações com caracteres especiais, como:</p>\n<p> *: representando \"qualquer quantidade de caracteres\"\n<br />\n?: representando \"exatamente um caractere\"</p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:131
 msgctxt "IgnoreListEditDlg|"
@@ -3435,7 +3436,7 @@ msgid ""
 "\"*@foobar.com\" matches any sender from host foobar.com<br />    "
 "\"stupid!.+\" (RegEx) matches any sender with nickname \"stupid\" from any "
 "host<br />"
-msgstr "<b>Ignorar regra:</b><br />Dependendo do tipo de regra, o texto é comparado com outro pelo:<br /><br />- <u>conteúdo da mensagem:</u><br /><i>Exemplo:<i><br />    \"*foobar*\" corresponde com qualquer texto contento a palavra\"foobar\"<br /><br />- <u>a linha do remetente <i>nick!ident@host.name<i></u><br /><i>Examplo:</i><br />    \"*@foobar.com\" corresponde a qualquer remetente com servidor foobar.com<br />    \"stupid!.+\" (RegEx) corresponde a qualquer remetente com apelido \"stupid\" em qualquer servidort<br />"
+msgstr "<b>Ignorar regra:</b><br />Dependendo do tipo de regra, o texto é comparado com outro pelo:<br /><br />- <u>conteúdo da mensagem:</u><br /><i>Exemplo:<i><br />    \"*foobar*\" corresponde com qualquer texto contento a palavra\"foobar\"<br /><br />- <u>a linha do remetente <i>nick!ident@host.name<i></u><br /><i>Exemplo:</i><br />    \"*@foobar.com\" corresponde a qualquer remetente com servidor foobar.com<br /> \"stupid!.+\" (RegEx) corresponde a qualquer remetente com apelido \"stupid\" em qualquer servidor<br />"
 
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:91
 msgctxt "IgnoreListModel|"
@@ -3504,7 +3505,7 @@ msgid ""
 "There is already a rule\n"
 "\"%1\"\n"
 "Please choose another rule."
-msgstr "Já existe uma regra\n\"%1\"\nPor favor escolha outra"
+msgstr "Já existe uma regra\n\"%1\"\nPor favor, escolha outra."
 
 #: ../src/qtui/ui/indicatornotificationconfigwidget.ui:14
 msgctxt "IndicatorNotificationConfigWidget|"
@@ -3521,7 +3522,7 @@ msgstr "Isto habilita suporte para o projeto de notificação Ayatana  (libindic
 #: ../src/qtui/ui/indicatornotificationconfigwidget.ui:23
 msgctxt "IndicatorNotificationConfigWidget|"
 msgid "Show messages in application indicator"
-msgstr "Mostra mensagens no aplicativo de notificação"
+msgstr "Mostrar mensagens no aplicativo de notificação"
 
 #: ../src/qtui/ui/inputwidget.ui:26
 msgctxt "InputWidget|"
@@ -3641,7 +3642,7 @@ msgstr "Habilitar histórico por conversa"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:79
 msgctxt "InputWidgetSettingsPage|"
 msgid "Show nick selector"
-msgstr "Mostra seletor de apelidos"
+msgstr "Mostrar seletor de apelidos"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:95
 msgctxt "InputWidgetSettingsPage|"
@@ -3666,7 +3667,7 @@ msgstr "Edição multi-linhas"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:144
 msgctxt "InputWidgetSettingsPage|"
 msgid "Show at most"
-msgstr "Mostra no máximo"
+msgstr "Mostrar no máximo"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:170
 msgctxt "InputWidgetSettingsPage|"
@@ -3676,7 +3677,7 @@ msgstr "linhas"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:192
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enable scrollbars"
-msgstr "Habilita barra de rolagens"
+msgstr "Habilitar barras de rolagem"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:211
 msgctxt "InputWidgetSettingsPage|"
@@ -3999,7 +4000,7 @@ msgstr "&Conectar-se ao núcleo..."
 #: ../src/qtui/mainwin.cpp:362
 msgctxt "MainWin|"
 msgid "&Disconnect from Core"
-msgstr "&Disconectar-se do núcleo"
+msgstr "&Desconectar-se do núcleo"
 
 #: ../src/qtui/mainwin.cpp:364
 msgctxt "MainWin|"
@@ -4044,7 +4045,7 @@ msgstr "Mostrar barra de &menus"
 #: ../src/qtui/mainwin.cpp:387
 msgctxt "MainWin|"
 msgid "Show Status &Bar"
-msgstr "Mostras status &barra"
+msgstr "Mostrar &barra de status"
 
 #: ../src/qtui/mainwin.cpp:393
 msgctxt "MainWin|"
@@ -4064,7 +4065,7 @@ msgstr "&Configurar Quassel..."
 #: ../src/qtui/mainwin.cpp:416
 msgctxt "MainWin|"
 msgid "&About Quassel"
-msgstr "&Sobre Quassel"
+msgstr "&Sobre o Quassel"
 
 #: ../src/qtui/mainwin.cpp:421
 msgctxt "MainWin|"
@@ -4229,7 +4230,7 @@ msgstr "Ativar lista de conversação anterior"
 #: ../src/qtui/mainwin.cpp:503
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
-msgstr "Ir para pŕoxima conversa"
+msgstr "Ir para próxima conversa"
 
 #: ../src/qtui/mainwin.cpp:505
 msgctxt "MainWin|"
@@ -4479,7 +4480,7 @@ msgstr "Diálogo"
 #: ../src/qtui/settingspages/networkeditdlg.ui:21
 msgctxt "NetworkEditDlg|"
 msgid "Please enter a network name:"
-msgstr "Por favor entre com um nome de rede:"
+msgstr "Por favor, entre com um nome de rede:"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:840
 msgctxt "NetworkEditDlg|"
@@ -4543,7 +4544,7 @@ msgstr "<b>Nota:</b> Isto irá apagar todos os dados relacionados, incluindo tod
 msgctxt "NetworkModelController|"
 msgid ""
 "<br>Active channel buffers cannot be deleted, please part the channel first."
-msgstr "<br>Acumuladores ativos do canal não podem ser apagados, por favor saia do canal primeiro."
+msgstr "<br>Acumuladores ativos do canal não podem ser apagados, por favor, saia do canal primeiro."
 
 #: ../src/uisupport/networkmodelcontroller.cpp:195
 msgctxt "NetworkModelController|"
@@ -4862,7 +4863,7 @@ msgstr "Editar apelido"
 #: ../src/qtui/settingspages/nickeditdlg.ui:19
 msgctxt "NickEditDlg|"
 msgid "Please enter a valid nickname:"
-msgstr "Por favor entre com um apelido válido:"
+msgstr "Por favor, entre com um apelido válido:"
 
 #: ../src/qtui/settingspages/nickeditdlg.ui:32
 msgctxt "NickEditDlg|"
@@ -4928,7 +4929,7 @@ msgstr "Requisitando um total de até %1 da listas de tarefas para %2 acumulador
 msgctxt "QObject|"
 msgid ""
 "Requesting up to %1 of all unread backlog messages (plus additional %2)"
-msgstr "Requisitanto até %1 de todas as listas de tarefas de mensagens (mais adicional %2)"
+msgstr "Requisitando até %1 de todas as listas de tarefas de mensagens (mais adicional %2)"
 
 #: ../src/client/backlogrequester.cpp:142
 #, qt-format
@@ -5025,7 +5026,7 @@ msgstr "Condição não manipulável: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid proplist %1"
-msgstr "Lista de propriedas inválida %1"
+msgstr "Lista de propriedades inválida %1"
 
 #: ../src/uisupport/qssparser.cpp:368
 #, qt-format
@@ -5165,7 +5166,7 @@ msgstr ""
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> que lhe enviar um arquivo:<br>%2 (%3 bytes)"
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5175,7 +5176,7 @@ msgstr "Sincronizar com o núcleo"
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:21
 msgctxt "SaveIdentitiesDlg|"
 msgid "Syncing data with core, please wait..."
-msgstr "Sincronizando dados com o núcleo, por favor aguarde"
+msgstr "Sincronizando dados com o núcleo, por favor, aguarde..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:81
 msgctxt "SaveIdentitiesDlg|"
@@ -5312,7 +5313,7 @@ msgstr "Existem alterações não salvas na página de configuração atual. Voc
 #, qt-format
 msgctxt "SettingsDlg|"
 msgid "Configure %1"
-msgstr ""
+msgstr "Configurar %1"
 
 #: ../src/qtui/settingsdlg.cpp:220
 msgctxt "SettingsDlg|"
@@ -5348,7 +5349,7 @@ msgstr "Configurações"
 #, qt-format
 msgctxt "SettingsPageDlg|"
 msgid "Configure %1"
-msgstr ""
+msgstr "Configurar %1"
 
 #: ../src/qtui/settingspagedlg.cpp:120
 msgctxt "SettingsPageDlg|"
@@ -5509,7 +5510,7 @@ msgstr "Um lista de canais IRC que você ira entrar automaticamente após conect
 #: ../src/qtui/snorenotificationbackend.cpp:104
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Mensagem privada"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5524,12 +5525,12 @@ msgstr ""
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:41
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Backend:"
-msgstr ""
+msgstr "Infraestrutura:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:64
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Timeout:"
-msgstr ""
+msgstr "0 significa infinito"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:80
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5539,7 +5540,7 @@ msgstr " e"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:96
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "0 means infinite"
-msgstr ""
+msgstr "0 significa infinito"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -5609,7 +5610,7 @@ msgstr "<b>País:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:194 ../src/qtui/ui/sslinfodlg.ui:316
 msgctxt "SslInfoDlg|"
 msgid "<b>State or province:</b>"
-msgstr "<b>Estado ou provincia:</b>"
+msgstr "<b>Estado ou província:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:231 ../src/qtui/ui/sslinfodlg.ui:353
 msgctxt "SslInfoDlg|"
@@ -5708,7 +5709,7 @@ msgstr "Ilimitado"
 #: ../src/qtui/taskbarnotificationbackend.cpp:94
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
 msgid " seconds"
-msgstr " segundos"
+msgstr "segundos"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:31
 msgctxt "ToolBarActionProvider|"
@@ -5808,7 +5809,7 @@ msgstr "Tirar voz"
 #: ../src/uisupport/toolbaractionprovider.cpp:43
 msgctxt "ToolBarActionProvider|"
 msgid "Take voice from user"
-msgstr "Retirar voz do usuario"
+msgstr "Retirar voz do usuário"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:44
 msgctxt "ToolBarActionProvider|"
@@ -5848,7 +5849,7 @@ msgstr "Conectar-se a todos"
 #: ../src/uisupport/toolbaractionprovider.cpp:58
 msgctxt "ToolBarActionProvider|"
 msgid "Disconnect from all"
-msgstr "Disconectar-se de todos"
+msgstr "Desconectar-se de todos"
 
 #: ../src/qtui/ui/topicwidget.ui:32
 msgctxt "TopicWidget|"
@@ -5922,7 +5923,7 @@ msgstr "Tópico Widget"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #. Action Message
 #: ../src/uisupport/uistyle.cpp:671
@@ -6043,8 +6044,8 @@ msgstr[1] "%n Admins"
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
 msgid_plural "%n Operator(s)"
-msgstr[0] "%n Operadores"
-msgstr[1] "%n Operadoress"
+msgstr[0] "%n operador"
+msgstr[1] "%n operadores"
 
 #: ../src/client/networkmodel.cpp:792
 #, qt-format
@@ -6059,8 +6060,8 @@ msgstr[1] "%n Meio-Ops"
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
 msgid_plural "%n Voiced"
-msgstr[0] "%n voz(es)"
-msgstr[1] "%n voz(es)"
+msgstr[0] "%n voz"
+msgstr[1] "%n vozes"
 
 #: ../src/client/networkmodel.cpp:796
 #, qt-format
