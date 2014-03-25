@@ -427,7 +427,7 @@ msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:394
+#: ../src/client/networkmodel.cpp:401
 #, qt-format
 msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
@@ -625,36 +625,36 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:575
+#: ../src/client/networkmodel.cpp:583 ../src/client/networkmodel.cpp:585
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<b>Channel %1</b>"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:578
+#: ../src/client/networkmodel.cpp:589
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<b>Users:</b> %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:582
+#: ../src/client/networkmodel.cpp:593
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<b>Mode:</b> %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:593
+#: ../src/client/networkmodel.cpp:608
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<b>Topic:</b> %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:598
+#: ../src/client/networkmodel.cpp:613
 msgctxt "ChannelBufferItem|"
 msgid "Not active <br /> Double-click to join"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:601
+#: ../src/client/networkmodel.cpp:616
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<p> %1 </p>"
@@ -973,11 +973,6 @@ msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:168
-msgctxt "ChatViewSettingsPage|"
-msgid "AutoMarkerLineOnLostFocus"
-msgstr ""
-
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
@@ -991,11 +986,6 @@ msgid ""
 "text should go.</p><p>Eg:</p><p>https://www.google.com/search?q=<span style="
 "\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span style=\" "
 "font-weight:600;\">%s</span></p></body></html>"
-msgstr ""
-
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:190
-msgctxt "ChatViewSettingsPage|"
-msgid "WebSearchUrlFormat"
 msgstr ""
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
@@ -1306,7 +1296,7 @@ msgctxt "ConnectionSettingsPage|"
 msgid "IRC"
 msgstr ""
 
-#: ../src/qtui/chatitem.cpp:803
+#: ../src/qtui/chatitem.cpp:800
 msgctxt "ContentsChatItem|"
 msgid "Copy Link Address"
 msgstr ""
@@ -2961,7 +2951,7 @@ msgctxt "HighlightSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:184
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:192
 msgctxt "HighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr ""
@@ -3226,7 +3216,7 @@ msgid "minutes of being idle"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:399
-#: ../src/qtui/settingspages/identityeditwidget.cpp:238
+#: ../src/qtui/settingspages/identityeditwidget.cpp:244
 msgctxt "IdentityEditWidget|"
 msgid "Advanced"
 msgstr ""
@@ -3294,16 +3284,16 @@ msgid "Key Type:"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:605
-#: ../src/qtui/settingspages/identityeditwidget.cpp:353
-#: ../src/qtui/settingspages/identityeditwidget.cpp:365
+#: ../src/qtui/settingspages/identityeditwidget.cpp:364
+#: ../src/qtui/settingspages/identityeditwidget.cpp:376
 msgctxt "IdentityEditWidget|"
 msgid "No Key loaded"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:625
 #: ../src/qtui/settingspages/identityeditwidget.ui:723
-#: ../src/qtui/settingspages/identityeditwidget.cpp:354
-#: ../src/qtui/settingspages/identityeditwidget.cpp:408
+#: ../src/qtui/settingspages/identityeditwidget.cpp:365
+#: ../src/qtui/settingspages/identityeditwidget.cpp:423
 msgctxt "IdentityEditWidget|"
 msgid "Load"
 msgstr ""
@@ -3320,8 +3310,8 @@ msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
-#: ../src/qtui/settingspages/identityeditwidget.cpp:406
-#: ../src/qtui/settingspages/identityeditwidget.cpp:407
+#: ../src/qtui/settingspages/identityeditwidget.cpp:421
+#: ../src/qtui/settingspages/identityeditwidget.cpp:422
 msgctxt "IdentityEditWidget|"
 msgid "No Certificate loaded"
 msgstr ""
@@ -3331,40 +3321,40 @@ msgctxt "IdentityEditWidget|"
 msgid "CommonName:"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:321
+#: ../src/qtui/settingspages/identityeditwidget.cpp:327
 msgctxt "IdentityEditWidget|"
 msgid "Load a Key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:344
+#: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:344
+#: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that "
 "the key file must not have a passphrase."
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:359
+#: ../src/qtui/settingspages/identityeditwidget.cpp:370
 msgctxt "IdentityEditWidget|"
 msgid "RSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:362
+#: ../src/qtui/settingspages/identityeditwidget.cpp:373
 msgctxt "IdentityEditWidget|"
 msgid "DSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:367
-#: ../src/qtui/settingspages/identityeditwidget.cpp:413
+#: ../src/qtui/settingspages/identityeditwidget.cpp:378
+#: ../src/qtui/settingspages/identityeditwidget.cpp:433
 msgctxt "IdentityEditWidget|"
 msgid "Clear"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:379
+#: ../src/qtui/settingspages/identityeditwidget.cpp:390
 msgctxt "IdentityEditWidget|"
 msgid "Load a Certificate"
 msgstr ""
@@ -3869,24 +3859,24 @@ msgctxt "IrcListModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:938
+#: ../src/client/networkmodel.cpp:953
 msgctxt "IrcUserItem|"
 msgid " is away"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:953
+#: ../src/client/networkmodel.cpp:968
 #, qt-format
 msgctxt "IrcUserItem|"
 msgid "idling since %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:956
+#: ../src/client/networkmodel.cpp:971
 #, qt-format
 msgctxt "IrcUserItem|"
 msgid "login time: %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:959
+#: ../src/client/networkmodel.cpp:974
 #, qt-format
 msgctxt "IrcUserItem|"
 msgid "server: %1"
@@ -4018,7 +4008,7 @@ msgctxt "ItemViewSettingsPage|"
 msgid "Other activity"
 msgstr ""
 
-#: ../src/qtui/knotificationbackend.cpp:130
+#: ../src/qtui/knotificationbackend.cpp:134
 #, qt-format
 msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
@@ -4557,7 +4547,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/uisupport/multilineedit.cpp:727
+#: ../src/uisupport/multilineedit.cpp:731
 msgctxt "MultiLineEdit|"
 msgid "Paste Protection"
 msgstr ""
@@ -4622,35 +4612,35 @@ msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:213
+#: ../src/client/networkmodel.cpp:216 ../src/client/networkmodel.cpp:219
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Server: %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:214
+#: ../src/client/networkmodel.cpp:221
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Users: %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:217
+#: ../src/client/networkmodel.cpp:224
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Lag: %1 msecs"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:987
+#: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:987
+#: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:987
+#: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr ""
@@ -5267,25 +5257,25 @@ msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:490
+#: ../src/client/networkmodel.cpp:497
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "<b>Query with %1</b>"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:508
+#: ../src/client/networkmodel.cpp:515
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "idling since %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:511
+#: ../src/client/networkmodel.cpp:518
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "login time: %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:514
+#: ../src/client/networkmodel.cpp:521
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "server: %1"
@@ -5535,7 +5525,7 @@ msgctxt "ShortcutsSettingsPage|"
 msgid "Shortcuts"
 msgstr ""
 
-#: ../src/common/signalproxy.cpp:758
+#: ../src/common/signalproxy.cpp:770
 msgctxt "SignalProxy|"
 msgid "Disconnecting"
 msgstr ""
@@ -5972,13 +5962,13 @@ msgctxt "TopicWidget|"
 msgid "..."
 msgstr ""
 
-#: ../src/qtui/topicwidget.cpp:120
+#: ../src/qtui/topicwidget.cpp:121 ../src/qtui/topicwidget.cpp:127
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Users: %1"
 msgstr ""
 
-#: ../src/qtui/topicwidget.cpp:121
+#: ../src/qtui/topicwidget.cpp:122 ../src/qtui/topicwidget.cpp:128
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Lag: %1 msecs"
@@ -6134,7 +6124,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "<%1>"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:810
+#: ../src/client/networkmodel.cpp:825
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -6142,7 +6132,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:812
+#: ../src/client/networkmodel.cpp:827
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -6150,7 +6140,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:814
+#: ../src/client/networkmodel.cpp:829
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -6158,7 +6148,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:816
+#: ../src/client/networkmodel.cpp:831
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -6166,7 +6156,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:818
+#: ../src/client/networkmodel.cpp:833
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -6174,7 +6164,7 @@ msgid_plural "%n Voiced"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:820
+#: ../src/client/networkmodel.cpp:835
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
