@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-03-26 18:40+0000\n"
+"Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +75,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>Modern, dağıtılmış IRC İstemcisi</b><br><br>&copy;%1, Quassel Projesi<br><a href=\"http://quassel-irc.org\">http://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a>, <a href=\"http://www.freenode.net\">Freenode</a> üzerinde.<br><br>Quassel IRC <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> ve <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a> ile çift lisansa tabiidir.<br>Çoğu simgeler &copy; <a href=\"http://www.oxygen-icons.org\">Oxygen Takımı</a> tarafından yapılmış ve <a href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a> altında lisanslanmıştır.<br><br>Lütfen hataları göndermek için <a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> kullanın."
 
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
@@ -532,7 +532,7 @@ msgstr "Etkin olmayan sohbetleri gizle"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Etkin olmayan ağları gizle"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -765,22 +765,22 @@ msgstr "Kendi mesajlarımı göster"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "Yeniden bağlanmada arka günlük iletilerini görüntüle"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Arka günlükten iletileri göster"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Yeniden bağlanmada arka günlükten okunmuş iletileri dahil et"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Okunmuş iletileri dahil et"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -836,12 +836,12 @@ msgstr "Seçimi Kopyala"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Ara '%1'"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Sütun Genişliklerini Sıfırla"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -946,17 +946,17 @@ msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Quassel odağı kaybettiğinde geçerli sohbet penceresinin altına işaretçi satır belirle"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Quassel odağı kaybettiğinde işaretçi satırını otomatik ayarla"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "Web Arama Adresi:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -966,12 +966,12 @@ msgid ""
 "text should go.</p><p>Eg:</p><p>https://www.google.com/search?q=<span "
 "style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span "
 "style=\" font-weight:600;\">%s</span></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Parametre olarak seçilen metni açmakta kullanılacak adres. Seçilen metnin gelmesi gereken yere <span style=\" font-weight:600;\">%s</span> yerleştirin.</p><p>Örn:</p><p>https://www.google.com/search?q=<span style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span style=\" font-weight:600;\">%s</span></p></body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1129,19 +1129,19 @@ msgstr "Bağlı değil"
 #: ../src/client/clientauthhandler.cpp:149
 msgctxt "ClientAuthHandler|"
 msgid "Reconnecting in compatibility mode..."
-msgstr ""
+msgstr "Uyumluluk kipinde yeniden bağlanıyor..."
 
 #: ../src/client/clientauthhandler.cpp:236
 msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>Incompatible Quassel Core!</b><br>None of the protocols this client "
 "speaks are supported by the core you are trying to connect to."
-msgstr ""
+msgstr "<b>Uyumsuz Quassel Çekirdeği!</b><br>Bu istemcinin hiçbir protokolü bağlanmaya çalıştığınız çekirdek tarafından desteklenmiyor."
 
 #: ../src/client/clientauthhandler.cpp:239
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
-msgstr ""
+msgstr "Çekirdek, desteklediğimiz protokollerin hiçbirini desteklemiyor"
 
 #: ../src/client/clientauthhandler.cpp:254
 #, qt-format
@@ -1758,14 +1758,14 @@ msgstr "<b>Quassel İstemciniz çok eski!</b><br>Bu çekirdek en azından istemc
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
-msgstr ""
+msgstr "oturumu açmaya çalışmadan önce kayıt mesajı gönderilmedi, reddediliyor."
 
 #: ../src/core/coreauthhandler.cpp:145
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
-msgstr ""
+msgstr "<b>İstemci başlatılamadı!</b><br>Oturumu açmaya çalışmadan önce bir kayıt mesajı göndermeniz gerekmektedir."
 
 #: ../src/core/coreauthhandler.cpp:162
 msgctxt "CoreAuthHandler|"
@@ -2808,7 +2808,7 @@ msgstr "CTCP-%1 cevabı alındı %2: %3"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
-msgstr ""
+msgstr "%1 kişisinden %2 milisaniye geri dönüş süresiyle CTCP PING cevabı alındı"
 
 #: ../src/core/eventstringifier.cpp:740
 #, qt-format
@@ -3751,12 +3751,12 @@ msgstr "Emacs tuş ataması"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:127
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables line wrapping for input."
-msgstr ""
+msgstr "Girdi için satır kaydırmayı etkinleştirir."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "Satır kaydırma"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:143
 msgctxt "InputWidgetSettingsPage|"
@@ -5270,7 +5270,7 @@ msgstr "<b>%1</b> size bir dosya göndermek istiyor:<br>%2 (%3 bayt)"
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Bağlantı kesiliyor..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
