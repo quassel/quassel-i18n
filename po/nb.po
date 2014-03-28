@@ -6,12 +6,13 @@
 # sandsmark <inactive+sandsmark@transifex.com>, 2012
 # Terje Andersen <terander@guard.zapto.org>, 2009
 # Terje Andersen <teranders@gmail.com>, 2011
+# 2rB, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-03-27 08:30+0000\n"
+"Last-Translator: 2rB\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/quassel/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +76,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>En moderne, distribuert IRC-klient</b><br><br>&copy;%1 Quassel Project<br><a href=\"http://quassel-irc.org\">http://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> på <a href=\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC er dobbelt-lisensiert under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> og <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br>Mesteparten av ikonene er &copy; av <a href=\"http://www.oxygen-icons.org\">Oxygen Team</a> og brukt ihht <a href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Vennligst bruk <a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> for å rapportere om feil."
 
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
@@ -532,7 +533,7 @@ msgstr "Skjul inaktive samtaler"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Gjem inaktive nettverk"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -836,12 +837,12 @@ msgstr "Kopier valgt tekst"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Søk '%1'"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Nullstill kolonnebredder"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -956,7 +957,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "Nettsøk-URL:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -971,7 +972,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1164,7 +1165,7 @@ msgstr "Synkroniserer med kjernen..."
 #: ../src/client/clientauthhandler.cpp:293
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Kjernen nektet å godta tilkobling fra denne klienten"
 
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
@@ -1179,7 +1180,7 @@ msgstr "Innlogging avbrutt"
 #: ../src/client/clientauthhandler.cpp:420
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Ukryptert tilkobling kansellert"
 
 #: ../src/client/clientbacklogmanager.cpp:178
 #, qt-format
@@ -1517,7 +1518,7 @@ msgstr "Kaller restoreState() selv om aktive sesjoner finnes!"
 #: ../src/core/core.cpp:285
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
-msgstr ""
+msgstr "Kjernen er allerede konfigurert! Konfigurerer ikke på nytt ..."
 
 #: ../src/core/core.cpp:288
 msgctxt "Core|"
@@ -1588,7 +1589,7 @@ msgstr "Lukker tjener for grunnleggende oppsett."
 #: ../src/core/core.cpp:558
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
-msgstr ""
+msgstr "Ikke-autentisert klient frakoblet:"
 
 #: ../src/core/core.cpp:590
 msgctxt "Core|"
@@ -1753,7 +1754,7 @@ msgid ""
 "<b>Your Quassel Client is too old!</b><br>This core needs at least "
 "client/core protocol version %1 (got: %2).<br>Please consider upgrading your"
 " client."
-msgstr ""
+msgstr "<b>Quassel-klienten din er for gammel!</b><br>Kjernen trenger minst klient/kjerne protokollversjon %1 (har: %2).<br>Vennligst vurder å oppgradere klienten din."
 
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
@@ -1772,7 +1773,7 @@ msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>SSL er påkrevd!</b><br>Du må bruke SSL for å koble til denne kjernen."
 
 #: ../src/core/coreauthhandler.cpp:202
 msgctxt "CoreAuthHandler|"
@@ -1786,12 +1787,12 @@ msgstr "<b>Ugyldig brukernavn eller passord!</b><br>Brukernavn/passord-kombinasj
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
-msgstr ""
+msgstr "Klient %1 vellykket initialisert og autentisert som \"%2\" (BrukerID: %3)."
 
 #: ../src/core/coreauthhandler.cpp:226
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
-msgstr ""
+msgstr "Starter kryptering for klient:"
 
 #: ../src/qtui/coreconfigwizard.cpp:69
 msgctxt "CoreConfigWizard|"
@@ -2305,7 +2306,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "DCC %1 er ikke støttet"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
@@ -2316,7 +2317,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
-msgstr ""
+msgstr "DCC tilkoblingsfeil: %1"
 
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
@@ -2448,7 +2449,7 @@ msgstr "[bruk] /delkey <kallenavn|kanal> sletter krypteringsnøkkelen for kallen
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
-msgstr ""
+msgstr "Nøkkelen for %1 er %2:%3"
 
 #: ../src/core/coreuserinputhandler.cpp:797
 #, qt-format
@@ -2479,13 +2480,13 @@ msgstr "Dupliser:"
 #: ../src/common/protocols/datastream/datastreampeer.cpp:115
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ugyldig verifiseringsmelding!"
 
 #: ../src/common/protocols/datastream/datastreampeer.cpp:162
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Ukjent protokoll-melding av type %1"
 
 #: ../src/qtui/ui/debugbufferviewoverlay.ui:13
 msgctxt "DebugBufferViewOverlay|"
@@ -3309,7 +3310,7 @@ msgstr "Last inn en nøkkel"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
-msgstr ""
+msgstr "Kunne ikke lese nøkkel"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
@@ -4072,13 +4073,13 @@ msgstr "Tilordne på nytt"
 #: ../src/common/protocols/legacy/legacypeer.cpp:136
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ugyldig verifiseringsmelding"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:207
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Ukjent protokoll-melding av type %1"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:256
 #, qt-format
@@ -5259,18 +5260,18 @@ msgstr "tjener: %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "Innkommende filoverføring"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> ønsker å sende deg en fil:<br>%2 (%3 bytes)"
 
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Kobler fra ..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5586,7 +5587,7 @@ msgstr "En liste over IRC kanaler du ønsker å koble til automatisk etter oppko
 #: ../src/qtui/snorenotificationbackend.cpp:60
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Privat melding"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5596,7 +5597,7 @@ msgstr "Skjema"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Sovn"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:41
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5606,7 +5607,7 @@ msgstr ""
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:64
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Timeout:"
-msgstr ""
+msgstr "Tidsavbrudd:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:80
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5616,7 +5617,7 @@ msgstr " s"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:96
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "0 means infinite"
-msgstr ""
+msgstr "0 betyr uendelig"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
