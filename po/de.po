@@ -1,5 +1,6 @@
 # 
 # Translators:
+# Manuel Hoffmann <contradictioned@googlemail.com>, 2014
 # Daniel Albers <daniel@lbe.rs>, 2012-2013
 # Daniel Albers <daniel@lbers.com>, 2011-2012
 # Heffer <felix@fetzig.org>, 2013
@@ -13,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-03-28 18:10+0000\n"
+"Last-Translator: Manuel Hoffmann <contradictioned@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -535,7 +536,7 @@ msgstr "Inaktive Chats verstecken"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Inaktive Netzwerke verbergen"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -768,22 +769,22 @@ msgstr "Eigene Nachrichten anzeigen"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "Nachrichten aus dem Verlauf beim Wiederverbinden anzeigen"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Nachrichten aus dem Verlauf anzeigen"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Gelesene Nachrichten beim Wiederverbinden aus dem Verlauf einbinden."
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Gelesene Nachrichten einbinden."
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -839,12 +840,12 @@ msgstr "Auswahl kopieren"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Suche '%1'"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Spaltenbreiten zurücksetzen"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -949,17 +950,17 @@ msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Setze die Markierungslinie auf das Ende des aktuellen Chats wenn Quassel nicht mehr fokussiert ist."
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Setze die Markierungslinie automatisch wenn Quassel nicht mehr fokussiert ist"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "Websuche-URL:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -969,12 +970,12 @@ msgid ""
 "text should go.</p><p>Eg:</p><p>https://www.google.com/search?q=<span "
 "style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span "
 "style=\" font-weight:600;\">%s</span></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Die URL, die mit dem ausgewählten Text als Parameter geöffnet wird. Schreiben Sie <span style=\" font-weight:600;\">%s</span> an die Stelle, an die der ausgewählte Text gesetzt werden soll.</p><p>Z.B.:</p><p>https://www.google.com/search?q=<span style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span style=\" font-weight:600;\">%s</span></p></body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1132,19 +1133,19 @@ msgstr "Getrennt"
 #: ../src/client/clientauthhandler.cpp:149
 msgctxt "ClientAuthHandler|"
 msgid "Reconnecting in compatibility mode..."
-msgstr ""
+msgstr "Verbinde erneut im Kompatibilitätsmodus..."
 
 #: ../src/client/clientauthhandler.cpp:236
 msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>Incompatible Quassel Core!</b><br>None of the protocols this client "
 "speaks are supported by the core you are trying to connect to."
-msgstr ""
+msgstr "<b>Inkompatibler Quassel Core</b><br>Keine der Protokolle, die dieser Client spricht, werden von diesem Core unterstützt, mit den Sie sich verbinden möchten."
 
 #: ../src/client/clientauthhandler.cpp:239
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
-msgstr ""
+msgstr "Core spricht keine der Protokolle, die wir unterstützen."
 
 #: ../src/client/clientauthhandler.cpp:254
 #, qt-format
@@ -1152,12 +1153,12 @@ msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>The Quassel Core you are trying to connect to is too old!</b><br>We need "
 "at least protocol v%1, but the core speaks v%2 only."
-msgstr ""
+msgstr "<b>Der Quassel Core, mit dem Sie sich verbinden wollen, ist zu alt!</b><br>Es wird mindestens Protokollversion %1 benötigt, der Core versteht jedoch nur Version %2."
 
 #: ../src/client/clientauthhandler.cpp:256
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
-msgstr ""
+msgstr "Inkompatible Protokolversionen, Verbindung zum Core zurückgewiesen."
 
 #: ../src/client/clientauthhandler.cpp:278
 msgctxt "ClientAuthHandler|"
@@ -1167,7 +1168,7 @@ msgstr "Mit Quassel-Core synchronisieren..."
 #: ../src/client/clientauthhandler.cpp:293
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Der Core verweigert die Verbindung von diesem Client."
 
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
@@ -1182,7 +1183,7 @@ msgstr "Anmelden abgebrochen"
 #: ../src/client/clientauthhandler.cpp:420
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Unverschlüsselte Verbindung abgebrochen."
 
 #: ../src/client/clientbacklogmanager.cpp:178
 #, qt-format
@@ -1520,7 +1521,7 @@ msgstr "restoreState() aufgerufen, obwohl aktive Sitzungen vorhanden sind!"
 #: ../src/core/core.cpp:285
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
-msgstr ""
+msgstr "Core ist bereits konfiguriert! Wird nicht nochmal konfiguriert..."
 
 #: ../src/core/core.cpp:288
 msgctxt "Core|"
@@ -1591,7 +1592,7 @@ msgstr "Beende Server für Setup."
 #: ../src/core/core.cpp:558
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
-msgstr ""
+msgstr "Nichtauthentifizierter Client, verbindung getrennt."
 
 #: ../src/core/core.cpp:590
 msgctxt "Core|"
@@ -1756,26 +1757,26 @@ msgid ""
 "<b>Your Quassel Client is too old!</b><br>This core needs at least "
 "client/core protocol version %1 (got: %2).<br>Please consider upgrading your"
 " client."
-msgstr ""
+msgstr "<b>Ihr Quasselclient ist zu alt!</b><br>Dieser Core benötigt mindestens Client/Core Protokollversion %1 (Sie haben %2).<br>Denken Sie darüber nach, Ihren Client zu upgraden."
 
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
-msgstr ""
+msgstr "Keine Registrierungsnachricht vor dem Loginversuch gesendet; lehne ab."
 
 #: ../src/core/coreauthhandler.cpp:145
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
-msgstr ""
+msgstr "<b>Client nicht initialisiert!</b><br>Sie müssen vor dem Anmeldungsversuch eine Registrierungsnachricht senden."
 
 #: ../src/core/coreauthhandler.cpp:162
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>SSL wird benötigt!</b><br>Um sich mit diesem Core zu verbinden, wir SSL benötigt."
 
 #: ../src/core/coreauthhandler.cpp:202
 msgctxt "CoreAuthHandler|"
@@ -1789,12 +1790,12 @@ msgstr "<b>Ungültiger Benutzername oder Passwort!</b><br>Die angegebene Benutze
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
-msgstr ""
+msgstr "Client %1 erfolgreich initialisiert und authentifiziert als \"%2\" (UserId: %3)."
 
 #: ../src/core/coreauthhandler.cpp:226
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
-msgstr ""
+msgstr "Starte Verschlüsselung für den Client."
 
 #: ../src/qtui/coreconfigwizard.cpp:69
 msgctxt "CoreConfigWizard|"
@@ -2281,7 +2282,7 @@ msgstr "Keine freien und gültigen Spitznamen in Spitznamensliste gefunden. Benu
 #: ../src/core/coresessioneventprocessor.cpp:450
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
-msgstr ""
+msgstr "Konnte keine Schlüssel austauschen, da das qca-ossl-Plugin fehlt."
 
 #: ../src/core/coresessioneventprocessor.cpp:461
 msgctxt "CoreSessionEventProcessor|"
@@ -2302,39 +2303,39 @@ msgstr "DH1080_FINISH kann nicht verarbeitet werden. Schlüsselaustausch fehlges
 #: ../src/core/coresessioneventprocessor.cpp:1056
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
-msgstr ""
+msgstr "Reverse DCC SEND nicht unterstützt"
 
 #: ../src/core/coresessioneventprocessor.cpp:1074
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "DCC %1 nicht unterstützt"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr ""
+msgstr "Verbindung geschlossen während noch Dateien übertragen wurden!"
 
 #: ../src/core/coretransfer.cpp:70
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
-msgstr ""
+msgstr "DCC Verbindungsfehler: %1"
 
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr ""
+msgstr "Reverse DCC noch nicht unterstütz!"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
-msgstr ""
+msgstr "DCC Receive: Mehr Daten bekommen als erwartet!"
 
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
-msgstr ""
+msgstr "DCC Receive: Quassel Client hat während einer Übertragung die Verbindung beendet!"
 
 #: ../src/core/coreuserinputhandler.cpp:88
 msgctxt "CoreUserInputHandler|"
@@ -2355,7 +2356,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
 " plugin."
-msgstr ""
+msgstr "Fehler: QCA-Providerplugin nicht gefunden. Es wird normalerweise vom qca-ossl-Plugin bereitgestellt."
 
 #: ../src/core/coreuserinputhandler.cpp:204
 msgctxt "CoreUserInputHandler|"
@@ -2391,12 +2392,12 @@ msgstr "Fehler: Wenn eine Verschlüsselung genutzt werden soll muss Quassel mit 
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
-msgstr ""
+msgstr "[usage] /keyx [<nick>] Startet einen DH1080 Schlüsselaustausch mit dem Ziel."
 
 #: ../src/core/coreuserinputhandler.cpp:381
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
-msgstr ""
+msgstr "Es ist nur möglich Schlüssel in einem Dialogfenster auszutauschen."
 
 #: ../src/core/coreuserinputhandler.cpp:391
 #, qt-format
@@ -2451,7 +2452,7 @@ msgstr "[Benutzung] /delkey <nick|channel> löscht den Schlüssel für die Versc
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
-msgstr ""
+msgstr "Der Schlüssel für %1 ist %2:%3"
 
 #: ../src/core/coreuserinputhandler.cpp:797
 #, qt-format
@@ -2482,13 +2483,13 @@ msgstr "Duplizieren:"
 #: ../src/common/protocols/datastream/datastreampeer.cpp:115
 msgctxt "DataStreamPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ungültige Handshake-Nachricht!"
 
 #: ../src/common/protocols/datastream/datastreampeer.cpp:162
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Unbekannte Protokollnachricht vom Typ %1"
 
 #: ../src/qtui/ui/debugbufferviewoverlay.ui:13
 msgctxt "DebugBufferViewOverlay|"
@@ -2811,7 +2812,7 @@ msgstr "CTCP %1-Antwort von %2: %3"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
-msgstr ""
+msgstr "CTCP PING-Antwort von %1 mit einer Verzögerung von %2 Millisekunden erhalten"
 
 #: ../src/core/eventstringifier.cpp:740
 #, qt-format
@@ -3312,14 +3313,14 @@ msgstr "Schlüssel laden"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
-msgstr ""
+msgstr "Konnte Schlüssel nicht lesen"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that"
 " the key file must not have a passphrase."
-msgstr ""
+msgstr "Konnte die Schlüsseldatei nicht lesen. Entweder sie ist inkompatibel oder ungültig. Beachten Sie, dass die Schlüsseldatei keine Passphrase haben darf."
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:370
 msgctxt "IdentityEditWidget|"
@@ -3754,12 +3755,12 @@ msgstr "Emacs-Tastaturbefehle"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:127
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables line wrapping for input."
-msgstr ""
+msgstr "Zeilenumbruch für die Eingabe aktivieren."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "Zeilenumbruch"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:143
 msgctxt "InputWidgetSettingsPage|"
@@ -4075,13 +4076,13 @@ msgstr "Neu zuweisen"
 #: ../src/common/protocols/legacy/legacypeer.cpp:136
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
-msgstr ""
+msgstr "Ungültige Handshake-Nachricht!"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:207
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Unbekannte Protokollnachricht vom Typ %1"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:256
 #, qt-format
@@ -5262,18 +5263,18 @@ msgstr "Server: %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "Eingehende Dateiübertragung"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> möchte eine Datei senden:<br>%2 (%3 byte)"
 
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Trenne..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5589,7 +5590,7 @@ msgstr "Eine Liste von IRC-Kanälen, die Sie automatischen nach dem Verbinden be
 #: ../src/qtui/snorenotificationbackend.cpp:60
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Private Nachricht"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5604,12 +5605,12 @@ msgstr "Snore"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:41
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Backend:"
-msgstr ""
+msgstr "Backend:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:64
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Timeout:"
-msgstr ""
+msgstr "Zeitüberschreitung:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:80
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5619,7 +5620,7 @@ msgstr " s"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:96
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "0 means infinite"
-msgstr ""
+msgstr "0 bedeutet unendlich"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
