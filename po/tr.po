@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-26 18:40+0000\n"
+"PO-Revision-Date: 2014-03-29 23:20+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -1227,7 +1227,7 @@ msgstr " saniye"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:80
 msgctxt "ConnectionSettingsPage|"
 msgid "Disconnect after"
-msgstr "Ardından bağlantıyı kes"
+msgstr "Şundan sonra bağlantıyı kes:"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:103
 msgctxt "ConnectionSettingsPage|"
@@ -3005,7 +3005,7 @@ msgstr "<li>Her kimlik için gerçek ad belirtmeniz gerekiyor</li>"
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:209
 msgctxt "IdentitiesSettingsPage|"
 msgid "<li>You need to specify an ident for every identity</li>"
-msgstr "<li>Her kimlik için bir ident belirtmeniz gerekiyor</li>"
+msgstr "<li>Her kimlik için bir tanımlayıcı belirtmeniz gerekiyor</li>"
 
 #: ../src/qtui/settingspages/identitiessettingspage.cpp:210
 msgctxt "IdentitiesSettingsPage|"
@@ -3206,7 +3206,7 @@ msgstr "Gelişmiş"
 #: ../src/qtui/settingspages/identityeditwidget.ui:407
 msgctxt "IdentityEditWidget|"
 msgid "Ident:"
-msgstr "Ident:"
+msgstr "Tanımlayıcı:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:414
 msgctxt "IdentityEditWidget|"
@@ -3389,7 +3389,7 @@ msgid ""
 "<i>nick!ident@host.name<i></p>\n"
 "<p><u>Message:</u></p>\n"
 "<p>The rule is matched against the actual message content</p>"
-msgstr "<p><b>Kural Türü:</b></p>\n<p><u>Gönderen:</u></p>\n<p>Kural gönderici dizgesiyle eşleştirilir\n<i>takmaad!ident@host.name<i></p>\n<p><u>İleti:</u></p>\n<p>Kural asıl ileti içeriğine karşı eşleştirilir</p>"
+msgstr "<p><b>Kural Türü:</b></p>\n<p><u>Gönderen:</u></p>\n<p>Kural gönderici dizgesiyle eşleştirilir\n<i>takmaad!tanımlayıcı@sunucu.adı<i></p>\n<p><u>İleti:</u></p>\n<p>Kural asıl ileti içeriğine karşı eşleştirilir</p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:66
 msgctxt "IgnoreListEditDlg|"
@@ -3426,7 +3426,7 @@ msgid ""
 "- <i>*@foobar.com</i> matches any sender from host <i>foobar.com</i>\n"
 "<br />\n"
 "- <i>stupid!.+</i> (RegEx) matches any sender with nickname <i>stupid</i> from any host</p>"
-msgstr "<p><b>Yoksayma kuralı:</b></p>\n<p>Kuralın türüne bağlı olarak, metin ikisinden biri ile eşleştirilir:</p>\n<p><u>- ileti içeriği:</u></p>\n<p><i>Örnek:</i>\n<br />\n<i>*foobar*</i>, <i>foobar</i> içeren herhangi bir metni eşleştirir</p>\n<p><u>- gönderici dizgesi</u>  <i>(takmaad!ident@host.name)</i></p>\n<p><i>Örnekler:</i>\n<br />\n- <i>*@foobar.com</i>, <i>foobar.com</i> sunucusundaki tüm gönderenleri eşleştirir\n<br />\n- <i>aptal!.+</i> (RegEx - Düzenli İfade), tüm sunuculardaki <i>aptal</i> takma adında tüm gönderenleri eşleştirir</p>"
+msgstr "<p><b>Yoksayma kuralı:</b></p>\n<p>Kuralın türüne bağlı olarak, metin ikisinden biri ile eşleştirilir:</p>\n<p><u>- ileti içeriği:</u></p>\n<p><i>Örnek:</i>\n<br />\n<i>*foobar*</i>, <i>foobar</i> içeren herhangi bir metni eşleştirir</p>\n<p><u>- gönderici dizgesi</u>  <i>(takmaad!tanımlayıcı@sunucu.adı)</i></p>\n<p><i>Örnekler:</i>\n<br />\n- <i>*@foobar.com</i>, <i>foobar.com</i> sunucusundaki tüm gönderenleri eşleştirir\n<br />\n- <i>aptal!.+</i> (RegEx - Düzenli İfade), tüm sunuculardaki <i>aptal</i> takma adında tüm gönderenleri eşleştirir</p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:112
 msgctxt "IgnoreListEditDlg|"
@@ -3525,7 +3525,7 @@ msgid ""
 "\"*@foobar.com\" matches any sender from host foobar.com<br />    "
 "\"stupid!.+\" (RegEx) matches any sender with nickname \"stupid\" from any "
 "host<br />"
-msgstr "<b>Yoksayma kuralı:</b><br />Kuralın türüne bağlı olarak, metin ikisinden biri ile eşleştirilir:<br /><br />- <u>ileti içeriği:</u><br /><i>Örnek:<i><br />    \"*foobar*\", \"foobar\" içeren herhangi bir metni eşleştirir.<br /><br />- <u>gönderici dizgesi <i>takmaad!ident@host.name<i></u><br /><i>Örnek:</i><br />    \"*@foobar.com\", foobar.com sunucusundaki tüm gönderenleri eşleştirir<br />    \"aptal!.+\" (RegEx - Düzenli İfade), tüm sunuculardaki \"aptal\" takma adında tüm gönderenleri eşleştirir<br />"
+msgstr "<b>Yoksayma kuralı:</b><br />Kuralın türüne bağlı olarak, metin ikisinden biri ile eşleştirilir:<br /><br />- <u>ileti içeriği:</u><br /><i>Örnek:<i><br />    \"*foobar*\", \"foobar\" içeren herhangi bir metni eşleştirir.<br /><br />- <u>gönderici dizgesi <i>takmaad!tanımlayıcı@sunucu.adı<i></u><br /><i>Örnek:</i><br />    \"*@foobar.com\", foobar.com sunucusundaki tüm gönderenleri eşleştirir<br />    \"aptal!.+\" (RegEx - Düzenli İfade), tüm sunuculardaki \"aptal\" takma adında tüm gönderenleri eşleştirir<br />"
 
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:91
 msgctxt "IgnoreListModel|"
@@ -3950,7 +3950,7 @@ msgstr "Arayüz"
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:29
 msgctxt "ItemViewSettingsPage|"
 msgid "Chat & Nick Lists"
-msgstr "Sohbet & Takma Ad Listeleri"
+msgstr "Sohbet ve Takma Ad Listeleri"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:34
 msgctxt "ItemViewSettingsPage|"
@@ -4159,7 +4159,7 @@ msgstr "&Kısayolları Yapılandır..."
 #: ../src/qtui/mainwin.cpp:406 ../src/qtui/mainwin.cpp:410
 msgctxt "MainWin|"
 msgid "&Configure Quassel..."
-msgstr "Quasseli &Yapılandır..."
+msgstr "Quassel'i &Yapılandır..."
 
 #: ../src/qtui/mainwin.cpp:416
 msgctxt "MainWin|"
