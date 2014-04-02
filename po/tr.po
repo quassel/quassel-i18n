@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-29 23:20+0000\n"
+"PO-Revision-Date: 2014-04-01 22:10+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -3286,7 +3286,7 @@ msgstr "SSL Sertifikası Kullan"
 #: ../src/qtui/settingspages/identityeditwidget.ui:656
 msgctxt "IdentityEditWidget|"
 msgid "Organisation:"
-msgstr "Organizasyon:"
+msgstr "Kuruluş:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
@@ -4209,7 +4209,7 @@ msgstr "Geçerli Tamponu Gizle"
 #: ../src/qtui/mainwin.cpp:442
 msgctxt "MainWin|"
 msgid "Navigation"
-msgstr "Organizasyon:"
+msgstr "Gezinme"
 
 #: ../src/qtui/mainwin.cpp:444
 msgctxt "MainWin|"
