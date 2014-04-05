@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-04-04 03:20+0000\n"
+"Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -518,7 +518,7 @@ msgstr "ਚੈਨਲ ਵੇਖਾਓ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:128
 msgctxt "BufferViewSettingsPage|"
 msgid "Show queries"
-msgstr ""
+msgstr "ਕਿਊਰੀਆਂ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:135
 msgctxt "BufferViewSettingsPage|"
@@ -676,7 +676,7 @@ msgstr ""
 #: ../src/qtui/ui/channellistdlg.ui:62
 msgctxt "ChannelListDlg|"
 msgid "Show Channels"
-msgstr ""
+msgstr "ਚੈਨਲ ਵੇਖਾਓ"
 
 #: ../src/qtui/ui/channellistdlg.ui:86
 msgctxt "ChannelListDlg|"
@@ -1073,7 +1073,7 @@ msgstr "ਇੰਟਰਫੇਸ"
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
 msgid "Chat View"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਝਲਕ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:41
 msgctxt "ChatViewSettingsPage|"
@@ -1390,7 +1390,7 @@ msgstr "ਪਿੰਗ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:66
 msgctxt "ContextMenuActionProvider|"
 msgid "Client info"
-msgstr ""
+msgstr "ਕਲਾਂਇਟ ਜਾਣਕਾਰੀ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:67
 msgctxt "ContextMenuActionProvider|"
@@ -1455,7 +1455,7 @@ msgstr ""
 #: ../src/uisupport/contextmenuactionprovider.cpp:91
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Channel List"
-msgstr ""
+msgstr "ਚੈਨਲ ਸੂਚੀ ਵੇਖਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:92
 msgctxt "ContextMenuActionProvider|"
@@ -3607,7 +3607,7 @@ msgstr ""
 #: ../src/qtui/ui/indicatornotificationconfigwidget.ui:23
 msgctxt "IndicatorNotificationConfigWidget|"
 msgid "Show messages in application indicator"
-msgstr ""
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਸੰਕੇਤਕ ਵਿੱਚ ਸੁਨੇੇਹ ਵੇਖਾਓ"
 
 #: ../src/qtui/ui/inputwidget.ui:26
 msgctxt "InputWidget|"
@@ -4400,7 +4400,7 @@ msgstr ""
 #: ../src/qtui/mainwin.cpp:892
 msgctxt "MainWin|"
 msgid "Show Input Line"
-msgstr ""
+msgstr "ਇੰਪੁੱਟ ਲਾਈਨ ਵੇਖਾਓ"
 
 #: ../src/qtui/mainwin.cpp:907
 msgctxt "MainWin|"
@@ -4410,7 +4410,7 @@ msgstr "ਵਿਸ਼ਾ"
 #: ../src/qtui/mainwin.cpp:919
 msgctxt "MainWin|"
 msgid "Show Topic Line"
-msgstr ""
+msgstr "ਵਿਸ਼ਾ ਲਾਈਨ ਵੇਖਾਓ"
 
 #: ../src/qtui/mainwin.cpp:1013
 msgctxt "MainWin|"
@@ -5791,7 +5791,7 @@ msgstr "ਕੁਨੈਕਟ ਕਰੋ"
 #: ../src/uisupport/toolbaractionprovider.cpp:31
 msgctxt "ToolBarActionProvider|"
 msgid "Connect to IRC"
-msgstr ""
+msgstr "IRC ਨਾਲ ਕੁਨੈਕਟ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:32
 msgctxt "ToolBarActionProvider|"
@@ -5801,7 +5801,7 @@ msgstr "ਡਿਸ-ਕੁਨੈਕਟ"
 #: ../src/uisupport/toolbaractionprovider.cpp:32
 msgctxt "ToolBarActionProvider|"
 msgid "Disconnect from IRC"
-msgstr ""
+msgstr "IRC ਤੋਂ ਡਿਸ-ਕੁਨੈਕਟ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:34
 msgctxt "ToolBarActionProvider|"
@@ -5821,7 +5821,7 @@ msgstr "ਜੁਆਇਨ"
 #: ../src/uisupport/toolbaractionprovider.cpp:35
 msgctxt "ToolBarActionProvider|"
 msgid "Join a channel"
-msgstr ""
+msgstr "ਚੈਨਲ ਜੁਆਇੰਨ ਕਰੋ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:37
 msgctxt "ToolBarActionProvider|"
