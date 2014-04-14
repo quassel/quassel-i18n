@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-04-01 22:10+0000\n"
+"PO-Revision-Date: 2014-04-14 00:30+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgid ""
 "href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd>for keeping Qt alive, and for "
 "sponsoring development of Quassel Mobile with N810s</dd>"
-msgstr "Özel teşekkürlerimiz:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>John \"nox\" Hand</b></dt><dd>Orijinal Quassel ikonu - The All-Seeing Eye için</dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">The Oxygen Team</a></b></dt><dd>Quassel üzerinde gördüğümüz tüm grafik dizaynı için</dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Software önceki adı ile Trolltech</a></b></dt><dd>Qt ve Qtopia'yı tasarladıkları için, ve Greenphones ve dahası var QuasselTopia geliştirme sponsorlukları için</dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd>Qt'ye canlılık verdikleri için, ve Quassel Mobile N810s ile ilgili geliştirilmesini sponsorize ettiklerinden dolayı onlara gidiyor</dd>"
+msgstr "Özel teşekkürlerimiz:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>John \"nox\" Hand</b></dt><dd>Özgün Quassel simgesi - The All-Seeing Eye için</dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">Oxygen Takımı</a></b></dt><dd>Quassel üzerinde gördüğümüz tüm grafik tasarımı için</dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Yazılımın önceki adı ile Trolltech</a></b></dt><dd>Qt ve Qtopia'yı oluşturdukları ve Greenphones, QuasselTopia ve dahasına geliştirme sponsorlukları verdikleri için</dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd>Qt'ye canlılık verdikleri için ve Quassel Mobile N810s ile ilgili geliştirilmesini desteklediklerinden dolayı</dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
