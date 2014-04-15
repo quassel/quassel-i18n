@@ -3,7 +3,7 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # scarabeus <scarabeus@gentoo.org>, 2009-2010
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012
-# Vít Pelčák <vit@pelcak.org>, 2012-2013
+# Vít Pelčák, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
