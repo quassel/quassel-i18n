@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-04-14 00:30+0000\n"
+"PO-Revision-Date: 2014-04-20 01:02+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -3771,7 +3771,7 @@ msgstr "Sohbet Ekranını Göster"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:186
 msgctxt "InputWidgetSettingsPage|"
 msgid "lines"
-msgstr "satırlar"
+msgstr "satır"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:208
 msgctxt "InputWidgetSettingsPage|"
@@ -3816,7 +3816,7 @@ msgstr "dahili bağlantı"
 #: ../src/qtui/ircconnectionwizard.cpp:49
 msgctxt "IrcConnectionWizard|"
 msgid "Save && Connect"
-msgstr "Kaydet && Bağlan"
+msgstr "Kaydet ve Bağlan"
 
 #: ../src/client/irclistmodel.cpp:65
 msgctxt "IrcListModel|"
