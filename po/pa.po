@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-04-04 03:20+0000\n"
+"PO-Revision-Date: 2014-05-27 02:21+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -455,7 +455,7 @@ msgstr ""
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:582
 msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ ਸ਼ਾਮਿਲ"
 
 #: ../src/uisupport/bufferviewfilter.cpp:54
 msgctxt "BufferViewFilter|"
@@ -485,7 +485,7 @@ msgstr "ਹਟਾਓ(&l)"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:84
 msgctxt "BufferViewSettingsPage|"
 msgid "Chat List Settings"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ ਸੈਟਿੰਗ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:92
 msgctxt "BufferViewSettingsPage|"
@@ -751,12 +751,12 @@ msgstr ""
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:150
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Always show highlighted messages"
-msgstr ""
+msgstr "ਹਮੇਸ਼ਾ ਉਭਾਰੇ ਗਏ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:157
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show own messages"
-msgstr ""
+msgstr "ਆਪਣੇ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
@@ -791,7 +791,7 @@ msgstr "ਗੱਲਬਾਤ ਨਿਗਰਾਨ"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
-msgstr ""
+msgstr "ਚੋਣ ਕੀਤੀ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
@@ -806,7 +806,7 @@ msgstr "ਅਣਡਿੱਠਾ:"
 #: ../src/qtui/chatmonitorview.cpp:54
 msgctxt "ChatMonitorView|"
 msgid "Show Own Messages"
-msgstr ""
+msgstr "ਆਪਣੇ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 
 #: ../src/qtui/chatmonitorview.cpp:61
 msgctxt "ChatMonitorView|"
@@ -826,7 +826,7 @@ msgstr "...ਸੰਰਚਨਾ"
 #: ../src/qtui/chatscene.cpp:826
 msgctxt "ChatScene|"
 msgid "Copy Selection"
-msgstr ""
+msgstr "ਚੋਣ ਦੀ ਕਾਪੀ ਕਰੋ"
 
 #: ../src/qtui/chatscene.cpp:833
 #, qt-format
@@ -859,12 +859,12 @@ msgstr "ਆਕਾਰ ਪ੍ਰਤੀ ਸੰਵੇਦਨਸ਼ੀਲ"
 #: ../src/qtui/ui/chatviewsearchbar.ui:62
 msgctxt "ChatViewSearchBar|"
 msgid "search nick"
-msgstr ""
+msgstr "ਨਾਂ ਲੱਭੋ"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:69
 msgctxt "ChatViewSearchBar|"
 msgid "search message"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਲੱਭੋ"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:82
 msgctxt "ChatViewSearchBar|"
@@ -1063,7 +1063,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:772
 msgctxt "ChatViewSettingsPage|"
 msgid "Own messages:"
-msgstr ""
+msgstr "ਆਪਣੇ ਸੁਨੇਹੇ:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
@@ -1102,7 +1102,7 @@ msgstr "...%1 ਨਾਲ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹ�
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Looking up %1..."
-msgstr ""
+msgstr "...%1 ਦੀ ਖੋਜ ਜਾਰੀ"
 
 #: ../src/client/clientauthhandler.cpp:106
 #: ../src/client/clientauthhandler.cpp:315
@@ -1115,7 +1115,7 @@ msgstr "%1 ਨਾਲ ਕੁਨੈਕਟ ਹੈ"
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Disconnecting from %1..."
-msgstr ""
+msgstr "...%1 ਤੋਂ ਡਿਸਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../src/client/clientauthhandler.cpp:114
 msgctxt "ClientAuthHandler|"
@@ -1350,7 +1350,7 @@ msgstr "...ਡਿਫਾਲਟ ਸੈੱਟ ਕਰੋ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:55
 msgctxt "ContextMenuActionProvider|"
 msgid "Use Defaults..."
-msgstr ""
+msgstr "...ਮੂਲ ਵਰਤੋਂ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:57
 msgctxt "ContextMenuActionProvider|"
@@ -2153,7 +2153,7 @@ msgstr "ਵਰਜਨ:"
 #: ../src/qtui/ui/coreinfodlg.ui:28
 msgctxt "CoreInfoDlg|"
 msgid "<core version>"
-msgstr ""
+msgstr "<core version>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:35
 msgctxt "CoreInfoDlg|"
@@ -4105,7 +4105,7 @@ msgstr ""
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
 msgid "Configure &Networks..."
-msgstr ""
+msgstr "...ਨੈੱਟਵਰਕ ਸੰਰਚਨਾ(&N)"
 
 #: ../src/qtui/mainwin.cpp:369
 msgctxt "MainWin|"
@@ -4115,7 +4115,7 @@ msgstr "ਬੰਦ ਕਰੋ(&Q)"
 #: ../src/qtui/mainwin.cpp:373
 msgctxt "MainWin|"
 msgid "&Configure Chat Lists..."
-msgstr ""
+msgstr "....ਗੱਲਬਾਤ ਸੂਚੀ ਸੰਰਚਨਾ(&C)"
 
 #: ../src/qtui/mainwin.cpp:376
 msgctxt "MainWin|"
@@ -4350,7 +4350,7 @@ msgstr "ਵੇਖੋ(&V)"
 #: ../src/qtui/mainwin.cpp:534
 msgctxt "MainWin|"
 msgid "&Chat Lists"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ&C)"
 
 #: ../src/qtui/mainwin.cpp:536
 msgctxt "MainWin|"
@@ -4390,12 +4390,12 @@ msgstr "ਗੱਲਬਾਤ ਨਿਗਰਾਨ"
 #: ../src/qtui/mainwin.cpp:877
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਨਿਗਰਾਨ ਵੇਖਾਓ"
 
 #: ../src/qtui/mainwin.cpp:883
 msgctxt "MainWin|"
 msgid "Inputline"
-msgstr ""
+msgstr "ਇੰਪੁੱਟਲਾਈਨ"
 
 #: ../src/qtui/mainwin.cpp:892
 msgctxt "MainWin|"
