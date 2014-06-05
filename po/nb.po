@@ -6,13 +6,13 @@
 # sandsmark <inactive+sandsmark@transifex.com>, 2012
 # Terje Andersen <terander@guard.zapto.org>, 2009
 # Terje Andersen <teranders@gmail.com>, 2011
-# 2rB, 2014
+# Thorbjørn Bruarøy, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
 "PO-Revision-Date: 2014-03-27 08:30+0000\n"
-"Last-Translator: 2rB\n"
+"Last-Translator: Thorbjørn Bruarøy\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/quassel/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

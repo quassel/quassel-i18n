@@ -4,8 +4,8 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
-# Pad <pedroaraujo@colorlesscube.com>, 2013
-# Pad <pedroaraujo@colorlesscube.com>, 2013
+# Pedro Araujo <pedroaraujo@colorlesscube.com>, 2013
+# Pedro Araujo <pedroaraujo@colorlesscube.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"

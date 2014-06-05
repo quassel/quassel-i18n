@@ -1,7 +1,7 @@
 # 
 # Translators:
-# ujuc Gang <potopro@gmail.com>, 2013
-# ujuc Gang <potopro@gmail.com>, 2013
+# Sungjin Kang <potopro@gmail.com>, 2013
+# Sungjin Kang <potopro@gmail.com>, 2013
 # Tae-Hoon KWON <zerolaunch@naver.com>, 2012
 # Tae-Hoon KWON <zerolaunch@naver.com>, 2012
 msgid ""

@@ -1,7 +1,7 @@
 # 
 # Translators:
-# libregeekingkid <rajuvindane@gmail.com>, 2013
-# libregeekingkid <rajuvindane@gmail.com>, 2013
+# Raju Devidas Vindane <rajuvindane@gmail.com>, 2013
+# Raju Devidas Vindane <rajuvindane@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"

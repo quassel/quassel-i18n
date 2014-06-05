@@ -3,8 +3,8 @@
 # Adam Tulinius <mail@adamtulinius.dk>, 2010
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
-# furyfire <frazzer@hotmail.com>, 2013
-# furyfire <frazzer@hotmail.com>, 2013
+# Jens True <frazzer@hotmail.com>, 2013
+# Jens True <frazzer@hotmail.com>, 2013
 # Per Nielsen <>, 2012
 msgid ""
 msgstr ""

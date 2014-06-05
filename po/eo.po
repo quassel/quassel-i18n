@@ -1,8 +1,8 @@
 # 
 # Translators:
-# cordata <tiffypet@yahoo.com>, 2012
+# Tinjo Kohen <tiffypet@yahoo.com>, 2012
 #   <recoverybenk@gmail.com>, 2012
-# cordata <tiffypet@yahoo.com>, 2012
+# Tinjo Kohen <tiffypet@yahoo.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"

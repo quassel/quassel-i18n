@@ -2,9 +2,9 @@
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011-2012
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2012
-# Larso <larso@gmx.com>, 2011-2012
-# Larso <larso@gmx.com>, 2013
-# Larso <larso@gmx.com>, 2013-2014
+# Lasse Liehu <larso@gmx.com>, 2011-2012
+# Lasse Liehu <larso@gmx.com>, 2013
+# Lasse Liehu <larso@gmx.com>, 2013-2014
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012-2013
 # mikuu <pinaatti@gmail.com>, 2011
 msgid ""

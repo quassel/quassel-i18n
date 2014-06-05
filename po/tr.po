@@ -3,15 +3,15 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010
 # zeugma <sunder67@hotmail.com>, 2013
-# volkangezer <volkangezer@gmail.com>, 2013
-# volkangezer <volkangezer@gmail.com>, 2013-2014
+# Volkan Gezer <volkangezer@gmail.com>, 2013
+# Volkan Gezer <volkangezer@gmail.com>, 2013-2014
 # zeugma <sunder67@hotmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
 "PO-Revision-Date: 2014-05-19 22:01+0000\n"
-"Last-Translator: volkangezer <volkangezer@gmail.com>\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

@@ -1,11 +1,11 @@
 # 
 # Translators:
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
+# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2013
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # Javier Llorente <javier@opensuse.org>, 2011
 # Javier Llorente <javier@opensuse.org>, 2011
-# Dongorongoro <jonathan@haitu-yu.com>, 2013
+# Jonathan Farnham <jonathan@haitu-yu.com>, 2013
 # Rafael Belmonte <EagleScreen@gmail.com>, 2009, 2011
 # enjolras <yo@miguelrevilla.com>, 2012
 msgid ""
