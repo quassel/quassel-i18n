@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-05-27 02:21+0000\n"
+"PO-Revision-Date: 2014-06-19 20:10+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "ਧੰਨਵਾਦ(&T)"
 #, qt-format
 msgctxt "AboutDlg|"
 msgid "<b>Version:</b> %1<br><b>Protocol version:</b> %2<br><b>Built:</b> %3"
-msgstr ""
+msgstr "<b>ਵਰਜਨ:</b> %1<br><b>ਪਰੋਟੋਕਾਲ ਵਰਜਨ:</b> %2<br><b>ਬਿਲਟ:</b> %3"
 
 #: ../src/qtui/aboutdlg.cpp:49
 #, qt-format
@@ -180,12 +180,12 @@ msgstr "ਫਾਰਮ"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:22
 msgctxt "AppearanceSettingsPage|"
 msgid "Client style:"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਸਟਾਇਲ:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:29
 msgctxt "AppearanceSettingsPage|"
 msgid "Set application style"
-msgstr ""
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਸਟਾਇਲ ਸੈੱਟ ਕਰੋ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:36
 msgctxt "AppearanceSettingsPage|"
@@ -195,7 +195,7 @@ msgstr "ਭਾਸ਼ਾ:"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:43
 msgctxt "AppearanceSettingsPage|"
 msgid "Set the application language. Requires restart!"
-msgstr ""
+msgstr "ਐਪਲੀਕੇਸ਼ਨ ਭਾਸ਼ਾ ਸੈੱਟ ਕਰੋ। ਮੁੜ-ਚਾਲੂ ਕਰਨ ਦੀ ਲੋੜ!"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:47
 msgctxt "AppearanceSettingsPage|"
@@ -211,7 +211,7 @@ msgstr "<System Default>"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:75
 msgctxt "AppearanceSettingsPage|"
 msgid "Use custom stylesheet"
-msgstr ""
+msgstr "ਪਸੰਦੀਦਾ ਸਟਾਇਲਸ਼ੀਟ ਵਰਤੋਂ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:109
 msgctxt "AppearanceSettingsPage|"
@@ -246,7 +246,7 @@ msgstr ""
 #: ../src/qtui/settingspages/appearancesettingspage.ui:237
 msgctxt "AppearanceSettingsPage|"
 msgid "User Notices:"
-msgstr ""
+msgstr "ਯੂਜ਼ਰ ਸੂਚਨਾਵਾਂ:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:280
 msgctxt "AppearanceSettingsPage|"
@@ -256,7 +256,7 @@ msgstr "ਸਰਵਰ ਨੋਟਿਸ:"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:294
 msgctxt "AppearanceSettingsPage|"
 msgid "Default Target"
-msgstr ""
+msgstr "ਮੂਲ ਟੀਚਾ"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:301
 msgctxt "AppearanceSettingsPage|"
@@ -286,7 +286,7 @@ msgstr ""
 #: ../src/qtui/awaylogview.cpp:33
 msgctxt "AwayLogView|"
 msgid "Away Log"
-msgstr ""
+msgstr "ਦੂਰ ਹੋਣ ਦਾ ਲਾਗ"
 
 #: ../src/qtui/awaylogview.cpp:46
 msgctxt "AwayLogView|"
@@ -296,7 +296,7 @@ msgstr "ਨੈੱਟਵਰਕ ਨਾਂ ਵੇਖਾਓ"
 #: ../src/qtui/awaylogview.cpp:51
 msgctxt "AwayLogView|"
 msgid "Show Buffer Name"
-msgstr ""
+msgstr "ਬਫ਼ਰ ਨਾਂ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:14
 msgctxt "BacklogSettingsPage|"
@@ -395,7 +395,7 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.ui:385
 msgctxt "BacklogSettingsPage|"
 msgid "Additional Messages:"
-msgstr ""
+msgstr "ਵਾਧੂ ਸੁਨੇਹੇ:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:324
 msgctxt "BacklogSettingsPage|"
@@ -450,7 +450,7 @@ msgstr "ਡਾਈਲਾਗ"
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:22
 msgctxt "BufferViewEditDlg|"
 msgid "Please enter a name for the chat list:"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ ਲਈ ਨਾਂ ਦਿਉ:"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:582
 msgctxt "BufferViewEditDlg|"
@@ -523,7 +523,7 @@ msgstr "ਕਿਊਰੀਆਂ ਵੇਖਾਓ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:135
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive chats"
-msgstr ""
+msgstr "ਨਾ-ਸਰਗਰਮ ਗੱਲਬਾਤ ਓਹਲੇ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
@@ -533,7 +533,7 @@ msgstr ""
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
 msgid "Add new chats automatically"
-msgstr ""
+msgstr "ਨਵੀਆਂ ਗੱਲਬਾਤਾਂ ਆਪਣੇ-ਆਪ ਜੋੜੋ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:156
 msgctxt "BufferViewSettingsPage|"
@@ -543,17 +543,17 @@ msgstr "ਵਰਣਮਾਲਾ ਨਾਲ ਲੜੀਬੱਧ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:163
 msgctxt "BufferViewSettingsPage|"
 msgid "Minimum Activity:"
-msgstr ""
+msgstr "ਘੱਟੋ-ਘੱਟ ਸਰਗਰਮੀ:"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:171
 msgctxt "BufferViewSettingsPage|"
 msgid "No Activity"
-msgstr ""
+msgstr "ਕੋਈ ਸਰਗਰਮੀ ਨਹੀਂ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:176
 msgctxt "BufferViewSettingsPage|"
 msgid "Other Activity"
-msgstr ""
+msgstr "ਹੋਰ ਸਰਗਰਮੀ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:181
 msgctxt "BufferViewSettingsPage|"
@@ -578,12 +578,12 @@ msgstr "ਇੰਟਰਫੇਸ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:36
 msgctxt "BufferViewSettingsPage|"
 msgid "Custom Chat Lists"
-msgstr ""
+msgstr "ਪਸੰਦੀਦਾ ਗੱਲਬਾਤ ਸੂਚੀ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:383
 msgctxt "BufferViewSettingsPage|"
 msgid "Delete Chat List?"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਸੂਚੀ ਹਟਾਉਣੀ ਹੈ?"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:384
 #, qt-format
@@ -594,7 +594,7 @@ msgstr ""
 #: ../src/qtui/ui/bufferviewwidget.ui:26
 msgctxt "BufferViewWidget|"
 msgid "BufferView"
-msgstr ""
+msgstr "ਬਫ਼ਰਝਲਕ"
 
 #: ../src/qtui/bufferwidget.cpp:79
 msgctxt "BufferWidget|"
@@ -614,12 +614,12 @@ msgstr "ਅਸਲੀ ਸਾਈਜ਼"
 #: ../src/qtui/bufferwidget.cpp:94
 msgctxt "BufferWidget|"
 msgid "Set Marker Line"
-msgstr ""
+msgstr "ਮਾਰਕਰ ਲਾਈਨ ਸੈੱਟ"
 
 #: ../src/qtui/bufferwidget.cpp:98
 msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
-msgstr ""
+msgstr "ਮਾਰਕਰ ਲਾਈਨ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/client/networkmodel.cpp:583 ../src/client/networkmodel.cpp:585
 #, qt-format
@@ -664,7 +664,7 @@ msgstr "ਚੈਨਲ ਲਿਸਟ"
 #: ../src/qtui/ui/channellistdlg.ui:38
 msgctxt "ChannelListDlg|"
 msgid "Search Pattern:"
-msgstr ""
+msgstr "ਖੋਜ ਪੈਟਰਨ:"
 
 #: ../src/qtui/ui/channellistdlg.ui:48
 msgctxt "ChannelListDlg|"
@@ -697,7 +697,7 @@ msgid ""
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Lucida Grande'; font-size:13pt;\">SUPER EVIL CATASTROPHIC ERROR!!11</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lucida Grande'; font-size:13pt;\"></p></body></html>"
-msgstr ""
+msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Lucida Grande'; font-size:13pt;\">ਬਹੁਤ ਭਿਆਨ ਕੈਟਾਸਟਰੋਫਿਕ ਗਲਤੀ!!11</span></p>\n<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lucida Grande'; font-size:13pt;\"></p></body></html>"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:14
 msgctxt "ChatMonitorSettingsPage|"
@@ -707,7 +707,7 @@ msgstr "ਫਾਰਮ"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:22
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Operation Mode:"
-msgstr ""
+msgstr "ਓਪਰੇਸ਼ਨ ਮੋਡ:"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:29
 msgctxt "ChatMonitorSettingsPage|"
@@ -816,7 +816,7 @@ msgstr "ਨੈੱਟਵਰਕ ਨਾਂ ਵੇਖਾਓ"
 #: ../src/qtui/chatmonitorview.cpp:66
 msgctxt "ChatMonitorView|"
 msgid "Show Buffer Name"
-msgstr ""
+msgstr "ਬਫ਼ਰ ਨਾਂ ਵੇਖਾਓ"
 
 #: ../src/qtui/chatmonitorview.cpp:73
 msgctxt "ChatMonitorView|"
@@ -832,7 +832,7 @@ msgstr "ਚੋਣ ਦੀ ਕਾਪੀ ਕਰੋ"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "'%1' ਖੋਜ"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
@@ -892,7 +892,7 @@ msgid ""
 "<tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n"
 "</table>\n"
 "</body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>ਵਰਤੋਂ ਉਦਾਹਰਨਾਂ:</p>\n<table cellpadding=\"2\">\n<tr><td>dd.MM.yyyy</td><td>21.05.2001</td></tr>\n<tr><td>ddd MMMM d yy</td><td>Tue May 21 01</td></tr>\n<tr><td>hh:mm:ss.zzz</td><td>14:13:09.042</td></tr>\n<tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n</table>\n</body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:42
 msgctxt "ChatViewSettingsPage|"
@@ -967,7 +967,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1083,7 +1083,7 @@ msgstr ""
 #: ../src/client/client.cpp:320
 msgctxt "Client|"
 msgid "Identity already exists in client!"
-msgstr ""
+msgstr "ਪਛਾਣ ਕਲਾਇਟ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ!"
 
 #: ../src/client/clientauthhandler.cpp:65
 #: ../src/client/clientauthhandler.cpp:471
@@ -1165,12 +1165,12 @@ msgstr ""
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
 msgid "Logging in..."
-msgstr ""
+msgstr "...ਲਾਗਇਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../src/client/clientauthhandler.cpp:362
 msgctxt "ClientAuthHandler|"
 msgid "Login canceled"
-msgstr ""
+msgstr "ਲਾਗਇਨ ਰੱਦ ਕੀਤਾ"
 
 #: ../src/client/clientauthhandler.cpp:420
 msgctxt "ClientAuthHandler|"
@@ -1181,12 +1181,12 @@ msgstr ""
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
-msgstr ""
+msgstr "%2 ਸਕਿੰਟਾਂ ਵਿੱਚ %1 ਸੁਨੇਹਿਆਂ ਉੱਤੇ ਕਾਰਵਾਈ ਹੋਈ।"
 
 #: ../src/client/clientbufferviewmanager.cpp:60
 msgctxt "ClientBufferViewManager|"
 msgid "All Chats"
-msgstr ""
+msgstr "ਸਭ ਗੱਲਾਬਾਤਾਂ"
 
 #: ../src/client/clientuserinputhandler.cpp:98
 msgctxt "ClientUserInputHandler|"
@@ -1201,7 +1201,7 @@ msgstr ""
 #: ../src/qtui/settingspages/connectionsettingspage.ui:14
 msgctxt "ConnectionSettingsPage|"
 msgid "Configure the IRC Connection"
-msgstr ""
+msgstr "IRC ਕੁਨੈਕਸ਼ਨ ਸੰਰਚਨਾ"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:20
 msgctxt "ConnectionSettingsPage|"
@@ -1211,7 +1211,7 @@ msgstr ""
 #: ../src/qtui/settingspages/connectionsettingspage.ui:37
 msgctxt "ConnectionSettingsPage|"
 msgid "Ping interval:"
-msgstr ""
+msgstr "ਪਿੰਗ ਅੰਤਰਾਲ:"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:44
 #: ../src/qtui/settingspages/connectionsettingspage.ui:155
@@ -1223,7 +1223,7 @@ msgstr " ਸਕਿੰਟ"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:80
 msgctxt "ConnectionSettingsPage|"
 msgid "Disconnect after"
-msgstr ""
+msgstr "ਇਸ ਦੇ ਬਾਅਦ ਡਿਸ-ਕੁਨੈਕਟ"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:103
 msgctxt "ConnectionSettingsPage|"
@@ -1260,7 +1260,7 @@ msgstr "ਯੂਜ਼ਰ"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:206
 msgctxt "ConnectionSettingsPage|"
 msgid "Minimum delay between requests:"
-msgstr ""
+msgstr "ਬੇਨਤੀਆਂ ਵਿੱਚ ਘੱਟੋ-ਘੱਟ ਦੇਰੀ:"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:250
 msgctxt "ConnectionSettingsPage|"
@@ -1300,7 +1300,7 @@ msgstr "ਭਾਗ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:44
 msgctxt "ContextMenuActionProvider|"
 msgid "Delete Chat(s)..."
-msgstr ""
+msgstr "...ਗੱਲਬਾਤਾਂ ਹਟਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:45
 msgctxt "ContextMenuActionProvider|"
@@ -1315,32 +1315,32 @@ msgstr "ਜੁਆਇੰਨ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
 msgid "Parts"
-msgstr ""
+msgstr "ਵੱਖ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:49
 msgctxt "ContextMenuActionProvider|"
 msgid "Quits"
-msgstr ""
+msgstr "ਬੰਦ ਕਰਨਾ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:50
 msgctxt "ContextMenuActionProvider|"
 msgid "Nick Changes"
-msgstr ""
+msgstr "ਨਾਂ ਤਬਦੀਲੀਆਂ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:51
 msgctxt "ContextMenuActionProvider|"
 msgid "Mode Changes"
-msgstr ""
+msgstr "ਮੋਡ ਤਬਦੀਲੀਆਂ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:52
 msgctxt "ContextMenuActionProvider|"
 msgid "Day Changes"
-msgstr ""
+msgstr "ਦਿਨ ਤਬਦੀਲੀਆਂ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:53
 msgctxt "ContextMenuActionProvider|"
 msgid "Topic Changes"
-msgstr ""
+msgstr "ਵਿਸ਼ਾ ਬਦਲਣਾ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:54
 msgctxt "ContextMenuActionProvider|"
@@ -1360,12 +1360,12 @@ msgstr "...ਚੈਨਲ ਜੁਆਇੰਨ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:59
 msgctxt "ContextMenuActionProvider|"
 msgid "Start Query"
-msgstr ""
+msgstr "ਕਿਊਰੀ ਸ਼ੁਰੂ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:60
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Query"
-msgstr ""
+msgstr "ਕਿਊਰੀ ਵੇਖਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:61
 msgctxt "ContextMenuActionProvider|"
@@ -1400,12 +1400,12 @@ msgstr "...ਕਸਟਮ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:79
 msgctxt "ContextMenuActionProvider|"
 msgid "Give Operator Status"
-msgstr ""
+msgstr "ਓਪਰੇਟਰ ਅਹੁਦਾ ਦਿਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:80
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Operator Status"
-msgstr ""
+msgstr "ਓਪਰੇਟਰ ਅਹੁਦਾ ਵਾਪਿਸ ਲਵੋ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:81
 msgctxt "ContextMenuActionProvider|"
@@ -1430,12 +1430,12 @@ msgstr "ਆਵਾਜ਼ ਲਵੋ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:85
 msgctxt "ContextMenuActionProvider|"
 msgid "Kick From Channel"
-msgstr ""
+msgstr "ਚੈਨਲ ਤੋਂ ਠੁੱਡਾ ਮਾਰੋ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:86
 msgctxt "ContextMenuActionProvider|"
 msgid "Ban From Channel"
-msgstr ""
+msgstr "ਚੈਨਲ ਤੋਂ ਪਾਬੰਦੀ ਲਗਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:87
 msgctxt "ContextMenuActionProvider|"
@@ -1460,12 +1460,12 @@ msgstr "ਚੈਨਲ ਸੂਚੀ ਵੇਖਾਓ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:92
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Ignore List"
-msgstr ""
+msgstr "ਅਣਡਿੱਠਾ ਸੂਚੀ ਵੇਖਾਓ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:105
 msgctxt "ContextMenuActionProvider|"
 msgid "Hide Events"
-msgstr ""
+msgstr "ਘਟਨਾਵਾਂ ਓਹਲੇ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:113
 msgctxt "ContextMenuActionProvider|"
@@ -1518,7 +1518,7 @@ msgstr ""
 #: ../src/core/core.cpp:288
 msgctxt "Core|"
 msgid "Admin user or password not set."
-msgstr ""
+msgstr "ਐਡਮਿਨ ਯੂਜ਼ਰ ਜਾਂ ਪਾਸਵਰਡ ਸੈੱਟ ਨਹੀਂ ਹੈ।"
 
 #: ../src/core/core.cpp:291
 msgctxt "Core|"
@@ -1528,7 +1528,7 @@ msgstr ""
 #: ../src/core/core.cpp:296
 msgctxt "Core|"
 msgid "Creating admin user..."
-msgstr ""
+msgstr "...ਐਡਮਿਨ ਯੂਜ਼ਰ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../src/core/core.cpp:449
 #, qt-format
@@ -1574,7 +1574,7 @@ msgstr ""
 #: ../src/core/core.cpp:543
 msgctxt "Core|"
 msgid "Client connected from"
-msgstr ""
+msgstr "ਕਲਾਂਇਟ ਇਸ ਤੋਂ ਕੁਨੈਕਟ ਹੈ"
 
 #: ../src/core/core.cpp:546
 msgctxt "Core|"
@@ -1599,13 +1599,13 @@ msgstr ""
 #: ../src/client/coreaccount.h:40
 msgctxt "CoreAccount|"
 msgid "Internal Core"
-msgstr ""
+msgstr "ਅੰਦਰੂਨੀ ਕੋਰ"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:14
 #: ../src/qtui/settingspages/coreaccountsettingspage.cpp:260
 msgctxt "CoreAccountEditDlg|"
 msgid "Edit Core Account"
-msgstr ""
+msgstr "ਕੋਰ ਖਾਤਾ ਸੋਧ"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:20
 msgctxt "CoreAccountEditDlg|"
@@ -1685,7 +1685,7 @@ msgstr "ਕੋਰ ਅਕਾਊਂਟ ਜੋੜੋ"
 #: ../src/client/coreaccountmodel.cpp:68
 msgctxt "CoreAccountModel|"
 msgid "Internal Core"
-msgstr ""
+msgstr "ਅੰਦਰੂਨੀ ਕੋਰ"
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:20
 msgctxt "CoreAccountSettingsPage|"
@@ -1695,7 +1695,7 @@ msgstr "ਕੁਅੱਸੇਲ ਕੋਰ ਨਾਲ ਕੁਨੈਕਟ"
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:30
 msgctxt "CoreAccountSettingsPage|"
 msgid "Core Accounts"
-msgstr ""
+msgstr "ਕੋਰ ਖਾਤੇ"
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:45
 msgctxt "CoreAccountSettingsPage|"
@@ -2163,7 +2163,7 @@ msgstr ""
 #: ../src/qtui/ui/coreinfodlg.ui:42
 msgctxt "CoreInfoDlg|"
 msgid "Connected Clients:"
-msgstr ""
+msgstr "ਕੁਨੈਕਟ ਹੋਏ ਕਲਾਂਇਟ:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:49
 msgctxt "CoreInfoDlg|"
@@ -2178,12 +2178,12 @@ msgstr ""
 #: ../src/qtui/ui/coreinfodlg.ui:63
 msgctxt "CoreInfoDlg|"
 msgid "Build date:"
-msgstr ""
+msgstr "ਬਿਲਡ ਮਿਤੀ:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:70
 msgctxt "CoreInfoDlg|"
 msgid "<build date>"
-msgstr ""
+msgstr "<build date>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:81
 msgctxt "CoreInfoDlg|"
@@ -2195,8 +2195,8 @@ msgstr "ਬੰਦ ਕਰੋ"
 msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
 msgid_plural "%n Day(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ਦਿਨ"
+msgstr[1] "%n ਦਿਨ"
 
 #: ../src/qtui/coreinfodlg.cpp:58
 #, qt-format
@@ -2734,13 +2734,13 @@ msgstr ""
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
-msgstr ""
+msgstr "%1 ਲਈ ਵਿਸ਼ਾ \"%2\" ਹੈ"
 
 #: ../src/core/eventstringifier.cpp:621
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
-msgstr ""
+msgstr "ਵਿਸ਼ਾ %1 ਵਲੋਂ %2 ਨੂੰ ਸੈੱਟ ਕੀਤਾ"
 
 #: ../src/core/eventstringifier.cpp:634
 #, qt-format
@@ -2769,7 +2769,7 @@ msgstr ""
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
-msgstr ""
+msgstr "ਨਾਂ ਪਹਿਲਾਂ ਹੀ ਵਰਤੋਂ ਵਿੱਚ ਹੈ: %1"
 
 #: ../src/core/eventstringifier.cpp:679
 #, qt-format
@@ -2912,7 +2912,7 @@ msgstr ""
 #: ../src/qtui/settingspages/highlightsettingspage.ui:114
 msgctxt "HighlightSettingsPage|"
 msgid "Current nick"
-msgstr ""
+msgstr "ਮੌਜੂਦਾ ਨਾਂ"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:124
 msgctxt "HighlightSettingsPage|"
@@ -3752,7 +3752,7 @@ msgstr ""
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "ਲਾਈਨ ਸਮੇਟਣਾ"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:143
 msgctxt "InputWidgetSettingsPage|"
@@ -3807,7 +3807,7 @@ msgstr ""
 #: ../src/common/internalpeer.cpp:58
 msgctxt "InternalPeer|"
 msgid "internal connection"
-msgstr ""
+msgstr "ਅੰਦਰੂਨੀ ਕੁਨੈਕਸ਼ਨ"
 
 #: ../src/qtui/ircconnectionwizard.cpp:49
 msgctxt "IrcConnectionWizard|"
@@ -4565,7 +4565,7 @@ msgstr "ਸਰਵਰ ਪਾਸਵਰਡ:"
 #: ../src/qtui/settingspages/networkadddlg.ui:131
 msgctxt "NetworkAddDlg|"
 msgid "Use secure connection"
-msgstr ""
+msgstr "ਸੁਰੱਖਿਅਤ ਕੁਨੈਕਸ਼ਨ ਵਰਤੋਂ"
 
 #: ../src/qtui/settingspages/networkeditdlg.ui:13
 msgctxt "NetworkEditDlg|"
@@ -4575,7 +4575,7 @@ msgstr "ਡਾਈਲਾਗ"
 #: ../src/qtui/settingspages/networkeditdlg.ui:21
 msgctxt "NetworkEditDlg|"
 msgid "Please enter a network name:"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਨਾਂ ਦਿਉ:"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:840
 msgctxt "NetworkEditDlg|"
@@ -4598,7 +4598,7 @@ msgstr "ਯੂਜ਼ਰ: %1"
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Lag: %1 msecs"
-msgstr ""
+msgstr "ਦੇਰੀ: %1 ਮਿਲੀਸਕਿੰਟ"
 
 #: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
@@ -4613,7 +4613,7 @@ msgstr "ਵਿਸ਼ਾ"
 #: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Nick Count"
-msgstr ""
+msgstr "ਨਾਂ ਗਿਣਤੀ"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:177
 msgctxt "NetworkModelController|"
@@ -4626,7 +4626,7 @@ msgstr[1] ""
 #, qt-format
 msgctxt "NetworkModelController|"
 msgid "...and <b>%1</b> more<br><br>"
-msgstr ""
+msgstr "...ਅਤੇ <b>%1</b> ਹੋਰ<br><br>"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:191
 msgctxt "NetworkModelController|"
@@ -4669,7 +4669,7 @@ msgstr "ਪਾਸਵਰਡ:"
 #: ../src/qtui/ircconnectionwizard.cpp:158
 msgctxt "NetworkPage|"
 msgid "Setup Network Connection"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਕੁਨੈਕਸ਼ਨ ਸੈਟਅੱਪ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:14
 msgctxt "NetworksSettingsPage|"
@@ -4696,7 +4696,7 @@ msgstr "ਹਟਾਓ(&l)"
 #: ../src/qtui/settingspages/networkssettingspage.ui:124
 msgctxt "NetworksSettingsPage|"
 msgid "Network Details"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਵੇਰਵਾ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:132
 msgctxt "NetworksSettingsPage|"
@@ -4718,7 +4718,7 @@ msgstr "ਸਰਵਰ"
 #: ../src/qtui/settingspages/networkssettingspage.ui:193
 msgctxt "NetworksSettingsPage|"
 msgid "Manage servers for this network"
-msgstr ""
+msgstr "ਇਹ ਨੈੱਟਵਰਕ ਲਈ ਸਰਵਰ ਪ੍ਰਬੰਧ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:217
 msgctxt "NetworksSettingsPage|"
@@ -4772,7 +4772,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:386
 msgctxt "NetworksSettingsPage|"
 msgid "Automatic Reconnect"
-msgstr ""
+msgstr "ਆਪਣੇ-ਆਪ ਮੁੜ-ਕੁਨੈਕਟ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:397
 msgctxt "NetworksSettingsPage|"
@@ -4787,7 +4787,7 @@ msgstr " s"
 #: ../src/qtui/settingspages/networkssettingspage.ui:420
 msgctxt "NetworksSettingsPage|"
 msgid "between retries"
-msgstr ""
+msgstr "ਮੁੜ-ਕੋਸ਼ਿਸ਼ਾਂ ਵਿੱਚ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:444
 msgctxt "NetworksSettingsPage|"
@@ -5266,7 +5266,7 @@ msgstr ""
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "....ਡਿਸ-ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5291,7 +5291,7 @@ msgstr "ਡਾਈਲਾਗ"
 #: ../src/qtui/settingspages/servereditdlg.ui:30
 msgctxt "ServerEditDlg|"
 msgid "Server Info"
-msgstr ""
+msgstr "ਸਰਵਰ ਜਾਣਕਾਰੀ"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:38
 msgctxt "ServerEditDlg|"
@@ -5342,7 +5342,7 @@ msgstr "HTTP"
 #: ../src/qtui/settingspages/servereditdlg.ui:167
 msgctxt "ServerEditDlg|"
 msgid "Proxy Host:"
-msgstr ""
+msgstr "ਪਰਾਕਸੀ ਹੋਸਟ:"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:174
 msgctxt "ServerEditDlg|"
@@ -5891,17 +5891,17 @@ msgstr "ਕਿੱਕ"
 #: ../src/uisupport/toolbaractionprovider.cpp:44
 msgctxt "ToolBarActionProvider|"
 msgid "Remove user from channel"
-msgstr ""
+msgstr "ਯੂਜ਼ਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:45
 msgctxt "ToolBarActionProvider|"
 msgid "Ban"
-msgstr ""
+msgstr "ਪਾਬੰਦੀ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:45
 msgctxt "ToolBarActionProvider|"
 msgid "Ban user from channel"
-msgstr ""
+msgstr "ਚੈਨਲ ਤੋਂ ਯੂਜ਼ਰ ਉੱਤੇ ਪਾਬੰਦੀ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:46
 msgctxt "ToolBarActionProvider|"
@@ -5911,7 +5911,7 @@ msgstr "ਠੁੱਡਾ/ਪਾਬੰਦੀ"
 #: ../src/uisupport/toolbaractionprovider.cpp:46
 msgctxt "ToolBarActionProvider|"
 msgid "Remove and ban user from channel"
-msgstr ""
+msgstr "ਯੂਜ਼ਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ ਅਤੇ ਪਾਬੰਦੀ ਲਗਾਓ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:51
 msgctxt "ToolBarActionProvider|"
@@ -5921,7 +5921,7 @@ msgstr "ਸਭ ਨਾਲ ਕੁਨੈਕਟ"
 #: ../src/uisupport/toolbaractionprovider.cpp:58
 msgctxt "ToolBarActionProvider|"
 msgid "Disconnect from all"
-msgstr ""
+msgstr "ਸਭ ਤੋਂ ਡਿਸ-ਕੁਨੈਕਟ ਕਰੋ"
 
 #: ../src/qtui/ui/topicwidget.ui:32
 msgctxt "TopicWidget|"
@@ -5943,7 +5943,7 @@ msgstr "ਯੂਜ਼ਰ: %1"
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Lag: %1 msecs"
-msgstr ""
+msgstr "ਦੇਰੀ: %1 ਮਿਲੀਸਕਿੰਟ"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:14
 msgctxt "TopicWidgetSettingsPage|"
@@ -6022,7 +6022,7 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "User mode: %DM%1%DM"
-msgstr ""
+msgstr "ਯੂਜ਼ਰ ਮੋਡ: %DM%1%DM"
 
 #: ../src/uisupport/uistyle.cpp:685
 #, qt-format
@@ -6100,24 +6100,24 @@ msgstr "<%1>"
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
 msgid_plural "%n Owner(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ਮਾਲਕ"
+msgstr[1] "%n ਮਾਲਕ"
 
 #: ../src/client/networkmodel.cpp:827
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
 msgid_plural "%n Admin(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ਐਡਮਿਨ"
+msgstr[1] "%n ਐਡਮਿਨ"
 
 #: ../src/client/networkmodel.cpp:829
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
 msgid_plural "%n Operator(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ਓਪਰੇਟਰ"
+msgstr[1] "%n ਓਪਰੇਟਰ"
 
 #: ../src/client/networkmodel.cpp:831
 #, qt-format
@@ -6140,5 +6140,5 @@ msgstr[1] ""
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
 msgid_plural "%n User(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ਯੂਜ਼ਰ"
+msgstr[1] "%n ਯੂਜ਼ਰ"
