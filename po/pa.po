@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-06-19 20:10+0000\n"
+"PO-Revision-Date: 2014-07-24 23:50+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -3063,7 +3063,7 @@ msgstr ""
 #: ../src/common/identity.cpp:194 ../src/common/identity.cpp:195
 msgctxt "Identity|"
 msgid "http://quassel-irc.org - Chat comfortably. Anywhere."
-msgstr ""
+msgstr "http://quassel-irc.org - ਸੌਖੀ ਤਰ੍ਹਾਂ ਕਿਤੇ ਵੀ ਗੱਲ ਕਰੋ।"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:30
 msgctxt "IdentityEditWidget|"
@@ -3581,7 +3581,7 @@ msgstr ""
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:144
 msgctxt "IgnoreListSettingsPage|"
 msgid "Rule already exists"
-msgstr ""
+msgstr "ਨਿਯਮ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ"
 
 #: ../src/qtui/settingspages/ignorelistsettingspage.cpp:145
 #, qt-format
@@ -3627,12 +3627,12 @@ msgstr "ਕਾਲਾ"
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark blue"
-msgstr ""
+msgstr "ਗੂੜ੍ਹਾ ਨੀਲਾ"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark green"
-msgstr ""
+msgstr "ਗੂੜ੍ਹਾ ਹਰਾ"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
@@ -3642,7 +3642,7 @@ msgstr "ਲਾਲ"
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark red"
-msgstr ""
+msgstr "ਗੂੜ੍ਹਾ ਲਾਲ"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
@@ -3697,7 +3697,7 @@ msgstr "ਹਲਕਾ ਸਲੇਟੀ"
 #: ../src/qtui/inputwidget.cpp:85 ../src/qtui/inputwidget.cpp:86
 msgctxt "InputWidget|"
 msgid "Clear Color"
-msgstr ""
+msgstr "ਰੰਗ ਸਾਫ਼ ਕਰੋ"
 
 #: ../src/qtui/inputwidget.cpp:136
 msgctxt "InputWidget|"
@@ -5524,7 +5524,7 @@ msgstr ""
 #: ../src/qtui/ui/simplenetworkeditor.ui:96
 msgctxt "SimpleNetworkEditor|"
 msgid "Edit this server entry"
-msgstr ""
+msgstr "ਇਹ ਸਰਵਰ ਇੰਦਰਾਜ਼ ਸੋਧੋ"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:99
 msgctxt "SimpleNetworkEditor|"
@@ -5534,7 +5534,7 @@ msgstr "...ਸੋਧ(&E)"
 #: ../src/qtui/ui/simplenetworkeditor.ui:116
 msgctxt "SimpleNetworkEditor|"
 msgid "Add another IRC server"
-msgstr ""
+msgstr "ਹੋਰ IRC ਸਰਵਰ ਜੋੜੋ"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:119
 msgctxt "SimpleNetworkEditor|"
@@ -5831,7 +5831,7 @@ msgstr "ਕਿਊਰੀ"
 #: ../src/uisupport/toolbaractionprovider.cpp:37
 msgctxt "ToolBarActionProvider|"
 msgid "Start a private conversation"
-msgstr ""
+msgstr "ਪ੍ਰਾਈਵੇਟ ਗੱਲਬਾਤ ਸ਼ੁਰੂ ਕਰੋ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:38
 msgctxt "ToolBarActionProvider|"
@@ -5841,7 +5841,7 @@ msgstr "ਕੌਣ ਹੈ"
 #: ../src/uisupport/toolbaractionprovider.cpp:38
 msgctxt "ToolBarActionProvider|"
 msgid "Request user information"
-msgstr ""
+msgstr "ਯੂਜ਼ਰ ਜਾਣਕਾਰੀ ਦੀ ਮੰਗ ਕਰੋ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
@@ -6009,7 +6009,7 @@ msgstr "%DN%1%DN %2"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "You are now known as %DN%1%DN"
-msgstr ""
+msgstr "ਹੁਣ ਤੁਹਾਨੂੰ %DN%1%DN ਵਜੋਂ ਜਾਣਿਆ ਜਾਂਦਾ ਹੈ"
 
 #: ../src/uisupport/uistyle.cpp:680
 #, qt-format
@@ -6075,7 +6075,7 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN (%2 more)"
-msgstr ""
+msgstr "%DN%1%DN (%2 ਹੋਰ)"
 
 #: ../src/uisupport/uistyle.cpp:752
 #, qt-format
