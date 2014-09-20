@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-09-16 09:11+0000\n"
+"PO-Revision-Date: 2014-09-19 09:50+0000\n"
 "Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -769,17 +769,17 @@ msgstr "Zobrazit starší zprávy při připojení"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Zobrazit starší zprávy"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Zahrnout starší přečtené zprávy při připojení"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Zahrnout přečtené zprávy"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -945,12 +945,12 @@ msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Nastavit značící linku na konec současného okna rozhovoru pokud Quassel nebyl vidět"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Nastavit značící linku automaticky "
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
@@ -1140,7 +1140,7 @@ msgstr ""
 #: ../src/client/clientauthhandler.cpp:239
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
-msgstr ""
+msgstr "Jádro již nezveřejňuje podporované protokoly"
 
 #: ../src/client/clientauthhandler.cpp:254
 #, qt-format
@@ -1153,7 +1153,7 @@ msgstr ""
 #: ../src/client/clientauthhandler.cpp:256
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
-msgstr ""
+msgstr "Verze protokolu není kompatibilní, připojení k jádru odmítnuto"
 
 #: ../src/client/clientauthhandler.cpp:278
 msgctxt "ClientAuthHandler|"
@@ -1163,7 +1163,7 @@ msgstr "Synchronizace s jádrem..."
 #: ../src/client/clientauthhandler.cpp:293
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Jádro zamítlo připojení z tohoto klientu"
 
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
@@ -1516,7 +1516,7 @@ msgstr "Volám restoreState() i když existuje aktivní sezení!"
 #: ../src/core/core.cpp:285
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
-msgstr ""
+msgstr "Jádro je již nakonfigurováno! Nenastavovat znovu..."
 
 #: ../src/core/core.cpp:288
 msgctxt "Core|"
@@ -1771,7 +1771,7 @@ msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>SSL je vyžadováno!</b><br>Musíte použít SSL pro připojení k tomuto jádru."
 
 #: ../src/core/coreauthhandler.cpp:202
 msgctxt "CoreAuthHandler|"
@@ -2299,13 +2299,13 @@ msgstr "Nelze zpracovat DH1080_FINISH. Výměna klíče selhala."
 #: ../src/core/coresessioneventprocessor.cpp:1056
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
-msgstr ""
+msgstr "Reverzní DCC SEND není podporován"
 
 #: ../src/core/coresessioneventprocessor.cpp:1074
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "DCC %1 není podporován"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
@@ -2321,7 +2321,7 @@ msgstr "Chyba DCC spojení: %1"
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr ""
+msgstr "Reverzní DCC ještě není podporován!"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
