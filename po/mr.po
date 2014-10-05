@@ -1,13 +1,13 @@
 # 
 # Translators:
 # Raju Devidas Vindane <rajuvindane@gmail.com>, 2013
-# Raju Devidas Vindane <rajuvindane@gmail.com>, 2013
+# Raju Devidas Vindane <rajuvindane@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-10-05 00:00+0000\n"
+"Last-Translator: Raju Devidas Vindane <rajuvindane@gmail.com>\n"
 "Language-Team: Marathi (http://www.transifex.com/projects/p/quassel/language/mr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid ""
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:15pt; font-weight:600; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Quassel IRC</p></body></html>"
-msgstr ""
+msgstr "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'DejaVu Sans'; font-size:15pt; font-weight:600; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">क्वासल IRC</p></body></html>"
 
 #: ../src/qtui/ui/aboutdlg.ui:112
 msgctxt "AboutDlg|"
