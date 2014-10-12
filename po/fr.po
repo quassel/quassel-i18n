@@ -7,12 +7,13 @@
 # GrecKo <gr3cko@gmail.com>, 2011
 # Guillaume Gay <guillaume.gay@bigfoot.com>, 2013
 # Dorian <munto@free.fr>, 2012
+# Vlavv <vlavv2@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-10-11 15:11+0000\n"
+"Last-Translator: Vlavv <vlavv2@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/quassel/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -533,7 +534,7 @@ msgstr "Masquer les conversations inactives"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Masquer les réseaux inactifs"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -766,22 +767,22 @@ msgstr "Afficher mes messages"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "Afficher les messages de l'historique lors de la reconnexion"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Afficher les messages de l'historique"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Inclure les messages lus de l'historique lors de la reconnexion"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Inclure les messages lus"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -837,12 +838,12 @@ msgstr "Copier la sélection"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Chercher '%1'"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Réinitialiser la largeur des colonnes"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -947,17 +948,17 @@ msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Placer la ligne de séparation en bas de la fenêtre de conversation actuelle lorsque Quassel perd le focus"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Placer la ligne de séparation automatiquement lorsque Quassel perd le focus"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "Adresse de la recherche :"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -967,12 +968,12 @@ msgid ""
 "text should go.</p><p>Eg:</p><p>https://www.google.com/search?q=<span "
 "style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span "
 "style=\" font-weight:600;\">%s</span></p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>L'adresse à ouvrir avec le texte sélectionné en paramètre. Utilisez <span style=\" font-weight:600;\">%s</span> pour indiquer là où le texte sélectionné devrait se trouver.</p><p>Ex. :</p><p>https://www.google.com/search?q=<span style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span style=\" font-weight:600;\">%s</span></p></body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1130,19 +1131,19 @@ msgstr "Déconnecté"
 #: ../src/client/clientauthhandler.cpp:149
 msgctxt "ClientAuthHandler|"
 msgid "Reconnecting in compatibility mode..."
-msgstr ""
+msgstr "Se reconnecter en mode de compatibilité..."
 
 #: ../src/client/clientauthhandler.cpp:236
 msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>Incompatible Quassel Core!</b><br>None of the protocols this client "
 "speaks are supported by the core you are trying to connect to."
-msgstr ""
+msgstr "<b>Composant central Quassel incompatible !</b><br>Aucun des protocoles utilisés par ce client n'est supporté par le composant central auquel vous essayez de vous connecter."
 
 #: ../src/client/clientauthhandler.cpp:239
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
-msgstr ""
+msgstr "Le composant central ne reconnaît aucun des protocoles que nous utilisons"
 
 #: ../src/client/clientauthhandler.cpp:254
 #, qt-format
@@ -1150,12 +1151,12 @@ msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>The Quassel Core you are trying to connect to is too old!</b><br>We need "
 "at least protocol v%1, but the core speaks v%2 only."
-msgstr ""
+msgstr "<b>Le composant central Quassel auquel vous essayez de vous connecter est trop vieux !</b><br>Nous avons besoin du protocole v%1 au minimum, mais le composant central ne reconnaît que le protocole v%2."
 
 #: ../src/client/clientauthhandler.cpp:256
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
-msgstr ""
+msgstr "Version du protocole imcompatible, connexion au composant central refusée"
 
 #: ../src/client/clientauthhandler.cpp:278
 msgctxt "ClientAuthHandler|"
@@ -1165,7 +1166,7 @@ msgstr "Synchronisation avec le composant central..."
 #: ../src/client/clientauthhandler.cpp:293
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Le composant central a refusé la connexion de ce client"
 
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
@@ -1180,7 +1181,7 @@ msgstr "Identification annulée"
 #: ../src/client/clientauthhandler.cpp:420
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Connexion non chiffrée annulée"
 
 #: ../src/client/clientbacklogmanager.cpp:178
 #, qt-format
@@ -1518,7 +1519,7 @@ msgstr "Appel de restoreState() alors que des sessions actives existent !"
 #: ../src/core/core.cpp:285
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
-msgstr ""
+msgstr "Le composant central est déjà configuré ! On ne le reconfigure pas..."
 
 #: ../src/core/core.cpp:288
 msgctxt "Core|"
@@ -1589,7 +1590,7 @@ msgstr "Arrêt du serveur pour une configuration de base."
 #: ../src/core/core.cpp:558
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
-msgstr ""
+msgstr "Client non-authentifié déconnecté :"
 
 #: ../src/core/core.cpp:590
 msgctxt "Core|"
@@ -1754,7 +1755,7 @@ msgid ""
 "<b>Your Quassel Client is too old!</b><br>This core needs at least "
 "client/core protocol version %1 (got: %2).<br>Please consider upgrading your"
 " client."
-msgstr ""
+msgstr "<b>Votre client Quassel est trop ancien !</b><br>Le composant central requiert au minimum la version %1 du protocole client/composant central (nous avons la version : %2).<br>Veuillez mettre à jour votre client."
 
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
@@ -2598,7 +2599,7 @@ msgstr "%1 vous a invité sur le canal %2"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
-msgstr "%1 à changé le sujet de %2 en : « %3 »"
+msgstr "%1 a changé le sujet de %2 en : « %3 »"
 
 #: ../src/core/eventstringifier.cpp:347
 #, qt-format
@@ -3752,12 +3753,12 @@ msgstr "Saisie de type Emacs"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:127
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables line wrapping for input."
-msgstr ""
+msgstr "Activer le retour à la ligne automatique dans le composant de saisie."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "Retour à la ligne automatique"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:143
 msgctxt "InputWidgetSettingsPage|"
