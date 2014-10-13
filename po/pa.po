@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-10-07 22:35+0000\n"
+"PO-Revision-Date: 2014-10-13 01:20+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/projects/p/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -76,14 +76,14 @@ msgstr ""
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
 msgid "Quassel IRC is mainly developed by:"
-msgstr ""
+msgstr "ਕੁਅੱਸੇਲ IRC ਦਾ ਮੁੱਖ ਰੂਪ ਵਿੱਚ ਵਿਕਾਸ ਕੀਤਾ:"
 
 #: ../src/qtui/aboutdlg.cpp:84
 msgctxt "AboutDlg|"
 msgid ""
 "We would like to thank the following contributors (in alphabetical order) "
 "and everybody we forgot to mention here:"
-msgstr ""
+msgstr "ਅਸੀਂ ਹੇਠ ਦਿੱਤੇ ਯੋਗਦਾਨੀਆਂ (ਵਰਣਮਾਲਾ ਮੁਤਾਬਕ) ਅਤੇ ਹਰੇਕ ਉਸ ਦਾ, ਜਿਸ ਨੂੰ ਇੱਥੇ ਦੱਸਣਾ ਭੁੱਲ ਗਏ ਹਨ, ਦਾ ਧੰਨਵਾਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ:"
 
 #: ../src/qtui/aboutdlg.cpp:206
 msgctxt "AboutDlg|"
@@ -145,7 +145,7 @@ msgstr "ਏਲੀਆਸ"
 #: ../src/qtui/settingspages/aliasesmodel.cpp:186
 msgctxt "AliasesModel|"
 msgid "Expansion"
-msgstr ""
+msgstr "ਫੈਲਾਓ"
 
 #: ../src/qtui/settingspages/aliasessettingspage.ui:13
 msgctxt "AliasesSettingsPage|"
@@ -528,7 +528,7 @@ msgstr "ਨਾ-ਸਰਗਰਮ ਗੱਲਬਾਤ ਓਹਲੇ"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "ਨਾ-ਸਰਗਰਮ ਨੈੱਟਵਰਕ ਓਹਲੇ ਕਰੋ"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -648,7 +648,7 @@ msgstr "<b>ਵਿਸ਼ਾ:</b> %1"
 #: ../src/client/networkmodel.cpp:613
 msgctxt "ChannelBufferItem|"
 msgid "Not active <br /> Double-click to join"
-msgstr ""
+msgstr "ਸਰਗਰਮ ਨਹੀਂ ਹੈ <br /> ਜੁਆਇੰਨ ਕਰਨ ਲਈ ਦੋ-ਵਾਰ ਕਲਿੱਕ ਕਰੋ"
 
 #: ../src/client/networkmodel.cpp:616
 #, qt-format
@@ -837,7 +837,7 @@ msgstr "'%1' ਖੋਜ"
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "ਕਾਲਮ ਚੌੜਾਈ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -1390,7 +1390,7 @@ msgstr "ਪਿੰਗ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:66
 msgctxt "ContextMenuActionProvider|"
 msgid "Client info"
-msgstr "ਕਲਾਂਇਟ ਜਾਣਕਾਰੀ"
+msgstr "ਕਲਾਈਂਟ ਜਾਣਕਾਰੀ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:67
 msgctxt "ContextMenuActionProvider|"
@@ -2158,7 +2158,7 @@ msgstr "<core version>"
 #: ../src/qtui/ui/coreinfodlg.ui:35
 msgctxt "CoreInfoDlg|"
 msgid "Uptime:"
-msgstr ""
+msgstr "ਅੱਪਟਾਈਮ:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:42
 msgctxt "CoreInfoDlg|"
@@ -2168,7 +2168,7 @@ msgstr "ਕੁਨੈਕਟ ਹੋਏ ਕਲਾਂਇਟ:"
 #: ../src/qtui/ui/coreinfodlg.ui:49
 msgctxt "CoreInfoDlg|"
 msgid "<connected clients>"
-msgstr ""
+msgstr "<ਕੁਨੈਕਟ ਹੋਏ ਕਲਾਈਂਟ>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:56
 msgctxt "CoreInfoDlg|"
@@ -2877,7 +2877,7 @@ msgstr "RegEx"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:43
 msgctxt "HighlightSettingsPage|"
 msgid "CS"
-msgstr ""
+msgstr "CS"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:48
 msgctxt "HighlightSettingsPage|"
@@ -4903,7 +4903,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:751
 msgctxt "NetworksSettingsPage|"
 msgid "Server encoding:"
-msgstr ""
+msgstr "ਸਰਵਰ ਇੰਕੋਡਿੰਗ:"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:37
 msgctxt "NetworksSettingsPage|"
@@ -4935,7 +4935,7 @@ msgstr "</ul>"
 #: ../src/qtui/settingspages/networkssettingspage.cpp:187
 msgctxt "NetworksSettingsPage|"
 msgid "Invalid Network Settings"
-msgstr ""
+msgstr "ਗਲਤ ਨੈੱਟਵਰਕ ਸੈਟਿੰਗ"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:650
 msgctxt "NetworksSettingsPage|"
@@ -4985,7 +4985,7 @@ msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
 msgid "Select Audio File"
-msgstr ""
+msgstr "ਆਡੀਓ ਫਾਇਲ ਚੁਣੋ"
 
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:14
 msgctxt "PhononNotificationConfigWidget|"
@@ -5255,7 +5255,7 @@ msgstr "ਸਰਵਰ: %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "ਆਉਣ ਵਾਲੀ ਫਾਇਲ ਟਰਾਂਸਫਰ"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
