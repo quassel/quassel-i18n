@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-09-19 09:50+0000\n"
+"PO-Revision-Date: 2014-11-12 08:16+0000\n"
 "Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -2808,7 +2808,7 @@ msgstr "Obdržena CTCP-%1 odpověď od %2: %3"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
-msgstr ""
+msgstr "Obdržena CTCP-PING odpověď od %1 s %2 milivteřinovým odstupem"
 
 #: ../src/core/eventstringifier.cpp:740
 #, qt-format
