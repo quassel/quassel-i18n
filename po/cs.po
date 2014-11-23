@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-11-13 10:31+0000\n"
+"PO-Revision-Date: 2014-11-22 11:20+0000\n"
 "Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -2310,7 +2310,7 @@ msgstr "DCC %1 není podporován"
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr ""
+msgstr "Socket uzavřen v průběhu stahování!"
 
 #: ../src/core/coretransfer.cpp:70
 #, qt-format
@@ -2326,12 +2326,12 @@ msgstr "Reverzní DCC ještě není podporován!"
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
-msgstr ""
+msgstr "DCC příjem: Obdrženo více dat než bylo očekáváno!"
 
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
-msgstr ""
+msgstr "DCC příjem: Quassel klient odpojen v průběhu přenosu!"
 
 #: ../src/core/coreuserinputhandler.cpp:88
 msgctxt "CoreUserInputHandler|"
