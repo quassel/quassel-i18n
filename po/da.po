@@ -5,13 +5,14 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # Jens True <frazzer@hotmail.com>, 2013
 # Jens True <frazzer@hotmail.com>, 2013
+# Joe Hansen <joedalton2@yahoo.dk>, 2014
 # Per Nielsen <>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-03-25 23:25+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2014-11-27 15:23+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -204,7 +205,7 @@ msgstr "Vælg sprog. Genstart nødvendig."
 #: ../src/qtui/settingspages/appearancesettingspage.ui:47
 msgctxt "AppearanceSettingsPage|"
 msgid "<Untranslated>"
-msgstr ""
+msgstr "<Ikke oversat>"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:52
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:76
@@ -280,7 +281,7 @@ msgstr "Fejl opstod:"
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:35
 msgctxt "AppearanceSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/appearancesettingspage.cpp:242
 msgctxt "AppearanceSettingsPage|"
@@ -377,13 +378,13 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.ui:347
 msgctxt "BacklogSettingsPage|"
 msgid "Limit:"
-msgstr ""
+msgstr "Begrænsning:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:235
 #: ../src/qtui/settingspages/backlogsettingspage.ui:357
 msgctxt "BacklogSettingsPage|"
 msgid "Unlimited"
-msgstr ""
+msgstr "Ubegrænset:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:260
 #: ../src/qtui/settingspages/backlogsettingspage.ui:270
@@ -399,7 +400,7 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.ui:385
 msgctxt "BacklogSettingsPage|"
 msgid "Additional Messages:"
-msgstr ""
+msgstr "Yderligere beskeder:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:324
 msgctxt "BacklogSettingsPage|"
@@ -420,7 +421,7 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.cpp:27
 msgctxt "BacklogSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/backlogsettingspage.cpp:27
 msgctxt "BacklogSettingsPage|"
@@ -449,7 +450,7 @@ msgstr ""
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:22
 msgctxt "BufferViewEditDlg|"
@@ -522,7 +523,7 @@ msgstr "Vis kanaler"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:128
 msgctxt "BufferViewSettingsPage|"
 msgid "Show queries"
-msgstr ""
+msgstr "Vis forespørgsler"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:135
 msgctxt "BufferViewSettingsPage|"
@@ -532,12 +533,12 @@ msgstr "Skjul hændelser"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Skjul inaktive netværk"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
 msgid "Add new chats automatically"
-msgstr ""
+msgstr "Tilføj nye diagrammer automatisk"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:156
 msgctxt "BufferViewSettingsPage|"
@@ -577,7 +578,7 @@ msgstr "Forhåndsvisning:"
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:36
 msgctxt "BufferViewSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.cpp:36
 msgctxt "BufferViewSettingsPage|"
@@ -641,7 +642,7 @@ msgstr "<b>Brugere:</b> %1"
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<b>Mode:</b> %1"
-msgstr ""
+msgstr "<b>Tilstand:</b> %1"
 
 #: ../src/client/networkmodel.cpp:608
 #, qt-format
@@ -658,7 +659,7 @@ msgstr "Inaktiv <br /> dobbelt-klik for at joine"
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "<p> %1 </p>"
-msgstr ""
+msgstr "<p> %1 </p>"
 
 #: ../src/qtui/ui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
@@ -711,7 +712,7 @@ msgstr "Fra"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:22
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Operation Mode:"
-msgstr ""
+msgstr "Operationstilstand:"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:29
 msgctxt "ChatMonitorSettingsPage|"
@@ -785,7 +786,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -1072,7 +1073,7 @@ msgstr "Vis egne beskeder"
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
@@ -1642,7 +1643,7 @@ msgstr "lokal"
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:187
 msgctxt "CoreAccountEditDlg|"
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:93
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:226
@@ -1679,7 +1680,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:152
 msgctxt "CoreAccountEditDlg|"
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.cpp:262
 msgctxt "CoreAccountEditDlg|"
@@ -2015,7 +2016,7 @@ msgstr "Af&bryd fra server"
 #: ../src/client/coreconnection.cpp:449
 msgctxt "CoreConnection|"
 msgid "Receiving session state"
-msgstr ""
+msgstr "Modtager sessionstilstand"
 
 #: ../src/client/coreconnection.cpp:451
 #, qt-format
@@ -2026,7 +2027,7 @@ msgstr "Forbinder til %1..."
 #: ../src/client/coreconnection.cpp:487
 msgctxt "CoreConnection|"
 msgid "Receiving network states"
-msgstr ""
+msgstr "Modtager netværkstilstande"
 
 #: ../src/client/coreconnection.cpp:538
 #, qt-format
@@ -2121,12 +2122,12 @@ msgstr "Beskeder"
 #: ../src/qtui/coreconnectionstatuswidget.cpp:66
 msgctxt "CoreConnectionStatusWidget|seconds"
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #: ../src/qtui/coreconnectionstatuswidget.cpp:66
 msgctxt "CoreConnectionStatusWidget|milliseconds"
 msgid "ms"
-msgstr ""
+msgstr "ms"
 
 #: ../src/qtui/coreconnectionstatuswidget.cpp:67
 #, qt-format
@@ -2137,12 +2138,12 @@ msgstr ""
 #: ../src/qtui/coreconnectionstatuswidget.cpp:83
 msgctxt "CoreConnectionStatusWidget|"
 msgid "The connection to your core is encrypted with SSL."
-msgstr ""
+msgstr "Forbindelsen til din kerne er krypteret med SSL."
 
 #: ../src/qtui/coreconnectionstatuswidget.cpp:87
 msgctxt "CoreConnectionStatusWidget|"
 msgid "The connection to your core is not encrypted."
-msgstr ""
+msgstr "Forbindelsen til din kerne er ikke krypteret."
 
 #: ../src/qtui/ui/coreinfodlg.ui:13
 msgctxt "CoreInfoDlg|"
@@ -2152,7 +2153,7 @@ msgstr "Server opsætnings guide"
 #: ../src/qtui/ui/coreinfodlg.ui:21
 msgctxt "CoreInfoDlg|"
 msgid "Version:"
-msgstr ""
+msgstr "Version:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:28
 msgctxt "CoreInfoDlg|"
@@ -2182,12 +2183,12 @@ msgstr ""
 #: ../src/qtui/ui/coreinfodlg.ui:63
 msgctxt "CoreInfoDlg|"
 msgid "Build date:"
-msgstr ""
+msgstr "Byggedato:"
 
 #: ../src/qtui/ui/coreinfodlg.ui:70
 msgctxt "CoreInfoDlg|"
 msgid "<build date>"
-msgstr ""
+msgstr "<byggedato>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:81
 msgctxt "CoreInfoDlg|"
@@ -2199,8 +2200,8 @@ msgstr "Luk"
 msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
 msgid_plural "%n Day(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n dag"
+msgstr[1] "%n dage"
 
 #: ../src/qtui/coreinfodlg.cpp:58
 #, qt-format
@@ -2217,18 +2218,18 @@ msgstr "Forbindelse mislykkedes. Prøver næste server"
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Forbindet til %1:%2 ..."
 
 #: ../src/core/corenetwork.cpp:234
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
-msgstr ""
+msgstr "Afbryder. (%1)"
 
 #: ../src/core/corenetwork.cpp:234
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
-msgstr ""
+msgstr "Kernenedlukning"
 
 #: ../src/core/corenetwork.cpp:432
 #, qt-format
@@ -2289,7 +2290,7 @@ msgstr ""
 #: ../src/core/coresessioneventprocessor.cpp:473
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
-msgstr ""
+msgstr "Din nøgle er angivet og beskeder vil blive krypteret."
 
 #: ../src/core/coresessioneventprocessor.cpp:475
 msgctxt "CoreSessionEventProcessor|"
@@ -2305,7 +2306,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "DCC %1 er ikke understøttet"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
@@ -2316,17 +2317,17 @@ msgstr ""
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
-msgstr ""
+msgstr "DCC-forbindelsesfejl: %1"
 
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr ""
+msgstr "Omvendt DCC er endnu ikke understøttet!"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
-msgstr ""
+msgstr "DCC Receive: Modtog flere data end forventet!"
 
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
@@ -2342,7 +2343,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "sending CTCP-%1 request to %2"
-msgstr ""
+msgstr "sender CTCP-%1-forespørgsel til %2"
 
 #: ../src/core/coreuserinputhandler.cpp:193
 #: ../src/core/coreuserinputhandler.cpp:364
@@ -2485,7 +2486,7 @@ msgstr ""
 #, qt-format
 msgctxt "DataStreamPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Ukendt protokolbesked af typen %1"
 
 #: ../src/qtui/ui/debugbufferviewoverlay.ui:13
 msgctxt "DebugBufferViewOverlay|"
@@ -2785,7 +2786,7 @@ msgstr ""
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
-msgstr ""
+msgstr "sender CTCP-%1-forespørgsel til %2"
 
 #: ../src/core/eventstringifier.cpp:717
 msgctxt "EventStringifier|"
@@ -2931,7 +2932,7 @@ msgstr "Versal følsom"
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:29
 msgctxt "HighlightSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:192
 msgctxt "HighlightSettingsPage|"
@@ -3117,12 +3118,12 @@ msgstr "Fjern identitet"
 #: ../src/qtui/settingspages/identityeditwidget.ui:139
 msgctxt "IdentityEditWidget|"
 msgid "Re&name..."
-msgstr ""
+msgstr "&Omdøb ..."
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:165
 msgctxt "IdentityEditWidget|"
 msgid "Move upwards in list"
-msgstr ""
+msgstr "Flyt op i listen"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:168
 #: ../src/qtui/settingspages/identityeditwidget.ui:182
@@ -3133,7 +3134,7 @@ msgstr "Rediger..."
 #: ../src/qtui/settingspages/identityeditwidget.ui:179
 msgctxt "IdentityEditWidget|"
 msgid "Move downwards in list"
-msgstr ""
+msgstr "Flyt ned i listen"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:227
 msgctxt "IdentityEditWidget|"
@@ -3251,7 +3252,7 @@ msgstr ""
 #: ../src/qtui/settingspages/identityeditwidget.ui:546
 msgctxt "IdentityEditWidget|"
 msgid "Continue"
-msgstr ""
+msgstr "Fortsæt"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:584
 msgctxt "IdentityEditWidget|"
@@ -3621,87 +3622,87 @@ msgstr "Fra"
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "White"
-msgstr ""
+msgstr "Hvid"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Black"
-msgstr ""
+msgstr "Sort"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark blue"
-msgstr ""
+msgstr "Mørkeblå"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark green"
-msgstr ""
+msgstr "Mørkegrøn"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Red"
-msgstr ""
+msgstr "Rød"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark red"
-msgstr ""
+msgstr "Mørkerød"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Dark magenta"
-msgstr ""
+msgstr "Mørk magenta"
 
 #: ../src/qtui/inputwidget.cpp:74
 msgctxt "InputWidget|"
 msgid "Orange"
-msgstr ""
+msgstr "Orange"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Yellow"
-msgstr ""
+msgstr "Gul"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Green"
-msgstr ""
+msgstr "Grøn"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Dark cyan"
-msgstr ""
+msgstr "Mørk cyan"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Cyan"
-msgstr ""
+msgstr "Cyan"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Blue"
-msgstr ""
+msgstr "Blå"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Magenta"
-msgstr ""
+msgstr "Magenta"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Dark gray"
-msgstr ""
+msgstr "Mørkegrå"
 
 #: ../src/qtui/inputwidget.cpp:75
 msgctxt "InputWidget|"
 msgid "Light gray"
-msgstr ""
+msgstr "Lysegrå"
 
 #: ../src/qtui/inputwidget.cpp:85 ../src/qtui/inputwidget.cpp:86
 msgctxt "InputWidget|"
 msgid "Clear Color"
-msgstr ""
+msgstr "Klar farve"
 
 #: ../src/qtui/inputwidget.cpp:136
 msgctxt "InputWidget|"
@@ -3716,17 +3717,17 @@ msgstr "Fra"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:22
 msgctxt "InputWidgetSettingsPage|"
 msgid "Custom font:"
-msgstr ""
+msgstr "Tilpasset skrifttype:"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:50
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enable spell check"
-msgstr ""
+msgstr "Aktiver stavekontrol"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:63
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enable per chat history"
-msgstr ""
+msgstr "Aktiver per snak-historik"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:79
 msgctxt "InputWidgetSettingsPage|"
@@ -3746,7 +3747,7 @@ msgstr ""
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:114
 msgctxt "InputWidgetSettingsPage|"
 msgid "Emacs key bindings"
-msgstr ""
+msgstr "Emacs' genvejstaster"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:127
 msgctxt "InputWidgetSettingsPage|"
@@ -3801,7 +3802,7 @@ msgstr ""
 #: ../src/qtui/settingspages/inputwidgetsettingspage.cpp:24
 msgctxt "InputWidgetSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.cpp:24
 msgctxt "InputWidgetSettingsPage|"
@@ -3831,7 +3832,7 @@ msgstr "Brugere"
 #: ../src/client/irclistmodel.cpp:67
 msgctxt "IrcListModel|"
 msgid "Topic"
-msgstr ""
+msgstr "Emne"
 
 #: ../src/client/networkmodel.cpp:953
 msgctxt "IrcUserItem|"
@@ -3864,7 +3865,7 @@ msgstr "Fra"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:22
 msgctxt "ItemViewSettingsPage|"
 msgid "Custom font:"
-msgstr ""
+msgstr "Tilpasset skrifttype:"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:50
 msgctxt "ItemViewSettingsPage|"
@@ -3945,7 +3946,7 @@ msgstr "Væk:"
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:29
 msgctxt "ItemViewSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:29
 msgctxt "ItemViewSettingsPage|"
@@ -4015,7 +4016,7 @@ msgstr ""
 #: ../src/qtui/settingspages/keysequencewidget.cpp:275
 msgctxt "KeySequenceWidget|Ctrl key"
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:276
 msgctxt "KeySequenceWidget|Alt key"
@@ -4025,7 +4026,7 @@ msgstr "Alle"
 #: ../src/qtui/settingspages/keysequencewidget.cpp:277
 msgctxt "KeySequenceWidget|Shift key"
 msgid "Shift"
-msgstr ""
+msgstr "Skift"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:281
 msgctxt ""
@@ -4042,7 +4043,7 @@ msgstr "Ingen"
 #: ../src/qtui/settingspages/keysequencewidget.cpp:389
 msgctxt "KeySequenceWidget|"
 msgid "Shortcut Conflict"
-msgstr ""
+msgstr "Genvejskonflikt"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:384
 #, qt-format
@@ -4050,7 +4051,7 @@ msgctxt "KeySequenceWidget|"
 msgid ""
 "The \"%1\" shortcut is already in use, and cannot be configured.\n"
 "Please choose another one."
-msgstr ""
+msgstr "Genvejen »%1« er allerede i brug, og kan ikke konfigureres.\nVælg venligst en anden."
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:390
 #, qt-format
@@ -4078,7 +4079,7 @@ msgstr ""
 #, qt-format
 msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
-msgstr ""
+msgstr "Ukendt protokolbesked af typen %1"
 
 #: ../src/common/protocols/legacy/legacypeer.cpp:256
 #, qt-format
@@ -4374,7 +4375,7 @@ msgstr "&Hjælp"
 #: ../src/qtui/mainwin.cpp:567
 msgctxt "MainWin|"
 msgid "Debug"
-msgstr ""
+msgstr "Fejlsøg"
 
 #: ../src/qtui/mainwin.cpp:843
 msgctxt "MainWin|"
@@ -4409,7 +4410,7 @@ msgstr "Vis input felt"
 #: ../src/qtui/mainwin.cpp:907
 msgctxt "MainWin|"
 msgid "Topic"
-msgstr ""
+msgstr "Emne"
 
 #: ../src/qtui/mainwin.cpp:919
 msgctxt "MainWin|"
@@ -4419,7 +4420,7 @@ msgstr "Vis emne felt"
 #: ../src/qtui/mainwin.cpp:1013
 msgctxt "MainWin|"
 msgid "Main Toolbar"
-msgstr ""
+msgstr "Hovedværktøjslinje"
 
 #: ../src/qtui/mainwin.cpp:1074
 msgctxt "MainWin|"
@@ -4434,24 +4435,24 @@ msgstr "Ikke forbundet til serveren."
 #: ../src/qtui/mainwin.cpp:1191 ../src/qtui/mainwin.cpp:1201
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
-msgstr ""
+msgstr "Forbindelse uden kryptering"
 
 #: ../src/qtui/mainwin.cpp:1191
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
-msgstr ""
+msgstr "<b>Din klient understøtter ikke SSL-kryptering</b>"
 
 #: ../src/qtui/mainwin.cpp:1193 ../src/qtui/mainwin.cpp:1203
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
-msgstr ""
+msgstr "Sensitive data, såsom adgangskoder, vil blive sendt uden kryptering til din Quassel-kerne."
 
 #: ../src/qtui/mainwin.cpp:1201
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
-msgstr ""
+msgstr "<b>Din kerne understøtter ikke SSL-kryptering</b>"
 
 #: ../src/qtui/mainwin.cpp:1219 ../src/qtui/mainwin.cpp:1240
 msgctxt "MainWin|"
@@ -4469,28 +4470,28 @@ msgstr ""
 #: ../src/qtui/mainwin.cpp:1223
 msgctxt "MainWin|"
 msgid "Continue"
-msgstr ""
+msgstr "Fortsæt"
 
 #: ../src/qtui/mainwin.cpp:1224
 msgctxt "MainWin|"
 msgid "Show Certificate"
-msgstr ""
+msgstr "Vis certifikat"
 
 #: ../src/qtui/mainwin.cpp:1241
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
-msgstr ""
+msgstr "Ønsker du at acceptere dette certifikat for altid uden at blive spurgt?"
 
 #: ../src/qtui/mainwin.cpp:1243
 msgctxt "MainWin|"
 msgid "Current Session Only"
-msgstr ""
+msgstr "Kun for nuværende session"
 
 #: ../src/qtui/mainwin.cpp:1244
 msgctxt "MainWin|"
 msgid "Forever"
-msgstr ""
+msgstr "For altid"
 
 #: ../src/qtui/mainwin.cpp:1255
 msgctxt "MainWin|"
@@ -4511,7 +4512,7 @@ msgstr "Fra"
 #: ../src/qtui/ui/msgprocessorstatuswidget.ui:34
 msgctxt "MsgProcessorStatusWidget|"
 msgid "Receiving Backlog"
-msgstr ""
+msgstr "Modtager Backlog"
 
 #: ../src/uisupport/multilineedit.cpp:718
 #, qt-format
@@ -4524,7 +4525,7 @@ msgstr[1] "Ønsker du virkelig at sende %n linje(r)"
 #: ../src/uisupport/multilineedit.cpp:731
 msgctxt "MultiLineEdit|"
 msgid "Paste Protection"
-msgstr ""
+msgstr "Indsæt-beskyttelse"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:14
 msgctxt "NetworkAddDlg|"
@@ -4534,7 +4535,7 @@ msgstr "Netværk"
 #: ../src/qtui/settingspages/networkadddlg.ui:22
 msgctxt "NetworkAddDlg|"
 msgid "Use preset:"
-msgstr ""
+msgstr "Brug forhåndsindstilling:"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:57
 msgctxt "NetworkAddDlg|"
@@ -4554,12 +4555,12 @@ msgstr "Netværk"
 #: ../src/qtui/settingspages/networkadddlg.ui:85
 msgctxt "NetworkAddDlg|"
 msgid "Server address:"
-msgstr ""
+msgstr "Serveradresse:"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:95
 msgctxt "NetworkAddDlg|"
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:115
 msgctxt "NetworkAddDlg|"
@@ -4569,12 +4570,12 @@ msgstr "Gentag kodeord:"
 #: ../src/qtui/settingspages/networkadddlg.ui:131
 msgctxt "NetworkAddDlg|"
 msgid "Use secure connection"
-msgstr ""
+msgstr "Brug sikker forbindelse"
 
 #: ../src/qtui/settingspages/networkeditdlg.ui:13
 msgctxt "NetworkEditDlg|"
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: ../src/qtui/settingspages/networkeditdlg.ui:21
 msgctxt "NetworkEditDlg|"
@@ -4607,12 +4608,12 @@ msgstr "Lag: %1 msecs"
 #: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Chat"
-msgstr ""
+msgstr "Snak"
 
 #: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
 msgid "Topic"
-msgstr ""
+msgstr "Emne"
 
 #: ../src/client/networkmodel.cpp:1002
 msgctxt "NetworkModel|"
@@ -4623,21 +4624,21 @@ msgstr "Brugere"
 msgctxt "NetworkModelController|"
 msgid "Do you want to delete the following buffer(s) permanently?"
 msgid_plural "Do you want to delete the following buffer(s) permanently?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ønsker du at slette det følgende mellemlager permanent?"
+msgstr[1] "Ønsker du at slette de følgende mellemlagre permanent?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:190
 #, qt-format
 msgctxt "NetworkModelController|"
 msgid "...and <b>%1</b> more<br><br>"
-msgstr ""
+msgstr "... og <b>%1</b> mere<br><br>"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:191
 msgctxt "NetworkModelController|"
 msgid ""
 "<b>Note:</b> This will delete all related data, including all backlog data, "
 "from the core's database and cannot be undone."
-msgstr ""
+msgstr "<b>Bemærk:</b> Dette vil slette alle relaterede data, inklusvie alle backlog-data, fra kernens database og det kan ikke fortrydes."
 
 #: ../src/uisupport/networkmodelcontroller.cpp:193
 msgctxt "NetworkModelController|"
@@ -4648,7 +4649,7 @@ msgstr ""
 #: ../src/uisupport/networkmodelcontroller.cpp:195
 msgctxt "NetworkModelController|"
 msgid "Remove buffers permanently?"
-msgstr ""
+msgstr "Fjern mellemlagre permanent?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:530
 msgctxt "NetworkModelController::JoinDlg|"
@@ -4673,7 +4674,7 @@ msgstr "Proxy password:"
 #: ../src/qtui/ircconnectionwizard.cpp:158
 msgctxt "NetworkPage|"
 msgid "Setup Network Connection"
-msgstr ""
+msgstr "Opsæt netværksforbindelse"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:14
 msgctxt "NetworksSettingsPage|"
@@ -4683,7 +4684,7 @@ msgstr "Fra"
 #: ../src/qtui/settingspages/networkssettingspage.ui:48
 msgctxt "NetworksSettingsPage|"
 msgid "Re&name..."
-msgstr ""
+msgstr "&Omdøb ..."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:65
 #: ../src/qtui/settingspages/networkssettingspage.ui:235
@@ -4695,7 +4696,7 @@ msgstr "&Tilføj..."
 #: ../src/qtui/settingspages/networkssettingspage.ui:252
 msgctxt "NetworksSettingsPage|"
 msgid "De&lete"
-msgstr ""
+msgstr "&Slet"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:124
 msgctxt "NetworksSettingsPage|"
@@ -4722,7 +4723,7 @@ msgstr "Server: %1"
 #: ../src/qtui/settingspages/networkssettingspage.ui:193
 msgctxt "NetworksSettingsPage|"
 msgid "Manage servers for this network"
-msgstr ""
+msgstr "Håndter servere fra dette netværk"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:217
 msgctxt "NetworksSettingsPage|"
@@ -4732,24 +4733,24 @@ msgstr "Rediger..."
 #: ../src/qtui/settingspages/networkssettingspage.ui:278
 msgctxt "NetworksSettingsPage|"
 msgid "Move upwards in list"
-msgstr ""
+msgstr "Flyt op i listen"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:292
 msgctxt "NetworksSettingsPage|"
 msgid "Move downwards in list"
-msgstr ""
+msgstr "Flyt ned i listen"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:337
 msgctxt "NetworksSettingsPage|"
 msgid "Commands"
-msgstr ""
+msgstr "Kommandoer"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:340
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Configure automatic identification or misc. commands to be executed after "
 "connecting to a server"
-msgstr ""
+msgstr "Konfigurer automatisk identifikation eller diverse kommandoer til kørsel efter forbindelse til en server"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:346
 msgctxt "NetworksSettingsPage|"
@@ -4781,12 +4782,12 @@ msgstr "Forbind igen automatisk"
 #: ../src/qtui/settingspages/networkssettingspage.ui:397
 msgctxt "NetworksSettingsPage|"
 msgid "Wait"
-msgstr ""
+msgstr "Vent"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:404
 msgctxt "NetworksSettingsPage|"
 msgid " s"
-msgstr ""
+msgstr "s"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:420
 msgctxt "NetworksSettingsPage|"
@@ -4801,7 +4802,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:464
 msgctxt "NetworksSettingsPage|"
 msgid "Unlimited"
-msgstr ""
+msgstr "Ubegrænset"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:489
 msgctxt "NetworksSettingsPage|"
@@ -4833,7 +4834,7 @@ msgstr "Proxy password:"
 #: ../src/qtui/settingspages/networkssettingspage.ui:580
 msgctxt "NetworksSettingsPage|"
 msgid "Use SASL Authentication"
-msgstr ""
+msgstr "Brug SASL-godkendelse"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:625
 msgctxt "NetworksSettingsPage|"
@@ -4851,19 +4852,19 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:659
 msgctxt "NetworksSettingsPage|"
 msgid "Encodings"
-msgstr ""
+msgstr "Kodninger"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:662
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Configure advanced settings such as message encodings and automatic "
 "reconnect"
-msgstr ""
+msgstr "Konfigurer avancerede indstillinger såsom beskedkodninger og automatisk genforbindelse"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:671
 msgctxt "NetworksSettingsPage|"
 msgid "Control encodings for in- and outgoing messages"
-msgstr ""
+msgstr "Kontroller kodninger for ind- og udgående beskeder"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:674
 msgctxt "NetworksSettingsPage|"
@@ -4907,7 +4908,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:751
 msgctxt "NetworksSettingsPage|"
 msgid "Server encoding:"
-msgstr ""
+msgstr "Serverkodning:"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:37
 msgctxt "NetworksSettingsPage|"
@@ -4979,17 +4980,17 @@ msgstr "Rediger nick"
 #: ../src/qtui/settingspages/notificationssettingspage.cpp:28
 msgctxt "NotificationsSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/notificationssettingspage.cpp:28
 msgctxt "NotificationsSettingsPage|"
 msgid "Notifications"
-msgstr ""
+msgstr "Påmindelser"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
 msgid "Select Audio File"
-msgstr ""
+msgstr "Vælg lydfil"
 
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:14
 msgctxt "PhononNotificationConfigWidget|"
@@ -4999,18 +5000,18 @@ msgstr "Fra"
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:20
 msgctxt "PhononNotificationConfigWidget|"
 msgid "Play a sound"
-msgstr ""
+msgstr "Afspil en lyd"
 
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:46
 msgctxt "PhononNotificationConfigWidget|"
 msgid "Prelisten to the selected sound"
-msgstr ""
+msgstr "Forhåndslyt til den valgte lyd"
 
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:59
 #: ../src/qtui/ui/phononnotificationconfigwidget.ui:69
 msgctxt "PhononNotificationConfigWidget|"
 msgid "Select the sound file to play"
-msgstr ""
+msgstr "Vælg lydfil at afspille"
 
 #: ../src/core/postgresqlstorage.cpp:72
 msgctxt "PostgreSqlStorage|"
@@ -5290,7 +5291,7 @@ msgstr "Afbryd"
 #: ../src/qtui/settingspages/servereditdlg.ui:14
 msgctxt "ServerEditDlg|"
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:30
 msgctxt "ServerEditDlg|"
@@ -5300,13 +5301,13 @@ msgstr "Server: %1"
 #: ../src/qtui/settingspages/servereditdlg.ui:38
 msgctxt "ServerEditDlg|"
 msgid "Server address:"
-msgstr ""
+msgstr "Serveradresse:"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:45
 #: ../src/qtui/settingspages/servereditdlg.ui:181
 msgctxt "ServerEditDlg|"
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:72
 msgctxt "ServerEditDlg|"
@@ -5341,7 +5342,7 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:155
 msgctxt "ServerEditDlg|"
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:167
 msgctxt "ServerEditDlg|"
@@ -5390,7 +5391,7 @@ msgstr "Der er ikke-gemte ændringer på denne side af opsætningen. Vil du genn
 #, qt-format
 msgctxt "SettingsDlg|"
 msgid "Configure %1"
-msgstr ""
+msgstr "Konfigurer %1"
 
 #: ../src/qtui/settingsdlg.cpp:220
 msgctxt "SettingsDlg|"
@@ -5400,7 +5401,7 @@ msgstr "Default away-indstillinger"
 #: ../src/qtui/settingsdlg.cpp:220
 msgctxt "SettingsDlg|"
 msgid "Do you like to reload the settings, undoing your changes on this page?"
-msgstr ""
+msgstr "Ønsker du at genindlæse indstillingerne, og dermed fortryde dine ændringer på denne side?"
 
 #: ../src/qtui/settingsdlg.cpp:231
 msgctxt "SettingsDlg|"
@@ -5410,7 +5411,7 @@ msgstr "<Systemets standard>"
 #: ../src/qtui/settingsdlg.cpp:231
 msgctxt "SettingsDlg|"
 msgid "Do you like to restore the default values for this page?"
-msgstr ""
+msgstr "Ønsker du at gendanne standardværdierne for denne side?"
 
 #: ../src/qtui/ui/settingspagedlg.ui:14
 msgctxt "SettingsPageDlg|"
@@ -5426,7 +5427,7 @@ msgstr "&Indstillinger"
 #, qt-format
 msgctxt "SettingsPageDlg|"
 msgid "Configure %1"
-msgstr ""
+msgstr "Konfigurer %1"
 
 #: ../src/qtui/settingspagedlg.cpp:120
 msgctxt "SettingsPageDlg|"
@@ -5436,7 +5437,7 @@ msgstr "Default away-indstillinger"
 #: ../src/qtui/settingspagedlg.cpp:120
 msgctxt "SettingsPageDlg|"
 msgid "Do you like to reload the settings, undoing your changes on this page?"
-msgstr ""
+msgstr "Ønsker du at genindlæse indstillingerne, og dermed fortryde dine ændringer på denne side?"
 
 #: ../src/qtui/settingspagedlg.cpp:131
 msgctxt "SettingsPageDlg|"
@@ -5446,17 +5447,17 @@ msgstr "<Systemets standard>"
 #: ../src/qtui/settingspagedlg.cpp:131
 msgctxt "SettingsPageDlg|"
 msgid "Do you like to restore the default values for this page?"
-msgstr ""
+msgstr "Ønsker du at gendanne standardværdierne for denne side?"
 
 #: ../src/qtui/settingspages/shortcutsmodel.cpp:121
 msgctxt "ShortcutsModel|"
 msgid "Action"
-msgstr ""
+msgstr "Handling"
 
 #: ../src/qtui/settingspages/shortcutsmodel.cpp:123
 msgctxt "ShortcutsModel|"
 msgid "Shortcut"
-msgstr ""
+msgstr "Genvej"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:14
 msgctxt "ShortcutsSettingsPage|"
@@ -5471,7 +5472,7 @@ msgstr "Søge mønster:"
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:62
 msgctxt "ShortcutsSettingsPage|"
 msgid "Shortcut for Selected Action"
-msgstr ""
+msgstr "Genvej for valgt handling"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:68
 msgctxt "ShortcutsSettingsPage|"
@@ -5488,12 +5489,12 @@ msgstr "Ingen"
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:82
 msgctxt "ShortcutsSettingsPage|"
 msgid "Custom:"
-msgstr ""
+msgstr "Tilpasset:"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.cpp:65
 msgctxt "ShortcutsSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.cpp:65
 msgctxt "ShortcutsSettingsPage|"
@@ -5513,7 +5514,7 @@ msgstr "Netværk"
 #: ../src/qtui/ui/simplenetworkeditor.ui:35
 msgctxt "SimpleNetworkEditor|"
 msgid "The name of the IRC network you are configuring"
-msgstr ""
+msgstr "Navnet på IRC-netværket du konfigurerer"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:63
 msgctxt "SimpleNetworkEditor|"
@@ -5523,12 +5524,12 @@ msgstr "Server: %1"
 #: ../src/qtui/ui/simplenetworkeditor.ui:81
 msgctxt "SimpleNetworkEditor|"
 msgid "A list of IRC servers belonging to this network"
-msgstr ""
+msgstr "En lister over IRC-servere tilhørende dette netværk"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:96
 msgctxt "SimpleNetworkEditor|"
 msgid "Edit this server entry"
-msgstr ""
+msgstr "Rediger denne serverpost"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:99
 msgctxt "SimpleNetworkEditor|"
@@ -5538,7 +5539,7 @@ msgstr "Rediger..."
 #: ../src/qtui/ui/simplenetworkeditor.ui:116
 msgctxt "SimpleNetworkEditor|"
 msgid "Add another IRC server"
-msgstr ""
+msgstr "Tilføj en IRC-server"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:119
 msgctxt "SimpleNetworkEditor|"
@@ -5548,17 +5549,17 @@ msgstr "&Tilføj..."
 #: ../src/qtui/ui/simplenetworkeditor.ui:136
 msgctxt "SimpleNetworkEditor|"
 msgid "Remove this server entry from the list"
-msgstr ""
+msgstr "Fjern denne serverpost fra listen"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:139
 msgctxt "SimpleNetworkEditor|"
 msgid "De&lete"
-msgstr ""
+msgstr "&Slet"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:165
 msgctxt "SimpleNetworkEditor|"
 msgid "Move upwards in list"
-msgstr ""
+msgstr "Flyt op i listen"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:168
 #: ../src/qtui/ui/simplenetworkeditor.ui:182
@@ -5569,7 +5570,7 @@ msgstr "Rediger..."
 #: ../src/qtui/ui/simplenetworkeditor.ui:179
 msgctxt "SimpleNetworkEditor|"
 msgid "Move downwards in list"
-msgstr ""
+msgstr "Flyt ned i listen"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:226
 msgctxt "SimpleNetworkEditor|"
@@ -5586,7 +5587,7 @@ msgstr ""
 #: ../src/qtui/snorenotificationbackend.cpp:60
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Privat besked"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -5606,17 +5607,17 @@ msgstr ""
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:64
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Timeout:"
-msgstr ""
+msgstr "Tidsudløb:"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:80
 msgctxt "SnoreNotificationConfigWidget|"
 msgid " s"
-msgstr ""
+msgstr "s"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:96
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "0 means infinite"
-msgstr ""
+msgstr "0 betyder uendelig"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -5631,7 +5632,7 @@ msgstr "SQLite er en filbaseret database engine der ikke kræver noget setup. De
 #: ../src/qtui/ui/sslinfodlg.ui:14
 msgctxt "SslInfoDlg|"
 msgid "Security Information"
-msgstr ""
+msgstr "Sikkerhedsinformation"
 
 #: ../src/qtui/ui/sslinfodlg.ui:22
 msgctxt "SslInfoDlg|"
@@ -5641,12 +5642,12 @@ msgstr "<b>Brugere:</b> %1"
 #: ../src/qtui/ui/sslinfodlg.ui:39
 msgctxt "SslInfoDlg|"
 msgid "<b>IP address:</b>"
-msgstr ""
+msgstr "<b>IP-adresse:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:56
 msgctxt "SslInfoDlg|"
 msgid "<b>Encryption:</b>"
-msgstr ""
+msgstr "<b>Kryptering:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:73
 msgctxt "SslInfoDlg|"
@@ -5656,7 +5657,7 @@ msgstr "<b>Emne:</b> %1"
 #: ../src/qtui/ui/sslinfodlg.ui:90
 msgctxt "SslInfoDlg|"
 msgid "<b>Certificate chain:</b>"
-msgstr ""
+msgstr "<b>Certifikatkæde:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:120
 msgctxt "SslInfoDlg|"
@@ -5671,22 +5672,22 @@ msgstr "<b>Kanal %1</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:143 ../src/qtui/ui/sslinfodlg.ui:265
 msgctxt "SslInfoDlg|"
 msgid "<b>Organization:</b>"
-msgstr ""
+msgstr "<b>Organisation:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:160 ../src/qtui/ui/sslinfodlg.ui:282
 msgctxt "SslInfoDlg|"
 msgid "<b>Organizational unit:</b>"
-msgstr ""
+msgstr "<b>Organisationsenhed:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:177 ../src/qtui/ui/sslinfodlg.ui:299
 msgctxt "SslInfoDlg|"
 msgid "<b>Country:</b>"
-msgstr ""
+msgstr "<b>Land:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:194 ../src/qtui/ui/sslinfodlg.ui:316
 msgctxt "SslInfoDlg|"
 msgid "<b>State or province:</b>"
-msgstr ""
+msgstr "<b>Stat eller provins:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:231 ../src/qtui/ui/sslinfodlg.ui:353
 msgctxt "SslInfoDlg|"
@@ -5706,12 +5707,12 @@ msgstr ""
 #: ../src/qtui/ui/sslinfodlg.ui:384
 msgctxt "SslInfoDlg|"
 msgid "<b>MD5 digest:</b>"
-msgstr ""
+msgstr "<b>MD5-sammendrag:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:401
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA1 digest:</b>"
-msgstr ""
+msgstr "<b>SHA1-sammendrag:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:431
 msgctxt "SslInfoDlg|"
@@ -5726,13 +5727,13 @@ msgstr "Ja"
 #: ../src/qtui/sslinfodlg.cpp:73
 msgctxt "SslInfoDlg|"
 msgid "No, for the following reasons:<ul>"
-msgstr ""
+msgstr "Nej, af følgende årsager:<ul>"
 
 #: ../src/qtui/sslinfodlg.cpp:80
 #, qt-format
 msgctxt "SslInfoDlg|"
 msgid "%1 to %2"
-msgstr ""
+msgstr "%1 til %2"
 
 #: ../src/client/networkmodel.h:151
 msgctxt "StatusBufferItem|"
@@ -5780,7 +5781,7 @@ msgstr ""
 #: ../src/qtui/taskbarnotificationbackend.cpp:93
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
 msgid "Unlimited"
-msgstr ""
+msgstr "Ubegrænset"
 
 #: ../src/qtui/taskbarnotificationbackend.cpp:94
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
@@ -5845,7 +5846,7 @@ msgstr "[Whois] %1"
 #: ../src/uisupport/toolbaractionprovider.cpp:38
 msgctxt "ToolBarActionProvider|"
 msgid "Request user information"
-msgstr ""
+msgstr "Anmod om brugerinformation"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
@@ -5895,7 +5896,7 @@ msgstr ""
 #: ../src/uisupport/toolbaractionprovider.cpp:44
 msgctxt "ToolBarActionProvider|"
 msgid "Remove user from channel"
-msgstr ""
+msgstr "Fjern bruger fra kanal"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:45
 msgctxt "ToolBarActionProvider|"
@@ -5957,12 +5958,12 @@ msgstr "Fra"
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:22
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Custom font:"
-msgstr ""
+msgstr "Tilpasset skrifttype:"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:50
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Resize dynamically to fit contents"
-msgstr ""
+msgstr "Ændr størrelse dynamisk så det passer med indholdet"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:84
 msgctxt "TopicWidgetSettingsPage|"
@@ -5972,12 +5973,12 @@ msgstr "Kun ved markering"
 #: ../src/qtui/settingspages/topicwidgetsettingspage.cpp:24
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Interface"
-msgstr ""
+msgstr "Grænseflade"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.cpp:24
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Topic Widget"
-msgstr ""
+msgstr "Emneguide"
 
 #. Plain Message
 #. ----------
@@ -5999,54 +6000,54 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #. Action Message
 #: ../src/uisupport/uistyle.cpp:675
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %2"
-msgstr ""
+msgstr "%DN%1%DN %2"
 
 #. Nick Message
 #: ../src/uisupport/uistyle.cpp:679
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "You are now known as %DN%1%DN"
-msgstr ""
+msgstr "Du kendes nu som %DN%1%DN"
 
 #: ../src/uisupport/uistyle.cpp:680
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN is now known as %DN%2%DN"
-msgstr ""
+msgstr "%DN%1%DN kendes nu som %DN%2%DN"
 
 #. Mode Message
 #: ../src/uisupport/uistyle.cpp:684
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "User mode: %DM%1%DM"
-msgstr ""
+msgstr "Brugertilstand: %DM%1%DM"
 
 #: ../src/uisupport/uistyle.cpp:685
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Mode %DM%1%DM by %DN%2%DN"
-msgstr ""
+msgstr "Tilstand %DM%1%DM af %DN%2%DN"
 
 #. Join Message
 #: ../src/uisupport/uistyle.cpp:689
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has joined %DC%4%DC"
-msgstr ""
+msgstr "%DN%1%DN %DH(%2@%3)%DH har sluttet sig til %DC%4%DC"
 
 #. Part Message
 #: ../src/uisupport/uistyle.cpp:692
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN %DH(%2@%3)%DH has left %DC%4%DC"
-msgstr ""
+msgstr "%DN%1%DN %DH(%2@%3)%DH har forladt %DC%4%DC"
 
 #. Quit Message
 #: ../src/uisupport/uistyle.cpp:697
@@ -6104,8 +6105,8 @@ msgstr "<%1>"
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
 msgid_plural "%n Owner(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n ejer"
+msgstr[1] "%n ejere"
 
 #: ../src/client/networkmodel.cpp:827
 #, qt-format
