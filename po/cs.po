@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-11-22 11:20+0000\n"
+"PO-Revision-Date: 2014-12-01 07:20+0000\n"
 "Last-Translator: Jaroslav Lichtblau <jlichtblau@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -2580,7 +2580,7 @@ msgstr "Zavřít"
 #: ../src/qtui/dockmanagernotificationbackend.cpp:184
 msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
-msgstr ""
+msgstr "Označit záznam dockmanageru"
 
 #: ../src/core/eventstringifier.cpp:224 ../src/core/eventstringifier.cpp:370
 msgctxt "EventStringifier|"
@@ -5599,7 +5599,7 @@ msgstr "Form"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Usnout"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:41
 msgctxt "SnoreNotificationConfigWidget|"
