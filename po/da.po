@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Adam Tulinius <mail@adamtulinius.dk>, 2010
-# Daniel Albers <daniel@lbe.rs>, 2012
+# Daniel Albers <daniel@lbe.rs>, 2012,2015
 # Daniel Albers <daniel@lbers.com>, 2011
 # Jens True <frazzer@hotmail.com>, 2013
 # Jens True <frazzer@hotmail.com>, 2013
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2014-11-27 15:23+0000\n"
-"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"PO-Revision-Date: 2015-02-03 11:03+0000\n"
+"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,7 +76,7 @@ msgid ""
 "href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use "
 "<a href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>En moderne, distribuerede IRC klient</b><br><br>© %1 af projektets Quassel <br><a href=\"http://quassel-irc.org\"> http://quassel-irc.org</a> <br><a href=\"irc://irc.freenode.net/quassel\"> #quassel</a> på <a href=\"http://www.freenode.net\"> Freenode</a> <br><br>Quassel IRC er dual-licenseret under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\"> GPLv2</a> og <a href=\"http://www.gnu.org/licenses/gpl-3.0.txt\"> GPLv3</a>. <br>De fleste ikoner er © af <a href=\"http://www.oxygen-icons.org\"> Ilt Team</a> og anvendes under <a href=\"http://www.gnu.org/licenses/lgpl.html\"> LGPL</a>.<br><br>Venligst Brug <a href=\"http://bugs.quassel-irc.org\"> http://bugs.quassel-irc.org</a> til at rapportere fejl."
 
 #: ../src/qtui/aboutdlg.cpp:67
 msgctxt "AboutDlg|"
@@ -105,7 +105,7 @@ msgid ""
 "href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd>for keeping Qt alive, and for "
 "sponsoring development of Quassel Mobile with N810s</dd>"
-msgstr ""
+msgstr "Særlige tak går til: <br><dl><dt><img src=\":/pics/quassel-eye.png\"> <b>John \"nox\" hånd</b></dt> <dd>for den oprindelige Quassel ikon - The All-Seeing øjet</dt> <dt><img src=\":/pics/oxygen.png\"> <b><a href=\"http://www.oxygen-icons.org\"> Ilt teamet</a></b></dt> <dd>for at skabe alle de illustrationer du ser i hele Quassel</dd> <dt><img src=\":/pics/qt-logo-32.png\"> <b><a href=\"http://www.trolltech.com\"> Qt Software tidligere kendt som Trolltech</a></b></dt> <dd>til oprettelse af Qt og Qtopia, og for at sponsorere udvikling af QuasselTopia med Greenphones og mere</dd> <dt><a href=\"http://www.nokia.com\"> <img src=\":/pics/nokia.png\"></a></b></dt> <dd>for at holde Qt i live, og sponsorere udvikling af Quassel mobiltelefon med N810s</dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
@@ -124,7 +124,7 @@ msgctxt "AliasesModel|"
 msgid ""
 "<b>The shortcut for the alias</b><br />It can be used as a regular slash "
 "command.<br /><br /><b>Example:</b> \"foo\" can be used per /foo"
-msgstr ""
+msgstr "<b>Genvej til alias</b> < br / > det kan bruges som en almindelig skråstreg kommando. < br / > < br / > <b>eksempel:</b> \"foo\" kan bruges pr. /foo"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:61
 msgctxt "AliasesModel|"
@@ -140,7 +140,7 @@ msgid ""
 "semicolons<br /><br /><b>Example:</b> \"Test $1; Test $2; Test All $0\" will"
 " be expanded to three separate messages \"Test 1\", \"Test 2\" and \"Test "
 "All 1 2 3\" when called like /test 1 2 3"
-msgstr ""
+msgstr "<b>Streng genvejen vil blive udvidet til</b> < br / > <b>særlige variabler:</b> < br / >-<b>$i</b> repræsenterer i'th parameter. < br / >-<b>$i...j</b> repræsenterer i'th til j'th parameter adskilt af mellemrum. < br / >-<b>$i..</b> repræsenterer alle parametre fra jeg på adskilt af mellemrum. < br / >-<b>$i: hostname</b> repræsenterer hostname i den bruger identificeres i parameteren i'th eller en * hvis ukendt. < br / >-<b>$0</b> den hele strengen. < br / >-<b>$nick</b> din nuværende kaldenavn < br / >-<b>$channel</b> navnet på den valgte kanal < br / > < br / > flere kommandoer kan adskilles med semikolon < br / > < br / > <b>eksempel:</b> \"Test $1; Teste $2; Teste alle $0\" vil blive udvidet til tre separate meddelelser\"Test 1\",\"Test 2\"og\"Afprøve alle 1 2 3\"når kaldet ligesom/test 1 2 3"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:185
 msgctxt "AliasesModel|"
@@ -190,7 +190,7 @@ msgstr "Klient stil:"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:29
 msgctxt "AppearanceSettingsPage|"
 msgid "Set application style"
-msgstr ""
+msgstr "Sæt ansøgning stil"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:36
 msgctxt "AppearanceSettingsPage|"
@@ -251,7 +251,7 @@ msgstr "Besked omdirigering"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:237
 msgctxt "AppearanceSettingsPage|"
 msgid "User Notices:"
-msgstr ""
+msgstr "Brugeren bekendtgørelser:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:280
 msgctxt "AppearanceSettingsPage|"
@@ -318,34 +318,34 @@ msgstr "Antal af beskeder der bliver hentet fra serveren, når der scrolles op i
 #: ../src/qtui/settingspages/backlogsettingspage.ui:25
 msgctxt "BacklogSettingsPage|"
 msgid "Dynamic backlog amount:"
-msgstr ""
+msgstr "Dynamisk puklen beløb:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:75
 msgctxt "BacklogSettingsPage|"
 msgid "Backlog request method:"
-msgstr ""
+msgstr "Puklen forespørgsels metode:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:83
 msgctxt "BacklogSettingsPage|"
 msgid "Fixed amount per chat"
-msgstr ""
+msgstr "Fast beløb pr. chat"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:88
 msgctxt "BacklogSettingsPage|"
 msgid "Unread messages per chat"
-msgstr ""
+msgstr "Ulæste meddelelser pr. chat"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:93
 msgctxt "BacklogSettingsPage|"
 msgid "Globally unread messages"
-msgstr ""
+msgstr "Globalt ulæste beskeder"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:123
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "The simplest requester. It fetches a fixed amount of lines for each chat "
 "window from the backlog."
-msgstr ""
+msgstr "Den enkleste anmoderen. Den henter et fast beløb på linjerne for hvert chat-vinduet fra puklen."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:138
 msgctxt "BacklogSettingsPage|"
@@ -357,7 +357,7 @@ msgstr "mængde af beskeder pr. buffer, der bliver hentet, efter forbindelsen er
 #: ../src/qtui/settingspages/backlogsettingspage.ui:141
 msgctxt "BacklogSettingsPage|"
 msgid "Initial backlog amount:"
-msgstr ""
+msgstr "Indledende puklen beløb:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:205
 msgctxt "BacklogSettingsPage|"
@@ -365,14 +365,14 @@ msgid ""
 "This requester fetches unread messages for each chat window individually. The amount of lines can be limited per chat.\n"
 "\n"
 "You can also choose to fetch additional older chatlines to provide a better context."
-msgstr ""
+msgstr "Denne anmoderen henter ulæste meddelelser for hver chatvinduet individuelt. Mængden af linjer kan begrænses pr. chat.\n\nDu kan også vælge at hente yderligere ældre chatlines for at give en bedre sammenhæng."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:222
 #: ../src/qtui/settingspages/backlogsettingspage.ui:232
 #: ../src/qtui/settingspages/backlogsettingspage.ui:354
 msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched per buffer."
-msgstr ""
+msgstr "Det maksimale antal meddelelser hentes pr. buffer."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:225
 #: ../src/qtui/settingspages/backlogsettingspage.ui:347
@@ -394,7 +394,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages to be fetched in addition to the unread messages. The "
 "Limit does not apply here."
-msgstr ""
+msgstr "Mængden af meddelelser hentes ud over de ulæste meddelelser. Grænsen gælder ikke her."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:263
 #: ../src/qtui/settingspages/backlogsettingspage.ui:385
@@ -411,12 +411,12 @@ msgid ""
 "It is useful to limit the total amount of the backlog and is probably the fastest.\n"
 "\n"
 "You can also chose to fetch additional older chatlines to provide a better context."
-msgstr ""
+msgstr "Denne anmoderen henter alle meddelelser, der er nyere end den ældste ulæst besked for alle chats.\n\nBemærk: Denne anmoderen anbefales ikke hvis du bruger skjulte chatvinduer eller har inaktive chats (dvs.: ingen forslidt forespørgsler eller kanaler).\nDet er nyttigt at begrænse den samlede mængde af puklen og er formentlig den hurtigste.\n\nDu kan også vælge at hente yderligere ældre chatlines for at give en bedre sammenhæng."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:344
 msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched over all buffers."
-msgstr ""
+msgstr "Det maksimale antal meddelelser hentes over alle buffere."
 
 #: ../src/qtui/settingspages/backlogsettingspage.cpp:27
 msgctxt "BacklogSettingsPage|"
@@ -426,7 +426,7 @@ msgstr "Grænseflade"
 #: ../src/qtui/settingspages/backlogsettingspage.cpp:27
 msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
-msgstr ""
+msgstr "Puklen henter"
 
 #: ../src/client/networkmodel.cpp:401
 #, qt-format
@@ -437,7 +437,7 @@ msgstr "<p> %1 - %2 </p>"
 #: ../src/uisupport/bufferview.cpp:272
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
-msgstr ""
+msgstr "Flette buffere permanent?"
 
 #: ../src/uisupport/bufferview.cpp:273
 #, qt-format
@@ -445,7 +445,7 @@ msgctxt "BufferView|"
 msgid ""
 "Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n"
 " This cannot be reversed!"
-msgstr ""
+msgstr "Vil du flette buffer \"%1\" permanent i buffer \"%2\"?\n Dette kan ikke fortrydes!"
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
@@ -724,7 +724,7 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Operation modes:</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; text-decoration: underline;\">Opt-In:</span> <span style=\" font-weight:400;\">Only buffers on the right side are shown in chatmonitor</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Opt-Out:</span> Buffers on the right side will be ignored in chatmonitor</p></body></html>"
-msgstr ""
+msgstr "<! DOCTYPE html-OFFENTLIGE \"-//W3C//DTD HTML 4.0 / / EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\" > <html><head><meta name=\"qrichtext\" content=\"1\" /> <style type=\"text/css\"> p, li {white-space: pre wrap;}</style></head><body style=\"font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\"> <p style=\"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;-qt-block-indent:0; text-indent:0px;\"> <span style=\"font-weight:600;\"> driftstilstande:</span></p> <p style=\"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;-qt-block-indent:0; text-indent:0px; font-weight:600;\"> <span style=\"font-weight:400; text-decoration: underline;\"> Opt-In:</span> <span style=\"font-weight:400;\"> kun buffere på højre side er vist i chatmonitor</span></p> <p style=\"margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;-qt-block-indent:0; text-indent:0px;\"> <span style=\"text-decoration: underline;\"> Opt-Out:</span> buffere på højre side vil blive ignoreret i chatmonitor</p></body></html>"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:61
 msgctxt "ChatMonitorSettingsPage|"
@@ -751,12 +751,12 @@ msgstr "Vis:"
 msgctxt "ChatMonitorSettingsPage|"
 msgid ""
 "Show highlights in chatmonitor even if the originating buffer is ignored"
-msgstr ""
+msgstr "Vis højdepunkter i chatmonitor, selv om den oprindelige buffer ignoreres"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:150
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Always show highlighted messages"
-msgstr ""
+msgstr "Vis altid fremhævet meddelelser"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:157
 msgctxt "ChatMonitorSettingsPage|"
@@ -766,22 +766,22 @@ msgstr "Vis egne beskeder"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "Display beskeder fra efterslæb på reconnect"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "Vis meddelelser fra efterslæb"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "Omfatte læse beskeder fra efterslæb på reconnect"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Omfatte læste beskeder"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
@@ -796,12 +796,12 @@ msgstr "Vis chat monitor"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
-msgstr ""
+msgstr "Opt-In"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
-msgstr ""
+msgstr "Fravalg"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:275
 msgctxt "ChatMonitorSettingsPage|"
@@ -837,12 +837,12 @@ msgstr "Kopier valgte"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Søg på '%1'"
 
 #: ../src/qtui/chatscene.cpp:844
 msgctxt "ChatScene|"
 msgid "Reset Column Widths"
-msgstr ""
+msgstr "Nulstille kolonnebredder"
 
 #: ../src/qtui/ui/chatviewsearchbar.ui:13
 msgctxt "ChatViewSearchBar|"
@@ -897,7 +897,7 @@ msgid ""
 "<tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n"
 "</table>\n"
 "</body></html>"
-msgstr ""
+msgstr "<html><head/> <body><p>Skik eksempler:</p> <table cellpadding=\"2\"> <tr><td>dd.MM.yyyy</td> <td>21.05.2001</td></tr> <tr><td>ddd MMMM d åå</td> <td>Tue 21 maj 01</td></tr> <tr><td>hh:mm:ss.zzz</td> <td>14:13:09.042</td></tr> <tr><td>h:m:s ap</td> <td>2:13:9 pm</td></tr></table></body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:42
 msgctxt "ChatViewSettingsPage|"
@@ -907,7 +907,7 @@ msgstr "[hh:mm:ss]"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:69
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
-msgstr ""
+msgstr "Brugerdefinerede chat vinduet skrifttype:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:102
 msgctxt "ChatViewSettingsPage|"
@@ -928,36 +928,36 @@ msgstr "Vis webside eksempel når mus hover over en webaddresse"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:124
 msgctxt "ChatViewSettingsPage|"
 msgid "Show previews of webpages on URL hover"
-msgstr ""
+msgstr "Vis previews af websider på URL hover"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:140
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when selecting "
 "another channel"
-msgstr ""
+msgstr "Angive linjen markør til bunden af den aktuelle chatvindue, når du vælger en anden kanal"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:143
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
-msgstr ""
+msgstr "Indstille markør linje automatisk, når du skifter chats"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:159
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Angive linjen markør til bunden af den aktuelle chatvindue, når Quassel mister fokus."
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Indstille markør linje automatisk, når Quassel mister fokus"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "Søg efter webadresse:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -967,12 +967,12 @@ msgid ""
 "text should go.</p><p>Eg:</p><p>https://www.google.com/search?q=<span "
 "style=\" font-weight:600;\">%s<br/></span>https://duckduckgo.com/?q=<span "
 "style=\" font-weight:600;\">%s</span></p></body></html>"
-msgstr ""
+msgstr "<html><head/> <body><p>Den URL til at åbne med den markerede tekst som parameter. Placer <span style=\"font-weight:600;\"> %s</span> hvor markerede tekst bør gå.</p><p>Fx:</p><p>https://www.google.com/search?q= <span style=\"font-weight:600;\"> %s <br/></span> https://duckduckgo.com/?q= <span style=\"font-weight:600;\"> %s</span></p></body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.Google.com/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1063,7 +1063,7 @@ msgstr "Baggrund:"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:476
 msgctxt "ChatViewSettingsPage|"
 msgid "Use Sender Coloring"
-msgstr ""
+msgstr "Brug afsender farve"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:772
 msgctxt "ChatViewSettingsPage|"
@@ -1078,12 +1078,12 @@ msgstr "Grænseflade"
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:28
 msgctxt "ChatViewSettingsPage|"
 msgid "Chat View"
-msgstr ""
+msgstr "Chat Se"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:41
 msgctxt "ChatViewSettingsPage|"
 msgid "You need at least version 0.6 of quasselcore to use this feature"
-msgstr ""
+msgstr "Du skal som minimum version 0,6 af quasselcore til at bruge denne funktion"
 
 #: ../src/client/client.cpp:320
 msgctxt "Client|"
@@ -1094,7 +1094,7 @@ msgstr "Identiteten eksisterer allerede i klienten!"
 #: ../src/client/clientauthhandler.cpp:471
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
-msgstr ""
+msgstr "Ikke-krypteret forbindelse annulleret"
 
 #: ../src/client/clientauthhandler.cpp:87
 #: ../src/client/clientauthhandler.cpp:103
@@ -1130,19 +1130,19 @@ msgstr "Af&bryd fra server"
 #: ../src/client/clientauthhandler.cpp:149
 msgctxt "ClientAuthHandler|"
 msgid "Reconnecting in compatibility mode..."
-msgstr ""
+msgstr "Forbindelsen i kompatibilitetstilstand..."
 
 #: ../src/client/clientauthhandler.cpp:236
 msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>Incompatible Quassel Core!</b><br>None of the protocols this client "
 "speaks are supported by the core you are trying to connect to."
-msgstr ""
+msgstr "<b>Inkompatibel Quassel Core!</b><br>Ingen af protokollerne denne klient taler understøttes af kernen du forsøger at oprette forbindelse til."
 
 #: ../src/client/clientauthhandler.cpp:239
 msgctxt "ClientAuthHandler|"
 msgid "Core speaks none of the protocols we support"
-msgstr ""
+msgstr "Core taler ingen af protokollerne vi støtter"
 
 #: ../src/client/clientauthhandler.cpp:254
 #, qt-format
@@ -1150,12 +1150,12 @@ msgctxt "ClientAuthHandler|"
 msgid ""
 "<b>The Quassel Core you are trying to connect to is too old!</b><br>We need "
 "at least protocol v%1, but the core speaks v%2 only."
-msgstr ""
+msgstr "<b>The Quassel kernen du forsøger at oprette forbindelse til er for gammel!</b><br>Vi har brug for mindst protokol v %1, men kernen taler v %2 kun."
 
 #: ../src/client/clientauthhandler.cpp:256
 msgctxt "ClientAuthHandler|"
 msgid "Incompatible protocol version, connection to core refused"
-msgstr ""
+msgstr "Uforenelige protokolversion, forbindelse til core nægtede"
 
 #: ../src/client/clientauthhandler.cpp:278
 msgctxt "ClientAuthHandler|"
@@ -1165,7 +1165,7 @@ msgstr "F&orbind til server..."
 #: ../src/client/clientauthhandler.cpp:293
 msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
-msgstr ""
+msgstr "Kernen afviste forbindelsen fra denne klient"
 
 #: ../src/client/clientauthhandler.cpp:357
 msgctxt "ClientAuthHandler|"
@@ -1175,12 +1175,12 @@ msgstr "Logger på..."
 #: ../src/client/clientauthhandler.cpp:362
 msgctxt "ClientAuthHandler|"
 msgid "Login canceled"
-msgstr ""
+msgstr "Login annulleret"
 
 #: ../src/client/clientauthhandler.cpp:420
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Ikke-krypteret forbindelse aflyst"
 
 #: ../src/client/clientbacklogmanager.cpp:178
 #, qt-format
@@ -1191,17 +1191,17 @@ msgstr "Behandlede %1 beskeder på %2 sekunder."
 #: ../src/client/clientbufferviewmanager.cpp:60
 msgctxt "ClientBufferViewManager|"
 msgid "All Chats"
-msgstr ""
+msgstr "Alle Chats"
 
 #: ../src/client/clientuserinputhandler.cpp:98
 msgctxt "ClientUserInputHandler|"
 msgid "/JOIN expects a channel"
-msgstr ""
+msgstr "/ JOIN forventer en kanal"
 
 #: ../src/client/clientuserinputhandler.cpp:110
 msgctxt "ClientUserInputHandler|"
 msgid "/QUERY expects at least a nick"
-msgstr ""
+msgstr "/ QUERY forventer mindst en nick"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:14
 msgctxt "ConnectionSettingsPage|"
@@ -1211,7 +1211,7 @@ msgstr "Konfigurer IRC forbindelsen"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:20
 msgctxt "ConnectionSettingsPage|"
 msgid "Enable Ping Timeout Detection"
-msgstr ""
+msgstr "Aktivere Ping Timeout påvisning"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:37
 msgctxt "ConnectionSettingsPage|"
@@ -1240,12 +1240,12 @@ msgctxt "ConnectionSettingsPage|"
 msgid ""
 "This enables periodic polling of user information using /WHO. This is mostly"
 " interesting for tracking users' away status."
-msgstr ""
+msgstr "Dette gør det muligt for periodiske polling af brugeroplysninger ved hjælp af /WHO. Dette er mest interessante til at spore brugernes lager status."
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:131
 msgctxt "ConnectionSettingsPage|"
 msgid "Enable Automatic User Information Lookup (/WHO)"
-msgstr ""
+msgstr "Aktiverer automatisk brugeren Information opslag (/ der)"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:148
 msgctxt "ConnectionSettingsPage|"
@@ -1255,7 +1255,7 @@ msgstr "Opdaterings interval:"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:177
 msgctxt "ConnectionSettingsPage|"
 msgid "Ignore channels with more than:"
-msgstr ""
+msgstr "Ignorere kanaler med mere end:"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:184
 msgctxt "ConnectionSettingsPage|"
@@ -1265,12 +1265,12 @@ msgstr "Brugere"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:206
 msgctxt "ConnectionSettingsPage|"
 msgid "Minimum delay between requests:"
-msgstr ""
+msgstr "Minimal forsinkelse mellem anmodninger:"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:250
 msgctxt "ConnectionSettingsPage|"
 msgid "Enable standard-compliant CTCP behavior"
-msgstr ""
+msgstr "Aktiver standard-kompatible CTCP adfærd"
 
 #: ../src/qtui/settingspages/connectionsettingspage.cpp:27
 msgctxt "ConnectionSettingsPage|"
@@ -1385,12 +1385,12 @@ msgstr "Version"
 #: ../src/uisupport/contextmenuactionprovider.cpp:64
 msgctxt "ContextMenuActionProvider|"
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:65
 msgctxt "ContextMenuActionProvider|"
 msgid "Ping"
-msgstr ""
+msgstr "Ping"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:66
 msgctxt "ContextMenuActionProvider|"
@@ -1400,17 +1400,17 @@ msgstr "Klient stil:"
 #: ../src/uisupport/contextmenuactionprovider.cpp:67
 msgctxt "ContextMenuActionProvider|"
 msgid "Custom..."
-msgstr ""
+msgstr "Custom..."
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:79
 msgctxt "ContextMenuActionProvider|"
 msgid "Give Operator Status"
-msgstr ""
+msgstr "Give operatøren Status"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:80
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Operator Status"
-msgstr ""
+msgstr "Tag driftslederen Status"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:81
 msgctxt "ContextMenuActionProvider|"
