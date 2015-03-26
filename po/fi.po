@@ -4,14 +4,14 @@
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2012
 # Lasse Liehu <larso@gmx.com>, 2011-2012
 # Lasse Liehu <larso@gmx.com>, 2013
-# Lasse Liehu <larso@gmx.com>, 2013-2014
+# Lasse Liehu <larso@gmx.com>, 2013-2015
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012-2013
 # mikuu <pinaatti@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 01:31+0000\n"
+"PO-Revision-Date: 2015-03-25 14:31+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/quassel/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
@@ -193,7 +193,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "D-Bus-ilmoitukset"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
@@ -5514,7 +5514,7 @@ msgstr ""
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
-msgid "<b>Password change failed<b>"
+msgid "<b>Password change failed</b>"
 msgstr ""
 
 #: ../src/qtui/passwordchangedlg.cpp:69

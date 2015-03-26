@@ -2,12 +2,12 @@
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
 # Yuri Chornoivan <yurchor@gmail.com>, 2010
-# Yuri Chornoivan <yurchor@ukr.net>, 2011-2014
+# Yuri Chornoivan <yurchor@ukr.net>, 2011-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 01:31+0000\n"
+"PO-Revision-Date: 2015-03-25 12:13+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/quassel/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -20,475 +20,475 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Сучасний, розподілений клієнт IRC"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Засновник проекту, провідний розробник"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project Motivator, Lead Developer"
-msgstr ""
+msgstr "Мотиватор проекту, провідний розробник"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Колишній провідний розробник"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements"
-msgstr ""
+msgstr "Керівник перекладу, автор багатьох виправлень та покращень"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Many features, fixes and improvements"
-msgstr ""
+msgstr "Автор багатьох можливостей, виправлень та покращень"
 
 #: ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr ""
+msgstr "Автор багатьох виправлень та покращень, визначення причин вад та латок, супровідник спільноти"
 
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Chatview improvements"
-msgstr ""
+msgstr "Покращення панелі спілкування"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
-msgstr ""
+msgstr "Тестування та пошук вад, переклад данською"
 
 #: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:261
 #: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Переклад іспанською"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr ""
+msgstr "Виправлення піктограми лотка"
 
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Language improvements"
-msgstr ""
+msgstr "Покращення підтримки мов"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Покращення документації"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Переклад румунською"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Переклад фінською"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
 msgid "Message indicator support"
-msgstr ""
+msgstr "Підтримка індикатора повідомлень"
 
 #: ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
 msgid "Windows build system fixes"
-msgstr ""
+msgstr "Виправлення системи збирання у Windows"
 
 #: ../src/uisupport/aboutdata.cpp:194
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Виправлення аварійних завершень роботи"
 
 #: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:215
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Переклад французькою"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
 msgid "Usability review"
-msgstr ""
+msgstr "Робота над удосконаленням зручності користування"
 
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "Підтримка SASL"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Various improvements"
-msgstr ""
+msgstr "Різноманітні покращення"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:200
 #: ../src/uisupport/aboutdata.cpp:204
 msgctxt "AboutData|"
 msgid "Various fixes and improvements"
-msgstr ""
+msgstr "Різноманітні виправлення та покращення"
 
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Переклад галісійською"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Переклад есперанто"
 
 #: ../src/uisupport/aboutdata.cpp:203
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Переклад японською"
 
 #: ../src/uisupport/aboutdata.cpp:205 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
-msgstr ""
+msgstr "Супровідник у Gentoo"
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
+msgstr "Тестування та пошук вад (у Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
 msgid "Translation system fixes"
-msgstr ""
+msgstr "Виправлення системи перекладу"
 
 #: ../src/uisupport/aboutdata.cpp:208
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
-msgstr ""
+msgstr "Підтримка Центру сповіщень OSX"
 
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Виправлення"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
 msgid "Mac fixes"
-msgstr ""
+msgstr "Виправлення у Mac"
 
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "Сповіщення D-Bus"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Переклад польською"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
 msgid "Build system improvements"
-msgstr ""
+msgstr "Покращення у системі збирання"
 
 #: ../src/uisupport/aboutdata.cpp:214
 msgctxt "AboutData|"
 msgid "Formatting support and other input line improvements, many other fixes"
-msgstr ""
+msgstr "Підтримка форматування та інші покращення у системі введення повідомлень, багато інших виправлень"
 
 #: ../src/uisupport/aboutdata.cpp:216
 msgctxt "AboutData|"
 msgid "BluesTheme stylesheet"
-msgstr ""
+msgstr "Таблиця стилів теми Blues"
 
 #: ../src/uisupport/aboutdata.cpp:217 ../src/uisupport/aboutdata.cpp:251
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Переклад російською"
 
 #: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:253
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Переклад італійською"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
-msgstr ""
+msgstr "Покращення у системі обробки сертифікатів"
 
 #: ../src/uisupport/aboutdata.cpp:220
 msgctxt "AboutData|"
 msgid "Sanitize topic handling"
-msgstr ""
+msgstr "Робота над керуванням темами обговорення"
 
 #: ../src/uisupport/aboutdata.cpp:221
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Переклад норвезькою"
 
 #: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Переклад угорською"
 
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
 msgid "IRC parser improvements"
-msgstr ""
+msgstr "Покращення у засобі обробки даних IRC"
 
 #: ../src/uisupport/aboutdata.cpp:224 ../src/uisupport/aboutdata.cpp:296
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Переклад турецькою"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "Початкова підтримка Qt5"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "{Ku|U}buntu packager, motivator, promoter"
-msgstr ""
+msgstr "Покувальник для {Ku|U}buntu, мотиватор, пропагандист"
 
 #: ../src/uisupport/aboutdata.cpp:227
 msgctxt "AboutData|"
 msgid "Various features"
-msgstr ""
+msgstr "Різноманітні можливості"
 
 #: ../src/uisupport/aboutdata.cpp:228 ../src/uisupport/aboutdata.cpp:229
 #: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Various fixes"
-msgstr ""
+msgstr "Різноманітні виправлення"
 
 #: ../src/uisupport/aboutdata.cpp:230 ../src/uisupport/aboutdata.cpp:231
 #: ../src/uisupport/aboutdata.cpp:270 ../src/uisupport/aboutdata.cpp:273
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Виправлення вад"
 
 #: ../src/uisupport/aboutdata.cpp:232
 msgctxt "AboutData|"
 msgid "Postgres migration fixes"
-msgstr ""
+msgstr "Виправлення перенесення даних до Postgres"
 
 #: ../src/uisupport/aboutdata.cpp:233
 msgctxt "AboutData|"
 msgid "Context menu fixes"
-msgstr ""
+msgstr "Виправлення контекстного меню"
 
 #: ../src/uisupport/aboutdata.cpp:236
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
-msgstr ""
+msgstr "Багато виправлень та покращень, визначення причин вад"
 
 #: ../src/uisupport/aboutdata.cpp:237
 msgctxt "AboutData|"
 msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
+msgstr "Початкова версія логотипу «Всевидяче око»"
 
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
 msgid "Project founder, various improvements"
-msgstr ""
+msgstr "Засновник проекту, різноманітні покращення"
 
 #: ../src/uisupport/aboutdata.cpp:240
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Переклад сербською"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Переклад словенською"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
-msgstr ""
+msgstr "Невтомний тестувальник, тестування та підтримка у {Ku|U}buntu, літри смачного фінського алкоголю"
 
 #: ../src/uisupport/aboutdata.cpp:243
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
-msgstr ""
+msgstr "Допомога у портуванні на Qt5, налаштування Travis CI"
 
 #: ../src/uisupport/aboutdata.cpp:244 ../src/uisupport/aboutdata.cpp:254
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Переклад німецькою"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
-msgstr ""
+msgstr "Покращення у об’єднанні у буфері"
 
 #: ../src/uisupport/aboutdata.cpp:248
 msgctxt "AboutData|"
 msgid "OSX improvements"
-msgstr ""
+msgstr "Покращення у OSX"
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Переклад литовською"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
 msgid "Documentation fixes"
-msgstr ""
+msgstr "Виправлення у документації"
 
 #: ../src/uisupport/aboutdata.cpp:252
 msgctxt "AboutData|"
 msgid "Ideas, hacking, initial motivation"
-msgstr ""
+msgstr "Ідеї, участь у розробці, початкова мотивація"
 
 #: ../src/uisupport/aboutdata.cpp:255
 msgctxt "AboutData|"
 msgid "Core and other fixes, QuasselDroid"
-msgstr ""
+msgstr "Виправлення у ядрі та інших компонентах, QuasselDroid"
 
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Переклад німецькою, виправлення"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu live packages"
-msgstr ""
+msgstr "Багато виправлень та покращень, портативні пакунки для Ubutnu"
 
 #: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
 msgid "Tons of Oxygen icons including the Quassel logo"
-msgstr ""
+msgstr "Безліч піктограм Oxygen, зокрема логотип Quassel"
 
 #: ../src/uisupport/aboutdata.cpp:264
 msgctxt "AboutData|"
 msgid "MinGW support, SNORE backend, Windows packaging"
-msgstr ""
+msgstr "Підтримка MinGW, модуль SNORE, пакування для Windows"
 
 #: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Initial design and main window layout"
-msgstr ""
+msgstr "Початковий дизайн та компонування головного вікна"
 
 #: ../src/uisupport/aboutdata.cpp:266
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter"
-msgstr ""
+msgstr "Тестування та пошук вад"
 
 #: ../src/uisupport/aboutdata.cpp:267
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Переклад данською"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
 msgid "Linewrap for input line"
-msgstr ""
+msgstr "Перенесення рядків у рядку введення повідомлення"
 
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "/print command"
-msgstr ""
+msgstr "Команда /print"
 
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Build system fixes"
-msgstr ""
+msgstr "Виправлення у системі збирання"
 
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
 msgid "Emacs keybindings"
-msgstr ""
+msgstr "Клавіатурні скорочення Emacs"
 
 #: ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
 msgid "Highlight configuration improvements"
-msgstr ""
+msgstr "Покращення у налаштуваннях підсвічування"
 
 #: ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
 msgid "Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
+msgstr "Пакувальник для Kubuntu, пошук вад у системі пакування і збирання"
 
 #: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Audio backend improvements"
-msgstr ""
+msgstr "Покращення у модулі роботи зі звуком"
 
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Переклад голландською"
 
 #: ../src/uisupport/aboutdata.cpp:282 ../src/uisupport/aboutdata.cpp:283
 #: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Переклад грецькою"
 
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Переклад корейською"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Переклад норвезькою, документація"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
 msgid "Former Windows builder"
-msgstr ""
+msgstr "Колишній збиральник пакунків для Windows"
 
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
-msgstr ""
+msgstr "Виправлення, пакування для Debian"
 
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Виправлення і відгуки"
 
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Переклад чеською"
 
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Покращення у засобі виявлення мережі"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Переклад українською"
 
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Переклад португальською"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -564,7 +564,7 @@ msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
-msgstr ""
+msgstr "…та усім іншим, хто шукав вади та повідомляв про них, надавав відгуки, допомагав іншим та був частиною спільноти!"
 
 #: ../src/qtui/aboutdlg.cpp:100
 msgctxt "AboutDlg|"
@@ -581,7 +581,7 @@ msgid ""
 "more</i><br></dd><dt><a href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring development of "
 "Quassel Mobile with N810s</i></dd>"
-msgstr ""
+msgstr "Особливо вдячні:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>John \"nox\" Hand</b></dt><dd><i>за першу піктограму Quassel — всевидюче око</i></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">Команді Oxygen</a></b></dt><dd><i>за створення всіх художніх елементів, які ви бачите у інтерфейсі Quassel</i></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Software, раніше відомій як Trolltech</a></b></dt><dd><i>за створення Qt і Qtopia, а також за спонсорування розробки QuasselTopia наданням Greenphones та іншою підтримкою</i></dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>за спонсорування розробки Quassel Mobile наданням декількох N810</i></dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
@@ -1564,7 +1564,7 @@ msgstr "Щоб скористатися цією можливістю, вам с
 #: ../src/common/qt5cliparser.cpp:30
 msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "Quassel IRC — це сучасний, розподілений клієнт IRC"
 
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
@@ -1796,7 +1796,7 @@ msgstr "Перейти до балачки"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "Долучення/Полишення/Виходи"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2530,12 +2530,12 @@ msgstr "Визначення стану у мережі"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Покладатися на засіб керування налаштуваннями мережі Qt для визначення, чи встановлено з’єднання"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматично"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2581,7 +2581,7 @@ msgstr "Повторювати спроби кожні"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Інтервал між послідовними спробами встановити з’єднання"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -4573,7 +4573,7 @@ msgstr "&Від’єднатися від ядра"
 #: ../src/qtui/mainwin.cpp:364
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "Змінити &пароль…"
 
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
@@ -4853,19 +4853,19 @@ msgstr "Зневадження"
 #: ../src/qtui/mainwin.cpp:747
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr ""
+msgstr "Підтримки можливості не передбачено"
 
 #: ../src/qtui/mainwin.cpp:748
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr ""
+msgstr "<b>У ядрі вашого Quassel не передбачено підтримки цієї можливості</b>"
 
 #: ../src/qtui/mainwin.cpp:750
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Щоб мати змогу віддалено змінювати ваш пароль, вам слід встановити ядро Quassel версії 0.12.0 або новіше."
 
 #: ../src/qtui/mainwin.cpp:863
 msgctxt "MainWin|"
@@ -5482,22 +5482,22 @@ msgstr "Сповіщення"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Зміна пароля"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Старий пароль:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Новий пароль:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Підтвердження пароля:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5505,16 +5505,16 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Буде змінено пароль для користувача <b>%1</b> на ядрі Quassel, запущеному на <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Пароль не змінено"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
-msgid "<b>Password change failed<b>"
+msgid "<b>Password change failed</b>"
 msgstr ""
 
 #: ../src/qtui/passwordchangedlg.cpp:69
@@ -5522,7 +5522,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Під час спроби змінити ваш пароль ядро повідомило про помилку. Переконайтеся, що вами правильно введено старий пароль!"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -5869,17 +5869,17 @@ msgstr "Версія SSL:"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Користуйтеся лише TLSv1, якщо не впевнені щодо варіанта вибору!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (слабкий захист)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (слабкий захист)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
