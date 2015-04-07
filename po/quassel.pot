@@ -158,7 +158,7 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
-msgid "Early beta tester and bughunter (on Vistaâ¢!)"
+msgid "Early beta tester and bughunter (on Vista™!)"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:207
@@ -2709,6 +2709,7 @@ msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
 msgid_plural "%n Day(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/qtui/coreinfodlg.cpp:58
 #, qt-format
@@ -3286,7 +3287,6 @@ msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr ""
 
-#. Optional "unknown" in "Received unknown CTCP-FOO request by bar"
 #: ../src/core/eventstringifier.cpp:717
 msgctxt "EventStringifier|"
 msgid "unknown"
@@ -4490,6 +4490,7 @@ msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
@@ -5036,6 +5037,7 @@ msgctxt "MultiLineEdit|"
 msgid "Do you really want to paste %n line(s)?"
 msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/uisupport/multilineedit.cpp:714
 msgctxt "MultiLineEdit|"
@@ -5140,6 +5142,7 @@ msgctxt "NetworkModelController|"
 msgid "Do you want to delete the following buffer(s) permanently?"
 msgid_plural "Do you want to delete the following buffer(s) permanently?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/uisupport/networkmodelcontroller.cpp:190
 #, qt-format
@@ -6339,6 +6342,7 @@ msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/qtui/systraynotificationbackend.cpp:155
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -6647,6 +6651,7 @@ msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
 msgid_plural "%n Owner(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/networkmodel.cpp:827
 #, qt-format
@@ -6654,6 +6659,7 @@ msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
 msgid_plural "%n Admin(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/networkmodel.cpp:829
 #, qt-format
@@ -6661,6 +6667,7 @@ msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
 msgid_plural "%n Operator(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/networkmodel.cpp:831
 #, qt-format
@@ -6668,6 +6675,7 @@ msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
 msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/networkmodel.cpp:833
 #, qt-format
@@ -6675,6 +6683,7 @@ msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
 msgid_plural "%n Voiced"
 msgstr[0] ""
+msgstr[1] ""
 
 #: ../src/client/networkmodel.cpp:835
 #, qt-format
@@ -6682,3 +6691,4 @@ msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
 msgid_plural "%n User(s)"
 msgstr[0] ""
+msgstr[1] ""
