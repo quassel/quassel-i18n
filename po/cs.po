@@ -1,6 +1,7 @@
 # 
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
+# Jaroslav Lichtblau <dragonlord@seznam.cz>, 2015
 # Jaroslav Lichtblau <dragonlord@seznam.cz>, 2014
 # scarabeus <scarabeus@gentoo.org>, 2009-2010
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012
@@ -9,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 12:13+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2015-04-18 17:44+0000\n"
+"Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,22 +23,22 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Moderní, distribuovaný IRC klient"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Zakladatel projektu, vedoucí vývojář"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project Motivator, Lead Developer"
-msgstr ""
+msgstr "Motivátor projektu, vedoucí vývojář"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
