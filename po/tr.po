@@ -1,6 +1,7 @@
 # 
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
+# Demiray Muhterem <mdemiray@msn.com>, 2015
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010
 # zeugma <sunder67@hotmail.com>, 2013
 # Volkan Gezer <volkangezer@gmail.com>, 2013
@@ -10,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-27 11:32+0000\n"
-"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"PO-Revision-Date: 2015-04-19 18:21+0000\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,227 +29,227 @@ msgstr "Quassel IRC"
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Modern bir IRC istemci dağıtımı"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Proje Sahibi, Çekirdek Geliştirici"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project Motivator, Lead Developer"
-msgstr ""
+msgstr "Proje İnsan Kaynakları, Çekirdek Geliştirici"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Eski Çekirdek Geliştirici"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements"
-msgstr ""
+msgstr "Geliştirme, çevirme ve hata düzeltme sorumluları"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Many features, fixes and improvements"
-msgstr ""
+msgstr "Birçok özellik, düzeltme ve iyileştirmeler"
 
 #: ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr ""
+msgstr "Birçok düzeltme ve iyileştirmeler, hata ve yama sınıflandırma, toplum desteği"
 
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Chatview improvements"
-msgstr ""
+msgstr "Sohbet görünüm gelişmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
-msgstr ""
+msgstr "Erken beta testçisi ve hata avcısı, Danca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:261
 #: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "İspanyolca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr ""
+msgstr "Sistem simge düzeltmesi"
 
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Language improvements"
-msgstr ""
+msgstr "Dil iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Belgelendirme iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Romence çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Çeviriyi bitir"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
 msgid "Message indicator support"
-msgstr ""
+msgstr "Mesaj göstergesi desteği"
 
 #: ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
 msgid "Windows build system fixes"
-msgstr ""
+msgstr "Sistem pencerelerini düzenle"
 
 #: ../src/uisupport/aboutdata.cpp:194
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Çöküş düzenlemeleri"
 
 #: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:215
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Fransızca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
 msgid "Usability review"
-msgstr ""
+msgstr "Kullanışlılığı incele"
 
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "SASL desteği"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Various improvements"
-msgstr ""
+msgstr "Çeşitli iyileştirmeler"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:200
 #: ../src/uisupport/aboutdata.cpp:204
 msgctxt "AboutData|"
 msgid "Various fixes and improvements"
-msgstr ""
+msgstr "Çeşitli düzeltmeler ve iyileştirmeler"
 
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Galiçyaca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Esperanto çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:203
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Japonca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:205 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
-msgstr ""
+msgstr "Gentoo sorumlusu"
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
+msgstr "Erken beta testçisi ve hata avcısı (Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
 msgid "Translation system fixes"
-msgstr ""
+msgstr "Sistem çeviri düzenlemeleri"
 
 #: ../src/uisupport/aboutdata.cpp:208
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
-msgstr ""
+msgstr "OSX Hatırlatma Merkezi desteği"
 
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Düzenlemeler"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
 msgid "Mac fixes"
-msgstr ""
+msgstr "Mac düzenlemeleri"
 
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "D-Bus hatırlatmaları"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Polonya çevirileri"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
 msgid "Build system improvements"
-msgstr ""
+msgstr "Sistem inşa iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:214
 msgctxt "AboutData|"
 msgid "Formatting support and other input line improvements, many other fixes"
-msgstr ""
+msgstr "Biçimlendirme desteği ve diğer giriş hattı geliştirmeleri, diğer birçok düzeltmeler"
 
 #: ../src/uisupport/aboutdata.cpp:216
 msgctxt "AboutData|"
 msgid "BluesTheme stylesheet"
-msgstr ""
+msgstr "BluesTema stili"
 
 #: ../src/uisupport/aboutdata.cpp:217 ../src/uisupport/aboutdata.cpp:251
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Rusça çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:253
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "İtalyanca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
-msgstr ""
+msgstr "Sertifika taşıma iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:220
 msgctxt "AboutData|"
 msgid "Sanitize topic handling"
-msgstr ""
+msgstr "Sanitize konu işleme"
 
 #: ../src/uisupport/aboutdata.cpp:221
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Norveçce çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Macarca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
 msgid "IRC parser improvements"
-msgstr ""
+msgstr "IRC ayrıştırıcı gelişmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:224 ../src/uisupport/aboutdata.cpp:296
 #: ../src/uisupport/aboutdata.cpp:300
@@ -259,7 +260,7 @@ msgstr "Türkçe çeviri"
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "İlk Qt5 desteği"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -269,55 +270,55 @@ msgstr "{Ku|U}buntu paketleyici, motive edici ve dağıtıcı"
 #: ../src/uisupport/aboutdata.cpp:227
 msgctxt "AboutData|"
 msgid "Various features"
-msgstr ""
+msgstr "Çeşitli özellikler"
 
 #: ../src/uisupport/aboutdata.cpp:228 ../src/uisupport/aboutdata.cpp:229
 #: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Various fixes"
-msgstr ""
+msgstr "Çeşitli düzeltmeler"
 
 #: ../src/uisupport/aboutdata.cpp:230 ../src/uisupport/aboutdata.cpp:231
 #: ../src/uisupport/aboutdata.cpp:270 ../src/uisupport/aboutdata.cpp:273
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Hata düzeltmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:232
 msgctxt "AboutData|"
 msgid "Postgres migration fixes"
-msgstr ""
+msgstr "Postgres göç düzeltmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:233
 msgctxt "AboutData|"
 msgid "Context menu fixes"
-msgstr ""
+msgstr "Bağlam menüsü düzeltmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:236
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
-msgstr ""
+msgstr "Birçok düzeltmeler ve iyileştirmeler, hata sınıflandırma"
 
 #: ../src/uisupport/aboutdata.cpp:237
 msgctxt "AboutData|"
 msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
+msgstr "Orjinal \"All-Seeing Eye\" logosu"
 
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
 msgid "Project founder, various improvements"
-msgstr ""
+msgstr "Proje sahibi, çeşitli iyileştirmeler"
 
 #: ../src/uisupport/aboutdata.cpp:240
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Sırpça çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Slovence çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
@@ -335,7 +336,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Almanca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
@@ -345,17 +346,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:248
 msgctxt "AboutData|"
 msgid "OSX improvements"
-msgstr ""
+msgstr "OSX iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Litvanca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
 msgid "Documentation fixes"
-msgstr ""
+msgstr "Belgelendirme düzeltmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:252
 msgctxt "AboutData|"
@@ -370,7 +371,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Almanca çeviri düzeltmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
@@ -400,7 +401,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:267
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Danca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
@@ -440,23 +441,23 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Hollandaca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:282 ../src/uisupport/aboutdata.cpp:283
 #: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Yunanca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Korece çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Norveçce çeviri belgelendirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
@@ -471,12 +472,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Düzeltme ve geribildirim"
 
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Çek dili çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
@@ -486,12 +487,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Ukraynaca çeviri"
 
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Portekizce çeviri"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -1799,7 +1800,7 @@ msgstr "Sohbete Git"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "Girişler/Çıkışlar/Ayrılmalar"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2538,7 +2539,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Otomatik"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -5873,12 +5874,12 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (insecure)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (insecure)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
