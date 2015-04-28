@@ -8,14 +8,15 @@
 # m4yer <m4yer+quassel@minad.de>, 2012
 # m4yer <m4yer+quassel@minad.de>, 2012
 # Martin Mayer <m4yer@minad.de>, Michael Groh <brot@minad.de>, 2009-2010
+# Sebastian Meyer <transifex@netzvieh.de>, 2015
 # Tobias Frei <tobias@freiwuppertal.de>, 2012
 # Tobias Frei <tobias@freiwuppertal.de>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 12:13+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2015-04-27 16:05+0000\n"
+"Last-Translator: Sebastian Meyer <transifex@netzvieh.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +38,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Projektgründer, Hauptentwickler"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
@@ -47,7 +48,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Früherer Hauptentwickler"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
@@ -78,7 +79,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Spanische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
@@ -98,13 +99,13 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Rumänische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Finnische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
@@ -125,7 +126,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Französische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
@@ -135,7 +136,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "SASL Unterstützung"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
@@ -151,17 +152,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Galicische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Esperanto Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:203
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Japanische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:205 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
@@ -196,12 +197,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "D-Bus Benachrichtigungen"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Polnische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
@@ -222,12 +223,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Russische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:253
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Italienische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
@@ -242,12 +243,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:221
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Norwegische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Ungarische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
@@ -258,7 +259,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Türkische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
@@ -311,17 +312,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
 msgid "Project founder, various improvements"
-msgstr ""
+msgstr "Projektgründer, verschiedene Verbesserungen"
 
 #: ../src/uisupport/aboutdata.cpp:240
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Serbische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Slovenische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
@@ -339,7 +340,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Deutsche Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
@@ -404,17 +405,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:267
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Dänische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
 msgid "Linewrap for input line"
-msgstr ""
+msgstr "Zeilenumbruch für die Eingabezeile"
 
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "/print command"
-msgstr ""
+msgstr "/print Befehl"
 
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
@@ -444,23 +445,23 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Niederländische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:282 ../src/uisupport/aboutdata.cpp:283
 #: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Griechische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Koreanische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Norwegische Übersetzung, Dokumentation"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
@@ -480,7 +481,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Tschechische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
@@ -490,12 +491,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Ukrainische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Portugiesische Übersetzung"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -5485,22 +5486,22 @@ msgstr "Benachrichtigungen"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Passwort ändern"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Altes Passwort:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Neues Passwort:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Passwort bestätigen:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5518,7 +5519,7 @@ msgstr ""
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Passwortänderung fehlgeschlagen</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
@@ -5877,12 +5878,12 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (unsicher)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (unsicher)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
