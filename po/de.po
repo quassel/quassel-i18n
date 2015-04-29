@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-04-27 16:05+0000\n"
+"PO-Revision-Date: 2015-04-28 08:47+0000\n"
 "Last-Translator: Sebastian Meyer <transifex@netzvieh.de>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
@@ -68,7 +68,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Chatview improvements"
-msgstr ""
+msgstr "Chatview Verbesserungen"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
@@ -182,12 +182,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:208
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
-msgstr ""
+msgstr "OSX Benachrichtigungscenter Unterstützung"
 
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Verbesserungen"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
@@ -233,7 +233,7 @@ msgstr "Italienische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
-msgstr ""
+msgstr "Verbesserungen im Umgang mit Zertifikaten"
 
 #: ../src/uisupport/aboutdata.cpp:220
 msgctxt "AboutData|"
@@ -264,7 +264,7 @@ msgstr "Türkische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "Initiale Qt5 Unterstützung"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -350,12 +350,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:248
 msgctxt "AboutData|"
 msgid "OSX improvements"
-msgstr ""
+msgstr "OSX Verbesserungen"
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Litauische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
@@ -375,7 +375,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Deutsche Übersetzung, Fehlerbehebung"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
@@ -425,7 +425,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
 msgid "Emacs keybindings"
-msgstr ""
+msgstr "Emacs-Tastaturbefehle"
 
 #: ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
@@ -440,7 +440,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Audio backend improvements"
-msgstr ""
+msgstr "Verbesserung des Audio Backends"
 
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
@@ -486,7 +486,7 @@ msgstr "Tschechische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Verbesserung der Netzwerkerkennung"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
@@ -2538,12 +2538,12 @@ msgstr "Erkennen der Netzwerkverbindung"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Erkennung des Online Status dem Qt Netzwerk Konfigurationsmanager überlassen"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisch"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2589,7 +2589,7 @@ msgstr "Wiederverbinden nach"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Intervall zwischen aufeinanderfolgenden Verbindungsversuchen"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -4579,7 +4579,7 @@ msgstr "Vom Core &trennen"
 #: ../src/qtui/mainwin.cpp:364
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "&Passwort ändern..."
 
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
@@ -4859,19 +4859,19 @@ msgstr "Debug"
 #: ../src/qtui/mainwin.cpp:747
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr ""
+msgstr "Funktion nicht unterstützt"
 
 #: ../src/qtui/mainwin.cpp:748
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr ""
+msgstr "<b>Ihr Quassel Core unterstützt diese Funktion nicht</b>"
 
 #: ../src/qtui/mainwin.cpp:750
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Sie benötigen Quassel Core v0.12.0 oder neuer um Ihr Passwort vom Client aus ändern zu können."
 
 #: ../src/qtui/mainwin.cpp:863
 msgctxt "MainWin|"
@@ -5509,12 +5509,12 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Ändert das Passwort Ihres Benutzers <b>%1</b> für den Quassel Core der auf <b>%2</b> läuft."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Passwort nicht geändert"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
@@ -5526,7 +5526,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Der Core meldete einen Fehler beim Versuch Ihr Passwort zu ändern. Stellen Sie sicher, Ihr altes Passwort richtig eingegeben zu haben!"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -5873,7 +5873,7 @@ msgstr "SSL-Version:"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Benutzen Sie nur TLSv1, es sei denn Sie sind absolut sicher, dass eine Änderung notwendig ist!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"

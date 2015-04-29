@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-04-18 17:44+0000\n"
+"PO-Revision-Date: 2015-04-28 21:36+0000\n"
 "Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Opravy"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
@@ -192,7 +192,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "D-Bus upozornění"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
@@ -1567,7 +1567,7 @@ msgstr "Pro tuto funkci potřebujete alespoň jádro quassel verze 0.6"
 #: ../src/common/qt5cliparser.cpp:30
 msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "Quassel IRC je moderní, distribuovaný IRC klient."
 
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
@@ -2538,7 +2538,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatický"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2584,7 +2584,7 @@ msgstr "Zkusit vše"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Interval mezi následnými pokusy o připojení"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -4576,7 +4576,7 @@ msgstr "O&dpojit od jádra"
 #: ../src/qtui/mainwin.cpp:364
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "Změnit &heslo..."
 
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
@@ -4856,12 +4856,12 @@ msgstr "Debug"
 #: ../src/qtui/mainwin.cpp:747
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr ""
+msgstr "Funkce není podporována"
 
 #: ../src/qtui/mainwin.cpp:748
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr ""
+msgstr "<b>Tato funkce není podporována použitým jádrem programu Quassel</b>"
 
 #: ../src/qtui/mainwin.cpp:750
 msgctxt "MainWin|"
@@ -5485,22 +5485,22 @@ msgstr "Oznámení"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Změnit heslo"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Staré heslo:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Nové heslo:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Potvrdit heslo:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5513,19 +5513,19 @@ msgstr ""
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Heslo nezměněno"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Změna hesla selhala</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Jádro nahlásilo chybu při pokusu o změnu vašeho hesla. Ujistěte se, že jste zadali staré heslo správně!"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -5872,17 +5872,17 @@ msgstr "Verze SSL:"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Pokud si nejste naprosto jisti co děláte, používejte pouze TLSv1!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (nespolehlivé)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (nespolehlivé)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
