@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-04-28 21:36+0000\n"
+"PO-Revision-Date: 2015-04-29 18:33+0000\n"
 "Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -624,7 +624,7 @@ msgstr "<b>Text na jaký bude převedena zkratka</b><br /><b>Speciální hodnoty
 #: ../src/qtui/settingspages/aliasesmodel.cpp:185
 msgctxt "AliasesModel|"
 msgid "Alias"
-msgstr "Alternativa"
+msgstr "Alias"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:186
 msgctxt "AliasesModel|"
@@ -654,7 +654,7 @@ msgstr "IRC"
 #: ../src/qtui/settingspages/aliasessettingspage.cpp:28
 msgctxt "AliasesSettingsPage|"
 msgid "Aliases"
-msgstr "Alternativy"
+msgstr "Aliasy"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:14
 msgctxt "AppearanceSettingsPage|"
@@ -770,7 +770,7 @@ msgstr "Prosím vyberte soubor stylu"
 #: ../src/qtui/awaylogview.cpp:33
 msgctxt "AwayLogView|"
 msgid "Away Log"
-msgstr "Logovaní při nastavení pryč"
+msgstr "Logování v nepřítomnosti"
 
 #: ../src/qtui/awaylogview.cpp:46
 msgctxt "AwayLogView|"
@@ -844,14 +844,14 @@ msgid ""
 "This requester fetches unread messages for each chat window individually. The amount of lines can be limited per chat.\n"
 "\n"
 "You can also choose to fetch additional older chatlines to provide a better context."
-msgstr "Tento požadavek stáhne nepřečtené zprávy individuálně pro každou záložku. Množství řádek lze limitovat pro celý rozhovor.\n\nTaké můžete vybrat množství dodatečně stahovaných zastaralých zpráv pro lepší srozumitelnost."
+msgstr "Tento požadavek stáhne nepřečtené zprávy individuálně pro každou záložku. Množství řádek lze limitovat pro celý rozhovor.\n\nTaké můžete vybrat množství dodatečně stahovaných starších zpráv pro lepší srozumitelnost."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:222
 #: ../src/qtui/settingspages/backlogsettingspage.ui:232
 #: ../src/qtui/settingspages/backlogsettingspage.ui:354
 msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched per buffer."
-msgstr "Maximální množství zpráv, které se stáhnou za záložku."
+msgstr "Maximální množství zpráv, které se stáhnou pro každou záložku."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:225
 #: ../src/qtui/settingspages/backlogsettingspage.ui:347
@@ -924,7 +924,7 @@ msgctxt "BufferView|"
 msgid ""
 "Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n"
 " This cannot be reversed!"
-msgstr "Opravdu chcete trvale sloučit záložku \"%1\" do záložky \"%2\"?\n￼Tuto operaci nelze zvrátit!"
+msgstr "Opravdu chcete trvale sloučit záložku \"%1\" do záložky \"%2\"?\n￼Tuto operaci nelze vzít zpět!"
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
@@ -992,7 +992,7 @@ msgstr "Tato možnost není dostupná když jsou viditelné všechny sítě\nV d
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:114
 msgctxt "BufferViewSettingsPage|"
 msgid "Show status window"
-msgstr "Zobrazit okno statusu"
+msgstr "Zobrazit stavové okno"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:121
 msgctxt "BufferViewSettingsPage|"
@@ -1143,7 +1143,7 @@ msgstr "<p> %1 </p>"
 #: ../src/qtui/ui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
 msgid "Channel List"
-msgstr "Seznam Kanálů"
+msgstr "Seznam kanálů"
 
 #: ../src/qtui/ui/channellistdlg.ui:38
 msgctxt "ChannelListDlg|"
@@ -1170,7 +1170,7 @@ msgstr "Filtr:"
 #: ../src/qtui/ui/channellistdlg.ui:98
 msgctxt "ChannelListDlg|"
 msgid "Errors Occurred:"
-msgstr "Nastalé chyby:"
+msgstr "Zaznamenané chyby:"
 
 #: ../src/qtui/ui/channellistdlg.ui:132
 msgctxt "ChannelListDlg|"
