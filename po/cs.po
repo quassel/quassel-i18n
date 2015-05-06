@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-04-29 18:33+0000\n"
+"PO-Revision-Date: 2015-05-05 20:42+0000\n"
 "Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "Motivátor projektu, vedoucí vývojář"
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Bývalý hlavní vývojář"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
@@ -1799,7 +1799,7 @@ msgstr "Přejít na rozhovor"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "Příchody/odchody/ukončení"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -4868,7 +4868,7 @@ msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Pro vzdálenou změnu hesla potřebujete Quassel jádro verze v0.12.0 nebo novější."
 
 #: ../src/qtui/mainwin.cpp:863
 msgctxt "MainWin|"
@@ -5508,7 +5508,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Toto změní heslo pro vaše uživatelské jméno <b>%1</b> pro jádro Quassel běžící na <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
