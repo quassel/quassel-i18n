@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-05-05 20:42+0000\n"
+"PO-Revision-Date: 2015-06-27 14:32+0000\n"
 "Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -131,7 +131,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "SASL podpora"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
@@ -282,7 +282,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Opravy chyb"
 
 #: ../src/uisupport/aboutdata.cpp:232
 msgctxt "AboutData|"
@@ -302,7 +302,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:237
 msgctxt "AboutData|"
 msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
+msgstr "Originální logo \"Vševidoucí oko\""
 
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
@@ -476,7 +476,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Český překlad"
 
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
@@ -567,7 +567,7 @@ msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
-msgstr ""
+msgstr "... a všichni ostatní kdo hledají a hlásí chyby, posílají zpětnou vazbu, pomáhají ostatním a jsou součástí komunity!"
 
 #: ../src/qtui/aboutdlg.cpp:100
 msgctxt "AboutDlg|"
@@ -584,7 +584,7 @@ msgid ""
 "more</i><br></dd><dt><a href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring development of "
 "Quassel Mobile with N810s</i></dd>"
-msgstr ""
+msgstr "Zvláště bychom rádi poděkovali:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>Johnu \"nox\" Handovi</b></dt><dd><i>za originální ikonu aplikace Quassel - Vševidoucí oko</i><br></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">Týmu Oxygen</a></b></dt><dd><i>za vzhled prvků použitých v celé aplikaci Quassel</i><br></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Software dříve znám jako Trolltech</a></b></dt><dd><i>za vytvoření Qt a Qtopia, a za podporu vývoje QuasselTopia společně s Greenphones a dalším</i><br></dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>za podporu vývoje Quassel Mobile s N810s</i></dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
@@ -2533,7 +2533,7 @@ msgstr "Detekce stavu sítě"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Spoléhat na Qt správce síťové konfigurace pro zjištění jestli jsme online"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
