@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-06-16 10:12+0000\n"
+"PO-Revision-Date: 2015-08-15 19:33+0000\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/ald/quassel/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Quassel IRC"
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Moderen, porazdeljen odjemalec za IRC"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
@@ -1564,7 +1564,7 @@ msgstr "Za uporabo te zmožnosti je zahtevano jedro za Quassel različice 0.6 al
 #: ../src/common/qt5cliparser.cpp:30
 msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "Quassel IRC je moderen, porazdeljen odjemalec za IRC"
 
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
@@ -1796,7 +1796,7 @@ msgstr "Pojdi na klepet"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "Pridružitve/zapustitve/končanja"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2530,7 +2530,7 @@ msgstr "Zaznavanje stanja omrežja"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Za zaznavanje povezanosti se zanesi na upravljalnika nastavitev omrežja za Qt"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
@@ -4867,7 +4867,7 @@ msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Da bi lahko oddaljeno spremenili vaše geslo, morate imeti jedro Quassel različice 0.12.0 ali novejše"
 
 #: ../src/qtui/mainwin.cpp:863
 msgctxt "MainWin|"
@@ -5509,7 +5509,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "To spremeni geslo za uporabniško ime <b>%1</b> na jedru Quassel, ki teče na <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
@@ -5873,7 +5873,7 @@ msgstr "Različica SSL:"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Uporabite le TLSv1, razen če veste kaj delate!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
