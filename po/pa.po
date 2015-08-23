@@ -1,13 +1,13 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
-# A S Alam <apreet.alam@gmail.com>, 2014
+# A S Alam <apreet.alam@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 12:13+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2015-08-23 00:40+0000\n"
+"Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/ald/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,17 +19,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "ਕੁਅੱਸੇਲ IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "ਮਾਡਰਨ, ਸਾਂਝਾ ਕੀਤਾ IRC ਕਲਾਂਇਟ"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "ਪਰੋਜੈਕਟ ਮੋਢੀ, ਮੁੱਖ ਡਿਵੈਲਪਰ"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
@@ -1069,7 +1069,7 @@ msgstr "ਗੱਲਬਾਤ ਸੂਚੀ ਹਟਾਉਣੀ ਹੈ?"
 #, qt-format
 msgctxt "BufferViewSettingsPage|"
 msgid "Do you really want to delete the chat list \"%1\"?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਗੱਲਬਾਤ ਸੂਚੀ \"%1\" ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: ../src/qtui/ui/bufferviewwidget.ui:26
 msgctxt "BufferViewWidget|"
@@ -1241,22 +1241,22 @@ msgstr "ਆਪਣੇ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:164
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
-msgstr ""
+msgstr "ਮੁੜ-ਕਨੈਕਟ ਕਰਨ ਉੱਤੇ ਬੈਕਲਾਗ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:167
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
-msgstr ""
+msgstr "ਬੈਕਲਾਗ ਤੋਂ ਸੁਨੇਹੇ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:192
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
-msgstr ""
+msgstr "ਮੁੜ-ਕਨੈਕਟ ਕਰਨ ਉੱਤੇ ਬੈਕਲਾਗ ਤੋਂ ਪੜ੍ਹੇ ਜਾ ਚੁੱਕੇ ਸੁਨੇਹੇ ਸ਼ਾਮਿਲ ਕਰੋ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "ਪੜ੍ਹੇ ਸੁਨੇਹਿਆਂ ਸਮੇਤ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
@@ -1276,7 +1276,7 @@ msgstr "ਚੋਣ ਕੀਤੀ"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:61
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
-msgstr ""
+msgstr "ਛੱਡੋ"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:276
 msgctxt "ChatMonitorSettingsPage|"
@@ -1349,7 +1349,7 @@ msgstr "ਸੁਨੇਹਾ ਲੱਭੋ"
 #: ../src/qtui/ui/chatviewsearchbar.ui:82
 msgctxt "ChatViewSearchBar|"
 msgid "ignore joins, parts, etc."
-msgstr ""
+msgstr "ਭਾਗ ਲੈਣਾ, ਛੱਡਣਾ ਆਦਿ ਅਣਡਿੱਠਾ ਕਰੋ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:14
 msgctxt "ChatViewSettingsPage|"
@@ -1382,12 +1382,12 @@ msgstr "[hh:mm:ss]"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:69
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
-msgstr ""
+msgstr "ਪਸੰਦੀਦਾ ਗੱਲਬਾਤ ਵਿੰਡੋ ਫ਼ੋਟ:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:102
 msgctxt "ChatViewSettingsPage|"
 msgid "Show colored text in the chat window"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਵਿੰਡੋ ਵਿੱਚ ਰੰਗਦਾਰ ਟੈਕਸਟ ਵੇਖਾਓ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:105
 msgctxt "ChatViewSettingsPage|"
@@ -1415,24 +1415,24 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:143
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
-msgstr ""
+msgstr "ਜਦੋਂ ਗੱਲਬਾਤ ਬਦਲਣੀ ਹੋਵੇ ਤਾਂ ਮਾਰਕਰ ਲਾਈਨ ਆਟੋਮੈਟਿਕ ਸੈਟ ਕਰੋ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:159
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "ਜਦੋਂ ਕੁਅੱਸੇਲ ਫੋਕਸ ਛੱਡੇ ਤਾਂ ਮੌਜੂਦਾ ਗੱਲਬਾਤ ਵਿੰਡੋ ਦੇ ਹੇਠਾਂ ਮਾਰਕਰ ਲਾਈਨ ਲਗਾਉ।"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:162
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "ਜਦੋਂ ਕੁਅੱਸੇਲ ਫੋਕਸ ਛੱਡੇ ਤਾਂ ਮਾਰਕਰ ਲਾਈਨ ਆਟੋਮੈਟਿਕ ਲਗਾਉ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "ਵੈਬ ਖੋਜ Url:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -1538,7 +1538,7 @@ msgstr "ਬੈਕਗਰਾਊਂਡ:"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:476
 msgctxt "ChatViewSettingsPage|"
 msgid "Use Sender Coloring"
-msgstr ""
+msgstr "ਭੇਜਣ ਵਾਲੇ ਦੇ ਰੰਗ ਵਰਤੋਂ"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:772
 msgctxt "ChatViewSettingsPage|"
@@ -1563,7 +1563,7 @@ msgstr ""
 #: ../src/common/qt5cliparser.cpp:30
 msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "ਕੁਅੱਸੇਲ IRC ਮਾਡਰਨ, ਸਾਂਝਾ ਕੀਤਾ IRC ਕਲਾਂਇਟ ਹੈ।"
 
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
@@ -1574,7 +1574,7 @@ msgstr "ਪਛਾਣ ਕਲਾਇਟ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਮ�
 #: ../src/client/clientauthhandler.cpp:472
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
-msgstr ""
+msgstr "ਬਿਨ-ਇਕ੍ਰਿਪਸ਼ਨ ਕਨੈਕਸ਼ਨ ਰੱਦ ਕੀਤਾ"
 
 #: ../src/client/clientauthhandler.cpp:87
 #: ../src/client/clientauthhandler.cpp:103
@@ -1780,7 +1780,7 @@ msgstr "ਜੁਆਇਨ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:43
 msgctxt "ContextMenuActionProvider|"
 msgid "Part"
-msgstr "ਭਾਗ"
+msgstr "ਛੱਡੋ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:44
 msgctxt "ContextMenuActionProvider|"
@@ -1795,7 +1795,7 @@ msgstr "ਗੱਲ ਉੱਤੇ ਜਾਓ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "ਭਾਗ ਲੈਣਾ/ਛੱਡਣਾ/ਬੰਦ ਕਰਨਾ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2534,7 +2534,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "ਆਟੋਮੈਟਿਕ"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -3110,13 +3110,13 @@ msgstr ""
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
-msgstr ""
+msgstr "[Whois] %1 %2 (%3) ਹੈ"
 
 #: ../src/core/eventstringifier.cpp:437
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
-msgstr ""
+msgstr "[Whois] %1 %2 (%3) ਰਾਹੀਂ ਆਨਲਾਈਨ ਹੈ"
 
 #: ../src/core/eventstringifier.cpp:439
 #, qt-format
@@ -3128,7 +3128,7 @@ msgstr ""
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
-msgstr ""
+msgstr "[Whowas] %1 %2@%3 (%4) ਸੀ"
 
 #: ../src/core/eventstringifier.cpp:458
 #, qt-format
@@ -3519,7 +3519,7 @@ msgstr ""
 #: ../src/common/identity.cpp:183
 msgctxt "Identity|"
 msgid "Gone fishing."
-msgstr ""
+msgstr "ਪੂਰਾ ਕਰ ਰਿਹਾ/ਰਹੀ ਹਾਂ"
 
 #: ../src/common/identity.cpp:187
 msgctxt "Identity|"
@@ -3630,14 +3630,14 @@ msgstr ""
 #: ../src/qtui/settingspages/identityeditwidget.ui:261
 msgctxt "IdentityEditWidget|"
 msgid "Away Nick:"
-msgstr ""
+msgstr "ਦੂਰ ਹੋਣ ਦੌਰਾਨ ਨਾਂ:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:268
 #: ../src/qtui/settingspages/identityeditwidget.ui:297
 #: ../src/qtui/settingspages/identityeditwidget.ui:366
 msgctxt "IdentityEditWidget|"
 msgid "Away Reason:"
-msgstr ""
+msgstr "ਦੂਰ ਹੋਣ ਦਾ ਕਾਰਨ:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:280
 msgctxt "IdentityEditWidget|"
@@ -3695,7 +3695,7 @@ msgstr "ਸੁਨੇਹੇ"
 #: ../src/qtui/settingspages/identityeditwidget.ui:431
 msgctxt "IdentityEditWidget|"
 msgid "Part Reason:"
-msgstr "ਪਾਰਟ ਕਾਰਨ:"
+msgstr "ਛੱਡਣ ਕਾਰਨ:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:444
 msgctxt "IdentityEditWidget|"
@@ -3728,7 +3728,7 @@ msgstr "ਜਾਰੀ ਰੱਖੋ"
 #: ../src/qtui/settingspages/identityeditwidget.ui:584
 msgctxt "IdentityEditWidget|"
 msgid "Use SSL Key"
-msgstr ""
+msgstr "SSL ਕੁੰਜੀ ਵਰਤੋਂ"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:598
 msgctxt "IdentityEditWidget|"
@@ -3758,7 +3758,7 @@ msgstr ""
 #: ../src/qtui/settingspages/identityeditwidget.ui:656
 msgctxt "IdentityEditWidget|"
 msgid "Organisation:"
-msgstr ""
+msgstr "ਸੰਗਠਨ:"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
@@ -3766,7 +3766,7 @@ msgstr ""
 #: ../src/qtui/settingspages/identityeditwidget.cpp:422
 msgctxt "IdentityEditWidget|"
 msgid "No Certificate loaded"
-msgstr ""
+msgstr "ਕੋਈ ਸਰਟੀਫਿਕੇਟ ਲੋਡ ਨਹੀਂ ਕੀਤਾ"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:690
 msgctxt "IdentityEditWidget|"
@@ -3776,12 +3776,12 @@ msgstr "ਆਮ-ਨਾਂ:"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:327
 msgctxt "IdentityEditWidget|"
 msgid "Load a Key"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਲੋਡ ਕਰੋ"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਪੜ੍ਹਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
@@ -4308,13 +4308,13 @@ msgstr "ਵਿਸ਼ਾ"
 #: ../src/client/networkmodel.cpp:953
 msgctxt "IrcUserItem|"
 msgid " is away"
-msgstr ""
+msgstr "ਦੂਰ ਹੈ"
 
 #: ../src/client/networkmodel.cpp:968
 #, qt-format
 msgctxt "IrcUserItem|"
 msgid "idling since %1"
-msgstr ""
+msgstr "%1 ਤੋਂ ਸੰਪਰਕ ਵਿੱਚ ਨਹੀਂ"
 
 #: ../src/client/networkmodel.cpp:971
 #, qt-format
@@ -4422,7 +4422,7 @@ msgstr "ਇੰਟਰਫੇਸ"
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:29
 msgctxt "ItemViewSettingsPage|"
 msgid "Chat & Nick Lists"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ ਤੇ ਨਾਂ ਸੂਚੀਆਂ"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:34
 msgctxt "ItemViewSettingsPage|"
@@ -4452,7 +4452,7 @@ msgstr "ਹਾਈਲਾਈਟ"
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:41
 msgctxt "ItemViewSettingsPage|"
 msgid "Other activity"
-msgstr ""
+msgstr "ਹੋਰ ਸਰਗਰਮੀਆਂ"
 
 #: ../src/qtui/knotificationbackend.cpp:139
 #, qt-format
@@ -4800,12 +4800,12 @@ msgstr ""
 #: ../src/qtui/mainwin.cpp:505
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
-msgstr ""
+msgstr "ਅਗਲੀ ਗੱਲਬਾਤ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/qtui/mainwin.cpp:507
 msgctxt "MainWin|"
 msgid "Go to Previous Chat"
-msgstr ""
+msgstr "ਪਿਛਲੀ ਗੱਲਬਾਤ ਉੱਤੇ ਜਾਓ"
 
 #: ../src/qtui/mainwin.cpp:516
 msgctxt "MainWin|"
@@ -5477,22 +5477,22 @@ msgstr "ਨੋਟੀਫਿਕੇਸ਼ਨ"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਬਦਲੋ"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "ਪੁਰਾਣਾ ਪਾਸਵਰਡ:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "ਨਵਾਂ ਪਾਸਵਰਡ:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਤਸਦੀਕ:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5505,7 +5505,7 @@ msgstr ""
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਬਦਲਿਆ ਨਹੀਂ ਗਿਆ"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
@@ -5775,7 +5775,7 @@ msgstr "<b>%1 ਨਾਲ ਕਿਊਰੀ</b>"
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "idling since %1"
-msgstr ""
+msgstr "%1 ਤੋਂ ਸੰਪਰਕ ਵਿੱਚ ਨਹੀਂ"
 
 #: ../src/client/networkmodel.cpp:518
 #, qt-format
@@ -6368,7 +6368,7 @@ msgstr "IRC ਤੋਂ ਡਿਸ-ਕੁਨੈਕਟ"
 #: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
 msgid "Part"
-msgstr "ਭਾਗ"
+msgstr "ਵੱਖ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
