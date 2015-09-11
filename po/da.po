@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-09-09 04:37+0000\n"
+"PO-Revision-Date: 2015-09-10 04:45+0000\n"
 "Last-Translator: Jonas Thyssen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -76,33 +76,33 @@ msgstr "Tidlig beta-tester og fejljæger, dansk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Spansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr ""
+msgstr "Skuffeikon rettelse"
 
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Language improvements"
-msgstr ""
+msgstr "Sprogforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Dokumentationsforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Rumænsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Finsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
@@ -123,7 +123,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Fransk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
@@ -133,33 +133,33 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "SASL understøttelse"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Various improvements"
-msgstr ""
+msgstr "Forskelige forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:200
 #: ../src/uisupport/aboutdata.cpp:204
 msgctxt "AboutData|"
 msgid "Various fixes and improvements"
-msgstr ""
+msgstr "Forskellige rettelser og forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Galisisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Esperanto oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:203
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Japansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:205 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
@@ -169,7 +169,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
+msgstr "Tidlig beta-tester og fejljæger (på Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
@@ -184,12 +184,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
 msgid "Mac fixes"
-msgstr ""
+msgstr "Mac rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
@@ -199,7 +199,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Polsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
@@ -220,12 +220,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Russisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:253
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Italiensk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
@@ -240,12 +240,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:221
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Norsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Ungarsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
@@ -256,12 +256,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Tykisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "Indledende Qt5 understøttelse"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -314,12 +314,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:240
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Serbisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Slovensk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
@@ -337,7 +337,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Tysk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
@@ -352,7 +352,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Lettisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
@@ -372,7 +372,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Tysk oversættelse, rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
@@ -402,7 +402,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:267
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Dansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
@@ -442,23 +442,23 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Hollandsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:282 ../src/uisupport/aboutdata.cpp:283
 #: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Græsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Koreansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Norsk oversættelse, dokumentation"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
@@ -473,12 +473,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Rettelser og feedback"
 
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Tjekkisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
@@ -488,12 +488,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Ukrainsk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Portugisisk oversættelse"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -569,7 +569,7 @@ msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
-msgstr ""
+msgstr "... og enhver anden, der finder og rapporterer fejl, giver feedback, hjælper andre og deltager i fællesskabet!"
 
 #: ../src/qtui/aboutdlg.cpp:100
 msgctxt "AboutDlg|"
@@ -586,7 +586,7 @@ msgid ""
 "more</i><br></dd><dt><a href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring development of "
 "Quassel Mobile with N810s</i></dd>"
-msgstr ""
+msgstr "En special tak går til:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>John \"nox\" Hand</b></dt><dd><i>for det originale Quassel ikon - The All-Seeing Eye</i><br></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">Oxygen-holdet</a></b></dt><dd><i>for at skabe alt det grafik du ser i Quassel</i><br></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Software tidligere kendt som Trolltech</a></b></dt><dd><i>for at skabe Qt og Qtopia og for at sponsorere QuasselTopia med Greenphones med mere</i><br></dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>for at sponsorere udviklingen af Quassel Mobile med N810s</i></dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
@@ -794,17 +794,17 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "Number of messages to be requested from the core when using scrolling up in "
 "the buffer view."
-msgstr "Antal af beskeder der bliver hentet fra serveren, når der scrolles op i en buffer."
+msgstr "Antal af beskeder der bliver hentet fra værten, når der scrolles op i en buffer."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:25
 msgctxt "BacklogSettingsPage|"
 msgid "Dynamic backlog amount:"
-msgstr "Dynamisk puklen beløb:"
+msgstr "Dynamisk bagkatalog mængde:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:75
 msgctxt "BacklogSettingsPage|"
 msgid "Backlog request method:"
-msgstr "Puklen forespørgsels metode:"
+msgstr "Bagkatalog forespørgselsmetode:"
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:83
 msgctxt "BacklogSettingsPage|"
