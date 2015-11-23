@@ -4622,6 +4622,11 @@ msgctxt "LegacyPeer|"
 msgid "Unknown protocol message of type %1"
 msgstr ""
 
+#: ../src/qtui/mainpage.cpp:40
+msgctxt "MainPage|"
+msgid "Connect to Core..."
+msgstr ""
+
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
 msgid "General"
@@ -4944,79 +4949,79 @@ msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:887
+#: ../src/qtui/mainwin.cpp:889
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:899
+#: ../src/qtui/mainwin.cpp:901
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:905
+#: ../src/qtui/mainwin.cpp:907
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:914
+#: ../src/qtui/mainwin.cpp:916
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:929
+#: ../src/qtui/mainwin.cpp:931
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:941
+#: ../src/qtui/mainwin.cpp:943
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1035
+#: ../src/qtui/mainwin.cpp:1037
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1099
+#: ../src/qtui/mainwin.cpp:1101
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1199
+#: ../src/qtui/mainwin.cpp:1201
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1217 ../src/qtui/mainwin.cpp:1227
+#: ../src/qtui/mainwin.cpp:1220 ../src/qtui/mainwin.cpp:1230
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1217
+#: ../src/qtui/mainwin.cpp:1220
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1219 ../src/qtui/mainwin.cpp:1229
+#: ../src/qtui/mainwin.cpp:1222 ../src/qtui/mainwin.cpp:1232
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1227
+#: ../src/qtui/mainwin.cpp:1230
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1245 ../src/qtui/mainwin.cpp:1266
+#: ../src/qtui/mainwin.cpp:1248 ../src/qtui/mainwin.cpp:1269
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1246
+#: ../src/qtui/mainwin.cpp:1249
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -5024,33 +5029,33 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1249
+#: ../src/qtui/mainwin.cpp:1252
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1250
+#: ../src/qtui/mainwin.cpp:1253
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1267
+#: ../src/qtui/mainwin.cpp:1270
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1269
+#: ../src/qtui/mainwin.cpp:1272
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1270
+#: ../src/qtui/mainwin.cpp:1273
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1281
+#: ../src/qtui/mainwin.cpp:1284
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
@@ -6325,7 +6330,12 @@ msgctxt "SslInfoDlg|"
 msgid "<b>SHA1 digest:</b>"
 msgstr ""
 
-#: ../src/qtui/ui/sslinfodlg.ui:431
+#: ../src/qtui/ui/sslinfodlg.ui:418
+msgctxt "SslInfoDlg|"
+msgid "<b>SHA256 digest:</b>"
+msgstr ""
+
+#: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
 msgid "<b>Trusted:</b>"
 msgstr ""
