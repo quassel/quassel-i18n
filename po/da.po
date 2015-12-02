@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-09-10 04:45+0000\n"
+"PO-Revision-Date: 2015-12-01 14:31+0000\n"
 "Last-Translator: Jonas Thyssen\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -250,7 +250,7 @@ msgstr "Ungarsk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
 msgid "IRC parser improvements"
-msgstr ""
+msgstr "IRC-parser forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:224 ../src/uisupport/aboutdata.cpp:296
 #: ../src/uisupport/aboutdata.cpp:300
@@ -2112,7 +2112,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:173
 msgctxt "CoreAccountEditDlg|"
 msgid "Hostname:"
-msgstr ""
+msgstr "Værtsnavn:"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:47
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:180
@@ -2146,7 +2146,7 @@ msgstr "Husk"
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:127
 msgctxt "CoreAccountEditDlg|"
 msgid "Use a Proxy"
-msgstr ""
+msgstr "Brug en proxy"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:139
 msgctxt "CoreAccountEditDlg|"
@@ -5890,7 +5890,7 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:171
 msgctxt "ServerEditDlg|"
 msgid "Use a Proxy"
-msgstr ""
+msgstr "Brug en proxy"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:188
 msgctxt "ServerEditDlg|"
@@ -6200,7 +6200,7 @@ msgstr "Sikkerhedsinformation"
 #: ../src/qtui/ui/sslinfodlg.ui:22
 msgctxt "SslInfoDlg|"
 msgid "<b>Hostname:</b>"
-msgstr "<b>Brugere:</b> %1"
+msgstr "<b>Værtsnavn:</b> %1"
 
 #: ../src/qtui/ui/sslinfodlg.ui:39
 msgctxt "SslInfoDlg|"
