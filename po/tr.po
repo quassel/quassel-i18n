@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-04-19 18:21+0000\n"
-"Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
+"PO-Revision-Date: 2015-12-04 10:18+0000\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/ald/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -325,12 +325,12 @@ msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
-msgstr ""
+msgstr "Yorgunluk bilmez, {Ku|U}buntu testçisi, litrelerce lezzetli Fin alkolü"
 
 #: ../src/uisupport/aboutdata.cpp:243
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
-msgstr ""
+msgstr "Qt5 dönüştürme yardımı, Travis CI yapılandırması"
 
 #: ../src/uisupport/aboutdata.cpp:244 ../src/uisupport/aboutdata.cpp:254
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
@@ -411,12 +411,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "/print command"
-msgstr ""
+msgstr "/print komutu"
 
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Build system fixes"
-msgstr ""
+msgstr "Derleme sistem onarımları"
 
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
@@ -585,7 +585,7 @@ msgid ""
 "more</i><br></dd><dt><a href=\"http://www.nokia.com\"><img "
 "src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring development of "
 "Quassel Mobile with N810s</i></dd>"
-msgstr ""
+msgstr "Özel teşekkürlerimiz:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;<b>John \"nox\" Hand</b></dt><dd><i>Özgün Quassel simgesi - The All-Seeing Eye için</i><br></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href=\"http://www.oxygen-icons.org\">Oxygen Takımı</a></b></dt><dd><i>Quassel üzerinde gördüğümüz tüm grafik tasarımı için</i><br></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt Yazılımın önceki adı ile Trolltech</a></b></dt><dd><i>Qt ve Qtopia'yı oluşturdukları ve Greenphones, QuasselTopia ve dahasına geliştirme sponsorlukları verdikleri için</i><br></dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>Quassel Mobile N810s ile Quassel geliştirilmesini desteklediklerinden dolayı</i><br></dd>"
 
 #: ../src/core/abstractsqlstorage.cpp:127
 #, qt-format
@@ -1568,7 +1568,7 @@ msgstr "Bu özelliği kullanabilmeniz için QuasselCore'un en az 0.6 sürümüne
 #: ../src/common/qt5cliparser.cpp:30
 msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "Quassel IRC, modern bir IRC istemci dağıtımıdır"
 
 #: ../src/client/client.cpp:324
 msgctxt "Client|"
@@ -2534,7 +2534,7 @@ msgstr "Ağ Durumu Algılama"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Çevrimiçi olup olmadığımızı kontrol etmek için Qt ağ yapılandırma yöneticisine güven"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
@@ -2585,7 +2585,7 @@ msgstr "Yeniden dene"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Ardarda bağlantı denemesi aralığı"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -5505,7 +5505,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Bu, <b>%1</b> kullanıcı adınız için <b>%2</b> üzerinde çalışan Quassel Çekirdeği parolayı değiştirir."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
@@ -5515,7 +5515,7 @@ msgstr "Parola Değiştirilmedi"
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Parola değiştirme başarısız</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
@@ -5869,7 +5869,7 @@ msgstr "SSL Sürümü:"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Ne yaptığınızı bilmiyorsanız sadece TLSv1 kullanın!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
