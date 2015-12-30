@@ -9,7 +9,7 @@
 # Theofilos Intzoglou <int.teo@gmail.com>, 2012
 # warlordfff <warlordfff@gmail.com>, 2012
 # warlordfff <warlordfff@gmail.com>, 2012
-# Γιάννης Ανθυμίδης <yannanth@gmail.com>, 2013
+# Γιάννης Ανθυμίδης, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
