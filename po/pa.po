@@ -1,12 +1,12 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
-# A S Alam <apreet.alam@gmail.com>, 2014-2015
+# A S Alam <apreet.alam@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-08-23 00:40+0000\n"
+"PO-Revision-Date: 2016-01-06 01:10+0000\n"
 "Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/ald/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -1805,7 +1805,7 @@ msgstr "ਜੁਆਇੰਨ"
 #: ../src/uisupport/contextmenuactionprovider.cpp:49
 msgctxt "ContextMenuActionProvider|"
 msgid "Parts"
-msgstr "ਵੱਖ"
+msgstr "ਛੱਡਣਾ"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:50
 msgctxt "ContextMenuActionProvider|"
@@ -6368,7 +6368,7 @@ msgstr "IRC ਤੋਂ ਡਿਸ-ਕੁਨੈਕਟ"
 #: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
 msgid "Part"
-msgstr "ਵੱਖ"
+msgstr "ਛੱਡੋ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
