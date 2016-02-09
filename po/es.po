@@ -3,7 +3,7 @@
 # Adolfo Jayme Barrientos, 2013
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
-# Javier Llorente <javier@opensuse.org>, 2011
+# Javier Llorente <javier@opensuse.org>, 2011,2016
 # Javier Llorente <javier@opensuse.org>, 2011
 # Jonathan Farnham <jonathan@haitu-yu.com>, 2013
 # Rafael Belmonte <EagleScreen@gmail.com>, 2009, 2011
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2015-03-25 12:13+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-02-09 00:11+0000\n"
+"Last-Translator: Javier Llorente <javier@opensuse.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/ald/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,27 +25,27 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Un cliente de IRC moderno y distribuido"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Fundador del proyecto, desarrollador principal"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project Motivator, Lead Developer"
-msgstr ""
+msgstr "Motivador del proyecto, desarrollador principal"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Desarrollador principal anterior"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
@@ -76,7 +76,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Traducción al castellano"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
@@ -96,13 +96,13 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Traducción al rumano"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Traducción al finlandés"
 
 #: ../src/uisupport/aboutdata.cpp:191
 msgctxt "AboutData|"
@@ -117,13 +117,13 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:194
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Correcciones de cuelgues"
 
 #: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:215
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Traducción al francés"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
@@ -133,12 +133,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "Soporte de SASL"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Various improvements"
-msgstr ""
+msgstr "Mejoras varias"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:200
 #: ../src/uisupport/aboutdata.cpp:204
@@ -149,22 +149,22 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Traducción al gallego"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Traducción al esperanto"
 
 #: ../src/uisupport/aboutdata.cpp:203
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Traducción al japonés"
 
 #: ../src/uisupport/aboutdata.cpp:205 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
-msgstr ""
+msgstr "Encargado de Gentoo"
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
@@ -184,7 +184,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Correcciones"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
@@ -194,17 +194,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "Notificaciones de D-Bus"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Traducción al polaco"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
 msgid "Build system improvements"
-msgstr ""
+msgstr "Mejoras en el sistema de compilación"
 
 #: ../src/uisupport/aboutdata.cpp:214
 msgctxt "AboutData|"
@@ -220,12 +220,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Traducción al ruso"
 
 #: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:253
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Traducción al italiano"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
@@ -261,7 +261,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "Soporte inicial de Qt5"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -277,14 +277,14 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Various fixes"
-msgstr ""
+msgstr "Correcciones varias"
 
 #: ../src/uisupport/aboutdata.cpp:230 ../src/uisupport/aboutdata.cpp:231
 #: ../src/uisupport/aboutdata.cpp:270 ../src/uisupport/aboutdata.cpp:273
 #: ../src/uisupport/aboutdata.cpp:277 ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Correcciones de fallos"
 
 #: ../src/uisupport/aboutdata.cpp:232
 msgctxt "AboutData|"
@@ -417,7 +417,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Build system fixes"
-msgstr ""
+msgstr "Corrección de fallos en el sistema de compilación"
 
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
@@ -493,7 +493,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Traducción al portugués"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -1014,7 +1014,7 @@ msgstr "Esconder conversaciones inactivas"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:142
 msgctxt "BufferViewSettingsPage|"
 msgid "Hide inactive networks"
-msgstr ""
+msgstr "Ocultar redes inactivas"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:149
 msgctxt "BufferViewSettingsPage|"
@@ -1318,7 +1318,7 @@ msgstr "Copiar seleccionado"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Buscar '%1'"
 
 #: ../src/qtui/chatscene.cpp:845
 msgctxt "ChatScene|"
@@ -1453,7 +1453,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:193
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
-msgstr ""
+msgstr "https://www.google.es/search?q=%s"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:202
 msgctxt "ChatViewSettingsPage|"
@@ -1901,17 +1901,17 @@ msgstr "Dar el estado del operador"
 #: ../src/uisupport/contextmenuactionprovider.cpp:81
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Operator Status"
-msgstr "Obtener el estado del operador"
+msgstr "Quitar el estado del operador"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:82
 msgctxt "ContextMenuActionProvider|"
 msgid "Give Half-Operator Status"
-msgstr ""
+msgstr "Dar el estado de medio-operador"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:83
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Half-Operator Status"
-msgstr ""
+msgstr "Quitar el estado de medio-operador"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:84
 msgctxt "ContextMenuActionProvider|"
@@ -2279,7 +2279,7 @@ msgstr ""
 #: ../src/core/coreauthhandler.cpp:236
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
-msgstr ""
+msgstr "Iniciando cifrado para el cliente:"
 
 #: ../src/qtui/coreconfigwizard.cpp:69
 msgctxt "CoreConfigWizard|"
@@ -3175,7 +3175,7 @@ msgstr "[Whois] %1 tiene soporte de voz en los canales: %2"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
-msgstr "[Whois] %1 es operador de los canales: %2"
+msgstr "[Whois] %1 es un operador de los canales: %2"
 
 #: ../src/core/eventstringifier.cpp:532
 #, qt-format
@@ -4576,7 +4576,7 @@ msgstr "&Desconectar del núcleo"
 #: ../src/qtui/mainwin.cpp:364
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "Cambiar &contraseña..."
 
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
@@ -4856,7 +4856,7 @@ msgstr "Depurar"
 #: ../src/qtui/mainwin.cpp:747
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr ""
+msgstr "Característica no soportada"
 
 #: ../src/qtui/mainwin.cpp:748
 msgctxt "MainWin|"
@@ -5483,7 +5483,7 @@ msgstr "Notificaciones"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Cambiar contraseña"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
@@ -5809,7 +5809,7 @@ msgstr ""
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Desconectándose..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -6150,7 +6150,7 @@ msgstr "Una lista de los canales de IRC a los que se unirá automáticamente tra
 #: ../src/qtui/snorenotificationbackend.cpp:59
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Mensaje privado"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
@@ -6419,7 +6419,7 @@ msgstr "Op"
 #: ../src/uisupport/toolbaractionprovider.cpp:39
 msgctxt "ToolBarActionProvider|"
 msgid "Give operator privileges to user"
-msgstr "Dar al usuario privilegios de operador"
+msgstr "Dar privilegios de operador al usuario"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
@@ -6429,7 +6429,7 @@ msgstr "Deop"
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
 msgid "Take operator privileges from user"
-msgstr "Obtener privilegios de operador del usuario"
+msgstr "Quitar privilegios de operador al usuario"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:41
 msgctxt "ToolBarActionProvider|"
