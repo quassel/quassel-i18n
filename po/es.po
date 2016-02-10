@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-09 00:11+0000\n"
+"PO-Revision-Date: 2016-02-09 09:29+0000\n"
 "Last-Translator: Javier Llorente <javier@opensuse.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/ald/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "Desarrollador principal anterior"
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements"
-msgstr ""
+msgstr "Maestro de las traducciones, un montón de arreglos y mejoras"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
@@ -65,7 +65,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Chatview improvements"
-msgstr ""
+msgstr "Mejoras en la vista de charlas"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
@@ -128,7 +128,7 @@ msgstr "Traducción al francés"
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
 msgid "Usability review"
-msgstr ""
+msgstr "Análisis de usabilidad"
 
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
@@ -184,7 +184,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr "Correcciones"
+msgstr "Correcciones de fallos"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
@@ -245,7 +245,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Traducción al húngaro"
 
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
@@ -256,7 +256,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Traducción al turco"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
@@ -337,7 +337,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Traducción al alemán"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
