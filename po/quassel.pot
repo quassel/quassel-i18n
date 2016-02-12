@@ -106,12 +106,8 @@ msgctxt "AboutData|"
 msgid "Message indicator support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:194
-msgctxt "AboutData|"
-msgid "Build sytem fix"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:312
+#: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:195
+#: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Build system fix"
 msgstr ""
