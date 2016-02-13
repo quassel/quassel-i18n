@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-11 08:54+0000\n"
+"PO-Revision-Date: 2016-02-12 10:43+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Portuguese (http://www.transifex.com/ald/quassel/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -110,12 +110,8 @@ msgctxt "AboutData|"
 msgid "Message indicator support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:194
-msgctxt "AboutData|"
-msgid "Build sytem fix"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:312
+#: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:195
+#: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Build system fix"
 msgstr ""

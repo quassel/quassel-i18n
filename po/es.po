@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-11 08:54+0000\n"
+"PO-Revision-Date: 2016-02-12 10:43+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Spanish (http://www.transifex.com/ald/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Mejoras en la documentación"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:214
 #: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:255
@@ -116,12 +116,8 @@ msgctxt "AboutData|"
 msgid "Message indicator support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:194
-msgctxt "AboutData|"
-msgid "Build sytem fix"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:195 ../src/uisupport/aboutdata.cpp:312
+#: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:195
+#: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Build system fix"
 msgstr ""
@@ -258,7 +254,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Traducción al noruego"
 
 #: ../src/uisupport/aboutdata.cpp:227
 msgctxt "AboutData|"
@@ -487,7 +483,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:302 ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Traducción al griego"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
@@ -497,12 +493,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Traducción al coreano"
 
 #: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Traducción al noruego, documentación"
 
 #: ../src/uisupport/aboutdata.cpp:304
 msgctxt "AboutData|"
@@ -522,7 +518,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:308 ../src/uisupport/aboutdata.cpp:310
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Traducción al checo"
 
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
@@ -532,7 +528,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Traducción al ucraniano"
 
 #: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
@@ -1306,7 +1302,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:195
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
-msgstr ""
+msgstr "Incluir mensajes leídos"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
@@ -1482,7 +1478,7 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search Url:"
-msgstr ""
+msgstr "URL de búsqueda en la Web:"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
 msgctxt "ChatViewSettingsPage|"
@@ -1710,7 +1706,7 @@ msgstr "Inicio de sesión cancelado"
 #: ../src/client/clientauthhandler.cpp:425
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
-msgstr ""
+msgstr "Conexión no cifrada cancelada"
 
 #: ../src/client/clientbacklogmanager.cpp:178
 #, qt-format
@@ -1965,7 +1961,7 @@ msgstr "Dar voz"
 #: ../src/uisupport/contextmenuactionprovider.cpp:85
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Voice"
-msgstr "Obtener voz"
+msgstr "Quitar voz"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:86
 msgctxt "ContextMenuActionProvider|"
@@ -1975,7 +1971,7 @@ msgstr "Expulsar del canal"
 #: ../src/uisupport/contextmenuactionprovider.cpp:87
 msgctxt "ContextMenuActionProvider|"
 msgid "Ban From Channel"
-msgstr "Prohibir entrada en el canal"
+msgstr "Prohibir entrada al canal"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:88
 msgctxt "ContextMenuActionProvider|"
@@ -6284,7 +6280,7 @@ msgstr "<b>Dirección IP:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:56
 msgctxt "SslInfoDlg|"
 msgid "<b>Encryption:</b>"
-msgstr "<b>Encriptación:</b>"
+msgstr "<b>Cifrado:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:73
 msgctxt "SslInfoDlg|"
@@ -6324,7 +6320,7 @@ msgstr "<b>País:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:194 ../src/qtui/ui/sslinfodlg.ui:316
 msgctxt "SslInfoDlg|"
 msgid "<b>State or province:</b>"
-msgstr "<b>Estado o provincia:</b>"
+msgstr "<b>Provincia o estado:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:231 ../src/qtui/ui/sslinfodlg.ui:353
 msgctxt "SslInfoDlg|"
@@ -6408,7 +6404,7 @@ msgstr "Mostrar un mensaje en una ventana emergente"
 #: ../src/uisupport/tabcompleter.cpp:52
 msgctxt "TabCompleter|"
 msgid "Tab completion"
-msgstr "Autocompletar por Tabulador"
+msgstr "Autocompletar con el tabulador"
 
 #: ../src/qtui/taskbarnotificationbackend.cpp:83
 msgctxt "TaskbarNotificationBackend::ConfigWidget|"
@@ -6473,7 +6469,7 @@ msgstr "Unirse a un canal"
 #: ../src/uisupport/toolbaractionprovider.cpp:36
 msgctxt "ToolBarActionProvider|"
 msgid "Query"
-msgstr "Pregunta"
+msgstr "Consulta"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:36
 msgctxt "ToolBarActionProvider|"
@@ -6518,7 +6514,7 @@ msgstr "Voz"
 #: ../src/uisupport/toolbaractionprovider.cpp:41
 msgctxt "ToolBarActionProvider|"
 msgid "Give voice to user"
-msgstr "Proporcionar voz al usuario"
+msgstr "Dar voz al usuario"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:42
 msgctxt "ToolBarActionProvider|"
@@ -6528,7 +6524,7 @@ msgstr "Retirar voz"
 #: ../src/uisupport/toolbaractionprovider.cpp:42
 msgctxt "ToolBarActionProvider|"
 msgid "Take voice from user"
-msgstr "Obtener voz del usuario"
+msgstr "Quitar voz al usuario"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:43
 msgctxt "ToolBarActionProvider|"
@@ -6543,22 +6539,22 @@ msgstr "Borrar usuario del canal"
 #: ../src/uisupport/toolbaractionprovider.cpp:44
 msgctxt "ToolBarActionProvider|"
 msgid "Ban"
-msgstr "Banear"
+msgstr "Prohibir entrada"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:44
 msgctxt "ToolBarActionProvider|"
 msgid "Ban user from channel"
-msgstr "Banear usuario del canal"
+msgstr "Prohibir entrada al usuario a este canal"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:45
 msgctxt "ToolBarActionProvider|"
 msgid "Kick/Ban"
-msgstr "Expulsar/Banear"
+msgstr "Expulsar/Prohibir entrada"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:45
 msgctxt "ToolBarActionProvider|"
 msgid "Remove and ban user from channel"
-msgstr "Borrar y banear al usuario del canal"
+msgstr "Borrar y prohibir que entre el usuario al canal"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:50
 msgctxt "ToolBarActionProvider|"
@@ -6590,7 +6586,7 @@ msgstr "Usuarios: %1"
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Lag: %1 msecs"
-msgstr "Demora: %1 ms"
+msgstr "Retardo: %1 ms"
 
 #: ../src/qtui/settingspages/topicwidgetsettingspage.ui:14
 msgctxt "TopicWidgetSettingsPage|"
@@ -6627,7 +6623,7 @@ msgstr "Componente del tema"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "You are now known as %DN%1%DN"
-msgstr "Ahora es usted conocido como %DN%1%DN"
+msgstr "Ahora se te conoce como %DN%1%DN"
 
 #: ../src/uisupport/uistyle.cpp:691
 #, qt-format
