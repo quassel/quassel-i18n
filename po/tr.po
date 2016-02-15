@@ -5,14 +5,14 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010
 # zeugma <sunder67@hotmail.com>, 2013
 # Volkan Gezer <volkangezer@gmail.com>, 2013
-# Volkan Gezer <volkangezer@gmail.com>, 2013-2015
+# Volkan Gezer <volkangezer@gmail.com>, 2013-2016
 # zeugma <sunder67@hotmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-02-14 13:58+0000\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/ald/quassel/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,7 +119,7 @@ msgstr "Mesaj göstergesi desteği"
 #: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Build system fix"
-msgstr ""
+msgstr "Sistem onarım derlemesi"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
@@ -129,7 +129,7 @@ msgstr "Sistem pencerelerini düzenle"
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "Nicer tooltips"
-msgstr ""
+msgstr "Daha iyi araç ipuçları"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
@@ -192,7 +192,7 @@ msgstr "Sertifika taşıma iyileştirmeleri"
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vistaâ¢!)"
-msgstr ""
+msgstr "Erken beta testçisi ve hata avcısı (Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
@@ -274,7 +274,7 @@ msgstr "Türkçe çeviri"
 #: ../src/uisupport/aboutdata.cpp:230
 msgctxt "AboutData|"
 msgid "MinGW support, SNORE backend, Windows packaging"
-msgstr ""
+msgstr "MinGW desteği, SNORE arka ucu, Windows paketleme"
 
 #: ../src/uisupport/aboutdata.cpp:231
 msgctxt "AboutData|"
@@ -308,12 +308,12 @@ msgstr "Hata düzeltmeleri"
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
 msgid "QuasselDroid and Java wizardess, documentation, bugfixes"
-msgstr ""
+msgstr "QuasselDroid ve Java sihirbazı, belgelendirme ve hata onarımları"
 
 #: ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Python improvements"
-msgstr ""
+msgstr "Python iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
@@ -371,7 +371,7 @@ msgstr "Almanca çeviri"
 #: ../src/uisupport/aboutdata.cpp:254
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
-msgstr ""
+msgstr "Tampon birleştirme iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
@@ -391,12 +391,12 @@ msgstr "Belgelendirme düzeltmeleri"
 #: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
 msgid "Ideas, hacking, initial motivation"
-msgstr ""
+msgstr "Fikirler, kurcalama ve ilk motivasyon"
 
 #: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Core and other fixes, QuasselDroid"
-msgstr ""
+msgstr "Temel ve diğer onarımlar, QuasselDroid"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
@@ -406,22 +406,22 @@ msgstr "Almanca çeviri düzeltmeleri"
 #: ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu live packages"
-msgstr ""
+msgstr "Birçok düzeltmeler ve iyileştirmeler; Ubuntu canlı paketleri"
 
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Tons of Oxygen icons including the Quassel logo"
-msgstr ""
+msgstr "Quassel logosu dahil tonlarca Oxygen simgeleri"
 
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
 msgid "Initial design and main window layout"
-msgstr ""
+msgstr "İlk tasarım ve ana pencere yerleşimi"
 
 #: ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter"
-msgstr ""
+msgstr "Erken beta testçisi ve hata avcısı"
 
 #: ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
@@ -431,12 +431,12 @@ msgstr "Danca çeviri"
 #: ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
 msgid "Linewrap for input line"
-msgstr ""
+msgstr "Girdi satırı için satır kaydırma"
 
 #: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Performance improvements and cleanups"
-msgstr ""
+msgstr "Performans iyileştirmeleri ve temizlemeler"
 
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
@@ -446,7 +446,7 @@ msgstr "/print komutu"
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Performance improvements"
-msgstr ""
+msgstr "Performans iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
@@ -456,22 +456,22 @@ msgstr "Derleme sistem onarımları"
 #: ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Emacs keybindings"
-msgstr ""
+msgstr "Emacs tuş atamaları"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Highlight configuration improvements"
-msgstr ""
+msgstr "Yapılandırma iyileştirme vurgulama"
 
 #: ../src/uisupport/aboutdata.cpp:288
 msgctxt "AboutData|"
 msgid "Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
+msgstr "Kubuntu paketçisi, (paketleme/derleme sistemi) hata avcusu"
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
 msgid "Audio backend improvements"
-msgstr ""
+msgstr "Ses arka ucu iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
@@ -487,7 +487,7 @@ msgstr "Yunanca çeviri"
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Fixing and hosting Windows builds"
-msgstr ""
+msgstr "Onarım ve Windows derleme barındırma"
 
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
@@ -502,12 +502,12 @@ msgstr "Norveçce çeviri belgelendirmeleri"
 #: ../src/uisupport/aboutdata.cpp:304
 msgctxt "AboutData|"
 msgid "Former Windows builder"
-msgstr ""
+msgstr "Önceki Windows derleyicisi"
 
 #: ../src/uisupport/aboutdata.cpp:305
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
-msgstr ""
+msgstr "Onarımlar, Debian paketleme"
 
 #: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
@@ -522,7 +522,7 @@ msgstr "Çek dili çeviri"
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Ağ tespit iyileştirmeleri"
 
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
@@ -608,7 +608,7 @@ msgctxt "AboutDlg|"
 msgid ""
 "...and anybody else finding and reporting bugs, giving feedback, helping "
 "others and being part of the community!"
-msgstr ""
+msgstr "...ve topluluğun parçası olan ve diğerlerine yardım eden, hata bulan ve onaran, geri bildirim yollayan herkes!"
 
 #: ../src/qtui/aboutdlg.cpp:100
 msgctxt "AboutDlg|"
@@ -2292,7 +2292,7 @@ msgstr "<b>İstemci başlatılamadı!</b><br>Oturumu açmaya çalışmadan önce
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
-msgstr ""
+msgstr "SSL gerekli ancak %1 SSL olmayan bir bağlantı girişiminde bulundu"
 
 #: ../src/core/coreauthhandler.cpp:163
 msgctxt "CoreAuthHandler|"
@@ -2311,7 +2311,7 @@ msgstr "<b>Quassel Çekirdek Sürüm %1</b><br>İnşa: %2<br>Up %3d%4h%5m (şu k
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
-msgstr ""
+msgstr "%1 konumundan \"%2\" olarak geçersiz oturum girişimi"
 
 #: ../src/core/coreauthhandler.cpp:214
 msgctxt "CoreAuthHandler|"
@@ -4366,52 +4366,52 @@ msgstr "Konu"
 #: ../src/client/networkmodel.cpp:976
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
-msgstr ""
+msgstr "(bilinmeyen)"
 
 #: ../src/client/networkmodel.cpp:980
 msgctxt "IrcUserItem|"
 msgid "Away&nbsp;Message"
-msgstr ""
+msgstr "Uzakta&nbsp;Mesajı"
 
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
 msgid "Realname"
-msgstr ""
+msgstr "Gerçek adı"
 
 #: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operatör"
 
 #: ../src/client/networkmodel.cpp:984
 msgctxt "IrcUserItem|"
 msgid "Suser&nbsp;Host"
-msgstr ""
+msgstr "Skullanıcı&nbsp;Mekine"
 
 #: ../src/client/networkmodel.cpp:985
 msgctxt "IrcUserItem|"
 msgid "Whois&nbsp;Service&nbsp;Reply"
-msgstr ""
+msgstr "Whois&nbsp;Hizmet&nbsp;Yanıt"
 
 #: ../src/client/networkmodel.cpp:986
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
-msgstr ""
+msgstr "Sunucu maskesi"
 
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Boşta&nbsp;süresi"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
 msgid "Login&nbsp;time"
-msgstr ""
+msgstr "Oturum&nbsp;süresi"
 
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Sunucu"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -4640,7 +4640,7 @@ msgstr "Bilinmeyen %1 protokol ileti türü"
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Çekirdeğe bağlan..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
@@ -5607,7 +5607,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Çekirdek parolanızı değiştirirken bir hata bildirdi. Eski parolanızı doğru girdiğinizden emin olun!"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -6249,7 +6249,7 @@ msgstr "Horlama"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Snore'u Etkinleştir"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -6349,7 +6349,7 @@ msgstr "<b>SHA1 özeti:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>SHA256 özet:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
