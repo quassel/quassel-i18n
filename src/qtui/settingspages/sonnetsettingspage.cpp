@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2015 by the Quassel Project                        *
+ *   Copyright (C) 2005-2014 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -18,48 +18,50 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include "clienttransfermanager.h"
+#include "sonnetsettingspage.h"
 
-#include "client.h"
-#include "clienttransfer.h"
+#include <QVBoxLayout>
 
+#include "qtui.h"
 
-INIT_SYNCABLE_OBJECT(ClientTransferManager)
-ClientTransferManager::ClientTransferManager(QObject *parent)
-    : TransferManager(parent)
+SonnetSettingsPage::SonnetSettingsPage(QWidget *parent)
+    : SettingsPage(tr("Interface"), tr("Spell Checking"), parent)
 {
-    connect(this, SIGNAL(transferAdded(const Transfer*)), SLOT(onTransferAdded(const Transfer*)));
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    _configWidget = new Sonnet::ConfigWidget(this);
+    layout->addWidget(_configWidget);
+    connect(_configWidget, SIGNAL(configChanged()), SLOT(widgetHasChanged()));
 }
 
 
-void ClientTransferManager::onCoreTransferAdded(const QUuid &uuid)
+bool SonnetSettingsPage::hasDefaults() const
 {
-    if (uuid.isNull()) {
-        qWarning() << Q_FUNC_INFO << "Invalid transfer uuid" << uuid.toString();
-        return;
-    }
-
-    ClientTransfer *transfer = new ClientTransfer(uuid, this);
-    connect(transfer, SIGNAL(initDone()), SLOT(onTransferInitDone())); // we only want to add initialized transfers
-    Client::signalProxy()->synchronize(transfer);
+    return true;
 }
 
 
-void ClientTransferManager::onTransferInitDone()
+void SonnetSettingsPage::defaults()
 {
-    Transfer *transfer = qobject_cast<Transfer *>(sender());
-    Q_ASSERT(transfer);
-    addTransfer(transfer);
+    _configWidget->slotDefault();
+    widgetHasChanged();
 }
 
 
-void ClientTransferManager::onTransferAdded(const Transfer *transfer)
+void SonnetSettingsPage::load()
 {
-    const ClientTransfer *t = qobject_cast<const ClientTransfer *>(transfer);
-    if (!t) {
-        qWarning() << "Invalid Transfer added to ClientTransferManager!";
-        return;
-    }
 
-    emit transferAdded(t);
+}
+
+
+void SonnetSettingsPage::save()
+{
+    _configWidget->save();
+    setChangedState(false);
+}
+
+
+void SonnetSettingsPage::widgetHasChanged()
+{
+    if (!hasChanged())
+        setChangedState(true);
 }
