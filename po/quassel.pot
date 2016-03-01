@@ -863,7 +863,7 @@ msgstr ""
 #: ../src/qtui/settingspages/backlogsettingspage.ui:138
 msgctxt "BacklogSettingsPage|"
 msgid ""
-"amount of messages per buffer that are requested after the core connection "
+"Amount of messages per buffer that are requested after the core connection "
 "has been established."
 msgstr ""
 
@@ -1495,7 +1495,7 @@ msgstr ""
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
-msgid "Web Search Url:"
+msgid "Web Search URL:"
 msgstr ""
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:187
@@ -2214,7 +2214,7 @@ msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:147
 msgctxt "CoreAccountEditDlg|"
-msgid "Socks 5"
+msgid "SOCKS 5"
 msgstr ""
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:152
@@ -5515,8 +5515,8 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:736
 msgctxt "NetworksSettingsPage|"
 msgid ""
-"Incoming messages encoded in Utf8 will always be treated as such.\n"
-"This setting defines the encoding for messages that are not Utf8."
+"Incoming messages encoded in UTF-8 will always be treated as such.\n"
+"This setting defines the encoding for messages that are not UTF-8."
 msgstr ""
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:720
@@ -6032,7 +6032,7 @@ msgstr ""
 
 #: ../src/qtui/settingspages/servereditdlg.ui:196
 msgctxt "ServerEditDlg|"
-msgid "Socks 5"
+msgid "SOCKS 5"
 msgstr ""
 
 #: ../src/qtui/settingspages/servereditdlg.ui:201
