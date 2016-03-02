@@ -2887,28 +2887,28 @@ msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:58
+#: ../src/core/coretransfer.cpp:64
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:70
+#: ../src/core/coretransfer.cpp:76
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:114
+#: ../src/core/coretransfer.cpp:120
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:160
+#: ../src/core/coretransfer.cpp:166
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:176
+#: ../src/core/coretransfer.cpp:182
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
 msgstr ""
@@ -6674,6 +6674,46 @@ msgstr ""
 #: ../src/qtui/settingspages/topicwidgetsettingspage.cpp:24
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Topic Widget"
+msgstr ""
+
+#: ../src/common/transfer.cpp:92
+msgctxt "Transfer|"
+msgid "New"
+msgstr ""
+
+#: ../src/common/transfer.cpp:94
+msgctxt "Transfer|"
+msgid "Pending"
+msgstr ""
+
+#: ../src/common/transfer.cpp:96
+msgctxt "Transfer|"
+msgid "Connecting"
+msgstr ""
+
+#: ../src/common/transfer.cpp:98
+msgctxt "Transfer|"
+msgid "Transferring"
+msgstr ""
+
+#: ../src/common/transfer.cpp:100
+msgctxt "Transfer|"
+msgid "Paused"
+msgstr ""
+
+#: ../src/common/transfer.cpp:102
+msgctxt "Transfer|"
+msgid "Completed"
+msgstr ""
+
+#: ../src/common/transfer.cpp:104
+msgctxt "Transfer|"
+msgid "Failed"
+msgstr ""
+
+#: ../src/common/transfer.cpp:106
+msgctxt "Transfer|"
+msgid "Rejected"
 msgstr ""
 
 #. Nick Message
