@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
-msgid "Early beta tester and bughunter (on Vistaâ¢!)"
+msgid "Early beta tester and bughunter (on Vista™!)"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:212
