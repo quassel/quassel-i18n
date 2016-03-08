@@ -2903,12 +2903,12 @@ msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:166
+#: ../src/core/coretransfer.cpp:167
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
 msgstr ""
 
-#: ../src/core/coretransfer.cpp:182
+#: ../src/core/coretransfer.cpp:183
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
 msgstr ""
