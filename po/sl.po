@@ -1,14 +1,14 @@
 # 
 # Translators:
-# Andrej Mernik <andrejm@ubuntu.si>, 2014-2015
+# Andrej Mernik <andrejm@ubuntu.si>, 2014-2016
 # Daniel Albers <daniel@lbers.com>, 2011
 # Jure Repinc <jlp@holodeck1.com>, 2009-2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-04-02 19:45+0000\n"
+"Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/ald/quassel/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,37 +30,37 @@ msgstr "Moderen, porazdeljen odjemalec za IRC"
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Ustanovitelj projekta, glavni razvijalec"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
 msgid "Project Motivator, Lead Developer"
-msgstr ""
+msgstr "Motivator projekta, glavni razvijalec"
 
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Predhodni glavni razvijalec"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements"
-msgstr ""
+msgstr "Mojster prevodov, veliko popravkov in izboljšav"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Many features, fixes and improvements"
-msgstr ""
+msgstr "Veliko zmožnosti, popravkov in izboljšav"
 
 #: ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr ""
+msgstr "Veliko popravkov in izboljšav, obravnavanje hroščev in popravkov, podpora skupnosti"
 
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
 msgid "Chatview improvements"
-msgstr ""
+msgstr "Izboljšave prikaza klepeta"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
@@ -2288,7 +2288,7 @@ msgstr "<b>Odjemalec ni začet!</b><br>Pred poskusom prijave morate poslati regi
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
-msgstr ""
+msgstr "Zahtevan je SSL, zaznan pa je bil poskus povezave brez SSL od %1"
 
 #: ../src/core/coreauthhandler.cpp:163
 msgctxt "CoreAuthHandler|"
@@ -2307,7 +2307,7 @@ msgstr "<b>Jedro za Quassel različice %1</b><br>Izgrajeno: %2<br>Teče %3 d %4 
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
-msgstr ""
+msgstr "Neveljaven poskus prijave od %1 kot »%2«"
 
 #: ../src/core/coreauthhandler.cpp:214
 msgctxt "CoreAuthHandler|"
@@ -4364,22 +4364,22 @@ msgstr "Tema"
 #: ../src/client/networkmodel.cpp:976
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
-msgstr ""
+msgstr "(neznano)"
 
 #: ../src/client/networkmodel.cpp:980
 msgctxt "IrcUserItem|"
 msgid "Away&nbsp;Message"
-msgstr ""
+msgstr "Sporočilo&nbsp;odsotnosti"
 
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
 msgid "Realname"
-msgstr ""
+msgstr "Pravo ime"
 
 #: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operater"
 
 #: ../src/client/networkmodel.cpp:984
 msgctxt "IrcUserItem|"
@@ -4389,27 +4389,27 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:985
 msgctxt "IrcUserItem|"
 msgid "Whois&nbsp;Service&nbsp;Reply"
-msgstr ""
+msgstr "Whois&nbsp;Storitev&nbsp;Odgovor"
 
 #: ../src/client/networkmodel.cpp:986
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
-msgstr ""
+msgstr "Maska gostitelja"
 
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Nedejaven(-na)&nbsp;od"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
 msgid "Login&nbsp;time"
-msgstr ""
+msgstr "Čas&nbsp;prijave"
 
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Strežnik"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -4640,7 +4640,7 @@ msgstr "Neznano sporočilo protokola vrste %1"
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Poveži se z jedrom ..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
@@ -6253,7 +6253,7 @@ msgstr "Snore"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Omogoči smrčanje"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -6353,7 +6353,7 @@ msgstr "<b>Izvleček SHA1:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>Izvleček SHA256:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
