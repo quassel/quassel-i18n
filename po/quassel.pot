@@ -2277,17 +2277,17 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:132 ../src/core/coreauthhandler.cpp:144
+#: ../src/core/coreauthhandler.cpp:138 ../src/core/coreauthhandler.cpp:150
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:132
+#: ../src/core/coreauthhandler.cpp:138
 msgctxt "CoreAuthHandler|"
 msgid "too old, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:133
+#: ../src/core/coreauthhandler.cpp:139
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
@@ -2295,58 +2295,58 @@ msgid ""
 "core protocol version %1 (got: %2).<br>Please consider upgrading your client."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:144
+#: ../src/core/coreauthhandler.cpp:150
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:145
+#: ../src/core/coreauthhandler.cpp:151
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:162
+#: ../src/core/coreauthhandler.cpp:168
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:163
+#: ../src/core/coreauthhandler.cpp:169
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:177
+#: ../src/core/coreauthhandler.cpp:183
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "<b>Quassel Core Version %1</b><br>Built: %2<br>Up %3d%4h%5m (since %6)"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:213
+#: ../src/core/coreauthhandler.cpp:219
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:214
+#: ../src/core/coreauthhandler.cpp:220
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:219
+#: ../src/core/coreauthhandler.cpp:225
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:238
+#: ../src/core/coreauthhandler.cpp:244
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -2876,12 +2876,12 @@ msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1255
+#: ../src/core/coresessioneventprocessor.cpp:1269
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1273
+#: ../src/core/coresessioneventprocessor.cpp:1287
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
