@@ -9,12 +9,13 @@
 # Dorian <munto@free.fr>, 2012
 # Vlavv <vlavv2@gmail.com>, 2014
 # Vlavv <vlavv2@gmail.com>, 2015
+# Zoddo <zoddo.ino+github@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-05-07 16:24+0000\n"
+"Last-Translator: Zoddo <zoddo.ino+github@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/ald/quassel/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:136
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
@@ -36,7 +37,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
 msgid "Project Founder, Lead Developer"
-msgstr ""
+msgstr "Fondateur du projet, Développeur principal"
 
 #: ../src/uisupport/aboutdata.cpp:175
 msgctxt "AboutData|"
@@ -46,22 +47,22 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Former Lead Developer"
-msgstr ""
+msgstr "Ancien développeur principal"
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements"
-msgstr ""
+msgstr "Responsable de traduction, nombreuses corrections et améliorations"
 
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Many features, fixes and improvements"
-msgstr ""
+msgstr "Nombreuses fonctionnalités, améliorations et corrections"
 
 #: ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr ""
+msgstr "Nombreuses corrections et améliorations, correction du triage, support communautaire"
 
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
@@ -71,160 +72,160 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
-msgstr ""
+msgstr "Bêta-testeur, traduction danoise"
 
 #: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:271
 #: ../src/uisupport/aboutdata.cpp:296
 msgctxt "AboutData|"
 msgid "Spanish translation"
-msgstr ""
+msgstr "Traduction en espagnol"
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr ""
+msgstr "Correction de l'icône de la barre des tâches"
 
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Language improvements"
-msgstr ""
+msgstr "Améliorations du système de traduction"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Documentation improvements"
-msgstr ""
+msgstr "Améliorations de la documentation"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:214
 #: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:255
 #: ../src/uisupport/aboutdata.cpp:267 ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Fixes"
-msgstr ""
+msgstr "Correctifs"
 
 #: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "Romanian translation"
-msgstr ""
+msgstr "Traduction en roumain"
 
 #: ../src/uisupport/aboutdata.cpp:191 ../src/uisupport/aboutdata.cpp:244
 #: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Finnish translation"
-msgstr ""
+msgstr "Traduction finnoise"
 
 #: ../src/uisupport/aboutdata.cpp:192
 msgctxt "AboutData|"
 msgid "Message indicator support"
-msgstr ""
+msgstr "Prise en charge des indicateurs de message"
 
 #: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:195
 #: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Build system fix"
-msgstr ""
+msgstr "Correction du système de compilation"
 
 #: ../src/uisupport/aboutdata.cpp:196
 msgctxt "AboutData|"
 msgid "Windows build system fixes"
-msgstr ""
+msgstr "Correction du système de compilation sous Windows"
 
 #: ../src/uisupport/aboutdata.cpp:197
 msgctxt "AboutData|"
 msgid "Nicer tooltips"
-msgstr ""
+msgstr "Info-bulles plus agréables"
 
 #: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Corrections de crashs"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:220
 #: ../src/uisupport/aboutdata.cpp:282
 msgctxt "AboutData|"
 msgid "French translation"
-msgstr ""
+msgstr "Traduction française"
 
 #: ../src/uisupport/aboutdata.cpp:200
 msgctxt "AboutData|"
 msgid "Usability review"
-msgstr ""
+msgstr "Examen de la facilité d'utilisation"
 
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "Support SASL"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
 msgid "Various improvements"
-msgstr ""
+msgstr "Diverses améliorations"
 
 #: ../src/uisupport/aboutdata.cpp:203 ../src/uisupport/aboutdata.cpp:204
 #: ../src/uisupport/aboutdata.cpp:208
 msgctxt "AboutData|"
 msgid "Various fixes and improvements"
-msgstr ""
+msgstr "Améliorations et corrections diverses"
 
 #: ../src/uisupport/aboutdata.cpp:205
 msgctxt "AboutData|"
 msgid "Galician translation"
-msgstr ""
+msgstr "Traduction en Galicien"
 
 #: ../src/uisupport/aboutdata.cpp:206
 msgctxt "AboutData|"
 msgid "Esperanto translation"
-msgstr ""
+msgstr "Traduction en espéranto"
 
 #: ../src/uisupport/aboutdata.cpp:207
 msgctxt "AboutData|"
 msgid "Japanese translation"
-msgstr ""
+msgstr "Traduction en japonais"
 
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:273
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
-msgstr ""
+msgstr "Mainteneur Gentoo"
 
 #: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:224
 #: ../src/uisupport/aboutdata.cpp:309
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
-msgstr ""
+msgstr "Amélioration de la gestion des certificats"
 
 #: ../src/uisupport/aboutdata.cpp:211
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vistaâ¢!)"
-msgstr ""
+msgstr "Bêta-testeur (sur Vistaâ¢!)"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
 msgid "Translation system fixes"
-msgstr ""
+msgstr "Correction du système de traduction"
 
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
-msgstr ""
+msgstr "Prise en charge du Centre de Notification OSX"
 
 #: ../src/uisupport/aboutdata.cpp:215 ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "Mac fixes"
-msgstr ""
+msgstr "Corrections sous Mac"
 
 #: ../src/uisupport/aboutdata.cpp:216
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
-msgstr ""
+msgstr "Notifications D-Bus"
 
 #: ../src/uisupport/aboutdata.cpp:217
 msgctxt "AboutData|"
 msgid "Polish translation"
-msgstr ""
+msgstr "Traduction polonaise"
 
 #: ../src/uisupport/aboutdata.cpp:218
 msgctxt "AboutData|"
 msgid "Build system improvements"
-msgstr ""
+msgstr "Amélioration du système de compilation"
 
 #: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
@@ -234,18 +235,18 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:221
 msgctxt "AboutData|"
 msgid "BluesTheme stylesheet"
-msgstr ""
+msgstr "Feuille de style BluesTheme"
 
 #: ../src/uisupport/aboutdata.cpp:222 ../src/uisupport/aboutdata.cpp:261
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
 msgid "Russian translation"
-msgstr ""
+msgstr "Traduction russe"
 
 #: ../src/uisupport/aboutdata.cpp:223 ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Italian translation"
-msgstr ""
+msgstr "Traduction italienne"
 
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
@@ -255,23 +256,23 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "Norwegian translation"
-msgstr ""
+msgstr "Traduction norvégienne"
 
 #: ../src/uisupport/aboutdata.cpp:227
 msgctxt "AboutData|"
 msgid "Hungarian translation"
-msgstr ""
+msgstr "Traduction en hongrois"
 
 #: ../src/uisupport/aboutdata.cpp:228
 msgctxt "AboutData|"
 msgid "IRC parser improvements"
-msgstr ""
+msgstr "Améliorations du parser IRC"
 
 #: ../src/uisupport/aboutdata.cpp:229 ../src/uisupport/aboutdata.cpp:311
 #: ../src/uisupport/aboutdata.cpp:316
 msgctxt "AboutData|"
 msgid "Turkish translation"
-msgstr ""
+msgstr "Traduction turc"
 
 #: ../src/uisupport/aboutdata.cpp:230
 msgctxt "AboutData|"
@@ -281,7 +282,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:231
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
-msgstr ""
+msgstr "Support Qt5 initial"
 
 #: ../src/uisupport/aboutdata.cpp:232
 msgctxt "AboutData|"
@@ -291,21 +292,21 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:233
 msgctxt "AboutData|"
 msgid "Various features"
-msgstr ""
+msgstr "Différentes fonctionnalités"
 
 #: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:235
 #: ../src/uisupport/aboutdata.cpp:243 ../src/uisupport/aboutdata.cpp:248
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Various fixes"
-msgstr ""
+msgstr "Diverses corrections"
 
 #: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:240
 #: ../src/uisupport/aboutdata.cpp:281 ../src/uisupport/aboutdata.cpp:284
 #: ../src/uisupport/aboutdata.cpp:289 ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
 msgid "Bugfixes"
-msgstr ""
+msgstr "Corrections de bugs"
 
 #: ../src/uisupport/aboutdata.cpp:238
 msgctxt "AboutData|"
@@ -315,22 +316,22 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:239
 msgctxt "AboutData|"
 msgid "Python improvements"
-msgstr ""
+msgstr "Améliorations Python"
 
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Postgres migration fixes"
-msgstr ""
+msgstr "Corrections des migrations Postgres"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
 msgid "Context menu fixes"
-msgstr ""
+msgstr "Corrections dans le menu contextuel"
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
-msgstr ""
+msgstr "Nombreuses corrections et améliorations, bug de triage"
 
 #: ../src/uisupport/aboutdata.cpp:246
 msgctxt "AboutData|"
@@ -340,17 +341,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
 msgid "Project founder, various improvements"
-msgstr ""
+msgstr "Fondateur du projet, diverses améliorations"
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Serbian translation"
-msgstr ""
+msgstr "Traduction serbe"
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
 msgid "Slovenian translation"
-msgstr ""
+msgstr "Traduction en slovène"
 
 #: ../src/uisupport/aboutdata.cpp:251
 msgctxt "AboutData|"
@@ -368,27 +369,27 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:266 ../src/uisupport/aboutdata.cpp:307
 msgctxt "AboutData|"
 msgid "German translation"
-msgstr ""
+msgstr "Traduction allemande"
 
 #: ../src/uisupport/aboutdata.cpp:254
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
-msgstr ""
+msgstr "Améliorations de fusion de tampons"
 
 #: ../src/uisupport/aboutdata.cpp:258
 msgctxt "AboutData|"
 msgid "OSX improvements"
-msgstr ""
+msgstr "Améliorations du support de OSX"
 
 #: ../src/uisupport/aboutdata.cpp:259
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
-msgstr ""
+msgstr "Traduction lituanienne"
 
 #: ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
 msgid "Documentation fixes"
-msgstr ""
+msgstr "Corrections de la documentation"
 
 #: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
@@ -398,17 +399,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Core and other fixes, QuasselDroid"
-msgstr ""
+msgstr "Composant central et autres correctifs, QuasselDroid"
 
 #: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
 msgid "German translation, fixes"
-msgstr ""
+msgstr "Traduction allemande, corrections"
 
 #: ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu live packages"
-msgstr ""
+msgstr "Nombreuses corrections et améliorations ; Création des paquets Ubuntu"
 
 #: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
@@ -418,17 +419,17 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
 msgid "Initial design and main window layout"
-msgstr ""
+msgstr "Design initial et présentation de la fenêtre principale"
 
 #: ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter"
-msgstr ""
+msgstr "Premiers bêta-testeur"
 
 #: ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
 msgid "Danish translation"
-msgstr ""
+msgstr "Traduction danoise"
 
 #: ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
@@ -438,27 +439,27 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Performance improvements and cleanups"
-msgstr ""
+msgstr "Nettoyages et améliorations des performances"
 
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "/print command"
-msgstr ""
+msgstr "commande /print"
 
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Performance improvements"
-msgstr ""
+msgstr "Amélioration des performances"
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
 msgid "Build system fixes"
-msgstr ""
+msgstr "Correction du système de compilation"
 
 #: ../src/uisupport/aboutdata.cpp:285
 msgctxt "AboutData|"
 msgid "Emacs keybindings"
-msgstr ""
+msgstr "Saisie de type Emacs"
 
 #: ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
@@ -478,63 +479,63 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
 msgid "Dutch translation"
-msgstr ""
+msgstr "Traduction néerlandaise"
 
 #: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
 #: ../src/uisupport/aboutdata.cpp:302 ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
 msgid "Greek translation"
-msgstr ""
+msgstr "Traduction grecque"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Fixing and hosting Windows builds"
-msgstr ""
+msgstr "Correction et hébergement des versions Windows"
 
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Korean translation"
-msgstr ""
+msgstr "Traduction coréenne"
 
 #: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
-msgstr ""
+msgstr "Traduction norvégienne, documentation"
 
 #: ../src/uisupport/aboutdata.cpp:304
 msgctxt "AboutData|"
 msgid "Former Windows builder"
-msgstr ""
+msgstr "Ancien compilateur Windows"
 
 #: ../src/uisupport/aboutdata.cpp:305
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
-msgstr ""
+msgstr "Corrections, maintenance du package Debian"
 
 #: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
-msgstr ""
+msgstr "Corrections et commentaires"
 
 #: ../src/uisupport/aboutdata.cpp:308 ../src/uisupport/aboutdata.cpp:310
 msgctxt "AboutData|"
 msgid "Czech translation"
-msgstr ""
+msgstr "Traduction tchèque"
 
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Améliorations de la détection réseau"
 
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Traduction ukrainienne"
 
 #: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Traduction portugaise"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -1842,7 +1843,7 @@ msgstr "Aller à la discussion"
 #: ../src/uisupport/contextmenuactionprovider.cpp:47
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins/Parts/Quits"
-msgstr ""
+msgstr "Arrivées/Départs/Sorties"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
@@ -2281,27 +2282,27 @@ msgstr "<b>Votre client Quassel est trop ancien !</b><br>Le composant central r
 #: ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
-msgstr ""
+msgstr "n'a pas envoyé de message d'enregistrement avant d'essayer de se connecter, rejet."
 
 #: ../src/core/coreauthhandler.cpp:145
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
-msgstr ""
+msgstr "<b>Client non initialisé !</b><br>Vous devez envoyer un message d'enregistrement avant d'essayer de vous connecter."
 
 #: ../src/core/coreauthhandler.cpp:162
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
-msgstr ""
+msgstr "SSL requis mais tentative de connexion non-SSL depuis %1"
 
 #: ../src/core/coreauthhandler.cpp:163
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
-msgstr ""
+msgstr "<b>SSL est requis !</b><br>Vous devez utiliser SSL pour se connecter à ce composant central."
 
 #: ../src/core/coreauthhandler.cpp:177
 #, qt-format
@@ -2313,7 +2314,7 @@ msgstr "<b>Composant central Quassel version %1</b><br>Compilation : %2<br>En f
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
-msgstr ""
+msgstr "Tentative de connexion non valide de %1 « %2 »"
 
 #: ../src/core/coreauthhandler.cpp:214
 msgctxt "CoreAuthHandler|"
@@ -2327,12 +2328,12 @@ msgstr "<b>identifiant ou mot de passe erroné !</b><br>Impossible de trouver a
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
-msgstr ""
+msgstr "Client %1 initialisé et authentifié avec succès en tant que « %2 » (ID utilisateur : %3)."
 
 #: ../src/core/coreauthhandler.cpp:238
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
-msgstr ""
+msgstr "Lancement du chiffrement pour le client :"
 
 #: ../src/qtui/coreconfigwizard.cpp:69
 msgctxt "CoreConfigWizard|"
@@ -2588,12 +2589,12 @@ msgstr "Détection de l'état du réseau"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:26
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Rely on Qt's network configuration manager to detect if we're online"
-msgstr ""
+msgstr "Utiliser le gestionnaire de configuration réseau de Qt pour détecter si nous sommes en ligne"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatique"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2639,7 +2640,7 @@ msgstr "Réessayer après"
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Interval between consecutive connection attempts"
-msgstr ""
+msgstr "Intervalle entre deux tentatives de connexion consécutives"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -2821,7 +2822,7 @@ msgstr "Aucun pseudo libre et valable n'a été trouvé dans la liste. Utilisez�
 #: ../src/core/coresessioneventprocessor.cpp:450
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
-msgstr ""
+msgstr "Impossible d'effectuer l'échange de clés, le plugin qca-ossl est manquant."
 
 #: ../src/core/coresessioneventprocessor.cpp:461
 msgctxt "CoreSessionEventProcessor|"
@@ -2842,39 +2843,39 @@ msgstr "Échec de l'analyse DH1080_FINISH. Échec de l'échange de clés. "
 #: ../src/core/coresessioneventprocessor.cpp:1052
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
-msgstr ""
+msgstr "DCC SEND inversé n'est pas encore pris en charge !"
 
 #: ../src/core/coresessioneventprocessor.cpp:1070
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
-msgstr ""
+msgstr "DCC %1 non pris en charge"
 
 #: ../src/core/coretransfer.cpp:58
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr ""
+msgstr "La connexion a été fermée pendant que le transfert était en cours !"
 
 #: ../src/core/coretransfer.cpp:70
 #, qt-format
 msgctxt "CoreTransfer|"
 msgid "DCC connection error: %1"
-msgstr ""
+msgstr "Erreur de connexion DCC : %1"
 
 #: ../src/core/coretransfer.cpp:114
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr ""
+msgstr "DCC inversé n'est pas encore pris en charge"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Got more data than expected!"
-msgstr ""
+msgstr "Réception DCC : A obtenu plus de données que prévu !"
 
 #: ../src/core/coretransfer.cpp:176
 msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
-msgstr ""
+msgstr "Réception DCC : Quassel Client a été déconnecté pendant le transfert !"
 
 #: ../src/core/coreuserinputhandler.cpp:88
 msgctxt "CoreUserInputHandler|"
@@ -2931,12 +2932,12 @@ msgstr "Erreur : définir une clé de chiffrement nécessite que Quassel ait é
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
-msgstr ""
+msgstr "[utilisation] /keyx [<nick>] Initie un échange de clés DH1080 avec la cible. "
 
 #: ../src/core/coreuserinputhandler.cpp:377
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
-msgstr ""
+msgstr "Il est seulement possible d'échanger des clés dans un tampon de requête."
 
 #: ../src/core/coreuserinputhandler.cpp:387
 #, qt-format
@@ -2991,7 +2992,7 @@ msgstr "[utilisation] /delkey <pseudo|canal> supprime la clé de chiffrement pou
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
-msgstr ""
+msgstr "La clé de %1 est %2:%3"
 
 #: ../src/qtui/settingspages/createidentitydlg.ui:17
 msgctxt "CreateIdentityDlg|"
@@ -3346,7 +3347,7 @@ msgstr "CTCP-%1 réponse de %2: %3"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
-msgstr ""
+msgstr "Réception d'une requête CTCP PING de %1 avec un temps aller-retour de %2 millisecondes"
 
 #: ../src/client/execwrapper.cpp:49
 #, qt-format
@@ -3841,14 +3842,14 @@ msgstr "Charger une clé"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
-msgstr ""
+msgstr "Impossible de lire la clé"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:355
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that"
 " the key file must not have a passphrase."
-msgstr ""
+msgstr "Impossible de lire la clé. Elle est incompatible ou non valide. Notez que la clé ne doit pas avoir de mot de passe."
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:370
 msgctxt "IdentityEditWidget|"
@@ -4368,22 +4369,22 @@ msgstr "Sujet"
 #: ../src/client/networkmodel.cpp:976
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
-msgstr ""
+msgstr "(inconnu)"
 
 #: ../src/client/networkmodel.cpp:980
 msgctxt "IrcUserItem|"
 msgid "Away&nbsp;Message"
-msgstr ""
+msgstr "Message&nbsp;d'absence"
 
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
 msgid "Realname"
-msgstr ""
+msgstr "Nom réel"
 
 #: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Opérateur"
 
 #: ../src/client/networkmodel.cpp:984
 msgctxt "IrcUserItem|"
@@ -4393,27 +4394,27 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:985
 msgctxt "IrcUserItem|"
 msgid "Whois&nbsp;Service&nbsp;Reply"
-msgstr ""
+msgstr "Réponse&nbsp;du&nbsp;service&nbsp;Whois"
 
 #: ../src/client/networkmodel.cpp:986
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
-msgstr ""
+msgstr "Masque d'hôte"
 
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Inactif&nbsp;depuis"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
 msgid "Login&nbsp;time"
-msgstr ""
+msgstr "Durée&nbsp;de&nbsp;connexion"
 
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Serveur"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -4642,7 +4643,7 @@ msgstr ""
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Se connecter au composant central ..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
@@ -4662,7 +4663,7 @@ msgstr "Se &déconnecter du composant central"
 #: ../src/qtui/mainwin.cpp:366
 msgctxt "MainWin|"
 msgid "Change &Password..."
-msgstr ""
+msgstr "Changer le mot de passe ..."
 
 #: ../src/qtui/mainwin.cpp:368
 msgctxt "MainWin|"
@@ -4942,19 +4943,19 @@ msgstr "Débogage"
 #: ../src/qtui/mainwin.cpp:749
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr ""
+msgstr "Fonctionnalité non prise en charge"
 
 #: ../src/qtui/mainwin.cpp:750
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr ""
+msgstr "<b>Votre composant central ne prend pas en charge cette fonctionnalité</b>"
 
 #: ../src/qtui/mainwin.cpp:752
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
-msgstr ""
+msgstr "Vous avez besoin de Quassel Core v0.12.0 ou plus récent pour pouvoir changer à distance votre mot de passe."
 
 #: ../src/qtui/mainwin.cpp:865
 msgctxt "MainWin|"
@@ -5569,22 +5570,22 @@ msgstr "Notifications"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Changer le mot de passe"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Ancien mot de passe :"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Nouveau mot de passe :"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Confirmez le mot de passe :"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5592,24 +5593,24 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Cela changera le mot de passe pour votre nom d'utilisateur <b>%1</b> sur le composant central <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Le mot de passe n'a pas été changé"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Le changement du mot de passe a échoué</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Le composant central a reporté une erreur en tentant de changer votre mot de passe. Êtes-vous sûr que vous avez entrer votre ancien mot de passe correctement ?"
 
 #: ../src/qtui/phononnotificationbackend.cpp:188
 msgctxt "PhononNotificationBackend::ConfigWidget|"
@@ -5884,18 +5885,18 @@ msgstr "serveur : %1"
 #: ../src/qtui/ui/receivefiledlg.ui:14
 msgctxt "ReceiveFileDlg|"
 msgid "Incoming File Transfer"
-msgstr ""
+msgstr "Transfert de fichiers entrant"
 
 #: ../src/qtui/receivefiledlg.cpp:35
 #, qt-format
 msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
-msgstr ""
+msgstr "<b>%1</b> veut vous envoyer un fichier :<br>%2 (%3 octets)"
 
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Déconnexion ..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5956,17 +5957,17 @@ msgstr "Version SSL :"
 #: ../src/qtui/settingspages/servereditdlg.ui:147
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "N'utilisez que TLSv1 sauf si vous savez ce que vous faites !"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (non sécurisé)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (non sécurisé)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
@@ -6236,7 +6237,7 @@ msgstr "Liste des canaux IRC que vous voulez rejoindre automatiquement après co
 #: ../src/qtui/snorenotificationbackend.cpp:56
 msgctxt "SnoreNotificationBackend|"
 msgid "Private Message"
-msgstr ""
+msgstr "Message privé"
 
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:20
 msgctxt "SnoreNotificationConfigWidget|"
