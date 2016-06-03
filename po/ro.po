@@ -2,7 +2,7 @@
 # Translators:
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013
 # Arthur Țițeică <arthur.titeica@gmail.com>, 2013
-# Sergiu Bivol <sergiu@ase.md>, 2013
+# Sergiu Bivol <sergiu@cip.md>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
