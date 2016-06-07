@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2015 by the Quassel Project                        *
+ *   Copyright (C) 2005-2016 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -1306,5 +1306,5 @@ void CoreSessionEventProcessor::handleCtcpTime(CtcpEvent *e)
 void CoreSessionEventProcessor::handleCtcpVersion(CtcpEvent *e)
 {
     e->setReply(QString("Quassel IRC %1 (built on %2) -- http://www.quassel-irc.org")
-        .arg(Quassel::buildInfo().plainVersionString).arg(Quassel::buildInfo().buildDate));
+        .arg(Quassel::buildInfo().plainVersionString).arg(Quassel::buildInfo().commitDate));
 }
