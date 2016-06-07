@@ -566,7 +566,8 @@ msgstr ""
 #: ../src/qtui/aboutdlg.cpp:38
 #, qt-format
 msgctxt "AboutDlg|"
-msgid "<b>Version:</b> %1<br><b>Protocol version:</b> %2<br><b>Built:</b> %3"
+msgid ""
+"<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
 msgstr ""
 
 #: ../src/qtui/aboutdlg.cpp:54
@@ -2323,7 +2324,8 @@ msgstr ""
 #: ../src/core/coreauthhandler.cpp:183
 #, qt-format
 msgctxt "CoreAuthHandler|"
-msgid "<b>Quassel Core Version %1</b><br>Built: %2<br>Up %3d%4h%5m (since %6)"
+msgid ""
+"<b>Quassel Core Version %1</b><br>Version date: %2<br>Up %3d%4h%5m (since %6)"
 msgstr ""
 
 #: ../src/core/coreauthhandler.cpp:219
@@ -2742,12 +2744,12 @@ msgstr ""
 
 #: ../src/qtui/ui/coreinfodlg.ui:63
 msgctxt "CoreInfoDlg|"
-msgid "Build date:"
+msgid "Version date:"
 msgstr ""
 
 #: ../src/qtui/ui/coreinfodlg.ui:70
 msgctxt "CoreInfoDlg|"
-msgid "<build date>"
+msgid "<version date>"
 msgstr ""
 
 #: ../src/qtui/ui/coreinfodlg.ui:81
