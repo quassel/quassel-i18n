@@ -45,6 +45,19 @@ public :
 
     virtual QVariant data(int column, int row) const;
 
+    /**
+     * Escapes a string as HTML, ready for Qt markup.
+     *
+     * Implementation depends on Qt version - Qt4 uses Qt::escape, while Qt5 uses .toHtmlEscaped().
+     *
+     * @param[in] string               QString to escape
+     * @param[in] useNonbreakingSpaces
+     * @parblock
+     * If true, replace spaces with non-breaking spaces (i.e. '&nbsp;'), otherwise only HTML escape.
+     * @endparblock
+     */
+    static QString escapeHTML(const QString &string, bool useNonbreakingSpaces = false);
+
     inline bool isActive() const { return (bool)_network ? _network->isConnected() : false; }
 
     inline const NetworkId &networkId() const { return _networkId; }
@@ -200,6 +213,14 @@ public:
 
     void attachIrcChannel(IrcChannel *ircChannel);
 
+    /**
+     * Gets the list of channel modes for a given nick.
+     *
+     * @param[in] nick IrcUser nickname to check
+     * @returns Channel modes as a string if any, otherwise empty string
+     */
+    QString nickChannelModes(const QString &nick) const;
+
 public slots:
     void join(const QList<IrcUser *> &ircUsers);
     void part(IrcUser *ircUser);
@@ -265,6 +286,13 @@ public :
     inline IrcUser *ircUser() { return _ircUser; }
     virtual QVariant data(int column, int role) const;
     virtual QString toolTip(int column) const;
+
+    /**
+     * Gets the list of channel modes for this nick if parented to channel.
+     *
+     * @returns Channel modes as a string if any, otherwise empty string
+     */
+    QString channelModes() const;
 
 private slots:
     inline void ircUserQuited() { parent()->removeChild(this); }
