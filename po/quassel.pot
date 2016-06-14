@@ -948,7 +948,7 @@ msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:401
+#: ../src/client/networkmodel.cpp:420
 #, qt-format
 msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
@@ -1146,39 +1146,30 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:589 ../src/client/networkmodel.cpp:591
+#: ../src/client/networkmodel.cpp:680
 #, qt-format
 msgctxt "ChannelBufferItem|"
-msgid "<b>Channel %1</b>"
+msgid "Channel %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:595
-#, qt-format
+#: ../src/client/networkmodel.cpp:684
 msgctxt "ChannelBufferItem|"
-msgid "<b>Users:</b> %1"
+msgid "Users"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:599
-#, qt-format
+#: ../src/client/networkmodel.cpp:689
 msgctxt "ChannelBufferItem|"
-msgid "<b>Mode:</b> %1"
+msgid "Mode"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:614
-#, qt-format
+#: ../src/client/networkmodel.cpp:699
 msgctxt "ChannelBufferItem|"
-msgid "<b>Topic:</b> %1"
+msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:619
+#: ../src/client/networkmodel.cpp:705
 msgctxt "ChannelBufferItem|"
-msgid "Not active <br /> Double-click to join"
-msgstr ""
-
-#: ../src/client/networkmodel.cpp:622
-#, qt-format
-msgctxt "ChannelBufferItem|"
-msgid "<p> %1 </p>"
+msgid "Not active, double-click to join"
 msgstr ""
 
 #: ../src/qtui/ui/channellistdlg.ui:14
@@ -4415,54 +4406,84 @@ msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:976
+#: ../src/client/networkmodel.cpp:1078
+msgctxt "IrcUserItem|"
+msgid "Modes"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1082
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:980
+#: ../src/client/networkmodel.cpp:1086
 msgctxt "IrcUserItem|"
-msgid "Away&nbsp;Message"
+msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:982
+#: ../src/client/networkmodel.cpp:1088
 msgctxt "IrcUserItem|"
 msgid "Realname"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
+#: ../src/client/networkmodel.cpp:1095
 msgctxt "IrcUserItem|"
-msgid "Operator"
+msgid "Help status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:984
+#: ../src/client/networkmodel.cpp:1096
 msgctxt "IrcUserItem|"
-msgid "Suser&nbsp;Host"
+msgid "Available for help"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:985
+#: ../src/client/networkmodel.cpp:1099
 msgctxt "IrcUserItem|"
-msgid "Whois&nbsp;Service&nbsp;Reply"
+msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:986
+#: ../src/client/networkmodel.cpp:1106
+msgctxt "IrcUserItem|"
+msgid "Account"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1107
+msgctxt "IrcUserItem|"
+msgid "Identified for this nick"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1110
+msgctxt "IrcUserItem|"
+msgid "Service Reply"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1114
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:993
+#: ../src/client/networkmodel.cpp:1118
 msgctxt "IrcUserItem|"
-msgid "Idling&nbsp;since"
+msgid "Operator"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:997
+#: ../src/client/networkmodel.cpp:1126
 msgctxt "IrcUserItem|"
-msgid "Login&nbsp;time"
+msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1000
+#: ../src/client/networkmodel.cpp:1130
+msgctxt "IrcUserItem|"
+msgid "Login time"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1133
 msgctxt "IrcUserItem|"
 msgid "Server"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1138
+msgctxt "IrcUserItem|"
+msgid "No information available"
 msgstr ""
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
@@ -4694,401 +4715,401 @@ msgctxt "MainPage|"
 msgid "Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:365
+#: ../src/qtui/mainwin.cpp:371
 msgctxt "MainWin|"
 msgid "General"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:367
+#: ../src/qtui/mainwin.cpp:373
 msgctxt "MainWin|"
 msgid "&Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:369
+#: ../src/qtui/mainwin.cpp:375
 msgctxt "MainWin|"
 msgid "&Disconnect from Core"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:371
+#: ../src/qtui/mainwin.cpp:377
 msgctxt "MainWin|"
 msgid "Change &Password..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:373
+#: ../src/qtui/mainwin.cpp:379
 msgctxt "MainWin|"
 msgid "Core &Info..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:375
+#: ../src/qtui/mainwin.cpp:381
 msgctxt "MainWin|"
 msgid "Configure &Networks..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:378
+#: ../src/qtui/mainwin.cpp:384
 msgctxt "MainWin|"
 msgid "&Quit"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:382
+#: ../src/qtui/mainwin.cpp:388
 msgctxt "MainWin|"
 msgid "&Configure Chat Lists..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:385
+#: ../src/qtui/mainwin.cpp:391
 msgctxt "MainWin|"
 msgid "&Lock Layout"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:389
+#: ../src/qtui/mainwin.cpp:395
 msgctxt "MainWin|"
 msgid "Show &Search Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:391
+#: ../src/qtui/mainwin.cpp:397
 msgctxt "MainWin|"
 msgid "Show Away Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:393
+#: ../src/qtui/mainwin.cpp:399
 msgctxt "MainWin|"
 msgid "Show &Menubar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:396
+#: ../src/qtui/mainwin.cpp:402
 msgctxt "MainWin|"
 msgid "Show Status &Bar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:402
+#: ../src/qtui/mainwin.cpp:408
 msgctxt "MainWin|"
 msgid "&Full Screen Mode"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:409
+#: ../src/qtui/mainwin.cpp:415
 msgctxt "MainWin|"
 msgid "Configure &Shortcuts..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:415 ../src/qtui/mainwin.cpp:419
+#: ../src/qtui/mainwin.cpp:421 ../src/qtui/mainwin.cpp:425
 msgctxt "MainWin|"
 msgid "&Configure Quassel..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:425
+#: ../src/qtui/mainwin.cpp:431
 msgctxt "MainWin|"
 msgid "&About Quassel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:430
+#: ../src/qtui/mainwin.cpp:436
 msgctxt "MainWin|"
 msgid "About &Qt"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:434
+#: ../src/qtui/mainwin.cpp:440
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:436
+#: ../src/qtui/mainwin.cpp:442
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:438
+#: ../src/qtui/mainwin.cpp:444
 msgctxt "MainWin|"
 msgid "Debug &MessageModel"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:440
+#: ../src/qtui/mainwin.cpp:446
 msgctxt "MainWin|"
 msgid "Debug &HotList"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:442
+#: ../src/qtui/mainwin.cpp:448
 msgctxt "MainWin|"
 msgid "Debug &Log"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:444
+#: ../src/qtui/mainwin.cpp:450
 msgctxt "MainWin|"
 msgid "Reload Stylesheet"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:447
+#: ../src/qtui/mainwin.cpp:453
 msgctxt "MainWin|"
 msgid "Hide Current Buffer"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:451
+#: ../src/qtui/mainwin.cpp:457
 msgctxt "MainWin|"
 msgid "Navigation"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:453
+#: ../src/qtui/mainwin.cpp:459
 msgctxt "MainWin|"
 msgid "Jump to hot chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:465
+#: ../src/qtui/mainwin.cpp:471
 msgctxt "MainWin|"
 msgid "Set Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:467
+#: ../src/qtui/mainwin.cpp:473
 msgctxt "MainWin|"
 msgid "Set Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:469
+#: ../src/qtui/mainwin.cpp:475
 msgctxt "MainWin|"
 msgid "Set Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:471
+#: ../src/qtui/mainwin.cpp:477
 msgctxt "MainWin|"
 msgid "Set Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:473
+#: ../src/qtui/mainwin.cpp:479
 msgctxt "MainWin|"
 msgid "Set Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:475
+#: ../src/qtui/mainwin.cpp:481
 msgctxt "MainWin|"
 msgid "Set Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:477
+#: ../src/qtui/mainwin.cpp:483
 msgctxt "MainWin|"
 msgid "Set Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:479
+#: ../src/qtui/mainwin.cpp:485
 msgctxt "MainWin|"
 msgid "Set Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:481
+#: ../src/qtui/mainwin.cpp:487
 msgctxt "MainWin|"
 msgid "Set Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:483
+#: ../src/qtui/mainwin.cpp:489
 msgctxt "MainWin|"
 msgid "Set Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:486
+#: ../src/qtui/mainwin.cpp:492
 msgctxt "MainWin|"
 msgid "Quick Access #0"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:488
+#: ../src/qtui/mainwin.cpp:494
 msgctxt "MainWin|"
 msgid "Quick Access #1"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:490
+#: ../src/qtui/mainwin.cpp:496
 msgctxt "MainWin|"
 msgid "Quick Access #2"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:492
+#: ../src/qtui/mainwin.cpp:498
 msgctxt "MainWin|"
 msgid "Quick Access #3"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:494
+#: ../src/qtui/mainwin.cpp:500
 msgctxt "MainWin|"
 msgid "Quick Access #4"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:496
+#: ../src/qtui/mainwin.cpp:502
 msgctxt "MainWin|"
 msgid "Quick Access #5"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:498
+#: ../src/qtui/mainwin.cpp:504
 msgctxt "MainWin|"
 msgid "Quick Access #6"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:500
+#: ../src/qtui/mainwin.cpp:506
 msgctxt "MainWin|"
 msgid "Quick Access #7"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:502
+#: ../src/qtui/mainwin.cpp:508
 msgctxt "MainWin|"
 msgid "Quick Access #8"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:504
+#: ../src/qtui/mainwin.cpp:510
 msgctxt "MainWin|"
 msgid "Quick Access #9"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:508
+#: ../src/qtui/mainwin.cpp:514
 msgctxt "MainWin|"
 msgid "Activate Next Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:510
+#: ../src/qtui/mainwin.cpp:516
 msgctxt "MainWin|"
 msgid "Activate Previous Chat List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:512
+#: ../src/qtui/mainwin.cpp:518
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:514
+#: ../src/qtui/mainwin.cpp:520
 msgctxt "MainWin|"
 msgid "Go to Previous Chat"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:523
+#: ../src/qtui/mainwin.cpp:529
 msgctxt "MainWin|"
 msgid "&File"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:536
+#: ../src/qtui/mainwin.cpp:542
 msgctxt "MainWin|"
 msgid "&Networks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:542
+#: ../src/qtui/mainwin.cpp:548
 msgctxt "MainWin|"
 msgid "&View"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:543
+#: ../src/qtui/mainwin.cpp:549
 msgctxt "MainWin|"
 msgid "&Chat Lists"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:545
+#: ../src/qtui/mainwin.cpp:551
 msgctxt "MainWin|"
 msgid "&Toolbars"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:559
+#: ../src/qtui/mainwin.cpp:565
 msgctxt "MainWin|"
 msgid "&Settings"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:569
+#: ../src/qtui/mainwin.cpp:575
 msgctxt "MainWin|"
 msgid "&Help"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:578
+#: ../src/qtui/mainwin.cpp:584
 msgctxt "MainWin|"
 msgid "Debug"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:754
+#: ../src/qtui/mainwin.cpp:760
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:755
+#: ../src/qtui/mainwin.cpp:761
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:757
+#: ../src/qtui/mainwin.cpp:763
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:870
+#: ../src/qtui/mainwin.cpp:876
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:879
+#: ../src/qtui/mainwin.cpp:885
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:894
+#: ../src/qtui/mainwin.cpp:900
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:906
+#: ../src/qtui/mainwin.cpp:912
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:912
+#: ../src/qtui/mainwin.cpp:918
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:921
+#: ../src/qtui/mainwin.cpp:927
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:936
+#: ../src/qtui/mainwin.cpp:942
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:948
+#: ../src/qtui/mainwin.cpp:954
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1042
+#: ../src/qtui/mainwin.cpp:1048
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1106
+#: ../src/qtui/mainwin.cpp:1112
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1206
+#: ../src/qtui/mainwin.cpp:1212
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1225 ../src/qtui/mainwin.cpp:1235
+#: ../src/qtui/mainwin.cpp:1231 ../src/qtui/mainwin.cpp:1241
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1225
+#: ../src/qtui/mainwin.cpp:1231
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1227 ../src/qtui/mainwin.cpp:1237
+#: ../src/qtui/mainwin.cpp:1233 ../src/qtui/mainwin.cpp:1243
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1235
+#: ../src/qtui/mainwin.cpp:1241
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1253 ../src/qtui/mainwin.cpp:1274
+#: ../src/qtui/mainwin.cpp:1259 ../src/qtui/mainwin.cpp:1280
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1254
+#: ../src/qtui/mainwin.cpp:1260
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -5096,33 +5117,33 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1257
+#: ../src/qtui/mainwin.cpp:1263
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1258
+#: ../src/qtui/mainwin.cpp:1264
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1275
+#: ../src/qtui/mainwin.cpp:1281
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1277
+#: ../src/qtui/mainwin.cpp:1283
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1278
+#: ../src/qtui/mainwin.cpp:1284
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1289
+#: ../src/qtui/mainwin.cpp:1295
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
@@ -5216,35 +5237,38 @@ msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:216 ../src/client/networkmodel.cpp:219
-#, qt-format
+#: ../src/client/networkmodel.cpp:238
 msgctxt "NetworkItem|"
-msgid "Server: %1"
+msgid "Server"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:221
-#, qt-format
+#: ../src/client/networkmodel.cpp:240
 msgctxt "NetworkItem|"
-msgid "Users: %1"
+msgid "Users"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:224
-#, qt-format
+#: ../src/client/networkmodel.cpp:243
 msgctxt "NetworkItem|"
-msgid "Lag: %1 msecs"
+msgid "Lag"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1029
+#: ../src/client/networkmodel.cpp:243
+#, qt-format
+msgctxt "NetworkItem|"
+msgid "%1 msecs"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1182
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1029
+#: ../src/client/networkmodel.cpp:1182
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1029
+#: ../src/client/networkmodel.cpp:1182
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr ""
@@ -5881,6 +5905,32 @@ msgctxt "QssParser|"
 msgid "Invalid font size specification: %1"
 msgstr ""
 
+#: ../src/qtui/qtmultimedianotificationbackend.cpp:167
+msgctxt "QtMultimediaNotificationBackend::ConfigWidget|"
+msgid "Select Audio File"
+msgstr ""
+
+#: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:14
+msgctxt "QtMultimediaNotificationConfigWidget|"
+msgid "Form"
+msgstr ""
+
+#: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:20
+msgctxt "QtMultimediaNotificationConfigWidget|"
+msgid "Play a sound"
+msgstr ""
+
+#: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:46
+msgctxt "QtMultimediaNotificationConfigWidget|"
+msgid "Prelisten to the selected sound"
+msgstr ""
+
+#: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:59
+#: ../src/qtui/ui/qtmultimedianotificationconfigwidget.ui:69
+msgctxt "QtMultimediaNotificationConfigWidget|"
+msgid "Select the sound file to play"
+msgstr ""
+
 #: ../src/common/util.cpp:169
 msgctxt "Quassel::secondsToString()|"
 msgid "year"
@@ -5906,28 +5956,85 @@ msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:503
+#: ../src/client/networkmodel.cpp:530
 #, qt-format
 msgctxt "QueryBufferItem|"
-msgid "<b>Query with %1</b>"
+msgid "Query with %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:521
-#, qt-format
+#: ../src/client/networkmodel.cpp:552
 msgctxt "QueryBufferItem|"
-msgid "idling since %1"
+msgid "(unknown)"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:524
-#, qt-format
+#: ../src/client/networkmodel.cpp:556
 msgctxt "QueryBufferItem|"
-msgid "login time: %1"
+msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:527
-#, qt-format
+#: ../src/client/networkmodel.cpp:558
 msgctxt "QueryBufferItem|"
-msgid "server: %1"
+msgid "Realname"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:564
+msgctxt "QueryBufferItem|"
+msgid "Help status"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:565
+msgctxt "QueryBufferItem|"
+msgid "Available for help"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:568
+msgctxt "QueryBufferItem|"
+msgid "Service status"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:575
+msgctxt "QueryBufferItem|"
+msgid "Account"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:576
+msgctxt "QueryBufferItem|"
+msgid "Identified for this nick"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:579
+msgctxt "QueryBufferItem|"
+msgid "Service Reply"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:583
+msgctxt "QueryBufferItem|"
+msgid "Hostmask"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:587
+msgctxt "QueryBufferItem|"
+msgid "Operator"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:595
+msgctxt "QueryBufferItem|"
+msgid "Idling since"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:599
+msgctxt "QueryBufferItem|"
+msgid "Login time"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:602
+msgctxt "QueryBufferItem|"
+msgid "Server"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:608
+msgctxt "QueryBufferItem|"
+msgid "No information available"
 msgstr ""
 
 #: ../src/qtui/ui/receivefiledlg.ui:14
@@ -6433,7 +6540,7 @@ msgctxt "SslInfoDlg|"
 msgid "%1 to %2"
 msgstr ""
 
-#: ../src/client/networkmodel.h:151
+#: ../src/client/networkmodel.h:164
 msgctxt "StatusBufferItem|"
 msgid "Status Buffer"
 msgstr ""
@@ -6797,7 +6904,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:831
+#: ../src/client/networkmodel.cpp:928
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -6805,7 +6912,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:833
+#: ../src/client/networkmodel.cpp:930
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -6813,7 +6920,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:835
+#: ../src/client/networkmodel.cpp:932
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -6821,7 +6928,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:837
+#: ../src/client/networkmodel.cpp:934
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -6829,7 +6936,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:839
+#: ../src/client/networkmodel.cpp:936
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -6837,7 +6944,7 @@ msgid_plural "%n Voiced"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:841
+#: ../src/client/networkmodel.cpp:938
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
