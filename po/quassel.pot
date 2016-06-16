@@ -1146,28 +1146,28 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:680
+#: ../src/client/networkmodel.cpp:701
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:684
+#: ../src/client/networkmodel.cpp:705
 msgctxt "ChannelBufferItem|"
 msgid "Users"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:689
+#: ../src/client/networkmodel.cpp:710
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:699
+#: ../src/client/networkmodel.cpp:720
 msgctxt "ChannelBufferItem|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:705
+#: ../src/client/networkmodel.cpp:726
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
 msgstr ""
@@ -2762,43 +2762,76 @@ msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:172
+#: ../src/core/corenetwork.cpp:182
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:180 ../src/core/corenetwork.cpp:181
+#: ../src/core/corenetwork.cpp:190 ../src/core/corenetwork.cpp:191
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:238
+#: ../src/core/corenetwork.cpp:248
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:238
+#: ../src/core/corenetwork.cpp:248
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:446
+#: ../src/core/corenetwork.cpp:456
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:448
+#: ../src/core/corenetwork.cpp:458
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:492
+#: ../src/core/corenetwork.cpp:502
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:917
+msgctxt "CoreNetwork|"
+msgid "SASL EXTERNAL authentication not supported"
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:928
+msgctxt "CoreNetwork|"
+msgid "SASL PLAIN authentication not supported"
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:974
+#, qt-format
+msgctxt "CoreNetwork|"
+msgid "Ready to negotiate (found: %1)"
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:976
+#, qt-format
+msgctxt "CoreNetwork|"
+msgid "Negotiating capabilities (requesting: %1)..."
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:991
+msgctxt "CoreNetwork|"
+msgid "SASL authentication currently not supported by server"
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:995
+#, qt-format
+msgctxt "CoreNetwork|"
+msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
 #: ../src/core/coresession.cpp:233
@@ -2827,54 +2860,39 @@ msgid ""
 "exists, updating instead!"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:78
+#: ../src/core/coresessioneventprocessor.cpp:81
 msgctxt "CoreSessionEventProcessor|"
 msgid ""
 "No free and valid nicks in nicklist found. use: /nick <othernick> to continue"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:153
-msgctxt "CoreSessionEventProcessor|"
-msgid "SASL authentication not supported by server, continuing without"
-msgstr ""
-
-#: ../src/core/coresessioneventprocessor.cpp:157
-msgctxt "CoreSessionEventProcessor|"
-msgid "Capability negotiation finished"
-msgstr ""
-
-#: ../src/core/coresessioneventprocessor.cpp:211
-msgctxt "CoreSessionEventProcessor|"
-msgid "Negotiating capabilities..."
-msgstr ""
-
-#: ../src/core/coresessioneventprocessor.cpp:606
+#: ../src/core/coresessioneventprocessor.cpp:598
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:617
+#: ../src/core/coresessioneventprocessor.cpp:609
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr ""
 
+#: ../src/core/coresessioneventprocessor.cpp:613
 #: ../src/core/coresessioneventprocessor.cpp:621
-#: ../src/core/coresessioneventprocessor.cpp:629
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:631
+#: ../src/core/coresessioneventprocessor.cpp:623
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1269
+#: ../src/core/coresessioneventprocessor.cpp:1351
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1287
+#: ../src/core/coresessioneventprocessor.cpp:1369
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -3147,230 +3165,236 @@ msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:224 ../src/core/eventstringifier.cpp:370
+#: ../src/core/eventstringifier.cpp:238 ../src/core/eventstringifier.cpp:384
 msgctxt "EventStringifier|"
 msgid "[Whois] "
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:239
+#: ../src/core/eventstringifier.cpp:253
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 invited you to channel %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:341
+#: ../src/core/eventstringifier.cpp:355
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:347
+#: ../src/core/eventstringifier.cpp:361
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Operwall] %1: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:355
+#: ../src/core/eventstringifier.cpp:369
 msgctxt "EventStringifier|"
 msgid ""
 "Received non-RFC-compliant RPL_ISUPPORT: this can lead to unexpected "
 "behavior!"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:384
+#: ../src/core/eventstringifier.cpp:398
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 is away: \"%2\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:391
+#: ../src/core/eventstringifier.cpp:405
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:399
+#: ../src/core/eventstringifier.cpp:413
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:421
+#: ../src/core/eventstringifier.cpp:435
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:437
+#: ../src/core/eventstringifier.cpp:451
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:439
+#: ../src/core/eventstringifier.cpp:453
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was online via %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:449
+#: ../src/core/eventstringifier.cpp:463
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:458
+#: ../src/core/eventstringifier.cpp:472
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] End of /WHO list for %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:470
+#: ../src/core/eventstringifier.cpp:484
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is logged in since %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:474
+#: ../src/core/eventstringifier.cpp:488
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is idling for %2 (since %3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:484
+#: ../src/core/eventstringifier.cpp:498
 msgctxt "EventStringifier|"
 msgid "[Whois] End of /WHOIS list"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:507
+#: ../src/core/eventstringifier.cpp:521
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is a user on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:509
+#: ../src/core/eventstringifier.cpp:523
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 has voice on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:511
+#: ../src/core/eventstringifier.cpp:525
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:532
+#: ../src/core/eventstringifier.cpp:546
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 has %2 users. Topic is: \"%3\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:540
+#: ../src/core/eventstringifier.cpp:554
 msgctxt "EventStringifier|"
 msgid "End of channel list"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:558
+#: ../src/core/eventstringifier.cpp:572
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Homepage for %1 is %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:575
+#: ../src/core/eventstringifier.cpp:589
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 created on %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:589
+#: ../src/core/eventstringifier.cpp:603
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:592
+#: ../src/core/eventstringifier.cpp:606
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:601
+#: ../src/core/eventstringifier.cpp:615
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "No topic is set for %1."
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:609
+#: ../src/core/eventstringifier.cpp:623
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:621
+#: ../src/core/eventstringifier.cpp:635
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:634
+#: ../src/core/eventstringifier.cpp:648
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:642
+#: ../src/core/eventstringifier.cpp:656
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:649
+#: ../src/core/eventstringifier.cpp:666
+#, qt-format
+msgctxt "EventStringifier|"
+msgid "[WhoX] %1"
+msgstr ""
+
+#: ../src/core/eventstringifier.cpp:673
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:659
+#: ../src/core/eventstringifier.cpp:683
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick %1 contains illegal characters"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:669
+#: ../src/core/eventstringifier.cpp:693
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:679
+#: ../src/core/eventstringifier.cpp:703
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:702
+#: ../src/core/eventstringifier.cpp:726
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr ""
 
 #. Optional "unknown" in "Received unknown CTCP-FOO request by bar"
-#: ../src/core/eventstringifier.cpp:717
+#: ../src/core/eventstringifier.cpp:741
 msgctxt "EventStringifier|"
 msgid "unknown"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:718
+#: ../src/core/eventstringifier.cpp:742
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:721
+#: ../src/core/eventstringifier.cpp:745
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:736
+#: ../src/core/eventstringifier.cpp:760
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
@@ -4401,87 +4425,92 @@ msgctxt "IrcListModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/core/ircparser.cpp:322
+#: ../src/core/ircparser.cpp:325
 msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1078
+#: ../src/client/networkmodel.cpp:1099
 msgctxt "IrcUserItem|"
 msgid "Modes"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1082
+#: ../src/client/networkmodel.cpp:1103
 msgctxt "IrcUserItem|"
 msgid "(unknown)"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1086
+#: ../src/client/networkmodel.cpp:1107
 msgctxt "IrcUserItem|"
 msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1088
+#: ../src/client/networkmodel.cpp:1109
 msgctxt "IrcUserItem|"
 msgid "Realname"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1095
+#: ../src/client/networkmodel.cpp:1116
 msgctxt "IrcUserItem|"
 msgid "Help status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1096
+#: ../src/client/networkmodel.cpp:1117
 msgctxt "IrcUserItem|"
 msgid "Available for help"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1099
+#: ../src/client/networkmodel.cpp:1120
 msgctxt "IrcUserItem|"
 msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1106
+#: ../src/client/networkmodel.cpp:1130
+msgctxt "IrcUserItem|"
+msgid "Not logged in"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:1136 ../src/client/networkmodel.cpp:1145
 msgctxt "IrcUserItem|"
 msgid "Account"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1107
+#: ../src/client/networkmodel.cpp:1146
 msgctxt "IrcUserItem|"
 msgid "Identified for this nick"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1110
+#: ../src/client/networkmodel.cpp:1152
 msgctxt "IrcUserItem|"
 msgid "Service Reply"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1114
+#: ../src/client/networkmodel.cpp:1156
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1118
+#: ../src/client/networkmodel.cpp:1160
 msgctxt "IrcUserItem|"
 msgid "Operator"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1126
+#: ../src/client/networkmodel.cpp:1168
 msgctxt "IrcUserItem|"
 msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1130
+#: ../src/client/networkmodel.cpp:1172
 msgctxt "IrcUserItem|"
 msgid "Login time"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1133
+#: ../src/client/networkmodel.cpp:1175
 msgctxt "IrcUserItem|"
 msgid "Server"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1138
+#: ../src/client/networkmodel.cpp:1180
 msgctxt "IrcUserItem|"
 msgid "No information available"
 msgstr ""
@@ -5258,17 +5287,17 @@ msgctxt "NetworkItem|"
 msgid "%1 msecs"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1182
+#: ../src/client/networkmodel.cpp:1224
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1182
+#: ../src/client/networkmodel.cpp:1224
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1182
+#: ../src/client/networkmodel.cpp:1224
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr ""
@@ -5992,47 +6021,52 @@ msgctxt "QueryBufferItem|"
 msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:575
+#: ../src/client/networkmodel.cpp:578
+msgctxt "QueryBufferItem|"
+msgid "Not logged in"
+msgstr ""
+
+#: ../src/client/networkmodel.cpp:584 ../src/client/networkmodel.cpp:593
 msgctxt "QueryBufferItem|"
 msgid "Account"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:576
+#: ../src/client/networkmodel.cpp:594
 msgctxt "QueryBufferItem|"
 msgid "Identified for this nick"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:579
+#: ../src/client/networkmodel.cpp:600
 msgctxt "QueryBufferItem|"
 msgid "Service Reply"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:583
+#: ../src/client/networkmodel.cpp:604
 msgctxt "QueryBufferItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:587
+#: ../src/client/networkmodel.cpp:608
 msgctxt "QueryBufferItem|"
 msgid "Operator"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:595
+#: ../src/client/networkmodel.cpp:616
 msgctxt "QueryBufferItem|"
 msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:599
+#: ../src/client/networkmodel.cpp:620
 msgctxt "QueryBufferItem|"
 msgid "Login time"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:602
+#: ../src/client/networkmodel.cpp:623
 msgctxt "QueryBufferItem|"
 msgid "Server"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:608
+#: ../src/client/networkmodel.cpp:629
 msgctxt "QueryBufferItem|"
 msgid "No information available"
 msgstr ""
@@ -6904,7 +6938,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:928
+#: ../src/client/networkmodel.cpp:949
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -6912,7 +6946,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:930
+#: ../src/client/networkmodel.cpp:951
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -6920,7 +6954,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:932
+#: ../src/client/networkmodel.cpp:953
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -6928,7 +6962,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:934
+#: ../src/client/networkmodel.cpp:955
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -6936,7 +6970,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:936
+#: ../src/client/networkmodel.cpp:957
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -6944,7 +6978,7 @@ msgid_plural "%n Voiced"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:938
+#: ../src/client/networkmodel.cpp:959
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
