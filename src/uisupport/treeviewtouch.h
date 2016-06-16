@@ -18,42 +18,49 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef NICKVIEW_H_
-#define NICKVIEW_H_
+#pragma once
 
 #include <QTreeView>
 
-#include "bufferinfo.h"
-#include "treeviewtouch.h"
-
-class NickView : public TreeViewTouch
+/**
+* This class handles Touch Events for TreeViews
+*/
+class TreeViewTouch : public QTreeView
 {
     Q_OBJECT
 
 public:
-    NickView(QWidget *parent = 0);
+    explicit TreeViewTouch(QWidget *parent = 0);
 
 protected:
-    virtual void rowsInserted(const QModelIndex &parent, int start, int end);
 
-    //! This reimplementation ensures that the current index is first in list
-    virtual QModelIndexList selectedIndexes() const;
+    /**
+    * Handles Events
+    *
+    * @param[in,out] an event
+    * @returns true if event got handled, false if event got ignored
+    */
+    bool event(QEvent *event) override;
 
-    void unanimatedExpandAll();
+    /**
+    * Handles Mouse Move Events
+    *
+    * Suppresses Events during Touch-Scroll
+    *
+    * @param[in,out] An Event
+    */
+    void mouseMoveEvent(QMouseEvent *event) override;
 
-public slots:
-    virtual void setModel(QAbstractItemModel *model);
-    virtual void setRootIndex(const QModelIndex &index);
-    void init();
-    void showContextMenu(const QPoint &pos);
-    void startQuery(const QModelIndex &modelIndex);
-
-signals:
-    void selectionUpdated();
+    /**
+    * Handles Mouse Press Events
+    *
+    * Suppresses Events during Touch-Scroll
+    *
+    * @param[in,out] An Event
+    */
+    void mousePressEvent(QMouseEvent *event) override;
 
 private:
-    friend class NickListWidget; // needs selectedIndexes()
+    bool _touchScrollInProgress = false;
+    bool _firstTouchUpdateHappened = false;
 };
-
-
-#endif
