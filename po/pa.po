@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-06-30 12:37+0000\n"
+"Last-Translator: A S Alam <apreet.alam@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/ald/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3567,7 +3567,7 @@ msgstr "ਕੁਅੱਸੇਲ ਆਈਆਰਸੀ ਯੂਜ਼ਰ"
 #: ../src/common/identity.cpp:177
 msgctxt "Identity|"
 msgid "<empty>"
-msgstr ""
+msgstr "<ਖਾਲੀ>"
 
 #: ../src/common/identity.cpp:183
 msgctxt "Identity|"
@@ -4406,7 +4406,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "ਸਰਵਰ"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -5954,12 +5954,12 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (ਅਸੁਰੱਖਿਅਤ)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (ਅਸੁਰੱਖਿਅਤ)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
