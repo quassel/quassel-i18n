@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Daniel Albers <daniel@lbers.com>, 2011
-# Jaroslav Lichtblau <dragonlord@seznam.cz>, 2015
+# Jaroslav Lichtblau <dragonlord@seznam.cz>, 2015-2016
 # Jaroslav Lichtblau <dragonlord@seznam.cz>, 2014
 # scarabeus <scarabeus@gentoo.org>, 2009-2010
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-02-12 10:43+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2016-08-15 10:59+0000\n"
+"Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/ald/quassel/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -526,12 +526,12 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
-msgstr ""
+msgstr "Ukrajinský překlad"
 
 #: ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
 msgid "Portuguese translation"
-msgstr ""
+msgstr "Portugalský překlad"
 
 #: ../src/qtui/ui/aboutdlg.ui:17
 msgctxt "AboutDlg|"
@@ -4401,17 +4401,17 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:993
 msgctxt "IrcUserItem|"
 msgid "Idling&nbsp;since"
-msgstr ""
+msgstr "Idlí&nbsp;od"
 
 #: ../src/client/networkmodel.cpp:997
 msgctxt "IrcUserItem|"
 msgid "Login&nbsp;time"
-msgstr ""
+msgstr "Login&nbsp;čas"
 
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -4641,7 +4641,7 @@ msgstr "Neznámá zpráva protokolu typu %1"
 #: ../src/qtui/mainpage.cpp:40
 msgctxt "MainPage|"
 msgid "Connect to Core..."
-msgstr ""
+msgstr "Připojit k jádru..."
 
 #: ../src/qtui/mainwin.cpp:360
 msgctxt "MainWin|"
@@ -6252,7 +6252,7 @@ msgstr "Usnout"
 #: ../src/qtui/ui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Povolit Snore"
 
 #: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
@@ -6352,7 +6352,7 @@ msgstr "<b>SHA1 přehled:</b>"
 #: ../src/qtui/ui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>SHA256 přehled:</b>"
 
 #: ../src/qtui/ui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
