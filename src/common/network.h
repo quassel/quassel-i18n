@@ -96,11 +96,20 @@ public :
         D_CHANMODE = 0x08
     };
 
+    // Default port assignments according to what many IRC networks have settled on.
+    // Technically not a standard, but it's fairly widespread.
+    // See https://freenode.net/news/port-6697-irc-via-tlsssl
+    enum PortDefaults {
+        PORT_PLAINTEXT = 6667, /// Default port for unencrypted connections
+        PORT_SSL = 6697        /// Default port for encrypted connections
+    };
+
     struct Server {
         QString host;
         uint port;
         QString password;
         bool useSsl;
+        bool sslVerify;     /// If true, validate SSL certificates
         int sslVersion;
 
         bool useProxy;
@@ -110,10 +119,17 @@ public :
         QString proxyUser;
         QString proxyPass;
 
-        Server() : port(6667), useSsl(false), sslVersion(0), useProxy(false), proxyType(QNetworkProxy::Socks5Proxy), proxyHost("localhost"), proxyPort(8080) {}
-        Server(const QString &host, uint port, const QString &password, bool useSsl)
-            : host(host), port(port), password(password), useSsl(useSsl), sslVersion(0),
-            useProxy(false), proxyType(QNetworkProxy::Socks5Proxy), proxyHost("localhost"), proxyPort(8080) {}
+        // sslVerify only applies when useSsl is true.  sslVerify should be enabled by default,
+        // so enabling useSsl offers a more secure default.
+        Server() : port(6667), useSsl(false), sslVerify(true), sslVersion(0), useProxy(false),
+            proxyType(QNetworkProxy::Socks5Proxy), proxyHost("localhost"), proxyPort(8080) {}
+
+        Server(const QString &host, uint port, const QString &password, bool useSsl,
+               bool sslVerify)
+            : host(host), port(port), password(password), useSsl(useSsl), sslVerify(sslVerify),
+              sslVersion(0), useProxy(false), proxyType(QNetworkProxy::Socks5Proxy),
+              proxyHost("localhost"), proxyPort(8080) {}
+
         bool operator==(const Server &other) const;
         bool operator!=(const Server &other) const;
     };

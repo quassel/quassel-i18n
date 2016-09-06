@@ -76,7 +76,10 @@ if (NOT WITH_KDE)
 endif()
 
 # For this, the feature info is added after we know if QtWebkit is installed
-option(WITH_WEBKIT "WebKit support (for link previews)" ON)
+option(WITH_WEBKIT "WebKit support (for link previews) (legacy)" ON)
+
+# For this, the feature info is added after we know if QtWebEngine is installed
+option(WITH_WEBENGINE "WebEngine support (for link previews)" ON)
 
 if (APPLE)
     # Notification Center is only available in > 10.8, which is Darwin v12
@@ -200,19 +203,21 @@ if (USE_QT5)
             DESCRIPTION "the widgets module for Qt5"
         )
 
-        find_package(Qt5DBus QUIET)
-        set_package_properties(Qt5DBus PROPERTIES TYPE RECOMMENDED
-            URL "http://qt.digia.com"
-            DESCRIPTION "D-Bus support for Qt5"
-            PURPOSE     "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments"
-        )
-        if (Qt5DBus_FOUND)
-            find_package(dbusmenu-qt5 QUIET CONFIG)
-            set_package_properties(dbusmenu-qt5 PROPERTIES TYPE RECOMMENDED
-                URL "https://launchpad.net/libdbusmenu-qt"
-                DESCRIPTION "a library implementing the DBusMenu specification"
-                PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
+        if (NOT WIN32)
+            find_package(Qt5DBus QUIET)
+            set_package_properties(Qt5DBus PROPERTIES TYPE RECOMMENDED
+                URL "http://qt.digia.com"
+                DESCRIPTION "D-Bus support for Qt5"
+                PURPOSE     "Needed for supporting D-Bus-based notifications and tray icon, used by most modern desktop environments"
             )
+            if (Qt5DBus_FOUND)
+                find_package(dbusmenu-qt5 QUIET CONFIG)
+                set_package_properties(dbusmenu-qt5 PROPERTIES TYPE RECOMMENDED
+                    URL "https://launchpad.net/libdbusmenu-qt"
+                    DESCRIPTION "a library implementing the DBusMenu specification"
+                    PURPOSE     "Required for having a context menu for the D-Bus-based tray icon"
+                )
+            endif()
         endif()
 
         find_package(Qt5Multimedia QUIET)
@@ -267,7 +272,29 @@ if (USE_QT5)
         if (WITH_WEBKIT AND Qt5WebKitWidgets_FOUND)
             set(HAVE_WEBKIT true)
         endif()
-        add_feature_info("WITH_WEBKIT, QtWebKit and QtWebKitWidgets modules" HAVE_WEBKIT "Support showing previews for URLs in chat")
+        add_feature_info("WITH_WEBKIT, QtWebKit and QtWebKitWidgets modules" HAVE_WEBKIT "Support showing previews for URLs in chat (legacy)")
+
+        if (WITH_WEBENGINE)
+            find_package(Qt5WebEngine QUIET)
+            set_package_properties(Qt5WebEngine PROPERTIES TYPE RECOMMENDED
+                URL "http://qt.digia.com"
+                DESCRIPTION "a WebEngine implementation for Qt"
+                PURPOSE     "Needed for displaying previews for URLs in chat"
+            )
+            if (Qt5WebEngine_FOUND)
+                find_package(Qt5WebEngineWidgets QUIET)
+                set_package_properties(Qt5WebEngineWidgets PROPERTIES TYPE RECOMMENDED
+                    URL "http://qt.digia.com"
+                    DESCRIPTION "widgets for Qt's WebEngine implementation"
+                    PURPOSE     "Needed for displaying previews for URLs in chat"
+                )
+            endif()
+        endif()
+
+        if (WITH_WEBENGINE AND Qt5WebEngineWidgets_FOUND)
+            set(HAVE_WEBENGINE true)
+        endif()
+        add_feature_info("WITH_WEBENGINE, QtWebEngine and QtWebEngineWidgets modules" HAVE_WEBENGINE "Support showing previews for URLs in chat")
 
         # KDE Frameworks
         ################

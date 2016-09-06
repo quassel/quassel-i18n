@@ -86,6 +86,9 @@ public:
     void saveStateToSettings(UiSettings &);
     void restoreStateFromSettings(UiSettings &);
 
+    // We need to override this to add the show/hide menu bar option
+    virtual QMenu *createPopupMenu();
+
 public slots:
     void showStatusBarMessage(const QString &message);
     void hideCurrentBuffer();
@@ -140,6 +143,7 @@ private slots:
     void on_actionConfigureViews_triggered();
     void on_actionLockLayout_toggled(bool lock);
     void on_jumpHotBuffer_triggered();
+    void on_bufferSearch_triggered();
     void on_actionDebugNetworkModel_triggered();
     void on_actionDebugBufferViewOverlay_triggered();
     void on_actionDebugMessageModel_triggered();

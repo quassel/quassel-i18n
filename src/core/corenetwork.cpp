@@ -222,7 +222,8 @@ void CoreNetwork::connectToIrc(bool reconnecting)
 }
 
 
-void CoreNetwork::disconnectFromIrc(bool requested, const QString &reason, bool withReconnect)
+void CoreNetwork::disconnectFromIrc(bool requested, const QString &reason, bool withReconnect,
+                                    bool forceImmediate)
 {
     _quitRequested = requested; // see socketDisconnected();
     if (!withReconnect) {
@@ -250,7 +251,7 @@ void CoreNetwork::disconnectFromIrc(bool requested, const QString &reason, bool 
         socketDisconnected();
     } else {
         if (socket.state() == QAbstractSocket::ConnectedState) {
-            userInputHandler()->issueQuit(_quitReason);
+            userInputHandler()->issueQuit(_quitReason, forceImmediate);
         } else {
             socket.close();
         }
@@ -268,16 +269,21 @@ void CoreNetwork::userInput(BufferInfo buf, QString msg)
 }
 
 
-void CoreNetwork::putRawLine(QByteArray s)
+void CoreNetwork::putRawLine(const QByteArray s, const bool prepend)
 {
-    if (_tokenBucket > 0)
+    if (_tokenBucket > 0) {
         writeToSocket(s);
-    else
-        _msgQueue.append(s);
+    } else {
+        if (prepend) {
+            _msgQueue.prepend(s);
+        } else {
+            _msgQueue.append(s);
+        }
+    }
 }
 
 
-void CoreNetwork::putCmd(const QString &cmd, const QList<QByteArray> &params, const QByteArray &prefix)
+void CoreNetwork::putCmd(const QString &cmd, const QList<QByteArray> &params, const QByteArray &prefix, const bool prepend)
 {
     QByteArray msg;
 
@@ -294,16 +300,16 @@ void CoreNetwork::putCmd(const QString &cmd, const QList<QByteArray> &params, co
         msg += params[i];
     }
 
-    putRawLine(msg);
+    putRawLine(msg, prepend);
 }
 
 
-void CoreNetwork::putCmd(const QString &cmd, const QList<QList<QByteArray>> &params, const QByteArray &prefix)
+void CoreNetwork::putCmd(const QString &cmd, const QList<QList<QByteArray>> &params, const QByteArray &prefix, const bool prependAll)
 {
     QListIterator<QList<QByteArray>> i(params);
     while (i.hasNext()) {
         QList<QByteArray> msg = i.next();
-        putCmd(cmd, msg, prefix);
+        putCmd(cmd, msg, prefix, prependAll);
     }
 }
 
@@ -1108,9 +1114,33 @@ void CoreNetwork::sendAutoWho()
 #ifdef HAVE_SSL
 void CoreNetwork::sslErrors(const QList<QSslError> &sslErrors)
 {
-    Q_UNUSED(sslErrors)
-    socket.ignoreSslErrors();
-    // TODO errorhandling
+    Server server = usedServer();
+    if (server.sslVerify) {
+        // Treat the SSL error as a hard error
+        QString sslErrorMessage = tr("Encrypted connection couldn't be verified, disconnecting "
+                                     "since verification is required");
+        if (!sslErrors.empty()) {
+            // Add the error reason if known
+            sslErrorMessage.append(tr(" (Reason: %1)").arg(sslErrors.first().errorString()));
+        }
+        displayMsg(Message::Error, BufferInfo::StatusBuffer, "", sslErrorMessage);
+
+        // Disconnect, triggering a reconnect in case it's a temporary issue with certificate
+        // validity, network trouble, etc.
+        disconnectFromIrc(false, QString("Encrypted connection not verified"), true /* withReconnect */);
+    } else {
+        // Treat the SSL error as a warning, continue to connect anyways
+        QString sslErrorMessage = tr("Encrypted connection couldn't be verified, continuing "
+                                     "since verification is not required");
+        if (!sslErrors.empty()) {
+            // Add the error reason if known
+            sslErrorMessage.append(tr(" (Reason: %1)").arg(sslErrors.first().errorString()));
+        }
+        displayMsg(Message::Info, BufferInfo::StatusBuffer, "", sslErrorMessage);
+
+        // Proceed with the connection
+        socket.ignoreSslErrors();
+    }
 }
 
 

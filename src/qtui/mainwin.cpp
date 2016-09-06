@@ -353,6 +353,15 @@ void MainWin::restoreStateFromSettings(UiSettings &s)
         show();
 }
 
+QMenu *MainWin::createPopupMenu()
+{
+    QMenu *popupMenu = QMainWindow::createPopupMenu();
+    popupMenu->addSeparator();
+    ActionCollection *coll = QtUi::actionCollection("General");
+    popupMenu->addAction(coll->action("ToggleMenuBar"));
+    return popupMenu;
+}
+
 
 void MainWin::updateIcon()
 {
@@ -397,7 +406,7 @@ void MainWin::setupActions()
     coll->addAction("ShowAwayLog", new Action(tr("Show Away Log"), coll,
             this, SLOT(showAwayLog())));
     coll->addAction("ToggleMenuBar", new Action(QIcon::fromTheme("show-menu"), tr("Show &Menubar"), coll,
-            0, 0, QKeySequence(Qt::CTRL + Qt::Key_M)))->setCheckable(true);
+            0, 0))->setCheckable(true);
 
     coll->addAction("ToggleStatusBar", new Action(tr("Show Status &Bar"), coll,
             0, 0))->setCheckable(true);
@@ -458,6 +467,9 @@ void MainWin::setupActions()
 
     coll->addAction("JumpHotBuffer", new Action(tr("Jump to hot chat"), coll,
             this, SLOT(on_jumpHotBuffer_triggered()), QKeySequence(Qt::META + Qt::Key_A)));
+
+    coll->addAction("ActivateBufferFilter", new Action(tr("Activate the buffer search"), coll,
+            this, SLOT(on_bufferSearch_triggered()), QKeySequence(Qt::CTRL + Qt::Key_S)));
 
     // Jump keys
 #ifdef Q_OS_MAC
@@ -722,7 +734,7 @@ BufferView *MainWin::activeBufferView() const
     if (_activeBufferViewIndex < 0 || _activeBufferViewIndex >= _bufferViews.count())
         return 0;
     BufferViewDock *dock = _bufferViews.at(_activeBufferViewIndex);
-    return dock->isActive() ? qobject_cast<BufferView *>(dock->widget()) : 0;
+    return dock->isActive() ? dock->bufferView() : 0;
 }
 
 
@@ -731,9 +743,8 @@ void MainWin::changeActiveBufferView(int bufferViewId)
     if (bufferViewId < 0)
         return;
 
-    BufferView *current = activeBufferView();
-    if (current) {
-        qobject_cast<BufferViewDock *>(current->parent())->setActive(false);
+    if (_activeBufferViewIndex >= 0 && _activeBufferViewIndex < _bufferViews.count()) {
+        _bufferViews[_activeBufferViewIndex]->setActive(false);
         _activeBufferViewIndex = -1;
     }
 
@@ -768,9 +779,9 @@ void MainWin::showPasswordChangeDlg()
 
 void MainWin::changeActiveBufferView(bool backwards)
 {
-    BufferView *current = activeBufferView();
-    if (current)
-        qobject_cast<BufferViewDock *>(current->parent())->setActive(false);
+    if (_activeBufferViewIndex >= 0 && _activeBufferViewIndex < _bufferViews.count()) {
+        _bufferViews[_activeBufferViewIndex]->setActive(false);
+    }
 
     if (!_bufferViews.count())
         return;
@@ -1652,6 +1663,16 @@ void MainWin::on_jumpHotBuffer_triggered()
         return;
 
     Client::bufferModel()->switchToBuffer(_bufferHotList->hottestBuffer());
+}
+
+void MainWin::on_bufferSearch_triggered()
+{
+    if (_activeBufferViewIndex < 0 || _activeBufferViewIndex >= _bufferViews.count()) {
+        qWarning() << "Tried to activate filter on invalid bufferview:" << _activeBufferViewIndex;
+        return;
+    }
+
+    _bufferViews[_activeBufferViewIndex]->activateFilter();
 }
 
 
