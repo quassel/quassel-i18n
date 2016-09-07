@@ -18,38 +18,45 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef MONOAPPLICATION_H_
-#define MONOAPPLICATION_H_
+#pragma once
 
-#include "qtuiapplication.h"
+#include "settingspage.h"
+#include "ui_chatviewcolorsettingspage.h"
 
-class CoreApplicationInternal;
+class ColorButton;
 
-class MonolithicApplication : public QtUiApplication
+class ChatViewColorSettingsPage : public SettingsPage
 {
     Q_OBJECT
-public:
-    MonolithicApplication(int &, char **);
-    ~MonolithicApplication();
 
-    bool init();
+public:
+    /**
+     * Construct and initialize the ChatViewColorSettingsPage
+     *
+     * @param parent Parent QWidget object, such as the settings dialog
+     */
+    explicit ChatViewColorSettingsPage(QWidget *parent = 0);
 
     /**
-     * Requests a reload of relevant runtime configuration.
+     * Gets whether or not this settings page has defaults
      *
-     * @see Quassel::reloadConfig()
-     *
-     * @return True if configuration reload successful, otherwise false
+     * @return True if defaults available, otherwise false
      */
-    bool reloadConfig();
+    inline bool hasDefaults() const { return true; }
 
-private slots:
-    void startInternalCore();
+public slots:
+    /**
+     * Save and apply current settings
+     */
+    void save();
 
 private:
-    CoreApplicationInternal *_internal;
-    bool _internalInitDone;
+    Ui::ChatViewColorSettingsPage ui;  /// Reference to the Qt settings page UI
+
+    /**
+     * Gets the settings path for configuration values
+     *
+     * @return QString pointing to settings group and key for configuration values
+     */
+    inline QString settingsKey() const { return QString("QtUi/ChatView/__default__"); }
 };
-
-
-#endif

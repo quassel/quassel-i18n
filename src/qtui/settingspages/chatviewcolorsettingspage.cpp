@@ -18,38 +18,27 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef MONOAPPLICATION_H_
-#define MONOAPPLICATION_H_
+#include "chatviewcolorsettingspage.h"
 
-#include "qtuiapplication.h"
+#include "client.h"
+#include "colorbutton.h"
+#include "qtui.h"
+#include "qtuistyle.h"
 
-class CoreApplicationInternal;
-
-class MonolithicApplication : public QtUiApplication
+ChatViewColorSettingsPage::ChatViewColorSettingsPage(QWidget *parent) :
+    SettingsPage(tr("Interface"), tr("Chat View Colors"), parent)
 {
-    Q_OBJECT
-public:
-    MonolithicApplication(int &, char **);
-    ~MonolithicApplication();
+    ui.setupUi(this);
 
-    bool init();
-
-    /**
-     * Requests a reload of relevant runtime configuration.
-     *
-     * @see Quassel::reloadConfig()
-     *
-     * @return True if configuration reload successful, otherwise false
-     */
-    bool reloadConfig();
-
-private slots:
-    void startInternalCore();
-
-private:
-    CoreApplicationInternal *_internal;
-    bool _internalInitDone;
-};
+    initAutoWidgets();
+}
 
 
-#endif
+void ChatViewColorSettingsPage::save()
+{
+    // Save the general settings
+    SettingsPage::save();
+    // Update the stylesheet in case colors are changed
+    QtUi::style()->generateSettingsQss();
+    QtUi::style()->reload();
+}
