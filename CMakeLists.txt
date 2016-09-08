@@ -70,20 +70,34 @@ else()
     add_feature_info(WITH_KDE WITH_KDE "Integrate with the KDE Frameworks runtime environment")
 endif()
 
-cmake_dependent_option(WITH_OXYGEN "Install Oxygen icon set (usually shipped with KDE)" ON "NOT WITH_KDE" OFF)
+cmake_dependent_option(WITH_BREEZE "Install Breeze icon theme (usually shipped with KDE)" ON "NOT WITH_KDE" OFF)
+cmake_dependent_option(WITH_BREEZE_DARK "Install Dark Breeze icon theme (usually shipped with KDE)" OFF "NOT WITH_KDE" OFF)
+cmake_dependent_option(WITH_OXYGEN "Install Oxygen icon theme (usually shipped with KDE)" OFF "NOT WITH_KDE" OFF)
 if (NOT WITH_KDE)
-    add_feature_info(WITH_OXYGEN WITH_OXYGEN "Install Oxygen icon set")
+    add_feature_info(WITH_BREEZE WITH_BREEZE "Install Breeze icon theme")
+    add_feature_info(WITH_BREEZE_DARK WITH_BREEZE_DARK "Install Dark Breeze icon theme")
+    add_feature_info(WITH_OXYGEN WITH_OXYGEN "Install Oxygen icon theme")
+endif()
+
+if (WITH_OXYGEN)
+    add_definitions(-DWITH_OXYGEN)
+endif()
+if (WITH_BREEZE)
+    add_definitions(-DWITH_BREEZE)
+endif()
+if (WITH_BREEZE_DARK)
+    add_definitions(-DWITH_BREEZE_DARK)
 endif()
 
 # For this, the feature info is added after we know if QtWebkit is installed
-option(WITH_WEBKIT "WebKit support (for link previews) (legacy)" ON)
+option(WITH_WEBKIT "WebKit support (for link previews) (legacy)" OFF)
 
 # For this, the feature info is added after we know if QtWebEngine is installed
 option(WITH_WEBENGINE "WebEngine support (for link previews)" ON)
 
 if (APPLE)
     # Notification Center is only available in > 10.8, which is Darwin v12
-    if (CMAKE_SYSTEM_VERSION VERSION_GREATER "11.9.9")
+    if (NOT CMAKE_SYSTEM_VERSION VERSION_LESS 12)
         option(WITH_NOTIFICATION_CENTER "OS X Notification Center support" ON)
         add_feature_info(WITH_NOTIFICATION_CENTER WITH_NOTIFICATION_CENTER "Use the OS X Notification Center")
     endif()
@@ -102,9 +116,6 @@ endif()
 
 # The following options are not for end-user consumption, so don't list them in the feature summary
 cmake_dependent_option(DEPLOY "Add required libs to bundle resources and create a dmg. Note: requires Qt to be built with 10.4u SDK" OFF "APPLE" OFF)
-
-# Handle with care
-set(QT_PATH "" CACHE PATH "Path to a Qt4 installation to use instead of the system Qt (e.g. for static builds)")
 
 # Static builds are not supported and require some manual setup! Don't enable unless you know what you're doing (we don't know either)
 cmake_dependent_option(STATIC      "Enable static building (not supported)" OFF "NOT WITH_KDE" OFF)
@@ -154,22 +165,6 @@ endif()
 # Set up Qt
 #####################################################################
 
-if (USE_QT5)
-    message(STATUS "Building for Qt5...")
-    set(QT_MIN_VERSION "5.2.0")
-    add_definitions(-DHAVE_QT5)
-else()
-    message(STATUS "Building for Qt4...")
-    set(QT_MIN_VERSION "4.8.0")
-
-    # Select a Qt installation here, if you don't want to use system Qt
-    if(QT_PATH)
-        # FindQt4 will look for the qmake binary in $PATH, so we just prepend QT_PATH
-        set(ENV{PATH} ${QT_PATH}/bin:$ENV{PATH})
-    endif()
-endif()
-
-
 # Find package dependencies
 #
 # Note that you can forcefully disable optional packages
@@ -177,6 +172,10 @@ endif()
 #####################################################################
 
 if (USE_QT5)
+    message(STATUS "Building for Qt5...")
+    set(QT_MIN_VERSION "5.2.0")
+    add_definitions(-DHAVE_QT5)
+
     find_package(Qt5Core ${QT_MIN_VERSION} QUIET)
     set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED
         URL "http://qt.digia.com"
@@ -323,17 +322,17 @@ if (USE_QT5)
                     DESCRIPTION "KDE Frameworks"
                     PURPOSE     "Required for integration into the Plasma desktop"
                 )
-            else(WITH_KDE)
+            else()
                 find_package(KF5Sonnet QUIET)
                 set_package_properties(KF5Sonnet PROPERTIES TYPE RECOMMENDED
                     URL "http://api.kde.org/frameworks-api/frameworks5-apidocs/sonnet/html"
                     DESCRIPTION "framework for providing spell-checking capabilities"
                     PURPOSE "Enables spell-checking support in input widgets"
                 )
-            endif(WITH_KDE)
-        endif(ECM_FOUND)
+            endif()
+        endif()
 
-    endif(BUILD_GUI)
+    endif()
 
     if (BUILD_CORE)
         find_package(Qt5Script QUIET)
@@ -352,7 +351,7 @@ if (USE_QT5)
             PURPOSE "Required for encryption support"
         )
 
-    endif(BUILD_CORE)
+    endif()
 
     find_package(Qt5LinguistTools QUIET)
     set_package_properties(Qt5LinguistTools PROPERTIES TYPE RECOMMENDED
@@ -379,7 +378,10 @@ if (USE_QT5)
         endif()
     endif()
 
-else(USE_QT5)
+else()
+    message(STATUS "Building for Qt4...")
+    set(QT_MIN_VERSION "4.8.0")
+
     find_package(Qt4 ${QT_MIN_VERSION} QUIET REQUIRED)
 
     if (BUILD_GUI)
@@ -409,14 +411,14 @@ else(USE_QT5)
             )
             set(CMAKE_C_FLAGS ${_cflags})
 
-        else(WITH_KDE)
+        else()
             find_package(Phonon QUIET)
             set_package_properties(Phonon PROPERTIES TYPE RECOMMENDED
                 URL "https://projects.kde.org/projects/kdesupport/phonon"
                 DESCRIPTION "a multimedia abstraction library"
                 PURPOSE     "Required for audio notifications"
             )
-        endif(WITH_KDE)
+        endif()
 
         find_package(IndicateQt QUIET)
         set_package_properties(IndicateQt PROPERTIES TYPE OPTIONAL
@@ -425,7 +427,7 @@ else(USE_QT5)
             PURPOSE     "Provides integration into the Ayatana notification system used by e.g. Ubuntu"
         )
 
-    endif(BUILD_GUI)
+    endif()
 
     if (BUILD_CORE)
 
@@ -577,7 +579,7 @@ if (NOT WIN32)
     check_function_exists(umask HAVE_UMASK)
     if(HAVE_UMASK)
         add_definitions(-DHAVE_UMASK)
-    endif(HAVE_UMASK)
+    endif()
 endif()
 
 
@@ -638,7 +640,7 @@ endif()
 if (NOT GIT_HEAD OR NOT GIT_DESCRIBE)
   if (DEFINED ENV{GIT_HEAD})
       set(GIT_HEAD $ENV{GIT_HEAD})
-  endif ()
+  endif()
   if (DEFINED ENV{GIT_DESCRIBE})
      set(GIT_DESCRIBE $ENV{GIT_DESCRIBE})
   endif()

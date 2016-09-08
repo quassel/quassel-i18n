@@ -100,6 +100,12 @@ int main(int argc, char **argv)
 #   ifdef WITH_OXYGEN
     Q_INIT_RESOURCE(oxygen);
 #   endif
+#   ifdef WITH_BREEZE
+    Q_INIT_RESOURCE(breeze);
+#   endif
+#   ifdef WITH_BREEZE_DARK
+    Q_INIT_RESOURCE(breezedark);
+#   endif
 # endif
 #endif
 
@@ -140,7 +146,7 @@ int main(int argc, char **argv)
 
 #ifndef BUILD_CORE
     // put client-only arguments here
-    cliParser->addOption("icontheme", 0, "Override the system icon theme ('oxygen' is recommended)", "theme");
+    cliParser->addOption("icontheme", 0, "Override the system icon theme ('breeze' is recommended)", "theme");
     cliParser->addOption("qss", 0, "Load a custom application stylesheet", "file.qss");
     cliParser->addSwitch("debugbufferswitches", 0, "Enables debugging for bufferswitches");
     cliParser->addSwitch("debugmodel", 0, "Enables debugging for models");
@@ -177,13 +183,19 @@ int main(int argc, char **argv)
     }
 #endif
 
-#  if defined BUILD_CORE
+#if defined BUILD_CORE
     CoreApplication app(argc, argv);
-#  elif defined BUILD_QTUI
+#elif defined BUILD_QTUI
+# if QT_VERSION >= 0x050600
+    QtUiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+# endif
     QtUiApplication app(argc, argv);
-#  elif defined BUILD_MONO
+#elif defined BUILD_MONO
+# if QT_VERSION >= 0x050600
+    MonolithicApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+# endif
     MonolithicApplication app(argc, argv);
-#  endif
+#endif
 
 #ifndef HAVE_KDE4
     // the non-KDE version parses after app has been instantiated

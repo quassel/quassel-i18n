@@ -155,79 +155,143 @@ void CoreSessionEventProcessor::processIrcEventCap(IrcEvent *e)
     // Handle capability negotiation
     // See: http://ircv3.net/specs/core/capability-negotiation-3.2.html
     // And: http://ircv3.net/specs/core/capability-negotiation-3.1.html
-    if (e->params().count() >= 3) {
-        CoreNetwork *coreNet = coreNetwork(e);
-        QString capCommand = e->params().at(1).trimmed().toUpper();
-        if (capCommand == "LS" || capCommand == "NEW") {
-            // Either we've gotten a list of capabilities, or new capabilities we may want
-            // Server: CAP * LS * :multi-prefix extended-join account-notify batch invite-notify tls
-            // Server: CAP * LS * :cap-notify server-time example.org/dummy-cap=dummyvalue example.org/second-dummy-cap
-            // Server: CAP * LS :userhost-in-names sasl=EXTERNAL,DH-AES,DH-BLOWFISH,ECDSA-NIST256P-CHALLENGE,PLAIN
-            bool capListFinished;
-            QStringList availableCaps;
-            if (e->params().count() == 4) {
-                // Middle of multi-line reply, ignore the asterisk
-                capListFinished = false;
-                availableCaps = e->params().at(3).split(' ');
-            } else {
-                // Single line reply
-                capListFinished = true;
+
+    // All commands require at least 2 parameters
+    if (!checkParamCount(e, 2))
+        return;
+
+    CoreNetwork *coreNet = coreNetwork(e);
+    QString capCommand = e->params().at(1).trimmed().toUpper();
+    if (capCommand == "LS" || capCommand == "NEW") {
+        // Either we've gotten a list of capabilities, or new capabilities we may want
+        // Server: CAP * LS * :multi-prefix extended-join account-notify batch invite-notify tls
+        // Server: CAP * LS * :cap-notify server-time example.org/dummy-cap=dummyvalue example.org/second-dummy-cap
+        // Server: CAP * LS :userhost-in-names sasl=EXTERNAL,DH-AES,DH-BLOWFISH,ECDSA-NIST256P-CHALLENGE,PLAIN
+        bool capListFinished;
+        QStringList availableCaps;
+        if (e->params().count() == 4) {
+            // Middle of multi-line reply, ignore the asterisk
+            capListFinished = false;
+            availableCaps = e->params().at(3).split(' ');
+        } else {
+            // Single line reply
+            capListFinished = true;
+            if (e->params().count() >= 3) {
+                // Some capabilities are specified, add them
                 availableCaps = e->params().at(2).split(' ');
+            } else {
+                // No capabilities available, add an empty list
+                availableCaps = QStringList();
             }
-            // Store what capabilities are available
-            QStringList availableCapPair;
-            for (int i = 0; i < availableCaps.count(); ++i) {
-                // Capability may include values, e.g. CAP * LS :multi-prefix sasl=EXTERNAL
-                availableCapPair = availableCaps[i].trimmed().split('=');
-                if(availableCapPair.count() >= 2) {
-                    coreNet->addCap(availableCapPair.at(0).trimmed().toLower(), availableCapPair.at(1).trimmed());
-                } else {
-                    coreNet->addCap(availableCapPair.at(0).trimmed().toLower());
-                }
+        }
+        // Sort capabilities before requesting for consistency among networks.  This may avoid
+        // unexpected cases when some networks offer capabilities in a different order than
+        // others.  It also looks nicer in logs.  Not required.
+        availableCaps.sort();
+        // Store what capabilities are available
+        QString availableCapName, availableCapValue;
+        for (int i = 0; i < availableCaps.count(); ++i) {
+            // Capability may include values, e.g. CAP * LS :multi-prefix sasl=EXTERNAL
+            // Capability name comes before the first '='.  If no '=' exists, this gets the
+            // whole string instead.
+            availableCapName = availableCaps[i].section('=', 0, 0).trimmed();
+            // Some capabilities include multiple key=value pairs in the listing,
+            // e.g. "sts=duration=31536000,port=6697"
+            // Include everything after the first equal sign as part of the value.  If no '='
+            // exists, this gets an empty string.
+            availableCapValue = availableCaps[i].section('=', 1).trimmed();
+            // Only add the capability if it's non-empty
+            if (!availableCapName.isEmpty()) {
+                coreNet->addCap(availableCapName, availableCapValue);
             }
+        }
 
-            // Begin capability requests when capability listing complete
-            if (capListFinished)
-                coreNet->beginCapNegotiation();
-        } else if (capCommand == "ACK") {
-            // Server: CAP * ACK :multi-prefix sasl
-            // Got the capability we want, handle as needed.
-            // As only one capability is requested at a time, no need to split
-            QString acceptedCap = e->params().at(2).trimmed().toLower();
+        // Begin capability requests when capability listing complete
+        if (capListFinished)
+            coreNet->beginCapNegotiation();
+    } else if (capCommand == "ACK") {
+        // CAP ACK requires at least 3 parameters (no empty response allowed)
+        if (!checkParamCount(e, 3)) {
+            // If an invalid reply is sent, try to continue rather than getting stuck.
+            coreNet->sendNextCap();
+            return;
+        }
 
+        // Server: CAP * ACK :multi-prefix sasl
+        // Got the capabilities we want, handle as needed.
+        QStringList acceptedCaps;
+        acceptedCaps = e->params().at(2).split(' ');
+
+        // Store what capability was acknowledged
+        QString acceptedCap;
+
+        // Keep track of whether or not a capability requires further configuration.  Due to queuing
+        // logic in CoreNetwork::queueCap(), this shouldn't ever happen when more than one
+        // capability is requested, but it's better to handle edge cases or faulty servers.
+        bool capsRequireConfiguration = false;
+
+        for (int i = 0; i < acceptedCaps.count(); ++i) {
+            acceptedCap = acceptedCaps[i].trimmed().toLower();
             // Mark this cap as accepted
             coreNet->acknowledgeCap(acceptedCap);
-
-            if (!coreNet->capsRequiringConfiguration.contains(acceptedCap)) {
+            if (!capsRequireConfiguration &&
+                    coreNet->capsRequiringConfiguration.contains(acceptedCap)) {
+                capsRequireConfiguration = true;
                 // Some capabilities (e.g. SASL) require further messages to finish.  If so, do NOT
                 // send the next capability; it will be handled elsewhere in CoreNetwork.
-                // Otherwise, move on to the next capability
-                coreNet->sendNextCap();
+                // Otherwise, allow moving on to the next capability.
             }
-        } else if (capCommand == "NAK" || capCommand == "DEL") {
-            // Either something went wrong with this capability, or it is no longer supported
-            // > For CAP NAK
-            // Server: CAP * NAK :multi-prefix sasl
-            // > For CAP DEL
-            // Server: :irc.example.com CAP modernclient DEL :multi-prefix sasl
-            // CAP NAK and CAP DEL replies are always single-line
+        }
 
-            QStringList removedCaps;
-            removedCaps = e->params().at(2).split(' ');
-
-            // Store what capability was denied or removed
-            QString removedCap;
-            for (int i = 0; i < removedCaps.count(); ++i) {
-                removedCap = removedCaps[i].trimmed().toLower();
-                // Mark this cap as removed
-                coreNet->removeCap(removedCap);
-            }
-
+        if (!capsRequireConfiguration) {
+            // No additional configuration required, move on to the next capability
+            coreNet->sendNextCap();
+        }
+    } else if (capCommand == "NAK" || capCommand == "DEL") {
+        // CAP NAK/DEL require at least 3 parameters (no empty response allowed)
+        if (!checkParamCount(e, 3)) {
             if (capCommand == "NAK") {
-                // Continue negotiation when capability listing complete only if this is the result
-                // of a denied cap, not a removed cap
+                // If an invalid reply is sent, try to continue rather than getting stuck.  This
+                // only matters for denied caps, not removed caps.
                 coreNet->sendNextCap();
             }
+            return;
+        }
+
+        // Either something went wrong with the capabilities, or they are no longer supported
+        // > For CAP NAK
+        // Server: CAP * NAK :multi-prefix sasl
+        // > For CAP DEL
+        // Server: :irc.example.com CAP modernclient DEL :multi-prefix sasl
+        // CAP NAK and CAP DEL replies are always single-line
+
+        QStringList removedCaps;
+        removedCaps = e->params().at(2).split(' ');
+
+        // Store the capabilities that were denied or removed
+        QString removedCap;
+        for (int i = 0; i < removedCaps.count(); ++i) {
+            removedCap = removedCaps[i].trimmed().toLower();
+            // Mark this cap as removed.
+            // For CAP DEL, removes it from use.
+            // For CAP NAK when received before negotiation enabled these capabilities, removeCap()
+            // should do nothing.  This merely guards against non-spec servers sending an
+            // unsolicited CAP ACK then later removing that capability.
+            coreNet->removeCap(removedCap);
+        }
+
+        if (capCommand == "NAK") {
+            // Continue negotiation only if this is the result of denied caps, not removed caps
+            if (removedCaps.count() > 1) {
+                // We've received a CAP NAK reply to multiple capabilities at once.  Unfortunately,
+                // we don't know which capability failed and which ones are valid to re-request, so
+                // individually retry each capability from the failed bundle.
+                // See CoreNetwork::retryCapsIndividually() for more details.
+                coreNet->retryCapsIndividually();
+                // Still need to call sendNextCap() to carry on.
+            }
+            // Carry on with negotiation
+            coreNet->sendNextCap();
         }
     }
 }
@@ -242,15 +306,9 @@ void CoreSessionEventProcessor::processIrcEventAccount(IrcEvent *e)
 
     IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
     if (ircuser) {
-        QString newAccount = e->params().at(0);
-        // WHOX uses '0' to indicate logged-out, account-notify uses '*'
-        if (newAccount != "*") {
-            // Account logged in, set account name
-            ircuser->setAccount(newAccount);
-        } else {
-            // Account logged out, set account name to logged-out
-            ircuser->setAccount("*");
-        }
+        // WHOX uses '0' to indicate logged-out, account-notify and extended-join uses '*'.
+        // As '*' is used internally to represent logged-out, no need to handle that differently.
+        ircuser->setAccount(e->params().at(0));
     } else {
         qDebug() << "Received account-notify data for unknown user" << e->prefix();
     }
@@ -259,13 +317,17 @@ void CoreSessionEventProcessor::processIrcEventAccount(IrcEvent *e)
 /* IRCv3 away-notify - ":nick!user@host AWAY [:message]" */
 void CoreSessionEventProcessor::processIrcEventAway(IrcEvent *e)
 {
-    if (!checkParamCount(e, 2))
+    if (!checkParamCount(e, 1))
         return;
+    // Don't use checkParamCount(e, 2) since the message is optional.  Some servers respond in a way
+    // that it counts as two parameters, but we shouldn't rely on that.
 
     // Nick is sent as part of parameters in order to split user/server decoding
     IrcUser *ircuser = e->network()->ircUser(e->params().at(0));
     if (ircuser) {
-        if (!e->params().at(1).isEmpty()) {
+        // If two parameters are sent -and- the second parameter isn't empty, then user is away.
+        // Otherwise, mark them as not away.
+        if (e->params().count() >= 2 && !e->params().at(1).isEmpty()) {
             ircuser->setAway(true);
             ircuser->setAwayMessage(e->params().at(1));
         } else {
@@ -300,7 +362,7 @@ void CoreSessionEventProcessor::processIrcEventInvite(IrcEvent *e)
     }
 }
 
-
+/*  JOIN: ":<nick!user@host> JOIN <channel>" */
 void CoreSessionEventProcessor::processIrcEventJoin(IrcEvent *e)
 {
     if (e->testFlag(EventManager::Fake)) // generated by handleEarlyNetsplitJoin
@@ -314,13 +376,22 @@ void CoreSessionEventProcessor::processIrcEventJoin(IrcEvent *e)
     IrcUser *ircuser = net->updateNickFromMask(e->prefix());
 
     if (net->capEnabled(IrcCap::EXTENDED_JOIN)) {
-        if (!checkParamCount(e, 3))
-            return;
-        // If logged in, :nick!user@host JOIN #channelname accountname :Real Name
-        // If logged out, :nick!user@host JOIN #channelname * :Real Name
-        // See:  http://ircv3.net/specs/extensions/extended-join-3.1.html
-        // FIXME Keep track of authed user account, requires adding support to ircuser.h/cpp
-        ircuser->setRealName(e->params()[2]);
+        if (e->params().count() < 3) {
+            // Some IRC servers don't send extended-join events in all situations.  Rather than
+            // ignore the join entirely, treat it as a regular join with a debug-level log entry.
+            // See:  https://github.com/inspircd/inspircd/issues/821
+            qDebug() << "extended-join requires 3 params, got:" << e->params() << ", handling as a "
+                        "regular join";
+        } else {
+            // If logged in, :nick!user@host JOIN #channelname accountname :Real Name
+            // If logged out, :nick!user@host JOIN #channelname * :Real Name
+            // See:  http://ircv3.net/specs/extensions/extended-join-3.1.html
+            // WHOX uses '0' to indicate logged-out, account-notify and extended-join uses '*'.
+            // As '*' is used internally to represent logged-out, no need to handle that differently.
+            ircuser->setAccount(e->params()[1]);
+            // Update the user's real name, too
+            ircuser->setRealName(e->params()[2]);
+        }
     }
     // Else :nick!user@host JOIN #channelname
 
@@ -875,10 +946,12 @@ void CoreSessionEventProcessor::processIrcEvent324(IrcEvent *e)
 }
 
 
-/*  RPL_WHOISACCOUNT: "<nick> <account> :is authed as */
+/*  RPL_WHOISACCOUNT - "<nick> <account> :is authed as" */
 void CoreSessionEventProcessor::processIrcEvent330(IrcEvent *e)
 {
-    if (!checkParamCount(e, 3))
+    // Though the ":is authed as" remark should always be there, we should handle cases when it's
+    // not included, too.
+    if (!checkParamCount(e, 2))
         return;
 
     IrcUser *ircuser = e->network()->ircUser(e->params().at(0));
@@ -1023,7 +1096,7 @@ void CoreSessionEventProcessor::processIrcEvent354(IrcEvent *e)
         // Don't use .section(" ", 1) with WHOX replies, for there's no hopcount to trim out
 
         // As part of IRCv3 account-notify, check account name
-        // WHOX uses '0' to indicate logged-out, account-notify uses '*'
+        // WHOX uses '0' to indicate logged-out, account-notify and extended-join uses '*'.
         QString newAccount = e->params()[7];
         if (newAccount != "0") {
             // Account logged in, set account name
@@ -1097,7 +1170,9 @@ void CoreSessionEventProcessor::processWhoInformation (Network *net, const QStri
 void CoreSessionEventProcessor::processIrcEvent403(IrcEventNumeric *e)
 {
     // If this is the result of an AutoWho, hide it.  It's confusing to show to the user.
-    if (!checkParamCount(e, 2))
+    // Though the ":No such channel" remark should always be there, we should handle cases when it's
+    // not included, too.
+    if (!checkParamCount(e, 1))
         return;
 
     QString channelOrNick = e->params()[0];

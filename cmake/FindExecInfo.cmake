@@ -7,23 +7,21 @@
 
 find_path(EXECINFO_INCLUDES "execinfo.h")
 
-if(EXECINFO_INCLUDES STREQUAL "EXECINFO_INCLUDES-NOTFOUND")
-  set(EXECINFO_INCLUDES "")
-else(EXECINFO_INCLUDES STREQUAL "EXECINFO_INCLUDES-NOTFOUND")
+if(EXECINFO_INCLUDES)
   # We found the header file's include dir.
 
   # Now determine if it's built-in or not, by searching the library file.
   find_library(EXECINFO_LIBRARIES "execinfo")
 
-  if(EXECINFO_LIBRARIES STREQUAL "EXECINFO_LIBRARIES-NOTFOUND")
+  if(NOT EXECINFO_LIBRARIES)
     # Built-in, no further action is needed
     set(EXECINFO_LIBRARIES "")
     message(STATUS "Found execinfo (built-in)")
-  else(EXECINFO_LIBRARIES STREQUAL "EXECINFO_LIBRARIES-NOTFOUND")
+  else()
     # It's an external library.
     message(STATUS "Found execinfo: ${EXECINFO_LIBRARIES}")
-  endif(EXECINFO_LIBRARIES STREQUAL "EXECINFO_LIBRARIES-NOTFOUND")
+  endif()
 
   set(EXECINFO_FOUND true)
 
-endif(EXECINFO_INCLUDES STREQUAL "EXECINFO_INCLUDES-NOTFOUND")
+endif()
