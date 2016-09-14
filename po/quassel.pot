@@ -2390,34 +2390,27 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:183
-#, qt-format
-msgctxt "CoreAuthHandler|"
-msgid ""
-"<b>Quassel Core Version %1</b><br>Version date: %2<br>Up %3d%4h%5m (since %6)"
-msgstr ""
-
-#: ../src/core/coreauthhandler.cpp:219
+#: ../src/core/coreauthhandler.cpp:209
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:220
+#: ../src/core/coreauthhandler.cpp:210
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:225
+#: ../src/core/coreauthhandler.cpp:215
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:244
+#: ../src/core/coreauthhandler.cpp:234
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -2840,103 +2833,103 @@ msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:210
+#: ../src/core/corenetwork.cpp:217
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:218 ../src/core/corenetwork.cpp:219
+#: ../src/core/corenetwork.cpp:225 ../src/core/corenetwork.cpp:226
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:279
+#: ../src/core/corenetwork.cpp:286
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:279
+#: ../src/core/corenetwork.cpp:286
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:494
+#: ../src/core/corenetwork.cpp:507
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:496
+#: ../src/core/corenetwork.cpp:509
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:540
+#: ../src/core/corenetwork.cpp:557
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:958
+#: ../src/core/corenetwork.cpp:1059
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:969
+#: ../src/core/corenetwork.cpp:1070
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1075
+#: ../src/core/corenetwork.cpp:1176
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1090
+#: ../src/core/corenetwork.cpp:1191
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1097
+#: ../src/core/corenetwork.cpp:1198
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1105
+#: ../src/core/corenetwork.cpp:1206
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1120
+#: ../src/core/corenetwork.cpp:1221
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1124
+#: ../src/core/corenetwork.cpp:1225
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1248
+#: ../src/core/corenetwork.cpp:1349
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1252 ../src/core/corenetwork.cpp:1265
+#: ../src/core/corenetwork.cpp:1353 ../src/core/corenetwork.cpp:1366
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1261
+#: ../src/core/corenetwork.cpp:1362
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -5383,12 +5376,12 @@ msgctxt "NetworkAddDlg|"
 msgid "Verify connection security"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:808
+#: ../src/qtui/settingspages/networkssettingspage.cpp:859
 msgctxt "NetworkAddDlg|"
 msgid "Your Quassel core does not support this feature"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:809
+#: ../src/qtui/settingspages/networkssettingspage.cpp:860
 msgctxt "NetworkAddDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
@@ -5405,7 +5398,7 @@ msgctxt "NetworkEditDlg|"
 msgid "Please enter a network name:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:880
+#: ../src/qtui/settingspages/networkssettingspage.cpp:931
 msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr ""
@@ -5518,13 +5511,13 @@ msgid "Re&name..."
 msgstr ""
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:65
-#: ../src/qtui/settingspages/networkssettingspage.ui:235
+#: ../src/qtui/settingspages/networkssettingspage.ui:234
 msgctxt "NetworksSettingsPage|"
 msgid "&Add..."
 msgstr ""
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:88
-#: ../src/qtui/settingspages/networkssettingspage.ui:252
+#: ../src/qtui/settingspages/networkssettingspage.ui:251
 msgctxt "NetworksSettingsPage|"
 msgid "De&lete"
 msgstr ""
@@ -5540,8 +5533,8 @@ msgid "Identity:"
 msgstr ""
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:149
-#: ../src/qtui/settingspages/networkssettingspage.ui:281
-#: ../src/qtui/settingspages/networkssettingspage.ui:295
+#: ../src/qtui/settingspages/networkssettingspage.ui:280
+#: ../src/qtui/settingspages/networkssettingspage.ui:294
 msgctxt "NetworksSettingsPage|"
 msgid "..."
 msgstr ""
@@ -5561,34 +5554,34 @@ msgctxt "NetworksSettingsPage|"
 msgid "&Edit..."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:278
+#: ../src/qtui/settingspages/networkssettingspage.ui:277
 msgctxt "NetworksSettingsPage|"
 msgid "Move upwards in list"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:292
+#: ../src/qtui/settingspages/networkssettingspage.ui:291
 msgctxt "NetworksSettingsPage|"
 msgid "Move downwards in list"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:337
+#: ../src/qtui/settingspages/networkssettingspage.ui:336
 msgctxt "NetworksSettingsPage|"
 msgid "Commands"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:340
+#: ../src/qtui/settingspages/networkssettingspage.ui:339
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Configure automatic identification or misc. commands to be executed after "
 "connecting to a server"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:346
+#: ../src/qtui/settingspages/networkssettingspage.ui:345
 msgctxt "NetworksSettingsPage|"
 msgid "Commands to execute on connect:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:362
+#: ../src/qtui/settingspages/networkssettingspage.ui:361
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Specify a list of IRC commands to be executed upon connect.\n"
@@ -5596,84 +5589,121 @@ msgid ""
 "be needed here!"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:374
+#: ../src/qtui/settingspages/networkssettingspage.ui:373
 msgctxt "NetworksSettingsPage|"
 msgid "Connection"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:383
+#: ../src/qtui/settingspages/networkssettingspage.ui:382
 msgctxt "NetworksSettingsPage|"
 msgid "Automatically reconnect to the IRC network after connection failures"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:386
+#: ../src/qtui/settingspages/networkssettingspage.ui:385
 msgctxt "NetworksSettingsPage|"
 msgid "Automatic Reconnect"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:397
+#: ../src/qtui/settingspages/networkssettingspage.ui:396
+#: ../src/qtui/settingspages/networkssettingspage.ui:595
 msgctxt "NetworksSettingsPage|"
 msgid "Wait"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:404
+#: ../src/qtui/settingspages/networkssettingspage.ui:403
+#: ../src/qtui/settingspages/networkssettingspage.ui:605
 msgctxt "NetworksSettingsPage|"
 msgid " s"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:420
+#: ../src/qtui/settingspages/networkssettingspage.ui:419
 msgctxt "NetworksSettingsPage|"
 msgid "between retries"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:444
+#: ../src/qtui/settingspages/networkssettingspage.ui:443
 msgctxt "NetworksSettingsPage|"
 msgid "Number of retries:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:464
+#: ../src/qtui/settingspages/networkssettingspage.ui:463
+#: ../src/qtui/settingspages/networkssettingspage.ui:547
 msgctxt "NetworksSettingsPage|"
 msgid "Unlimited"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:489
+#: ../src/qtui/settingspages/networkssettingspage.ui:488
 msgctxt "NetworksSettingsPage|"
 msgid "Rejoin all channels after reconnect"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:516
-#: ../src/qtui/settingspages/networkssettingspage.ui:525
+#: ../src/qtui/settingspages/networkssettingspage.ui:507
+msgctxt "NetworksSettingsPage|"
+msgid "Use Custom Rate Limits"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:521
+msgctxt "NetworksSettingsPage|"
+msgid "Max. messages at once:"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:528
+msgctxt "NetworksSettingsPage|"
+msgid "Maximum number of messages to send without any delays"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:544
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"<html><head/><body><p>Disable all rate limiting, e.g. for IRC bridges.</"
+"p><p>Don't use with most normal networks.</p></body></html>"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:602
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"<html><head/><body><p>Delay between messages after the maximum number of "
+"undelayed messages have been sent.</p></body></html>"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:621
+msgctxt "NetworksSettingsPage|"
+msgid "between future messages"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:663
+#: ../src/qtui/settingspages/networkssettingspage.ui:672
 msgctxt "NetworksSettingsPage|"
 msgid "Auto Identify"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:540
+#: ../src/qtui/settingspages/networkssettingspage.ui:687
 msgctxt "NetworksSettingsPage|"
 msgid "NickServ"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:557
+#: ../src/qtui/settingspages/networkssettingspage.ui:704
 msgctxt "NetworksSettingsPage|"
 msgid "Service:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:567
-#: ../src/qtui/settingspages/networkssettingspage.ui:615
+#: ../src/qtui/settingspages/networkssettingspage.ui:714
+#: ../src/qtui/settingspages/networkssettingspage.ui:762
 msgctxt "NetworksSettingsPage|"
 msgid "Password:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:580
+#: ../src/qtui/settingspages/networkssettingspage.ui:727
 msgctxt "NetworksSettingsPage|"
 msgid "Use SASL Authentication"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:625
+#: ../src/qtui/settingspages/networkssettingspage.ui:772
 msgctxt "NetworksSettingsPage|"
 msgid "Account:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:635
+#: ../src/qtui/settingspages/networkssettingspage.ui:782
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "<html><head/><body><p><span style=\" font-weight:600;\">Note:</span> because "
@@ -5681,62 +5711,62 @@ msgid ""
 "body></html>"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:659
+#: ../src/qtui/settingspages/networkssettingspage.ui:806
 msgctxt "NetworksSettingsPage|"
 msgid "Encodings"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:662
+#: ../src/qtui/settingspages/networkssettingspage.ui:809
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Configure advanced settings such as message encodings and automatic reconnect"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:671
+#: ../src/qtui/settingspages/networkssettingspage.ui:818
 msgctxt "NetworksSettingsPage|"
 msgid "Control encodings for in- and outgoing messages"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:674
+#: ../src/qtui/settingspages/networkssettingspage.ui:821
 msgctxt "NetworksSettingsPage|"
 msgid "Use Custom Encodings"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:685
-#: ../src/qtui/settingspages/networkssettingspage.ui:705
+#: ../src/qtui/settingspages/networkssettingspage.ui:832
+#: ../src/qtui/settingspages/networkssettingspage.ui:852
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Specify which encoding your messages will be sent in.\n"
 "UTF-8 should be a sane choice for most networks."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:689
+#: ../src/qtui/settingspages/networkssettingspage.ui:836
 msgctxt "NetworksSettingsPage|"
 msgid "Send messages in:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:716
-#: ../src/qtui/settingspages/networkssettingspage.ui:736
+#: ../src/qtui/settingspages/networkssettingspage.ui:863
+#: ../src/qtui/settingspages/networkssettingspage.ui:883
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Incoming messages encoded in UTF-8 will always be treated as such.\n"
 "This setting defines the encoding for messages that are not UTF-8."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:720
+#: ../src/qtui/settingspages/networkssettingspage.ui:867
 msgctxt "NetworksSettingsPage|"
 msgid "Receive fallback:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:747
-#: ../src/qtui/settingspages/networkssettingspage.ui:761
+#: ../src/qtui/settingspages/networkssettingspage.ui:894
+#: ../src/qtui/settingspages/networkssettingspage.ui:908
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "This specifies how control messages, nicks and servernames are encoded.\n"
 "Unless you *really* know what you do, leave this as ISO-8859-1!"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:751
+#: ../src/qtui/settingspages/networkssettingspage.ui:898
 msgctxt "NetworksSettingsPage|"
 msgid "Server encoding:"
 msgstr ""
@@ -5751,34 +5781,54 @@ msgctxt "NetworksSettingsPage|"
 msgid "Networks"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:185
+#: ../src/qtui/settingspages/networkssettingspage.cpp:177
+#: ../src/qtui/settingspages/networkssettingspage.cpp:189
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"<p>Override default message rate limiting.</p><p><b>Setting limits too low "
+"may get you disconnected from the server!</b></p>"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:192
+msgctxt "NetworksSettingsPage|"
+msgid "Your Quassel core does not support this feature"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:193
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"You need a Quassel core v0.13.0 or newer in order to modify message rate "
+"limits."
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:222
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "<b>The following problems need to be corrected before your changes can be "
 "applied:</b><ul>"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:186
+#: ../src/qtui/settingspages/networkssettingspage.cpp:223
 msgctxt "NetworksSettingsPage|"
 msgid "<li>All networks need at least one server defined</li>"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:187
+#: ../src/qtui/settingspages/networkssettingspage.cpp:224
 msgctxt "NetworksSettingsPage|"
 msgid "</ul>"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:188
+#: ../src/qtui/settingspages/networkssettingspage.cpp:225
 msgctxt "NetworksSettingsPage|"
 msgid "Invalid Network Settings"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:651
+#: ../src/qtui/settingspages/networkssettingspage.cpp:702
 msgctxt "NetworksSettingsPage|"
 msgid "Delete Network?"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:652
+#: ../src/qtui/settingspages/networkssettingspage.cpp:703
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -6370,12 +6420,12 @@ msgctxt "ServerEditDlg|"
 msgid "Proxy Password:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:955
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1006
 msgctxt "ServerEditDlg|"
 msgid "Your Quassel core does not support this feature"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:956
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1007
 msgctxt "ServerEditDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
