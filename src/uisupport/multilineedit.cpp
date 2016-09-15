@@ -90,6 +90,14 @@ MultiLineEdit::~MultiLineEdit()
 {
 }
 
+#if defined HAVE_KF5 || defined HAVE_KDE4
+void MultiLineEdit::createHighlighter()
+{
+    KTextEdit::createHighlighter();
+    if (highlighter())
+        highlighter()->setAutomatic(false);
+}
+#endif
 
 void MultiLineEdit::setCustomFont(const QFont &font)
 {
@@ -183,7 +191,11 @@ void MultiLineEdit::updateSizeHint()
     opt.lineWidth = lineWidth();
     opt.midLineWidth = midLineWidth();
     opt.state |= QStyle::State_Sunken;
-    QSize s = style()->sizeFromContents(QStyle::CT_LineEdit, &opt, QSize(100, h).expandedTo(QApplication::globalStrut()), this);
+    QWidget *widget = this;
+#ifdef Q_OS_MAC
+    widget = 0;
+#endif
+    QSize s = style()->sizeFromContents(QStyle::CT_LineEdit, &opt, QSize(100, h).expandedTo(QApplication::globalStrut()), widget);
     if (s != _sizeHint) {
         _sizeHint = s;
         updateGeometry();

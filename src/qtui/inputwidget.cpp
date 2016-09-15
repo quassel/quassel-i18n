@@ -101,7 +101,7 @@ InputWidget::InputWidget(QWidget *parent)
 
     UiSettings s("InputWidget");
 
-#ifdef HAVE_KDE
+#ifdef HAVE_KDE4
     s.notify("EnableSpellCheck", this, SLOT(setEnableSpellCheck(QVariant)));
     setEnableSpellCheck(s.value("EnableSpellCheck", false));
 #endif
@@ -504,12 +504,6 @@ void InputWidget::onTextEntered(const QString &text)
     fmt.clearForeground();
     fmt.clearBackground();
     inputLine()->setCurrentCharFormat(fmt);
-
-#ifdef HAVE_KDE
-    // Set highlighter back to active in case it was deactivated by too many errors.
-    if (ui.inputEdit->highlighter())
-        ui.inputEdit->highlighter()->setActive(true);
-#endif
 }
 
 
