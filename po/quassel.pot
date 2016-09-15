@@ -723,7 +723,7 @@ msgstr ""
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:52
 #: ../src/qtui/settingspages/appearancesettingspage.ui:84
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:77
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:74
 msgctxt "AppearanceSettingsPage|"
 msgid "<System Default>"
 msgstr ""
@@ -808,22 +808,22 @@ msgctxt "AppearanceSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:107
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:104
 msgctxt "AppearanceSettingsPage|"
 msgid "Breeze Light"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:110
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:107
 msgctxt "AppearanceSettingsPage|"
 msgid "Breeze Dark"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:113
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:110
 msgctxt "AppearanceSettingsPage|"
 msgid "Oxygen"
 msgstr ""
 
-#: ../src/qtui/settingspages/appearancesettingspage.cpp:283
+#: ../src/qtui/settingspages/appearancesettingspage.cpp:280
 msgctxt "AppearanceSettingsPage|"
 msgid "Please choose a stylesheet file"
 msgstr ""
@@ -1182,28 +1182,28 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:705
+#: ../src/client/networkmodel.cpp:719
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:709
+#: ../src/client/networkmodel.cpp:723
 msgctxt "ChannelBufferItem|"
 msgid "Users"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:714
+#: ../src/client/networkmodel.cpp:728
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:724
+#: ../src/client/networkmodel.cpp:738
 msgctxt "ChannelBufferItem|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:730
+#: ../src/client/networkmodel.cpp:744
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
 msgstr ""
@@ -2968,33 +2968,33 @@ msgid ""
 "No free and valid nicks in nicklist found. use: /nick <othernick> to continue"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:670
+#: ../src/core/coresessioneventprocessor.cpp:685
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:681
+#: ../src/core/coresessioneventprocessor.cpp:696
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:685
-#: ../src/core/coresessioneventprocessor.cpp:693
+#: ../src/core/coresessioneventprocessor.cpp:700
+#: ../src/core/coresessioneventprocessor.cpp:708
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:695
+#: ../src/core/coresessioneventprocessor.cpp:710
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1427
+#: ../src/core/coresessioneventprocessor.cpp:1442
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1445
+#: ../src/core/coresessioneventprocessor.cpp:1460
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -3267,7 +3267,7 @@ msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:238 ../src/core/eventstringifier.cpp:384
+#: ../src/core/eventstringifier.cpp:238 ../src/core/eventstringifier.cpp:393
 msgctxt "EventStringifier|"
 msgid "[Whois] "
 msgstr ""
@@ -3284,219 +3284,224 @@ msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:361
+#: ../src/core/eventstringifier.cpp:365
+msgctxt "EventStringifier|"
+msgid "Error from server: "
+msgstr ""
+
+#: ../src/core/eventstringifier.cpp:370
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Operwall] %1: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:369
+#: ../src/core/eventstringifier.cpp:378
 msgctxt "EventStringifier|"
 msgid ""
 "Received non-RFC-compliant RPL_ISUPPORT: this can lead to unexpected "
 "behavior!"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:398
+#: ../src/core/eventstringifier.cpp:407
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 is away: \"%2\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:405
+#: ../src/core/eventstringifier.cpp:414
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:413
+#: ../src/core/eventstringifier.cpp:422
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:435
+#: ../src/core/eventstringifier.cpp:444
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:451
+#: ../src/core/eventstringifier.cpp:460
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:453
+#: ../src/core/eventstringifier.cpp:462
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was online via %2 (%3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:463
+#: ../src/core/eventstringifier.cpp:472
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:472
+#: ../src/core/eventstringifier.cpp:481
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] End of /WHO list for %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:484
+#: ../src/core/eventstringifier.cpp:493
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is logged in since %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:488
+#: ../src/core/eventstringifier.cpp:497
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is idling for %2 (since %3)"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:498
+#: ../src/core/eventstringifier.cpp:507
 msgctxt "EventStringifier|"
 msgid "[Whois] End of /WHOIS list"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:521
+#: ../src/core/eventstringifier.cpp:530
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is a user on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:523
+#: ../src/core/eventstringifier.cpp:532
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 has voice on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:525
+#: ../src/core/eventstringifier.cpp:534
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:546
+#: ../src/core/eventstringifier.cpp:555
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 has %2 users. Topic is: \"%3\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:554
+#: ../src/core/eventstringifier.cpp:563
 msgctxt "EventStringifier|"
 msgid "End of channel list"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:572
+#: ../src/core/eventstringifier.cpp:581
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Homepage for %1 is %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:589
+#: ../src/core/eventstringifier.cpp:598
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 created on %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:603
+#: ../src/core/eventstringifier.cpp:612
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:606
+#: ../src/core/eventstringifier.cpp:615
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:615
+#: ../src/core/eventstringifier.cpp:624
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "No topic is set for %1."
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:623
+#: ../src/core/eventstringifier.cpp:632
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:635
+#: ../src/core/eventstringifier.cpp:644
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:648
+#: ../src/core/eventstringifier.cpp:657
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:656
+#: ../src/core/eventstringifier.cpp:665
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:666
+#: ../src/core/eventstringifier.cpp:675
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[WhoX] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:673
+#: ../src/core/eventstringifier.cpp:682
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:683
+#: ../src/core/eventstringifier.cpp:692
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick %1 contains illegal characters"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:693
+#: ../src/core/eventstringifier.cpp:702
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:703
+#: ../src/core/eventstringifier.cpp:712
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:726
+#: ../src/core/eventstringifier.cpp:735
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr ""
 
 #. Optional "unknown" in "Received unknown CTCP-FOO request by bar"
-#: ../src/core/eventstringifier.cpp:741
+#: ../src/core/eventstringifier.cpp:750
 msgctxt "EventStringifier|"
 msgid "unknown"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:742
+#: ../src/core/eventstringifier.cpp:751
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:745
+#: ../src/core/eventstringifier.cpp:754
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:760
+#: ../src/core/eventstringifier.cpp:769
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
@@ -4532,87 +4537,87 @@ msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1102
+#: ../src/client/networkmodel.cpp:1116
 msgctxt "IrcUserItem|"
 msgid "Modes"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1106
+#: ../src/client/networkmodel.cpp:1120
 msgctxt "IrcUserItem|"
 msgid "Unknown"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1112
+#: ../src/client/networkmodel.cpp:1126
 msgctxt "IrcUserItem|"
 msgid "Away message"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1114
+#: ../src/client/networkmodel.cpp:1128
 msgctxt "IrcUserItem|"
 msgid "Realname"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1121
+#: ../src/client/networkmodel.cpp:1135
 msgctxt "IrcUserItem|"
 msgid "Help status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1122
+#: ../src/client/networkmodel.cpp:1136
 msgctxt "IrcUserItem|"
 msgid "Available for help"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1125
+#: ../src/client/networkmodel.cpp:1139
 msgctxt "IrcUserItem|"
 msgid "Service status"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1135
+#: ../src/client/networkmodel.cpp:1149
 msgctxt "IrcUserItem|"
 msgid "Not logged in"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1141 ../src/client/networkmodel.cpp:1150
+#: ../src/client/networkmodel.cpp:1155 ../src/client/networkmodel.cpp:1164
 msgctxt "IrcUserItem|"
 msgid "Account"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1151
+#: ../src/client/networkmodel.cpp:1165
 msgctxt "IrcUserItem|"
 msgid "Identified for this nick"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1157
+#: ../src/client/networkmodel.cpp:1171
 msgctxt "IrcUserItem|"
 msgid "Service Reply"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1161
+#: ../src/client/networkmodel.cpp:1175
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1165
+#: ../src/client/networkmodel.cpp:1179
 msgctxt "IrcUserItem|"
 msgid "Operator"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1173
+#: ../src/client/networkmodel.cpp:1187
 msgctxt "IrcUserItem|"
 msgid "Idling since"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1177
+#: ../src/client/networkmodel.cpp:1191
 msgctxt "IrcUserItem|"
 msgid "Login time"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1180
+#: ../src/client/networkmodel.cpp:1194
 msgctxt "IrcUserItem|"
 msgid "Server"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1185
+#: ../src/client/networkmodel.cpp:1199
 msgctxt "IrcUserItem|"
 msgid "No information available"
 msgstr ""
@@ -5208,44 +5213,49 @@ msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1125
+#: ../src/qtui/mainwin.cpp:1079
+msgctxt "MainWin|"
+msgid "Nick Toolbar"
+msgstr ""
+
+#: ../src/qtui/mainwin.cpp:1144
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1225
+#: ../src/qtui/mainwin.cpp:1244
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1244 ../src/qtui/mainwin.cpp:1254
+#: ../src/qtui/mainwin.cpp:1263 ../src/qtui/mainwin.cpp:1273
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1244
+#: ../src/qtui/mainwin.cpp:1263
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1246 ../src/qtui/mainwin.cpp:1256
+#: ../src/qtui/mainwin.cpp:1265 ../src/qtui/mainwin.cpp:1275
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1254
+#: ../src/qtui/mainwin.cpp:1273
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1272 ../src/qtui/mainwin.cpp:1293
+#: ../src/qtui/mainwin.cpp:1291 ../src/qtui/mainwin.cpp:1312
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1273
+#: ../src/qtui/mainwin.cpp:1292
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -5253,33 +5263,33 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1276
+#: ../src/qtui/mainwin.cpp:1295
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1277
+#: ../src/qtui/mainwin.cpp:1296
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1294
+#: ../src/qtui/mainwin.cpp:1313
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1296
+#: ../src/qtui/mainwin.cpp:1315
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1297
+#: ../src/qtui/mainwin.cpp:1316
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1308
+#: ../src/qtui/mainwin.cpp:1327
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
@@ -5300,7 +5310,7 @@ msgctxt "MsgProcessorStatusWidget|"
 msgid "Receiving Backlog"
 msgstr ""
 
-#: ../src/uisupport/multilineedit.cpp:718
+#: ../src/uisupport/multilineedit.cpp:730
 #, qt-format
 msgctxt "MultiLineEdit|"
 msgid "Do you really want to paste %n line(s)?"
@@ -5308,7 +5318,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/uisupport/multilineedit.cpp:731
+#: ../src/uisupport/multilineedit.cpp:743
 msgctxt "MultiLineEdit|"
 msgid "Paste Protection"
 msgstr ""
@@ -5429,17 +5439,17 @@ msgctxt "NetworkItem|"
 msgid "Not connected"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1229
+#: ../src/client/networkmodel.cpp:1243
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1229
+#: ../src/client/networkmodel.cpp:1243
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:1229
+#: ../src/client/networkmodel.cpp:1243
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr ""
@@ -5475,22 +5485,38 @@ msgctxt "NetworkModelController|"
 msgid "Remove buffers permanently?"
 msgstr ""
 
-#: ../src/uisupport/networkmodelcontroller.cpp:544
+#: ../src/uisupport/networkmodelcontroller.cpp:240
+#: ../src/uisupport/networkmodelcontroller.cpp:242
+msgctxt "NetworkModelController|"
+msgid "Question"
+msgstr ""
+
+#: ../src/uisupport/networkmodelcontroller.cpp:240
+msgctxt "NetworkModelController|"
+msgid "Really Connect to all IRC Networks?"
+msgstr ""
+
+#: ../src/uisupport/networkmodelcontroller.cpp:242
+msgctxt "NetworkModelController|"
+msgid "Really disconnect from all IRC Networks?"
+msgstr ""
+
+#: ../src/uisupport/networkmodelcontroller.cpp:548
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Join Channel"
 msgstr ""
 
-#: ../src/uisupport/networkmodelcontroller.cpp:547
+#: ../src/uisupport/networkmodelcontroller.cpp:551
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Network:"
 msgstr ""
 
-#: ../src/uisupport/networkmodelcontroller.cpp:549
+#: ../src/uisupport/networkmodelcontroller.cpp:553
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Channel:"
 msgstr ""
 
-#: ../src/uisupport/networkmodelcontroller.cpp:551
+#: ../src/uisupport/networkmodelcontroller.cpp:555
 msgctxt "NetworkModelController::JoinDlg|"
 msgid "Password:"
 msgstr ""
@@ -6876,124 +6902,124 @@ msgctxt "ToolBarActionProvider|"
 msgid "Disconnect from IRC"
 msgstr ""
 
-#: ../src/uisupport/toolbaractionprovider.cpp:33
-msgctxt "ToolBarActionProvider|"
-msgid "Part"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:33
-msgctxt "ToolBarActionProvider|"
-msgid "Leave currently selected channel"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:34
-msgctxt "ToolBarActionProvider|"
-msgid "Join"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:34
-msgctxt "ToolBarActionProvider|"
-msgid "Join a channel"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:36
-msgctxt "ToolBarActionProvider|"
-msgid "Query"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:36
-msgctxt "ToolBarActionProvider|"
-msgid "Start a private conversation"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:37
-msgctxt "ToolBarActionProvider|"
-msgid "Whois"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:37
-msgctxt "ToolBarActionProvider|"
-msgid "Request user information"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:39
-msgctxt "ToolBarActionProvider|"
-msgid "Op"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:39
-msgctxt "ToolBarActionProvider|"
-msgid "Give operator privileges to user"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:40
-msgctxt "ToolBarActionProvider|"
-msgid "Deop"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:40
-msgctxt "ToolBarActionProvider|"
-msgid "Take operator privileges from user"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:41
-msgctxt "ToolBarActionProvider|"
-msgid "Voice"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:41
-msgctxt "ToolBarActionProvider|"
-msgid "Give voice to user"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:42
-msgctxt "ToolBarActionProvider|"
-msgid "Devoice"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:42
-msgctxt "ToolBarActionProvider|"
-msgid "Take voice from user"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:43
-msgctxt "ToolBarActionProvider|"
-msgid "Kick"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:43
-msgctxt "ToolBarActionProvider|"
-msgid "Remove user from channel"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:44
-msgctxt "ToolBarActionProvider|"
-msgid "Ban"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:44
-msgctxt "ToolBarActionProvider|"
-msgid "Ban user from channel"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:45
-msgctxt "ToolBarActionProvider|"
-msgid "Kick/Ban"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:45
-msgctxt "ToolBarActionProvider|"
-msgid "Remove and ban user from channel"
-msgstr ""
-
-#: ../src/uisupport/toolbaractionprovider.cpp:50
+#: ../src/uisupport/toolbaractionprovider.cpp:32
 msgctxt "ToolBarActionProvider|"
 msgid "Connect to all"
 msgstr ""
 
-#: ../src/uisupport/toolbaractionprovider.cpp:57
+#: ../src/uisupport/toolbaractionprovider.cpp:33
 msgctxt "ToolBarActionProvider|"
 msgid "Disconnect from all"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:35
+msgctxt "ToolBarActionProvider|"
+msgid "Part"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:35
+msgctxt "ToolBarActionProvider|"
+msgid "Leave currently selected channel"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:36
+msgctxt "ToolBarActionProvider|"
+msgid "Join"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:36
+msgctxt "ToolBarActionProvider|"
+msgid "Join a channel"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:38
+msgctxt "ToolBarActionProvider|"
+msgid "Query"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:38
+msgctxt "ToolBarActionProvider|"
+msgid "Start a private conversation"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:39
+msgctxt "ToolBarActionProvider|"
+msgid "Whois"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:39
+msgctxt "ToolBarActionProvider|"
+msgid "Request user information"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:41
+msgctxt "ToolBarActionProvider|"
+msgid "Op"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:41
+msgctxt "ToolBarActionProvider|"
+msgid "Give operator privileges to user"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:42
+msgctxt "ToolBarActionProvider|"
+msgid "Deop"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:42
+msgctxt "ToolBarActionProvider|"
+msgid "Take operator privileges from user"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:43
+msgctxt "ToolBarActionProvider|"
+msgid "Voice"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:43
+msgctxt "ToolBarActionProvider|"
+msgid "Give voice to user"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:44
+msgctxt "ToolBarActionProvider|"
+msgid "Devoice"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:44
+msgctxt "ToolBarActionProvider|"
+msgid "Take voice from user"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:45
+msgctxt "ToolBarActionProvider|"
+msgid "Kick"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:45
+msgctxt "ToolBarActionProvider|"
+msgid "Remove user from channel"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:46
+msgctxt "ToolBarActionProvider|"
+msgid "Ban"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:46
+msgctxt "ToolBarActionProvider|"
+msgid "Ban user from channel"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:47
+msgctxt "ToolBarActionProvider|"
+msgid "Kick/Ban"
+msgstr ""
+
+#: ../src/uisupport/toolbaractionprovider.cpp:47
+msgctxt "ToolBarActionProvider|"
+msgid "Remove and ban user from channel"
 msgstr ""
 
 #: ../src/qtui/ui/topicwidget.ui:32
@@ -7167,7 +7193,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
 msgstr ""
 
-#: ../src/client/networkmodel.cpp:953
+#: ../src/client/networkmodel.cpp:967
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -7175,7 +7201,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:955
+#: ../src/client/networkmodel.cpp:969
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -7183,7 +7209,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:957
+#: ../src/client/networkmodel.cpp:971
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -7191,7 +7217,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:959
+#: ../src/client/networkmodel.cpp:973
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -7199,7 +7225,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:961
+#: ../src/client/networkmodel.cpp:975
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -7207,7 +7233,7 @@ msgid_plural "%n Voiced"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/client/networkmodel.cpp:963
+#: ../src/client/networkmodel.cpp:977
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
