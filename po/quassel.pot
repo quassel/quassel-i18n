@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:177
 msgctxt "AboutData|"
-msgid "Master of Translation, many fixes and enhancements"
+msgid "Master of Translation, many fixes and enhancements, Travis support"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:178
@@ -52,475 +52,498 @@ msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:193
+#: ../src/uisupport/aboutdata.cpp:180
 msgctxt "AboutData|"
-msgid "Chatview improvements"
+msgid "IRCv3 support, documentation, many other improvements, outstanding PRs"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
-msgid "Early beta tester and bughunter, Danish translation"
+msgid "OSX UI improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:271
-#: ../src/uisupport/aboutdata.cpp:296
+#: ../src/uisupport/aboutdata.cpp:185 ../src/uisupport/aboutdata.cpp:195
 msgctxt "AboutData|"
-msgid "Spanish translation"
+msgid "Chatview improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:186
 msgctxt "AboutData|"
-msgid "Tray icon fix"
+msgid "Early beta tester and bughunter, Danish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:187
+#: ../src/uisupport/aboutdata.cpp:187 ../src/uisupport/aboutdata.cpp:274
+#: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
-msgid "Language improvements"
+msgid "Spanish translation"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
+msgid "Tray icon fix"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:189
+msgctxt "AboutData|"
+msgid "Language improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:190
+msgctxt "AboutData|"
 msgid "Documentation improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:214
-#: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:255
-#: ../src/uisupport/aboutdata.cpp:267 ../src/uisupport/aboutdata.cpp:297
+#: ../src/uisupport/aboutdata.cpp:191 ../src/uisupport/aboutdata.cpp:217
+#: ../src/uisupport/aboutdata.cpp:240 ../src/uisupport/aboutdata.cpp:258
+#: ../src/uisupport/aboutdata.cpp:270 ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid "Fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:190 ../src/uisupport/aboutdata.cpp:299
+#: ../src/uisupport/aboutdata.cpp:192 ../src/uisupport/aboutdata.cpp:304
 msgctxt "AboutData|"
 msgid "Romanian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:191 ../src/uisupport/aboutdata.cpp:244
-#: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:257
+#: ../src/uisupport/aboutdata.cpp:193 ../src/uisupport/aboutdata.cpp:247
+#: ../src/uisupport/aboutdata.cpp:259 ../src/uisupport/aboutdata.cpp:260
 msgctxt "AboutData|"
 msgid "Finnish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:192
+#: ../src/uisupport/aboutdata.cpp:194
 msgctxt "AboutData|"
 msgid "Message indicator support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:195
-#: ../src/uisupport/aboutdata.cpp:312
+#: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:197
+#: ../src/uisupport/aboutdata.cpp:317
 msgctxt "AboutData|"
 msgid "Build system fix"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:196
+#: ../src/uisupport/aboutdata.cpp:198
 msgctxt "AboutData|"
 msgid "Windows build system fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:197
+#: ../src/uisupport/aboutdata.cpp:199
 msgctxt "AboutData|"
-msgid "Nicer tooltips"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:198
-msgctxt "AboutData|"
-msgid "Crash fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:220
-#: ../src/uisupport/aboutdata.cpp:282
-msgctxt "AboutData|"
-msgid "French translation"
+msgid "AppData metadata"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:200
 msgctxt "AboutData|"
-msgid "Usability review"
+msgid "Nicer tooltips, spell check and other improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
+msgid "Crash fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:202 ../src/uisupport/aboutdata.cpp:223
+#: ../src/uisupport/aboutdata.cpp:285
+msgctxt "AboutData|"
+msgid "French translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:203
+msgctxt "AboutData|"
+msgid "Usability review"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:204
+msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:202
-msgctxt "AboutData|"
-msgid "Various improvements"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:203 ../src/uisupport/aboutdata.cpp:204
-#: ../src/uisupport/aboutdata.cpp:208
-msgctxt "AboutData|"
-msgid "Various fixes and improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:205
 msgctxt "AboutData|"
+msgid "Various improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:206 ../src/uisupport/aboutdata.cpp:207
+#: ../src/uisupport/aboutdata.cpp:211
+msgctxt "AboutData|"
+msgid "Various fixes and improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:208
+msgctxt "AboutData|"
 msgid "Galician translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:206
+#: ../src/uisupport/aboutdata.cpp:209
 msgctxt "AboutData|"
 msgid "Esperanto translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:207
+#: ../src/uisupport/aboutdata.cpp:210
 msgctxt "AboutData|"
 msgid "Japanese translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:273
+#: ../src/uisupport/aboutdata.cpp:212 ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:210 ../src/uisupport/aboutdata.cpp:224
-#: ../src/uisupport/aboutdata.cpp:309
+#: ../src/uisupport/aboutdata.cpp:213 ../src/uisupport/aboutdata.cpp:227
+#: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:211
+#: ../src/uisupport/aboutdata.cpp:214
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:212
+#: ../src/uisupport/aboutdata.cpp:215
 msgctxt "AboutData|"
 msgid "Translation system fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:213
+#: ../src/uisupport/aboutdata.cpp:216
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:215 ../src/uisupport/aboutdata.cpp:269
+#: ../src/uisupport/aboutdata.cpp:218 ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Mac fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:216
+#: ../src/uisupport/aboutdata.cpp:219
 msgctxt "AboutData|"
 msgid "D-Bus notifications"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:217
+#: ../src/uisupport/aboutdata.cpp:220
 msgctxt "AboutData|"
 msgid "Polish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:218
+#: ../src/uisupport/aboutdata.cpp:221 ../src/uisupport/aboutdata.cpp:302
 msgctxt "AboutData|"
 msgid "Build system improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:219
+#: ../src/uisupport/aboutdata.cpp:222
 msgctxt "AboutData|"
 msgid "Formatting support and other input line improvements, many other fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:221
+#: ../src/uisupport/aboutdata.cpp:224
 msgctxt "AboutData|"
 msgid "BluesTheme stylesheet"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:222 ../src/uisupport/aboutdata.cpp:261
-#: ../src/uisupport/aboutdata.cpp:291
+#: ../src/uisupport/aboutdata.cpp:225 ../src/uisupport/aboutdata.cpp:264
+#: ../src/uisupport/aboutdata.cpp:295
 msgctxt "AboutData|"
 msgid "Russian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:223 ../src/uisupport/aboutdata.cpp:263
+#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:266
 msgctxt "AboutData|"
 msgid "Italian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:225
+#: ../src/uisupport/aboutdata.cpp:228
 msgctxt "AboutData|"
 msgid "Sanitize topic handling"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:226
+#: ../src/uisupport/aboutdata.cpp:229
 msgctxt "AboutData|"
 msgid "Norwegian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:227
+#: ../src/uisupport/aboutdata.cpp:230
 msgctxt "AboutData|"
 msgid "Hungarian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:228
+#: ../src/uisupport/aboutdata.cpp:231
 msgctxt "AboutData|"
 msgid "IRC parser improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:229 ../src/uisupport/aboutdata.cpp:311
-#: ../src/uisupport/aboutdata.cpp:316
+#: ../src/uisupport/aboutdata.cpp:232 ../src/uisupport/aboutdata.cpp:316
+#: ../src/uisupport/aboutdata.cpp:321
 msgctxt "AboutData|"
 msgid "Turkish translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:230
+#: ../src/uisupport/aboutdata.cpp:233
 msgctxt "AboutData|"
-msgid "MinGW support, SNORE backend, Windows packaging"
+msgid "Windows build support and Appveyor maintenance, snorenotify backend"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:231
+#: ../src/uisupport/aboutdata.cpp:234
 msgctxt "AboutData|"
 msgid "Initial Qt5 support"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:232
+#: ../src/uisupport/aboutdata.cpp:235
 msgctxt "AboutData|"
 msgid "{Ku|U}buntu packager, motivator, promoter"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:233
+#: ../src/uisupport/aboutdata.cpp:236
 msgctxt "AboutData|"
-msgid "Various features"
+msgid "Various features and improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:235
-#: ../src/uisupport/aboutdata.cpp:243 ../src/uisupport/aboutdata.cpp:248
-#: ../src/uisupport/aboutdata.cpp:286
+#: ../src/uisupport/aboutdata.cpp:237 ../src/uisupport/aboutdata.cpp:238
+#: ../src/uisupport/aboutdata.cpp:246 ../src/uisupport/aboutdata.cpp:251
+#: ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
 msgid "Various fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:236 ../src/uisupport/aboutdata.cpp:240
-#: ../src/uisupport/aboutdata.cpp:281 ../src/uisupport/aboutdata.cpp:284
-#: ../src/uisupport/aboutdata.cpp:289 ../src/uisupport/aboutdata.cpp:293
+#: ../src/uisupport/aboutdata.cpp:239 ../src/uisupport/aboutdata.cpp:243
+#: ../src/uisupport/aboutdata.cpp:284 ../src/uisupport/aboutdata.cpp:287
+#: ../src/uisupport/aboutdata.cpp:292 ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Bugfixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:238
-msgctxt "AboutData|"
-msgid "QuasselDroid and Java wizardess, documentation, bugfixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:239
-msgctxt "AboutData|"
-msgid "Python improvements"
-msgstr ""
-
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
-msgid "Postgres migration fixes"
+msgid ""
+"QuasselDroid and Java wizardess, documentation, bugfixes, many valuable "
+"technical discussions"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
-msgid "Context menu fixes"
+msgid "Python improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:244
+msgctxt "AboutData|"
+msgid "Postgres migration fixes"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:245
 msgctxt "AboutData|"
+msgid "Context menu fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:248
+msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:246
-msgctxt "AboutData|"
-msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:247
-msgctxt "AboutData|"
-msgid "Project founder, various improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
-msgid "Serbian translation"
+msgid "Original \"All-Seeing Eye\" logo"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:250
 msgctxt "AboutData|"
+msgid "Project founder, various improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:252
+msgctxt "AboutData|"
+msgid "Serbian translation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:253
+msgctxt "AboutData|"
 msgid "Slovenian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:251
+#: ../src/uisupport/aboutdata.cpp:254
 msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:252
+#: ../src/uisupport/aboutdata.cpp:255
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:253 ../src/uisupport/aboutdata.cpp:264
-#: ../src/uisupport/aboutdata.cpp:266 ../src/uisupport/aboutdata.cpp:307
+#: ../src/uisupport/aboutdata.cpp:256 ../src/uisupport/aboutdata.cpp:267
+#: ../src/uisupport/aboutdata.cpp:269 ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "German translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:254
+#: ../src/uisupport/aboutdata.cpp:257
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:258
+#: ../src/uisupport/aboutdata.cpp:261
 msgctxt "AboutData|"
 msgid "OSX improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:259
+#: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
 msgid "Lithuanian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:260
+#: ../src/uisupport/aboutdata.cpp:263
 msgctxt "AboutData|"
 msgid "Documentation fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:262
+#: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Ideas, hacking, initial motivation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:265
+#: ../src/uisupport/aboutdata.cpp:268
 msgctxt "AboutData|"
-msgid "Core and other fixes, QuasselDroid"
+msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:268
+#: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "German translation, fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:270
+#: ../src/uisupport/aboutdata.cpp:273
 msgctxt "AboutData|"
-msgid "Many fixes and improvements; Ubuntu live packages"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:272
-msgctxt "AboutData|"
-msgid "Tons of Oxygen icons including the Quassel logo"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:274
-msgctxt "AboutData|"
-msgid "Initial design and main window layout"
+msgid "Many fixes and improvements; Debian/Ubuntu nightly PPA"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
-msgid "Early beta tester and bughunter"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:276
-msgctxt "AboutData|"
-msgid "Danish translation"
+msgid "Tons of Oxygen icons including the Quassel logo"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
-msgid "Linewrap for input line"
+msgid "Initial design and main window layout"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
-msgid "Performance improvements and cleanups"
+msgid "Early beta tester and bughunter"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
-msgid "/print command"
+msgid "Danish translation"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
-msgid "Performance improvements"
+msgid "Linewrap for input line"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:281
+msgctxt "AboutData|"
+msgid "Performance improvements and cleanups"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:282
+msgctxt "AboutData|"
+msgid "/print command"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
+msgid "Performance improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:286
+msgctxt "AboutData|"
 msgid "Build system fixes"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:285
-msgctxt "AboutData|"
-msgid "Emacs keybindings"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:287
-msgctxt "AboutData|"
-msgid "Highlight configuration improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:288
 msgctxt "AboutData|"
-msgid "Kubuntu packager, (packaging/build system) bughunter"
+msgid "Emacs keybindings"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
+msgid "Highlight configuration improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:291
+msgctxt "AboutData|"
+msgid "Kubuntu packager, (packaging/build system) bughunter"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:293
+msgctxt "AboutData|"
 msgid "Audio backend improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:292
+#: ../src/uisupport/aboutdata.cpp:294
+msgctxt "AboutData|"
+msgid "Improvements"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:296
 msgctxt "AboutData|"
 msgid "Dutch translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:295
-#: ../src/uisupport/aboutdata.cpp:302 ../src/uisupport/aboutdata.cpp:303
+#: ../src/uisupport/aboutdata.cpp:298 ../src/uisupport/aboutdata.cpp:299
+#: ../src/uisupport/aboutdata.cpp:307 ../src/uisupport/aboutdata.cpp:308
 msgctxt "AboutData|"
 msgid "Greek translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:298
+#: ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
-msgid "Fixing and hosting Windows builds"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:300
-msgctxt "AboutData|"
-msgid "Korean translation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:301
-msgctxt "AboutData|"
-msgid "Norwegian translation, documentation"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:304
-msgctxt "AboutData|"
-msgid "Former Windows builder"
+msgid ""
+"Windows build support, automated OSX builds in Travis, various improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:305
 msgctxt "AboutData|"
-msgid "Fixes, Debian packaging"
+msgid "Korean translation"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
+msgid "Norwegian translation, documentation"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:309
+msgctxt "AboutData|"
+msgid "Former Windows builder"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:310
+msgctxt "AboutData|"
+msgid "Fixes, Debian packaging"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:311
+msgctxt "AboutData|"
 msgid "Fixes and feedback"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:308 ../src/uisupport/aboutdata.cpp:310
+#: ../src/uisupport/aboutdata.cpp:313 ../src/uisupport/aboutdata.cpp:315
 msgctxt "AboutData|"
 msgid "Czech translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:313
+#: ../src/uisupport/aboutdata.cpp:318
 msgctxt "AboutData|"
 msgid "Network detection improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:314
+#: ../src/uisupport/aboutdata.cpp:319
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:315
+#: ../src/uisupport/aboutdata.cpp:320
 msgctxt "AboutData|"
 msgid "Portuguese translation"
 msgstr ""
@@ -580,10 +603,10 @@ msgid ""
 "\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC is dual-licensed "
 "under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> and <a "
 "href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br>Most icons "
-"are &copy; by the <a href=\"http://www.oxygen-icons.org\">Oxygen Team</a> "
-"and used under the <a href=\"http://www.gnu.org/licenses/lgpl.html\">LGPL</"
-"a>.<br><br>Please use <a href=\"http://bugs.quassel-irc.org\">http://bugs."
-"quassel-irc.org</a> to report bugs."
+"are &copy; by the <a href=\"https://api.kde.org/frameworks/oxygen-icons5/"
+"html/index.html\">Oxygen Team</a> and used under the <a href=\"http://www."
+"gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use <a href=\"http://"
+"bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to report bugs."
 msgstr ""
 
 #: ../src/qtui/aboutdlg.cpp:72
@@ -611,14 +634,14 @@ msgid ""
 "Special thanks goes to:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;"
 "<b>John \"nox\" Hand</b></dt><dd><i>for the original Quassel icon - The All-"
 "Seeing Eye</i><br></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href="
-"\"http://www.oxygen-icons.org\">The Oxygen Team</a></b></dt><dd><i>for "
-"creating all the artwork you see throughout Quassel</i><br></dd><dt><img src="
-"\":/pics/qt-logo-32.png\">&nbsp;<b><a href=\"http://www.trolltech.com\">Qt "
-"Software formerly known as Trolltech</a></b></dt><dd><i>for creating Qt and "
-"Qtopia, and for sponsoring development of QuasselTopia with Greenphones and "
-"more</i><br></dd><dt><a href=\"http://www.nokia.com\"><img src=\":/pics/"
-"nokia.png\"></a></b></dt><dd><i>for sponsoring development of Quassel Mobile "
-"with N810s</i></dd>"
+"\"https://api.kde.org/frameworks/oxygen-icons5/html/index.html\">The Oxygen "
+"Team</a></b></dt><dd><i>for creating all the artwork you see throughout "
+"Quassel</i><br></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href="
+"\"https://www.qt.io/\">Qt Software formerly known as Trolltech</a></b></"
+"dt><dd><i>for creating Qt and Qtopia, and for sponsoring development of "
+"QuasselTopia with Greenphones and more</i><br></dd><dt><a href=\"http://www."
+"nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring "
+"development of Quassel Mobile with N810s</i></dd>"
 msgstr ""
 
 #: ../src/core/abstractsqlstorage.cpp:140
