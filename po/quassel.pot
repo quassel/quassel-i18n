@@ -413,7 +413,7 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:273
 msgctxt "AboutData|"
-msgid "Many fixes and improvements; Debian/Ubuntu nightly PPA"
+msgid "Many fixes and improvements; Ubuntu PPAs"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:275
@@ -593,7 +593,7 @@ msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:54
+#: ../src/qtui/aboutdlg.cpp:53
 #, qt-format
 msgctxt "AboutDlg|"
 msgid ""
@@ -602,14 +602,18 @@ msgid ""
 "a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> on <a href="
 "\"http://www.freenode.net\">Freenode</a><br><br>Quassel IRC is dual-licensed "
 "under <a href=\"http://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> and <a "
-"href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br>Most icons "
-"are &copy; by the <a href=\"https://api.kde.org/frameworks/oxygen-icons5/"
-"html/index.html\">Oxygen Team</a> and used under the <a href=\"http://www."
-"gnu.org/licenses/lgpl.html\">LGPL</a>.<br><br>Please use <a href=\"http://"
-"bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to report bugs."
+"href=\"http://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a href="
+"\"https://api.kde.org/frameworks/breeze-icons/html\">Breeze icon theme</a> "
+"&copy; Uri Herrera and others, licensed under the <a href=\"https://github."
+"com/KDE/breeze-icons/blob/21ffd9b/COPYING-ICONS\">LGPLv3</a>.<br><a href="
+"\"https://api.kde.org/frameworks/oxygen-icons5/html\">Oxygen icon theme</a> "
+"&copy; Nuno Pinheiro and others, licensed under the <a href=\"https://github."
+"com/KDE/oxygen-icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Please use <a "
+"href=\"http://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> to "
+"report bugs."
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:72
+#: ../src/qtui/aboutdlg.cpp:73
 msgctxt "AboutDlg|"
 msgid "Quassel IRC is mainly developed by:"
 msgstr ""
@@ -628,20 +632,31 @@ msgid ""
 "others and being part of the community!"
 msgstr ""
 
-#: ../src/qtui/aboutdlg.cpp:100
+#: ../src/qtui/aboutdlg.cpp:98
+msgctxt "AboutDlg|"
+msgid "Special thanks goes to:"
+msgstr ""
+
+#: ../src/qtui/aboutdlg.cpp:102
+msgctxt "AboutDlg|"
+msgid "for the original Quassel logo - The All-Seeing Eye"
+msgstr ""
+
+#: ../src/qtui/aboutdlg.cpp:106
+msgctxt "AboutDlg|"
+msgid "for the current Quassel logo"
+msgstr ""
+
+#: ../src/qtui/aboutdlg.cpp:110
+msgctxt "AboutDlg|"
+msgid "for the amazing Breeze and Oxygen icon themes"
+msgstr ""
+
+#: ../src/qtui/aboutdlg.cpp:114
 msgctxt "AboutDlg|"
 msgid ""
-"Special thanks goes to:<br><dl><dt><img src=\":/pics/quassel-eye.png\">&nbsp;"
-"<b>John \"nox\" Hand</b></dt><dd><i>for the original Quassel icon - The All-"
-"Seeing Eye</i><br></dt><dt><img src=\":/pics/oxygen.png\">&nbsp;<b><a href="
-"\"https://api.kde.org/frameworks/oxygen-icons5/html/index.html\">The Oxygen "
-"Team</a></b></dt><dd><i>for creating all the artwork you see throughout "
-"Quassel</i><br></dd><dt><img src=\":/pics/qt-logo-32.png\">&nbsp;<b><a href="
-"\"https://www.qt.io/\">Qt Software formerly known as Trolltech</a></b></"
-"dt><dd><i>for creating Qt and Qtopia, and for sponsoring development of "
-"QuasselTopia with Greenphones and more</i><br></dd><dt><a href=\"http://www."
-"nokia.com\"><img src=\":/pics/nokia.png\"></a></b></dt><dd><i>for sponsoring "
-"development of Quassel Mobile with N810s</i></dd>"
+"for creating an awesome framework, and for sponsoring development with "
+"Greenphones, N810s, N950s and more"
 msgstr ""
 
 #: ../src/core/abstractsqlstorage.cpp:140
