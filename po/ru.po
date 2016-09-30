@@ -4,12 +4,13 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # sfionov <fionov@gmail.com>, 2012
 # sfionov <fionov@gmail.com>, 2012
+# Viktor Suprun <popsul1993@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-03-13 11:00+0000\n"
-"Last-Translator: Andrei Stepanov\n"
+"PO-Revision-Date: 2016-09-29 12:39+0000\n"
+"Last-Translator: Viktor Suprun <popsul1993@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/ald/quassel/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,7 +148,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "SASL support"
-msgstr ""
+msgstr "Поддержка SASL"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
@@ -1354,7 +1355,7 @@ msgstr "Скопировать выделение"
 #, qt-format
 msgctxt "ChatScene|"
 msgid "Search '%1'"
-msgstr ""
+msgstr "Найти '%1'"
 
 #: ../src/qtui/chatscene.cpp:845
 msgctxt "ChatScene|"
@@ -2588,7 +2589,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматически"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2757,7 +2758,7 @@ msgstr "Сбой соединения. Пробую следующий серв�
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Соединяюсь с %1:%2..."
 
 #: ../src/core/corenetwork.cpp:233
 #, qt-format
@@ -3646,7 +3647,7 @@ msgstr "Переименовать личность"
 #: ../src/qtui/settingspages/identityeditwidget.ui:139
 msgctxt "IdentityEditWidget|"
 msgid "Re&name..."
-msgstr ""
+msgstr "Пере&именовать..."
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:165
 msgctxt "IdentityEditWidget|"
@@ -3667,7 +3668,7 @@ msgstr "Передвинуть вниз в списке"
 #: ../src/qtui/settingspages/identityeditwidget.ui:227
 msgctxt "IdentityEditWidget|"
 msgid "A&way"
-msgstr ""
+msgstr "&Отсутствую"
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:233
 msgctxt "IdentityEditWidget|"
@@ -4375,12 +4376,12 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:982
 msgctxt "IrcUserItem|"
 msgid "Realname"
-msgstr ""
+msgstr "Реальное имя"
 
 #: ../src/client/networkmodel.cpp:983 ../src/client/networkmodel.cpp:987
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Оператор"
 
 #: ../src/client/networkmodel.cpp:984
 msgctxt "IrcUserItem|"
@@ -4410,7 +4411,7 @@ msgstr ""
 #: ../src/client/networkmodel.cpp:1000
 msgctxt "IrcUserItem|"
 msgid "Server"
-msgstr ""
+msgstr "Сервер"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:14
 msgctxt "ItemViewSettingsPage|"
@@ -5171,13 +5172,13 @@ msgstr "Добавить сеть"
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Server: %1"
-msgstr ""
+msgstr "Сервер: %1"
 
 #: ../src/client/networkmodel.cpp:221
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "Users: %1"
-msgstr ""
+msgstr "Пользователи: %1"
 
 #: ../src/client/networkmodel.cpp:224
 #, qt-format
@@ -5266,7 +5267,7 @@ msgstr "Форма"
 #: ../src/qtui/settingspages/networkssettingspage.ui:48
 msgctxt "NetworksSettingsPage|"
 msgid "Re&name..."
-msgstr ""
+msgstr "Пере&именовать..."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:65
 #: ../src/qtui/settingspages/networkssettingspage.ui:235
@@ -5278,7 +5279,7 @@ msgstr "Доб&авить..."
 #: ../src/qtui/settingspages/networkssettingspage.ui:252
 msgctxt "NetworksSettingsPage|"
 msgid "De&lete"
-msgstr ""
+msgstr "У&далить"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:124
 msgctxt "NetworksSettingsPage|"
@@ -5572,22 +5573,22 @@ msgstr "Уведомления"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Сменить пароль"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Текущий пароль:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Новый пароль:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Повторите пароль:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5600,12 +5601,12 @@ msgstr ""
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Пароль не изменен"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Не удалось изменить пароль</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
@@ -5898,7 +5899,7 @@ msgstr ""
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "Отключение..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -5964,12 +5965,12 @@ msgstr ""
 #: ../src/qtui/settingspages/servereditdlg.ui:151
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 (небезопасно)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:156
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 (небезопасно)"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:161
 msgctxt "ServerEditDlg|"
@@ -6206,7 +6207,7 @@ msgstr "Удалить этот сервер из списка"
 #: ../src/qtui/ui/simplenetworkeditor.ui:139
 msgctxt "SimpleNetworkEditor|"
 msgid "De&lete"
-msgstr ""
+msgstr "У&далить"
 
 #: ../src/qtui/ui/simplenetworkeditor.ui:165
 msgctxt "SimpleNetworkEditor|"
@@ -6299,7 +6300,7 @@ msgstr ""
 #: ../src/qtui/ui/sslinfodlg.ui:120
 msgctxt "SslInfoDlg|"
 msgid "Subject"
-msgstr ""
+msgstr "Тема"
 
 #: ../src/qtui/ui/sslinfodlg.ui:126 ../src/qtui/ui/sslinfodlg.ui:248
 msgctxt "SslInfoDlg|"
@@ -6364,7 +6365,7 @@ msgstr "<b>Пользователи:</b> %1"
 #: ../src/qtui/sslinfodlg.cpp:71
 msgctxt "SslInfoDlg|"
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: ../src/qtui/sslinfodlg.cpp:73
 msgctxt "SslInfoDlg|"
@@ -6385,12 +6386,12 @@ msgstr "Буфер состояния"
 #: ../src/qtui/systemtray.cpp:67 ../src/qtui/systemtray.cpp:100
 msgctxt "SystemTray|"
 msgid "&Minimize"
-msgstr ""
+msgstr "&Минимизировать"
 
 #: ../src/qtui/systemtray.cpp:102
 msgctxt "SystemTray|"
 msgid "&Restore"
-msgstr ""
+msgstr "&Восстановить"
 
 #: ../src/qtui/systraynotificationbackend.cpp:141
 #, qt-format
@@ -6586,7 +6587,7 @@ msgstr ""
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Users: %1"
-msgstr ""
+msgstr "Пользователи: %1"
 
 #: ../src/qtui/topicwidget.cpp:123 ../src/qtui/topicwidget.cpp:129
 #, qt-format
