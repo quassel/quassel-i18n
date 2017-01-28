@@ -3521,7 +3521,6 @@ msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr ""
 
-#. Optional "unknown" in "Received unknown CTCP-FOO request by bar"
 #: ../src/core/eventstringifier.cpp:750
 msgctxt "EventStringifier|"
 msgid "unknown"
