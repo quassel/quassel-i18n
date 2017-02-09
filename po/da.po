@@ -5,14 +5,14 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # Jens True <frazzer@hotmail.com>, 2013
 # Jens True <frazzer@hotmail.com>, 2013
-# Joe Hansen <joedalton2@yahoo.dk>, 2014,2016
+# Joe Hansen <joedalton2@yahoo.dk>, 2014,2016-2017
 # Jonas Thyssen, 2015
 # Per Nielsen <>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2016-08-10 16:31+0000\n"
+"PO-Revision-Date: 2017-02-08 21:24+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -203,7 +203,7 @@ msgstr "Rettelser til oversættelsessystemet"
 #: ../src/uisupport/aboutdata.cpp:213
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
-msgstr ""
+msgstr "Understøttelse af OSX-påmindelsescenter"
 
 #: ../src/uisupport/aboutdata.cpp:215 ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
@@ -2454,7 +2454,7 @@ msgstr "Fra"
 #: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:21
 msgctxt "CoreConfigWizardStorageSelectionPage|"
 msgid "Storage Backend:"
-msgstr ""
+msgstr "Lagermotor:"
 
 #: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:56
 msgctxt "CoreConfigWizardStorageSelectionPage|"
@@ -2474,7 +2474,7 @@ msgstr "Fra"
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:19
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Your Choices"
-msgstr ""
+msgstr "Dine valg"
 
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:35
 msgctxt "CoreConfigWizardSyncPage|"
@@ -2489,7 +2489,7 @@ msgstr ""
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:55
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Storage Backend:"
-msgstr ""
+msgstr "Lagermotor:"
 
 #: ../src/qtui/ui/coreconfigwizardsyncpage.ui:62
 msgctxt "CoreConfigWizardSyncPage|"
@@ -2504,7 +2504,7 @@ msgstr "Vent venligst mens dine indstillinger overføres til serveren..."
 #: ../src/qtui/ui/coreconnectauthdlg.ui:14
 msgctxt "CoreConnectAuthDlg|"
 msgid "Authentication Required"
-msgstr ""
+msgstr "Godkendelse krævet"
 
 #: ../src/qtui/ui/coreconnectauthdlg.ui:20
 msgctxt "CoreConnectAuthDlg|"
@@ -2530,7 +2530,7 @@ msgstr "Gentag kodeord:"
 #, qt-format
 msgctxt "CoreConnectAuthDlg|"
 msgid "Please enter your credentials for %1:"
-msgstr ""
+msgstr "Indtast dine akkreditiver for %1:"
 
 #: ../src/qtui/coreconnectdlg.cpp:41
 msgctxt "CoreConnectDlg|"
@@ -2592,7 +2592,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:29
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisk"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:41
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:57
@@ -2605,7 +2605,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:44
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Ping timeout after"
-msgstr ""
+msgstr "Ping tidsudløb efter"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:60
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:157
@@ -2793,7 +2793,7 @@ msgstr "Klient stil:"
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
-msgstr ""
+msgstr "frakoblet (brugerid: %1)."
 
 #: ../src/core/coresession.cpp:481
 #, qt-format
@@ -3286,7 +3286,7 @@ msgstr "Emne valg af %1 på %2"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
-msgstr ""
+msgstr "%1 er blevet inviteret til %2"
 
 #: ../src/core/eventstringifier.cpp:642
 #, qt-format
@@ -3297,7 +3297,7 @@ msgstr "[Whois] %1"
 #: ../src/core/eventstringifier.cpp:649
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
-msgstr ""
+msgstr "Slut på /WHOWAS"
 
 #: ../src/core/eventstringifier.cpp:659
 #, qt-format
@@ -5447,7 +5447,7 @@ msgstr "Kontroller kodninger for ind- og udgående beskeder"
 #: ../src/qtui/settingspages/networkssettingspage.ui:674
 msgctxt "NetworksSettingsPage|"
 msgid "Use Custom Encodings"
-msgstr ""
+msgstr "Brug tilpassede kodninger"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:685
 #: ../src/qtui/settingspages/networkssettingspage.ui:705
@@ -5568,22 +5568,22 @@ msgstr "Påmindelser"
 #: ../src/qtui/ui/passwordchangedlg.ui:14
 msgctxt "PasswordChangeDlg|"
 msgid "Change Password"
-msgstr ""
+msgstr "Ændr adgangskode"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:37
 msgctxt "PasswordChangeDlg|"
 msgid "Old password:"
-msgstr ""
+msgstr "Gammel adgangskode:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:51
 msgctxt "PasswordChangeDlg|"
 msgid "New Password:"
-msgstr ""
+msgstr "Ny adgangskode:"
 
 #: ../src/qtui/ui/passwordchangedlg.ui:65
 msgctxt "PasswordChangeDlg|"
 msgid "Confirm password:"
-msgstr ""
+msgstr "Bekræft adgangskode:"
 
 #: ../src/qtui/passwordchangedlg.cpp:33
 #, qt-format
@@ -5591,17 +5591,17 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Dette ændrer adgangskoden for dit brugernavn <b>%1</b> på Quassel Core kørende på <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:66
 msgctxt "PasswordChangeDlg|"
 msgid "Password Not Changed"
-msgstr ""
+msgstr "Adgangskoden blev ikke ændret"
 
 #: ../src/qtui/passwordchangedlg.cpp:67
 msgctxt "PasswordChangeDlg|"
 msgid "<b>Password change failed</b>"
-msgstr ""
+msgstr "<b>Ændring af adgangskode mislykkedes</b>"
 
 #: ../src/qtui/passwordchangedlg.cpp:69
 msgctxt "PasswordChangeDlg|"
@@ -5702,19 +5702,19 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid message type in %1"
-msgstr ""
+msgstr "Ugyldig beskedtype i %1"
 
 #: ../src/uisupport/qssparser.cpp:257
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid condition %1"
-msgstr ""
+msgstr "Ugyldig betingelse %1"
 
 #: ../src/uisupport/qssparser.cpp:269
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid message label: %1"
-msgstr ""
+msgstr "Ugyldig beskedetiket: %1"
 
 #: ../src/uisupport/qssparser.cpp:281
 #, qt-format
@@ -5731,7 +5731,7 @@ msgstr ""
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid format name: %1"
-msgstr ""
+msgstr "Ugyldigt formatnavn: %1"
 
 #: ../src/uisupport/qssparser.cpp:309
 #, qt-format
