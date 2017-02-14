@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>=14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Qt-Contexts: true\n"
 
 #: ../src/uisupport/aboutdata.cpp:136
@@ -2739,6 +2739,7 @@ msgid_plural "%n Day(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/qtui/coreinfodlg.cpp:58
 #, qt-format
@@ -4544,6 +4545,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:80
 msgctxt "KeySequenceButton|"
@@ -5097,6 +5099,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/uisupport/multilineedit.cpp:724
 msgctxt "MultiLineEdit|"
@@ -5203,6 +5206,7 @@ msgid_plural "Do you want to delete the following buffer(s) permanently?"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/uisupport/networkmodelcontroller.cpp:190
 #, qt-format
@@ -6395,6 +6399,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/qtui/systraynotificationbackend.cpp:155
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -6705,6 +6710,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/client/networkmodel.cpp:833
 #, qt-format
@@ -6714,6 +6720,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/client/networkmodel.cpp:835
 #, qt-format
@@ -6723,6 +6730,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/client/networkmodel.cpp:837
 #, qt-format
@@ -6732,6 +6740,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/client/networkmodel.cpp:839
 #, qt-format
@@ -6741,6 +6750,7 @@ msgid_plural "%n Voiced"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
 
 #: ../src/client/networkmodel.cpp:841
 #, qt-format
@@ -6750,3 +6760,4 @@ msgid_plural "%n User(s)"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+msgstr[3] ""
