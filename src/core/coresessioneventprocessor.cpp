@@ -415,6 +415,8 @@ void CoreSessionEventProcessor::processIrcEventJoin(IrcEvent *e)
 
     if (net->isMe(ircuser)) {
         net->setChannelJoined(channel);
+        // Mark the message as Self
+        e->setFlag(EventManager::Self);
         // FIXME use event
         net->putRawLine(net->serverEncode("MODE " + channel)); // we want to know the modes of the channel we just joined, so we ask politely
     }
@@ -540,8 +542,29 @@ void CoreSessionEventProcessor::processIrcEventMode(IrcEvent *e)
             ircUser->removeUserModes(removeModes);
 
         if (e->network()->isMe(ircUser)) {
+            // Mark the message as Self
+            e->setFlag(EventManager::Self);
             coreNetwork(e)->updatePersistentModes(addModes, removeModes);
         }
+    }
+}
+
+
+void CoreSessionEventProcessor::processIrcEventNick(IrcEvent *e)
+{
+    if (checkParamCount(e, 1)) {
+        IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
+        if (!ircuser) {
+            qWarning() << Q_FUNC_INFO << "Unknown IrcUser!";
+            return;
+        }
+
+        if (e->network()->isMe(ircuser)) {
+            // Mark the message as Self
+            e->setFlag(EventManager::Self);
+        }
+
+        // Actual processing is handled in lateProcessIrcEventNick(), this just sets the event flag
     }
 }
 
@@ -566,6 +589,25 @@ void CoreSessionEventProcessor::lateProcessIrcEventNick(IrcEvent *e)
 }
 
 
+void CoreSessionEventProcessor::processIrcEventPart(IrcEvent *e)
+{
+    if (checkParamCount(e, 1)) {
+        IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
+        if (!ircuser) {
+            qWarning() << Q_FUNC_INFO<< "Unknown IrcUser!";
+            return;
+        }
+
+        if (e->network()->isMe(ircuser)) {
+            // Mark the message as Self
+            e->setFlag(EventManager::Self);
+        }
+
+        // Actual processing is handled in lateProcessIrcEventNick(), this just sets the event flag
+    }
+}
+
+
 void CoreSessionEventProcessor::lateProcessIrcEventPart(IrcEvent *e)
 {
     if (checkParamCount(e, 1)) {
@@ -576,8 +618,9 @@ void CoreSessionEventProcessor::lateProcessIrcEventPart(IrcEvent *e)
         }
         QString channel = e->params().at(0);
         ircuser->partChannel(channel);
-        if (e->network()->isMe(ircuser))
+        if (e->network()->isMe(ircuser)) {
             qobject_cast<CoreNetwork *>(e->network())->setChannelParted(channel);
+        }
     }
 }
 
@@ -609,6 +652,11 @@ void CoreSessionEventProcessor::processIrcEventQuit(IrcEvent *e)
     IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
     if (!ircuser)
         return;
+
+    if (e->network()->isMe(ircuser)) {
+        // Mark the message as Self
+        e->setFlag(EventManager::Self);
+    }
 
     QString msg;
     if (e->params().count() > 0)
@@ -655,7 +703,13 @@ void CoreSessionEventProcessor::lateProcessIrcEventQuit(IrcEvent *e)
 void CoreSessionEventProcessor::processIrcEventTopic(IrcEvent *e)
 {
     if (checkParamCount(e, 2)) {
-        e->network()->updateNickFromMask(e->prefix());
+        IrcUser *ircuser = e->network()->updateNickFromMask(e->prefix());
+
+        if (e->network()->isMe(ircuser)) {
+            // Mark the message as Self
+            e->setFlag(EventManager::Self);
+        }
+
         IrcChannel *channel = e->network()->ircChannel(e->params().at(0));
         if (channel)
             channel->setTopic(e->params().at(1));
@@ -1008,16 +1062,24 @@ void CoreSessionEventProcessor::processIrcEvent352(IrcEvent *e)
         return;
 
     QString channel = e->params()[0];
-    IrcUser *ircuser = e->network()->ircUser(e->params()[4]);
+    // Store the nick separate from ircuser for AutoWho check below
+    QString nick = e->params()[4];
+    IrcUser *ircuser = e->network()->ircUser(nick);
     if (ircuser) {
+        // Only process the WHO information if an IRC user exists.  Don't create an IRC user here;
+        // there's no way to track when the user quits, which would leave a phantom IrcUser lying
+        // around.
+        // NOTE:  Whenever MONITOR support is introduced, the IrcUser will be created by an
+        // RPL_MONONLINE numeric before any WHO commands are run.
         processWhoInformation(e->network(), channel, ircuser, e->params()[3], e->params()[1],
                 e->params()[2], e->params()[5], e->params().last().section(" ", 1));
     }
 
     // Check if channel name has a who in progress.
-    // If not, then check if user nick exists and has a who in progress.
+    // If not, then check if user nickname has a who in progress.  Use nick directly; don't use
+    // ircuser as that may be deleted (e.g. nick joins channel, leaves before WHO reply received).
     if (coreNetwork(e)->isAutoWhoInProgress(channel) ||
-        (ircuser && coreNetwork(e)->isAutoWhoInProgress(ircuser->nick()))) {
+        (coreNetwork(e)->isAutoWhoInProgress(nick))) {
         e->setFlag(EventManager::Silent);
     }
 }
@@ -1104,8 +1166,14 @@ void CoreSessionEventProcessor::processIrcEvent354(IrcEvent *e)
         return;
 
     QString channel = e->params()[1];
-    IrcUser *ircuser = e->network()->ircUser(e->params()[5]);
+    QString nick = e->params()[5];
+    IrcUser *ircuser = e->network()->ircUser(nick);
     if (ircuser) {
+        // Only process the WHO information if an IRC user exists.  Don't create an IRC user here;
+        // there's no way to track when the user quits, which would leave a phantom IrcUser lying
+        // around.
+        // NOTE:  Whenever MONITOR support is introduced, the IrcUser will be created by an
+        // RPL_MONONLINE numeric before any WHO commands are run.
         processWhoInformation(e->network(), channel, ircuser, e->params()[4], e->params()[2],
                 e->params()[3], e->params()[6], e->params().last());
         // Don't use .section(" ", 1) with WHOX replies, for there's no hopcount to trim out
@@ -1123,9 +1191,10 @@ void CoreSessionEventProcessor::processIrcEvent354(IrcEvent *e)
     }
 
     // Check if channel name has a who in progress.
-    // If not, then check if user nick exists and has a who in progress.
+    // If not, then check if user nickname has a who in progress.  Use nick directly; don't use
+    // ircuser as that may be deleted (e.g. nick joins channel, leaves before WHO reply received).
     if (coreNetwork(e)->isAutoWhoInProgress(channel) ||
-        (ircuser && coreNetwork(e)->isAutoWhoInProgress(ircuser->nick()))) {
+        (coreNetwork(e)->isAutoWhoInProgress(nick))) {
         e->setFlag(EventManager::Silent);
     }
 }

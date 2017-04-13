@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef TYPES_H_
-#define TYPES_H_
+#pragma once
+
+#include <type_traits>
 
 #include <QDebug>
 #include <QString>
@@ -106,14 +107,32 @@ Q_DECLARE_METATYPE(QHostAddress)
 typedef QList<MsgId> MsgIdList;
 typedef QList<BufferId> BufferIdList;
 
-//! Base class for exceptions.
-struct Exception {
-    Exception(QString msg = "Unknown Exception") : _msg(msg) {}
-    virtual ~Exception() {} // make gcc happy
-    virtual inline QString msg() { return _msg; }
+/**
+ * Catch-all stream serialization operator for enum types.
+ *
+ * @param[in,out] out   Stream to serialize to
+ * @param[in]     value Value to serialize
+ * @returns A reference to the stream
+ */
+template<typename T,
+         typename = typename std::enable_if<std::is_enum<T>::value>::type>
+QDataStream &operator<<(QDataStream &out, T value) {
+    out << static_cast<typename std::underlying_type<T>::type>(value);
+    return out;
+}
 
-protected:
-    QString _msg;
-};
-
-#endif
+/**
+ * Catch-all stream serialization operator for enum types.
+ *
+ * @param[in,out] in    Stream to deserialize from
+ * @param[out]    value Value to deserialize into
+ * @returns A reference to the stream
+ */
+template<typename T,
+         typename = typename std::enable_if<std::is_enum<T>::value>::type>
+QDataStream &operator>>(QDataStream &in, T &value) {
+    typename std::underlying_type<T>::type v;
+    in >> v;
+    value = static_cast<T>(v);
+    return in;
+}

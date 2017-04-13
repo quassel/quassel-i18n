@@ -1,3 +1,3 @@
 UPDATE buffer
-SET lastseenmsgid = :lastseenmsgid
+SET lastseenmsgid = least(:lastseenmsgid, buffer.lastmsgid)
 WHERE userid = :userid AND bufferid = :bufferid

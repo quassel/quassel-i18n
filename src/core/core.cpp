@@ -431,8 +431,13 @@ bool Core::sslSupported()
 bool Core::reloadCerts()
 {
 #ifdef HAVE_SSL
-    SslServer *sslServer = qobject_cast<SslServer *>(&instance()->_server);
-    return sslServer->reloadCerts();
+    SslServer *sslServerv4 = qobject_cast<SslServer *>(&instance()->_server);
+    bool retv4 = sslServerv4->reloadCerts();
+
+    SslServer *sslServerv6 = qobject_cast<SslServer *>(&instance()->_v6server);
+    bool retv6 = sslServerv6->reloadCerts();
+
+    return retv4 && retv6;
 #else
     // SSL not supported, don't mark configuration reload as failed
     return true;
@@ -669,6 +674,7 @@ QVariantList Core::backendInfo()
         v["Description"] = backend->description();
         v["SetupKeys"] = backend->setupKeys();
         v["SetupDefaults"] = backend->setupDefaults();
+        v["IsDefault"] = isStorageBackendDefault(backend);
         backends.append(v);
     }
     return backends;

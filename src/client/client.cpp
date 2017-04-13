@@ -38,6 +38,7 @@
 #include "clientuserinputhandler.h"
 #include "coreaccountmodel.h"
 #include "coreconnection.h"
+#include "dccconfig.h"
 #include "ircchannel.h"
 #include "ircuser.h"
 #include "message.h"
@@ -47,6 +48,7 @@
 #include "networkmodel.h"
 #include "quassel.h"
 #include "signalproxy.h"
+#include "transfermodel.h"
 #include "util.h"
 #include "clientauthhandler.h"
 
@@ -100,11 +102,13 @@ Client::Client(QObject *parent)
     _backlogManager(new ClientBacklogManager(this)),
     _bufferViewManager(0),
     _bufferViewOverlay(new BufferViewOverlay(this)),
+    _dccConfig(0),
     _ircListHelper(new ClientIrcListHelper(this)),
     _inputHandler(0),
     _networkConfig(0),
     _ignoreListManager(0),
     _transferManager(0),
+    _transferModel(new TransferModel(this)),
     _messageModel(0),
     _messageProcessor(0),
     _coreAccountModel(new CoreAccountModel(this)),
@@ -412,9 +416,16 @@ void Client::setSyncedToCore()
     _ignoreListManager = new ClientIgnoreListManager(this);
     p->synchronize(ignoreListManager());
 
+    // create TransferManager and DccConfig if core supports them
+    Q_ASSERT(!_dccConfig);
     Q_ASSERT(!_transferManager);
-    _transferManager = new ClientTransferManager(this);
-    p->synchronize(transferManager());
+    if (coreFeatures() & Quassel::DccFileTransfer) {
+        _dccConfig = new DccConfig(this);
+        p->synchronize(dccConfig());
+        _transferManager = new ClientTransferManager(this);
+        _transferModel->setManager(_transferManager);
+        p->synchronize(transferManager());
+    }
 
     // trigger backlog request once all active bufferviews are initialized
     connect(bufferViewOverlay(), SIGNAL(initDone()), this, SLOT(requestInitialBacklog()));
@@ -487,8 +498,14 @@ void Client::setDisconnectedFromCore()
     }
 
     if (_transferManager) {
+        _transferModel->setManager(nullptr);
         _transferManager->deleteLater();
-        _transferManager = 0;
+        _transferManager = nullptr;
+    }
+
+    if (_dccConfig) {
+        _dccConfig->deleteLater();
+        _dccConfig = nullptr;
     }
 
     // we probably don't want to save pending input for reconnect

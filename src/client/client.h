@@ -53,10 +53,12 @@ class ClientTransferManager;
 class ClientUserInputHandler;
 class CoreAccountModel;
 class CoreConnection;
+class DccConfig;
 class IrcUser;
 class IrcChannel;
 class NetworkConfig;
 class SignalProxy;
+class TransferModel;
 
 struct NetworkInfo;
 
@@ -113,6 +115,7 @@ public:
 
     static inline ClientAliasManager *aliasManager() { return instance()->_aliasManager; }
     static inline ClientBacklogManager *backlogManager() { return instance()->_backlogManager; }
+    static inline DccConfig *dccConfig() { return instance()->_dccConfig; }
     static inline ClientIrcListHelper *ircListHelper() { return instance()->_ircListHelper; }
     static inline ClientBufferViewManager *bufferViewManager() { return instance()->_bufferViewManager; }
     static inline BufferViewOverlay *bufferViewOverlay() { return instance()->_bufferViewOverlay; }
@@ -120,6 +123,7 @@ public:
     static inline NetworkConfig *networkConfig() { return instance()->_networkConfig; }
     static inline ClientIgnoreListManager *ignoreListManager() { return instance()->_ignoreListManager; }
     static inline ClientTransferManager *transferManager() { return instance()->_transferManager; }
+    static inline TransferModel *transferModel() { return instance()->_transferModel; }
 
     static inline CoreAccountModel *coreAccountModel() { return instance()->_coreAccountModel; }
     static inline CoreConnection *coreConnection() { return instance()->_coreConnection; }
@@ -245,11 +249,13 @@ private:
     ClientBacklogManager *_backlogManager;
     ClientBufferViewManager *_bufferViewManager;
     BufferViewOverlay *_bufferViewOverlay;
+    DccConfig *_dccConfig;
     ClientIrcListHelper *_ircListHelper;
     ClientUserInputHandler *_inputHandler;
     NetworkConfig *_networkConfig;
     ClientIgnoreListManager *_ignoreListManager;
     ClientTransferManager *_transferManager;
+    TransferModel *_transferModel;
 
     MessageModel *_messageModel;
     AbstractMessageProcessor *_messageProcessor;

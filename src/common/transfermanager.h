@@ -20,9 +20,11 @@
 
 #pragma once
 
-#include "syncableobject.h"
-
+#include <QHash>
+#include <QList>
 #include <QUuid>
+
+#include "syncableobject.h"
 
 class Transfer;
 
@@ -31,12 +33,16 @@ class TransferManager : public SyncableObject
     Q_OBJECT
     SYNCABLE_OBJECT
 
+    Q_PROPERTY(TransferManager::TransferIdList transferIds READ transferIds WRITE setTransferIds)
+
 public:
-    using SyncableObject::SyncableObject;
-    inline virtual const QMetaObject *syncMetaObject() const { return &staticMetaObject; }
+    using TransferIdList = QList<QUuid>;
+
+    TransferManager(QObject *parent = nullptr);
+    const QMetaObject *syncMetaObject() const override { return &staticMetaObject; }
 
     Transfer *transfer(const QUuid &uuid) const;
-    QList<QUuid> transferIds() const;
+    TransferIdList transferIds() const;
 
 signals:
     void transferAdded(const QUuid &uuid);
@@ -47,9 +53,12 @@ protected:
     void removeTransfer(const QUuid &uuid);
 
 protected slots:
-    virtual void onCoreTransferAdded(const QUuid &uuid) { Q_UNUSED(uuid) };
+    virtual void setTransferIds(const TransferIdList &transferIds) { Q_UNUSED(transferIds) };
+    virtual void onCoreTransferAdded(const QUuid &transferId) { Q_UNUSED(transferId) };
 
 private:
     QHash<QUuid, Transfer *> _transfers;
-
 };
+
+QDataStream &operator<<(QDataStream &out, const TransferManager::TransferIdList &transferIds);
+QDataStream &operator>>(QDataStream &in, TransferManager::TransferIdList &state);
