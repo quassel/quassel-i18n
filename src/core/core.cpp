@@ -194,7 +194,14 @@ void Core::init()
                                         "to work."));
             exit(1); // TODO make this less brutal (especially for mono client -> popup)
         }
+
         qWarning() << "Core is currently not configured! Please connect with a Quassel Client for basic setup.";
+
+        if (!cs.isWritable()) {
+            qWarning() << "Cannot write quasselcore configuration; probably a permission problem.";
+            exit(EXIT_FAILURE);
+        }
+
     }
 
     if (Quassel::isOptionSet("add-user")) {
@@ -292,7 +299,9 @@ QString Core::setupCore(const QString &adminUser, const QString &adminPassword, 
         return tr("Could not setup storage!");
     }
 
-    saveBackendSettings(backend, setupData);
+    if (!saveBackendSettings(backend, setupData)) {
+        return tr("Could not save backend settings, probably a permission problem.");
+    }
 
     quInfo() << qPrintable(tr("Creating admin user..."));
     _storage->addUser(adminUser, adminPassword);
@@ -698,7 +707,9 @@ bool Core::selectBackend(const QString &backend)
     Storage::State storageState = storage->init(settings);
     switch (storageState) {
     case Storage::IsReady:
-        saveBackendSettings(backend, settings);
+        if (!saveBackendSettings(backend, settings)) {
+            qCritical() << qPrintable(QString("Could not save backend settings, probably a permission problem."));
+        }
         qWarning() << "Switched backend to:" << qPrintable(backend);
         qWarning() << "Backend already initialized. Skipping Migration";
         return true;
@@ -716,7 +727,9 @@ bool Core::selectBackend(const QString &backend)
             return false;
         }
 
-        saveBackendSettings(backend, settings);
+        if (!saveBackendSettings(backend, settings)) {
+            qCritical() << qPrintable(QString("Could not save backend settings, probably a permission problem."));
+        }
         qWarning() << "Switched backend to:" << qPrintable(backend);
         break;
     }
@@ -732,7 +745,10 @@ bool Core::selectBackend(const QString &backend)
         storage = 0;
         if (reader->migrateTo(writer)) {
             qDebug() << "Migration finished!";
-            saveBackendSettings(backend, settings);
+            if (!saveBackendSettings(backend, settings)) {
+                qCritical() << qPrintable(QString("Could not save backend settings, probably a permission problem."));
+                return false;
+            }
             return true;
         }
         return false;
@@ -879,12 +895,14 @@ AbstractSqlMigrationWriter *Core::getMigrationWriter(Storage *storage)
 }
 
 
-void Core::saveBackendSettings(const QString &backend, const QVariantMap &settings)
+bool Core::saveBackendSettings(const QString &backend, const QVariantMap &settings)
 {
     QVariantMap dbsettings;
     dbsettings["Backend"] = backend;
     dbsettings["ConnectionProperties"] = settings;
-    CoreSettings().setStorageSettings(dbsettings);
+    CoreSettings s = CoreSettings();
+    s.setStorageSettings(dbsettings);
+    return s.sync();
 }
 
 
