@@ -1018,12 +1018,12 @@ msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:271
+#: ../src/uisupport/bufferview.cpp:276
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:272
+#: ../src/uisupport/bufferview.cpp:277
 #, qt-format
 msgctxt "BufferView|"
 msgid ""
@@ -1031,7 +1031,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:711
+#: ../src/uisupport/bufferview.cpp:723
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
@@ -2185,83 +2185,88 @@ msgid ""
 "to work."
 msgstr ""
 
-#: ../src/core/core.cpp:252
+#: ../src/core/core.cpp:259
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:286
+#: ../src/core/core.cpp:293
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:289
+#: ../src/core/core.cpp:296
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr ""
 
-#: ../src/core/core.cpp:292
+#: ../src/core/core.cpp:299
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:297
+#: ../src/core/core.cpp:303
 msgctxt "Core|"
-msgid "Creating admin user..."
+msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:464
-#, qt-format
+#: ../src/core/core.cpp:306
 msgctxt "Core|"
-msgid "Invalid listen address %1"
+msgid "Creating admin user..."
 msgstr ""
 
 #: ../src/core/core.cpp:473
 #, qt-format
 msgctxt "Core|"
-msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
+msgid "Invalid listen address %1"
 msgstr ""
 
 #: ../src/core/core.cpp:482
 #, qt-format
 msgctxt "Core|"
+msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
+msgstr ""
+
+#: ../src/core/core.cpp:491
+#, qt-format
+msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:490
+#: ../src/core/core.cpp:499
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:501
+#: ../src/core/core.cpp:510
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:509
+#: ../src/core/core.cpp:518
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:518
+#: ../src/core/core.cpp:527
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:558
+#: ../src/core/core.cpp:567
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr ""
 
-#: ../src/core/core.cpp:561
+#: ../src/core/core.cpp:570
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:573
+#: ../src/core/core.cpp:582
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
@@ -2927,64 +2932,64 @@ msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1061
+#: ../src/core/corenetwork.cpp:1064
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1072
+#: ../src/core/corenetwork.cpp:1075
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1178
+#: ../src/core/corenetwork.cpp:1181
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1193
+#: ../src/core/corenetwork.cpp:1196
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1200
+#: ../src/core/corenetwork.cpp:1203
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1208
+#: ../src/core/corenetwork.cpp:1211
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1223
+#: ../src/core/corenetwork.cpp:1226
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1227
+#: ../src/core/corenetwork.cpp:1230
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1351
+#: ../src/core/corenetwork.cpp:1354
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1355 ../src/core/corenetwork.cpp:1368
+#: ../src/core/corenetwork.cpp:1358 ../src/core/corenetwork.cpp:1371
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1364
+#: ../src/core/corenetwork.cpp:1367
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3081,49 +3086,49 @@ msgctxt "CoreTransfer|"
 msgid "DCC Receive: Quassel Client disconnected during transfer!"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:95
+#: ../src/core/coreuserinputhandler.cpp:104
 msgctxt "CoreUserInputHandler|"
 msgid "away"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:176
+#: ../src/core/coreuserinputhandler.cpp:185
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "sending CTCP-%1 request to %2"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:197
-#: ../src/core/coreuserinputhandler.cpp:368
-#: ../src/core/coreuserinputhandler.cpp:675
-#: ../src/core/coreuserinputhandler.cpp:713
+#: ../src/core/coreuserinputhandler.cpp:206
+#: ../src/core/coreuserinputhandler.cpp:377
+#: ../src/core/coreuserinputhandler.cpp:684
+#: ../src/core/coreuserinputhandler.cpp:722
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl "
 "plugin."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:208
+#: ../src/core/coreuserinputhandler.cpp:217
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /delkey <nick|channel> deletes the encryption key for nick or "
 "channel or just /delkey when in a channel or query."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:215
-#: ../src/core/coreuserinputhandler.cpp:731
+#: ../src/core/coreuserinputhandler.cpp:224
+#: ../src/core/coreuserinputhandler.cpp:740
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:220
+#: ../src/core/coreuserinputhandler.cpp:229
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been deleted."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:224
-#: ../src/core/coreuserinputhandler.cpp:739
+#: ../src/core/coreuserinputhandler.cpp:233
+#: ../src/core/coreuserinputhandler.cpp:748
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3132,30 +3137,30 @@ msgid ""
 "with QCA2 present."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:378
+#: ../src/core/coreuserinputhandler.cpp:387
 msgctxt "CoreUserInputHandler|"
 msgid "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:385
+#: ../src/core/coreuserinputhandler.cpp:394
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:395
+#: ../src/core/coreuserinputhandler.cpp:404
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Failed to initiate key exchange with %1."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:400
+#: ../src/core/coreuserinputhandler.cpp:409
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Initiated key exchange with %1."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:404
-#: ../src/core/coreuserinputhandler.cpp:697
+#: ../src/core/coreuserinputhandler.cpp:413
+#: ../src/core/coreuserinputhandler.cpp:706
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3164,33 +3169,33 @@ msgid ""
 "with QCA present."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:605
+#: ../src/core/coreuserinputhandler.cpp:614
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:685
+#: ../src/core/coreuserinputhandler.cpp:694
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
 "channel. /setkey <key> when in a channel or query buffer sets the key for it."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:694
+#: ../src/core/coreuserinputhandler.cpp:703
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:723
+#: ../src/core/coreuserinputhandler.cpp:732
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel "
 "or just /showkey when in a channel or query."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:735
+#: ../src/core/coreuserinputhandler.cpp:744
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
@@ -4045,7 +4050,7 @@ msgid "minutes of being idle"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:399
-#: ../src/qtui/settingspages/identityeditwidget.cpp:244
+#: ../src/qtui/settingspages/identityeditwidget.cpp:290
 msgctxt "IdentityEditWidget|"
 msgid "Advanced"
 msgstr ""
@@ -4113,16 +4118,16 @@ msgid "Key Type:"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:605
-#: ../src/qtui/settingspages/identityeditwidget.cpp:364
-#: ../src/qtui/settingspages/identityeditwidget.cpp:376
+#: ../src/qtui/settingspages/identityeditwidget.cpp:410
+#: ../src/qtui/settingspages/identityeditwidget.cpp:422
 msgctxt "IdentityEditWidget|"
 msgid "No Key loaded"
 msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:625
 #: ../src/qtui/settingspages/identityeditwidget.ui:723
-#: ../src/qtui/settingspages/identityeditwidget.cpp:365
-#: ../src/qtui/settingspages/identityeditwidget.cpp:423
+#: ../src/qtui/settingspages/identityeditwidget.cpp:411
+#: ../src/qtui/settingspages/identityeditwidget.cpp:469
 msgctxt "IdentityEditWidget|"
 msgid "Load"
 msgstr ""
@@ -4139,8 +4144,8 @@ msgstr ""
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:663
 #: ../src/qtui/settingspages/identityeditwidget.ui:697
-#: ../src/qtui/settingspages/identityeditwidget.cpp:421
-#: ../src/qtui/settingspages/identityeditwidget.cpp:422
+#: ../src/qtui/settingspages/identityeditwidget.cpp:467
+#: ../src/qtui/settingspages/identityeditwidget.cpp:468
 msgctxt "IdentityEditWidget|"
 msgid "No Certificate loaded"
 msgstr ""
@@ -4150,40 +4155,95 @@ msgctxt "IdentityEditWidget|"
 msgid "CommonName:"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:327
+#: ../src/qtui/settingspages/identityeditwidget.cpp:107
+msgctxt "IdentityEditWidget|"
+msgid ""
+"You can add date/time to this message using the syntax: <br/>%%<span "
+"class='italic'>&lt;format&gt;</span>%%, where <span class='italic'>&lt;"
+"format&gt;</span> is:"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:112
+msgctxt "IdentityEditWidget|"
+msgid "the hour"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:113
+msgctxt "IdentityEditWidget|"
+msgid "the minutes"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:114
+msgctxt "IdentityEditWidget|"
+msgid "seconds"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:115
+msgctxt "IdentityEditWidget|"
+msgid "AM/PM"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:116
+msgctxt "IdentityEditWidget|"
+msgid "day"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:117
+msgctxt "IdentityEditWidget|"
+msgid "month"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:121
+msgctxt "IdentityEditWidget|"
+msgid "current timezone"
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:124
+msgctxt "IdentityEditWidget|"
+msgid "Example: Away since %%hh:mm%% on %%dd.MM%%."
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:125
+msgctxt "IdentityEditWidget|"
+msgid ""
+"%%%% without anything inside represents %%.  Other format codes are "
+"available."
+msgstr ""
+
+#: ../src/qtui/settingspages/identityeditwidget.cpp:373
 msgctxt "IdentityEditWidget|"
 msgid "Load a Key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:355
+#: ../src/qtui/settingspages/identityeditwidget.cpp:401
 msgctxt "IdentityEditWidget|"
 msgid "Failed to read key"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:355
+#: ../src/qtui/settingspages/identityeditwidget.cpp:401
 msgctxt "IdentityEditWidget|"
 msgid ""
 "Failed to read the key file. It is either incompatible or invalid. Note that "
 "the key file must not have a passphrase."
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:370
+#: ../src/qtui/settingspages/identityeditwidget.cpp:416
 msgctxt "IdentityEditWidget|"
 msgid "RSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:373
+#: ../src/qtui/settingspages/identityeditwidget.cpp:419
 msgctxt "IdentityEditWidget|"
 msgid "DSA"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:378
-#: ../src/qtui/settingspages/identityeditwidget.cpp:433
+#: ../src/qtui/settingspages/identityeditwidget.cpp:424
+#: ../src/qtui/settingspages/identityeditwidget.cpp:479
 msgctxt "IdentityEditWidget|"
 msgid "Clear"
 msgstr ""
 
-#: ../src/qtui/settingspages/identityeditwidget.cpp:390
+#: ../src/qtui/settingspages/identityeditwidget.cpp:436
 msgctxt "IdentityEditWidget|"
 msgid "Load a Certificate"
 msgstr ""
@@ -7133,7 +7193,7 @@ msgctxt "SystemTray|"
 msgid "&Restore"
 msgstr ""
 
-#: ../src/qtui/systraynotificationbackend.cpp:141
+#: ../src/qtui/systraynotificationbackend.cpp:145
 #, qt-format
 msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
@@ -7141,7 +7201,7 @@ msgid_plural "%n pending highlight(s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/qtui/systraynotificationbackend.cpp:155
+#: ../src/qtui/systraynotificationbackend.cpp:159
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
 msgid "Show a message in a popup"
 msgstr ""
