@@ -2893,103 +2893,103 @@ msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:217
+#: ../src/core/corenetwork.cpp:218
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:225 ../src/core/corenetwork.cpp:226
+#: ../src/core/corenetwork.cpp:229 ../src/core/corenetwork.cpp:230
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:286
+#: ../src/core/corenetwork.cpp:290
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:286
+#: ../src/core/corenetwork.cpp:290
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:507
+#: ../src/core/corenetwork.cpp:511
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:509
+#: ../src/core/corenetwork.cpp:513
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:557
+#: ../src/core/corenetwork.cpp:561
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1064
+#: ../src/core/corenetwork.cpp:1068
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1075
+#: ../src/core/corenetwork.cpp:1079
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1181
+#: ../src/core/corenetwork.cpp:1185
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1196
+#: ../src/core/corenetwork.cpp:1200
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1203
+#: ../src/core/corenetwork.cpp:1207
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1211
+#: ../src/core/corenetwork.cpp:1215
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1226
+#: ../src/core/corenetwork.cpp:1230
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1230
+#: ../src/core/corenetwork.cpp:1234
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1354
+#: ../src/core/corenetwork.cpp:1358
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1358 ../src/core/corenetwork.cpp:1371
+#: ../src/core/corenetwork.cpp:1362 ../src/core/corenetwork.cpp:1375
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1367
+#: ../src/core/corenetwork.cpp:1371
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
