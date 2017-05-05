@@ -6,7 +6,7 @@
 # Jens True <frazzer@hotmail.com>, 2013
 # Jens True <frazzer@hotmail.com>, 2013
 # Joe Hansen <joedalton2@yahoo.dk>, 2014,2016-2017
-# Jonas Thyssen, 2015
+# Jonas Benthin Thyssen, 2015
 # Per Nielsen <>, 2012
 msgid ""
 msgstr ""
