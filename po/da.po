@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2017-05-11 16:31+0000\n"
+"PO-Revision-Date: 2017-07-06 17:34+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/ald/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -472,7 +472,7 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
 msgid "Audio backend improvements"
-msgstr ""
+msgstr "Forbedringer af lydmotor"
 
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
@@ -488,7 +488,7 @@ msgstr "Græsk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Fixing and hosting Windows builds"
-msgstr ""
+msgstr "Rettelse af og lagring af Windowsbygninger"
 
 #: ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
@@ -508,7 +508,7 @@ msgstr "Tidligere Windowsbygger"
 #: ../src/uisupport/aboutdata.cpp:305
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
-msgstr ""
+msgstr "Rettelser, Debianpakning"
 
 #: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
@@ -523,7 +523,7 @@ msgstr "Tjekkisk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid "Network detection improvements"
-msgstr ""
+msgstr "Forbedringer af netværksregistreringer"
 
 #: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
@@ -2031,7 +2031,7 @@ msgstr "Eksisterende regler"
 #: ../src/core/core.cpp:191
 msgctxt "Core|"
 msgid "Could not initialize any storage backend! Exiting..."
-msgstr ""
+msgstr "Kunne ikke initialisere en lagermotor! Afslutter ..."
 
 #: ../src/core/core.cpp:192
 msgctxt "Core|"
@@ -2115,7 +2115,7 @@ msgstr "Af&bryd fra server"
 #: ../src/core/core.cpp:544
 msgctxt "Core|"
 msgid "Closing server for basic setup."
-msgstr ""
+msgstr "Lukker server for grundlæggende opsætning."
 
 #: ../src/core/core.cpp:556
 msgctxt "Core|"
@@ -2125,7 +2125,7 @@ msgstr ""
 #: ../src/client/coreaccount.h:40
 msgctxt "CoreAccount|"
 msgid "Internal Core"
-msgstr ""
+msgstr "Intern kerne"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:14
 #: ../src/qtui/settingspages/coreaccountsettingspage.cpp:261
@@ -2211,7 +2211,7 @@ msgstr "Tilføj konto"
 #: ../src/client/coreaccountmodel.cpp:68
 msgctxt "CoreAccountModel|"
 msgid "Internal Core"
-msgstr ""
+msgstr "Intern kerne"
 
 #: ../src/qtui/settingspages/coreaccountsettingspage.ui:20
 msgctxt "CoreAccountSettingsPage|"
@@ -2256,7 +2256,7 @@ msgstr "Forbind altid til"
 #: ../src/qtui/settingspages/coreaccountsettingspage.cpp:30
 msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
-msgstr ""
+msgstr "Eksterne kerner"
 
 #: ../src/core/coreauthhandler.cpp:132 ../src/core/coreauthhandler.cpp:144
 msgctxt "CoreAuthHandler|"
@@ -2633,7 +2633,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:147
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Retry every"
-msgstr ""
+msgstr "Prøv hver"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:154
 msgctxt "CoreConnectionSettingsPage|"
@@ -2643,7 +2643,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Remote Cores"
-msgstr ""
+msgstr "Eksterne kerner"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.cpp:24
 msgctxt "CoreConnectionSettingsPage|"
@@ -2699,7 +2699,7 @@ msgstr "Version:"
 #: ../src/qtui/ui/coreinfodlg.ui:28
 msgctxt "CoreInfoDlg|"
 msgid "<core version>"
-msgstr ""
+msgstr "<core version>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:35
 msgctxt "CoreInfoDlg|"
@@ -2714,12 +2714,12 @@ msgstr "Forbundet til %1"
 #: ../src/qtui/ui/coreinfodlg.ui:49
 msgctxt "CoreInfoDlg|"
 msgid "<connected clients>"
-msgstr ""
+msgstr "<connected clients>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:56
 msgctxt "CoreInfoDlg|"
 msgid "<core uptime>"
-msgstr ""
+msgstr "<core uptime>"
 
 #: ../src/qtui/ui/coreinfodlg.ui:63
 msgctxt "CoreInfoDlg|"
@@ -2748,7 +2748,7 @@ msgstr[1] "%n dage"
 #, qt-format
 msgctxt "CoreInfoDlg|"
 msgid " %1:%2:%3 (since %4)"
-msgstr ""
+msgstr " %1:%2:%3 (siden %4)"
 
 #: ../src/core/corenetwork.cpp:167
 msgctxt "CoreNetwork|"
