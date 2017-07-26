@@ -7,8 +7,8 @@
 # tampakrap <tampakrap@gmail.com>, 2012
 # tampakrap <tampakrap@gmail.com>, 2012
 # Theofilos Intzoglou <int.teo@gmail.com>, 2012
-# warlordfff <warlordfff@gmail.com>, 2012
-# warlordfff <warlordfff@gmail.com>, 2012
+# Kostas Koudaras <warlordfff@gmail.com>, 2012
+# Kostas Koudaras <warlordfff@gmail.com>, 2012
 # Γιάννης Ανθυμίδης, 2013
 msgid ""
 msgstr ""
