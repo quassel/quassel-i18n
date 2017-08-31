@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CoreConfigWizardStorageSelectionPage</class>
- <widget class="QWidget" name="CoreConfigWizardStorageSelectionPage">
+ <class>CoreConfigWizardAuthenticationSelectionPage</class>
+ <widget class="QWidget" name="CoreConfigWizardAuthenticationSelectionPage">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>402</width>
-    <height>148</height>
+    <width>377</width>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,13 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinAndMaxSize</enum>
+     </property>
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Storage Backend:</string>
+        <string>Authentication Backend:</string>
        </property>
       </widget>
      </item>
@@ -65,7 +68,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QStackedWidget" name="storageSettingsStack">
+    <widget class="QStackedWidget" name="authSettingsStack">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
        <horstretch>0</horstretch>
