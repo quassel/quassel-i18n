@@ -1760,7 +1760,7 @@ msgid "Identity already exists in client!"
 msgstr ""
 
 #: ../src/client/clientauthhandler.cpp:69
-#: ../src/client/clientauthhandler.cpp:497
+#: ../src/client/clientauthhandler.cpp:498
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr ""
@@ -1779,7 +1779,7 @@ msgid "Looking up %1..."
 msgstr ""
 
 #: ../src/client/clientauthhandler.cpp:110
-#: ../src/client/clientauthhandler.cpp:320
+#: ../src/client/clientauthhandler.cpp:321
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Connected to %1"
@@ -1836,17 +1836,17 @@ msgctxt "ClientAuthHandler|"
 msgid "The core refused connection from this client"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:362
+#: ../src/client/clientauthhandler.cpp:363
 msgctxt "ClientAuthHandler|"
 msgid "Logging in..."
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:367
+#: ../src/client/clientauthhandler.cpp:368
 msgctxt "ClientAuthHandler|"
 msgid "Login canceled"
 msgstr ""
 
-#: ../src/client/clientauthhandler.cpp:425
+#: ../src/client/clientauthhandler.cpp:426
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr ""
@@ -2171,12 +2171,12 @@ msgctxt "ContextMenuActionProvider|"
 msgid "Existing Rules"
 msgstr ""
 
-#: ../src/core/core.cpp:191
+#: ../src/core/core.cpp:210
 msgctxt "Core|"
 msgid "Could not initialize any storage backend! Exiting..."
 msgstr ""
 
-#: ../src/core/core.cpp:192
+#: ../src/core/core.cpp:211
 msgctxt "Core|"
 msgid ""
 "Currently, Quassel supports SQLite3 and PostgreSQL. You need to build your\n"
@@ -2185,90 +2185,204 @@ msgid ""
 "to work."
 msgstr ""
 
-#: ../src/core/core.cpp:259
+#: ../src/core/core.cpp:276
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:293
+#: ../src/core/core.cpp:310
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:296
+#: ../src/core/core.cpp:313
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr ""
 
-#: ../src/core/core.cpp:299
+#: ../src/core/core.cpp:316
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:303
+#: ../src/core/core.cpp:322
+msgctxt "Core|"
+msgid "Could not setup authenticator!"
+msgstr ""
+
+#: ../src/core/core.cpp:326
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:306
+#: ../src/core/core.cpp:330
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr ""
 
-#: ../src/core/core.cpp:473
+#: ../src/core/core.cpp:568
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/core.cpp:482
+#: ../src/core/core.cpp:577
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:491
+#: ../src/core/core.cpp:586
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:499
+#: ../src/core/core.cpp:594
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:510
+#: ../src/core/core.cpp:605
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:518
+#: ../src/core/core.cpp:613
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:527
+#: ../src/core/core.cpp:622
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:567
+#: ../src/core/core.cpp:662
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr ""
 
-#: ../src/core/core.cpp:570
+#: ../src/core/core.cpp:665
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:582
+#: ../src/core/core.cpp:677
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
+msgstr ""
+
+#: ../src/core/core.cpp:831
+#, qt-format
+msgctxt "Core|"
+msgid "Unsupported storage backend: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:832
+msgctxt "Core|"
+msgid "Supported backends are:"
+msgstr ""
+
+#: ../src/core/core.cpp:844 ../src/core/core.cpp:864
+#, qt-format
+msgctxt "Core|"
+msgid "Switched storage backend to: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:845
+msgctxt "Core|"
+msgid "Backend already initialized. Skipping Migration..."
+msgstr ""
+
+#: ../src/core/core.cpp:848
+#, qt-format
+msgctxt "Core|"
+msgid "Storage backend is not available: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:852
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to setup storage backend: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:857
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to initialize storage backend: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:872
+#, qt-format
+msgctxt "Core|"
+msgid "Migrating storage backend %1 to %2..."
+msgstr ""
+
+#: ../src/core/core.cpp:877
+msgctxt "Core|"
+msgid "Migration finished!"
+msgstr ""
+
+#: ../src/core/core.cpp:884
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to migrate storage backend! (No migration writer for %1)"
+msgstr ""
+
+#: ../src/core/core.cpp:890
+msgctxt "Core|"
+msgid "No currently active storage backend. Skipping migration..."
+msgstr ""
+
+#: ../src/core/core.cpp:893
+#, qt-format
+msgctxt "Core|"
+msgid "Currently active storage backend does not support migration: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:896
+#, qt-format
+msgctxt "Core|"
+msgid "New storage backend does not support migration: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:918
+#, qt-format
+msgctxt "Core|"
+msgid "Unsupported authenticator: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:919
+msgctxt "Core|"
+msgid "Supported authenticators are:"
+msgstr ""
+
+#: ../src/core/core.cpp:929 ../src/core/core.cpp:946
+#, qt-format
+msgctxt "Core|"
+msgid "Switched authenticator to: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:932
+#, qt-format
+msgctxt "Core|"
+msgid "Authenticator is not available: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:936
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to setup authenticator: %1"
+msgstr ""
+
+#: ../src/core/core.cpp:941
+#, qt-format
+msgctxt "Core|"
+msgid "Unable to initialize authenticator: %1"
 msgstr ""
 
 #: ../src/client/coreaccount.h:40
@@ -2450,53 +2564,51 @@ msgid ""
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:209
+#: ../src/core/coreauthhandler.cpp:227
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:210
+#: ../src/core/coreauthhandler.cpp:228
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:215
+#: ../src/core/coreauthhandler.cpp:233
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:234
+#: ../src/core/coreauthhandler.cpp:252
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:69
+#: ../src/qtui/coreconfigwizard.cpp:43
+msgctxt "CoreConfigWizard|"
+msgid "Description"
+msgstr ""
+
+#: ../src/qtui/coreconfigwizard.cpp:161
 msgctxt "CoreConfigWizard|"
 msgid "Core Configuration Wizard"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:98
+#: ../src/qtui/coreconfigwizard.cpp:202
 msgctxt "CoreConfigWizard|"
 msgid "Your core has been successfully configured. Logging you in..."
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:107
+#: ../src/qtui/coreconfigwizard.cpp:211
 #, qt-format
 msgctxt "CoreConfigWizard|"
 msgid ""
 "Core configuration failed:<br><b>%1</b><br>Press <em>Next</em> to start over."
-msgstr ""
-
-#: ../src/qtui/coreconfigwizard.cpp:126
-msgctxt "CoreConfigWizard|"
-msgid ""
-"Your are now logged into your freshly configured Quassel Core!<br>Please "
-"remember to configure your identities and networks now."
 msgstr ""
 
 #: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:14
@@ -2504,33 +2616,43 @@ msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Form"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:22
+#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:25
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Username:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:32
+#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:35
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Password:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:46
+#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:49
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Repeat password:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:60
+#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:63
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Remember password"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:69
+#: ../src/qtui/ui/coreconfigwizardadminuserpage.ui:72
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid ""
 "<b>Note:</b> Adding more users and changing your username/password is not "
 "possible via Quassel's client interface yet.\n"
 "If you need to do these things, please run \"<tt><nobr>quasselcore --help</"
 "nobr></tt>\"."
+msgstr ""
+
+#: ../src/qtui/ui/coreconfigwizardauthenticationselectionpage.ui:14
+msgctxt "CoreConfigWizardAuthenticationSelectionPage|"
+msgid "Form"
+msgstr ""
+
+#: ../src/qtui/ui/coreconfigwizardauthenticationselectionpage.ui:25
+msgctxt "CoreConfigWizardAuthenticationSelectionPage|"
+msgid "Authentication Backend:"
 msgstr ""
 
 #: ../src/qtui/ui/coreconfigwizardintropage.ui:13
@@ -2543,103 +2665,102 @@ msgctxt "CoreConfigWizardIntroPage|"
 msgid "This wizard will guide you through the setup of your Quassel Core."
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:162
+#: ../src/qtui/coreconfigwizard.cpp:257
 msgctxt "CoreConfigWizardPages::AdminUserPage|"
 msgid "Create Admin User"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:163
+#: ../src/qtui/coreconfigwizard.cpp:258
 msgctxt "CoreConfigWizardPages::AdminUserPage|"
 msgid ""
 "First, we will create a user on the core. This first user will have "
 "administrator privileges."
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:145
+#: ../src/qtui/coreconfigwizard.cpp:292
+msgctxt "CoreConfigWizardPages::AuthenticationSelectionPage|"
+msgid "Select Authentication Backend"
+msgstr ""
+
+#: ../src/qtui/coreconfigwizard.cpp:293
+msgctxt "CoreConfigWizardPages::AuthenticationSelectionPage|"
+msgid ""
+"Please select a backend for Quassel Core to use for authenticating users."
+msgstr ""
+
+#: ../src/qtui/coreconfigwizard.cpp:313
+msgctxt "CoreConfigWizardPages::AuthenticationSelectionPage|"
+msgid "Authentication Settings"
+msgstr ""
+
+#: ../src/qtui/coreconfigwizard.cpp:240
 msgctxt "CoreConfigWizardPages::IntroPage|"
 msgid "Introduction"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:198
+#: ../src/qtui/coreconfigwizard.cpp:378
 msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
 msgid "Select Storage Backend"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:199
+#: ../src/qtui/coreconfigwizard.cpp:379
 msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
-msgid ""
-"Please select a database backend for the Quassel Core storage to store the "
-"backlog and other data in."
+msgid "Please select a storage backend for Quassel Core."
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:306
+#: ../src/qtui/coreconfigwizard.cpp:419
 msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
-msgid "Connection Properties"
+msgid "Storage Settings"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:348
+#: ../src/qtui/coreconfigwizard.cpp:483
 msgctxt "CoreConfigWizardPages::SyncPage|"
 msgid "Storing Your Settings"
 msgstr ""
 
-#: ../src/qtui/coreconfigwizard.cpp:349
+#: ../src/qtui/coreconfigwizard.cpp:484
 msgctxt "CoreConfigWizardPages::SyncPage|"
 msgid ""
-"Your settings are now stored in the core, and you will be logged in "
+"Your settings are now being stored in the core, and you will be logged in "
 "automatically."
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:13
+#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:14
 msgctxt "CoreConfigWizardStorageSelectionPage|"
 msgid "Form"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:21
+#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:22
 msgctxt "CoreConfigWizardStorageSelectionPage|"
 msgid "Storage Backend:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:56
-msgctxt "CoreConfigWizardStorageSelectionPage|"
-msgid "Description"
-msgstr ""
-
-#: ../src/qtui/ui/coreconfigwizardstorageselectionpage.ui:62
-msgctxt "CoreConfigWizardStorageSelectionPage|"
-msgid "Foobar"
-msgstr ""
-
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:13
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:14
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Form"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:19
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:20
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Your Choices"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:35
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:36
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Admin User:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:42
-msgctxt "CoreConfigWizardSyncPage|"
-msgid "foo"
-msgstr ""
-
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:55
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:56
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Storage Backend:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:62
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:76
 msgctxt "CoreConfigWizardSyncPage|"
-msgid "bar"
+msgid "Authentication Backend:"
 msgstr ""
 
-#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:102
+#: ../src/qtui/ui/coreconfigwizardsyncpage.ui:110
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Please wait while your settings are being transmitted to the core..."
 msgstr ""
@@ -5051,6 +5172,51 @@ msgctxt "KeySequenceWidget|"
 msgid "Reassign"
 msgstr ""
 
+#: ../src/core/ldapauthenticator.cpp:77
+msgctxt "LdapAuthenticator|"
+msgid "LDAP"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:83
+msgctxt "LdapAuthenticator|"
+msgid "Authenticate users using an LDAP server."
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:91
+msgctxt "LdapAuthenticator|"
+msgid "Hostname"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:92
+msgctxt "LdapAuthenticator|"
+msgid "Port"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:93
+msgctxt "LdapAuthenticator|"
+msgid "Bind DN"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:94
+msgctxt "LdapAuthenticator|"
+msgid "Bind Password"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:95
+msgctxt "LdapAuthenticator|"
+msgid "Base DN"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:96
+msgctxt "LdapAuthenticator|"
+msgid "Filter"
+msgstr ""
+
+#: ../src/core/ldapauthenticator.cpp:97
+msgctxt "LdapAuthenticator|"
+msgid "UID Attribute"
+msgstr ""
+
 #: ../src/common/protocols/legacy/legacypeer.cpp:136
 msgctxt "LegacyPeer|"
 msgid "Invalid handshake message!"
@@ -6314,9 +6480,39 @@ msgctxt "PhononNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:72
+#: ../src/core/postgresqlstorage.cpp:58
+msgctxt "PostgreSqlStorage|"
+msgid "PostgreSQL driver plugin not available for Qt. Installed drivers:"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:81
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL Turbo Bomber HD!"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:88
+msgctxt "PostgreSqlStorage|"
+msgid "Username"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:89
+msgctxt "PostgreSqlStorage|"
+msgid "Password"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:90
+msgctxt "PostgreSqlStorage|"
+msgid "Hostname"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:91
+msgctxt "PostgreSqlStorage|"
+msgid "Port"
+msgstr ""
+
+#: ../src/core/postgresqlstorage.cpp:92
+msgctxt "PostgreSqlStorage|"
+msgid "Database"
 msgstr ""
 
 #: ../src/client/backlogrequester.cpp:95
@@ -7057,7 +7253,19 @@ msgctxt "SonnetSettingsPage|"
 msgid "Spell Checking"
 msgstr ""
 
-#: ../src/core/sqlitestorage.cpp:60
+#: ../src/core/sqlauthenticator.cpp:58
+msgctxt "SqlAuthenticator|"
+msgid "Database"
+msgstr ""
+
+#: ../src/core/sqlauthenticator.cpp:64
+msgctxt "SqlAuthenticator|"
+msgid ""
+"Do not authenticate against any remote service, but instead save a hashed "
+"and salted password in the database selected in the next step."
+msgstr ""
+
+#: ../src/core/sqlitestorage.cpp:67
 msgctxt "SqliteStorage|"
 msgid ""
 "SQLite is a file-based database engine that does not require any setup. It "
