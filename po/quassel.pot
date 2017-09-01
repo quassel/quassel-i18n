@@ -1002,12 +1002,12 @@ msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched over all buffers."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.cpp:27
+#: ../src/qtui/settingspages/backlogsettingspage.cpp:30
 msgctxt "BacklogSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.cpp:27
+#: ../src/qtui/settingspages/backlogsettingspage.cpp:30
 msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
 msgstr ""
