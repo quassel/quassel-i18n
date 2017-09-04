@@ -24,22 +24,24 @@
 
 #include <QDataStream>
 
-Message::Message(const BufferInfo &bufferInfo, Type type, const QString &contents, const QString &sender, Flags flags)
+Message::Message(const BufferInfo &bufferInfo, Type type, const QString &contents, const QString &sender, const QString &senderPrefixes, Flags flags)
     : _timestamp(QDateTime::currentDateTime().toUTC()),
     _bufferInfo(bufferInfo),
     _contents(contents),
     _sender(sender),
+    _senderPrefixes(senderPrefixes),
     _type(type),
     _flags(flags)
 {
 }
 
 
-Message::Message(const QDateTime &ts, const BufferInfo &bufferInfo, Type type, const QString &contents, const QString &sender, Flags flags)
+Message::Message(const QDateTime &ts, const BufferInfo &bufferInfo, Type type, const QString &contents, const QString &sender, const QString &senderPrefixes, Flags flags)
     : _timestamp(ts),
     _bufferInfo(bufferInfo),
     _contents(contents),
     _sender(sender),
+    _senderPrefixes(senderPrefixes),
     _type(type),
     _flags(flags)
 {
@@ -48,6 +50,7 @@ Message::Message(const QDateTime &ts, const BufferInfo &bufferInfo, Type type, c
 
 QDataStream &operator<<(QDataStream &out, const Message &msg)
 {
+    // We do not serialize the sender prefixes until we have a new protocol or client-features implemented
     out << msg.msgId() << (quint32)msg.timestamp().toTime_t() << (quint32)msg.type() << (quint8)msg.flags()
     << msg.bufferInfo() << msg.sender().toUtf8() << msg.contents().toUtf8();
     return out;
@@ -67,6 +70,8 @@ QDataStream &operator>>(QDataStream &in, Message &msg)
     msg._bufferInfo = buf;
     msg._timestamp = QDateTime::fromTime_t(ts);
     msg._sender = QString::fromUtf8(s);
+    // We do not serialize the sender prefixes until we have a new protocol or client-features implemented
+    msg._senderPrefixes = QString("");
     msg._contents = QString::fromUtf8(m);
     return in;
 }
