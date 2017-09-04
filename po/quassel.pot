@@ -6730,27 +6730,27 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr ""
 
-#: ../src/common/util.cpp:169
+#: ../src/common/util.cpp:171
 msgctxt "Quassel::secondsToString()|"
 msgid "year"
 msgstr ""
 
-#: ../src/common/util.cpp:170
+#: ../src/common/util.cpp:172
 msgctxt "Quassel::secondsToString()|"
 msgid "day"
 msgstr ""
 
-#: ../src/common/util.cpp:171
+#: ../src/common/util.cpp:173
 msgctxt "Quassel::secondsToString()|"
 msgid "h"
 msgstr ""
 
-#: ../src/common/util.cpp:172
+#: ../src/common/util.cpp:174
 msgctxt "Quassel::secondsToString()|"
 msgid "min"
 msgstr ""
 
-#: ../src/common/util.cpp:173
+#: ../src/common/util.cpp:175
 msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr ""
