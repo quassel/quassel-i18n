@@ -3128,7 +3128,7 @@ msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:524
+#: ../src/core/coresession.cpp:546
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3136,7 +3136,7 @@ msgid ""
 "create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:556
+#: ../src/core/coresession.cpp:578
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -6730,27 +6730,27 @@ msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
 msgstr ""
 
-#: ../src/common/util.cpp:171
+#: ../src/common/util.cpp:173
 msgctxt "Quassel::secondsToString()|"
 msgid "year"
 msgstr ""
 
-#: ../src/common/util.cpp:172
+#: ../src/common/util.cpp:174
 msgctxt "Quassel::secondsToString()|"
 msgid "day"
 msgstr ""
 
-#: ../src/common/util.cpp:173
+#: ../src/common/util.cpp:175
 msgctxt "Quassel::secondsToString()|"
 msgid "h"
 msgstr ""
 
-#: ../src/common/util.cpp:174
+#: ../src/common/util.cpp:176
 msgctxt "Quassel::secondsToString()|"
 msgid "min"
 msgstr ""
 
-#: ../src/common/util.cpp:175
+#: ../src/common/util.cpp:177
 msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr ""
