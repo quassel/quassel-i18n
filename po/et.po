@@ -1,6 +1,7 @@
 # 
 # Translators:
 # Georg, 2014
+# Georg, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"

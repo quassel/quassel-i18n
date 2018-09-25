@@ -1,5 +1,7 @@
 # 
 # Translators:
+# Daniel Albers <daniel@lbers.com>, 2010-2012
+# ulysses <ulysses@kubuntu.org>, 2010
 # ulysses <ulysses@kubuntu.org>, 2010
 msgid ""
 msgstr ""
