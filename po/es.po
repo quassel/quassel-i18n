@@ -2,7 +2,8 @@
 # Translators:
 # Adolfo Jayme-Barrientos, 2013
 # Adolfo Jayme Barrientos, 2013
-# Chris Egeland <chris@chrisegeland.com>, 2018
+# Chris <chris@chrisegeland.com>, 2018
+# Chris <chris@chrisegeland.com>, 2018
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # enjolras <yo@miguelrevilla.com>, 2012
@@ -15,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-08-28 13:38+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2018-09-26 02:37+0000\n"
+"Last-Translator: Chris <chris@chrisegeland.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/quassel/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -664,7 +665,7 @@ msgstr ""
 msgctxt "AboutDlg|"
 msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
-msgstr ""
+msgstr "<b>Versión:</b> %1<br><b>Fecha de versión:</b> %2<br><b>Versión de protocolo:</b> %3"
 
 #: ../src/qtui/aboutdlg.cpp:67
 #, qt-format
@@ -822,7 +823,7 @@ msgstr ""
 #: ../src/qtui/settingspages/aliasesmodel.cpp:110
 msgctxt "AliasesModel|"
 msgid "General variables"
-msgstr ""
+msgstr "Variables generales"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:111
 msgctxt "AliasesModel|"
@@ -3704,20 +3705,20 @@ msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1429
+#: ../src/core/corenetwork.cpp:1419
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1433 ../src/core/corenetwork.cpp:1446
+#: ../src/core/corenetwork.cpp:1423 ../src/core/corenetwork.cpp:1436
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1442
+#: ../src/core/corenetwork.cpp:1432
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3757,33 +3758,33 @@ msgid ""
 "continue"
 msgstr "No hay apodos disponibles en la lista de apodos. Utilice: /nick <otroapodo> para seguir."
 
-#: ../src/core/coresessioneventprocessor.cpp:800
+#: ../src/core/coresessioneventprocessor.cpp:801
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:811
+#: ../src/core/coresessioneventprocessor.cpp:812
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:815
-#: ../src/core/coresessioneventprocessor.cpp:823
+#: ../src/core/coresessioneventprocessor.cpp:816
+#: ../src/core/coresessioneventprocessor.cpp:824
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:825
+#: ../src/core/coresessioneventprocessor.cpp:826
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1587
+#: ../src/core/coresessioneventprocessor.cpp:1579
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1605
+#: ../src/core/coresessioneventprocessor.cpp:1597
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -8462,8 +8463,8 @@ msgstr ""
 msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n resaltados pendientes"
+msgstr[1] "%n resaltados pendientes"
 
 #: ../src/qtui/systraynotificationbackend.cpp:146
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -8885,16 +8886,16 @@ msgstr[1] "%n operadores"
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
 msgid_plural "%n Half-Op(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n semiOp(es)"
+msgstr[1] "%n semiOp(es)"
 
 #: ../src/client/networkmodel.cpp:1039
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
 msgid_plural "%n Voiced"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%n Con voz"
+msgstr[1] "%n Con voz"
 
 #: ../src/client/networkmodel.cpp:1041
 #, qt-format

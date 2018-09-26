@@ -3700,20 +3700,20 @@ msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1429
+#: ../src/core/corenetwork.cpp:1419
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1433 ../src/core/corenetwork.cpp:1446
+#: ../src/core/corenetwork.cpp:1423 ../src/core/corenetwork.cpp:1436
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1442
+#: ../src/core/corenetwork.cpp:1432
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
@@ -3753,33 +3753,33 @@ msgid ""
 "continue"
 msgstr "Não foi encontrado apelidos válidos ou livres na lista de apelidos. use: /nick <outroapelido> para continuar"
 
-#: ../src/core/coresessioneventprocessor.cpp:800
+#: ../src/core/coresessioneventprocessor.cpp:801
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:811
+#: ../src/core/coresessioneventprocessor.cpp:812
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:815
-#: ../src/core/coresessioneventprocessor.cpp:823
+#: ../src/core/coresessioneventprocessor.cpp:816
+#: ../src/core/coresessioneventprocessor.cpp:824
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:825
+#: ../src/core/coresessioneventprocessor.cpp:826
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1587
+#: ../src/core/coresessioneventprocessor.cpp:1579
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr ""
 
-#: ../src/core/coresessioneventprocessor.cpp:1605
+#: ../src/core/coresessioneventprocessor.cpp:1597
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
