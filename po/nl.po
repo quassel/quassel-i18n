@@ -1950,7 +1950,7 @@ msgctxt "CliParser|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr ""
 
-#: ../src/client/client.cpp:354
+#: ../src/client/client.cpp:298
 msgctxt "Client|"
 msgid "Identity already exists in client!"
 msgstr "Identiteit bestaat al in client!"
@@ -2384,23 +2384,23 @@ msgctxt "ContextMenuActionProvider|"
 msgid "Existing Rules"
 msgstr "Bestaande regels"
 
-#: ../src/core/core.cpp:116
+#: ../src/core/core.cpp:102
 msgctxt "Core|"
 msgid "Invalid core settings version!"
 msgstr ""
 
-#: ../src/core/core.cpp:183
+#: ../src/core/core.cpp:169
 #, qt-format
 msgctxt "Core|"
 msgid "Cannot configure from environment: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:187
+#: ../src/core/core.cpp:173
 msgctxt "Core|"
 msgid "Cannot configure from environment!"
 msgstr ""
 
-#: ../src/core/core.cpp:193
+#: ../src/core/core.cpp:179
 msgctxt "Core|"
 msgid ""
 "Could not initialize any storage backend! Exiting...\n"
@@ -2409,238 +2409,238 @@ msgid ""
 "to work."
 msgstr ""
 
-#: ../src/core/core.cpp:200
+#: ../src/core/core.cpp:186
 msgctxt "Core|"
 msgid "Cannot write quasselcore configuration; probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:249
+#: ../src/core/core.cpp:235
 msgctxt "Core|"
 msgid "Cannot open port for listening!"
 msgstr ""
 
-#: ../src/core/core.cpp:292
+#: ../src/core/core.cpp:311
 msgctxt "Core|"
 msgid "Cannot restore a state for an unconfigured core!"
 msgstr ""
 
-#: ../src/core/core.cpp:296
+#: ../src/core/core.cpp:315
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr "restoreState() wordt aangeroepen, hoewel een sessie actief is!"
 
-#: ../src/core/core.cpp:333
+#: ../src/core/core.cpp:352
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:336
+#: ../src/core/core.cpp:355
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr "Beheerderaccount of wachtwoord niet ingesteld."
 
-#: ../src/core/core.cpp:340
+#: ../src/core/core.cpp:359
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr "Kan opslag niet starten!"
 
-#: ../src/core/core.cpp:346
+#: ../src/core/core.cpp:365
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:352
+#: ../src/core/core.cpp:371
 msgctxt "Core|"
 msgid "Fatal failure while trying to setup, terminating"
 msgstr ""
 
-#: ../src/core/core.cpp:356
+#: ../src/core/core.cpp:375
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:360
+#: ../src/core/core.cpp:379
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr "Beheerderaccount instellen..."
 
-#: ../src/core/core.cpp:444
+#: ../src/core/core.cpp:463
 #, qt-format
 msgctxt "Core|"
 msgid "Selected storage backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:544
+#: ../src/core/core.cpp:563
 #, qt-format
 msgctxt "Core|"
 msgid "Selected auth backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:633
+#: ../src/core/core.cpp:652
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr "Ongeldig luisteradres %1"
 
-#: ../src/core/core.cpp:642
+#: ../src/core/core.cpp:661
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr "Op IPv6 %1 poort %2 naar GUI-clients luisteren met protocol versie %3"
 
-#: ../src/core/core.cpp:651
+#: ../src/core/core.cpp:670
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr "Kan IPv6-interface niet openen %1:%2: %3"
 
-#: ../src/core/core.cpp:659
+#: ../src/core/core.cpp:678
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr "Op IPv4 %1 poort %2 naar GUI-clients luisteren met protocol versie %3"
 
-#: ../src/core/core.cpp:670
+#: ../src/core/core.cpp:689
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr "Kan IPv4-interface niet openen %1:%2: %3"
 
-#: ../src/core/core.cpp:678
+#: ../src/core/core.cpp:697
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr "Ongeldig luisteradres %1, onbekend netwerkprotocol"
 
-#: ../src/core/core.cpp:687
+#: ../src/core/core.cpp:706
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr "Kan geen enkele netwerkinterface openen om bij te luisteren!"
 
-#: ../src/core/core.cpp:735
+#: ../src/core/core.cpp:754
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr "Client verbindt vanaf"
 
-#: ../src/core/core.cpp:738
+#: ../src/core/core.cpp:757
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr "Server afsluiten voor standaard set-up."
 
-#: ../src/core/core.cpp:750
+#: ../src/core/core.cpp:769
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:829
+#: ../src/core/core.cpp:848
 msgctxt "Core|"
 msgid "Cannot setup storage backend."
 msgstr ""
 
-#: ../src/core/core.cpp:925
+#: ../src/core/core.cpp:941
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:926
+#: ../src/core/core.cpp:942
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:938 ../src/core/core.cpp:958
+#: ../src/core/core.cpp:954 ../src/core/core.cpp:974
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:939
+#: ../src/core/core.cpp:955
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:942
+#: ../src/core/core.cpp:958
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:946
+#: ../src/core/core.cpp:962
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:951
+#: ../src/core/core.cpp:967
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:966
+#: ../src/core/core.cpp:982
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:971
+#: ../src/core/core.cpp:987
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:978
+#: ../src/core/core.cpp:994
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:984
+#: ../src/core/core.cpp:1000
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:987
+#: ../src/core/core.cpp:1003
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:990
+#: ../src/core/core.cpp:1006
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1012
+#: ../src/core/core.cpp:1028
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1013
+#: ../src/core/core.cpp:1029
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:1023 ../src/core/core.cpp:1040
+#: ../src/core/core.cpp:1039 ../src/core/core.cpp:1056
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1026
+#: ../src/core/core.cpp:1042
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1030
+#: ../src/core/core.cpp:1046
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1035
+#: ../src/core/core.cpp:1051
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -2797,7 +2797,7 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr "Remote-cores"
 
-#: ../src/core/coreapplication.cpp:46
+#: ../src/core/coreapplication.cpp:41
 msgctxt "CoreApplication|"
 msgid "Could not initialize Quassel!"
 msgstr ""
@@ -3616,121 +3616,121 @@ msgid ""
 "connected clients."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:238
+#: ../src/core/corenetwork.cpp:233
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next Server"
 msgstr "Verbinden mislukt. Volgende server proberen"
 
-#: ../src/core/corenetwork.cpp:249 ../src/core/corenetwork.cpp:250
+#: ../src/core/corenetwork.cpp:244 ../src/core/corenetwork.cpp:245
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Met %1:%2 verbinden…"
 
-#: ../src/core/corenetwork.cpp:316
+#: ../src/core/corenetwork.cpp:310
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Verbinding verbreken. (%1)"
 
-#: ../src/core/corenetwork.cpp:316
+#: ../src/core/corenetwork.cpp:310
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Core uitschakelen"
 
-#: ../src/core/corenetwork.cpp:539
+#: ../src/core/corenetwork.cpp:551
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Kan niet met %1 (%2) verbinden"
 
-#: ../src/core/corenetwork.cpp:541
+#: ../src/core/corenetwork.cpp:553
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Verbinden mislukt: %1"
 
-#: ../src/core/corenetwork.cpp:589
+#: ../src/core/corenetwork.cpp:601
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1116
+#: ../src/core/corenetwork.cpp:1128
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1127
+#: ../src/core/corenetwork.cpp:1139
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1233
+#: ../src/core/corenetwork.cpp:1245
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1248
+#: ../src/core/corenetwork.cpp:1260
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1255
+#: ../src/core/corenetwork.cpp:1267
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1264
+#: ../src/core/corenetwork.cpp:1276
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1279
+#: ../src/core/corenetwork.cpp:1291
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1283
+#: ../src/core/corenetwork.cpp:1295
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1419
+#: ../src/core/corenetwork.cpp:1431
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1423 ../src/core/corenetwork.cpp:1436
+#: ../src/core/corenetwork.cpp:1435 ../src/core/corenetwork.cpp:1448
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1432
+#: ../src/core/corenetwork.cpp:1444
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:298
+#: ../src/core/coresession.cpp:280
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr "Client"
 
-#: ../src/core/coresession.cpp:298
+#: ../src/core/coresession.cpp:280
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr "verbinding verbroken (Userid: %1)."
 
-#: ../src/core/coresession.cpp:623
+#: ../src/core/coresession.cpp:605
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3738,7 +3738,7 @@ msgid ""
 " create network %1!"
 msgstr "CoreSession::createNetwork(): Got invalid networkId from Core when trying to create network %1!"
 
-#: ../src/core/coresession.cpp:655
+#: ../src/core/coresession.cpp:637
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -6119,493 +6119,493 @@ msgctxt "MainPage|"
 msgid "Connect to Core..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:401
+#: ../src/qtui/mainwin.cpp:397
 msgctxt "MainWin|"
 msgid "General"
 msgstr "Algemeen"
 
-#: ../src/qtui/mainwin.cpp:403
+#: ../src/qtui/mainwin.cpp:399
 msgctxt "MainWin|"
 msgid "&Connect to Core..."
 msgstr "Met &core verbinden…"
 
-#: ../src/qtui/mainwin.cpp:405
+#: ../src/qtui/mainwin.cpp:401
 msgctxt "MainWin|"
 msgid "&Disconnect from Core"
 msgstr "Verbinding met core &verbreken"
 
-#: ../src/qtui/mainwin.cpp:407
+#: ../src/qtui/mainwin.cpp:403
 msgctxt "MainWin|"
 msgid "Change &Password..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:409
+#: ../src/qtui/mainwin.cpp:405
 msgctxt "MainWin|"
 msgid "Core &Info..."
 msgstr "&Informatie over core…"
 
-#: ../src/qtui/mainwin.cpp:411
+#: ../src/qtui/mainwin.cpp:407
 msgctxt "MainWin|"
 msgid "Configure &Networks..."
 msgstr "&Netwerken configureren…"
 
-#: ../src/qtui/mainwin.cpp:418
+#: ../src/qtui/mainwin.cpp:414
 msgctxt "MainWin|"
 msgid "&Quit"
 msgstr "&Afsluiten"
 
-#: ../src/qtui/mainwin.cpp:422
+#: ../src/qtui/mainwin.cpp:418
 msgctxt "MainWin|"
 msgid "&Configure Chat Lists..."
 msgstr "Chatlijsten configureren…"
 
-#: ../src/qtui/mainwin.cpp:425
+#: ../src/qtui/mainwin.cpp:421
 msgctxt "MainWin|"
 msgid "&Lock Layout"
 msgstr "Inde&ling vastzetten"
 
-#: ../src/qtui/mainwin.cpp:429
+#: ../src/qtui/mainwin.cpp:425
 msgctxt "MainWin|"
 msgid "Show &Search Bar"
 msgstr "&Zoekbalk weergeven"
 
-#: ../src/qtui/mainwin.cpp:431
+#: ../src/qtui/mainwin.cpp:427
 msgctxt "MainWin|"
 msgid "Show Away Log"
 msgstr "Afwezigheidslog weergeven"
 
-#: ../src/qtui/mainwin.cpp:433
+#: ../src/qtui/mainwin.cpp:429
 msgctxt "MainWin|"
 msgid "Show &Menubar"
 msgstr "&Menubalk weergeven"
 
-#: ../src/qtui/mainwin.cpp:436
+#: ../src/qtui/mainwin.cpp:432
 msgctxt "MainWin|"
 msgid "Show Status &Bar"
 msgstr "Status&balk weergeven"
 
-#: ../src/qtui/mainwin.cpp:442
+#: ../src/qtui/mainwin.cpp:438
 msgctxt "MainWin|"
 msgid "&Full Screen Mode"
 msgstr "&Schermvullend"
 
-#: ../src/qtui/mainwin.cpp:449
+#: ../src/qtui/mainwin.cpp:445
 msgctxt "MainWin|"
 msgid "Configure &Shortcuts..."
 msgstr "&Sneltoetsen instellen…"
 
-#: ../src/qtui/mainwin.cpp:455 ../src/qtui/mainwin.cpp:459
+#: ../src/qtui/mainwin.cpp:451 ../src/qtui/mainwin.cpp:455
 msgctxt "MainWin|"
 msgid "&Configure Quassel..."
 msgstr "Quassel configureren…"
 
-#: ../src/qtui/mainwin.cpp:465
+#: ../src/qtui/mainwin.cpp:461
 msgctxt "MainWin|"
 msgid "&About Quassel"
 msgstr "&Over Quassel"
 
-#: ../src/qtui/mainwin.cpp:470
+#: ../src/qtui/mainwin.cpp:466
 msgctxt "MainWin|"
 msgid "About &Qt"
 msgstr "Over &Qt"
 
-#: ../src/qtui/mainwin.cpp:474
+#: ../src/qtui/mainwin.cpp:470
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
 msgstr "Debug &NetworkModel"
 
-#: ../src/qtui/mainwin.cpp:476
+#: ../src/qtui/mainwin.cpp:472
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
 msgstr "Debug &BufferViewOverlay"
 
-#: ../src/qtui/mainwin.cpp:478
+#: ../src/qtui/mainwin.cpp:474
 msgctxt "MainWin|"
 msgid "Debug &MessageModel"
 msgstr "Debug &MessageModel"
 
-#: ../src/qtui/mainwin.cpp:480
+#: ../src/qtui/mainwin.cpp:476
 msgctxt "MainWin|"
 msgid "Debug &HotList"
 msgstr "Debug &HotList"
 
-#: ../src/qtui/mainwin.cpp:482
+#: ../src/qtui/mainwin.cpp:478
 msgctxt "MainWin|"
 msgid "Debug &Log"
 msgstr "Debug &log"
 
-#: ../src/qtui/mainwin.cpp:484
+#: ../src/qtui/mainwin.cpp:480
 msgctxt "MainWin|"
 msgid "Reload Stylesheet"
 msgstr "Stijlblad herladen"
 
-#: ../src/qtui/mainwin.cpp:487
+#: ../src/qtui/mainwin.cpp:483
 msgctxt "MainWin|"
 msgid "Hide Current Buffer"
 msgstr "Huidige buffer verbergen"
 
-#: ../src/qtui/mainwin.cpp:491
+#: ../src/qtui/mainwin.cpp:487
 msgctxt "MainWin|"
 msgid "Text formatting"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:494
+#: ../src/qtui/mainwin.cpp:490
 msgctxt "MainWin|"
 msgid "Apply foreground color"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:499
+#: ../src/qtui/mainwin.cpp:495
 msgctxt "MainWin|"
 msgid "Apply background color"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:504
+#: ../src/qtui/mainwin.cpp:500
 msgctxt "MainWin|"
 msgid "Clear formatting"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:509
+#: ../src/qtui/mainwin.cpp:505
 msgctxt "MainWin|"
 msgid "Toggle bold"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:514
+#: ../src/qtui/mainwin.cpp:510
 msgctxt "MainWin|"
 msgid "Toggle italics"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:519
+#: ../src/qtui/mainwin.cpp:515
 msgctxt "MainWin|"
 msgid "Toggle underline"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:523
+#: ../src/qtui/mainwin.cpp:519
 msgctxt "MainWin|"
 msgid "Navigation"
 msgstr "Navigatie"
 
-#: ../src/qtui/mainwin.cpp:525
+#: ../src/qtui/mainwin.cpp:521
 msgctxt "MainWin|"
 msgid "Jump to hot chat"
 msgstr "Open het kanaal met oudste ongelezen bericht"
 
-#: ../src/qtui/mainwin.cpp:528
+#: ../src/qtui/mainwin.cpp:524
 msgctxt "MainWin|"
 msgid "Activate the buffer search"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:540
+#: ../src/qtui/mainwin.cpp:536
 msgctxt "MainWin|"
 msgid "Set Quick Access #0"
 msgstr "Stel snel-wisselen #0 in"
 
-#: ../src/qtui/mainwin.cpp:542
+#: ../src/qtui/mainwin.cpp:538
 msgctxt "MainWin|"
 msgid "Set Quick Access #1"
 msgstr "Stel snel-wisselen #1 in"
 
-#: ../src/qtui/mainwin.cpp:544
+#: ../src/qtui/mainwin.cpp:540
 msgctxt "MainWin|"
 msgid "Set Quick Access #2"
 msgstr "Stel snel-wisselen #2 in"
 
-#: ../src/qtui/mainwin.cpp:546
+#: ../src/qtui/mainwin.cpp:542
 msgctxt "MainWin|"
 msgid "Set Quick Access #3"
 msgstr "Stel snel-wisselen #3 in"
 
-#: ../src/qtui/mainwin.cpp:548
+#: ../src/qtui/mainwin.cpp:544
 msgctxt "MainWin|"
 msgid "Set Quick Access #4"
 msgstr "Stel snel-wisselen #4 in"
 
-#: ../src/qtui/mainwin.cpp:550
+#: ../src/qtui/mainwin.cpp:546
 msgctxt "MainWin|"
 msgid "Set Quick Access #5"
 msgstr "Stel snel-wisselen #5 in"
 
-#: ../src/qtui/mainwin.cpp:552
+#: ../src/qtui/mainwin.cpp:548
 msgctxt "MainWin|"
 msgid "Set Quick Access #6"
 msgstr "Stel snel-wisselen #6 in"
 
-#: ../src/qtui/mainwin.cpp:554
+#: ../src/qtui/mainwin.cpp:550
 msgctxt "MainWin|"
 msgid "Set Quick Access #7"
 msgstr "Stel snel-wisselen #7 in"
 
-#: ../src/qtui/mainwin.cpp:556
+#: ../src/qtui/mainwin.cpp:552
 msgctxt "MainWin|"
 msgid "Set Quick Access #8"
 msgstr "Stel snel-wisselen #8 in"
 
-#: ../src/qtui/mainwin.cpp:558
+#: ../src/qtui/mainwin.cpp:554
 msgctxt "MainWin|"
 msgid "Set Quick Access #9"
 msgstr "Stel snel-wisselen #9 in"
 
-#: ../src/qtui/mainwin.cpp:561
+#: ../src/qtui/mainwin.cpp:557
 msgctxt "MainWin|"
 msgid "Quick Access #0"
 msgstr "Snel-wisselen #0"
 
-#: ../src/qtui/mainwin.cpp:563
+#: ../src/qtui/mainwin.cpp:559
 msgctxt "MainWin|"
 msgid "Quick Access #1"
 msgstr "Snel-wisselen #1"
 
-#: ../src/qtui/mainwin.cpp:565
+#: ../src/qtui/mainwin.cpp:561
 msgctxt "MainWin|"
 msgid "Quick Access #2"
 msgstr "Snel-wisselen #2"
 
-#: ../src/qtui/mainwin.cpp:567
+#: ../src/qtui/mainwin.cpp:563
 msgctxt "MainWin|"
 msgid "Quick Access #3"
 msgstr "Snel-wisselen #3"
 
-#: ../src/qtui/mainwin.cpp:569
+#: ../src/qtui/mainwin.cpp:565
 msgctxt "MainWin|"
 msgid "Quick Access #4"
 msgstr "Snel-wisselen #4"
 
-#: ../src/qtui/mainwin.cpp:571
+#: ../src/qtui/mainwin.cpp:567
 msgctxt "MainWin|"
 msgid "Quick Access #5"
 msgstr "Snel-wisselen #5"
 
-#: ../src/qtui/mainwin.cpp:573
+#: ../src/qtui/mainwin.cpp:569
 msgctxt "MainWin|"
 msgid "Quick Access #6"
 msgstr "Snel-wisselen #6"
 
-#: ../src/qtui/mainwin.cpp:575
+#: ../src/qtui/mainwin.cpp:571
 msgctxt "MainWin|"
 msgid "Quick Access #7"
 msgstr "Snel-wisselen #7"
 
-#: ../src/qtui/mainwin.cpp:577
+#: ../src/qtui/mainwin.cpp:573
 msgctxt "MainWin|"
 msgid "Quick Access #8"
 msgstr "Snel-wisselen #8"
 
-#: ../src/qtui/mainwin.cpp:579
+#: ../src/qtui/mainwin.cpp:575
 msgctxt "MainWin|"
 msgid "Quick Access #9"
 msgstr "Snel-wisselen #9"
 
-#: ../src/qtui/mainwin.cpp:583
+#: ../src/qtui/mainwin.cpp:579
 msgctxt "MainWin|"
 msgid "Activate Next Chat List"
 msgstr "Activeer volgende chatlijst"
 
-#: ../src/qtui/mainwin.cpp:585
+#: ../src/qtui/mainwin.cpp:581
 msgctxt "MainWin|"
 msgid "Activate Previous Chat List"
 msgstr "Activeer vorige chatlijst"
 
-#: ../src/qtui/mainwin.cpp:587
+#: ../src/qtui/mainwin.cpp:583
 msgctxt "MainWin|"
 msgid "Go to Next Chat"
 msgstr "Ga naar de volgende chatlijst"
 
-#: ../src/qtui/mainwin.cpp:589
+#: ../src/qtui/mainwin.cpp:585
 msgctxt "MainWin|"
 msgid "Go to Previous Chat"
 msgstr "Ga naar de vorige chatlijst"
 
-#: ../src/qtui/mainwin.cpp:598
+#: ../src/qtui/mainwin.cpp:594
 msgctxt "MainWin|"
 msgid "&File"
 msgstr "&Bestand"
 
-#: ../src/qtui/mainwin.cpp:611
+#: ../src/qtui/mainwin.cpp:607
 msgctxt "MainWin|"
 msgid "&Networks"
 msgstr "&Netwerken"
 
-#: ../src/qtui/mainwin.cpp:617
+#: ../src/qtui/mainwin.cpp:613
 msgctxt "MainWin|"
 msgid "&View"
 msgstr "&Weergave"
 
-#: ../src/qtui/mainwin.cpp:618
+#: ../src/qtui/mainwin.cpp:614
 msgctxt "MainWin|"
 msgid "&Chat Lists"
 msgstr "&Chatlijsten"
 
-#: ../src/qtui/mainwin.cpp:620
+#: ../src/qtui/mainwin.cpp:616
 msgctxt "MainWin|"
 msgid "&Toolbars"
 msgstr "&Werkbalken"
 
-#: ../src/qtui/mainwin.cpp:634
+#: ../src/qtui/mainwin.cpp:630
 msgctxt "MainWin|"
 msgid "&Settings"
 msgstr "&Instellingen"
 
-#: ../src/qtui/mainwin.cpp:644
+#: ../src/qtui/mainwin.cpp:640
 msgctxt "MainWin|"
 msgid "&Help"
 msgstr "&Hulp"
 
-#: ../src/qtui/mainwin.cpp:653
+#: ../src/qtui/mainwin.cpp:649
 msgctxt "MainWin|"
 msgid "Debug"
 msgstr "Debug"
 
-#: ../src/qtui/mainwin.cpp:830
+#: ../src/qtui/mainwin.cpp:827
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:831
+#: ../src/qtui/mainwin.cpp:828
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:833
+#: ../src/qtui/mainwin.cpp:830
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:843
+#: ../src/qtui/mainwin.cpp:841
 msgctxt "MainWin|"
 msgid "Upgrading..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:844
+#: ../src/qtui/mainwin.cpp:842
 msgctxt "MainWin|"
 msgid "Your database is being upgraded"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:847
+#: ../src/qtui/mainwin.cpp:845
 msgctxt "MainWin|"
 msgid ""
 "In order to support new features, we need to make changes to your backlog "
 "database. This may take a long while."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:849
+#: ../src/qtui/mainwin.cpp:847
 msgctxt "MainWin|"
 msgid "Do not exit Quassel until the upgrade is complete!"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:866
+#: ../src/qtui/mainwin.cpp:864
 msgctxt "MainWin|"
 msgid "Fatal error"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:867
+#: ../src/qtui/mainwin.cpp:865
 msgctxt "MainWin|"
 msgid "Quassel encountered a fatal error and is terminated."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:869
+#: ../src/qtui/mainwin.cpp:867
 msgctxt "MainWin|"
 msgid "Reason:<em>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:997
+#: ../src/qtui/mainwin.cpp:999
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr "Nicks"
 
-#: ../src/qtui/mainwin.cpp:1007
+#: ../src/qtui/mainwin.cpp:1009
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr "Nicklijst weergeven"
 
-#: ../src/qtui/mainwin.cpp:1022
+#: ../src/qtui/mainwin.cpp:1024
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr "Chatmonitor"
 
-#: ../src/qtui/mainwin.cpp:1033
+#: ../src/qtui/mainwin.cpp:1035
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr "Chatmonitor weergeven"
 
-#: ../src/qtui/mainwin.cpp:1039
+#: ../src/qtui/mainwin.cpp:1041
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr "Invoerregel"
 
-#: ../src/qtui/mainwin.cpp:1048
+#: ../src/qtui/mainwin.cpp:1050
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr "Invoerregel weergeven"
 
-#: ../src/qtui/mainwin.cpp:1061
+#: ../src/qtui/mainwin.cpp:1063
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr "Onderwerp"
 
-#: ../src/qtui/mainwin.cpp:1073
+#: ../src/qtui/mainwin.cpp:1075
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr "Onderwerpregel weergeven"
 
-#: ../src/qtui/mainwin.cpp:1079
+#: ../src/qtui/mainwin.cpp:1081
 msgctxt "MainWin|"
 msgid "Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1090
+#: ../src/qtui/mainwin.cpp:1092
 msgctxt "MainWin|"
 msgid "Show File Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1187
+#: ../src/qtui/mainwin.cpp:1189
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr "Hoofdwerkbalk"
 
-#: ../src/qtui/mainwin.cpp:1207
+#: ../src/qtui/mainwin.cpp:1209
 msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1284
+#: ../src/qtui/mainwin.cpp:1286
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr "Met core verbonden."
 
-#: ../src/qtui/mainwin.cpp:1384
+#: ../src/qtui/mainwin.cpp:1386
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr "Niet met core verbonden."
 
-#: ../src/qtui/mainwin.cpp:1403 ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1406 ../src/qtui/mainwin.cpp:1417
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr "Onversleutelde verbinding"
 
-#: ../src/qtui/mainwin.cpp:1403
+#: ../src/qtui/mainwin.cpp:1406
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr "<b>U client ondersteunt geen SSL-versleuteling</b>"
 
-#: ../src/qtui/mainwin.cpp:1405 ../src/qtui/mainwin.cpp:1415
+#: ../src/qtui/mainwin.cpp:1408 ../src/qtui/mainwin.cpp:1419
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr "Gevoelige gegevens, zoals wachtwoorden, zullen onversleuteld naar uw Quassel-core verzonden worden."
 
-#: ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1417
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>Uw core ondersteunt geen SSL-versleuteling</b>"
 
-#: ../src/qtui/mainwin.cpp:1431 ../src/qtui/mainwin.cpp:1452
+#: ../src/qtui/mainwin.cpp:1436 ../src/qtui/mainwin.cpp:1459
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Onbetrouwbaar beveiligingscertificaat"
 
-#: ../src/qtui/mainwin.cpp:1432
+#: ../src/qtui/mainwin.cpp:1437
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6613,43 +6613,43 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>Het door de core op %1 opgegeven beveiligingscertificaat is om de volgende redenen onbetrouwbaar:</b>"
 
-#: ../src/qtui/mainwin.cpp:1435
+#: ../src/qtui/mainwin.cpp:1440
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Doorgaan"
 
-#: ../src/qtui/mainwin.cpp:1436
+#: ../src/qtui/mainwin.cpp:1441
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "Certificaat weergeven"
 
-#: ../src/qtui/mainwin.cpp:1453
+#: ../src/qtui/mainwin.cpp:1460
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "Wilt u dit certificaat permanent accepteren, zonder hierom gevraagd te worden?"
 
-#: ../src/qtui/mainwin.cpp:1455
+#: ../src/qtui/mainwin.cpp:1462
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Alleen deze sessie"
 
-#: ../src/qtui/mainwin.cpp:1456
+#: ../src/qtui/mainwin.cpp:1463
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Permanent"
 
-#: ../src/qtui/mainwin.cpp:1467
+#: ../src/qtui/mainwin.cpp:1475
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Core-verbinding fout"
 
-#: ../src/qtui/mainwin.cpp:1499 ../src/qtui/mainwin.cpp:1500
+#: ../src/qtui/mainwin.cpp:1508 ../src/qtui/mainwin.cpp:1509
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1502
+#: ../src/qtui/mainwin.cpp:1511
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
@@ -7713,34 +7713,34 @@ msgid "Select the sound file to play"
 msgstr "Selecteer een audio bestand om af te spelen"
 
 #. Supported icon theme names
-#: ../src/qtui/qtui.cpp:284
+#: ../src/qtui/qtui.cpp:270
 msgctxt "QtUi|"
 msgid "Breeze"
 msgstr ""
 
-#: ../src/qtui/qtui.cpp:285
+#: ../src/qtui/qtui.cpp:271
 msgctxt "QtUi|"
 msgid "Breeze Dark"
 msgstr ""
 
-#: ../src/qtui/qtui.cpp:287
+#: ../src/qtui/qtui.cpp:273
 msgctxt "QtUi|"
 msgid "Oxygen"
 msgstr ""
 
-#: ../src/qtui/qtui.cpp:341
+#: ../src/qtui/qtui.cpp:327
 msgctxt "QtUi|"
 msgid ""
 "No supported icon theme installed, you'll lack icons! Supported are the "
 "KDE/Plasma themes Breeze, Breeze Dark and Oxygen."
 msgstr ""
 
-#: ../src/qtui/qtuiapplication.cpp:105
+#: ../src/qtui/qtuiapplication.cpp:104
 msgctxt "QtUiApplication|"
 msgid "Could not initialize Quassel!"
 msgstr ""
 
-#: ../src/qtui/qtuiapplication.cpp:110
+#: ../src/qtui/qtuiapplication.cpp:109
 msgctxt "QtUiApplication|"
 msgid "Could not load or upgrade client settings!"
 msgstr ""
@@ -8155,7 +8155,7 @@ msgctxt "ShortcutsSettingsPage|"
 msgid "Shortcuts"
 msgstr "Sneltoetsen"
 
-#: ../src/common/signalproxy.cpp:792
+#: ../src/common/signalproxy.cpp:795
 msgctxt "SignalProxy|"
 msgid "Disconnecting"
 msgstr "Verbinding verbreken"
