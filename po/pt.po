@@ -6452,158 +6452,158 @@ msgctxt "MainWin|"
 msgid "Debug"
 msgstr "Depurar"
 
-#: ../src/qtui/mainwin.cpp:827
+#: ../src/qtui/mainwin.cpp:825
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:828
+#: ../src/qtui/mainwin.cpp:826
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:830
+#: ../src/qtui/mainwin.cpp:828
 msgctxt "MainWin|"
 msgid ""
 "You need a Quassel Core v0.12.0 or newer in order to be able to remotely "
 "change your password."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:841
+#: ../src/qtui/mainwin.cpp:838
 msgctxt "MainWin|"
 msgid "Upgrading..."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:842
+#: ../src/qtui/mainwin.cpp:839
 msgctxt "MainWin|"
 msgid "Your database is being upgraded"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:845
+#: ../src/qtui/mainwin.cpp:842
 msgctxt "MainWin|"
 msgid ""
 "In order to support new features, we need to make changes to your backlog "
 "database. This may take a long while."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:847
+#: ../src/qtui/mainwin.cpp:844
 msgctxt "MainWin|"
 msgid "Do not exit Quassel until the upgrade is complete!"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:864
+#: ../src/qtui/mainwin.cpp:861
 msgctxt "MainWin|"
 msgid "Fatal error"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:865
+#: ../src/qtui/mainwin.cpp:862
 msgctxt "MainWin|"
 msgid "Quassel encountered a fatal error and is terminated."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:867
+#: ../src/qtui/mainwin.cpp:864
 msgctxt "MainWin|"
 msgid "Reason:<em>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:999
+#: ../src/qtui/mainwin.cpp:989
 msgctxt "MainWin|"
 msgid "Nicks"
 msgstr "Alcunhas"
 
-#: ../src/qtui/mainwin.cpp:1009
+#: ../src/qtui/mainwin.cpp:999
 msgctxt "MainWin|"
 msgid "Show Nick List"
 msgstr "Mostrar Lista de Alcunhas"
 
-#: ../src/qtui/mainwin.cpp:1024
+#: ../src/qtui/mainwin.cpp:1014
 msgctxt "MainWin|"
 msgid "Chat Monitor"
 msgstr "Monitor de Conversa"
 
-#: ../src/qtui/mainwin.cpp:1035
+#: ../src/qtui/mainwin.cpp:1025
 msgctxt "MainWin|"
 msgid "Show Chat Monitor"
 msgstr "Mostrar Monitorização da Conversa"
 
-#: ../src/qtui/mainwin.cpp:1041
+#: ../src/qtui/mainwin.cpp:1031
 msgctxt "MainWin|"
 msgid "Inputline"
 msgstr "Linha de entrada"
 
-#: ../src/qtui/mainwin.cpp:1050
+#: ../src/qtui/mainwin.cpp:1040
 msgctxt "MainWin|"
 msgid "Show Input Line"
 msgstr "Mostrar Linha de Entrada"
 
-#: ../src/qtui/mainwin.cpp:1063
+#: ../src/qtui/mainwin.cpp:1053
 msgctxt "MainWin|"
 msgid "Topic"
 msgstr "Tópico"
 
-#: ../src/qtui/mainwin.cpp:1075
+#: ../src/qtui/mainwin.cpp:1065
 msgctxt "MainWin|"
 msgid "Show Topic Line"
 msgstr "Mostrar Linha do Tópico"
 
-#: ../src/qtui/mainwin.cpp:1081
+#: ../src/qtui/mainwin.cpp:1071
 msgctxt "MainWin|"
 msgid "Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1092
+#: ../src/qtui/mainwin.cpp:1082
 msgctxt "MainWin|"
 msgid "Show File Transfers"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1189
+#: ../src/qtui/mainwin.cpp:1179
 msgctxt "MainWin|"
 msgid "Main Toolbar"
 msgstr "Barra de Ferramentas Principal"
 
-#: ../src/qtui/mainwin.cpp:1209
+#: ../src/qtui/mainwin.cpp:1199
 msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1286
+#: ../src/qtui/mainwin.cpp:1276
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr "Conectado ao núcleo."
 
-#: ../src/qtui/mainwin.cpp:1386
+#: ../src/qtui/mainwin.cpp:1376
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr "Não conectado ao núcleo."
 
-#: ../src/qtui/mainwin.cpp:1406 ../src/qtui/mainwin.cpp:1417
+#: ../src/qtui/mainwin.cpp:1395 ../src/qtui/mainwin.cpp:1405
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr "Conexão Não Encriptada"
 
-#: ../src/qtui/mainwin.cpp:1406
+#: ../src/qtui/mainwin.cpp:1395
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr "<b>O seu cliente não suporta encriptação SSL</b>"
 
-#: ../src/qtui/mainwin.cpp:1408 ../src/qtui/mainwin.cpp:1419
+#: ../src/qtui/mainwin.cpp:1397 ../src/qtui/mainwin.cpp:1407
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr "Dados sensitivos, como as senhas, serão transmitidos desencriptados para o seu núcleo Quassel."
 
-#: ../src/qtui/mainwin.cpp:1417
+#: ../src/qtui/mainwin.cpp:1405
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>O seu núcleo não suporta encriptação SSL</b>"
 
-#: ../src/qtui/mainwin.cpp:1436 ../src/qtui/mainwin.cpp:1459
+#: ../src/qtui/mainwin.cpp:1423 ../src/qtui/mainwin.cpp:1444
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Certificado de Segurança Não Confiável"
 
-#: ../src/qtui/mainwin.cpp:1437
+#: ../src/qtui/mainwin.cpp:1424
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6611,43 +6611,43 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>O certificado SSL fornecido pelo núcleo em %1 não é confiável pelas seguintes razões:</b>"
 
-#: ../src/qtui/mainwin.cpp:1440
+#: ../src/qtui/mainwin.cpp:1427
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Continuar"
 
-#: ../src/qtui/mainwin.cpp:1441
+#: ../src/qtui/mainwin.cpp:1428
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "Mostrar Certificado"
 
-#: ../src/qtui/mainwin.cpp:1460
+#: ../src/qtui/mainwin.cpp:1445
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "Deseja aceitar este certificado para sempre sem ser solicitado?"
 
-#: ../src/qtui/mainwin.cpp:1462
+#: ../src/qtui/mainwin.cpp:1447
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Apenas Sessão Actual"
 
-#: ../src/qtui/mainwin.cpp:1463
+#: ../src/qtui/mainwin.cpp:1448
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Para Sempre"
 
-#: ../src/qtui/mainwin.cpp:1475
+#: ../src/qtui/mainwin.cpp:1459
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Erro de Conexão do Núcleo"
 
-#: ../src/qtui/mainwin.cpp:1508 ../src/qtui/mainwin.cpp:1509
+#: ../src/qtui/mainwin.cpp:1491 ../src/qtui/mainwin.cpp:1492
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1511
+#: ../src/qtui/mainwin.cpp:1494
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
