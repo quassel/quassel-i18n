@@ -2798,7 +2798,7 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr "Etäytimet"
 
-#: ../src/core/coreapplication.cpp:41
+#: ../src/core/coreapplication.cpp:37
 msgctxt "CoreApplication|"
 msgid "Could not initialize Quassel!"
 msgstr "Quasselin alustaminen epäonnistui!"
@@ -7736,12 +7736,12 @@ msgid ""
 "KDE/Plasma themes Breeze, Breeze Dark and Oxygen."
 msgstr ""
 
-#: ../src/qtui/qtuiapplication.cpp:104
+#: ../src/qtui/qtuiapplication.cpp:101
 msgctxt "QtUiApplication|"
 msgid "Could not initialize Quassel!"
 msgstr "Quasselin alustaminen epäonnistui!"
 
-#: ../src/qtui/qtuiapplication.cpp:109
+#: ../src/qtui/qtuiapplication.cpp:106
 msgctxt "QtUiApplication|"
 msgid "Could not load or upgrade client settings!"
 msgstr "Asiakkaan asetusten lataaminen tai päivittäminen epäonnistui!"
