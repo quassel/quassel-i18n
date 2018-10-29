@@ -123,7 +123,7 @@ msgid "Slovenian translation"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:196 ../src/uisupport/aboutdata.cpp:222
-#: ../src/uisupport/aboutdata.cpp:226 ../src/uisupport/aboutdata.cpp:243
+#: ../src/uisupport/aboutdata.cpp:225 ../src/uisupport/aboutdata.cpp:243
 #: ../src/uisupport/aboutdata.cpp:252 ../src/uisupport/aboutdata.cpp:274
 #: ../src/uisupport/aboutdata.cpp:290 ../src/uisupport/aboutdata.cpp:310
 #: ../src/uisupport/aboutdata.cpp:347
@@ -251,7 +251,7 @@ msgctxt "AboutData|"
 msgid "Translation system fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:225
+#: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "OSX Notification Center support"
 msgstr ""
