@@ -4232,14 +4232,9 @@ msgctxt "DebugConsole|"
 msgid "Evaluate!"
 msgstr ""
 
-#: ../src/qtui/ui/debuglogwidget.ui:13
-msgctxt "DebugLogWidget|"
+#: ../src/qtui/ui/debuglogdlg.ui:14
+msgctxt "DebugLogDlg|"
 msgid "Debug Log"
-msgstr ""
-
-#: ../src/qtui/ui/debuglogwidget.ui:43
-msgctxt "DebugLogWidget|"
-msgid "Close"
 msgstr ""
 
 #: ../src/qtui/dockmanagernotificationbackend.cpp:184
