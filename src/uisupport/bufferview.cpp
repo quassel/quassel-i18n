@@ -594,7 +594,7 @@ void BufferView::hideCurrentBuffer()
     config()->requestRemoveBuffer(bufferId);
 }
 
-void BufferView::filterTextChanged(QString filterString)
+void BufferView::filterTextChanged(const QString& filterString)
 {
     BufferViewFilter *filter = qobject_cast<BufferViewFilter *>(model());
     if (!filter) {
@@ -624,8 +624,63 @@ QSize BufferView::sizeHint() const
 }
 
 
+void BufferView::changeHighlight(BufferView::Direction direction)
+{
+    // If for some weird reason we get a new delegate
+    BufferViewDelegate *delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
+    if (delegate) {
+        delegate->currentHighlight = QModelIndex();
+    }
+
+    QModelIndex newIndex = _currentHighlight;
+    if (!newIndex.isValid()) {
+        newIndex = model()->index(0, 0);
+    }
+
+    if (direction == Backward) {
+        newIndex = indexBelow(newIndex);
+    } else {
+        newIndex = indexAbove(newIndex);
+    }
+
+    if (!newIndex.isValid()) {
+        return;
+    }
+
+    _currentHighlight = newIndex;
+
+    delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
+    if (delegate) {
+        delegate->currentHighlight = _currentHighlight;
+    }
+    viewport()->update();
+}
+
+void BufferView::selectHighlighted()
+{
+    if (_currentHighlight.isValid()) {
+        selectionModel()->setCurrentIndex(_currentHighlight, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
+        selectionModel()->select(_currentHighlight, QItemSelectionModel::ClearAndSelect);
+    } else {
+        selectFirstBuffer();
+    }
+
+    clearHighlight();
+}
+
+void BufferView::clearHighlight()
+{
+    // If for some weird reason we get a new delegate
+    BufferViewDelegate *delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
+    if (delegate) {
+        delegate->currentHighlight = QModelIndex();
+    }
+    _currentHighlight = QModelIndex();
+    viewport()->update();
+}
+
 // ****************************************
-//  BufferViewDelgate
+//  BufferViewDelegate
 // ****************************************
 class ColorsChangedEvent : public QEvent
 {
@@ -756,12 +811,16 @@ void BufferViewDock::onFilterReturnPressed()
     }
 
     BufferView *view = bufferView();
-    if (!view || _filterEdit->text().isEmpty()) {
+    if (!view) {
         return;
     }
 
-    view->selectFirstBuffer();
-    _filterEdit->clear();
+    if (!_filterEdit->text().isEmpty()) {
+        view->selectHighlighted();
+        _filterEdit->clear();
+    } else {
+        view->clearHighlight();
+    }
 }
 
 void BufferViewDock::setActive(bool active)
@@ -788,18 +847,35 @@ bool BufferViewDock::eventFilter(QObject *object, QEvent *event)
        }
    } else if (event->type() == QEvent::KeyRelease) {
        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-       if (keyEvent->key() != Qt::Key_Escape) {
+
+       BufferView *view = bufferView();
+       if (!view) {
            return false;
        }
 
-       _filterEdit->clear();
+       switch (keyEvent->key()) {
+       case Qt::Key_Escape: {
+           _filterEdit->clear();
 
-       if (_oldFocusItem) {
+           if (!_oldFocusItem) {
+               return false;
+           }
+
            _oldFocusItem->setFocus();
-           _oldFocusItem = 0;
+           _oldFocusItem = nullptr;
+           return true;
+       }
+       case Qt::Key_Down:
+           view->changeHighlight(BufferView::Backward);
+           return true;
+       case Qt::Key_Up:
+           view->changeHighlight(BufferView::Forward);
+           return true;
+       default:
+           break;
        }
 
-       return true;
+       return false;
    }
 
    return false;
@@ -852,4 +928,14 @@ void BufferViewDock::activateFilter()
     _oldFocusItem = qApp->focusWidget();
 
     _filterEdit->setFocus();
+}
+
+
+void BufferViewDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    QStyleOptionViewItem newOption = option;
+    if (index == currentHighlight) {
+        newOption.state |= QStyle::State_HasFocus;
+    }
+    QStyledItemDelegate::paint(painter, newOption, index);
 }
