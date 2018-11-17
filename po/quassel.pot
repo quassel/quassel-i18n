@@ -1193,7 +1193,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:715
+#: ../src/uisupport/bufferview.cpp:770
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
