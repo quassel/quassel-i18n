@@ -22,31 +22,30 @@
 
 #include "client.h"
 #include "clienttransfermanager.h"
+#include "util.h"
 
-DccSettingsPage::DccSettingsPage(QWidget *parent)
+DccSettingsPage::DccSettingsPage(QWidget* parent)
     : SettingsPage(tr("IRC"), tr("DCC"), parent)
 {
     ui.setupUi(this);
     initAutoWidgets();
-    connect(ui.ipDetectionMode, SIGNAL(currentIndexChanged(int)), SLOT(updateWidgetStates()));
-    connect(ui.portSelectionMode, SIGNAL(currentIndexChanged(int)), SLOT(updateWidgetStates()));
+    connect(ui.ipDetectionMode, selectOverload<int>(&QComboBox::currentIndexChanged), this, &DccSettingsPage::updateWidgetStates);
+    connect(ui.portSelectionMode, selectOverload<int>(&QComboBox::currentIndexChanged), this, &DccSettingsPage::updateWidgetStates);
     updateWidgetStates();
 
-    connect(Client::instance(), SIGNAL(coreConnectionStateChanged(bool)), SLOT(onClientConfigChanged()));
+    connect(Client::instance(), &Client::coreConnectionStateChanged, this, &DccSettingsPage::onClientConfigChanged);
     setClientConfig(Client::dccConfig());
 }
-
 
 bool DccSettingsPage::isClientConfigValid() const
 {
     return _clientConfig != nullptr;
 }
 
-
-void DccSettingsPage::setClientConfig(DccConfig *config)
+void DccSettingsPage::setClientConfig(DccConfig* config)
 {
     if (_clientConfig) {
-        disconnect(_clientConfig, 0, this, 0);
+        disconnect(_clientConfig, nullptr, this, nullptr);
     }
     if (config && !isClientConfigValid()) {
         qWarning() << "Client DCC config is not valid/synchronized!";
@@ -56,7 +55,7 @@ void DccSettingsPage::setClientConfig(DccConfig *config)
     }
     _clientConfig = config;
     if (_clientConfig) {
-        connect(_clientConfig, SIGNAL(updated()), SLOT(load()));
+        connect(_clientConfig, &DccConfig::updated, this, &DccSettingsPage::load);
         load();
         ui.dccEnabled->setEnabled(true);
     }
@@ -65,23 +64,20 @@ void DccSettingsPage::setClientConfig(DccConfig *config)
     }
 }
 
-
 void DccSettingsPage::onClientConfigChanged()
 {
     if (Client::isConnected() && Client::dccConfig() && !Client::dccConfig()->isInitialized()) {
-        connect(Client::dccConfig(), SIGNAL(initDone()), SLOT(onClientConfigChanged()));
+        connect(Client::dccConfig(), &SyncableObject::initDone, this, &DccSettingsPage::onClientConfigChanged);
     }
     else {
         setClientConfig(Client::isConnected() ? Client::dccConfig() : nullptr);
     }
 }
 
-
 bool DccSettingsPage::hasDefaults() const
 {
     return true;
 }
-
 
 void DccSettingsPage::defaults()
 {
@@ -90,14 +86,12 @@ void DccSettingsPage::defaults()
     widgetHasChanged();
 }
 
-
 void DccSettingsPage::load()
 {
     _localConfig = isClientConfigValid() ? *_clientConfig : DccConfig{};
     SettingsPage::load();
     widgetHasChanged();
 }
-
 
 void DccSettingsPage::save()
 {
@@ -107,7 +101,6 @@ void DccSettingsPage::save()
     }
     setChangedState(false);
 }
-
 
 QVariant DccSettingsPage::loadAutoWidgetValue(const QString& widgetName)
 {
@@ -138,7 +131,6 @@ QVariant DccSettingsPage::loadAutoWidgetValue(const QString& widgetName)
     return {};
 }
 
-
 void DccSettingsPage::saveAutoWidgetValue(const QString& widgetName, const QVariant& value)
 {
     if (widgetName == "dccEnabled")
@@ -162,7 +154,7 @@ void DccSettingsPage::saveAutoWidgetValue(const QString& widgetName, const QVari
     else if (widgetName == "useFastSend")
         _localConfig.setUseFastSend(value.toBool());
     else if (widgetName == "outgoingIp") {
-        QHostAddress address {QHostAddress::LocalHost};
+        QHostAddress address{QHostAddress::LocalHost};
         if (!address.setAddress(value.toString())) {
             qWarning() << "Invalid IP address!";
             address = QHostAddress{QHostAddress::LocalHost};
@@ -174,13 +166,11 @@ void DccSettingsPage::saveAutoWidgetValue(const QString& widgetName, const QVari
     }
 }
 
-
 void DccSettingsPage::widgetHasChanged()
 {
     bool same = isClientConfigValid() && (_localConfig == *_clientConfig);
     setChangedState(!same);
 }
-
 
 void DccSettingsPage::updateWidgetStates()
 {

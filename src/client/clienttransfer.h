@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTTRANSFER_H
-#define CLIENTTRANSFER_H
+#pragma once
 
 #include <QUuid>
 
@@ -30,10 +29,9 @@ class QFile;
 class ClientTransfer : public Transfer
 {
     Q_OBJECT
-    SYNCABLE_OBJECT
 
 public:
-    ClientTransfer(const QUuid &uuid, QObject *parent = 0);
+    ClientTransfer(const QUuid& uuid, QObject* parent = nullptr);
 
     QString savePath() const;
 
@@ -41,11 +39,11 @@ public:
 
 public slots:
     // called on the client side
-    void accept(const QString &savePath) const override;
+    void accept(const QString& savePath) const override;
     void reject() const override;
 
 private slots:
-    void dataReceived(PeerPtr peer, const QByteArray &data) override;
+    void dataReceived(PeerPtr peer, const QByteArray& data) override;
     void onStatusChanged(Transfer::Status status);
 
 private:
@@ -53,7 +51,5 @@ private:
 
     mutable QString _savePath;
 
-    QFile *_file;
+    QFile* _file;
 };
-
-#endif

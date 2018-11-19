@@ -20,19 +20,22 @@
  * Parts of this API have been shamelessly stolen from KDE's kaction.h     *
  ***************************************************************************/
 
-#ifndef ACTION_H_
-#define ACTION_H_
+#pragma once
 
-#ifndef HAVE_KDE4
+#include "uisupport-export.h"
+
+#include <type_traits>
 
 #include <QShortcut>
 #include <QWidgetAction>
+
+#include "util.h"
 
 /// A specialized QWidgetAction, enhanced by some KDE features
 /** This declares/implements a subset of KAction's API (notably we've left out global shortcuts
  *  for now), which should make it easy to plug in KDE support later on.
  */
-class Action : public QWidgetAction
+class UISUPPORT_EXPORT Action : public QWidgetAction
 {
     Q_OBJECT
 
@@ -40,20 +43,38 @@ class Action : public QWidgetAction
     Q_PROPERTY(bool shortcutConfigurable READ isShortcutConfigurable WRITE setShortcutConfigurable)
     Q_FLAGS(ShortcutType)
 
-public :
-        enum ShortcutType {
+public:
+    enum ShortcutType
+    {
         ActiveShortcut = 0x01,
         DefaultShortcut = 0x02
     };
     Q_DECLARE_FLAGS(ShortcutTypes, ShortcutType)
 
-    explicit Action(QObject *parent);
-    Action(const QString &text, QObject *parent, const QObject *receiver = 0, const char *slot = 0, const QKeySequence &shortcut = 0);
-    Action(const QIcon &icon, const QString &text, QObject *parent, const QObject *receiver = 0, const char *slot = 0, const QKeySequence &shortcut = 0);
+    explicit Action(QObject* parent);
+    Action(const QString& text, QObject* parent, const QKeySequence& shortcut = 0);
+    Action(const QIcon& icon, const QString& text, QObject* parent, const QKeySequence& shortcut = 0);
+
+    template<typename Receiver, typename Slot>
+    Action(const QString& text, QObject* parent, const Receiver* receiver, Slot slot, const QKeySequence& shortcut = 0)
+        : Action(text, parent, shortcut)
+    {
+        static_assert(!std::is_same<Slot, const char*>::value, "Old-style connects not supported");
+
+        setShortcut(shortcut);
+        connect(this, &QAction::triggered, receiver, slot);
+    }
+
+    template<typename Receiver, typename Slot>
+    Action(const QIcon& icon, const QString& text, QObject* parent, const Receiver* receiver, Slot slot, const QKeySequence& shortcut = 0)
+        : Action(text, parent, receiver, slot, shortcut)
+    {
+        setIcon(icon);
+    }
 
     QKeySequence shortcut(ShortcutTypes types = ActiveShortcut) const;
-    void setShortcut(const QShortcut &shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
-    void setShortcut(const QKeySequence &shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShortcut(const QShortcut& shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShortcut(const QKeySequence& shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
 
     bool isShortcutConfigurable() const;
     void setShortcutConfigurable(bool configurable);
@@ -61,33 +82,8 @@ public :
 signals:
     void triggered(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
 
-private:
-    void init();
-
 private slots:
     void slotTriggered();
 };
 
-
 Q_DECLARE_OPERATORS_FOR_FLAGS(Action::ShortcutTypes)
-
-#else /* HAVE_KDE4 */
-#include <KAction>
-
-class Action : public KAction
-{
-    Q_OBJECT
-
-public:
-    explicit Action(QObject *parent);
-    Action(const QString &text, QObject *parent, const QObject *receiver = 0, const char *slot = 0, const QKeySequence &shortcut = 0);
-    Action(const QIcon &icon, const QString &text, QObject *parent, const QObject *receiver = 0, const char *slot = 0, const QKeySequence &shortcut = 0);
-
-private:
-    void init();
-};
-
-
-#endif
-
-#endif

@@ -25,25 +25,23 @@
 
 #include <QDebug>
 
-#include "logmessage.h"
-
 // This handler is called by Windows in a different thread when a console event happens
 // FIXME: When the console window is closed, the application is supposedly terminated as soon as
 //        this handler returns. We may want to block and wait for the main thread so set some
 //        condition variable once shutdown is complete...
 static BOOL WINAPI consoleCtrlHandler(DWORD ctrlType)
 {
-  switch (ctrlType) {
-  case CTRL_C_EVENT:     // Ctrl+C
-  case CTRL_CLOSE_EVENT: // Closing the console window
-      WindowsSignalWatcher::signalHandler(SIGTERM);
-      return TRUE;
-  default:
-      return FALSE;
-  }
+    switch (ctrlType) {
+    case CTRL_C_EVENT:      // Ctrl+C
+    case CTRL_CLOSE_EVENT:  // Closing the console window
+        WindowsSignalWatcher::signalHandler(SIGTERM);
+        return TRUE;
+    default:
+        return FALSE;
+    }
 }
 
-WindowsSignalWatcher::WindowsSignalWatcher(QObject *parent)
+WindowsSignalWatcher::WindowsSignalWatcher(QObject* parent)
     : AbstractSignalWatcher{parent}
     , Singleton<WindowsSignalWatcher>{this}
 {
@@ -66,7 +64,7 @@ WindowsSignalWatcher::WindowsSignalWatcher(QObject *parent)
 
 void WindowsSignalWatcher::signalHandler(int signal)
 {
-    quInfo() << "Caught signal" << signal;
+    qInfo() << "Caught signal" << signal;
 
     switch (signal) {
     case SIGINT:

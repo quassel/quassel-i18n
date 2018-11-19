@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef NOTIFICATIONSSETTINGSPAGE_H_
-#define NOTIFICATIONSSETTINGSPAGE_H_
+#pragma once
 
 #include <QHash>
 
@@ -35,22 +34,19 @@ class NotificationsSettingsPage : public SettingsPage
     Q_OBJECT
 
 public:
-    NotificationsSettingsPage(QWidget *parent = 0);
+    NotificationsSettingsPage(QWidget* parent = nullptr);
 
-    bool hasDefaults() const;
+    bool hasDefaults() const override;
 
 public slots:
-    void save();
-    void load();
-    void defaults();
+    void save() final override;
+    void load() final override;
+    void defaults() final override;
 
 private slots:
     void widgetHasChanged();
 
 private:
-    QList<SettingsPage *> _configWidgets;
-    bool _hasDefaults;
+    QList<SettingsPage*> _configWidgets;
+    bool _hasDefaults{false};
 };
-
-
-#endif

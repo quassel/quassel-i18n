@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef PHONONNOTIFICATIONBACKEND_H_
-#define PHONONNOTIFICATIONBACKEND_H_
+#pragma once
 
 #include <memory>
 
@@ -35,16 +34,16 @@ class QtMultimediaNotificationBackend : public AbstractNotificationBackend
     Q_OBJECT
 
 public:
-    QtMultimediaNotificationBackend(QObject *parent = 0);
+    QtMultimediaNotificationBackend(QObject* parent = nullptr);
 
-    void notify(const Notification &) override;
+    void notify(const Notification&) override;
     void close(uint notificationId) override;
-    virtual SettingsPage *createConfigWidget() const override;
+    SettingsPage* createConfigWidget() const override;
 
 private slots:
-    void enabledChanged(const QVariant &);
-    void audioFileChanged(const QVariant &);
-    void createMediaObject(const QString &name);
+    void enabledChanged(const QVariant&);
+    void audioFileChanged(const QVariant&);
+    void createMediaObject(const QString& name);
 
 private:
     class ConfigWidget;
@@ -53,13 +52,12 @@ private:
     std::unique_ptr<QMediaPlayer> _media;
 };
 
-
 class QtMultimediaNotificationBackend::ConfigWidget : public SettingsPage
 {
     Q_OBJECT
 
 public:
-    ConfigWidget(QWidget *parent = 0);
+    ConfigWidget(QWidget* parent = nullptr);
 
     void save() override;
     void load() override;
@@ -79,6 +77,3 @@ private:
     QString _filename;
     std::unique_ptr<QMediaPlayer> _audioPreview;
 };
-
-
-#endif

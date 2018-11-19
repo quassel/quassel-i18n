@@ -25,8 +25,7 @@
 
 constexpr auto settingsKey = "HighlightRuleList";
 
-INIT_SYNCABLE_OBJECT(CoreHighlightRuleManager)
-CoreHighlightRuleManager::CoreHighlightRuleManager(CoreSession *session)
+CoreHighlightRuleManager::CoreHighlightRuleManager(CoreSession* session)
     : HighlightRuleManager(session)
     , _coreSession{session}
 {
@@ -37,7 +36,7 @@ CoreHighlightRuleManager::CoreHighlightRuleManager(CoreSession *session)
     // Otherwise, we just use the defaults initialized in the base class
 
     // We store our settings whenever they change
-    connect(this, SIGNAL(updatedRemotely()), SLOT(save()));
+    connect(this, &SyncableObject::updatedRemotely, this, &CoreHighlightRuleManager::save);
 }
 
 void CoreHighlightRuleManager::save()
@@ -45,9 +44,7 @@ void CoreHighlightRuleManager::save()
     Core::setUserSetting(_coreSession->user(), settingsKey, toVariantMap());
 }
 
-bool CoreHighlightRuleManager::match(const RawMessage &msg, const QString &currentNick,
-                                     const QStringList &identityNicks)
+bool CoreHighlightRuleManager::match(const RawMessage& msg, const QString& currentNick, const QStringList& identityNicks)
 {
-    return match(msg.networkId, msg.text, msg.sender, msg.type, msg.flags, msg.target, currentNick,
-                 identityNicks);
+    return match(msg.networkId, msg.text, msg.sender, msg.type, msg.flags, msg.target, currentNick, identityNicks);
 }

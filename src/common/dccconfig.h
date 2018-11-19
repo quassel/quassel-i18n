@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include "common-export.h"
+
 #include <QHostAddress>
 
 #include "syncableobject.h"
@@ -30,7 +32,7 @@
  * @warning Equality and assignment operators are optimized for use in a settings page
  *          and do not cover all attributes!
  */
-class DccConfig : public SyncableObject
+class COMMON_EXPORT DccConfig : public SyncableObject
 {
     Q_OBJECT
     SYNCABLE_OBJECT
@@ -60,7 +62,8 @@ public:
     /**
      * Mode for detecting the outgoing IP
      */
-    enum class IpDetectionMode : quint8 {
+    enum class IpDetectionMode : quint8
+    {
         Automatic,  ///< Automatic detection (network socket or USERHOST)
         Manual,     ///< Manually specified IP
     };
@@ -69,9 +72,10 @@ public:
     /**
      * Mode for selecting the port range for DCC
      */
-    enum class PortSelectionMode : quint8 {
-        Automatic,   ///< Automatic port selection
-        Manual,      ///< Manually specified port range
+    enum class PortSelectionMode : quint8
+    {
+        Automatic,  ///< Automatic port selection
+        Manual,     ///< Manually specified port range
     };
     Q_ENUMS(PortSelectionMode)
 
@@ -82,10 +86,7 @@ public:
      *
      * @param[in] parent QObject parent
      */
-    DccConfig(QObject *parent = nullptr);
-
-    // see base class
-    const QMetaObject *syncMetaObject() const override { return &staticMetaObject; }
+    DccConfig(QObject* parent = nullptr);
 
     /**
      * Assignment operator.
@@ -95,7 +96,7 @@ public:
      * @param[in] other Right-hand side instance
      * @returns The updated instance
      */
-    DccConfig &operator=(const DccConfig &other);
+    DccConfig& operator=(const DccConfig& other);
 
     /**
      * Equality operator.
@@ -105,7 +106,7 @@ public:
      * @param[in] other Right-hand side instance
      * @returns Whether the two instances have equal properties
      */
-    bool operator==(const DccConfig &other);
+    bool operator==(const DccConfig& other);
 
     /// @name Getters
     /// @{
@@ -125,7 +126,7 @@ public slots:
     /// @name Setters
     /// @{
     void setDccEnabled(bool enabled);
-    void setOutgoingIp(const QHostAddress &outgoingIp);
+    void setOutgoingIp(const QHostAddress& outgoingIp);
     void setIpDetectionMode(DccConfig::IpDetectionMode ipDetectionMode);
     void setPortSelectionMode(DccConfig::PortSelectionMode portSelectionMode);
     void setMinPort(quint16 port);
@@ -138,14 +139,14 @@ public slots:
 
 private:
     // The given values are used as default for both initialization and settings
-    bool _dccEnabled                     {false};
-    QHostAddress _outgoingIp             {QHostAddress::LocalHost};
-    IpDetectionMode _ipDetectionMode     {IpDetectionMode::Automatic};
-    PortSelectionMode _portSelectionMode {PortSelectionMode::Automatic};
-    quint16 _minPort                     {1024};
-    quint16 _maxPort                     {32767};
-    int _chunkSize                       {16};
-    int _sendTimeout                     {180};
-    bool _usePassiveDcc                  {false};
-    bool _useFastSend                    {false};
+    bool _dccEnabled{false};
+    QHostAddress _outgoingIp{QHostAddress::LocalHost};
+    IpDetectionMode _ipDetectionMode{IpDetectionMode::Automatic};
+    PortSelectionMode _portSelectionMode{PortSelectionMode::Automatic};
+    quint16 _minPort{1024};
+    quint16 _maxPort{32767};
+    int _chunkSize{16};
+    int _sendTimeout{180};
+    bool _usePassiveDcc{false};
+    bool _useFastSend{false};
 };

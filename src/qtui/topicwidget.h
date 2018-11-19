@@ -30,31 +30,31 @@ class TopicWidget : public AbstractItemView
     Q_OBJECT
 
 public:
-    TopicWidget(QWidget *parent = 0);
+    TopicWidget(QWidget* parent = nullptr);
 
-    void setTopic(const QModelIndex &index);
-    void setCustomFont(const QFont &);
-    void setReadOnly(const bool &readonly);
+    void setTopic(const QModelIndex& index);
+    void setCustomFont(const QFont&);
+    void setReadOnly(const bool& readonly);
 
-    virtual bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject* obj, QEvent* event) override;
     inline bool isReadOnly() const { return _readonly; }
 
 signals:
     void switchedPlain();
 
 protected slots:
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
-    virtual void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+    void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
+    void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight) override;
 
 private slots:
     void on_topicLineEdit_textEntered();
     void on_topicEditButton_clicked();
     void switchEditable();
     void switchPlain();
-    void clickableActivated(const Clickable &);
+    void clickableActivated(const Clickable&);
     void updateResizeMode();
-    void setCustomFont(const QVariant &);
-    void setUseCustomFont(const QVariant &);
+    void setCustomFont(const QVariant&);
+    void setUseCustomFont(const QVariant&);
 
 private:
     QString sanitizeTopic(const QString& topic);
@@ -65,6 +65,5 @@ private:
     bool _mouseEntered;
     bool _readonly;
 };
-
 
 #endif

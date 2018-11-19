@@ -20,32 +20,46 @@
 
 #include "dockmanagernotificationbackend.h"
 
-#include <QHBoxLayout>
 #include <QCheckBox>
 #include <QDBusReply>
+#include <QHBoxLayout>
 
 #include "client.h"
+#include "clientbacklogmanager.h"
 #include "clientsettings.h"
 #include "coreconnection.h"
-#include "clientbacklogmanager.h"
+#include "util.h"
 
-DockManagerNotificationBackend::DockManagerNotificationBackend(QObject *parent)
-    : AbstractNotificationBackend(parent), _bus(QDBusConnection::sessionBus()), _dock(0), _item(0), _count(0)
+DockManagerNotificationBackend::DockManagerNotificationBackend(QObject* parent)
+    : AbstractNotificationBackend(parent)
+    , _bus(QDBusConnection::sessionBus())
 {
     NotificationSettings notificationSettings;
     _enabled = notificationSettings.value("DockManager/Enabled", false).toBool();
 
-    notificationSettings.notify("DockManager/Enabled", this, SLOT(enabledChanged(const QVariant &)));
+    notificationSettings.notify("DockManager/Enabled", this, &DockManagerNotificationBackend::enabledChanged);
 
     _dock = new QDBusInterface("net.launchpad.DockManager", "/net/launchpad/DockManager", "net.launchpad.DockManager", _bus, this);
     if (_dock->isValid()) {
-        _bus.connect("net.launchpad.DockManager", "/net/launchpad/DockManager", "net.launchpad.DockManager", "ItemAdded", this, SLOT(itemAdded(QDBusObjectPath)));
-    } else {
+        _bus.connect("net.launchpad.DockManager",
+                     "/net/launchpad/DockManager",
+                     "net.launchpad.DockManager",
+                     "ItemAdded",
+                     this,
+                     SLOT(itemAdded(QDBusObjectPath)));
+    }
+    else {
         // evil implementations (awn) use fd.o
         _dock = new QDBusInterface("org.freedesktop.DockManager", "/org/freedesktop/DockManager", "org.freedesktop.DockManager", _bus, this);
         if (_dock->isValid()) {
-            _bus.connect("org.freedesktop.DockManager", "/org/freedesktop/DockManager", "org.freedesktop.DockManager", "ItemAdded", this, SLOT(itemAdded(QDBusObjectPath)));
-        } else {
+            _bus.connect("org.freedesktop.DockManager",
+                         "/org/freedesktop/DockManager",
+                         "org.freedesktop.DockManager",
+                         "ItemAdded",
+                         this,
+                         SLOT(itemAdded(QDBusObjectPath)));
+        }
+        else {
             _available = _enabled = false;
             return;
         }
@@ -54,10 +68,12 @@ DockManagerNotificationBackend::DockManagerNotificationBackend(QObject *parent)
 
     itemAdded(QDBusObjectPath());
 
-    connect(Client::coreConnection(), SIGNAL(progressValueChanged(int)), this, SLOT(updateProgress(int)));
-    connect(Client::coreConnection(), SIGNAL(synchronized()), this, SLOT(synchronized()));
+    connect(Client::coreConnection(),
+            &CoreConnection::progressValueChanged,
+            this,
+            selectOverload<int>(&DockManagerNotificationBackend::updateProgress));
+    connect(Client::coreConnection(), &CoreConnection::synchronized, this, &DockManagerNotificationBackend::synchronized);
 }
-
 
 void DockManagerNotificationBackend::itemAdded(QDBusObjectPath p)
 {
@@ -67,7 +83,7 @@ void DockManagerNotificationBackend::itemAdded(QDBusObjectPath p)
         return;
 
     // stupid implementations (awn; kde?) use wrong casing of PID, but proper type
-    QDBusReply<QList<QDBusObjectPath> > paths = _dock->call("GetItemsByPid", (int)QCoreApplication::applicationPid());
+    QDBusReply<QList<QDBusObjectPath>> paths = _dock->call("GetItemsByPid", (int)QCoreApplication::applicationPid());
     if (!paths.isValid()) {
         // stupid implementations (i.e. docky) use uint, but proper casing
         paths = _dock->call("GetItemsByPID", (unsigned int)QCoreApplication::applicationPid());
@@ -76,21 +92,20 @@ void DockManagerNotificationBackend::itemAdded(QDBusObjectPath p)
             return;
         }
     }
-    if (paths.value().count() == 0) { // no icon for this instance
+    if (paths.value().count() == 0) {  // no icon for this instance
         return;
     }
 
-    QString path = paths.value()[0].path(); // no sense in using multiple icons for one instance
+    QString path = paths.value()[0].path();  // no sense in using multiple icons for one instance
     _item = new QDBusInterface("org.freedesktop.DockManager", path, "org.freedesktop.DockItem", _bus, this);
 }
-
 
 void DockManagerNotificationBackend::updateProgress(int progress)
 {
     if (!_enabled || !_item)
         return;
 
-    CoreConnection *c = Client::instance()->coreConnection();
+    CoreConnection* c = Client::instance()->coreConnection();
     int perc = 0;
     if (c->progressMaximum() == c->progressMinimum())
         perc = 0;
@@ -102,7 +117,6 @@ void DockManagerNotificationBackend::updateProgress(int progress)
     _item->call("UpdateDockItem", args);
 }
 
-
 void DockManagerNotificationBackend::updateProgress(int done, int total)
 {
     if (!_enabled || !_item)
@@ -110,9 +124,10 @@ void DockManagerNotificationBackend::updateProgress(int done, int total)
 
     int perc = 0;
     if (done == total) {
-        disconnect(Client::backlogManager(), 0, this, 0);
+        disconnect(Client::backlogManager(), nullptr, this, nullptr);
         perc = -1;
-    } else
+    }
+    else
         perc = (done * 100) / total;
 
     QHash<QString, QVariant> args;
@@ -120,14 +135,15 @@ void DockManagerNotificationBackend::updateProgress(int done, int total)
     _item->call("UpdateDockItem", args);
 }
 
-
 void DockManagerNotificationBackend::synchronized()
 {
-    connect(Client::backlogManager(), SIGNAL(updateProgress(int, int)), this, SLOT(updateProgress(int, int)));
+    connect(Client::backlogManager(),
+            &ClientBacklogManager::updateProgress,
+            this,
+            selectOverload<int, int>(&DockManagerNotificationBackend::updateProgress));
 }
 
-
-void DockManagerNotificationBackend::notify(const Notification &notification)
+void DockManagerNotificationBackend::notify(const Notification& notification)
 {
     if (!_enabled || !_item) {
         return;
@@ -142,7 +158,6 @@ void DockManagerNotificationBackend::notify(const Notification &notification)
     _item->call("UpdateDockItem", args);
 }
 
-
 void DockManagerNotificationBackend::close(uint notificationId)
 {
     Q_UNUSED(notificationId);
@@ -155,8 +170,7 @@ void DockManagerNotificationBackend::close(uint notificationId)
     _item->call("UpdateDockItem", args);
 }
 
-
-void DockManagerNotificationBackend::enabledChanged(const QVariant &v)
+void DockManagerNotificationBackend::enabledChanged(const QVariant& v)
 {
     _enabled = v.toBool();
 
@@ -168,46 +182,41 @@ void DockManagerNotificationBackend::enabledChanged(const QVariant &v)
     }
 }
 
-
-SettingsPage *DockManagerNotificationBackend::createConfigWidget() const
+SettingsPage* DockManagerNotificationBackend::createConfigWidget() const
 {
     return new ConfigWidget(_available);
 }
 
-
 /***************************************************************************/
 
-DockManagerNotificationBackend::ConfigWidget::ConfigWidget(bool enabled, QWidget *parent)
+DockManagerNotificationBackend::ConfigWidget::ConfigWidget(bool enabled, QWidget* parent)
     : SettingsPage("Internal", "DockManagerNotification", parent)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    auto* layout = new QHBoxLayout(this);
     layout->addWidget(enabledBox = new QCheckBox(tr("Mark dockmanager entry"), this));
     enabledBox->setVisible(enabled);
 
-    connect(enabledBox, SIGNAL(toggled(bool)), SLOT(widgetChanged()));
+    connect(enabledBox, &QAbstractButton::toggled, this, &ConfigWidget::widgetChanged);
 }
-
 
 void DockManagerNotificationBackend::ConfigWidget::widgetChanged()
 {
     bool changed = enabled != enabledBox->isChecked();
 
-    if (changed != hasChanged()) setChangedState(changed);
+    if (changed != hasChanged())
+        setChangedState(changed);
 }
-
 
 bool DockManagerNotificationBackend::ConfigWidget::hasDefaults() const
 {
     return true;
 }
 
-
 void DockManagerNotificationBackend::ConfigWidget::defaults()
 {
     enabledBox->setChecked(false);
     widgetChanged();
 }
-
 
 void DockManagerNotificationBackend::ConfigWidget::load()
 {
@@ -217,7 +226,6 @@ void DockManagerNotificationBackend::ConfigWidget::load()
     enabledBox->setChecked(enabled);
     setChangedState(false);
 }
-
 
 void DockManagerNotificationBackend::ConfigWidget::save()
 {

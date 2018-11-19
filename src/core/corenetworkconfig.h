@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CORENETWORKCONFIG_H_
-#define CORENETWORKCONFIG_H_
+#pragma once
 
 #include "networkconfig.h"
 
@@ -27,26 +26,20 @@ class CoreSession;
 
 class CoreNetworkConfig : public NetworkConfig
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    CoreNetworkConfig(const QString &objectName, CoreSession *parent);
-
-    inline virtual const QMetaObject *syncMetaObject() const { return &NetworkConfig::staticMetaObject; }
+    CoreNetworkConfig(const QString& objectName, CoreSession* parent);
 
     void save();
 
 public slots:
-    virtual inline void requestSetPingTimeoutEnabled(bool enabled) { setPingTimeoutEnabled(enabled); }
-    virtual inline void requestSetPingInterval(int interval) { setPingInterval(interval); }
-    virtual inline void requestSetMaxPingCount(int count) { setMaxPingCount(count); }
-    virtual inline void requestSetAutoWhoEnabled(bool enabled) { setAutoWhoEnabled(enabled); }
-    virtual inline void requestSetAutoWhoInterval(int interval) { setAutoWhoInterval(interval); }
-    virtual inline void requestSetAutoWhoNickLimit(int nickLimit) { setAutoWhoNickLimit(nickLimit); }
-    virtual inline void requestSetAutoWhoDelay(int delay) { setAutoWhoDelay(delay); }
-    virtual inline void requestSetStandardCtcp(bool enabled) { setStandardCtcp(enabled); }
+    inline void requestSetPingTimeoutEnabled(bool enabled) override { setPingTimeoutEnabled(enabled); }
+    inline void requestSetPingInterval(int interval) override { setPingInterval(interval); }
+    inline void requestSetMaxPingCount(int count) override { setMaxPingCount(count); }
+    inline void requestSetAutoWhoEnabled(bool enabled) override { setAutoWhoEnabled(enabled); }
+    inline void requestSetAutoWhoInterval(int interval) override { setAutoWhoInterval(interval); }
+    inline void requestSetAutoWhoNickLimit(int nickLimit) override { setAutoWhoNickLimit(nickLimit); }
+    inline void requestSetAutoWhoDelay(int delay) override { setAutoWhoDelay(delay); }
+    inline void requestSetStandardCtcp(bool enabled) override { setStandardCtcp(enabled); }
 };
-
-
-#endif

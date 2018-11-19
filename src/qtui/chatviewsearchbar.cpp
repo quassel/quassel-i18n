@@ -25,7 +25,7 @@
 #include "icon.h"
 #include "qtui.h"
 
-ChatViewSearchBar::ChatViewSearchBar(QWidget *parent)
+ChatViewSearchBar::ChatViewSearchBar(QWidget* parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
@@ -38,20 +38,20 @@ ChatViewSearchBar::ChatViewSearchBar(QWidget *parent)
 
     hide();
 
-    ActionCollection *coll = QtUi::actionCollection("General");
+    ActionCollection* coll = QtUi::actionCollection("General");
 
-    QAction *toggleSearchBar = coll->action("ToggleSearchBar");
-    connect(toggleSearchBar, SIGNAL(toggled(bool)), SLOT(setVisible(bool)));
+    QAction* toggleSearchBar = coll->action("ToggleSearchBar");
+    connect(toggleSearchBar, &QAction::toggled, this, &QWidget::setVisible);
 
-    Action *hideSearchBar = coll->add<Action>("HideSearchBar", toggleSearchBar, SLOT(setChecked(bool)));
-    hideSearchBar->setShortcutConfigurable(false);
+    auto* hideSearchBar = new Action{{}, this, toggleSearchBar, &QAction::setChecked};
     hideSearchBar->setShortcut(Qt::Key_Escape);
+    hideSearchBar->setShortcutConfigurable(false);
+    coll->addAction("HideSearchBar", hideSearchBar);
 
-    connect(ui.hideButton, SIGNAL(clicked()), toggleSearchBar, SLOT(toggle()));
-    connect(ui.searchEditLine, SIGNAL(textChanged(const QString &)), this, SLOT(delaySearch()));
-    connect(&_searchDelayTimer, SIGNAL(timeout()), this, SLOT(search()));
+    connect(ui.hideButton, &QAbstractButton::clicked, toggleSearchBar, &QAction::toggle);
+    connect(ui.searchEditLine, &QLineEdit::textChanged, this, &ChatViewSearchBar::delaySearch);
+    connect(&_searchDelayTimer, &QTimer::timeout, this, &ChatViewSearchBar::search);
 }
-
 
 void ChatViewSearchBar::setVisible(bool visible)
 {
@@ -66,12 +66,10 @@ void ChatViewSearchBar::setVisible(bool visible)
         emit hidden();
 }
 
-
 void ChatViewSearchBar::delaySearch()
 {
     _searchDelayTimer.start(300);
 }
-
 
 void ChatViewSearchBar::search()
 {

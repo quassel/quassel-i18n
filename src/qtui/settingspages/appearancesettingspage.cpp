@@ -31,18 +31,13 @@
 #include "qtuisettings.h"
 #include "qtuistyle.h"
 
-
-AppearanceSettingsPage::AppearanceSettingsPage(QWidget *parent)
+AppearanceSettingsPage::AppearanceSettingsPage(QWidget* parent)
     : SettingsPage(tr("Interface"), QString(), parent)
 {
     ui.setupUi(this);
 
 #ifdef QT_NO_SYSTEMTRAYICON
     ui.useSystemTrayIcon->hide();
-#endif
-#if QT_VERSION < 0x050000
-    // We don't support overriding the system icon theme with Qt4
-    ui.overrideSystemIconTheme->hide();
 #endif
 
     // If no system icon theme is given, showing the override option makes no sense.
@@ -57,45 +52,43 @@ AppearanceSettingsPage::AppearanceSettingsPage(QWidget *parent)
     initLanguageComboBox();
     initIconThemeComboBox();
 
-    foreach(QComboBox *comboBox, findChildren<QComboBox *>()) {
-        connect(comboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(widgetHasChanged()));
+    foreach (QComboBox* comboBox, findChildren<QComboBox*>()) {
+        connect(comboBox, selectOverload<const QString&>(&QComboBox::currentIndexChanged), this, &AppearanceSettingsPage::widgetHasChanged);
     }
-    foreach(QCheckBox *checkBox, findChildren<QCheckBox *>()) {
-        connect(checkBox, SIGNAL(clicked()), this, SLOT(widgetHasChanged()));
+    foreach (QCheckBox* checkBox, findChildren<QCheckBox*>()) {
+        connect(checkBox, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
     }
 
-    connect(ui.chooseStyleSheet, SIGNAL(clicked()), SLOT(chooseStyleSheet()));
+    connect(ui.chooseStyleSheet, &QAbstractButton::clicked, this, &AppearanceSettingsPage::chooseStyleSheet);
 
-    connect(ui.userNoticesInDefaultBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.userNoticesInStatusBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.userNoticesInCurrentBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
+    connect(ui.userNoticesInDefaultBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.userNoticesInStatusBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.userNoticesInCurrentBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
 
-    connect(ui.serverNoticesInDefaultBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.serverNoticesInStatusBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.serverNoticesInCurrentBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
+    connect(ui.serverNoticesInDefaultBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.serverNoticesInStatusBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.serverNoticesInCurrentBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
 
-    connect(ui.errorMsgsInDefaultBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.errorMsgsInStatusBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
-    connect(ui.errorMsgsInCurrentBuffer, SIGNAL(clicked(bool)), this, SLOT(widgetHasChanged()));
+    connect(ui.errorMsgsInDefaultBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.errorMsgsInStatusBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
+    connect(ui.errorMsgsInCurrentBuffer, &QAbstractButton::clicked, this, &AppearanceSettingsPage::widgetHasChanged);
 }
-
 
 void AppearanceSettingsPage::initStyleComboBox()
 {
     QStringList styleList = QStyleFactory::keys();
     ui.styleComboBox->addItem(tr("<System Default>"));
-    foreach(QString style, styleList) {
+    foreach (QString style, styleList) {
         ui.styleComboBox->addItem(style);
     }
 }
-
 
 void AppearanceSettingsPage::initLanguageComboBox()
 {
     QDir i18nDir(Quassel::translationDirPath(), "*.qm");
 
     QRegExp rx("(qt_)?([a-zA-Z_]+)\\.qm");
-    foreach(QString translationFile, i18nDir.entryList()) {
+    foreach (QString translationFile, i18nDir.entryList()) {
         if (!rx.exactMatch(translationFile))
             continue;
         if (!rx.cap(1).isEmpty())
@@ -103,7 +96,7 @@ void AppearanceSettingsPage::initLanguageComboBox()
         QLocale locale(rx.cap(2));
         _locales[QLocale::languageToString(locale.language())] = locale;
     }
-    foreach(QString language, _locales.keys()) {
+    foreach (QString language, _locales.keys()) {
         ui.languageComboBox->addItem(language);
     }
 }
@@ -113,11 +106,10 @@ void AppearanceSettingsPage::initIconThemeComboBox()
     auto availableThemes = QtUi::instance()->availableIconThemes();
 
     ui.iconThemeComboBox->addItem(tr("Automatic"), QString{});
-    for (auto &&p : QtUi::instance()->availableIconThemes()) {
+    for (auto&& p : QtUi::instance()->availableIconThemes()) {
         ui.iconThemeComboBox->addItem(p.second, p.first);
     }
 }
-
 
 void AppearanceSettingsPage::defaults()
 {
@@ -127,7 +119,6 @@ void AppearanceSettingsPage::defaults()
     SettingsPage::defaults();
     widgetHasChanged();
 }
-
 
 void AppearanceSettingsPage::load()
 {
@@ -147,7 +138,7 @@ void AppearanceSettingsPage::load()
     QLocale locale = uiSettings.value("Locale", QLocale::system()).value<QLocale>();
     if (locale == QLocale::system())
         ui.languageComboBox->setCurrentIndex(1);
-    else if (locale.language() == QLocale::C) // we use C for "untranslated"
+    else if (locale.language() == QLocale::C)  // we use C for "untranslated"
         ui.languageComboBox->setCurrentIndex(0);
     else
         ui.languageComboBox->setCurrentIndex(ui.languageComboBox->findText(QLocale::languageToString(locale.language()), Qt::MatchExactly));
@@ -186,7 +177,6 @@ void AppearanceSettingsPage::load()
     setChangedState(false);
 }
 
-
 void AppearanceSettingsPage::save()
 {
     QtUiSettings uiSettings;
@@ -202,7 +192,7 @@ void AppearanceSettingsPage::save()
     ui.styleComboBox->setProperty("storedValue", ui.styleComboBox->currentIndex());
 
     if (ui.languageComboBox->currentIndex() == 1) {
-        uiSettings.remove("Locale"); // force the default (QLocale::system())
+        uiSettings.remove("Locale");  // force the default (QLocale::system())
     }
     else {
         uiSettings.setValue("Locale", selectedLocale());
@@ -210,7 +200,7 @@ void AppearanceSettingsPage::save()
     ui.languageComboBox->setProperty("storedValue", ui.languageComboBox->currentIndex());
 
     bool needsIconThemeRefresh = ui.iconThemeComboBox->currentIndex() != ui.iconThemeComboBox->property("storedValue").toInt()
-                              || ui.overrideSystemIconTheme->isChecked() != ui.overrideSystemIconTheme->property("storedValue").toBool();
+                                 || ui.overrideSystemIconTheme->isChecked() != ui.overrideSystemIconTheme->property("storedValue").toBool();
 
     auto iconTheme = selectedIconTheme();
     if (iconTheme.isEmpty()) {
@@ -221,9 +211,9 @@ void AppearanceSettingsPage::save()
     }
     ui.iconThemeComboBox->setProperty("storedValue", ui.iconThemeComboBox->currentIndex());
 
-    bool needsStyleReload =
-        ui.useCustomStyleSheet->isChecked() != ui.useCustomStyleSheet->property("storedValue").toBool()
-        || (ui.useCustomStyleSheet->isChecked() && ui.customStyleSheetPath->text() != ui.customStyleSheetPath->property("storedValue").toString());
+    bool needsStyleReload = ui.useCustomStyleSheet->isChecked() != ui.useCustomStyleSheet->property("storedValue").toBool()
+                            || (ui.useCustomStyleSheet->isChecked()
+                                && ui.customStyleSheetPath->text() != ui.customStyleSheetPath->property("storedValue").toString());
 
     BufferSettings bufferSettings;
     int redirectTarget = 0;
@@ -261,7 +251,6 @@ void AppearanceSettingsPage::save()
         QtUi::instance()->refreshIconTheme();
 }
 
-
 QLocale AppearanceSettingsPage::selectedLocale() const
 {
     QLocale locale;
@@ -276,12 +265,10 @@ QLocale AppearanceSettingsPage::selectedLocale() const
     return locale;
 }
 
-
 QString AppearanceSettingsPage::selectedIconTheme() const
 {
     return ui.iconThemeComboBox->itemData(ui.iconThemeComboBox->currentIndex()).toString();
 }
-
 
 void AppearanceSettingsPage::chooseStyleSheet()
 {
@@ -296,30 +283,40 @@ void AppearanceSettingsPage::chooseStyleSheet()
         ui.customStyleSheetPath->setText(name);
 }
 
-
 void AppearanceSettingsPage::widgetHasChanged()
 {
     setChangedState(testHasChanged());
 }
 
-
 bool AppearanceSettingsPage::testHasChanged()
 {
-    if (ui.styleComboBox->currentIndex() != ui.styleComboBox->property("storedValue").toInt()) return true;
-    if (ui.languageComboBox->currentIndex() != ui.languageComboBox->property("storedValue").toInt()) return true;
-    if (ui.iconThemeComboBox->currentIndex() != ui.iconThemeComboBox->property("storedValue").toInt()) return true;
+    if (ui.styleComboBox->currentIndex() != ui.styleComboBox->property("storedValue").toInt())
+        return true;
+    if (ui.languageComboBox->currentIndex() != ui.languageComboBox->property("storedValue").toInt())
+        return true;
+    if (ui.iconThemeComboBox->currentIndex() != ui.iconThemeComboBox->property("storedValue").toInt())
+        return true;
 
-    if (SettingsPage::hasChanged(ui.userNoticesInStatusBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.userNoticesInDefaultBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.userNoticesInCurrentBuffer)) return true;
+    if (SettingsPage::hasChanged(ui.userNoticesInStatusBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.userNoticesInDefaultBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.userNoticesInCurrentBuffer))
+        return true;
 
-    if (SettingsPage::hasChanged(ui.serverNoticesInStatusBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.serverNoticesInDefaultBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.serverNoticesInCurrentBuffer)) return true;
+    if (SettingsPage::hasChanged(ui.serverNoticesInStatusBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.serverNoticesInDefaultBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.serverNoticesInCurrentBuffer))
+        return true;
 
-    if (SettingsPage::hasChanged(ui.errorMsgsInStatusBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.errorMsgsInDefaultBuffer)) return true;
-    if (SettingsPage::hasChanged(ui.errorMsgsInCurrentBuffer)) return true;
+    if (SettingsPage::hasChanged(ui.errorMsgsInStatusBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.errorMsgsInDefaultBuffer))
+        return true;
+    if (SettingsPage::hasChanged(ui.errorMsgsInCurrentBuffer))
+        return true;
 
     return false;
 }

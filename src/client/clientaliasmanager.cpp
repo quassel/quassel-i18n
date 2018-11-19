@@ -22,14 +22,11 @@
 
 #include "client.h"
 
-INIT_SYNCABLE_OBJECT(ClientAliasManager)
-ClientAliasManager::ClientAliasManager(QObject *parent)
+ClientAliasManager::ClientAliasManager(QObject* parent)
     : AliasManager(parent)
-{
-}
+{}
 
-
-const Network *ClientAliasManager::network(NetworkId id) const
+const Network* ClientAliasManager::network(NetworkId id) const
 {
     return Client::network(id);
 }

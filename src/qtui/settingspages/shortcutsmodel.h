@@ -36,23 +36,24 @@ class ShortcutsModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    enum Role {
+    enum Role
+    {
         ActionRole = Qt::UserRole,
         DefaultShortcutRole,
         ActiveShortcutRole,
         IsConfigurableRole
     };
 
-    ShortcutsModel(const QHash<QString, ActionCollection *> &actionCollections, QObject *parent = 0);
-    ~ShortcutsModel();
+    ShortcutsModel(const QHash<QString, ActionCollection*>& actionCollections, QObject* parent = nullptr);
+    ~ShortcutsModel() override;
 
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const;
-    QModelIndex parent(const QModelIndex &child) const;
-    int columnCount(const QModelIndex &parent = QModelIndex()) const;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    bool setData(const QModelIndex &index, const QVariant &value, int role = ActiveShortcutRole);
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
+    QModelIndex parent(const QModelIndex& child) const override;
+    int columnCount(const QModelIndex& parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role = ActiveShortcutRole) override;
 
 public slots:
     //! Load shortcuts from the ActionCollections
@@ -76,23 +77,28 @@ public slots:
 
 signals:
     //! Reflects the difference between model contents and the ActionCollections we loaded this from
-    void hasChanged(bool changed);
+    void changed(bool changed);
 
 private:
-    struct Item {
-        inline Item() { parentItem = 0; collection = 0; action = 0; }
+    struct Item
+    {
+        inline Item()
+        {
+            parentItem = nullptr;
+            collection = nullptr;
+            action = nullptr;
+        }
         inline ~Item() { qDeleteAll(actionItems); }
         int row;
-        Item *parentItem;
-        ActionCollection *collection;
-        Action *action;
+        Item* parentItem;
+        ActionCollection* collection;
+        Action* action;
         QKeySequence shortcut;
-        QList<Item *> actionItems;
+        QList<Item*> actionItems;
     };
 
-    QList<Item *> _categoryItems;
+    QList<Item*> _categoryItems;
     int _changedCount;
 };
 
-
-#endif // SHORTCUTSMODEL_H
+#endif  // SHORTCUTSMODEL_H

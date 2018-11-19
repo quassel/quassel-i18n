@@ -20,53 +20,40 @@
 
 #ifndef QT_NO_SYSTEMTRAYICON
 
-#include "legacysystemtray.h"
+#    include "legacysystemtray.h"
 
-#include "icon.h"
-#include "mainwin.h"
-#include "qtui.h"
+#    include "icon.h"
+#    include "mainwin.h"
+#    include "qtui.h"
 
-LegacySystemTray::LegacySystemTray(QWidget *parent)
+LegacySystemTray::LegacySystemTray(QWidget* parent)
     : SystemTray(parent)
+    , _trayIcon{new QSystemTrayIcon(associatedWidget())}
 {
-#ifndef HAVE_KDE4
-    _trayIcon = new QSystemTrayIcon(associatedWidget());
-#else
-    _trayIcon = new KSystemTrayIcon(associatedWidget());
-    // We don't want to trigger a minimize if a highlight is pending, so we brutally remove the internal connection for that
-    disconnect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-        _trayIcon, SLOT(activateOrHide(QSystemTrayIcon::ActivationReason)));
-#endif
-#ifndef Q_OS_MAC
-    connect(_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-        SLOT(onActivated(QSystemTrayIcon::ActivationReason)));
-#endif
-    connect(_trayIcon, SIGNAL(messageClicked()),
-        SLOT(onMessageClicked()));
+#    ifndef Q_OS_MAC
+    connect(_trayIcon, &QSystemTrayIcon::activated, this, &LegacySystemTray::onActivated);
+#    endif
+    connect(_trayIcon, &QSystemTrayIcon::messageClicked, this, &LegacySystemTray::onMessageClicked);
 
     _trayIcon->setContextMenu(trayMenu());
     _trayIcon->setVisible(false);
 
     setMode(Mode::Legacy);
 
-    connect(this, SIGNAL(visibilityChanged(bool)), this, SLOT(onVisibilityChanged(bool)));
-    connect(this, SIGNAL(modeChanged(Mode)), this, SLOT(onModeChanged(Mode)));
-    connect(this, SIGNAL(toolTipChanged(QString, QString)), SLOT(updateToolTip()));
-    connect(this, SIGNAL(iconsChanged()), this, SLOT(updateIcon()));
-    connect(this, SIGNAL(currentIconNameChanged()), this, SLOT(updateIcon()));
+    connect(this, &SystemTray::visibilityChanged, this, &LegacySystemTray::onVisibilityChanged);
+    connect(this, &SystemTray::modeChanged, this, &LegacySystemTray::onModeChanged);
+    connect(this, &SystemTray::toolTipChanged, this, &LegacySystemTray::updateToolTip);
+    connect(this, &SystemTray::iconsChanged, this, &LegacySystemTray::updateIcon);
+    connect(this, &SystemTray::currentIconNameChanged, this, &LegacySystemTray::updateIcon);
 
     updateIcon();
     updateToolTip();
 }
 
-
 bool LegacySystemTray::isSystemTrayAvailable() const
 {
-    return mode() == Mode::Legacy
-            ? QSystemTrayIcon::isSystemTrayAvailable()
-            : SystemTray::isSystemTrayAvailable();
+    return mode() == Mode::Legacy ? QSystemTrayIcon::isSystemTrayAvailable() : SystemTray::isSystemTrayAvailable();
 }
-
 
 void LegacySystemTray::onVisibilityChanged(bool isVisible)
 {
@@ -74,7 +61,6 @@ void LegacySystemTray::onVisibilityChanged(bool isVisible)
         _trayIcon->setVisible(isVisible);
     }
 }
-
 
 void LegacySystemTray::onModeChanged(Mode mode)
 {
@@ -86,43 +72,38 @@ void LegacySystemTray::onModeChanged(Mode mode)
     }
 }
 
-
 void LegacySystemTray::updateIcon()
 {
     QString iconName = (state() == NeedsAttention) ? currentAttentionIconName() : currentIconName();
     _trayIcon->setIcon(icon::get(iconName, QString{":/icons/hicolor/24x24/status/%1.svg"}.arg(iconName)));
 }
 
-
 void LegacySystemTray::updateToolTip()
 {
-#if defined Q_OS_MAC || defined Q_OS_WIN
+#    if defined Q_OS_MAC || defined Q_OS_WIN
     QString tooltip = QString("%1").arg(toolTipTitle());
     if (!toolTipSubTitle().isEmpty())
         tooltip += QString("\n%1").arg(toolTipSubTitle());
-#else
+#    else
     QString tooltip = QString("<b>%1</b>").arg(toolTipTitle());
     if (!toolTipSubTitle().isEmpty())
         tooltip += QString("<br>%1").arg(toolTipSubTitle());
-#endif
+#    endif
 
     _trayIcon->setToolTip(tooltip);
 }
-
 
 void LegacySystemTray::onActivated(QSystemTrayIcon::ActivationReason reason)
 {
     activate((SystemTray::ActivationReason)reason);
 }
 
-
 void LegacySystemTray::onMessageClicked()
 {
     emit messageClicked(_lastMessageId);
 }
 
-
-void LegacySystemTray::showMessage(const QString &title, const QString &message, SystemTray::MessageIcon icon, int msTimeout, uint id)
+void LegacySystemTray::showMessage(const QString& title, const QString& message, SystemTray::MessageIcon icon, int msTimeout, uint id)
 {
     // fancy stuff later: show messages in order
     // for now, we just show the last message
@@ -130,16 +111,14 @@ void LegacySystemTray::showMessage(const QString &title, const QString &message,
     _trayIcon->showMessage(title, message, (QSystemTrayIcon::MessageIcon)icon, msTimeout);
 }
 
-
 void LegacySystemTray::closeMessage(uint notificationId)
 {
     Q_UNUSED(notificationId)
 
     // there really seems to be no sane way to close the bubble... :(
-#ifdef Q_WS_X11
+#    ifdef Q_WS_X11
     showMessage("", "", NoIcon, 1);
-#endif
+#    endif
 }
-
 
 #endif /* QT_NO_SYSTEMTRAYICON */

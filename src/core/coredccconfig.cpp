@@ -25,7 +25,7 @@
 
 constexpr auto settingsKey = "DccConfig";
 
-CoreDccConfig::CoreDccConfig(CoreSession *session)
+CoreDccConfig::CoreDccConfig(CoreSession* session)
     : DccConfig(session)
     , _coreSession{session}
 {
@@ -36,9 +36,8 @@ CoreDccConfig::CoreDccConfig(CoreSession *session)
     // Otherwise, we just use the defaults initialized in the base class
 
     // We store our settings whenever they change
-    connect(this, SIGNAL(updatedRemotely()), SLOT(save()));
+    connect(this, &SyncableObject::updatedRemotely, this, &CoreDccConfig::save);
 }
-
 
 void CoreDccConfig::save()
 {

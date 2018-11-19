@@ -21,10 +21,11 @@
 #ifndef _HIGHLIGHTSETTINGSPAGE_H_
 #define _HIGHLIGHTSETTINGSPAGE_H_
 
-#include <QVariantList>
 #include <QTableWidgetItem>
+#include <QVariantList>
 
 #include "settingspage.h"
+
 #include "ui_highlightsettingspage.h"
 
 class HighlightSettingsPage : public SettingsPage
@@ -32,21 +33,26 @@ class HighlightSettingsPage : public SettingsPage
     Q_OBJECT
 
 public:
-    HighlightSettingsPage(QWidget *parent = 0);
+    HighlightSettingsPage(QWidget* parent = nullptr);
 
-    bool hasDefaults() const;
+    bool hasDefaults() const override;
 
 public slots:
-    void save();
-    void load();
-    void defaults();
+    void save() override;
+    void load() override;
+    void defaults() override;
 
 private slots:
     void widgetHasChanged();
-    void addNewRow(QString name = tr("highlight rule"), bool regex = false, bool cs = false, bool enable = true, QString chanName = "", bool self = false);
+    void addNewRow(QString name = tr("highlight rule"),
+                   bool regex = false,
+                   bool cs = false,
+                   bool enable = true,
+                   QString chanName = "",
+                   bool self = false);
     void removeSelectedRows();
-    void selectRow(QTableWidgetItem *item);
-    void tableChanged(QTableWidgetItem *item);
+    void selectRow(QTableWidgetItem* item);
+    void tableChanged(QTableWidgetItem* item);
 
     /**
      * Event handler for Local Highlights Details button
@@ -60,7 +66,8 @@ private:
     //    regex:  bool
     //    name:   QString
     //    enable: bool
-    enum column {
+    enum column
+    {
         EnableColumn = 0,
         NameColumn = 1,
         RegExColumn = 2,
@@ -73,6 +80,5 @@ private:
 
     bool testHasChanged();
 };
-
 
 #endif

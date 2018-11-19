@@ -23,29 +23,25 @@
 #include "bufferviewconfig.h"
 #include "signalproxy.h"
 
-INIT_SYNCABLE_OBJECT(BufferViewManager)
-BufferViewManager::BufferViewManager(SignalProxy *proxy, QObject *parent)
-    : SyncableObject(parent),
-    _proxy(proxy)
+BufferViewManager::BufferViewManager(SignalProxy* proxy, QObject* parent)
+    : SyncableObject(parent)
+    , _proxy(proxy)
 {
     _proxy->synchronize(this);
 }
 
-
-BufferViewConfig *BufferViewManager::bufferViewConfig(int bufferViewId) const
+BufferViewConfig* BufferViewManager::bufferViewConfig(int bufferViewId) const
 {
     if (_bufferViewConfigs.contains(bufferViewId))
         return _bufferViewConfigs[bufferViewId];
     else
-        return 0;
+        return nullptr;
 }
 
-
-BufferViewConfig *BufferViewManager::bufferViewConfigFactory(int bufferViewConfigId)
+BufferViewConfig* BufferViewManager::bufferViewConfigFactory(int bufferViewConfigId)
 {
     return new BufferViewConfig(bufferViewConfigId, this);
 }
-
 
 void BufferViewManager::addBufferViewConfig(int bufferViewConfigId)
 {
@@ -56,8 +52,7 @@ void BufferViewManager::addBufferViewConfig(int bufferViewConfigId)
     addBufferViewConfig(bufferViewConfigFactory(bufferViewConfigId));
 }
 
-
-void BufferViewManager::addBufferViewConfig(BufferViewConfig *config)
+void BufferViewManager::addBufferViewConfig(BufferViewConfig* config)
 {
     if (_bufferViewConfigs.contains(config->bufferViewId())) {
         delete config;
@@ -71,7 +66,6 @@ void BufferViewManager::addBufferViewConfig(BufferViewConfig *config)
     emit bufferViewConfigAdded(bufferViewId);
 }
 
-
 void BufferViewManager::deleteBufferViewConfig(int bufferViewConfigId)
 {
     if (!_bufferViewConfigs.contains(bufferViewConfigId))
@@ -82,7 +76,6 @@ void BufferViewManager::deleteBufferViewConfig(int bufferViewConfigId)
     SYNC(ARG(bufferViewConfigId))
     emit bufferViewConfigDeleted(bufferViewConfigId);
 }
-
 
 QVariantList BufferViewManager::initBufferViewIds() const
 {
@@ -96,10 +89,9 @@ QVariantList BufferViewManager::initBufferViewIds() const
     return bufferViewIds;
 }
 
-
 void BufferViewManager::initSetBufferViewIds(const QVariantList bufferViewIds)
 {
-    for (auto &&id : bufferViewIds) {
+    for (auto&& id : bufferViewIds) {
         addBufferViewConfig(id.value<int>());
     }
 }

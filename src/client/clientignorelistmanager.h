@@ -18,36 +18,33 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTIGNORELISTMANAGER_H
-#define CLIENTIGNORELISTMANAGER_H
+#pragma once
 
-#include "ignorelistmanager.h"
+#include "client-export.h"
+
 #include <QMap>
 
-class ClientIgnoreListManager : public IgnoreListManager
+#include "ignorelistmanager.h"
+
+class CLIENT_EXPORT ClientIgnoreListManager : public IgnoreListManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit ClientIgnoreListManager(QObject *parent = 0);
-    inline virtual const QMetaObject *syncMetaObject() const { return &IgnoreListManager::staticMetaObject; }
+    explicit ClientIgnoreListManager(QObject* parent = nullptr);
 
     //! Fetch all matching ignore rules for a given hostmask
     /** \param hostmask The hostmask of the user
-      * \param network The network name
-      * \param channel The channel name
-      * \return Returns a QMap with the rule as key and a bool, representing if the rule is enabled or not, as value
-      */
-    QMap<QString, bool> matchingRulesForHostmask(const QString &hostmask, const QString &network, const QString &channel) const;
+     * \param network The network name
+     * \param channel The channel name
+     * \return Returns a QMap with the rule as key and a bool, representing if the rule is enabled or not, as value
+     */
+    QMap<QString, bool> matchingRulesForHostmask(const QString& hostmask, const QString& network, const QString& channel) const;
 
 signals:
     void ignoreListChanged();
 
 private:
     // matches an ignore rule against a given string
-    bool pureMatch(const IgnoreListItem &item, const QString &string) const;
+    bool pureMatch(const IgnoreListItem& item, const QString& string) const;
 };
-
-
-#endif // CLIENTIGNORELISTMANAGER_H

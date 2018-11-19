@@ -18,34 +18,36 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include "chatlinemodelitem.h"
+
 #include <QFontMetrics>
 #include <QTextBoundaryFinder>
 
-#include "chatlinemodelitem.h"
 #include "chatlinemodel.h"
 #include "qtui.h"
 #include "qtuistyle.h"
 
 // This Struct is taken from Harfbuzz. We use it only to calc it's size.
 // we use a shared memory region so we do not have to malloc a buffer area for every line
-typedef struct {
-    /*HB_LineBreakType*/ unsigned lineBreakType  : 2;
-    /*HB_Bool*/ unsigned whiteSpace              : 1;     /* A unicode whitespace character, except NBSP, ZWNBSP */
-    /*HB_Bool*/ unsigned charStop                : 1;     /* Valid cursor position (for left/right arrow) */
-    /*HB_Bool*/ unsigned wordBoundary            : 1;
-    /*HB_Bool*/ unsigned sentenceBoundary        : 1;
-    unsigned unused                  : 2;
-} HB_CharAttributes_Dummy;
+using HB_CharAttributes_Dummy = struct
+{
+    /*HB_LineBreakType*/ unsigned lineBreakType : 2;
+    /*HB_Bool*/ unsigned whiteSpace : 1; /* A unicode whitespace character, except NBSP, ZWNBSP */
+    /*HB_Bool*/ unsigned charStop : 1;   /* Valid cursor position (for left/right arrow) */
+    /*HB_Bool*/ unsigned wordBoundary : 1;
+    /*HB_Bool*/ unsigned sentenceBoundary : 1;
+    unsigned unused : 2;
+};
 
-unsigned char *ChatLineModelItem::TextBoundaryFinderBuffer = (unsigned char *)malloc(512 * sizeof(HB_CharAttributes_Dummy));
+unsigned char* ChatLineModelItem::TextBoundaryFinderBuffer = (unsigned char*)malloc(512 * sizeof(HB_CharAttributes_Dummy));
 int ChatLineModelItem::TextBoundaryFinderBufferSize = 512 * (sizeof(HB_CharAttributes_Dummy) / sizeof(unsigned char));
 
 // ****************************************
 // the actual ChatLineModelItem
 // ****************************************
-ChatLineModelItem::ChatLineModelItem(const Message &msg)
-    : MessageModelItem(),
-    _styledMsg(msg)
+ChatLineModelItem::ChatLineModelItem(const Message& msg)
+    : MessageModelItem()
+    , _styledMsg(msg)
 {
     if (!msg.sender().contains('!'))
         _styledMsg.setFlags(msg.flags() |= Message::ServerMsg);
@@ -60,8 +62,7 @@ ChatLineModelItem::ChatLineModelItem(const Message &msg)
     // Unfortunately, the missing Self flag for other message types can't easily be worked around.
 }
 
-
-bool ChatLineModelItem::setData(int column, const QVariant &value, int role)
+bool ChatLineModelItem::setData(int column, const QVariant& value, int role)
 {
     switch (role) {
     case MessageModel::FlagsRole:
@@ -72,14 +73,13 @@ bool ChatLineModelItem::setData(int column, const QVariant &value, int role)
     }
 }
 
-
 QVariant ChatLineModelItem::data(int column, int role) const
 {
     if (role == ChatLineModel::MsgLabelRole)
         return QVariant::fromValue<UiStyle::MessageLabel>(messageLabel());
 
     QVariant variant;
-    MessageModel::ColumnType col = (MessageModel::ColumnType)column;
+    auto col = (MessageModel::ColumnType)column;
     switch (col) {
     case ChatLineModel::TimestampColumn:
         variant = timestampData(role);
@@ -98,7 +98,6 @@ QVariant ChatLineModelItem::data(int column, int role) const
     return variant;
 }
 
-
 QVariant ChatLineModelItem::timestampData(int role) const
 {
     switch (role) {
@@ -111,11 +110,11 @@ QVariant ChatLineModelItem::timestampData(int role) const
     case ChatLineModel::SelectedBackgroundRole:
         return backgroundBrush(UiStyle::FormatType::Timestamp, true);
     case ChatLineModel::FormatRole:
-        return QVariant::fromValue<UiStyle::FormatList>({std::make_pair(quint16{0}, UiStyle::Format{UiStyle::formatType(_styledMsg.type()) | UiStyle::FormatType::Timestamp, {}, {}})});
+        return QVariant::fromValue<UiStyle::FormatList>(
+            {std::make_pair(quint16{0}, UiStyle::Format{UiStyle::formatType(_styledMsg.type()) | UiStyle::FormatType::Timestamp, {}, {}})});
     }
     return QVariant();
 }
-
 
 QVariant ChatLineModelItem::senderData(int role) const
 {
@@ -129,11 +128,11 @@ QVariant ChatLineModelItem::senderData(int role) const
     case ChatLineModel::SelectedBackgroundRole:
         return backgroundBrush(UiStyle::FormatType::Sender, true);
     case ChatLineModel::FormatRole:
-        return QVariant::fromValue<UiStyle::FormatList>({std::make_pair(quint16{0}, UiStyle::Format{UiStyle::formatType(_styledMsg.type()) | UiStyle::FormatType::Sender, {}, {}})});
+        return QVariant::fromValue<UiStyle::FormatList>(
+            {std::make_pair(quint16{0}, UiStyle::Format{UiStyle::formatType(_styledMsg.type()) | UiStyle::FormatType::Sender, {}, {}})});
     }
     return QVariant();
 }
-
 
 QVariant ChatLineModelItem::contentsData(int role) const
 {
@@ -155,19 +154,17 @@ QVariant ChatLineModelItem::contentsData(int role) const
     return QVariant();
 }
 
-
 UiStyle::MessageLabel ChatLineModelItem::messageLabel() const
 {
     using MessageLabel = UiStyle::MessageLabel;
 
-    MessageLabel label = static_cast<MessageLabel>(_styledMsg.senderHash() << 16);
+    auto label = static_cast<MessageLabel>(_styledMsg.senderHash() << 16);
     if (_styledMsg.flags() & Message::Self)
         label |= MessageLabel::OwnMsg;
     if (_styledMsg.flags() & Message::Highlight)
         label |= MessageLabel::Highlight;
     return label;
 }
-
 
 QVariant ChatLineModelItem::backgroundBrush(UiStyle::FormatType subelement, bool selected) const
 {
@@ -178,7 +175,6 @@ QVariant ChatLineModelItem::backgroundBrush(UiStyle::FormatType subelement, bool
     return QVariant();
 }
 
-
 void ChatLineModelItem::computeWrapList() const
 {
     QString text = _styledMsg.plainContents();
@@ -186,9 +182,12 @@ void ChatLineModelItem::computeWrapList() const
     if (!length)
         return;
 
-    QList<ChatLineModel::Word> wplist; // use a temp list which we'll later copy into a QVector for efficiency
-    QTextBoundaryFinder finder(QTextBoundaryFinder::Line, _styledMsg.plainContents().unicode(), length,
-        TextBoundaryFinderBuffer, TextBoundaryFinderBufferSize);
+    QList<ChatLineModel::Word> wplist;  // use a temp list which we'll later copy into a QVector for efficiency
+    QTextBoundaryFinder finder(QTextBoundaryFinder::Line,
+                               _styledMsg.plainContents().unicode(),
+                               length,
+                               TextBoundaryFinderBuffer,
+                               TextBoundaryFinderBufferSize);
 
     int idx;
     int oldidx = 0;
@@ -234,7 +233,7 @@ void ChatLineModelItem::computeWrapList() const
         word.start = oldidx;
         int wordend = idx;
         for (; wordend > word.start; wordend--) {
-            if (!text.at(wordend-1).isSpace())
+            if (!text.at(wordend - 1).isSpace())
                 break;
         }
 

@@ -18,19 +18,22 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#ifdef HAVE_UMASK
+#    include <sys/stat.h>
+#    include <sys/types.h>
+#endif /* HAVE_UMASK */
+
 #include <QString>
 
 #include "corenetwork.h"
 #include "oidentdconfiggenerator.h"
 
-OidentdConfigGenerator::OidentdConfigGenerator(QObject *parent) :
-    QObject(parent),
-    _initialized(false)
+OidentdConfigGenerator::OidentdConfigGenerator(QObject* parent)
+    : QObject(parent)
 {
     if (!_initialized)
         init();
 }
-
 
 OidentdConfigGenerator::~OidentdConfigGenerator()
 {
@@ -38,7 +41,6 @@ OidentdConfigGenerator::~OidentdConfigGenerator()
     writeConfig();
     _configFile->deleteLater();
 }
-
 
 bool OidentdConfigGenerator::init()
 {
@@ -59,7 +61,7 @@ bool OidentdConfigGenerator::init()
     // the ability to bind to an IP on client sockets.
 
     _quasselStanzaTemplate = QString("lport %1 { reply \"%2\" } #%3\n");
-    _quasselStanzaRx = QRegExp(QString("^lport .* \\{ .* \\} #%1\\r?\\n").arg(_configTag));
+    _quasselStanzaRx = QRegExp(QString(R"(^lport .* \{ .* \} #%1\r?\n)").arg(_configTag));
 
     // initially remove all Quassel stanzas that might be present
     if (parseConfig(false) && writeConfig())
@@ -68,17 +70,18 @@ bool OidentdConfigGenerator::init()
     return _initialized;
 }
 
-
-QString OidentdConfigGenerator::sysIdentForIdentity(const CoreIdentity *identity) const {
+QString OidentdConfigGenerator::sysIdentForIdentity(const CoreIdentity* identity) const
+{
     // Make sure the identity's ident complies with strict mode if enabled
-    const CoreNetwork *network = qobject_cast<CoreNetwork *>(sender());
+    const CoreNetwork* network = qobject_cast<CoreNetwork*>(sender());
     return network->coreSession()->strictCompliantIdent(identity);
 }
 
-
-bool OidentdConfigGenerator::addSocket(const CoreIdentity *identity,
-                                       const QHostAddress &localAddress, quint16 localPort,
-                                       const QHostAddress &peerAddress, quint16 peerPort,
+bool OidentdConfigGenerator::addSocket(const CoreIdentity* identity,
+                                       const QHostAddress& localAddress,
+                                       quint16 localPort,
+                                       const QHostAddress& peerAddress,
+                                       quint16 peerPort,
                                        qint64 socketId)
 {
     Q_UNUSED(localAddress)
@@ -95,11 +98,12 @@ bool OidentdConfigGenerator::addSocket(const CoreIdentity *identity,
     return ret;
 }
 
-
 //! not yet implemented
-bool OidentdConfigGenerator::removeSocket(const CoreIdentity *identity,
-                                          const QHostAddress &localAddress, quint16 localPort,
-                                          const QHostAddress &peerAddress, quint16 peerPort,
+bool OidentdConfigGenerator::removeSocket(const CoreIdentity* identity,
+                                          const QHostAddress& localAddress,
+                                          quint16 localPort,
+                                          const QHostAddress& peerAddress,
+                                          quint16 peerPort,
                                           qint64 socketId)
 {
     Q_UNUSED(identity)
@@ -111,7 +115,6 @@ bool OidentdConfigGenerator::removeSocket(const CoreIdentity *identity,
 
     return true;
 }
-
 
 bool OidentdConfigGenerator::parseConfig(bool readQuasselStanzas)
 {
@@ -138,11 +141,10 @@ bool OidentdConfigGenerator::parseConfig(bool readQuasselStanzas)
     return true;
 }
 
-
 bool OidentdConfigGenerator::writeConfig()
 {
 #ifdef HAVE_UMASK
-    mode_t prev_umask = umask(S_IXUSR | S_IWGRP | S_IXGRP | S_IWOTH | S_IXOTH); // == 0133, rw-r--r--
+    mode_t prev_umask = umask(S_IXUSR | S_IWGRP | S_IXGRP | S_IWOTH | S_IXOTH);  // == 0133, rw-r--r--
 #endif
     bool not_open = (!_configFile->isOpen() && !_configFile->open(QIODevice::ReadWrite | QIODevice::Text));
 #ifdef HAVE_UMASK
@@ -164,8 +166,7 @@ bool OidentdConfigGenerator::writeConfig()
     return true;
 }
 
-
-bool OidentdConfigGenerator::lineByUs(const QByteArray &line)
+bool OidentdConfigGenerator::lineByUs(const QByteArray& line)
 {
     return _quasselStanzaRx.exactMatch(line);
 }

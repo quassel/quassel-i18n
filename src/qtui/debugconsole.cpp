@@ -19,23 +19,18 @@
  ***************************************************************************/
 
 #include "debugconsole.h"
+
 #include "client.h"
 #include "signalproxy.h"
 
-DebugConsole::DebugConsole(QWidget *parent)
+DebugConsole::DebugConsole(QWidget* parent)
     : QDialog(parent)
 {
     ui.setupUi(this);
 
-    Client::signalProxy()->attachSignal(this, SIGNAL(scriptRequest(QString)));
-    Client::signalProxy()->attachSlot(SIGNAL(scriptResult(QString)), this, SLOT(scriptResult(QString)));
+    Client::signalProxy()->attachSignal(this, &DebugConsole::scriptRequest);
+    Client::signalProxy()->attachSlot(SIGNAL(scriptResult(QString)), this, &DebugConsole::scriptResult);
 }
-
-
-DebugConsole::~DebugConsole()
-{
-}
-
 
 void DebugConsole::on_evalButton_clicked()
 {
@@ -43,7 +38,6 @@ void DebugConsole::on_evalButton_clicked()
         emit scriptRequest(ui.scriptEdit->toPlainText());
     }
 }
-
 
 void DebugConsole::scriptResult(QString result)
 {

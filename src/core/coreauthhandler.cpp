@@ -21,29 +21,24 @@
 #include "coreauthhandler.h"
 
 #ifdef HAVE_SSL
-#  include <QSslSocket>
+#    include <QSslSocket>
 #endif
 
 #include "core.h"
-#include "logmessage.h"
 
-using namespace Protocol;
-
-CoreAuthHandler::CoreAuthHandler(QTcpSocket *socket, QObject *parent)
-    : AuthHandler(parent),
-    _peer(0),
-    _magicReceived(false),
-    _legacy(false),
-    _clientRegistered(false),
-    _connectionFeatures(0)
+CoreAuthHandler::CoreAuthHandler(QTcpSocket* socket, QObject* parent)
+    : AuthHandler(parent)
+    , _peer(nullptr)
+    , _magicReceived(false)
+    , _legacy(false)
+    , _clientRegistered(false)
+    , _connectionFeatures(0)
 {
     setSocket(socket);
-    connect(socket, SIGNAL(readyRead()), SLOT(onReadyRead()));
+    connect(socket, &QIODevice::readyRead, this, &CoreAuthHandler::onReadyRead);
 
     // TODO: Timeout for the handshake phase
-
 }
-
 
 void CoreAuthHandler::onReadyRead()
 {
@@ -63,8 +58,12 @@ void CoreAuthHandler::onReadyRead()
             // no magic, assume legacy protocol
             qDebug() << "Legacy client detected, switching to compatibility mode";
             _legacy = true;
-            RemotePeer *peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(Protocol::LegacyProtocol, 0), this, socket(), Compressor::NoCompression, this);
-            connect(peer, SIGNAL(protocolVersionMismatch(int,int)), SLOT(onProtocolVersionMismatch(int,int)));
+            RemotePeer* peer = PeerFactory::createPeer(PeerFactory::ProtoDescriptor(Protocol::LegacyProtocol, 0),
+                                                       this,
+                                                       socket(),
+                                                       Compressor::NoCompression,
+                                                       this);
+            connect(peer, &RemotePeer::protocolVersionMismatch, this, &CoreAuthHandler::onProtocolVersionMismatch);
             setPeer(peer);
             return;
         }
@@ -77,27 +76,27 @@ void CoreAuthHandler::onReadyRead()
         if (features & Protocol::Compression)
             _connectionFeatures |= Protocol::Compression;
 
-        socket()->read((char*)&magic, 4); // read the 4 bytes we've just peeked at
+        socket()->read((char*)&magic, 4);  // read the 4 bytes we've just peeked at
     }
 
     // read the list of protocols supported by the client
-    while (socket()->bytesAvailable() >= 4 && _supportedProtos.size() < 16) { // sanity check
+    while (socket()->bytesAvailable() >= 4 && _supportedProtos.size() < 16) {  // sanity check
         quint32 data;
         socket()->read((char*)&data, 4);
         data = qFromBigEndian<quint32>(data);
 
-        Protocol::Type type = static_cast<Protocol::Type>(data & 0xff);
-        quint16 protoFeatures = static_cast<quint16>(data>>8 & 0xffff);
+        auto type = static_cast<Protocol::Type>(data & 0xff);
+        auto protoFeatures = static_cast<quint16>(data >> 8 & 0xffff);
         _supportedProtos.append(PeerFactory::ProtoDescriptor(type, protoFeatures));
 
-        if (data >= 0x80000000) { // last protocol
+        if (data >= 0x80000000) {  // last protocol
             Compressor::CompressionLevel level;
             if (_connectionFeatures & Protocol::Compression)
                 level = Compressor::BestCompression;
             else
                 level = Compressor::NoCompression;
 
-            RemotePeer *peer = PeerFactory::createPeer(_supportedProtos, this, socket(), level, this);
+            RemotePeer* peer = PeerFactory::createPeer(_supportedProtos, this, socket(), level, this);
             if (!peer) {
                 qWarning() << "Received invalid handshake data from client" << socket()->peerAddress().toString();
                 close();
@@ -106,30 +105,29 @@ void CoreAuthHandler::onReadyRead()
 
             if (peer->protocol() == Protocol::LegacyProtocol) {
                 _legacy = true;
-                connect(peer, SIGNAL(protocolVersionMismatch(int,int)), SLOT(onProtocolVersionMismatch(int,int)));
+                connect(peer, &RemotePeer::protocolVersionMismatch, this, &CoreAuthHandler::onProtocolVersionMismatch);
             }
             setPeer(peer);
 
             // inform the client
-            quint32 reply = peer->protocol() | peer->enabledFeatures()<<8 | _connectionFeatures<<24;
+            quint32 reply = peer->protocol() | peer->enabledFeatures() << 8 | _connectionFeatures << 24;
             reply = qToBigEndian<quint32>(reply);
             socket()->write((char*)&reply, 4);
             socket()->flush();
 
             if (!_legacy && (_connectionFeatures & Protocol::Encryption))
-                startSsl(); // legacy peer enables it later
+                startSsl();  // legacy peer enables it later
             return;
         }
     }
 }
 
-
-void CoreAuthHandler::setPeer(RemotePeer *peer)
+void CoreAuthHandler::setPeer(RemotePeer* peer)
 {
     qDebug().nospace() << "Using " << qPrintable(peer->protocolName()) << "...";
 
     _peer = peer;
-    disconnect(socket(), SIGNAL(readyRead()), this, SLOT(onReadyRead()));
+    disconnect(socket(), &QIODevice::readyRead, this, &CoreAuthHandler::onReadyRead);
 }
 
 // only in compat mode
@@ -138,25 +136,26 @@ void CoreAuthHandler::onProtocolVersionMismatch(int actual, int expected)
     qWarning() << qPrintable(tr("Client")) << _peer->description() << qPrintable(tr("too old, rejecting."));
     QString errorString = tr("<b>Your Quassel Client is too old!</b><br>"
                              "This core needs at least client/core protocol version %1 (got: %2).<br>"
-                             "Please consider upgrading your client.").arg(expected, actual);
-    _peer->dispatch(ClientDenied(errorString));
+                             "Please consider upgrading your client.")
+                              .arg(expected, actual);
+    _peer->dispatch(Protocol::ClientDenied(errorString));
     _peer->close();
 }
-
 
 bool CoreAuthHandler::checkClientRegistered()
 {
     if (!_clientRegistered) {
-        qWarning() << qPrintable(tr("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(tr("did not send a registration message before trying to login, rejecting."));
-        _peer->dispatch(ClientDenied(tr("<b>Client not initialized!</b><br>You need to send a registration message before trying to login.")));
+        qWarning() << qPrintable(tr("Client")) << qPrintable(socket()->peerAddress().toString())
+                   << qPrintable(tr("did not send a registration message before trying to login, rejecting."));
+        _peer->dispatch(
+            Protocol::ClientDenied(tr("<b>Client not initialized!</b><br>You need to send a registration message before trying to login.")));
         _peer->close();
         return false;
     }
     return true;
 }
 
-
-void CoreAuthHandler::handle(const RegisterClient &msg)
+void CoreAuthHandler::handle(const Protocol::RegisterClient& msg)
 {
     bool useSsl;
     if (_legacy)
@@ -165,8 +164,8 @@ void CoreAuthHandler::handle(const RegisterClient &msg)
         useSsl = _connectionFeatures & Protocol::Encryption;
 
     if (Quassel::isOptionSet("require-ssl") && !useSsl && !_peer->isLocal()) {
-        quInfo() << qPrintable(tr("SSL required but non-SSL connection attempt from %1").arg(socket()->peerAddress().toString()));
-        _peer->dispatch(ClientDenied(tr("<b>SSL is required!</b><br>You need to use SSL in order to connect to this core.")));
+        qInfo() << qPrintable(tr("SSL required but non-SSL connection attempt from %1").arg(socket()->peerAddress().toString()));
+        _peer->dispatch(Protocol::ClientDenied(tr("<b>SSL is required!</b><br>You need to use SSL in order to connect to this core.")));
         _peer->close();
         return;
     }
@@ -185,7 +184,7 @@ void CoreAuthHandler::handle(const RegisterClient &msg)
         }
     }
 
-    _peer->dispatch(ClientRegistered(Quassel::Features{}, configured, backends, authenticators, useSsl));
+    _peer->dispatch(Protocol::ClientRegistered(Quassel::Features{}, configured, backends, authenticators, useSsl));
 
     // useSsl is only used for the legacy protocol
     if (_legacy && useSsl)
@@ -194,8 +193,7 @@ void CoreAuthHandler::handle(const RegisterClient &msg)
     _clientRegistered = true;
 }
 
-
-void CoreAuthHandler::handle(const SetupData &msg)
+void CoreAuthHandler::handle(const Protocol::SetupData& msg)
 {
     if (!checkClientRegistered())
         return;
@@ -203,27 +201,28 @@ void CoreAuthHandler::handle(const SetupData &msg)
     // The default parameter to authenticator is Database.
     // Maybe this should be hardcoded elsewhere, i.e. as a define.
     QString authenticator = msg.authenticator;
-    quInfo() << "[" << authenticator << "]";
+    qInfo() << "[" << authenticator << "]";
     if (authenticator.trimmed().isEmpty()) {
         authenticator = QString("Database");
     }
 
     QString result = Core::setup(msg.adminUser, msg.adminPassword, msg.backend, msg.setupData, authenticator, msg.authSetupData);
     if (!result.isEmpty())
-        _peer->dispatch(SetupFailed(result));
+        _peer->dispatch(Protocol::SetupFailed(result));
     else
-        _peer->dispatch(SetupDone());
+        _peer->dispatch(Protocol::SetupDone());
 }
 
-
-void CoreAuthHandler::handle(const Login &msg)
+void CoreAuthHandler::handle(const Protocol::Login& msg)
 {
     if (!checkClientRegistered())
         return;
 
     if (!Core::isConfigured()) {
-        qWarning() << qPrintable(tr("Client")) << qPrintable(socket()->peerAddress().toString()) << qPrintable(tr("attempted to login before the core was configured, rejecting."));
-        _peer->dispatch(ClientDenied(tr("<b>Attempted to login before core was configured!</b><br>The core must be configured before attempting to login.")));
+        qWarning() << qPrintable(tr("Client")) << qPrintable(socket()->peerAddress().toString())
+                   << qPrintable(tr("attempted to login before the core was configured, rejecting."));
+        _peer->dispatch(Protocol::ClientDenied(
+            tr("<b>Attempted to login before core was configured!</b><br>The core must be configured before attempting to login.")));
         return;
     }
 
@@ -235,58 +234,57 @@ void CoreAuthHandler::handle(const Login &msg)
     }
 
     if (uid == 0) {
-        quInfo() << qPrintable(tr("Invalid login attempt from %1 as \"%2\"").arg(socket()->peerAddress().toString(), msg.user));
-        _peer->dispatch(LoginFailed(tr("<b>Invalid username or password!</b><br>The username/password combination you supplied could not be found in the database.")));
+        qInfo() << qPrintable(tr("Invalid login attempt from %1 as \"%2\"").arg(socket()->peerAddress().toString(), msg.user));
+        _peer->dispatch(Protocol::LoginFailed(tr(
+            "<b>Invalid username or password!</b><br>The username/password combination you supplied could not be found in the database.")));
         return;
     }
-    _peer->dispatch(LoginSuccess());
+    _peer->dispatch(Protocol::LoginSuccess());
 
-    quInfo() << qPrintable(tr("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).").arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
+    qInfo() << qPrintable(tr("Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3).")
+                          .arg(socket()->peerAddress().toString(), msg.user, QString::number(uid.toInt())));
 
-    const auto &clientFeatures = _peer->features();
+    const auto& clientFeatures = _peer->features();
     auto unsupported = clientFeatures.toStringList(false);
     if (!unsupported.isEmpty()) {
         if (unsupported.contains("NoFeatures"))
-            quInfo() << qPrintable(tr("Client does not support extended features."));
+            qInfo() << qPrintable(tr("Client does not support extended features."));
         else
-            quInfo() << qPrintable(tr("Client does not support the following features: %1").arg(unsupported.join(", ")));
+            qInfo() << qPrintable(tr("Client does not support the following features: %1").arg(unsupported.join(", ")));
     }
 
     if (!clientFeatures.unknownFeatures().isEmpty()) {
-        quInfo() << qPrintable(tr("Client supports unknown features: %1").arg(clientFeatures.unknownFeatures().join(", ")));
+        qInfo() << qPrintable(tr("Client supports unknown features: %1").arg(clientFeatures.unknownFeatures().join(", ")));
     }
 
-    disconnect(socket(), 0, this, 0);
-    disconnect(_peer, 0, this, 0);
-    _peer->setParent(0); // Core needs to take care of this one now!
+    disconnect(socket(), nullptr, this, nullptr);
+    disconnect(_peer, nullptr, this, nullptr);
+    _peer->setParent(nullptr);  // Core needs to take care of this one now!
 
-    socket()->flush(); // Make sure all data is sent before handing over the peer (and socket) to the session thread (bug 682)
+    socket()->flush();  // Make sure all data is sent before handing over the peer (and socket) to the session thread (bug 682)
     emit handshakeComplete(_peer, uid);
 }
-
 
 /*** SSL Stuff ***/
 
 void CoreAuthHandler::startSsl()
 {
-    #ifdef HAVE_SSL
-    QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket());
+#ifdef HAVE_SSL
+    auto* sslSocket = qobject_cast<QSslSocket*>(socket());
     Q_ASSERT(sslSocket);
 
-    qDebug() << qPrintable(tr("Starting encryption for Client:"))  << _peer->description();
-    connect(sslSocket, SIGNAL(sslErrors(const QList<QSslError> &)), SLOT(onSslErrors()));
-    sslSocket->flush(); // ensure that the write cache is flushed before we switch to ssl (bug 682)
+    qDebug() << qPrintable(tr("Starting encryption for Client:")) << _peer->description();
+    connect(sslSocket, selectOverload<const QList<QSslError>&>(&QSslSocket::sslErrors), this, &CoreAuthHandler::onSslErrors);
+    sslSocket->flush();  // ensure that the write cache is flushed before we switch to ssl (bug 682)
     sslSocket->startServerEncryption();
-    #endif /* HAVE_SSL */
+#endif /* HAVE_SSL */
 }
-
 
 #ifdef HAVE_SSL
 void CoreAuthHandler::onSslErrors()
 {
-    QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket());
+    auto* sslSocket = qobject_cast<QSslSocket*>(socket());
     Q_ASSERT(sslSocket);
     sslSocket->ignoreSslErrors();
 }
 #endif
-

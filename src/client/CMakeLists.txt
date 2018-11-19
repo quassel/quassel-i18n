@@ -1,11 +1,9 @@
-# Builds the client module
+quassel_add_module(Client EXPORT)
 
-# In Qt4, we still have some minor deps to QtGui: QItemSelectionModel, QSortFilterProxyModel
-# Still in Qt5: QAbstractItemView in BufferModel
-
-set(SOURCES
+target_sources(${TARGET} PRIVATE
     abstractmessageprocessor.cpp
     backlogrequester.cpp
+    backlogsettings.cpp
     buffermodel.cpp
     buffersettings.cpp
     bufferviewoverlay.cpp
@@ -38,13 +36,17 @@ set(SOURCES
     abstractui.h
 )
 
-if (USE_QT5)
-    list(APPEND qt_modules Widgets)
+target_link_libraries(${TARGET}
+    PUBLIC
+        Qt5::Core
+        Qt5::Gui
+        Qt5::Network
+        Qt5::Widgets  # QAbstractItemView in BufferModel
+        Quassel::Common
+)
+
+if (EMBED_DATA)
+    set_property(SOURCE client.cpp APPEND PROPERTY COMPILE_DEFINITIONS EMBED_DATA)
 endif()
 
-qt_add_resources(SOURCES ${CLIENT_RCS})
-
-add_library(mod_client STATIC ${SOURCES})
-qt_use_modules(mod_client Network Core Gui ${qt_modules})
-
-target_link_libraries(mod_client mod_common)
+target_link_if_exists(${TARGET} PUBLIC Quassel::Resource::Data)

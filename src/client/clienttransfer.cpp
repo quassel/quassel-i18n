@@ -18,18 +18,16 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QFile>
-
 #include "clienttransfer.h"
 
-INIT_SYNCABLE_OBJECT(ClientTransfer)
-ClientTransfer::ClientTransfer(const QUuid &uuid, QObject *parent)
-    : Transfer(uuid, parent),
-    _file(0)
-{
-    connect(this, SIGNAL(statusChanged(Transfer::Status)), SLOT(onStatusChanged(Transfer::Status)));
-}
+#include <QFile>
 
+ClientTransfer::ClientTransfer(const QUuid& uuid, QObject* parent)
+    : Transfer(uuid, parent)
+    , _file(nullptr)
+{
+    connect(this, &Transfer::statusChanged, this, &ClientTransfer::onStatusChanged);
+}
 
 quint64 ClientTransfer::transferred() const
 {
@@ -39,46 +37,41 @@ quint64 ClientTransfer::transferred() const
     return _file ? _file->size() : 0;
 }
 
-
 void ClientTransfer::cleanUp()
 {
     if (_file) {
         _file->close();
         _file->deleteLater();
-        _file = 0;
+        _file = nullptr;
     }
 }
-
 
 QString ClientTransfer::savePath() const
 {
     return _savePath;
 }
 
-
-void ClientTransfer::accept(const QString &savePath) const
+void ClientTransfer::accept(const QString& savePath) const
 {
     _savePath = savePath;
-    PeerPtr ptr = 0;
+    PeerPtr ptr = nullptr;
     REQUEST_OTHER(requestAccepted, ARG(ptr));
     emit accepted();
 }
 
-
 void ClientTransfer::reject() const
 {
-    PeerPtr ptr = 0;
+    PeerPtr ptr = nullptr;
     REQUEST_OTHER(requestRejected, ARG(ptr));
     emit rejected();
 }
 
-
-void ClientTransfer::dataReceived(PeerPtr, const QByteArray &data)
+void ClientTransfer::dataReceived(PeerPtr, const QByteArray& data)
 {
     // TODO: proper error handling (relay to core)
     if (!_file) {
         _file = new QFile(_savePath, this);
-        if (!_file->open(QFile::WriteOnly|QFile::Truncate)) {
+        if (!_file->open(QFile::WriteOnly | QFile::Truncate)) {
             qWarning() << Q_FUNC_INFO << "Could not open file:" << _file->errorString();
             return;
         }
@@ -95,19 +88,18 @@ void ClientTransfer::dataReceived(PeerPtr, const QByteArray &data)
     emit transferredChanged(transferred());
 }
 
-
 void ClientTransfer::onStatusChanged(Transfer::Status status)
 {
-    switch(status) {
-        case Status::Completed:
-            if (_file)
-                _file->close();
-            break;
-        case Status::Failed:
-            if (_file)
-                _file->remove();
-            break;
-        default:
-            ;
+    switch (status) {
+    case Status::Completed:
+        if (_file)
+            _file->close();
+        break;
+    case Status::Failed:
+        if (_file)
+            _file->remove();
+        break;
+    default:
+        ;
     }
 }

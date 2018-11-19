@@ -18,33 +18,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include "execwrapper.h"
+
 #include <QFile>
 #include <QTextCodec>
-
-#include "execwrapper.h"
 
 #include "client.h"
 #include "messagemodel.h"
 #include "quassel.h"
+#include "util.h"
 
-ExecWrapper::ExecWrapper(QObject *parent) : QObject(parent)
+ExecWrapper::ExecWrapper(QObject* parent)
+    : QObject(parent)
 {
-    connect(&_process, SIGNAL(readyReadStandardOutput()), SLOT(processReadStdout()));
-    connect(&_process, SIGNAL(readyReadStandardError()), SLOT(processReadStderr()));
-    connect(&_process, SIGNAL(finished(int, QProcess::ExitStatus)), SLOT(processFinished(int, QProcess::ExitStatus)));
-    connect(&_process, SIGNAL(error(QProcess::ProcessError)), SLOT(processError(QProcess::ProcessError)));
+    connect(&_process, &QProcess::readyReadStandardOutput, this, &ExecWrapper::processReadStdout);
+    connect(&_process, &QProcess::readyReadStandardError, this, &ExecWrapper::processReadStderr);
+    connect(&_process, selectOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, &ExecWrapper::processFinished);
+    connect(&_process, selectOverload<QProcess::ProcessError>(&QProcess::error), this, &ExecWrapper::processError);
 
-    connect(this, SIGNAL(output(QString)), SLOT(postStdout(QString)));
-    connect(this, SIGNAL(error(QString)), SLOT(postStderr(QString)));
+    connect(this, &ExecWrapper::output, this, &ExecWrapper::postStdout);
+    connect(this, &ExecWrapper::error, this, &ExecWrapper::postStderr);
 }
 
-
-void ExecWrapper::start(const BufferInfo &info, const QString &command)
+void ExecWrapper::start(const BufferInfo& info, const QString& command)
 {
     _bufferInfo = info;
     QString params;
 
-    QRegExp rx("^\\s*(\\S+)(\\s+(.*))?$");
+    QRegExp rx(R"(^\s*(\S+)(\s+(.*))?$)");
     if (!rx.exactMatch(command)) {
         emit error(tr("Invalid command string for /exec: %1").arg(command));
     }
@@ -55,10 +56,10 @@ void ExecWrapper::start(const BufferInfo &info, const QString &command)
 
     // Make sure we don't execute something outside a script dir
     if (_scriptName.contains("../") || _scriptName.contains("..\\"))
-        emit error(tr("Name \"%1\" is invalid: ../ or ..\\ are not allowed!").arg(_scriptName));
+        emit error(tr(R"(Name "%1" is invalid: ../ or ..\ are not allowed!)").arg(_scriptName));
 
     else {
-        foreach(QString scriptDir, Quassel::scriptDirPaths()) {
+        foreach (QString scriptDir, Quassel::scriptDirPaths()) {
             QString fileName = scriptDir + _scriptName;
             if (!QFile::exists(fileName))
                 continue;
@@ -69,23 +70,20 @@ void ExecWrapper::start(const BufferInfo &info, const QString &command)
         emit error(tr("Could not find script \"%1\"").arg(_scriptName));
     }
 
-    deleteLater(); // self-destruct
+    deleteLater();  // self-destruct
 }
 
-
-void ExecWrapper::postStdout(const QString &msg)
+void ExecWrapper::postStdout(const QString& msg)
 {
     if (_bufferInfo.isValid())
         Client::userInput(_bufferInfo, msg);
 }
 
-
-void ExecWrapper::postStderr(const QString &msg)
+void ExecWrapper::postStderr(const QString& msg)
 {
     if (_bufferInfo.isValid())
         Client::messageModel()->insertErrorMessage(_bufferInfo, msg);
 }
-
 
 void ExecWrapper::processFinished(int exitCode, QProcess::ExitStatus status)
 {
@@ -95,15 +93,14 @@ void ExecWrapper::processFinished(int exitCode, QProcess::ExitStatus status)
 
     // empty buffers
     if (!_stdoutBuffer.isEmpty())
-        foreach(QString msg, _stdoutBuffer.split('\n'))
-        emit output(msg);
+        foreach (QString msg, _stdoutBuffer.split('\n'))
+            emit output(msg);
     if (!_stderrBuffer.isEmpty())
-        foreach(QString msg, _stderrBuffer.split('\n'))
-        emit error(msg);
+        foreach (QString msg, _stderrBuffer.split('\n'))
+            emit error(msg);
 
     deleteLater();
 }
-
 
 void ExecWrapper::processError(QProcess::ProcessError err)
 {
@@ -116,7 +113,6 @@ void ExecWrapper::processError(QProcess::ProcessError err)
         deleteLater();
 }
 
-
 void ExecWrapper::processReadStdout()
 {
     QString str = QTextCodec::codecForLocale()->toUnicode(_process.readAllStandardOutput());
@@ -128,7 +124,6 @@ void ExecWrapper::processReadStdout()
         _stdoutBuffer = _stdoutBuffer.mid(idx + 1);
     }
 }
-
 
 void ExecWrapper::processReadStderr()
 {

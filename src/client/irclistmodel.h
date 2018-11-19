@@ -18,38 +18,36 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef IRCLISTMODEL_H
-#define IRCLISTMODEL_H
+#pragma once
 
-#include "irclisthelper.h"
+#include "client-export.h"
 
 #include <QAbstractItemModel>
 
-class IrcListModel : public QAbstractItemModel
+#include "irclisthelper.h"
+
+class CLIENT_EXPORT IrcListModel : public QAbstractItemModel
 {
     Q_OBJECT
 
 public:
-    IrcListModel(QObject *parent = 0);
+    IrcListModel(QObject* parent = nullptr);
 
-    virtual QVariant data(const QModelIndex &index, int role) const;
-    virtual Qt::ItemFlags flags(const QModelIndex &index) const;
+    QVariant data(const QModelIndex& index, int role) const override;
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
 
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
 
-    inline QModelIndex parent(const QModelIndex &) const { return QModelIndex(); }
+    inline QModelIndex parent(const QModelIndex&) const override { return {}; }
 
-    inline int rowCount(const QModelIndex &parent = QModelIndex()) const { Q_UNUSED(parent) return _channelList.count(); }
-    inline int columnCount(const QModelIndex &parent = QModelIndex()) const { Q_UNUSED(parent) return 3; }
+    inline int rowCount(const QModelIndex& parent = QModelIndex()) const override { Q_UNUSED(parent) return _channelList.count(); }
+    inline int columnCount(const QModelIndex& parent = QModelIndex()) const override { Q_UNUSED(parent) return 3; }
 
 public slots:
-    void setChannelList(const QList<IrcListHelper::ChannelDescription> &channelList = QList<IrcListHelper::ChannelDescription>());
+    void setChannelList(const QList<IrcListHelper::ChannelDescription>& channelList = QList<IrcListHelper::ChannelDescription>());
 
 private:
     QList<IrcListHelper::ChannelDescription> _channelList;
 };
-
-
-#endif //IRCLISTMODEL_H

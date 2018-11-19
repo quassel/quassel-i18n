@@ -18,45 +18,45 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtEndian>
+#include "coretransfer.h"
 
 #include <QCoreApplication>
 #include <QTcpSocket>
+#include <QtEndian>
 
-#include "coretransfer.h"
+#include "util.h"
 
 const qint64 chunkSize = 16 * 1024;
 
-INIT_SYNCABLE_OBJECT(CoreTransfer)
-
-CoreTransfer::CoreTransfer(Direction direction, const QString &nick, const QString &fileName, const QHostAddress &address, quint16 port, quint64 fileSize, QObject *parent)
-    : Transfer(direction, nick, fileName, address, port, fileSize, parent),
-    _socket(0),
-    _pos(0),
-    _reading(false)
-{
-
-}
-
+CoreTransfer::CoreTransfer(Direction direction,
+                           const QString& nick,
+                           const QString& fileName,
+                           const QHostAddress& address,
+                           quint16 port,
+                           quint64 fileSize,
+                           QObject* parent)
+    : Transfer(direction, nick, fileName, address, port, fileSize, parent)
+    , _socket(nullptr)
+    , _pos(0)
+    , _reading(false)
+{}
 
 quint64 CoreTransfer::transferred() const
 {
     return _pos;
 }
 
-
 void CoreTransfer::cleanUp()
 {
     if (_socket) {
         _socket->close();
         _socket->deleteLater();
-        _socket = 0;
+        _socket = nullptr;
     }
 
     _buffer.clear();
     _reading = false;
 }
-
 
 void CoreTransfer::onSocketDisconnected()
 {
@@ -67,7 +67,6 @@ void CoreTransfer::onSocketDisconnected()
         cleanUp();
 }
 
-
 void CoreTransfer::onSocketError(QAbstractSocket::SocketError error)
 {
     Q_UNUSED(error)
@@ -77,11 +76,10 @@ void CoreTransfer::onSocketError(QAbstractSocket::SocketError error)
     }
 }
 
-
 void CoreTransfer::requestAccepted(PeerPtr peer)
 {
     if (_peer || !peer || status() != Status::New)
-        return; // transfer was already accepted
+        return;  // transfer was already accepted
 
     _peer = peer;
     setStatus(Status::Pending);
@@ -91,7 +89,6 @@ void CoreTransfer::requestAccepted(PeerPtr peer)
     // FIXME temporary until we have queueing
     start();
 }
-
 
 void CoreTransfer::requestRejected(PeerPtr peer)
 {
@@ -104,7 +101,6 @@ void CoreTransfer::requestRejected(PeerPtr peer)
     emit rejected(peer);
 }
 
-
 void CoreTransfer::start()
 {
     if (!_peer || status() != Status::Pending || direction() != Direction::Receive)
@@ -112,7 +108,6 @@ void CoreTransfer::start()
 
     setupConnectionForReceive();
 }
-
 
 void CoreTransfer::setupConnectionForReceive()
 {
@@ -124,24 +119,22 @@ void CoreTransfer::setupConnectionForReceive()
     setStatus(Status::Connecting);
 
     _socket = new QTcpSocket(this);
-    connect(_socket, SIGNAL(connected()), SLOT(startReceiving()));
-    connect(_socket, SIGNAL(disconnected()), SLOT(onSocketDisconnected()));
-    connect(_socket, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(onSocketError(QAbstractSocket::SocketError)));
-    connect(_socket, SIGNAL(readyRead()), SLOT(onDataReceived()));
+    connect(_socket, &QAbstractSocket::connected, this, &CoreTransfer::startReceiving);
+    connect(_socket, &QAbstractSocket::disconnected, this, &CoreTransfer::onSocketDisconnected);
+    connect(_socket, selectOverload<QAbstractSocket::SocketError>(&QAbstractSocket::error), this, &CoreTransfer::onSocketError);
+    connect(_socket, &QIODevice::readyRead, this, &CoreTransfer::onDataReceived);
 
     _socket->connectToHost(address(), port());
 }
-
 
 void CoreTransfer::startReceiving()
 {
     setStatus(Status::Transferring);
 }
 
-
 void CoreTransfer::onDataReceived()
 {
-    if (_reading) // since we're spinning the event loop, we may get another readyRead() and thus reentrancy
+    if (_reading)  // since we're spinning the event loop, we may get another readyRead() and thus reentrancy
         return;
     _reading = true;
 
@@ -153,14 +146,14 @@ void CoreTransfer::onDataReceived()
             return;
 
         QCoreApplication::processEvents();  // don't block the rest of the core/client communication
-        if (!_socket)  // just in case something happened during spinning the event loop that killed our socket
+        if (!_socket)                       // just in case something happened during spinning the event loop that killed our socket
             return;
     }
 
     // Send ack to sender. The DCC protocol only specifies 32 bit values, but modern clients (i.e. those who can send files
     // larger than 4 GB) will ignore this anyway...
-    quint32 ack = qToBigEndian((quint32)_pos);// qDebug() << Q_FUNC_INFO << _pos;
-    _socket->write((char *)&ack, 4);
+    quint32 ack = qToBigEndian((quint32)_pos);  // qDebug() << Q_FUNC_INFO << _pos;
+    _socket->write((char*)&ack, 4);
 
     if (_pos > fileSize()) {
         qWarning() << "DCC Receive: Got more data than expected!";
@@ -168,15 +161,14 @@ void CoreTransfer::onDataReceived()
     }
     else if (_pos == fileSize()) {
         qDebug() << "DCC Receive: Transfer finished";
-        if (relayData(QByteArray(), false)) // empty buffer
+        if (relayData(QByteArray(), false))  // empty buffer
             setStatus(Status::Completed);
     }
 
     _reading = false;
 }
 
-
-bool CoreTransfer::relayData(const QByteArray &data, bool requireChunkSize)
+bool CoreTransfer::relayData(const QByteArray& data, bool requireChunkSize)
 {
     // safeguard against a disconnecting quasselclient
     if (!_peer) {
@@ -187,7 +179,7 @@ bool CoreTransfer::relayData(const QByteArray &data, bool requireChunkSize)
 
     // we only want to send data to the client once we have reached the chunksize
     if (_buffer.size() > 0 && (_buffer.size() >= chunkSize || !requireChunkSize)) {
-        Peer *p = _peer.data();
+        Peer* p = _peer.data();
         SYNC_OTHER(dataReceived, ARG(p), ARG(_buffer));
         _buffer.clear();
     }

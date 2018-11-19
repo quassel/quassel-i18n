@@ -18,42 +18,40 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef NICKVIEW_H_
-#define NICKVIEW_H_
+#pragma once
+
+#include "uisupport-export.h"
 
 #include <QTreeView>
 
 #include "bufferinfo.h"
 #include "treeviewtouch.h"
 
-class NickView : public TreeViewTouch
+class UISUPPORT_EXPORT NickView : public TreeViewTouch
 {
     Q_OBJECT
 
 public:
-    NickView(QWidget *parent = 0);
+    NickView(QWidget* parent = nullptr);
 
 protected:
-    virtual void rowsInserted(const QModelIndex &parent, int start, int end);
+    void rowsInserted(const QModelIndex& parent, int start, int end) override;
 
     //! This reimplementation ensures that the current index is first in list
-    virtual QModelIndexList selectedIndexes() const;
+    QModelIndexList selectedIndexes() const override;
 
     void unanimatedExpandAll();
 
 public slots:
-    virtual void setModel(QAbstractItemModel *model);
-    virtual void setRootIndex(const QModelIndex &index);
+    void setModel(QAbstractItemModel* model) override;
+    void setRootIndex(const QModelIndex& index) override;
     void init();
-    void showContextMenu(const QPoint &pos);
-    void startQuery(const QModelIndex &modelIndex);
+    void showContextMenu(const QPoint& pos);
+    void startQuery(const QModelIndex& modelIndex);
 
 signals:
     void selectionUpdated();
 
 private:
-    friend class NickListWidget; // needs selectedIndexes()
+    friend class NickListWidget;  // needs selectedIndexes()
 };
-
-
-#endif

@@ -18,47 +18,39 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QStringList>
-
 #include "clientsettings.h"
 
+#include <utility>
+
 #include <QHostAddress>
+#include <QStringList>
 #ifdef HAVE_SSL
-#include <QSslSocket>
+#    include <QSslSocket>
 #endif
 
 #include "client.h"
 #include "quassel.h"
 
-ClientSettings::ClientSettings(QString g) : Settings(g, Quassel::buildInfo().clientApplicationName)
-{
-}
-
-
-ClientSettings::~ClientSettings()
-{
-}
-
+ClientSettings::ClientSettings(QString g)
+    : Settings(g, Quassel::buildInfo().clientApplicationName)
+{}
 
 /***********************************************************************************************/
 
-CoreAccountSettings::CoreAccountSettings(const QString &subgroup)
-    : ClientSettings("CoreAccounts"),
-    _subgroup(subgroup)
+CoreAccountSettings::CoreAccountSettings(QString subgroup)
+    : ClientSettings("CoreAccounts")
+    , _subgroup(std::move(subgroup))
+{}
+
+QString CoreAccountSettings::keyForNotify(const QString& key) const
 {
+    return QString{"%1/%2/%3"}.arg(Client::currentCoreAccount().accountId().toInt()).arg(_subgroup).arg(key);
 }
 
-
-void CoreAccountSettings::notify(const QString &key, QObject *receiver, const char *slot)
-{
-    ClientSettings::notify(QString("%1/%2/%3").arg(Client::currentCoreAccount().accountId().toInt()).arg(_subgroup).arg(key), receiver, slot);
-}
-
-
-QList<AccountId> CoreAccountSettings::knownAccounts()
+QList<AccountId> CoreAccountSettings::knownAccounts() const
 {
     QList<AccountId> ids;
-    foreach(const QString &key, localChildGroups()) {
+    foreach (const QString& key, localChildGroups()) {
         AccountId acc = key.toInt();
         if (acc.isValid())
             ids << acc;
@@ -66,59 +58,50 @@ QList<AccountId> CoreAccountSettings::knownAccounts()
     return ids;
 }
 
-
-AccountId CoreAccountSettings::lastAccount()
+AccountId CoreAccountSettings::lastAccount() const
 {
     return localValue("LastAccount", 0).toInt();
 }
-
 
 void CoreAccountSettings::setLastAccount(AccountId account)
 {
     setLocalValue("LastAccount", account.toInt());
 }
 
-
-AccountId CoreAccountSettings::autoConnectAccount()
+AccountId CoreAccountSettings::autoConnectAccount() const
 {
     return localValue("AutoConnectAccount", 0).toInt();
 }
-
 
 void CoreAccountSettings::setAutoConnectAccount(AccountId account)
 {
     setLocalValue("AutoConnectAccount", account.toInt());
 }
 
-
-bool CoreAccountSettings::autoConnectOnStartup()
+bool CoreAccountSettings::autoConnectOnStartup() const
 {
     return localValue("AutoConnectOnStartup", false).toBool();
 }
-
 
 void CoreAccountSettings::setAutoConnectOnStartup(bool b)
 {
     setLocalValue("AutoConnectOnStartup", b);
 }
 
-
-bool CoreAccountSettings::autoConnectToFixedAccount()
+bool CoreAccountSettings::autoConnectToFixedAccount() const
 {
     return localValue("AutoConnectToFixedAccount", false).toBool();
 }
-
 
 void CoreAccountSettings::setAutoConnectToFixedAccount(bool b)
 {
     setLocalValue("AutoConnectToFixedAccount", b);
 }
 
-
-void CoreAccountSettings::storeAccountData(AccountId id, const QVariantMap &data)
+void CoreAccountSettings::storeAccountData(AccountId id, const QVariantMap& data)
 {
     QString base = QString::number(id.toInt());
-    foreach(const QString &key, data.keys()) {
+    foreach (const QString& key, data.keys()) {
         setLocalValue(base + "/" + key, data.value(key));
     }
 
@@ -126,12 +109,11 @@ void CoreAccountSettings::storeAccountData(AccountId id, const QVariantMap &data
     removeLocalKey(QString("%1/Connection").arg(base));
 }
 
-
-QVariantMap CoreAccountSettings::retrieveAccountData(AccountId id)
+QVariantMap CoreAccountSettings::retrieveAccountData(AccountId id) const
 {
     QVariantMap map;
     QString base = QString::number(id.toInt());
-    foreach(const QString &key, localChildKeys(base)) {
+    foreach (const QString& key, localChildKeys(base)) {
         map[key] = localValue(base + "/" + key);
     }
 
@@ -160,24 +142,21 @@ QVariantMap CoreAccountSettings::retrieveAccountData(AccountId id)
     return map;
 }
 
-
-void CoreAccountSettings::setAccountValue(const QString &key, const QVariant &value)
+void CoreAccountSettings::setAccountValue(const QString& key, const QVariant& value)
 {
     if (!Client::currentCoreAccount().isValid())
         return;
     setLocalValue(QString("%1/%2/%3").arg(Client::currentCoreAccount().accountId().toInt()).arg(_subgroup).arg(key), value);
 }
 
-
-QVariant CoreAccountSettings::accountValue(const QString &key, const QVariant &def)
+QVariant CoreAccountSettings::accountValue(const QString& key, const QVariant& def) const
 {
     if (!Client::currentCoreAccount().isValid())
         return QVariant();
     return localValue(QString("%1/%2/%3").arg(Client::currentCoreAccount().accountId().toInt()).arg(_subgroup).arg(key), def);
 }
 
-
-void CoreAccountSettings::setJumpKeyMap(const QHash<int, BufferId> &keyMap)
+void CoreAccountSettings::setJumpKeyMap(const QHash<int, BufferId>& keyMap)
 {
     QVariantMap variants;
     QHash<int, BufferId>::const_iterator mapIter = keyMap.constBegin();
@@ -188,8 +167,7 @@ void CoreAccountSettings::setJumpKeyMap(const QHash<int, BufferId> &keyMap)
     setAccountValue("JumpKeyMap", variants);
 }
 
-
-QHash<int, BufferId> CoreAccountSettings::jumpKeyMap()
+QHash<int, BufferId> CoreAccountSettings::jumpKeyMap() const
 {
     QHash<int, BufferId> keyMap;
     QVariantMap variants = accountValue("JumpKeyMap", QVariant()).toMap();
@@ -201,18 +179,16 @@ QHash<int, BufferId> CoreAccountSettings::jumpKeyMap()
     return keyMap;
 }
 
-
-void CoreAccountSettings::setBufferViewOverlay(const QSet<int> &viewIds)
+void CoreAccountSettings::setBufferViewOverlay(const QSet<int>& viewIds)
 {
     QVariantList variants;
-    foreach(int viewId, viewIds) {
+    foreach (int viewId, viewIds) {
         variants << qVariantFromValue(viewId);
     }
     setAccountValue("BufferViewOverlay", variants);
 }
 
-
-QSet<int> CoreAccountSettings::bufferViewOverlay()
+QSet<int> CoreAccountSettings::bufferViewOverlay() const
 {
     QSet<int> viewIds;
     QVariantList variants = accountValue("BufferViewOverlay").toList();
@@ -222,206 +198,191 @@ QSet<int> CoreAccountSettings::bufferViewOverlay()
     return viewIds;
 }
 
-
 void CoreAccountSettings::removeAccount(AccountId id)
 {
     removeLocalKey(QString("%1").arg(id.toInt()));
 }
 
-
 void CoreAccountSettings::clearAccounts()
 {
-    foreach(const QString &key, localChildGroups())
-    removeLocalKey(key);
+    foreach (const QString& key, localChildGroups())
+        removeLocalKey(key);
 }
-
 
 /***********************************************************************************************/
 // CoreConnectionSettings:
 
-CoreConnectionSettings::CoreConnectionSettings() : ClientSettings("CoreConnection") {}
+CoreConnectionSettings::CoreConnectionSettings()
+    : ClientSettings("CoreConnection")
+{}
 
 void CoreConnectionSettings::setNetworkDetectionMode(NetworkDetectionMode mode)
 {
     setLocalValue("NetworkDetectionMode", mode);
 }
 
-
-CoreConnectionSettings::NetworkDetectionMode CoreConnectionSettings::networkDetectionMode()
+CoreConnectionSettings::NetworkDetectionMode CoreConnectionSettings::networkDetectionMode() const
 {
     auto mode = localValue("NetworkDetectionMode", UseQNetworkConfigurationManager).toInt();
     if (mode == 0)
-        mode = UseQNetworkConfigurationManager; // UseSolid is gone, map that to the new default
+        mode = UseQNetworkConfigurationManager;  // UseSolid is gone, map that to the new default
     return static_cast<NetworkDetectionMode>(mode);
 }
-
 
 void CoreConnectionSettings::setAutoReconnect(bool autoReconnect)
 {
     setLocalValue("AutoReconnect", autoReconnect);
 }
 
-
-bool CoreConnectionSettings::autoReconnect()
+bool CoreConnectionSettings::autoReconnect() const
 {
     return localValue("AutoReconnect", true).toBool();
 }
-
 
 void CoreConnectionSettings::setPingTimeoutInterval(int interval)
 {
     setLocalValue("PingTimeoutInterval", interval);
 }
 
-
-int CoreConnectionSettings::pingTimeoutInterval()
+int CoreConnectionSettings::pingTimeoutInterval() const
 {
     return localValue("PingTimeoutInterval", 60).toInt();
 }
-
 
 void CoreConnectionSettings::setReconnectInterval(int interval)
 {
     setLocalValue("ReconnectInterval", interval);
 }
 
-
-int CoreConnectionSettings::reconnectInterval()
+int CoreConnectionSettings::reconnectInterval() const
 {
     return localValue("ReconnectInterval", 60).toInt();
 }
 
-
 /***********************************************************************************************/
 // NotificationSettings:
 
-NotificationSettings::NotificationSettings() : ClientSettings("Notification")
+NotificationSettings::NotificationSettings()
+    : ClientSettings("Notification")
+{}
+
+void NotificationSettings::setValue(const QString& key, const QVariant& data)
 {
+    setLocalValue(key, data);
 }
 
+QVariant NotificationSettings::value(const QString& key, const QVariant& def) const
+{
+    return localValue(key, def);
+}
 
-void NotificationSettings::setHighlightList(const QVariantList &highlightList)
+void NotificationSettings::remove(const QString& key)
+{
+    removeLocalKey(key);
+}
+
+void NotificationSettings::setHighlightList(const QVariantList& highlightList)
 {
     setLocalValue("Highlights/CustomList", highlightList);
 }
 
-
-QVariantList NotificationSettings::highlightList()
+QVariantList NotificationSettings::highlightList() const
 {
     return localValue("Highlights/CustomList").toList();
 }
-
 
 void NotificationSettings::setHighlightNick(NotificationSettings::HighlightNickType highlightNickType)
 {
     setLocalValue("Highlights/HighlightNick", highlightNickType);
 }
 
-
-NotificationSettings::HighlightNickType NotificationSettings::highlightNick()
+NotificationSettings::HighlightNickType NotificationSettings::highlightNick() const
 {
-    return (NotificationSettings::HighlightNickType)localValue("Highlights/HighlightNick",
-                                                               CurrentNick).toInt();
+    return (NotificationSettings::HighlightNickType)localValue("Highlights/HighlightNick", CurrentNick).toInt();
 }
-
 
 void NotificationSettings::setNicksCaseSensitive(bool cs)
 {
     setLocalValue("Highlights/NicksCaseSensitive", cs);
 }
 
-
-bool NotificationSettings::nicksCaseSensitive()
+bool NotificationSettings::nicksCaseSensitive() const
 {
     return localValue("Highlights/NicksCaseSensitive", false).toBool();
 }
-
 
 // ========================================
 //  TabCompletionSettings
 // ========================================
 
-TabCompletionSettings::TabCompletionSettings() : ClientSettings("TabCompletion")
-{
-}
+TabCompletionSettings::TabCompletionSettings()
+    : ClientSettings("TabCompletion")
+{}
 
-
-void TabCompletionSettings::setCompletionSuffix(const QString &suffix)
+void TabCompletionSettings::setCompletionSuffix(const QString& suffix)
 {
     setLocalValue("CompletionSuffix", suffix);
 }
 
-
-QString TabCompletionSettings::completionSuffix()
+QString TabCompletionSettings::completionSuffix() const
 {
     return localValue("CompletionSuffix", ": ").toString();
 }
-
 
 void TabCompletionSettings::setAddSpaceMidSentence(bool space)
 {
     setLocalValue("AddSpaceMidSentence", space);
 }
 
-
-bool TabCompletionSettings::addSpaceMidSentence()
+bool TabCompletionSettings::addSpaceMidSentence() const
 {
     return localValue("AddSpaceMidSentence", false).toBool();
 }
-
 
 void TabCompletionSettings::setSortMode(SortMode mode)
 {
     setLocalValue("SortMode", mode);
 }
 
-
-TabCompletionSettings::SortMode TabCompletionSettings::sortMode()
+TabCompletionSettings::SortMode TabCompletionSettings::sortMode() const
 {
     return static_cast<SortMode>(localValue("SortMode"), LastActivity);
 }
-
 
 void TabCompletionSettings::setCaseSensitivity(Qt::CaseSensitivity cs)
 {
     setLocalValue("CaseSensitivity", cs);
 }
 
-
-Qt::CaseSensitivity TabCompletionSettings::caseSensitivity()
+Qt::CaseSensitivity TabCompletionSettings::caseSensitivity() const
 {
     return (Qt::CaseSensitivity)localValue("CaseSensitivity", Qt::CaseInsensitive).toInt();
 }
-
 
 void TabCompletionSettings::setUseLastSpokenTo(bool use)
 {
     setLocalValue("UseLastSpokenTo", use);
 }
 
-
-bool TabCompletionSettings::useLastSpokenTo()
+bool TabCompletionSettings::useLastSpokenTo() const
 {
     return localValue("UseLastSpokenTo", false).toBool();
 }
-
 
 // ========================================
 //  ItemViewSettings
 // ========================================
 
-ItemViewSettings::ItemViewSettings(const QString &group) : ClientSettings(group)
-{
-}
+ItemViewSettings::ItemViewSettings(const QString& group)
+    : ClientSettings(group)
+{}
 
-
-bool ItemViewSettings::displayTopicInTooltip()
+bool ItemViewSettings::displayTopicInTooltip() const
 {
     return localValue("DisplayTopicInTooltip", false).toBool();
 }
 
-
-bool ItemViewSettings::mouseWheelChangesBuffer()
+bool ItemViewSettings::mouseWheelChangesBuffer() const
 {
     return localValue("MouseWheelChangesBuffer", false).toBool();
 }

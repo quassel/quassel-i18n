@@ -21,21 +21,21 @@
 #include "nickview.h"
 
 #include <QApplication>
-#include <QHeaderView>
-#include <QScrollBar>
 #include <QDebug>
+#include <QHeaderView>
 #include <QMenu>
+#include <QScrollBar>
 
 #include "buffermodel.h"
 #include "client.h"
 #include "contextmenuactionprovider.h"
 #include "graphicalui.h"
+#include "networkmodel.h"
 #include "nickview.h"
 #include "nickviewfilter.h"
-#include "networkmodel.h"
 #include "types.h"
 
-NickView::NickView(QWidget *parent)
+NickView::NickView(QWidget* parent)
     : TreeViewTouch(parent)
 {
     setIndentation(10);
@@ -47,20 +47,17 @@ NickView::NickView(QWidget *parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-//   // breaks with Qt 4.8
-//   if(QString("4.8.0") > qVersion()) // FIXME breaks with Qt versions >= 4.10!
     setAnimated(true);
 
-    connect(this, SIGNAL(customContextMenuRequested(const QPoint &)), SLOT(showContextMenu(const QPoint &)));
+    connect(this, &QWidget::customContextMenuRequested, this, &NickView::showContextMenu);
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
     // afaik this is better on Mac and Windows
-    connect(this, SIGNAL(activated(QModelIndex)), SLOT(startQuery(QModelIndex)));
+    connect(this, &QAbstractItemView::activated, this, &NickView::startQuery);
 #else
-    connect(this, SIGNAL(doubleClicked(QModelIndex)), SLOT(startQuery(QModelIndex)));
+    connect(this, &QAbstractItemView::doubleClicked, this, &NickView::startQuery);
 #endif
 }
-
 
 void NickView::init()
 {
@@ -70,22 +67,20 @@ void NickView::init()
     for (int i = 1; i < model()->columnCount(); i++)
         setColumnHidden(i, true);
 
-    connect(selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)), SIGNAL(selectionUpdated()));
-    connect(selectionModel(), SIGNAL(selectionChanged(QItemSelection, QItemSelection)), SIGNAL(selectionUpdated()));
+    connect(selectionModel(), &QItemSelectionModel::currentChanged, this, &NickView::selectionUpdated);
+    connect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &NickView::selectionUpdated);
 }
 
-
-void NickView::setModel(QAbstractItemModel *model_)
+void NickView::setModel(QAbstractItemModel* model_)
 {
     if (model())
-        disconnect(model(), 0, this, 0);
+        disconnect(model(), nullptr, this, nullptr);
 
     TreeViewTouch::setModel(model_);
     init();
 }
 
-
-void NickView::rowsInserted(const QModelIndex &parent, int start, int end)
+void NickView::rowsInserted(const QModelIndex& parent, int start, int end)
 {
     TreeViewTouch::rowsInserted(parent, start, end);
     if (model()->data(parent, NetworkModel::ItemTypeRole) == NetworkModel::UserCategoryItemType && !isExpanded(parent)) {
@@ -93,14 +88,12 @@ void NickView::rowsInserted(const QModelIndex &parent, int start, int end)
     }
 }
 
-
-void NickView::setRootIndex(const QModelIndex &index)
+void NickView::setRootIndex(const QModelIndex& index)
 {
     QAbstractItemView::setRootIndex(index);
     if (index.isValid())
         unanimatedExpandAll();
 }
-
 
 QModelIndexList NickView::selectedIndexes() const
 {
@@ -115,7 +108,6 @@ QModelIndexList NickView::selectedIndexes() const
     return indexList;
 }
 
-
 void NickView::unanimatedExpandAll()
 {
     // since of Qt Version 4.8.0 the default expandAll will not properly work if
@@ -127,8 +119,7 @@ void NickView::unanimatedExpandAll()
     setAnimated(wasAnimated);
 }
 
-
-void NickView::showContextMenu(const QPoint &pos)
+void NickView::showContextMenu(const QPoint& pos)
 {
     Q_UNUSED(pos);
 
@@ -137,13 +128,12 @@ void NickView::showContextMenu(const QPoint &pos)
     contextMenu.exec(QCursor::pos());
 }
 
-
-void NickView::startQuery(const QModelIndex &index)
+void NickView::startQuery(const QModelIndex& index)
 {
     if (index.data(NetworkModel::ItemTypeRole) != NetworkModel::IrcUserItemType)
         return;
 
-    IrcUser *ircUser = qobject_cast<IrcUser *>(index.data(NetworkModel::IrcUserRole).value<QObject *>());
+    auto* ircUser = qobject_cast<IrcUser*>(index.data(NetworkModel::IrcUserRole).value<QObject*>());
     NetworkId networkId = index.data(NetworkModel::NetworkIdRole).value<NetworkId>();
     if (!ircUser || !networkId.isValid())
         return;

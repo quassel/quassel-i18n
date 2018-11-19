@@ -18,12 +18,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef TABCOMPLETER_H_
-#define TABCOMPLETER_H_
+#pragma once
 
+#include "uisupport-export.h"
+
+#include <QMap>
 #include <QPointer>
 #include <QString>
-#include <QMap>
 
 #include "types.h"
 
@@ -31,31 +32,32 @@ class MultiLineEdit;
 class IrcUser;
 class Network;
 
-class TabCompleter : public QObject
+class UISUPPORT_EXPORT TabCompleter : public QObject
 {
     Q_OBJECT
 
 public:
-    enum Type {
+    enum Type
+    {
         UserTab = 0x01,
         ChannelTab = 0x02
     };
 
-    explicit TabCompleter(MultiLineEdit *inputLine_);
+    explicit TabCompleter(MultiLineEdit* inputLine_);
 
     void reset();
     void complete();
 
-    virtual bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject* obj, QEvent* event) override;
 
 public slots:
     void onTabCompletionKey();
 
 private:
-
-    struct CompletionKey {
-        inline CompletionKey(const QString &n) { contents = n; }
-        bool operator<(const CompletionKey &other) const;
+    struct CompletionKey
+    {
+        inline CompletionKey(const QString& n) { contents = n; }
+        bool operator<(const CompletionKey& other) const;
         QString contents;
     };
 
@@ -63,7 +65,7 @@ private:
     bool _enabled;
     QString _nickSuffix;
 
-    static const Network *_currentNetwork;
+    static const Network* _currentNetwork;
     static BufferId _currentBufferId;
     static QString _currentBufferName;
     static Type _completionType;
@@ -76,6 +78,3 @@ private:
 
     void buildCompletionList();
 };
-
-
-#endif

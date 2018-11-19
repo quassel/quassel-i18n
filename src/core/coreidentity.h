@@ -18,15 +18,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREIDENTITY_H
-#define COREIDENTITY_H
+#pragma once
 
 #include "identity.h"
 
 #ifdef HAVE_SSL
-#include <QSslKey>
-#include <QSslCertificate>
-#endif //HAVE_SSL
+#    include <QSslCertificate>
+#    include <QSslKey>
+#endif  // HAVE_SSL
 
 class SignalProxy;
 
@@ -37,55 +36,52 @@ class SignalProxy;
 class CoreIdentity;
 class CoreCertManager : public CertManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    CoreCertManager(CoreIdentity &identity);
+    CoreCertManager(CoreIdentity& identity);
 
-#ifdef HAVE_SSL
-    virtual const QSslKey &sslKey() const;
-    virtual const QSslCertificate &sslCert() const;
+#    ifdef HAVE_SSL
+    const QSslKey& sslKey() const override;
+    const QSslCertificate& sslCert() const override;
 
 public slots:
-    virtual void setSslKey(const QByteArray &encoded);
-    virtual void setSslCert(const QByteArray &encoded);
-#endif
+    void setSslKey(const QByteArray& encoded) override;
+    void setSslCert(const QByteArray& encoded) override;
+#    endif
 
     void setId(IdentityId id);
 
 private:
-    CoreIdentity &identity;
+    CoreIdentity& identity;
 };
 
-
-#endif //HAVE_SSL
+#endif  // HAVE_SSL
 
 // =========================================
 //  CoreIdentity
 // =========================================
 class CoreIdentity : public Identity
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    CoreIdentity(IdentityId id, QObject *parent = 0);
-    CoreIdentity(const Identity &other, QObject *parent = 0);
-    CoreIdentity(const CoreIdentity &other, QObject *parent = 0);
+    CoreIdentity(IdentityId id, QObject* parent = nullptr);
+    CoreIdentity(const Identity& other, QObject* parent = nullptr);
+    CoreIdentity(const CoreIdentity& other, QObject* parent = nullptr);
 
-    void synchronize(SignalProxy *proxy);
+    void synchronize(SignalProxy* proxy);
 
 #ifdef HAVE_SSL
-    inline const QSslKey &sslKey() const { return _sslKey; }
-    inline void setSslKey(const QSslKey &key) { _sslKey = key; }
-    void setSslKey(const QByteArray &encoded);
-    inline const QSslCertificate &sslCert() const { return _sslCert; }
-    inline void setSslCert(const QSslCertificate &cert) { _sslCert = cert; }
-    void setSslCert(const QByteArray &encoded);
+    inline const QSslKey& sslKey() const { return _sslKey; }
+    inline void setSslKey(const QSslKey& key) { _sslKey = key; }
+    void setSslKey(const QByteArray& encoded);
+    inline const QSslCertificate& sslCert() const { return _sslCert; }
+    inline void setSslCert(const QSslCertificate& cert) { _sslCert = cert; }
+    void setSslCert(const QByteArray& encoded);
 #endif /* HAVE_SSL */
 
-    CoreIdentity &operator=(const CoreIdentity &identity);
+    CoreIdentity& operator=(const CoreIdentity& identity);
 
 private:
 #ifdef HAVE_SSL
@@ -96,20 +92,15 @@ private:
 #endif
 };
 
-
 #ifdef HAVE_SSL
-inline const QSslKey &CoreCertManager::sslKey() const
+inline const QSslKey& CoreCertManager::sslKey() const
 {
     return identity.sslKey();
 }
 
-
-inline const QSslCertificate &CoreCertManager::sslCert() const
+inline const QSslCertificate& CoreCertManager::sslCert() const
 {
     return identity.sslCert();
 }
 
-
 #endif
-
-#endif //COREIDENTITY_H

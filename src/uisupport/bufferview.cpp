@@ -20,8 +20,8 @@
 
 #include "bufferview.h"
 
-#include <QApplication>
 #include <QAction>
+#include <QApplication>
 #include <QFlags>
 #include <QHeaderView>
 #include <QLineEdit>
@@ -32,35 +32,33 @@
 
 #include "action.h"
 #include "buffermodel.h"
-#include "bufferviewfilter.h"
 #include "buffersettings.h"
 #include "buffersyncer.h"
+#include "bufferviewfilter.h"
 #include "client.h"
 #include "contextmenuactionprovider.h"
 #include "graphicalui.h"
 #include "network.h"
 #include "networkmodel.h"
-#include "contextmenuactionprovider.h"
 
 /*****************************************
-* The TreeView showing the Buffers
-*****************************************/
+ * The TreeView showing the Buffers
+ *****************************************/
 // Please be carefull when reimplementing methods which are used to inform the view about changes to the data
 // to be on the safe side: call QTreeView's method aswell (or TreeViewTouch's)
-BufferView::BufferView(QWidget *parent)
+BufferView::BufferView(QWidget* parent)
     : TreeViewTouch(parent)
 {
-    connect(this, SIGNAL(collapsed(const QModelIndex &)), SLOT(storeExpandedState(const QModelIndex &)));
-    connect(this, SIGNAL(expanded(const QModelIndex &)), SLOT(storeExpandedState(const QModelIndex &)));
+    connect(this, &QTreeView::collapsed, this, &BufferView::storeExpandedState);
+    connect(this, &QTreeView::expanded, this, &BufferView::storeExpandedState);
 
     setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-    QAbstractItemDelegate *oldDelegate = itemDelegate();
-    BufferViewDelegate *tristateDelegate = new BufferViewDelegate(this);
+    QAbstractItemDelegate* oldDelegate = itemDelegate();
+    auto* tristateDelegate = new BufferViewDelegate(this);
     setItemDelegate(tristateDelegate);
     delete oldDelegate;
 }
-
 
 void BufferView::init()
 {
@@ -71,13 +69,11 @@ void BufferView::init()
 
     // New entries will be expanded automatically when added; no need to call expandAll()
 
-    header()->hide(); // nobody seems to use this anyway
+    header()->hide();  // nobody seems to use this anyway
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    // breaks with Qt 4.8
-    if (QString("4.8.0") > qVersion()) // FIXME breaks with Qt versions >= 4.10!
-        setAnimated(true);
+    setAnimated(true);
 
     // FIXME This is to workaround bug #663
     setUniformRowHeights(true);
@@ -93,24 +89,21 @@ void BufferView::init()
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
     // afaik this is better on Mac and Windows
-    disconnect(this, SIGNAL(activated(QModelIndex)), this, SLOT(joinChannel(QModelIndex)));
-    connect(this, SIGNAL(activated(QModelIndex)), SLOT(joinChannel(QModelIndex)));
+    connect(this, &QAbstractItemView::activated, this, &BufferView::joinChannel, Qt::UniqueConnection);
 #else
-    disconnect(this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(joinChannel(QModelIndex)));
-    connect(this, SIGNAL(doubleClicked(QModelIndex)), SLOT(joinChannel(QModelIndex)));
+    connect(this, &QAbstractItemView::doubleClicked, this, &BufferView::joinChannel, Qt::UniqueConnection);
 #endif
 }
 
-
-void BufferView::setModel(QAbstractItemModel *model)
+void BufferView::setModel(QAbstractItemModel* model)
 {
     delete selectionModel();
 
     TreeViewTouch::setModel(model);
     init();
     // remove old Actions
-    QList<QAction *> oldactions = header()->actions();
-    foreach(QAction *action, oldactions) {
+    QList<QAction*> oldactions = header()->actions();
+    foreach (QAction* action, oldactions) {
         header()->removeAction(action);
         action->deleteLater();
     }
@@ -119,18 +112,18 @@ void BufferView::setModel(QAbstractItemModel *model)
         return;
 
     QString sectionName;
-    QAction *showSection;
+    QAction* showSection;
     for (int i = 1; i < model->columnCount(); i++) {
         sectionName = (model->headerData(i, Qt::Horizontal, Qt::DisplayRole)).toString();
         showSection = new QAction(sectionName, header());
         showSection->setCheckable(true);
         showSection->setChecked(!isColumnHidden(i));
         showSection->setProperty("column", i);
-        connect(showSection, SIGNAL(toggled(bool)), this, SLOT(toggleHeader(bool)));
+        connect(showSection, &QAction::toggled, this, &BufferView::toggleHeader);
         header()->addAction(showSection);
     }
 
-    connect(model, SIGNAL(layoutChanged()), this, SLOT(on_layoutChanged()));
+    connect(model, &QAbstractItemModel::layoutChanged, this, &BufferView::on_layoutChanged);
 
     // Make sure collapsation is correct after setting a model
     // This might not be needed here, only in BufferView::setFilteredModel().  If issues arise, just
@@ -138,10 +131,9 @@ void BufferView::setModel(QAbstractItemModel *model)
     setExpandedState();
 }
 
-
-void BufferView::setFilteredModel(QAbstractItemModel *model_, BufferViewConfig *config)
+void BufferView::setFilteredModel(QAbstractItemModel* model_, BufferViewConfig* config)
 {
-    BufferViewFilter *filter = qobject_cast<BufferViewFilter *>(model());
+    auto* filter = qobject_cast<BufferViewFilter*>(model());
     if (filter) {
         filter->setConfig(config);
         setConfig(config);
@@ -149,34 +141,33 @@ void BufferView::setFilteredModel(QAbstractItemModel *model_, BufferViewConfig *
     }
 
     if (model()) {
-        disconnect(this, 0, model(), 0);
-        disconnect(model(), 0, this, 0);
+        disconnect(this, nullptr, model(), nullptr);
+        disconnect(model(), nullptr, this, nullptr);
     }
 
     if (!model_) {
         setModel(model_);
     }
     else {
-        BufferViewFilter *filter = new BufferViewFilter(model_, config);
+        auto* filter = new BufferViewFilter(model_, config);
         setModel(filter);
-        connect(filter, SIGNAL(configChanged()), this, SLOT(on_configChanged()));
+        connect(filter, &BufferViewFilter::configChanged, this, &BufferView::on_configChanged);
     }
     setConfig(config);
 }
 
-
-void BufferView::setConfig(BufferViewConfig *config)
+void BufferView::setConfig(BufferViewConfig* config)
 {
     if (_config == config)
         return;
 
     if (_config) {
-        disconnect(_config, 0, this, 0);
+        disconnect(_config, nullptr, this, nullptr);
     }
 
     _config = config;
     if (config) {
-        connect(config, SIGNAL(networkIdSet(const NetworkId &)), this, SLOT(setRootIndexForNetworkId(const NetworkId &)));
+        connect(config, &BufferViewConfig::networkIdSet, this, &BufferView::setRootIndexForNetworkId);
         setRootIndexForNetworkId(config->networkId());
     }
     else {
@@ -185,8 +176,7 @@ void BufferView::setConfig(BufferViewConfig *config)
     }
 }
 
-
-void BufferView::setRootIndexForNetworkId(const NetworkId &networkId)
+void BufferView::setRootIndexForNetworkId(const NetworkId& networkId)
 {
     if (!networkId.isValid() || !model()) {
         setIndentation(10);
@@ -204,8 +194,7 @@ void BufferView::setRootIndexForNetworkId(const NetworkId &networkId)
     }
 }
 
-
-void BufferView::joinChannel(const QModelIndex &index)
+void BufferView::joinChannel(const QModelIndex& index)
 {
     BufferInfo::Type bufferType = (BufferInfo::Type)index.data(NetworkModel::BufferTypeRole).value<int>();
 
@@ -217,8 +206,7 @@ void BufferView::joinChannel(const QModelIndex &index)
     Client::userInput(bufferInfo, QString("/JOIN %1").arg(bufferInfo.bufferName()));
 }
 
-
-void BufferView::dropEvent(QDropEvent *event)
+void BufferView::dropEvent(QDropEvent* event)
 {
     QModelIndex index = indexAt(event->pos());
 
@@ -228,12 +216,11 @@ void BufferView::dropEvent(QDropEvent *event)
     // check if we're really _on_ the item and not indicating a move to just above or below the item
     // Magic margin number for this is from QAbstractItemViewPrivate::position()
     const int margin = 2;
-    if (cursorPos.y() - indexRect.top() < margin
-        || indexRect.bottom() - cursorPos.y() < margin)
+    if (cursorPos.y() - indexRect.top() < margin || indexRect.bottom() - cursorPos.y() < margin)
         return TreeViewTouch::dropEvent(event);
 
     // If more than one buffer was being dragged, treat this as a rearrangement instead of a merge request
-    QList<QPair<NetworkId, BufferId> > bufferList = Client::networkModel()->mimeDataToBufferList(event->mimeData());
+    QList<QPair<NetworkId, BufferId>> bufferList = Client::networkModel()->mimeDataToBufferList(event->mimeData());
     if (bufferList.count() != 1)
         return TreeViewTouch::dropEvent(event);
 
@@ -255,23 +242,28 @@ void BufferView::dropEvent(QDropEvent *event)
     if (index2.data(NetworkModel::BufferTypeRole) == BufferInfo::ChannelBuffer && index2.data(NetworkModel::ItemActiveRole) == true)
         return TreeViewTouch::dropEvent(event);
 
-    //If the source buffer is not mergeable(AKA not a Channel and not a Query), try rearranging instead
-    if (index2.data(NetworkModel::BufferTypeRole) != BufferInfo::ChannelBuffer && index2.data(NetworkModel::BufferTypeRole) != BufferInfo::QueryBuffer)
+    // If the source buffer is not mergeable(AKA not a Channel and not a Query), try rearranging instead
+    if (index2.data(NetworkModel::BufferTypeRole) != BufferInfo::ChannelBuffer
+        && index2.data(NetworkModel::BufferTypeRole) != BufferInfo::QueryBuffer)
         return TreeViewTouch::dropEvent(event);
 
     // If the target buffer is not mergeable(AKA not a Channel and not a Query), try rearranging instead
-    if (index.data(NetworkModel::BufferTypeRole) != BufferInfo::ChannelBuffer && index.data(NetworkModel::BufferTypeRole) != BufferInfo::QueryBuffer)
+    if (index.data(NetworkModel::BufferTypeRole) != BufferInfo::ChannelBuffer
+        && index.data(NetworkModel::BufferTypeRole) != BufferInfo::QueryBuffer)
         return TreeViewTouch::dropEvent(event);
 
     // Confirm that the user really wants to merge the buffers before doing so
-    int res = QMessageBox::question(0, tr("Merge buffers permanently?"),
-        tr("Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n This cannot be reversed!").arg(Client::networkModel()->bufferName(bufferId2)).arg(Client::networkModel()->bufferName(bufferId1)),
-        QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+    int res = QMessageBox::question(nullptr,
+                                    tr("Merge buffers permanently?"),
+                                    tr("Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n This cannot be reversed!")
+                                        .arg(Client::networkModel()->bufferName(bufferId2))
+                                        .arg(Client::networkModel()->bufferName(bufferId1)),
+                                    QMessageBox::Yes | QMessageBox::No,
+                                    QMessageBox::No);
     if (res == QMessageBox::Yes) {
         Client::mergeBuffersPermanently(bufferId1, bufferId2);
     }
 }
-
 
 void BufferView::removeSelectedBuffers(bool permanently)
 {
@@ -280,7 +272,7 @@ void BufferView::removeSelectedBuffers(bool permanently)
 
     BufferId bufferId;
     QSet<BufferId> removedRows;
-    foreach(QModelIndex index, selectionModel()->selectedIndexes()) {
+    foreach (QModelIndex index, selectionModel()->selectedIndexes()) {
         if (index.data(NetworkModel::ItemTypeRole) != NetworkModel::BufferItemType)
             continue;
 
@@ -291,7 +283,7 @@ void BufferView::removeSelectedBuffers(bool permanently)
         removedRows << bufferId;
     }
 
-    foreach(BufferId bufferId, removedRows) {
+    foreach (BufferId bufferId, removedRows) {
         if (permanently)
             config()->requestRemoveBufferPermanently(bufferId);
         else
@@ -299,8 +291,7 @@ void BufferView::removeSelectedBuffers(bool permanently)
     }
 }
 
-
-void BufferView::rowsInserted(const QModelIndex &parent, int start, int end)
+void BufferView::rowsInserted(const QModelIndex& parent, int start, int end)
 {
     TreeViewTouch::rowsInserted(parent, start, end);
 
@@ -311,7 +302,6 @@ void BufferView::rowsInserted(const QModelIndex &parent, int start, int end)
     setExpandedState(parent);
 }
 
-
 void BufferView::on_layoutChanged()
 {
     int numNets = model()->rowCount(QModelIndex());
@@ -320,7 +310,6 @@ void BufferView::on_layoutChanged()
         setExpandedState(networkIdx);
     }
 }
-
 
 void BufferView::on_configChanged()
 {
@@ -335,7 +324,6 @@ void BufferView::on_configChanged()
     }
 }
 
-
 void BufferView::setExpandedState()
 {
     // Expand all active networks, collapse inactive ones... unless manually changed
@@ -343,7 +331,7 @@ void BufferView::setExpandedState()
     NetworkId networkId;
     for (int row = 0; row < model()->rowCount(); row++) {
         networkIdx = model()->index(row, 0);
-        if (model()->rowCount(networkIdx) ==  0)
+        if (model()->rowCount(networkIdx) == 0)
             continue;
 
         networkId = model()->data(networkIdx, NetworkModel::NetworkIdRole).value<NetworkId>();
@@ -354,8 +342,7 @@ void BufferView::setExpandedState()
     }
 }
 
-
-void BufferView::storeExpandedState(const QModelIndex &networkIdx)
+void BufferView::storeExpandedState(const QModelIndex& networkIdx)
 {
     NetworkId networkId = model()->data(networkIdx, NetworkModel::NetworkIdRole).value<NetworkId>();
 
@@ -368,8 +355,7 @@ void BufferView::storeExpandedState(const QModelIndex &networkIdx)
     _expandedState[networkId] = oldState;
 }
 
-
-void BufferView::setExpandedState(const QModelIndex &networkIdx)
+void BufferView::setExpandedState(const QModelIndex& networkIdx)
 {
     if (model()->data(networkIdx, NetworkModel::ItemTypeRole) != NetworkModel::NetworkItemType)
         return;
@@ -391,18 +377,12 @@ void BufferView::setExpandedState(const QModelIndex &networkIdx)
         update(networkIdx);
         setExpanded(networkIdx, expandNetwork);
     }
-    storeExpandedState(networkIdx); // this call is needed to keep track of the isActive state
+    storeExpandedState(networkIdx);  // this call is needed to keep track of the isActive state
 }
 
-#if QT_VERSION < 0x050000
-void BufferView::dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
-{
-    TreeViewTouch::dataChanged(topLeft, bottomRight);
-#else
-void BufferView::dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QVector<int> &roles)
+void BufferView::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector<int>& roles)
 {
     TreeViewTouch::dataChanged(topLeft, bottomRight, roles);
-#endif
 
     // determine how many items have been changed and if any of them is a networkitem
     // which just swichted from active to inactive or vice versa
@@ -415,15 +395,13 @@ void BufferView::dataChanged(const QModelIndex &topLeft, const QModelIndex &bott
     }
 }
 
-
 void BufferView::toggleHeader(bool checked)
 {
-    QAction *action = qobject_cast<QAction *>(sender());
+    auto* action = qobject_cast<QAction*>(sender());
     header()->setSectionHidden((action->property("column")).toInt(), !checked);
 }
 
-
-void BufferView::contextMenuEvent(QContextMenuEvent *event)
+void BufferView::contextMenuEvent(QContextMenuEvent* event)
 {
     QModelIndex index = indexAt(event->pos());
     if (!index.isValid())
@@ -441,34 +419,31 @@ void BufferView::contextMenuEvent(QContextMenuEvent *event)
         contextMenu.exec(QCursor::pos());
 }
 
-
-void BufferView::addActionsToMenu(QMenu *contextMenu, const QModelIndex &index)
+void BufferView::addActionsToMenu(QMenu* contextMenu, const QModelIndex& index)
 {
     QModelIndexList indexList = selectedIndexes();
     // make sure the item we clicked on is first
     indexList.removeAll(index);
     indexList.prepend(index);
 
-    GraphicalUi::contextMenuActionProvider()->addActions(contextMenu, indexList, this, "menuActionTriggered", (bool)config());
+    GraphicalUi::contextMenuActionProvider()->addActions(contextMenu, indexList, this, &BufferView::menuActionTriggered, (bool)config());
 }
 
-
-void BufferView::addFilterActions(QMenu *contextMenu, const QModelIndex &index)
+void BufferView::addFilterActions(QMenu* contextMenu, const QModelIndex& index)
 {
-    BufferViewFilter *filter = qobject_cast<BufferViewFilter *>(model());
+    auto* filter = qobject_cast<BufferViewFilter*>(model());
     if (filter) {
-        QList<QAction *> filterActions = filter->actions(index);
+        QList<QAction*> filterActions = filter->actions(index);
         if (!filterActions.isEmpty()) {
             contextMenu->addSeparator();
-            foreach(QAction *action, filterActions) {
+            foreach (QAction* action, filterActions) {
                 contextMenu->addAction(action);
             }
         }
     }
 }
 
-
-void BufferView::menuActionTriggered(QAction *result)
+void BufferView::menuActionTriggered(QAction* result)
 {
     ContextMenuActionProvider::ActionType type = (ContextMenuActionProvider::ActionType)result->data().toInt();
     switch (type) {
@@ -483,18 +458,15 @@ void BufferView::menuActionTriggered(QAction *result)
     }
 }
 
-
 void BufferView::nextBuffer()
 {
     changeBuffer(Forward);
 }
 
-
 void BufferView::previousBuffer()
 {
     changeBuffer(Backward);
 }
-
 
 void BufferView::changeBuffer(Direction direction)
 {
@@ -504,7 +476,7 @@ void BufferView::changeBuffer(Direction direction)
     QModelIndex lastNetIndex = model()->index(model()->rowCount() - 1, 0, QModelIndex());
 
     if (currentIndex.parent().isValid()) {
-        //If we are a child node just switch among siblings unless it's the first/last child
+        // If we are a child node just switch among siblings unless it's the first/last child
         resultingIndex = currentIndex.sibling(currentIndex.row() + direction, 0);
 
         if (!resultingIndex.isValid()) {
@@ -516,7 +488,7 @@ void BufferView::changeBuffer(Direction direction)
         }
     }
     else {
-        //If we have a toplevel node, try and get an adjacent child
+        // If we have a toplevel node, try and get an adjacent child
         if (direction == Backward) {
             QModelIndex newParent = currentIndex.sibling(currentIndex.row() - 1, 0);
             if (currentIndex.row() == 0)
@@ -570,7 +542,7 @@ void BufferView::selectFirstBuffer()
     selectionModel()->select(bufferIndex, QItemSelectionModel::ClearAndSelect);
 }
 
-void BufferView::wheelEvent(QWheelEvent *event)
+void BufferView::wheelEvent(QWheelEvent* event)
 {
     if (ItemViewSettings().mouseWheelChangesBuffer() == (bool)(event->modifiers() & Qt::AltModifier))
         return TreeViewTouch::wheelEvent(event);
@@ -578,7 +550,6 @@ void BufferView::wheelEvent(QWheelEvent *event)
     int rowDelta = (event->delta() > 0) ? -1 : 1;
     changeBuffer((Direction)rowDelta);
 }
-
 
 void BufferView::hideCurrentBuffer()
 {
@@ -588,7 +559,7 @@ void BufferView::hideCurrentBuffer()
 
     BufferId bufferId = index.data(NetworkModel::BufferIdRole).value<BufferId>();
 
-    //The check above means we won't be looking at a network, which should always be the first row, so we can just go backwards.
+    // The check above means we won't be looking at a network, which should always be the first row, so we can just go backwards.
     changeBuffer(Backward);
 
     config()->requestRemoveBuffer(bufferId);
@@ -596,38 +567,18 @@ void BufferView::hideCurrentBuffer()
 
 void BufferView::filterTextChanged(const QString& filterString)
 {
-    BufferViewFilter *filter = qobject_cast<BufferViewFilter *>(model());
+    auto* filter = qobject_cast<BufferViewFilter*>(model());
     if (!filter) {
         return;
     }
     filter->setFilterString(filterString);
-    on_configChanged(); // make sure collapsation is correct
+    on_configChanged();  // make sure collapsation is correct
 }
-
-
-QSize BufferView::sizeHint() const
-{
-    return TreeViewTouch::sizeHint();
-
-    if (!model())
-        return TreeViewTouch::sizeHint();
-
-    if (model()->rowCount() == 0)
-        return QSize(120, 50);
-
-    int columnSize = 0;
-    for (int i = 0; i < model()->columnCount(); i++) {
-        if (!isColumnHidden(i))
-            columnSize += sizeHintForColumn(i);
-    }
-    return QSize(columnSize, 50);
-}
-
 
 void BufferView::changeHighlight(BufferView::Direction direction)
 {
     // If for some weird reason we get a new delegate
-    BufferViewDelegate *delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
+    auto delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
     if (delegate) {
         delegate->currentHighlight = QModelIndex();
     }
@@ -639,7 +590,8 @@ void BufferView::changeHighlight(BufferView::Direction direction)
 
     if (direction == Backward) {
         newIndex = indexBelow(newIndex);
-    } else {
+    }
+    else {
         newIndex = indexAbove(newIndex);
     }
 
@@ -661,7 +613,8 @@ void BufferView::selectHighlighted()
     if (_currentHighlight.isValid()) {
         selectionModel()->setCurrentIndex(_currentHighlight, QItemSelectionModel::ClearAndSelect | QItemSelectionModel::Rows);
         selectionModel()->select(_currentHighlight, QItemSelectionModel::ClearAndSelect);
-    } else {
+    }
+    else {
         selectFirstBuffer();
     }
 
@@ -671,7 +624,7 @@ void BufferView::selectHighlighted()
 void BufferView::clearHighlight()
 {
     // If for some weird reason we get a new delegate
-    BufferViewDelegate *delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
+    auto delegate = qobject_cast<BufferViewDelegate*>(itemDelegate(_currentHighlight));
     if (delegate) {
         delegate->currentHighlight = QModelIndex();
     }
@@ -685,17 +638,15 @@ void BufferView::clearHighlight()
 class ColorsChangedEvent : public QEvent
 {
 public:
-    ColorsChangedEvent() : QEvent(QEvent::User) {};
+    ColorsChangedEvent()
+        : QEvent(QEvent::User){};
 };
 
-
-BufferViewDelegate::BufferViewDelegate(QObject *parent)
+BufferViewDelegate::BufferViewDelegate(QObject* parent)
     : QStyledItemDelegate(parent)
-{
-}
+{}
 
-
-void BufferViewDelegate::customEvent(QEvent *event)
+void BufferViewDelegate::customEvent(QEvent* event)
 {
     if (event->type() != QEvent::User)
         return;
@@ -703,8 +654,7 @@ void BufferViewDelegate::customEvent(QEvent *event)
     event->accept();
 }
 
-
-bool BufferViewDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const QStyleOptionViewItem &option, const QModelIndex &index)
+bool BufferViewDelegate::editorEvent(QEvent* event, QAbstractItemModel* model, const QStyleOptionViewItem& option, const QModelIndex& index)
 {
     if (event->type() != QEvent::MouseButtonRelease)
         return QStyledItemDelegate::editorEvent(event, model, option, index);
@@ -716,20 +666,16 @@ bool BufferViewDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, c
     if (!value.isValid())
         return QStyledItemDelegate::editorEvent(event, model, option, index);
 
-#if QT_VERSION < 0x050000
-    QStyleOptionViewItemV4 viewOpt(option);
-#else
     QStyleOptionViewItem viewOpt(option);
-#endif
     initStyleOption(&viewOpt, index);
 
     QRect checkRect = viewOpt.widget->style()->subElementRect(QStyle::SE_ItemViewItemCheckIndicator, &viewOpt, viewOpt.widget);
-    QMouseEvent *me = static_cast<QMouseEvent *>(event);
+    auto* me = static_cast<QMouseEvent*>(event);
 
     if (me->button() != Qt::LeftButton || !checkRect.contains(me->pos()))
         return QStyledItemDelegate::editorEvent(event, model, option, index);
 
-    Qt::CheckState state = static_cast<Qt::CheckState>(value.toInt());
+    auto state = static_cast<Qt::CheckState>(value.toInt());
     if (state == Qt::Unchecked)
         state = Qt::PartiallyChecked;
     else if (state == Qt::PartiallyChecked)
@@ -740,23 +686,22 @@ bool BufferViewDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, c
     return true;
 }
 
-
 // ==============================
 //  BufferView Dock
 // ==============================
-BufferViewDock::BufferViewDock(BufferViewConfig *config, QWidget *parent)
-    : QDockWidget(parent),
-    _childWidget(0),
-    _widget(new QWidget(parent)),
-    _filterEdit(new QLineEdit(parent)),
-    _active(false),
-    _title(config->bufferViewName())
+BufferViewDock::BufferViewDock(BufferViewConfig* config, QWidget* parent)
+    : QDockWidget(parent)
+    , _childWidget(nullptr)
+    , _widget(new QWidget(parent))
+    , _filterEdit(new QLineEdit(parent))
+    , _active(false)
+    , _title(config->bufferViewName())
 {
     setObjectName("BufferViewDock-" + QString::number(config->bufferViewId()));
     toggleViewAction()->setData(config->bufferViewId());
-    setAllowedAreas(Qt::RightDockWidgetArea|Qt::LeftDockWidgetArea);
-    connect(config, SIGNAL(bufferViewNameSet(const QString &)), this, SLOT(bufferViewRenamed(const QString &)));
-    connect(config, SIGNAL(configChanged()), SLOT(configChanged()));
+    setAllowedAreas(Qt::RightDockWidgetArea | Qt::LeftDockWidgetArea);
+    connect(config, &BufferViewConfig::bufferViewNameSet, this, &BufferViewDock::bufferViewRenamed);
+    connect(config, &BufferViewConfig::configChanged, this, &BufferViewDock::configChanged);
     updateTitle();
 
     _widget->setLayout(new QVBoxLayout);
@@ -768,15 +713,16 @@ BufferViewDock::BufferViewDock(BufferViewConfig *config, QWidget *parent)
     _filterEdit->setFocusPolicy(Qt::ClickFocus);
     _filterEdit->installEventFilter(this);
     _filterEdit->setPlaceholderText(tr("Search..."));
-    connect(_filterEdit, SIGNAL(returnPressed()), SLOT(onFilterReturnPressed()));
+    connect(_filterEdit, &QLineEdit::returnPressed, this, &BufferViewDock::onFilterReturnPressed);
 
     _widget->layout()->addWidget(_filterEdit);
     QDockWidget::setWidget(_widget);
 }
 
-void BufferViewDock::setLocked(bool locked) {
+void BufferViewDock::setLocked(bool locked)
+{
     if (locked) {
-        setFeatures(0);
+        setFeatures(nullptr);
     }
     else {
         setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
@@ -803,14 +749,14 @@ void BufferViewDock::onFilterReturnPressed()
 {
     if (_oldFocusItem) {
         _oldFocusItem->setFocus();
-        _oldFocusItem = 0;
+        _oldFocusItem = nullptr;
     }
 
     if (!config()->showSearch()) {
         _filterEdit->setVisible(false);
     }
 
-    BufferView *view = bufferView();
+    BufferView* view = bufferView();
     if (!view) {
         return;
     }
@@ -818,7 +764,8 @@ void BufferViewDock::onFilterReturnPressed()
     if (!_filterEdit->text().isEmpty()) {
         view->selectHighlighted();
         _filterEdit->clear();
-    } else {
+    }
+    else {
         view->clearHighlight();
     }
 }
@@ -834,21 +781,22 @@ void BufferViewDock::setActive(bool active)
     }
 }
 
-bool BufferViewDock::eventFilter(QObject *object, QEvent *event)
+bool BufferViewDock::eventFilter(QObject* object, QEvent* event)
 {
-   if (object != _filterEdit)  {
-       return false;
-   }
+    if (object != _filterEdit) {
+        return false;
+    }
 
    if (event->type() == QEvent::FocusOut) {
        if (!config()->showSearch() && _filterEdit->text().isEmpty()) {
            _filterEdit->setVisible(false);
            return true;
        }
-   } else if (event->type() == QEvent::KeyRelease) {
-       QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+   }
+   else if (event->type() == QEvent::KeyRelease) {
+       auto keyEvent = static_cast<QKeyEvent*>(event);
 
-       BufferView *view = bufferView();
+       BufferView* view = bufferView();
        if (!view) {
            return false;
        }
@@ -881,17 +829,16 @@ bool BufferViewDock::eventFilter(QObject *object, QEvent *event)
    return false;
 }
 
-void BufferViewDock::bufferViewRenamed(const QString &newName)
+void BufferViewDock::bufferViewRenamed(const QString& newName)
 {
     _title = newName;
     updateTitle();
     toggleViewAction()->setText(newName);
 }
 
-
 int BufferViewDock::bufferViewId() const
 {
-    BufferView *view = bufferView();
+    BufferView* view = bufferView();
     if (!view)
         return 0;
 
@@ -901,22 +848,21 @@ int BufferViewDock::bufferViewId() const
         return 0;
 }
 
-
-BufferViewConfig *BufferViewDock::config() const
+BufferViewConfig* BufferViewDock::config() const
 {
-    BufferView *view = bufferView();
+    BufferView* view = bufferView();
     if (!view)
-        return 0;
+        return nullptr;
     else
         return view->config();
 }
 
-void BufferViewDock::setWidget(QWidget *newWidget)
+void BufferViewDock::setWidget(QWidget* newWidget)
 {
     _widget->layout()->addWidget(newWidget);
     _childWidget = newWidget;
 
-    connect(_filterEdit, SIGNAL(textChanged(QString)), bufferView(), SLOT(filterTextChanged(QString)));
+    connect(_filterEdit, &QLineEdit::textChanged, bufferView(), &BufferView::filterTextChanged);
 }
 
 void BufferViewDock::activateFilter()

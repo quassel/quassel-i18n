@@ -18,49 +18,48 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef MULTILINEEDIT_H_
-#define MULTILINEEDIT_H_
+#pragma once
 
-#include <QKeyEvent>
+#include "uisupport-export.h"
+
 #include <QHash>
+#include <QKeyEvent>
 
-#ifdef HAVE_KDE4
-#  include <KDE/KTextEdit>
-#  define MultiLineEditParent KTextEdit
-#elif defined HAVE_KF5
-#  include <KTextWidgets/KTextEdit>
-#  define MultiLineEditParent KTextEdit
+#if defined HAVE_KF5
+#    include <KTextWidgets/KTextEdit>
+#    define MultiLineEditParent KTextEdit
 #else
-#  include <QTextEdit>
-#  define MultiLineEditParent QTextEdit
+#    include <QTextEdit>
+#    define MultiLineEditParent QTextEdit
 #endif
 
 #if defined HAVE_SONNET && !defined HAVE_KDE
-#  include <QContextMenuEvent>
-#  include <Sonnet/Highlighter>
-#  include <Sonnet/SpellCheckDecorator>
+#    include <QContextMenuEvent>
+
+#    include <Sonnet/Highlighter>
+#    include <Sonnet/SpellCheckDecorator>
 #endif
 
-class MultiLineEdit : public MultiLineEditParent
+class UISUPPORT_EXPORT MultiLineEdit : public MultiLineEditParent
 {
     Q_OBJECT
 
 public:
-    enum Mode {
+    enum Mode
+    {
         SingleLine,
         MultiLine
     };
 
-    MultiLineEdit(QWidget *parent = 0);
-    ~MultiLineEdit();
+    MultiLineEdit(QWidget* parent = nullptr);
 
-    void setCustomFont(const QFont &); // should be used instead setFont(), so we can set our size correctly
+    void setCustomFont(const QFont&);  // should be used instead setFont(), so we can set our size correctly
 
     // Compatibility methods with the rest of the classes which still expect this to be a QLineEdit
     inline QString text() const { return toPlainText(); }
     inline QString html() const { return toHtml(); }
     inline int cursorPosition() const { return textCursor().position(); }
-    inline void insert(const QString &newText) { insertPlainText(newText); }
+    inline void insert(const QString& newText) { insertPlainText(newText); }
     inline void backspace() { keyPressEvent(new QKeyEvent(QEvent::KeyPress, Qt::Key_Backspace, Qt::NoModifier)); }
     inline bool hasSelectedText() const { return textCursor().hasSelection(); }
 
@@ -72,7 +71,7 @@ public:
 
     inline QString mircColorFromRGB(QString rgbColor) const { return _mircColorMap.key(rgbColor); }
     inline QString rgbColorFromMirc(QString mircColor) const { return _mircColorMap[mircColor]; }
-    inline QMap<QString, QString>  mircColorMap() const { return _mircColorMap; }
+    inline QMap<QString, QString> mircColorMap() const { return _mircColorMap; }
 
     inline QStringList history() const { return _history; }
     inline QHash<int, QString> tempHistory() const { return _tempHistory; }
@@ -87,7 +86,7 @@ public slots:
     void setMaxHeight(int numLines);
     void setEmacsMode(bool enable = true);
     void setScrollBarsEnabled(bool enable = true);
-    void setPasteProtectionEnabled(bool enable = true, QWidget *msgBoxParent = 0);
+    void setPasteProtectionEnabled(bool enable = true, QWidget* msgBoxParent = nullptr);
     void setLineWrapEnabled(bool enable = false);
 
     inline void setHistory(QStringList history) { _history = history; }
@@ -95,16 +94,16 @@ public slots:
     inline void setIdx(qint32 idx) { _idx = idx; }
 
 signals:
-    void textEntered(const QString &text);
+    void textEntered(const QString& text);
     void noTextEntered();
 
 protected:
-    bool event(QEvent *e) override;
-    void keyPressEvent(QKeyEvent *event) override;
-    void resizeEvent(QResizeEvent *event) override;
+    bool event(QEvent* e) override;
+    void keyPressEvent(QKeyEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
 #if defined HAVE_SONNET && !defined HAVE_KDE
-    void contextMenuEvent(QContextMenuEvent *event) override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
 #endif
 
 private slots:
@@ -113,13 +112,13 @@ private slots:
     void on_textChanged();
     void on_documentHeightChanged(qreal height);
 
-    bool addToHistory(const QString &text, bool temporary = false);
+    bool addToHistory(const QString& text, bool temporary = false);
     void historyMoveForward();
     void historyMoveBack();
 
     QString convertRichtextToMircCodes();
-    QString convertMircCodesToHtml(const QString &text);
-    bool mircCodesChanged(QTextCursor &cursor, QTextCursor &peekcursor);
+    QString convertMircCodesToHtml(const QString& text);
+    bool mircCodesChanged(QTextCursor& cursor, QTextCursor& peekcursor);
 
 private:
     void reset();
@@ -130,32 +129,29 @@ private:
 private:
     QStringList _history;
     QHash<int, QString> _tempHistory;
-    qint32 _idx;
-    Mode _mode;
-    bool _singleLine;
-    int _minHeight;
-    int _maxHeight;
-    bool _scrollBarsEnabled;
-    bool _pasteProtectionEnabled;
-    bool _emacsMode;
-    int _completionSpace;
+    qint32 _idx{0};
+    Mode _mode{SingleLine};
+    bool _singleLine{true};
+    int _minHeight{1};
+    int _maxHeight{5};
+    bool _scrollBarsEnabled{true};
+    bool _pasteProtectionEnabled{true};
+    bool _emacsMode{false};
+    int _completionSpace{0};
 
     QSize _sizeHint;
-    qreal _lastDocumentHeight;
+    qreal _lastDocumentHeight{-1};
 
     QMap<QString, QString> _mircColorMap;
 
 #if defined HAVE_SONNET && !defined HAVE_KDE
     // This member function is provided by KTextEdit
-    Sonnet::Highlighter *highlighter() const;
+    Sonnet::Highlighter* highlighter() const;
 
 private slots:
     void setSpellCheckEnabled(bool enabled);
 
 private:
-    Sonnet::SpellCheckDecorator *_spellCheckDecorator{nullptr};
+    Sonnet::SpellCheckDecorator* _spellCheckDecorator{nullptr};
 #endif
 };
-
-
-#endif

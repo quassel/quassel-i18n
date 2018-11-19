@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef ABSTRACTBUFFERCONTAINER_H_
-#define ABSTRACTBUFFERCONTAINER_H_
+#pragma once
+
+#include "uisupport-export.h"
 
 #include "abstractitemview.h"
 #include "buffermodel.h"
@@ -28,23 +29,22 @@ class AbstractChatView;
 class AbstractUiMsg;
 class Buffer;
 
-class AbstractBufferContainer : public AbstractItemView
+class UISUPPORT_EXPORT AbstractBufferContainer : public AbstractItemView
 {
     Q_OBJECT
 
 public:
-    AbstractBufferContainer(QWidget *parent);
-    virtual ~AbstractBufferContainer();
+    AbstractBufferContainer(QWidget* parent);
 
     inline BufferId currentBuffer() const { return _currentBuffer; }
 
 signals:
     void currentChanged(BufferId);
-    void currentChanged(const QModelIndex &);
+    void currentChanged(const QModelIndex&);
 
 protected:
     //! Create an AbstractChatView for the given BufferId and add it to the UI if necessary
-    virtual AbstractChatView *createChatView(BufferId) = 0;
+    virtual AbstractChatView* createChatView(BufferId) = 0;
 
     //! Remove a chat view from the UI and delete it
     /** This method shall remove the view from the UI (for example, from a QStackedWidget) if appropriate.
@@ -59,8 +59,8 @@ protected:
     virtual inline bool autoMarkerLine() const { return true; }
 
 protected slots:
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
-    virtual void rowsAboutToBeRemoved(const QModelIndex &parent, int start, int end);
+    void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
+    void rowsAboutToBeRemoved(const QModelIndex& parent, int start, int end) override;
 
     //! Show the given chat view
     /** This method is called when the given chat view should be displayed. Use this e.g. for
@@ -75,16 +75,12 @@ private slots:
 
 private:
     BufferId _currentBuffer;
-    QHash<BufferId, AbstractChatView *> _chatViews;
+    QHash<BufferId, AbstractChatView*> _chatViews;
 };
-
 
 class AbstractChatView
 {
 public:
-    virtual ~AbstractChatView() {};
+    virtual ~AbstractChatView() = default;
     virtual MsgId lastMsgId() const = 0;
 };
-
-
-#endif

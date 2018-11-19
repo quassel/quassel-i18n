@@ -20,24 +20,19 @@
 
 #include "colorbutton.h"
 
+#include <QColorDialog>
 #include <QPainter>
 #include <QStyle>
 #include <QStyleOptionFrame>
 
-#ifdef HAVE_KDE4
-#  include <KColorDialog>
-#else
-#  include <QColorDialog>
-#endif
-
-ColorButton::ColorButton(QWidget *parent) : QToolButton(parent)
+ColorButton::ColorButton(QWidget* parent)
+    : QToolButton(parent)
 {
     setText("");
-    connect(this, SIGNAL(clicked()), SLOT(chooseColor()));
+    connect(this, &QAbstractButton::clicked, this, &ColorButton::chooseColor);
 }
 
-
-void ColorButton::setColor(const QColor &color)
+void ColorButton::setColor(const QColor& color)
 {
     _color = color;
     QPixmap pixmap(QSize(32, 32));
@@ -47,22 +42,14 @@ void ColorButton::setColor(const QColor &color)
     emit colorChanged(color);
 }
 
-
 QColor ColorButton::color() const
 {
     return _color;
 }
 
-
 void ColorButton::chooseColor()
 {
-#ifdef HAVE_KDE4
-    QColor c = color();
-    KColorDialog::getColor(c, this);
-#else
     QColor c = QColorDialog::getColor(color(), this);
-#endif
-
     if (c.isValid()) {
         setColor(c);
     }

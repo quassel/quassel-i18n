@@ -18,8 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLICKABLE_H_
-#define CLICKABLE_H_
+#pragma once
+
+#include "uisupport-export.h"
+
+#include <vector>
 
 #include <QStackedWidget>
 
@@ -27,11 +30,12 @@
 
 class QModelIndex;
 
-class Clickable
+class UISUPPORT_EXPORT Clickable
 {
 public:
     // Don't change these enums without also changing dependent methods!
-    enum Type {
+    enum Type
+    {
         Invalid = -1,
         Url = 0,
         Channel = 1,
@@ -39,7 +43,9 @@ public:
     };
 
     explicit inline Clickable(Type type = Invalid, quint16 start = 0, quint16 length = 0)
-        : _type(type), _start(start), _length(length)
+        : _type(type)
+        , _start(start)
+        , _length(length)
     {}
 
     inline Type type() const { return _type; }
@@ -48,7 +54,7 @@ public:
 
     inline bool isValid() const { return _type != Invalid; }
 
-    void activate(NetworkId networkId, const QString &bufferName) const;
+    void activate(NetworkId networkId, const QString& bufferName) const;
 
 private:
     Type _type;
@@ -56,14 +62,10 @@ private:
     quint16 _length;
 };
 
-
-class ClickableList : public QList<Clickable>
+class UISUPPORT_EXPORT ClickableList : public std::vector<Clickable>
 {
 public:
-    static ClickableList fromString(const QString &);
+    static ClickableList fromString(const QString&);
 
     Clickable atCursorPos(int idx);
 };
-
-
-#endif // CLICKABLE_H_

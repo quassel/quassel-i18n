@@ -30,23 +30,23 @@ class ChatMonitorView : public ChatView
     Q_OBJECT
 
 public:
-    ChatMonitorView(ChatMonitorFilter *filter, QWidget *parent);
+    ChatMonitorView(ChatMonitorFilter* filter, QWidget* parent);
+
+    void showFieldsChanged(bool checked);
 
 protected:
-    virtual void addActionsToMenu(QMenu *menu, const QPointF &pos);
-    virtual void mouseDoubleClickEvent(QMouseEvent *event);
+    void addActionsToMenu(QMenu* menu, const QPointF& pos) override;
+    void mouseDoubleClickEvent(QMouseEvent* event) override;
 
 private slots:
-    void showFieldsChanged(bool checked);
     void showSettingsPage();
     virtual void coreConnectionStateChanged(bool connected);
 
 protected:
-    inline ChatMonitorFilter *filter() const { return _filter; }
+    inline ChatMonitorFilter* filter() const { return _filter; }
 
 private:
-    ChatMonitorFilter *_filter;
+    ChatMonitorFilter* _filter;
 };
 
-
-#endif //CHATMONITORVIEW_H
+#endif  // CHATMONITORVIEW_H

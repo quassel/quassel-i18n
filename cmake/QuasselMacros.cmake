@@ -1,163 +1,280 @@
-# This file contains various macros useful for building Quassel.
+# This file contains various functions and macros useful for building Quassel.
 #
-# (C) 2014 by the Quassel Project <devel@quassel-irc.org>
-#
-# The qt4_use_modules function was taken from CMake's Qt4Macros.cmake:
-# (C) 2005-2009 Kitware, Inc.
-#
-# The qt5_use_modules function was taken from Qt 5.10.1 (and modified):
-# (C) 2005-2011 Kitware, Inc.
+# (C) 2014-2018 by the Quassel Project <devel@quassel-irc.org>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+###################################################################################################
 
-############################
-# Macros for dealing with Qt
-############################
+include(CMakeParseArguments)
+include(GenerateExportHeader)
+include(QuasselCompileFeatures)
 
-# CMake gained this function in 2.8.10. To be able to use older versions, we've copied
-# this here. If present, the function from CMake will take precedence and our copy will be ignored.
-function(qt4_use_modules _target _link_type)
-    if ("${_link_type}" STREQUAL "LINK_PUBLIC" OR "${_link_type}" STREQUAL "LINK_PRIVATE")
-        set(modules ${ARGN})
-        set(link_type ${_link_type})
+###################################################################################################
+# Adds a library target for a Quassel module.
+#
+# quassel_add_module(Module [STATIC] [EXPORT])
+#
+# The function expects the (CamelCased) module name as a parameter, and derives various
+# strings from it. For example, quassel_add_module(Client) produces
+#  - a library target named quassel_client with output name (lib)quassel-client(.so)
+#  - an alias target named Quassel::Client in global scope
+#
+# If the optional argument STATIC is given, a static library is built; otherwise, on
+# platforms other than Windows, a shared library is created. For shared libraries, also
+# an install rule is added.
+#
+# To generate an export header for the library, specify EXPORT. The header will be named
+# ${module}-export.h (where ${module} is the lower-case name of the module).
+#
+# The function exports the TARGET variable which can be used in the current scope
+# for setting source files, properties, link dependencies and so on.
+# To refer to the target outside of the current scope, e.g. for linking, use
+# the alias name.
+#
+function(quassel_add_module _module)
+    set(options EXPORT STATIC NOINSTALL)
+    set(oneValueArgs )
+    set(multiValueArgs )
+    cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+    # Derive target, alias target, output name from the given module name
+    set(alias "Quassel::${_module}")
+    set(target ${alias})
+    string(TOLOWER ${target} target)
+    string(REPLACE "::" "_" target ${target})
+    string(REPLACE "_" "-" output_name ${target})
+
+    if (ARG_STATIC)
+        set(buildmode STATIC)
     else()
-        set(modules ${_link_type} ${ARGN})
+        set(buildmode SHARED)
     endif()
-    foreach(_module ${modules})
-        string(TOUPPER ${_module} _ucmodule)
-        set(_targetPrefix QT_QT${_ucmodule})
-        if (_ucmodule STREQUAL QAXCONTAINER OR _ucmodule STREQUAL QAXSERVER)
-            if (NOT QT_Q${_ucmodule}_FOUND)
-                message(FATAL_ERROR "Can not use \"${_module}\" module which has not yet been found.")
+
+    add_library(${target} ${buildmode} "")
+    add_library(${alias} ALIAS ${target})
+
+    target_link_libraries(${target} PRIVATE Qt5::Core)
+    target_include_directories(${target}
+        PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}
+        PRIVATE ${CMAKE_CURRENT_BINARY_DIR} # for generated files
+    )
+    target_compile_features(${target} PUBLIC ${QUASSEL_COMPILE_FEATURES})
+
+    set_target_properties(${target} PROPERTIES
+        OUTPUT_NAME ${output_name}
+        VERSION ${QUASSEL_MAJOR}.${QUASSEL_MINOR}.${QUASSEL_PATCH}
+    )
+
+    if (buildmode STREQUAL "SHARED" AND NOT ${ARG_NOINSTALL})
+        install(TARGETS ${target}
+            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        )
+    endif()
+
+    if (ARG_EXPORT)
+        string(TOLOWER ${_module} lower_module)
+        string(TOUPPER ${_module} upper_module)
+        string(REPLACE "::" "-" header_base ${lower_module})
+        string(REPLACE "::" "_" macro_base ${upper_module})
+        generate_export_header(${target}
+            BASE_NAME ${macro_base}
+            EXPORT_FILE_NAME ${CMAKE_BINARY_DIR}/export/${header_base}-export.h
+        )
+        target_include_directories(${target} PUBLIC ${CMAKE_BINARY_DIR}/export)
+    endif()
+
+    # Export the target name for further use
+    set(TARGET ${target} PARENT_SCOPE)
+endfunction()
+
+###################################################################################################
+# Provides a library that contains data files as a Qt resource (.qrc).
+#
+# quassel_add_resource(QrcName
+#                      [BASEDIR basedir]
+#                      [PREFIX prefix]
+#                      PATTERNS pattern1 pattern2...
+#                      [DEPENDS dep1 dep2...]
+# )
+#
+# The first parameter is the CamelCased name of the resource; the library target will be called
+# "Quassel::Resource::QrcName". The library provides a Qt resource named "qrcname" (lowercased QrcName)
+# containing the files matching PATTERNS relative to BASEDIR (by default, the current source dir).
+# The resource prefix can be set by giving the PREFIX argument.
+# Additional target dependencies can be specified with DEPENDS.
+#
+function(quassel_add_resource _name)
+    set(options )
+    set(oneValueArgs BASEDIR PREFIX)
+    set(multiValueArgs DEPENDS PATTERNS)
+    cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+    if (NOT ARG_BASEDIR)
+        set(ARG_BASEDIR ${CMAKE_CURRENT_SOURCE_DIR})
+    endif()
+    get_filename_component(basedir ${ARG_BASEDIR} REALPATH)
+
+    string(TOLOWER ${_name} lower_name)
+
+    set(qrc_target   quassel-qrc-${lower_name})
+    set(qrc_file     ${lower_name}.qrc)
+    set(qrc_src      qrc_${lower_name}.cpp)
+    set(qrc_filepath ${CMAKE_CURRENT_BINARY_DIR}/${qrc_file})
+    set(qrc_srcpath  ${CMAKE_CURRENT_BINARY_DIR}/${qrc_src})
+
+    # This target will always be built, so the qrc file will always be freshly generated.
+    # That way, changes to the glob result are always taken into account.
+    add_custom_target(${qrc_target} VERBATIM
+        COMMENT "Generating ${qrc_file}"
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/cmake/GenerateQrc.cmake "${qrc_filepath}" "${ARG_PREFIX}" "${ARG_PATTERNS}"
+        DEPENDS ${ARG_DEPENDS}
+        BYPRODUCTS ${qrc_filepath}
+        WORKING_DIRECTORY ${basedir}
+    )
+    set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${qrc_filepath})
+
+    # RCC sucks and expects the data files relative to the qrc file, with no way to configure it differently.
+    # Only when reading from stdin ("-") it takes the working directory as a base, so we have to use this if
+    # we want to use generated qrc files (which obviously cannot be placed in the source directory).
+    # Since neither autorcc nor qt5_add_resources() support this, we have to invoke rcc manually :(
+    #
+    # On Windows, input redirection apparently doesn't work, however piping does. Use this for all platforms for
+    # consistency, accommodating for the fact that the 'cat' equivalent on Windows is 'type'.
+    if (WIN32)
+        set(cat_cmd type)
+    else()
+        set(cat_cmd cat)
+    endif()
+    add_custom_command(VERBATIM
+        COMMENT "Generating ${qrc_src}"
+        COMMAND ${cat_cmd} "$<SHELL_PATH:${qrc_filepath}>"
+                | "$<SHELL_PATH:$<TARGET_FILE:Qt5::rcc>>" --name "${lower_name}" --output "$<SHELL_PATH:${qrc_srcpath}>" -
+        DEPENDS ${qrc_target}
+        MAIN_DEPENDENCY ${qrc_filepath}
+        OUTPUT ${qrc_srcpath}
+        WORKING_DIRECTORY ${basedir}
+    )
+
+    # Generate library target that can be referenced elsewhere. Force static, because
+    # we can't easily export symbols from the generated sources.
+    quassel_add_module(Resource::${_name} STATIC)
+    target_sources(${TARGET} PRIVATE ${qrc_srcpath})
+    set_target_properties(${TARGET} PROPERTIES AUTOMOC OFF AUTOUIC OFF AUTORCC OFF)
+
+    # Set variable for referencing the target from outside
+    set(RESOURCE_TARGET ${TARGET} PARENT_SCOPE)
+endfunction()
+
+###################################################################################################
+# Adds a unit test case
+#
+# quassel_add_test(TestName
+#                  [LIBRARIES lib1 lib2...]
+# )
+#
+# The test name is given in CamelCase as first and mandatory parameter. The corresponding source file
+# is expected the lower-cased test name plus the .cpp extension.
+# The test case is automatically linked against Qt5::Test, GMock, Quassel::Common and
+# Quassel::Test::Main, which contains the main function. This main function also instantiates a
+# QCoreApplication, so the event loop can be used in test cases.
+#
+# Additional libraries can be given using the LIBRARIES argument.
+#
+# Test cases should include testglobal.h, which transitively includes the GTest/GMock headers and
+# exports the main function.
+#
+# The compiled test case binary is located in the unit/ directory in the build directory.
+#
+function(quassel_add_test _target)
+    set(options )
+    set(oneValueArgs )
+    set(multiValueArgs LIBRARIES)
+    cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+    string(TOLOWER ${_target} lower_target)
+    set(srcfile ${lower_target}.cpp)
+
+    list(APPEND ARG_LIBRARIES
+        Qt5::Test
+        Quassel::Common
+        Quassel::Test::Global
+        Quassel::Test::Main
+    )
+
+    if (WIN32)
+        # On Windows, tests need to be built in the same directory that contains the libraries
+        set(output_dir "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+    else()
+        # On other platforms, separate the test cases out
+        set(output_dir "${CMAKE_BINARY_DIR}/unit")
+    endif()
+
+    add_executable(${_target} ${srcfile})
+    set_target_properties(${_target} PROPERTIES
+        OUTPUT_NAME ${_target}
+        RUNTIME_OUTPUT_DIRECTORY "${output_dir}"
+    )
+    target_link_libraries(${_target} PUBLIC ${ARG_LIBRARIES})
+
+    add_test(
+        NAME ${_target}
+        COMMAND $<TARGET_FILE:${_target}>
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
+    )
+endfunction()
+
+###################################################################################################
+# target_link_if_exists(Target
+#                       [PUBLIC dep1 dep2...]
+#                       [PRIVATE dep3 dep4...]
+# )
+#
+# Convenience function to add dependencies to a target only if they exist. This is useful when
+# handling targets that are conditionally created, e.g. resource libraries depending on -DEMBED_DATA.
+#
+# NOTE: In order to link a given target, it must already have been created, i.e its subdirectory
+#       must already have been added. This is also true for globally visible ALIAS targets that
+#       can otherwise be linked to regardless of creation order; "if (TARGET...)" does not
+#       support handling this case correctly.
+#
+function(target_link_if_exists _target)
+    set(options )
+    set(oneValueArgs )
+    set(multiValueArgs PUBLIC PRIVATE)
+    cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+
+    if (ARG_PUBLIC)
+        foreach(dep ${ARG_PUBLIC})
+            if (TARGET ${dep})
+                target_link_libraries(${_target} PUBLIC ${dep})
             endif()
-            set(_targetPrefix QT_Q${_ucmodule})
-        else()
-            if (NOT QT_QT${_ucmodule}_FOUND)
-                message(FATAL_ERROR "Can not use \"${_module}\" module which has not yet been found.")
+        endforeach()
+    endif()
+
+    if (ARG_PRIVATE)
+        foreach(dep ${ARG_PRIVATE})
+            if (TARGET ${dep})
+                target_link_libraries(${_target} PRIVATE ${dep})
             endif()
-            if ("${_ucmodule}" STREQUAL "MAIN")
-                message(FATAL_ERROR "Can not use \"${_module}\" module with qt4_use_modules.")
-            endif()
-        endif()
-        target_link_libraries(${_target} ${link_type} ${${_targetPrefix}_LIBRARIES})
-        set_property(TARGET ${_target} APPEND PROPERTY INCLUDE_DIRECTORIES ${${_targetPrefix}_INCLUDE_DIR} ${QT_HEADERS_DIR} ${QT_MKSPECS_DIR}/default)
-        set_property(TARGET ${_target} APPEND PROPERTY COMPILE_DEFINITIONS ${${_targetPrefix}_COMPILE_DEFINITIONS})
-    endforeach()
-endfunction()
-
-# Qt 5.11 removed the qt5_use_modules function, so we need to provide it until we can switch to a modern CMake version.
-# If present, the Qt-provided version will be used automatically instead.
-function(qt5_use_modules _target _link_type)
-    if (NOT TARGET ${_target})
-        message(FATAL_ERROR "The first argument to qt5_use_modules must be an existing target.")
-    endif()
-    if ("${_link_type}" STREQUAL "LINK_PUBLIC" OR "${_link_type}" STREQUAL "LINK_PRIVATE" )
-        set(_qt5_modules ${ARGN})
-        set(_qt5_link_type ${_link_type})
-    else()
-        set(_qt5_modules ${_link_type} ${ARGN})
-    endif()
-
-    if ("${_qt5_modules}" STREQUAL "")
-        message(FATAL_ERROR "qt5_use_modules requires at least one Qt module to use.")
-    endif()
-    foreach(_module ${_qt5_modules})
-        if (NOT Qt5${_module}_FOUND)
-            find_package(Qt5${_module} PATHS "${_Qt5_COMPONENT_PATH}" NO_DEFAULT_PATH)
-            if (NOT Qt5${_module}_FOUND)
-                message(FATAL_ERROR "Can not use \"${_module}\" module which has not yet been found.")
-            endif()
-        endif()
-        target_link_libraries(${_target} ${_qt5_link_type} ${Qt5${_module}_LIBRARIES})
-        set_property(TARGET ${_target} APPEND PROPERTY INCLUDE_DIRECTORIES ${Qt5${_module}_INCLUDE_DIRS})
-        set_property(TARGET ${_target} APPEND PROPERTY COMPILE_DEFINITIONS ${Qt5${_module}_COMPILE_DEFINITIONS})
-        if (Qt5_POSITION_INDEPENDENT_CODE
-                AND (CMAKE_VERSION VERSION_LESS 2.8.12
-                    AND (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
-                    OR CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)))
-            set_property(TARGET ${_target} PROPERTY POSITION_INDEPENDENT_CODE ${Qt5_POSITION_INDEPENDENT_CODE})
-        endif()
-    endforeach()
-endfunction()
-
-# Some wrappers for simplifying dual-Qt support
-
-function(qt_use_modules)
-    if (USE_QT5)
-        qt5_use_modules(${ARGN})
-    else()
-        qt4_use_modules(${ARGN})
+        endforeach()
     endif()
 endfunction()
 
-function(qt_wrap_ui _var)
-    if (USE_QT5)
-        qt5_wrap_ui(var ${ARGN})
-    else()
-        qt4_wrap_ui(var ${ARGN})
-    endif()
-    set(${_var} ${${_var}} ${var} PARENT_SCOPE)
+###################################################################################################
+# process_cmake_cxx_flags()
+#
+# Append the options declared CMAKE_CXX_FLAGS and CMAKE_CXX_FLAGS_<BUILD_TYPE> to the global
+# compile options.
+# Unset the variables afterwards to avoid duplication.
+#
+function(process_cmake_cxx_flags)
+    string(TOUPPER ${CMAKE_BUILD_TYPE} upper_build_type)
+    set(cxx_flags "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_${upper_build_type}}")
+    separate_arguments(sep_cxx_flags UNIX_COMMAND ${cxx_flags})
+    add_compile_options(${sep_cxx_flags})
+    set(CMAKE_CXX_FLAGS "" PARENT_SCOPE)
+    set(CMAKE_CXX_FLAGS_${upper_build_type} "" PARENT_SCOPE)
 endfunction()
-
-function(qt_add_resources _var)
-    if (USE_QT5)
-        qt5_add_resources(var ${ARGN})
-    else()
-        qt4_add_resources(var ${ARGN})
-    endif()
-    set(${_var} ${${_var}} ${var} PARENT_SCOPE)
-endfunction()
-
-function(qt_add_dbus_interface _var)
-    if (USE_QT5)
-        qt5_add_dbus_interface(var ${ARGN})
-    else()
-        qt4_add_dbus_interface(var ${ARGN})
-    endif()
-    set(${_var} ${${_var}} ${var} PARENT_SCOPE)
-endfunction()
-
-function(qt_add_dbus_adaptor _var)
-    if (USE_QT5)
-        qt5_add_dbus_adaptor(var ${ARGN})
-    else()
-        qt4_add_dbus_adaptor(var ${ARGN})
-    endif()
-    set(${_var} ${${_var}} ${var} PARENT_SCOPE)
-endfunction()
-
-######################################
-# Macros for dealing with translations
-######################################
-
-# This generates a .ts from a .po file
-macro(generate_ts outvar basename)
-  set(input ${basename}.po)
-  set(output ${CMAKE_BINARY_DIR}/po/${basename}.ts)
-  add_custom_command(OUTPUT ${output}
-          COMMAND ${QT_LCONVERT_EXECUTABLE}
-          ARGS -i ${input}
-               -of ts
-               -o ${output}
-          WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/po
-# This is a workaround to add (duplicate) strings that lconvert missed to the .ts
-          COMMAND ${QT_LUPDATE_EXECUTABLE}
-          ARGS -silent
-               ${CMAKE_SOURCE_DIR}/src/
-               -ts ${output}
-          DEPENDS ${basename}.po)
-  set(${outvar} ${output})
-endmacro(generate_ts outvar basename)
-
-# This generates a .qm from a .ts file
-macro(generate_qm outvar basename)
-  set(input ${CMAKE_BINARY_DIR}/po/${basename}.ts)
-  set(output ${CMAKE_BINARY_DIR}/po/${basename}.qm)
-  add_custom_command(OUTPUT ${output}
-          COMMAND ${QT_LRELEASE_EXECUTABLE}
-          ARGS -silent
-               ${input}
-          DEPENDS ${basename}.ts)
-  set(${outvar} ${output})
-endmacro(generate_qm outvar basename)

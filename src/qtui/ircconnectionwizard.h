@@ -30,9 +30,9 @@ class IrcConnectionWizard : public QWizard
     Q_OBJECT
 
 public:
-    IrcConnectionWizard(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+    IrcConnectionWizard(QWidget* parent = nullptr, Qt::WindowFlags flags = nullptr);
 
-    static QWizardPage *createIntroductionPage(QWidget *parent = 0);
+    static QWizardPage* createIntroductionPage(QWidget* parent = nullptr);
 
 private slots:
     void finishClicked();
@@ -40,11 +40,10 @@ private slots:
     void networkReady(NetworkId id);
 
 private:
-    QWizardPage *_introductionPage;
-    QWizardPage *_identityPage;
-    QWizardPage *_networkPage;
+    QWizardPage* _introductionPage{nullptr};
+    QWizardPage* _identityPage{nullptr};
+    QWizardPage* _networkPage{nullptr};
 };
-
 
 // ==============================
 //  Wizard Pages
@@ -60,15 +59,14 @@ class IdentityPage : public QWizardPage
     Q_OBJECT
 
 public:
-    IdentityPage(QWidget *parent = 0);
+    IdentityPage(QWidget* parent = nullptr);
 
-    CertIdentity *identity();
+    CertIdentity* identity();
 
 private:
-    IdentityEditWidget *_identityEditWidget;
-    CertIdentity *_identity;
+    IdentityEditWidget* _identityEditWidget;
+    CertIdentity* _identity{nullptr};
 };
-
 
 // Network Page
 #include "network.h"
@@ -80,16 +78,15 @@ class NetworkPage : public QWizardPage
     Q_OBJECT
 
 public:
-    NetworkPage(QWidget *parent = 0);
+    NetworkPage(QWidget* parent = nullptr);
 
     NetworkInfo networkInfo();
     QStringList channelList();
 
 private:
-    SimpleNetworkEditor *_networkEditor;
+    SimpleNetworkEditor* _networkEditor;
     NetworkInfo _networkInfo;
     QStringList _channelList;
 };
 
-
-#endif //IRCCONNECTIONWIZARD_H
+#endif  // IRCCONNECTIONWIZARD_H

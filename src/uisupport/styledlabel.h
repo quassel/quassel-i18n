@@ -18,32 +18,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef STYLEDLABEL_H
-#define STYLEDLABEL_H
+#pragma once
+
+#include "uisupport-export.h"
 
 #include <QFrame>
 
 #include "clickable.h"
 #include "uistyle.h"
 
-class StyledLabel : public QFrame
+class UISUPPORT_EXPORT StyledLabel : public QFrame
 {
     Q_OBJECT
 
 public:
-    enum ResizeMode {
+    enum ResizeMode
+    {
         NoResize,
         DynamicResize,
         ResizeOnHover
     };
 
-    StyledLabel(QWidget *parent = 0);
+    StyledLabel(QWidget* parent = nullptr);
 
-    void setText(const QString &text);
-    void setCustomFont(const QFont &font);
+    void setText(const QString& text);
+    void setCustomFont(const QFont& font);
 
-    virtual QSize sizeHint() const;
-    //virtual QSize minimumSizeHint() const;
+    QSize sizeHint() const override;
+    // virtual QSize minimumSizeHint() const;
 
     inline QTextOption::WrapMode wrapMode() const { return _wrapMode; }
     void setWrapMode(QTextOption::WrapMode mode);
@@ -58,26 +60,26 @@ public:
     void setResizeMode(ResizeMode);
 
 signals:
-    void clickableActivated(const Clickable &click);
+    void clickableActivated(const Clickable& click);
 
 protected:
-    virtual void paintEvent(QPaintEvent *event);
-    virtual void resizeEvent(QResizeEvent *event);
-    virtual void enterEvent(QEvent *);
-    virtual void leaveEvent(QEvent *);
-    virtual void mouseMoveEvent(QMouseEvent *event);
-    virtual void mousePressEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
+    void enterEvent(QEvent*) override;
+    void leaveEvent(QEvent*) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
+    void mousePressEvent(QMouseEvent* event) override;
 
-    int posToCursor(const QPointF &pos);
+    int posToCursor(const QPointF& pos);
 
 private:
     QSize _sizeHint;
-    QTextOption::WrapMode _wrapMode;
+    QTextOption::WrapMode _wrapMode{QTextOption::NoWrap};
     Qt::Alignment _alignment;
     QTextLayout _layout;
     ClickableList _clickables;
-    bool _toolTipEnabled;
-    ResizeMode _resizeMode;
+    bool _toolTipEnabled{true};
+    ResizeMode _resizeMode{NoResize};
 
     QList<QTextLayout::FormatRange> _layoutList;
     QVector<QTextLayout::FormatRange> _extraLayoutList;
@@ -89,6 +91,3 @@ private:
     void setHoverMode(int start, int length);
     void endHoverMode();
 };
-
-
-#endif

@@ -21,10 +21,11 @@
 #ifndef _CHATMONITORSETTINGSPAGE_H_
 #define _CHATMONITORSETTINGSPAGE_H_
 
-#include "settingspage.h"
-#include "ui_chatmonitorsettingspage.h"
-
 #include <QHash>
+
+#include "settingspage.h"
+
+#include "ui_chatmonitorsettingspage.h"
 
 class BufferViewConfig;
 
@@ -33,14 +34,14 @@ class ChatMonitorSettingsPage : public SettingsPage
     Q_OBJECT
 
 public:
-    ChatMonitorSettingsPage(QWidget *parent = 0);
-    bool hasDefaults() const;
+    ChatMonitorSettingsPage(QWidget* parent = nullptr);
+    bool hasDefaults() const override;
 
 public slots:
-    void save();
-    void load();
+    void save() override;
+    void load() override;
     void loadSettings();
-    void defaults();
+    void defaults() override;
 
 private slots:
     void widgetHasChanged();
@@ -52,11 +53,10 @@ private:
     Ui::ChatMonitorSettingsPage ui;
     QHash<QString, QVariant> settings;
     bool testHasChanged();
-    void toggleBuffers(BufferView *inView, BufferViewConfig *inCfg, BufferView *outView, BufferViewConfig *outCfg);
+    void toggleBuffers(BufferView* inView, BufferViewConfig* inCfg, BufferView* outView, BufferViewConfig* outCfg);
 
-    BufferViewConfig *_configAvailable;
-    BufferViewConfig *_configActive;
+    BufferViewConfig* _configAvailable;
+    BufferViewConfig* _configActive;
 };
-
 
 #endif

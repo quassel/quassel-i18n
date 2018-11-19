@@ -30,16 +30,15 @@ class TitleSetter : public AbstractItemView
     Q_OBJECT
 
 public:
-    TitleSetter(MainWin *parent);
+    TitleSetter(MainWin* parent);
 
 protected slots:
-    virtual void currentChanged(const QModelIndex &current, const QModelIndex &previous);
-    virtual void dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+    void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
+    void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight) override;
 
 private:
-    MainWin *_mainWin;
-    void changeWindowTitle(const QModelIndex &index);
+    MainWin* _mainWin;
+    void changeWindowTitle(const QModelIndex& index);
 };
-
 
 #endif

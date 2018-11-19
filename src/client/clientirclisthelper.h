@@ -18,35 +18,33 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTIRCLISTHELPER_H
-#define CLIENTIRCLISTHELPER_H
+#pragma once
+
+#include "client-export.h"
 
 #include "irclisthelper.h"
 
-class ClientIrcListHelper : public IrcListHelper
+class CLIENT_EXPORT ClientIrcListHelper : public IrcListHelper
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    inline ClientIrcListHelper(QObject *object = 0) : IrcListHelper(object) {};
-
-    inline virtual const QMetaObject *syncMetaObject() const { return &IrcListHelper::staticMetaObject; }
+    inline ClientIrcListHelper(QObject* object = nullptr)
+        : IrcListHelper(object){};
 
 public slots:
-    virtual QVariantList requestChannelList(const NetworkId &netId, const QStringList &channelFilters);
-    virtual void receiveChannelList(const NetworkId &netId, const QStringList &channelFilters, const QVariantList &channels);
-    virtual void reportFinishedList(const NetworkId &netId);
-    inline virtual void reportError(const QString &error) { emit errorReported(error); }
+    QVariantList requestChannelList(const NetworkId& netId, const QStringList& channelFilters) override;
+    void receiveChannelList(const NetworkId& netId, const QStringList& channelFilters, const QVariantList& channels) override;
+    void reportFinishedList(const NetworkId& netId) override;
+    inline void reportError(const QString& error) override { emit errorReported(error); }
 
 signals:
-    void channelListReceived(const NetworkId &netId, const QStringList &channelFilters, const QList<IrcListHelper::ChannelDescription> &channelList);
-    void finishedListReported(const NetworkId &netId);
-    void errorReported(const QString &error);
+    void channelListReceived(const NetworkId& netId,
+                             const QStringList& channelFilters,
+                             const QList<IrcListHelper::ChannelDescription>& channelList);
+    void finishedListReported(const NetworkId& netId);
+    void errorReported(const QString& error);
 
 private:
     NetworkId _netId;
 };
-
-
-#endif //CLIENTIRCLISTHELPER_H

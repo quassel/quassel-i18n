@@ -1,6 +1,6 @@
-# Builds the uisupport module
+quassel_add_module(UiSupport EXPORT)
 
-set(SOURCES
+target_sources(${TARGET} PRIVATE
     aboutdata.cpp
     abstractbuffercontainer.cpp
     abstractitemview.cpp
@@ -32,39 +32,44 @@ set(SOURCES
     treeviewtouch.cpp
     uisettings.cpp
     uistyle.cpp
+    widgethelpers.h
 
     # needed for automoc
     abstractnotificationbackend.h
 )
 
-if (WITH_KDE4)
-    include_directories(${KDE4_INCLUDES})
-    add_definitions(-DHAVE_KDE ${KDE4_DEFINITIONS})
-    set(SOURCES ${SOURCES} kcmdlinewrapper.cpp)
-endif()
-
-include_directories(${CMAKE_SOURCE_DIR}/src/common
-                    ${CMAKE_SOURCE_DIR}/src/client
+target_link_libraries(${TARGET}
+    PUBLIC
+        Qt5::Core
+        Qt5::Gui
+        Qt5::Network
+        Qt5::Widgets
+        Quassel::Client
+        Quassel::Common
 )
 
-if (USE_QT5)
-    list(APPEND qt_modules Widgets)
-endif()
-
-add_library(mod_uisupport STATIC ${SOURCES})
-qt_use_modules(mod_uisupport Core Gui Network ${qt_modules})
-
-target_link_libraries(mod_uisupport mod_client mod_common)
-
-if (WITH_KDE4)
-    target_link_libraries(mod_uisupport ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBRARY})
+if (EMBED_DATA)
+    set_property(SOURCE graphicalui.cpp APPEND PROPERTY COMPILE_DEFINITIONS EMBED_DATA)
 endif()
 
 if (WITH_KF5)
-    target_link_libraries(mod_uisupport KF5::CoreAddons KF5::TextWidgets KF5::XmlGui)
+    target_link_libraries(${TARGET}
+        PUBLIC
+            KF5::CoreAddons
+            KF5::TextWidgets
+            KF5::XmlGui
+    )
 endif()
 
 if (KF5Sonnet_FOUND)
-    add_definitions(-DHAVE_SONNET)
-    target_link_libraries(mod_uisupport KF5::SonnetUi)
+    target_link_libraries(${TARGET} PRIVATE KF5::SonnetUi)
+    target_compile_definitions(${TARGET} PRIVATE -DHAVE_SONNET)
 endif()
+
+target_link_if_exists(${TARGET}
+    PUBLIC
+        Quassel::Resource::HicolorIcons
+        Quassel::Resource::Icons
+        Quassel::Resource::IconThemes
+        Quassel::Resource::Pics
+)

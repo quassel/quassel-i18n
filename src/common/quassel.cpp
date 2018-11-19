@@ -37,13 +37,13 @@
 #include "bufferinfo.h"
 #include "identity.h"
 #include "logger.h"
-#include "logmessage.h"
 #include "message.h"
 #include "network.h"
 #include "peer.h"
 #include "protocol.h"
 #include "syncableobject.h"
 #include "types.h"
+#include "version.h"
 
 #ifndef Q_OS_WIN
 #    include "posixsignalwatcher.h"
@@ -51,52 +51,42 @@
 #    include "windowssignalwatcher.h"
 #endif
 
-#include "../../version.h"
-
 Quassel::Quassel()
     : Singleton<Quassel>{this}
     , _logger{new Logger{this}}
 {
+#ifdef EMBED_DATA
+    Q_INIT_RESOURCE(i18n);
+#endif
 }
 
-
-bool Quassel::init()
+void Quassel::init(RunMode runMode)
 {
-    if (instance()->_initialized)
-        return true;  // allow multiple invocations because of MonolithicApplication
+    _runMode = runMode;
 
     qsrand(QTime(0, 0, 0).secsTo(QTime::currentTime()));
 
-    instance()->setupSignalHandling();
-    instance()->setupEnvironment();
-    instance()->registerMetaTypes();
+    setupSignalHandling();
+    setupEnvironment();
+    registerMetaTypes();
 
-    instance()->_initialized = true;
+    // Initial translation (may be overridden in UI settings)
+    loadTranslation(QLocale::system());
+
+    setupCliParser();
+
+    // Don't keep a debug log on the core
+    logger()->setup(runMode != RunMode::CoreOnly);
 
     Network::setDefaultCodecForServer("UTF-8");
     Network::setDefaultCodecForEncoding("UTF-8");
     Network::setDefaultCodecForDecoding("ISO-8859-15");
-
-    if (isOptionSet("help")) {
-        instance()->_cliParser->usage();
-        return false;
-    }
-
-    if (isOptionSet("version")) {
-        std::cout << qPrintable("Quassel IRC: " + Quassel::buildInfo().plainVersionString) << std::endl;
-        return false;
-    }
-
-    // Don't keep a debug log on the core
-    return instance()->logger()->setup(runMode() != RunMode::CoreOnly);
 }
 
-
-Logger *Quassel::logger() const
+Logger* Quassel::logger() const
 {
     return _logger;
 }
-
 
 void Quassel::registerQuitHandler(QuitHandler handler)
 {
@@ -108,40 +98,37 @@ void Quassel::quit()
     // Protect against multiple invocations (e.g. triggered by MainWin::closeEvent())
     if (!_quitting) {
         _quitting = true;
-        quInfo() << "Quitting...";
+        qInfo() << "Quitting...";
         if (_quitHandlers.empty()) {
             QCoreApplication::quit();
         }
         else {
             // Note: We expect one of the registered handlers to call QCoreApplication::quit()
-            for (auto &&handler : _quitHandlers) {
+            for (auto&& handler : _quitHandlers) {
                 handler();
             }
         }
     }
 }
 
-
 void Quassel::registerReloadHandler(ReloadHandler handler)
 {
     instance()->_reloadHandlers.emplace_back(std::move(handler));
 }
 
-
 bool Quassel::reloadConfig()
 {
     bool result{true};
-    for (auto &&handler : _reloadHandlers) {
+    for (auto&& handler : _reloadHandlers) {
         result = result && handler();
     }
     return result;
 }
 
-
 //! Register our custom types with Qt's Meta Object System.
 /**  This makes them available for QVariant and in signals/slots, among other things.
-*
-*/
+ *
+ */
 void Quassel::registerMetaTypes()
 {
     // Complex types
@@ -187,7 +174,6 @@ void Quassel::registerMetaTypes()
     }
 }
 
-
 void Quassel::setupEnvironment()
 {
     // On modern Linux systems, XDG_DATA_DIRS contains a list of directories containing application data. This
@@ -197,7 +183,7 @@ void Quassel::setupEnvironment()
 #ifdef Q_OS_UNIX
     QString xdgDataVar = QFile::decodeName(qgetenv("XDG_DATA_DIRS"));
     if (xdgDataVar.isEmpty())
-        xdgDataVar = QLatin1String("/usr/local/share:/usr/share"); // sane defaults
+        xdgDataVar = QLatin1String("/usr/local/share:/usr/share");  // sane defaults
 
     QStringList xdgDirs = xdgDataVar.split(QLatin1Char(':'), QString::SkipEmptyParts);
 
@@ -209,7 +195,8 @@ void Quassel::setupEnvironment()
         xdgDirs.append(appDir);
         // Also append apps/quassel, this is only for QIconLoader to find icons there
         xdgDirs.append(appDir + "/apps/quassel");
-    } else
+    }
+    else
         xdgDirs.append(appDir);  // build directory is always the last fallback
 
     xdgDirs.removeDuplicates();
@@ -217,7 +204,6 @@ void Quassel::setupEnvironment()
     qputenv("XDG_DATA_DIRS", QFile::encodeName(xdgDirs.join(":")));
 #endif
 }
-
 
 void Quassel::setupBuildInfo()
 {
@@ -228,7 +214,7 @@ void Quassel::setupBuildInfo()
     buildInfo.organizationName = "Quassel Project";
     buildInfo.organizationDomain = "quassel-irc.org";
 
-    buildInfo.protocolVersion = 10; // FIXME: deprecated, will be removed
+    buildInfo.protocolVersion = 10;  // FIXME: deprecated, will be removed
 
     buildInfo.baseVersion = QUASSEL_VERSION_STRING;
     buildInfo.generatedVersion = GIT_DESCRIBE;
@@ -250,9 +236,7 @@ void Quassel::setupBuildInfo()
     if (buildInfo.generatedVersion.isEmpty()) {
         if (!buildInfo.commitHash.isEmpty()) {
             // dist version
-            buildInfo.plainVersionString = QString{"v%1 (dist-%2)"}
-                                               .arg(buildInfo.baseVersion)
-                                               .arg(buildInfo.commitHash.left(7));
+            buildInfo.plainVersionString = QString{"v%1 (dist-%2)"}.arg(buildInfo.baseVersion).arg(buildInfo.commitHash.left(7));
             buildInfo.fancyVersionString = QString{"v%1 (dist-<a href=\"https://github.com/quassel/quassel/commit/%3\">%2</a>)"}
                                                .arg(buildInfo.baseVersion)
                                                .arg(buildInfo.commitHash.left(7))
@@ -285,12 +269,10 @@ void Quassel::setupBuildInfo()
     instance()->_buildInfo = std::move(buildInfo);
 }
 
-
-const Quassel::BuildInfo &Quassel::buildInfo()
+const Quassel::BuildInfo& Quassel::buildInfo()
 {
     return instance()->_buildInfo;
 }
-
 
 void Quassel::setupSignalHandling()
 {
@@ -299,9 +281,8 @@ void Quassel::setupSignalHandling()
 #else
     _signalWatcher = new WindowsSignalWatcher(this);
 #endif
-    connect(_signalWatcher, SIGNAL(handleSignal(AbstractSignalWatcher::Action)), this, SLOT(handleSignal(AbstractSignalWatcher::Action)));
+    connect(_signalWatcher, &AbstractSignalWatcher::handleSignal, this, &Quassel::handleSignal);
 }
-
 
 void Quassel::handleSignal(AbstractSignalWatcher::Action action)
 {
@@ -309,9 +290,9 @@ void Quassel::handleSignal(AbstractSignalWatcher::Action action)
     case AbstractSignalWatcher::Action::Reload:
         // Most applications use this as the 'configuration reload' command, e.g. nginx uses it for graceful reloading of processes.
         if (!_reloadHandlers.empty()) {
-            quInfo() << "Reloading configuration";
+            qInfo() << "Reloading configuration";
             if (reloadConfig()) {
-                quInfo() << "Successfully reloaded configuration";
+                qInfo() << "Successfully reloaded configuration";
             }
         }
         break;
@@ -320,7 +301,7 @@ void Quassel::handleSignal(AbstractSignalWatcher::Action action)
             quit();
         }
         else {
-            quInfo() << "Already shutting down, ignoring signal";
+            qInfo() << "Already shutting down, ignoring signal";
         }
         break;
     case AbstractSignalWatcher::Action::HandleCrash:
@@ -329,41 +310,113 @@ void Quassel::handleSignal(AbstractSignalWatcher::Action action)
     }
 }
 
-
-Quassel::RunMode Quassel::runMode() {
+Quassel::RunMode Quassel::runMode()
+{
     return instance()->_runMode;
 }
 
-
-void Quassel::setRunMode(RunMode runMode)
+void Quassel::setupCliParser()
 {
-    instance()->_runMode = runMode;
+    QList<QCommandLineOption> options;
+
+    // General options
+    /// @todo Bring back --datadir to specify the database location independent of config
+    if (runMode() == RunMode::ClientOnly) {
+        options += {{"c", "configdir"}, tr("Specify the directory holding the client configuration."), tr("path")};
+    }
+    else {
+        options += {{"c", "configdir"},
+                    tr("Specify the directory holding configuration files, the SQlite database and the SSL certificate."),
+                    tr("path")};
+    }
+
+    // Client options
+    if (runMode() != RunMode::CoreOnly) {
+        options += {
+            {"icontheme", tr("Override the system icon theme ('breeze' is recommended)."), tr("theme")},
+            {"qss", tr("Load a custom application stylesheet."), tr("file.qss")},
+            {"hidewindow", tr("Start the client minimized to the system tray.")},
+        };
+    }
+
+    // Core options
+    if (runMode() != RunMode::ClientOnly) {
+        options += {
+            {"listen", tr("The address(es) quasselcore will listen on."), tr("<address>[,<address>[,...]]"), "::,0.0.0.0"},
+            {{"p", "port"}, tr("The port quasselcore will listen at."), tr("port"), "4242"},
+            {{"n", "norestore"}, tr("Don't restore last core's state.")},
+            {"config-from-environment", tr("Load configuration from environment variables.")},
+            {"select-backend", tr("Switch storage backend (migrating data if possible)."), tr("backendidentifier")},
+            {"select-authenticator", tr("Select authentication backend."), tr("authidentifier")},
+            {"add-user", tr("Starts an interactive session to add a new core user.")},
+            {"change-userpass",
+             tr("Starts an interactive session to change the password of the user identified by <username>."),
+             tr("username")},
+            {"strict-ident", tr("Use users' quasselcore username as ident reply. Ignores each user's configured ident setting.")},
+            {"ident-daemon", tr("Enable internal ident daemon.")},
+            {"ident-port",
+             tr("The port quasselcore will listen at for ident requests. Only meaningful with --ident-daemon."),
+             tr("port"),
+             "10113"},
+            {"oidentd", tr("Enable oidentd integration. In most cases you should also enable --strict-ident.")},
+            {"oidentd-conffile", tr("Set path to oidentd configuration file."), tr("file")},
+#ifdef HAVE_SSL
+            {"require-ssl", tr("Require SSL for remote (non-loopback) client connections.")},
+            {"ssl-cert", tr("Specify the path to the SSL certificate."), tr("path"), "configdir/quasselCert.pem"},
+            {"ssl-key", tr("Specify the path to the SSL key."), tr("path"), "ssl-cert-path"},
+#endif
+        };
+    }
+
+    // Logging options
+    options += {
+        {{"L", "loglevel"}, tr("Supports one of Debug|Info|Warning|Error; default is Info."), tr("level"), "Info"},
+        {{"l", "logfile"}, tr("Log to a file."), "path"},
+#ifdef HAVE_SYSLOG
+        {"syslog", tr("Log to syslog.")},
+#endif
+    };
+
+    // Debug options
+    options += {{"d", "debug"}, tr("Enable debug output.")};
+    if (runMode() != RunMode::CoreOnly) {
+        options += {
+            {"debugbufferswitches", tr("Enables debugging for bufferswitches.")},
+            {"debugmodel", tr("Enables debugging for models.")},
+        };
+    }
+    if (runMode() != RunMode::ClientOnly) {
+        options += {
+            {"debug-irc", tr("Enable logging of all raw IRC messages to debug log, including passwords!  In most cases you should also set --loglevel Debug")},
+            {"debug-irc-id", tr("Limit raw IRC logging to this network ID.  Implies --debug-irc"), tr("database network ID"), "-1"},
+        };
+    }
+
+    _cliParser.addOptions(options);
+    _cliParser.addHelpOption();
+    _cliParser.addVersionOption();
+    _cliParser.setApplicationDescription(tr("Quassel IRC is a modern, distributed IRC client."));
+
+    // This will call ::exit() for --help, --version and in case of errors
+    _cliParser.process(*QCoreApplication::instance());
 }
 
-
-void Quassel::setCliParser(std::shared_ptr<AbstractCliParser> parser)
+QString Quassel::optionValue(const QString& key)
 {
-    instance()->_cliParser = std::move(parser);
+    return instance()->_cliParser.value(key);
 }
 
-
-QString Quassel::optionValue(const QString &key)
+bool Quassel::isOptionSet(const QString& key)
 {
-    return instance()->_cliParser ? instance()->_cliParser->value(key) : QString{};
+    return instance()->_cliParser.isSet(key);
 }
 
-
-bool Quassel::isOptionSet(const QString &key)
-{
-    return instance()->_cliParser ? instance()->_cliParser->isSet(key) : false;
-}
-
-
-const QString &Quassel::coreDumpFileName()
+const QString& Quassel::coreDumpFileName()
 {
     if (_coreDumpFileName.isEmpty()) {
         QDir configDir(configDirPath());
-        _coreDumpFileName = configDir.absoluteFilePath(QString("Quassel-Crash-%1.log").arg(QDateTime::currentDateTime().toString("yyyyMMdd-hhmm")));
+        _coreDumpFileName = configDir.absoluteFilePath(
+            QString("Quassel-Crash-%1.log").arg(QDateTime::currentDateTime().toString("yyyyMMdd-hhmm")));
         QFile dumpFile(_coreDumpFileName);
         dumpFile.open(QIODevice::Append);
         QTextStream dumpStream(&dumpFile);
@@ -375,18 +428,13 @@ const QString &Quassel::coreDumpFileName()
     return _coreDumpFileName;
 }
 
-
 QString Quassel::configDirPath()
 {
     if (!instance()->_configDirPath.isEmpty())
         return instance()->_configDirPath;
 
     QString path;
-    if (isOptionSet("datadir")) {
-        qWarning() << "Obsolete option --datadir used!";
-        path = Quassel::optionValue("datadir");
-    }
-    else if (isOptionSet("configdir")) {
+    if (isOptionSet("configdir")) {
         path = Quassel::optionValue("configdir");
     }
     else {
@@ -395,12 +443,12 @@ QString Quassel::configDirPath()
         path = QDir::homePath() + "/Library/Application Support/Quassel/";
 #else
         // We abuse QSettings to find us a sensible path on the other platforms
-#  ifdef Q_OS_WIN
+#    ifdef Q_OS_WIN
         // don't use the registry
         QSettings::Format format = QSettings::IniFormat;
-#  else
+#    else
         QSettings::Format format = QSettings::NativeFormat;
-#  endif
+#    endif
         QSettings s(format, QSettings::UserScope, QCoreApplication::organizationDomain(), buildInfo().applicationName);
         QFileInfo fileInfo(s.fileName());
         path = fileInfo.dir().absolutePath();
@@ -424,32 +472,20 @@ QString Quassel::configDirPath()
     return path;
 }
 
-
-void Quassel::setDataDirPaths(const QStringList &paths) {
-    instance()->_dataDirPaths = paths;
-}
-
-
 QStringList Quassel::dataDirPaths()
 {
-    return instance()->_dataDirPaths;
-}
+    if (!instance()->_dataDirPaths.isEmpty())
+        return instance()->_dataDirPaths;
 
-
-QStringList Quassel::findDataDirPaths()
-{
-    // TODO Qt5
-    // We don't use QStandardPaths for now, as we still need to provide fallbacks for Qt4 and
-    // want to stay consistent.
+    // TODO: Migrate to QStandardPaths (will require moving of the sqlite database,
+    //       or a fallback for it being in the config dir)
 
     QStringList dataDirNames;
 #ifdef Q_OS_WIN
     dataDirNames << qgetenv("APPDATA") + QCoreApplication::organizationDomain() + "/share/apps/quassel/"
-                 << qgetenv("APPDATA") + QCoreApplication::organizationDomain()
-                 << QCoreApplication::applicationDirPath();
+                 << qgetenv("APPDATA") + QCoreApplication::organizationDomain() << QCoreApplication::applicationDirPath();
 #elif defined Q_OS_MAC
-    dataDirNames << QDir::homePath() + "/Library/Application Support/Quassel/"
-                 << QCoreApplication::applicationDirPath();
+    dataDirNames << QDir::homePath() + "/Library/Application Support/Quassel/" << QCoreApplication::applicationDirPath();
 #else
     // Linux et al
 
@@ -463,7 +499,8 @@ QStringList Quassel::findDataDirPaths()
     // Now whatever is configured through XDG_DATA_DIRS
     QString xdgDataDirs = QFile::decodeName(qgetenv("XDG_DATA_DIRS"));
     if (xdgDataDirs.isEmpty())
-        dataDirNames << "/usr/local/share" << "/usr/share";
+        dataDirNames << "/usr/local/share"
+                     << "/usr/share";
     else
         dataDirNames << xdgDataDirs.split(':', QString::SkipEmptyParts);
 
@@ -494,14 +531,14 @@ QStringList Quassel::findDataDirPaths()
 
     dataDirNames.removeDuplicates();
 
+    instance()->_dataDirPaths = dataDirNames;
     return dataDirNames;
 }
 
-
-QString Quassel::findDataFilePath(const QString &fileName)
+QString Quassel::findDataFilePath(const QString& fileName)
 {
     QStringList dataDirs = dataDirPaths();
-    foreach(QString dataDir, dataDirs) {
+    foreach (QString dataDir, dataDirs) {
         QString path = dataDir + fileName;
         if (QFile::exists(path))
             return path;
@@ -509,22 +546,20 @@ QString Quassel::findDataFilePath(const QString &fileName)
     return QString();
 }
 
-
 QStringList Quassel::scriptDirPaths()
 {
     QStringList res(configDirPath() + "scripts/");
-    foreach(QString path, dataDirPaths())
-    res << path + "scripts/";
+    foreach (QString path, dataDirPaths())
+        res << path + "scripts/";
     return res;
 }
-
 
 QString Quassel::translationDirPath()
 {
     if (instance()->_translationDirPath.isEmpty()) {
         // We support only one translation dir; fallback mechanisms wouldn't work else.
         // This means that if we have a $data/translations dir, the internal :/i18n resource won't be considered.
-        foreach(const QString &dir, dataDirPaths()) {
+        foreach (const QString& dir, dataDirPaths()) {
             if (QFile::exists(dir + "translations/")) {
                 instance()->_translationDirPath = dir + "translations/";
                 break;
@@ -536,11 +571,10 @@ QString Quassel::translationDirPath()
     return instance()->_translationDirPath;
 }
 
-
-void Quassel::loadTranslation(const QLocale &locale)
+void Quassel::loadTranslation(const QLocale& locale)
 {
-    QTranslator *qtTranslator = QCoreApplication::instance()->findChild<QTranslator *>("QtTr");
-    QTranslator *quasselTranslator = QCoreApplication::instance()->findChild<QTranslator *>("QuasselTr");
+    auto* qtTranslator = QCoreApplication::instance()->findChild<QTranslator*>("QtTr");
+    auto* quasselTranslator = QCoreApplication::instance()->findChild<QTranslator*>("QuasselTr");
 
     if (qtTranslator)
         qApp->removeTranslator(qtTranslator);
@@ -553,13 +587,11 @@ void Quassel::loadTranslation(const QLocale &locale)
 
     qtTranslator = new QTranslator(qApp);
     qtTranslator->setObjectName("QtTr");
-    qApp->installTranslator(qtTranslator);
 
     quasselTranslator = new QTranslator(qApp);
     quasselTranslator->setObjectName("QuasselTr");
-    qApp->installTranslator(quasselTranslator);
 
-#if QT_VERSION >= 0x040800 && !defined Q_OS_MAC
+#ifndef Q_OS_MAC
     bool success = qtTranslator->load(locale, QString("qt_"), translationDirPath());
     if (!success)
         qtTranslator->load(locale, QString("qt_"), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
@@ -570,8 +602,10 @@ void Quassel::loadTranslation(const QLocale &locale)
         qtTranslator->load(QString("qt_%1").arg(locale.name()), QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     quasselTranslator->load(QString("%1").arg(locale.name()), translationDirPath());
 #endif
-}
 
+    qApp->installTranslator(quasselTranslator);
+    qApp->installTranslator(qtTranslator);
+}
 
 // ---- Quassel::Features ---------------------------------------------------------------------------------------------
 
@@ -584,14 +618,13 @@ Quassel::Features::Features()
     _features.resize(featureEnum.keyCount(), true);  // enable all known features to true
 }
 
-
-Quassel::Features::Features(const QStringList &features, LegacyFeatures legacyFeatures)
+Quassel::Features::Features(const QStringList& features, LegacyFeatures legacyFeatures)
 {
     // TODO Qt5: Use QMetaEnum::fromType()
     auto featureEnum = Quassel::staticMetaObject.enumerator(Quassel::staticMetaObject.indexOfEnumerator("Feature"));
     _features.resize(featureEnum.keyCount(), false);
 
-    for (auto &&feature : features) {
+    for (auto&& feature : features) {
         int i = featureEnum.keyToValue(qPrintable(feature));
         if (i >= 0) {
             _features[i] = true;
@@ -604,7 +637,7 @@ Quassel::Features::Features(const QStringList &features, LegacyFeatures legacyFe
     if (legacyFeatures) {
         // TODO Qt5: Use QMetaEnum::fromType()
         auto legacyFeatureEnum = Quassel::staticMetaObject.enumerator(Quassel::staticMetaObject.indexOfEnumerator("LegacyFeature"));
-        for (quint32 mask = 0x0001; mask <= 0x8000; mask <<=1) {
+        for (quint32 mask = 0x0001; mask <= 0x8000; mask <<= 1) {
             if (static_cast<quint32>(legacyFeatures) & mask) {
                 int i = featureEnum.keyToValue(legacyFeatureEnum.valueToKey(mask));
                 if (i >= 0) {
@@ -615,13 +648,11 @@ Quassel::Features::Features(const QStringList &features, LegacyFeatures legacyFe
     }
 }
 
-
 bool Quassel::Features::isEnabled(Feature feature) const
 {
-    size_t i = static_cast<size_t>(feature);
+    auto i = static_cast<size_t>(feature);
     return i < _features.size() ? _features[i] : false;
 }
-
 
 QStringList Quassel::Features::toStringList(bool enabled) const
 {
@@ -642,7 +673,6 @@ QStringList Quassel::Features::toStringList(bool enabled) const
     return result;
 }
 
-
 Quassel::LegacyFeatures Quassel::Features::toLegacyFeatures() const
 {
     // TODO Qt5: Use LegacyFeatures (flag operators for enum classes not supported in Qt4)
@@ -661,7 +691,6 @@ Quassel::LegacyFeatures Quassel::Features::toLegacyFeatures() const
     }
     return static_cast<LegacyFeatures>(result);
 }
-
 
 QStringList Quassel::Features::unknownFeatures() const
 {

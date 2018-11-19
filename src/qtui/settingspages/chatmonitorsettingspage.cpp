@@ -20,18 +20,18 @@
 
 #include "chatmonitorsettingspage.h"
 
+#include <QVariant>
+
+#include "buffermodel.h"
+#include "bufferview.h"
+#include "bufferviewconfig.h"
+#include "bufferviewfilter.h"
+#include "chatviewsettings.h"
 #include "client.h"
 #include "icon.h"
 #include "networkmodel.h"
-#include "bufferviewconfig.h"
-#include "buffermodel.h"
-#include "bufferview.h"
-#include "bufferviewfilter.h"
-#include "chatviewsettings.h"
 
-#include <QVariant>
-
-ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget *parent)
+ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget* parent)
     : SettingsPage(tr("Interface"), tr("Chat Monitor"), parent)
 {
     ui.setupUi(this);
@@ -60,20 +60,18 @@ ChatMonitorSettingsPage::ChatMonitorSettingsPage(QWidget *parent)
     ui.operationMode->addItem(tr("Opt Out"), ChatViewSettings::OptOut);
 
     // connect slots
-    connect(ui.operationMode, SIGNAL(currentIndexChanged(int)), SLOT(switchOperationMode(int)));
-    connect(ui.showHighlights, SIGNAL(toggled(bool)), SLOT(widgetHasChanged()));
-    connect(ui.showOwnMessages, SIGNAL(toggled(bool)), SLOT(widgetHasChanged()));
-    connect(ui.alwaysOwn, SIGNAL(toggled(bool)), SLOT(widgetHasChanged()));
-    connect(ui.showBacklog, SIGNAL(toggled(bool)), SLOT(widgetHasChanged()));
-    connect(ui.includeRead, SIGNAL(toggled(bool)), SLOT(widgetHasChanged()));
+    connect(ui.operationMode, selectOverload<int>(&QComboBox::currentIndexChanged), this, &ChatMonitorSettingsPage::switchOperationMode);
+    connect(ui.showHighlights, &QAbstractButton::toggled, this, &ChatMonitorSettingsPage::widgetHasChanged);
+    connect(ui.showOwnMessages, &QAbstractButton::toggled, this, &ChatMonitorSettingsPage::widgetHasChanged);
+    connect(ui.alwaysOwn, &QAbstractButton::toggled, this, &ChatMonitorSettingsPage::widgetHasChanged);
+    connect(ui.showBacklog, &QAbstractButton::toggled, this, &ChatMonitorSettingsPage::widgetHasChanged);
+    connect(ui.includeRead, &QAbstractButton::toggled, this, &ChatMonitorSettingsPage::widgetHasChanged);
 }
-
 
 bool ChatMonitorSettingsPage::hasDefaults() const
 {
     return true;
 }
-
 
 void ChatMonitorSettingsPage::defaults()
 {
@@ -91,7 +89,6 @@ void ChatMonitorSettingsPage::defaults()
     load();
     widgetHasChanged();
 }
-
 
 void ChatMonitorSettingsPage::load()
 {
@@ -114,22 +111,21 @@ void ChatMonitorSettingsPage::load()
     if (!settings["Buffers"].toList().isEmpty()) {
         QList<BufferId> bufferIdsFromConfig;
         // remove all active buffers from the available config
-        foreach(QVariant v, settings["Buffers"].toList()) {
+        foreach (QVariant v, settings["Buffers"].toList()) {
             bufferIdsFromConfig << v.value<BufferId>();
             allBufferIds.removeAll(v.value<BufferId>());
         }
         Client::networkModel()->sortBufferIds(bufferIdsFromConfig);
-        _configActive->initSetBufferList(bufferIdsFromConfig);
+        _configActive->setBufferList(bufferIdsFromConfig);
     }
     ui.activeBuffers->setFilteredModel(Client::bufferModel(), _configActive);
 
     Client::networkModel()->sortBufferIds(allBufferIds);
-    _configAvailable->initSetBufferList(allBufferIds);
+    _configAvailable->setBufferList(allBufferIds);
     ui.availableBuffers->setFilteredModel(Client::bufferModel(), _configAvailable);
 
     setChangedState(false);
 }
-
 
 void ChatMonitorSettingsPage::loadSettings()
 {
@@ -137,8 +133,7 @@ void ChatMonitorSettingsPage::loadSettings()
     // and ChatMonitorSettingsPage::defaults() to match
     ChatViewSettings chatViewSettings("ChatMonitor");
 
-    settings["OperationMode"] = (ChatViewSettings::OperationMode)
-            chatViewSettings.value("OperationMode", ChatViewSettings::OptOut).toInt();
+    settings["OperationMode"] = (ChatViewSettings::OperationMode)chatViewSettings.value("OperationMode", ChatViewSettings::OptOut).toInt();
     settings["ShowHighlights"] = chatViewSettings.value("ShowHighlights", false);
     settings["ShowOwnMsgs"] = chatViewSettings.value("ShowOwnMsgs", true);
     settings["AlwaysOwn"] = chatViewSettings.value("AlwaysOwn", false);
@@ -146,7 +141,6 @@ void ChatMonitorSettingsPage::loadSettings()
     settings["ShowBacklog"] = chatViewSettings.value("ShowBacklog", true);
     settings["IncludeRead"] = chatViewSettings.value("IncludeRead", false);
 }
-
 
 void ChatMonitorSettingsPage::save()
 {
@@ -161,7 +155,7 @@ void ChatMonitorSettingsPage::save()
 
     // save list of active buffers
     QVariantList saveableBufferIdList;
-    foreach(BufferId id, _configActive->bufferList()) {
+    foreach (BufferId id, _configActive->bufferList()) {
         saveableBufferIdList << QVariant::fromValue<BufferId>(id);
     }
 
@@ -170,13 +164,12 @@ void ChatMonitorSettingsPage::save()
     setChangedState(false);
 }
 
-
 void ChatMonitorSettingsPage::widgetHasChanged()
 {
     bool changed = testHasChanged();
-    if (changed != hasChanged()) setChangedState(changed);
+    if (changed != hasChanged())
+        setChangedState(changed);
 }
-
 
 bool ChatMonitorSettingsPage::testHasChanged()
 {
@@ -198,27 +191,26 @@ bool ChatMonitorSettingsPage::testHasChanged()
 
     QSet<BufferId> uiBufs = _configActive->bufferList().toSet();
     QSet<BufferId> settingsBufs;
-    foreach(QVariant v, settings["Buffers"].toList())
-    settingsBufs << v.value<BufferId>();
+    foreach (QVariant v, settings["Buffers"].toList())
+        settingsBufs << v.value<BufferId>();
     if (uiBufs != settingsBufs)
         return true;
 
     return false;
 }
 
-
-//TODO: - support drag 'n drop
+// TODO: - support drag 'n drop
 //      - adding of complete networks(?)
 
 /*
   toggleBuffers takes each a bufferView and its config for "input" and "output".
   Any selected item will be moved over from the input to the output bufferview.
 */
-void ChatMonitorSettingsPage::toggleBuffers(BufferView *inView, BufferViewConfig *inCfg, BufferView *outView, BufferViewConfig *outCfg)
+void ChatMonitorSettingsPage::toggleBuffers(BufferView* inView, BufferViewConfig* inCfg, BufferView* outView, BufferViewConfig* outCfg)
 {
     // Fill QMap with selected items ordered by selection row
-    QMap<int, QList<BufferId> > selectedBuffers;
-    foreach(QModelIndex index, inView->selectionModel()->selectedIndexes()) {
+    QMap<int, QList<BufferId>> selectedBuffers;
+    foreach (QModelIndex index, inView->selectionModel()->selectedIndexes()) {
         BufferId inBufferId = index.data(NetworkModel::BufferIdRole).value<BufferId>();
         if (index.data(NetworkModel::ItemTypeRole) == NetworkModel::NetworkItemType) {
             // TODO:
@@ -238,12 +230,12 @@ void ChatMonitorSettingsPage::toggleBuffers(BufferView *inView, BufferViewConfig
       This can probably be removed whenever BufferViewConfig::bulkAdd or something
       like that is available.
     */
-    qobject_cast<BufferViewFilter *>(outView->model())->setConfig(0);
-    qobject_cast<BufferViewFilter *>(inView->model())->setConfig(0);
+    qobject_cast<BufferViewFilter*>(outView->model())->setConfig(nullptr);
+    qobject_cast<BufferViewFilter*>(inView->model())->setConfig(nullptr);
 
     // actually move the ids
-    foreach(QList<BufferId> list, selectedBuffers) {
-        foreach(BufferId buffer, list) {
+    foreach (QList<BufferId> list, selectedBuffers) {
+        foreach (BufferId buffer, list) {
             outCfg->addBuffer(buffer, 0);
             inCfg->removeBuffer(buffer);
         }
@@ -255,7 +247,6 @@ void ChatMonitorSettingsPage::toggleBuffers(BufferView *inView, BufferViewConfig
     widgetHasChanged();
 }
 
-
 void ChatMonitorSettingsPage::on_activateBuffer_clicked()
 {
     if (ui.availableBuffers->currentIndex().isValid() && ui.availableBuffers->selectionModel()->hasSelection()) {
@@ -263,7 +254,6 @@ void ChatMonitorSettingsPage::on_activateBuffer_clicked()
         widgetHasChanged();
     }
 }
-
 
 void ChatMonitorSettingsPage::on_deactivateBuffer_clicked()
 {
@@ -273,14 +263,13 @@ void ChatMonitorSettingsPage::on_deactivateBuffer_clicked()
     }
 }
 
-
 /*
   switchOperationMode gets called on combobox signal currentIndexChanged.
   modeIndex is the row id in combobox itemlist
 */
 void ChatMonitorSettingsPage::switchOperationMode(int idx)
 {
-    ChatViewSettings::OperationMode mode = (ChatViewSettings::OperationMode)(idx + 1);
+    auto mode = (ChatViewSettings::OperationMode)(idx + 1);
     if (mode == ChatViewSettings::OptIn) {
         ui.labelActiveBuffers->setText(tr("Show:"));
     }

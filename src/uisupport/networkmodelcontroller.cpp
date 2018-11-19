@@ -24,9 +24,9 @@
 #include <QDialogButtonBox>
 #include <QGridLayout>
 #include <QIcon>
+#include <QInputDialog>
 #include <QLabel>
 #include <QLineEdit>
-#include <QInputDialog>
 #include <QMessageBox>
 #include <QPushButton>
 
@@ -39,30 +39,21 @@
 #include "network.h"
 #include "util.h"
 
-NetworkModelController::NetworkModelController(QObject *parent)
-    : QObject(parent),
-    _actionCollection(new ActionCollection(this)),
-    _messageFilter(0),
-    _receiver(0)
+NetworkModelController::NetworkModelController(QObject* parent)
+    : QObject(parent)
+    , _actionCollection(new ActionCollection(this))
 {
-    connect(_actionCollection, SIGNAL(actionTriggered(QAction *)), SLOT(actionTriggered(QAction *)));
+    connect(_actionCollection, &ActionCollection::actionTriggered, this, &NetworkModelController::actionTriggered);
 }
 
-
-NetworkModelController::~NetworkModelController()
-{
-}
-
-
-Action *NetworkModelController::registerAction(ActionType type, const QString &text, bool checkable)
+Action* NetworkModelController::registerAction(ActionType type, const QString& text, bool checkable)
 {
     return registerAction(type, QPixmap(), text, checkable);
 }
 
-
-Action *NetworkModelController::registerAction(ActionType type, const QIcon &icon, const QString &text, bool checkable)
+Action* NetworkModelController::registerAction(ActionType type, const QIcon& icon, const QString& text, bool checkable)
 {
-    Action *act;
+    Action* act;
     if (icon.isNull())
         act = new Action(text, this);
     else
@@ -76,48 +67,39 @@ Action *NetworkModelController::registerAction(ActionType type, const QIcon &ico
     return act;
 }
 
-
 /******** Helper Functions ***********************************************************************/
 
-void NetworkModelController::setIndexList(const QModelIndex &index)
+void NetworkModelController::setIndexList(const QModelIndex& index)
 {
     _indexList = QList<QModelIndex>() << index;
 }
 
-
-void NetworkModelController::setIndexList(const QList<QModelIndex> &list)
+void NetworkModelController::setIndexList(const QList<QModelIndex>& list)
 {
     _indexList = list;
 }
 
-
-void NetworkModelController::setMessageFilter(MessageFilter *filter)
+void NetworkModelController::setMessageFilter(MessageFilter* filter)
 {
     _messageFilter = filter;
 }
 
-
-void NetworkModelController::setContextItem(const QString &contextItem)
+void NetworkModelController::setContextItem(const QString& contextItem)
 {
     _contextItem = contextItem;
 }
 
-
-void NetworkModelController::setSlot(QObject *receiver, const char *method)
+void NetworkModelController::setSlot(ActionSlot slot)
 {
-    _receiver = receiver;
-    _method = method;
+    _actionSlot = std::move(slot);
 }
 
-
-bool NetworkModelController::checkRequirements(const QModelIndex &index, ItemActiveStates requiredActiveState)
+bool NetworkModelController::checkRequirements(const QModelIndex& index, ItemActiveStates requiredActiveState)
 {
     if (!index.isValid())
         return false;
 
-    ItemActiveStates isActive = index.data(NetworkModel::ItemActiveRole).toBool()
-                                ? ActiveState
-                                : InactiveState;
+    ItemActiveStates isActive = index.data(NetworkModel::ItemActiveRole).toBool() ? ActiveState : InactiveState;
 
     if (!(isActive & requiredActiveState))
         return false;
@@ -125,10 +107,9 @@ bool NetworkModelController::checkRequirements(const QModelIndex &index, ItemAct
     return true;
 }
 
-
-QString NetworkModelController::nickName(const QModelIndex &index) const
+QString NetworkModelController::nickName(const QModelIndex& index) const
 {
-    IrcUser *ircUser = qobject_cast<IrcUser *>(index.data(NetworkModel::IrcUserRole).value<QObject *>());
+    auto* ircUser = qobject_cast<IrcUser*>(index.data(NetworkModel::IrcUserRole).value<QObject*>());
     if (ircUser)
         return ircUser->nick();
 
@@ -138,34 +119,31 @@ QString NetworkModelController::nickName(const QModelIndex &index) const
     if (bufferInfo.type() != BufferInfo::QueryBuffer)
         return QString();
 
-    return bufferInfo.bufferName(); // FIXME this might break with merged queries maybe
+    return bufferInfo.bufferName();  // FIXME this might break with merged queries maybe
 }
 
-
-BufferId NetworkModelController::findQueryBuffer(const QModelIndex &index, const QString &predefinedNick) const
+BufferId NetworkModelController::findQueryBuffer(const QModelIndex& index, const QString& predefinedNick) const
 {
     NetworkId networkId = index.data(NetworkModel::NetworkIdRole).value<NetworkId>();
     if (!networkId.isValid())
-        return BufferId();
+        return {};
 
     QString nick = predefinedNick.isEmpty() ? nickName(index) : predefinedNick;
     if (nick.isEmpty())
-        return BufferId();
+        return {};
 
     return findQueryBuffer(networkId, nick);
 }
 
-
-BufferId NetworkModelController::findQueryBuffer(NetworkId networkId, const QString &nick) const
+BufferId NetworkModelController::findQueryBuffer(NetworkId networkId, const QString& nick) const
 {
     return Client::networkModel()->bufferId(networkId, nick);
 }
 
-
-void NetworkModelController::removeBuffers(const QModelIndexList &indexList)
+void NetworkModelController::removeBuffers(const QModelIndexList& indexList)
 {
     QList<BufferInfo> inactive;
-    foreach(QModelIndex index, indexList) {
+    foreach (QModelIndex index, indexList) {
         BufferInfo info = index.data(NetworkModel::BufferInfoRole).value<BufferInfo>();
         if (info.isValid()) {
             if (info.type() == BufferInfo::QueryBuffer
@@ -175,10 +153,10 @@ void NetworkModelController::removeBuffers(const QModelIndexList &indexList)
     }
     QString msg;
     if (inactive.count()) {
-        msg = tr("Do you want to delete the following buffer(s) permanently?", 0, inactive.count());
+        msg = tr("Do you want to delete the following buffer(s) permanently?", "", inactive.count());
         msg += "<ul>";
         int count = 0;
-        foreach(BufferInfo info, inactive) {
+        foreach (BufferInfo info, inactive) {
             if (count < 10) {
                 msg += QString("<li>%1</li>").arg(info.bufferName());
                 count++;
@@ -189,31 +167,30 @@ void NetworkModelController::removeBuffers(const QModelIndexList &indexList)
         msg += "</ul>";
         if (count > 9 && inactive.size() - count != 0)
             msg += tr("...and <b>%1</b> more<br><br>").arg(inactive.size() - count);
-        msg += tr("<b>Note:</b> This will delete all related data, including all backlog data, from the core's database and cannot be undone.");
+        msg += tr(
+            "<b>Note:</b> This will delete all related data, including all backlog data, from the core's database and cannot be undone.");
         if (inactive.count() != indexList.count())
             msg += tr("<br>Active channel buffers cannot be deleted, please part the channel first.");
 
-        if (QMessageBox::question(0, tr("Remove buffers permanently?"), msg, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
-            foreach(BufferInfo info, inactive)
-            Client::removeBuffer(info.bufferId());
+        if (QMessageBox::question(nullptr, tr("Remove buffers permanently?"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No)
+            == QMessageBox::Yes) {
+            foreach (BufferInfo info, inactive)
+                Client::removeBuffer(info.bufferId());
         }
     }
 }
 
-
-void NetworkModelController::handleExternalAction(ActionType type, QAction *action)
+void NetworkModelController::handleExternalAction(ActionType type, QAction* action)
 {
     Q_UNUSED(type);
-    if (receiver() && method()) {
-        if (!QMetaObject::invokeMethod(receiver(), method(), Q_ARG(QAction *, action)))
-            qWarning() << "NetworkModelActionController::handleExternalAction(): Could not invoke slot" << receiver() << method();
+    if (_actionSlot) {
+        _actionSlot(action);
     }
 }
 
-
 /******** Handle Actions *************************************************************************/
 
-void NetworkModelController::actionTriggered(QAction *action)
+void NetworkModelController::actionTriggered(QAction* action)
 {
     ActionType type = (ActionType)action->data().toInt();
     if (type > 0) {
@@ -234,16 +211,28 @@ void NetworkModelController::actionTriggered(QAction *action)
     }
 }
 
-
-void NetworkModelController::handleNetworkAction(ActionType type, QAction *)
+void NetworkModelController::handleNetworkAction(ActionType type, QAction*)
 {
-    if (type == NetworkConnectAllWithDropdown || type == NetworkDisconnectAllWithDropdown || type == NetworkConnectAll || type == NetworkDisconnectAll) {
-        if (type == NetworkConnectAllWithDropdown && QMessageBox::question(0, tr("Question"), tr("Really Connect to all IRC Networks?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes) == QMessageBox::No)
+    if (type == NetworkConnectAllWithDropdown || type == NetworkDisconnectAllWithDropdown || type == NetworkConnectAll
+        || type == NetworkDisconnectAll) {
+        if (type == NetworkConnectAllWithDropdown
+            && QMessageBox::question(nullptr,
+                                     tr("Question"),
+                                     tr("Really Connect to all IRC Networks?"),
+                                     QMessageBox::Yes | QMessageBox::No,
+                                     QMessageBox::Yes)
+                   == QMessageBox::No)
             return;
-        if (type == NetworkDisconnectAllWithDropdown && QMessageBox::question(0, tr("Question"), tr("Really disconnect from all IRC Networks?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::No)
+        if (type == NetworkDisconnectAllWithDropdown
+            && QMessageBox::question(nullptr,
+                                     tr("Question"),
+                                     tr("Really disconnect from all IRC Networks?"),
+                                     QMessageBox::Yes | QMessageBox::No,
+                                     QMessageBox::No)
+                   == QMessageBox::No)
             return;
-        foreach(NetworkId id, Client::networkIds()) {
-            const Network *net = Client::network(id);
+        foreach (NetworkId id, Client::networkIds()) {
+            const Network* net = Client::network(id);
             if ((type == NetworkConnectAllWithDropdown || type == NetworkConnectAll) && net->connectionState() == Network::Disconnected)
                 net->requestConnect();
             if ((type == NetworkDisconnectAllWithDropdown || type == NetworkDisconnectAll) && net->connectionState() != Network::Disconnected)
@@ -255,7 +244,7 @@ void NetworkModelController::handleNetworkAction(ActionType type, QAction *)
     if (!indexList().count())
         return;
 
-    const Network *network = Client::network(indexList().at(0).data(NetworkModel::NetworkIdRole).value<NetworkId>());
+    const Network* network = Client::network(indexList().at(0).data(NetworkModel::NetworkIdRole).value<NetworkId>());
     Q_CHECK_PTR(network);
     if (!network)
         return;
@@ -272,27 +261,25 @@ void NetworkModelController::handleNetworkAction(ActionType type, QAction *)
     }
 }
 
-
-void NetworkModelController::handleBufferAction(ActionType type, QAction *)
+void NetworkModelController::handleBufferAction(ActionType type, QAction*)
 {
     if (type == BufferRemove) {
         removeBuffers(indexList());
     }
     else {
-        QList<BufferInfo> bufferList; // create temp list because model indexes might change
-        foreach(QModelIndex index, indexList()) {
+        QList<BufferInfo> bufferList;  // create temp list because model indexes might change
+        foreach (QModelIndex index, indexList()) {
             BufferInfo bufferInfo = index.data(NetworkModel::BufferInfoRole).value<BufferInfo>();
             if (bufferInfo.isValid())
                 bufferList << bufferInfo;
         }
 
-        foreach(BufferInfo bufferInfo, bufferList) {
+        foreach (BufferInfo bufferInfo, bufferList) {
             switch (type) {
             case BufferJoin:
                 Client::userInput(bufferInfo, QString("/JOIN %1").arg(bufferInfo.bufferName()));
                 break;
-            case BufferPart:
-            {
+            case BufferPart: {
                 QString reason = Client::identity(Client::network(bufferInfo.networkId())->identity())->partReason();
                 Client::userInput(bufferInfo, QString("/PART %1").arg(reason));
                 break;
@@ -307,8 +294,7 @@ void NetworkModelController::handleBufferAction(ActionType type, QAction *)
     }
 }
 
-
-void NetworkModelController::handleHideAction(ActionType type, QAction *action)
+void NetworkModelController::handleHideAction(ActionType type, QAction* action)
 {
     Q_UNUSED(action)
 
@@ -353,7 +339,7 @@ void NetworkModelController::handleHideAction(ActionType type, QAction *action)
         if (_messageFilter)
             BufferSettings(_messageFilter->idString()).setMessageFilter(filter);
         else {
-            foreach(QModelIndex index, _indexList) {
+            foreach (QModelIndex index, _indexList) {
                 BufferId bufferId = index.data(NetworkModel::BufferIdRole).value<BufferId>();
                 if (!bufferId.isValid())
                     continue;
@@ -368,7 +354,7 @@ void NetworkModelController::handleHideAction(ActionType type, QAction *action)
         if (_messageFilter)
             BufferSettings(_messageFilter->idString()).removeFilter();
         else {
-            foreach(QModelIndex index, _indexList) {
+            foreach (QModelIndex index, _indexList) {
                 BufferId bufferId = index.data(NetworkModel::BufferIdRole).value<BufferId>();
                 if (!bufferId.isValid())
                     continue;
@@ -381,8 +367,7 @@ void NetworkModelController::handleHideAction(ActionType type, QAction *action)
     };
 }
 
-
-void NetworkModelController::handleGeneralAction(ActionType type, QAction *action)
+void NetworkModelController::handleGeneralAction(ActionType type, QAction* action)
 {
     Q_UNUSED(action)
 
@@ -391,8 +376,7 @@ void NetworkModelController::handleGeneralAction(ActionType type, QAction *actio
     NetworkId networkId = indexList().at(0).data(NetworkModel::NetworkIdRole).value<NetworkId>();
 
     switch (type) {
-    case JoinChannel:
-    {
+    case JoinChannel: {
         QString channelName = contextItem();
         QString channelPassword;
         if (channelName.isEmpty()) {
@@ -405,7 +389,8 @@ void NetworkModelController::handleGeneralAction(ActionType type, QAction *actio
         }
         if (!channelName.isEmpty()) {
             if (!channelPassword.isEmpty())
-                Client::instance()->userInput(BufferInfo::fakeStatusBuffer(networkId), QString("/JOIN %1 %2").arg(channelName).arg(channelPassword));
+                Client::instance()->userInput(BufferInfo::fakeStatusBuffer(networkId),
+                                              QString("/JOIN %1 %2").arg(channelName).arg(channelPassword));
             else
                 Client::instance()->userInput(BufferInfo::fakeStatusBuffer(networkId), QString("/JOIN %1").arg(channelName));
         }
@@ -430,10 +415,9 @@ void NetworkModelController::handleGeneralAction(ActionType type, QAction *actio
     }
 }
 
-
-void NetworkModelController::handleNickAction(ActionType type, QAction *action)
+void NetworkModelController::handleNickAction(ActionType type, QAction* action)
 {
-    foreach(QModelIndex index, indexList()) {
+    foreach (QModelIndex index, indexList()) {
         NetworkId networkId = index.data(NetworkModel::NetworkIdRole).value<NetworkId>();
         if (!networkId.isValid())
             continue;
@@ -492,40 +476,43 @@ void NetworkModelController::handleNickAction(ActionType type, QAction *action)
         case NickQuery:
             Client::bufferModel()->switchToOrStartQuery(networkId, nick);
             break;
-        case NickIgnoreUser:
-        {
-            IrcUser *ircUser = qobject_cast<IrcUser *>(index.data(NetworkModel::IrcUserRole).value<QObject *>());
+        case NickIgnoreUser: {
+            auto* ircUser = qobject_cast<IrcUser*>(index.data(NetworkModel::IrcUserRole).value<QObject*>());
             if (!ircUser)
                 break;
             Client::ignoreListManager()->requestAddIgnoreListItem(IgnoreListManager::SenderIgnore,
-                action->property("ignoreRule").toString(),
-                false, IgnoreListManager::SoftStrictness,
-                IgnoreListManager::NetworkScope,
-                ircUser->network()->networkName(), true);
+                                                                  action->property("ignoreRule").toString(),
+                                                                  false,
+                                                                  IgnoreListManager::SoftStrictness,
+                                                                  IgnoreListManager::NetworkScope,
+                                                                  ircUser->network()->networkName(),
+                                                                  true);
             break;
         }
-        case NickIgnoreHost:
-        {
-            IrcUser *ircUser = qobject_cast<IrcUser *>(index.data(NetworkModel::IrcUserRole).value<QObject *>());
+        case NickIgnoreHost: {
+            auto* ircUser = qobject_cast<IrcUser*>(index.data(NetworkModel::IrcUserRole).value<QObject*>());
             if (!ircUser)
                 break;
             Client::ignoreListManager()->requestAddIgnoreListItem(IgnoreListManager::SenderIgnore,
-                action->property("ignoreRule").toString(),
-                false, IgnoreListManager::SoftStrictness,
-                IgnoreListManager::NetworkScope,
-                ircUser->network()->networkName(), true);
+                                                                  action->property("ignoreRule").toString(),
+                                                                  false,
+                                                                  IgnoreListManager::SoftStrictness,
+                                                                  IgnoreListManager::NetworkScope,
+                                                                  ircUser->network()->networkName(),
+                                                                  true);
             break;
         }
-        case NickIgnoreDomain:
-        {
-            IrcUser *ircUser = qobject_cast<IrcUser *>(index.data(NetworkModel::IrcUserRole).value<QObject *>());
+        case NickIgnoreDomain: {
+            auto* ircUser = qobject_cast<IrcUser*>(index.data(NetworkModel::IrcUserRole).value<QObject*>());
             if (!ircUser)
                 break;
             Client::ignoreListManager()->requestAddIgnoreListItem(IgnoreListManager::SenderIgnore,
-                action->property("ignoreRule").toString(),
-                false, IgnoreListManager::SoftStrictness,
-                IgnoreListManager::NetworkScope,
-                ircUser->network()->networkName(), true);
+                                                                  action->property("ignoreRule").toString(),
+                                                                  false,
+                                                                  IgnoreListManager::SoftStrictness,
+                                                                  IgnoreListManager::NetworkScope,
+                                                                  ircUser->network()->networkName(),
+                                                                  true);
             break;
         }
         case NickIgnoreCustom:
@@ -545,24 +532,24 @@ void NetworkModelController::handleNickAction(ActionType type, QAction *action)
     }
 }
 
-
 /***************************************************************************************************************
  * JoinDlg
  ***************************************************************************************************************/
 
-NetworkModelController::JoinDlg::JoinDlg(const QModelIndex &index, QWidget *parent) : QDialog(parent)
+NetworkModelController::JoinDlg::JoinDlg(const QModelIndex& index, QWidget* parent)
+    : QDialog(parent)
 {
     setWindowIcon(icon::get("irc-join-channel"));
     setWindowTitle(tr("Join Channel"));
 
-    QGridLayout *layout = new QGridLayout(this);
+    auto* layout = new QGridLayout(this);
     layout->addWidget(new QLabel(tr("Network:")), 0, 0);
     layout->addWidget(networks = new QComboBox, 0, 1);
     layout->addWidget(new QLabel(tr("Channel:")), 1, 0);
     layout->addWidget(channel = new QLineEdit, 1, 1);
     layout->addWidget(new QLabel(tr("Password:")), 2, 0);
     layout->addWidget(password = new QLineEdit, 2, 1);
-    layout->addWidget(buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel), 3, 0, 1, 2);
+    layout->addWidget(buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel), 3, 0, 1, 2);
     setLayout(layout);
 
     channel->setFocus();
@@ -570,12 +557,12 @@ NetworkModelController::JoinDlg::JoinDlg(const QModelIndex &index, QWidget *pare
     networks->setInsertPolicy(QComboBox::InsertAlphabetically);
     password->setEchoMode(QLineEdit::Password);
 
-    connect(buttonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), SLOT(reject()));
-    connect(channel, SIGNAL(textChanged(QString)), SLOT(on_channel_textChanged(QString)));
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+    connect(channel, &QLineEdit::textChanged, this, &JoinDlg::on_channel_textChanged);
 
-    foreach(NetworkId id, Client::networkIds()) {
-        const Network *net = Client::network(id);
+    foreach (NetworkId id, Client::networkIds()) {
+        const Network* net = Client::network(id);
         if (net->isConnected()) {
             networks->addItem(net->networkName(), QVariant::fromValue<NetworkId>(id));
         }
@@ -585,33 +572,28 @@ NetworkModelController::JoinDlg::JoinDlg(const QModelIndex &index, QWidget *pare
         NetworkId networkId = index.data(NetworkModel::NetworkIdRole).value<NetworkId>();
         if (networkId.isValid()) {
             networks->setCurrentIndex(networks->findText(Client::network(networkId)->networkName()));
-            if (index.data(NetworkModel::BufferTypeRole) == BufferInfo::ChannelBuffer
-                && !index.data(NetworkModel::ItemActiveRole).toBool())
+            if (index.data(NetworkModel::BufferTypeRole) == BufferInfo::ChannelBuffer && !index.data(NetworkModel::ItemActiveRole).toBool())
                 channel->setText(index.data(Qt::DisplayRole).toString());
         }
     }
 }
-
 
 NetworkId NetworkModelController::JoinDlg::networkId() const
 {
     return networks->itemData(networks->currentIndex()).value<NetworkId>();
 }
 
-
 QString NetworkModelController::JoinDlg::channelName() const
 {
     return channel->text();
 }
-
 
 QString NetworkModelController::JoinDlg::channelPassword() const
 {
     return password->text();
 }
 
-
-void NetworkModelController::JoinDlg::on_channel_textChanged(const QString &text)
+void NetworkModelController::JoinDlg::on_channel_textChanged(const QString& text)
 {
     buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!text.isEmpty());
 }

@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef SYNCABLEOBJECT_H
-#define SYNCABLEOBJECT_H
+#pragma once
+
+#include "common-export.h"
 
 #include <QDataStream>
 #include <QMetaType>
@@ -28,36 +29,37 @@
 
 #include "signalproxy.h"
 
-#define SYNCABLE_OBJECT static int _classNameOffset__();
-#define INIT_SYNCABLE_OBJECT(x) int x ::_classNameOffset__() {\
-    static int offset = QByteArray(x ::staticMetaObject.className()).length() + 2;\
-    return offset;\
-}\
+/**
+ * This macro needs to be declared in syncable objects, next to the Q_OBJECT macro.
+ *
+ * @note: Specializations of a base syncable object for core/client must not use the macro;
+ *        i.e., if you have Foo, ClientFoo and/or CoreFoo, the SYNCABLE_OBJECT macro would
+ *        only be declared in the class declaration of Foo.
+ */
+#define SYNCABLE_OBJECT                                                                                                                    \
+public:                                                                                                                                    \
+    const QMetaObject* syncMetaObject() const final override { return &staticMetaObject; }                                                 \
+                                                                                                                                           \
+private:
 
-#ifdef Q_CC_MSVC
-#    define SYNC(...) sync_call__(SignalProxy::Server, (__FUNCTION__ + _classNameOffset__()), __VA_ARGS__);
-#    define REQUEST(...) sync_call__(SignalProxy::Client, (__FUNCTION__ + _classNameOffset__()), __VA_ARGS__);
-#else
-#    define SYNC(...) sync_call__(SignalProxy::Server, __func__, __VA_ARGS__);
-#    define REQUEST(...) sync_call__(SignalProxy::Client, __func__, __VA_ARGS__);
-#endif //Q_CC_MSVC
+#define SYNC(...) sync_call__(SignalProxy::Server, __func__, __VA_ARGS__);
+#define REQUEST(...) sync_call__(SignalProxy::Client, __func__, __VA_ARGS__);
 
 #define SYNC_OTHER(x, ...) sync_call__(SignalProxy::Server, #x, __VA_ARGS__);
 #define REQUEST_OTHER(x, ...) sync_call__(SignalProxy::Client, #x, __VA_ARGS__);
 
-#define ARG(x) const_cast<void *>(reinterpret_cast<const void *>(&x))
+#define ARG(x) const_cast<void*>(reinterpret_cast<const void*>(&x))
 #define NO_ARG 0
 
-class SyncableObject : public QObject
+class COMMON_EXPORT SyncableObject : public QObject
 {
-    SYNCABLE_OBJECT
     Q_OBJECT
 
 public:
-    SyncableObject(QObject *parent = 0);
-    SyncableObject(const QString &objectName, QObject *parent = 0);
-    SyncableObject(const SyncableObject &other, QObject *parent = 0);
-    ~SyncableObject();
+    SyncableObject(QObject* parent = nullptr);
+    SyncableObject(const QString& objectName, QObject* parent = nullptr);
+    SyncableObject(const SyncableObject& other, QObject* parent = nullptr);
+    ~SyncableObject() override;
 
     //! Stores the object's state into a QVariantMap.
     /** The default implementation takes dynamic properties as well as getters that have
@@ -75,25 +77,24 @@ public:
     //! Initialize the object's state from a given QVariantMap.
     /** \see toVariantMap() for important information concerning this method.
      */
-    virtual void fromVariantMap(const QVariantMap &properties);
+    virtual void fromVariantMap(const QVariantMap& properties);
 
     virtual bool isInitialized() const;
 
-    virtual const QMetaObject *syncMetaObject() const { return metaObject(); }
+    virtual const QMetaObject* syncMetaObject() const { return metaObject(); }
 
     inline void setAllowClientUpdates(bool allow) { _allowClientUpdates = allow; }
     inline bool allowClientUpdates() const { return _allowClientUpdates; }
 
 public slots:
     virtual void setInitialized();
-    void requestUpdate(const QVariantMap &properties);
-    virtual void update(const QVariantMap &properties);
+    void requestUpdate(const QVariantMap& properties);
+    virtual void update(const QVariantMap& properties);
 
 protected:
-    void sync_call__(SignalProxy::ProxyMode modeType, const char *funcname, ...) const;
+    void sync_call__(SignalProxy::ProxyMode modeType, const char* funcname, ...) const;
 
-    void renameObject(const QString &newName);
-    SyncableObject &operator=(const SyncableObject &other);
+    SyncableObject& operator=(const SyncableObject& other);
 
 signals:
     void initDone();
@@ -101,18 +102,17 @@ signals:
     void updated();
 
 private:
-    void synchronize(SignalProxy *proxy);
-    void stopSynchronize(SignalProxy *proxy);
+    void synchronize(SignalProxy* proxy);
+    void stopSynchronize(SignalProxy* proxy);
 
-    bool setInitValue(const QString &property, const QVariant &value);
+    bool setInitValue(const QString& property, const QVariant& value);
 
-    bool _initialized;
-    bool _allowClientUpdates;
+private:
+    QString _objectName;
+    bool _initialized{false};
+    bool _allowClientUpdates{false};
 
-    QList<SignalProxy *> _signalProxies;
+    QList<SignalProxy*> _signalProxies;
 
     friend class SignalProxy;
 };
-
-
-#endif

@@ -27,13 +27,12 @@
 class ClientTransferManager : public TransferManager
 {
     Q_OBJECT
-    SYNCABLE_OBJECT
 
 public:
     using TransferManager::TransferManager;
 
 private slots:
-    void setTransferIds(const QList<QUuid> &transferIds) override;
-    void onCoreTransferAdded(const QUuid &uuid) override;
+    void setTransferIds(const QList<QUuid>& transferIds) override;
+    void onCoreTransferAdded(const QUuid& uuid) override;
     void onTransferInitDone();
 };

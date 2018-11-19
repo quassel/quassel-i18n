@@ -1,6 +1,6 @@
-# Builds the common module
+quassel_add_module(Common EXPORT)
 
-set(SOURCES
+target_sources(${TARGET} PRIVATE
     abstractsignalwatcher.h
     aliasmanager.cpp
     authhandler.cpp
@@ -17,7 +17,7 @@ set(SOURCES
     event.cpp
     eventmanager.cpp
     expressionmatch.cpp
-    # expressionmatchtests.cpp
+    funchelpers.h
     highlightrulemanager.cpp
     identity.cpp
     ignorelistmanager.cpp
@@ -27,7 +27,6 @@ set(SOURCES
     irclisthelper.cpp
     ircuser.cpp
     logger.cpp
-    logmessage.cpp
     message.cpp
     messageevent.cpp
     network.cpp
@@ -58,60 +57,39 @@ set(SOURCES
     protocol.h
 )
 
-if (USE_QT5)
-    list(APPEND SOURCES qt5cliparser.cpp)
-else()
-    list(APPEND SOURCES cliparser.cpp)
-endif()
+# Needed for finding the generated version.h
+target_include_directories(${TARGET} PRIVATE ${CMAKE_BINARY_DIR})
 
-if (QCA2_FOUND OR QCA2-QT5_FOUND)
-    set(SOURCES ${SOURCES} keyevent.cpp)
-endif()
+target_link_libraries(${TARGET} PUBLIC
+    ${CMAKE_DL_LIBS}
+    Qt5::Core
+    Qt5::Network
+    ZLIB::ZLIB
+)
 
-if (ZLIB_FOUND)
-    add_definitions(-DHAVE_ZLIB)
-    include_directories(${ZLIB_INCLUDE_DIRS})
-else()
-    set(SOURCES ${SOURCES} ../../3rdparty/miniz/miniz.c)
-endif()
-
-if (USE_QT4)
-    set(SOURCES ${SOURCES} ../../3rdparty/sha512/sha512.c)
+if (EMBED_DATA)
+    set_property(SOURCE quassel.cpp APPEND PROPERTY COMPILE_DEFINITIONS EMBED_DATA)
 endif()
 
 if (HAVE_SYSLOG)
-    add_definitions(-DHAVE_SYSLOG)
-endif()
-
-if (APPLE)
-    set(SOURCES ${SOURCES} mac_utils.cpp)
+    target_compile_definitions(${TARGET} PRIVATE -DHAVE_SYSLOG)
 endif()
 
 if (WIN32)
-    set(SOURCES ${SOURCES} logbacktrace_win.cpp windowssignalwatcher.cpp)
+    target_sources(${TARGET} PRIVATE logbacktrace_win.cpp windowssignalwatcher.cpp)
 else()
-    if (EXECINFO_FOUND)
-        add_definitions(-DHAVE_EXECINFO)
-        include_directories(${EXECINFO_INCLUDES})
+    if (Backtrace_FOUND)
+        configure_file(backtrace_config.h.in backtrace_config.h)
+        target_include_directories(${TARGET} PRIVATE ${Backtrace_INCLUDE_DIRS})
+        target_link_libraries(${TARGET} PRIVATE ${Backtrace_LIBRARIES})
+        set_property(SOURCE logbacktrace_unix.cpp posixsignalwatcher.cpp APPEND PROPERTY COMPILE_DEFINITIONS HAVE_BACKTRACE)
     endif()
-    set(SOURCES ${SOURCES} logbacktrace_unix.cpp posixsignalwatcher.cpp)
+    target_sources(${TARGET} PRIVATE logbacktrace_unix.cpp posixsignalwatcher.cpp)
 endif()
-
-qt_add_resources(SOURCES ${COMMON_RCS})
-
-add_library(mod_common STATIC ${SOURCES})
-qt_use_modules(mod_common Core Network)
 
 if (APPLE)
-    target_link_libraries(mod_common "-framework CoreServices" "-framework CoreFoundation")
+    target_sources(${TARGET} PRIVATE mac_utils.cpp)
+    target_link_libraries(${TARGET} PUBLIC "-framework CoreServices" "-framework CoreFoundation")
 endif()
 
-target_link_libraries(mod_common ${CMAKE_DL_LIBS} ${EXECINFO_LIBRARIES})
-
-if(ZLIB_FOUND)
-    target_link_libraries(mod_common ${ZLIB_LIBRARIES})
-endif()
-
-# This is needed so translations are generated before trying to build the qrc.
-# Should probably find a nicer solution with proper dependencies between the involved files, though...
-add_dependencies(mod_common po)
+target_link_if_exists(${TARGET} PUBLIC Quassel::Resource::I18n)

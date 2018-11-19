@@ -24,9 +24,9 @@
 #include "networkmodel.h"
 #include "types.h"
 
-BufferViewOverlayFilter::BufferViewOverlayFilter(QAbstractItemModel *model, BufferViewOverlay *overlay)
-    : QSortFilterProxyModel(model),
-    _overlay(0)
+BufferViewOverlayFilter::BufferViewOverlayFilter(QAbstractItemModel* model, BufferViewOverlay* overlay)
+    : QSortFilterProxyModel(model)
+    , _overlay(nullptr)
 {
     setOverlay(overlay);
     setSourceModel(model);
@@ -34,14 +34,13 @@ BufferViewOverlayFilter::BufferViewOverlayFilter(QAbstractItemModel *model, Buff
     setDynamicSortFilter(true);
 }
 
-
-void BufferViewOverlayFilter::setOverlay(BufferViewOverlay *overlay)
+void BufferViewOverlayFilter::setOverlay(BufferViewOverlay* overlay)
 {
     if (_overlay == overlay)
         return;
 
     if (_overlay) {
-        disconnect(_overlay, 0, this, 0);
+        disconnect(_overlay, nullptr, this, nullptr);
     }
 
     _overlay = overlay;
@@ -51,19 +50,17 @@ void BufferViewOverlayFilter::setOverlay(BufferViewOverlay *overlay)
         return;
     }
 
-    connect(overlay, SIGNAL(destroyed()), this, SLOT(overlayDestroyed()));
-    connect(overlay, SIGNAL(hasChanged()), this, SLOT(invalidate()));
+    connect(overlay, &QObject::destroyed, this, &BufferViewOverlayFilter::overlayDestroyed);
+    connect(overlay, &BufferViewOverlay::hasChanged, this, &QSortFilterProxyModel::invalidate);
     invalidate();
 }
 
-
 void BufferViewOverlayFilter::overlayDestroyed()
 {
-    setOverlay(0);
+    setOverlay(nullptr);
 }
 
-
-bool BufferViewOverlayFilter::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+bool BufferViewOverlayFilter::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     if (!_overlay)
         return false;

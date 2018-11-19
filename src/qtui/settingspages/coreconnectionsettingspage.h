@@ -31,14 +31,14 @@ class CoreConnectionSettingsPage : public SettingsPage
     Q_OBJECT
 
 public:
-    CoreConnectionSettingsPage(QWidget *parent = 0);
+    CoreConnectionSettingsPage(QWidget* parent = nullptr);
 
-    inline bool hasDefaults() const { return true; }
+    inline bool hasDefaults() const override { return true; }
 
 public slots:
-    void save();
-    void load();
-    void defaults();
+    void save() override;
+    void load() override;
+    void defaults() override;
 
 signals:
 
@@ -52,8 +52,7 @@ private:
     void setRadioButtons(CoreConnectionSettings::NetworkDetectionMode mode);
     CoreConnectionSettings::NetworkDetectionMode modeFromRadioButtons() const;
 
-    inline QString settingsKey() const { return QString("CoreConnection"); }
+    inline QString settingsKey() const override { return QString("CoreConnection"); }
 };
-
 
 #endif

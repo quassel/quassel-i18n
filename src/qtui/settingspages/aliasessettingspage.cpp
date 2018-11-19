@@ -25,7 +25,7 @@
 
 #include "icon.h"
 
-AliasesSettingsPage::AliasesSettingsPage(QWidget *parent)
+AliasesSettingsPage::AliasesSettingsPage(QWidget* parent)
     : SettingsPage(tr("IRC"), tr("Aliases"), parent)
 {
     ui.setupUi(this);
@@ -41,34 +41,30 @@ AliasesSettingsPage::AliasesSettingsPage(QWidget *parent)
     ui.aliasesView->verticalHeader()->hide();
     ui.aliasesView->horizontalHeader()->setStretchLastSection(true);
 
-    connect(ui.newAliasButton, SIGNAL(clicked()), &_aliasesModel, SLOT(newAlias()));
-    connect(ui.deleteAliasButton, SIGNAL(clicked()), this, SLOT(deleteSelectedAlias()));
-    connect(&_aliasesModel, SIGNAL(configChanged(bool)), this, SLOT(setChangedState(bool)));
-    connect(&_aliasesModel, SIGNAL(modelReady(bool)), this, SLOT(enableDialog(bool)));
+    connect(ui.newAliasButton, &QAbstractButton::clicked, &_aliasesModel, &AliasesModel::newAlias);
+    connect(ui.deleteAliasButton, &QAbstractButton::clicked, this, &AliasesSettingsPage::deleteSelectedAlias);
+    connect(&_aliasesModel, &AliasesModel::configChanged, this, &AliasesSettingsPage::setChangedState);
+    connect(&_aliasesModel, &AliasesModel::modelReady, this, &AliasesSettingsPage::enableDialog);
 
     enableDialog(_aliasesModel.isReady());
 }
 
-
 void AliasesSettingsPage::load()
 {
-    if (_aliasesModel.configChanged())
+    if (_aliasesModel.hasConfigChanged())
         _aliasesModel.revert();
 }
-
 
 void AliasesSettingsPage::defaults()
 {
     _aliasesModel.loadDefaults();
 }
 
-
 void AliasesSettingsPage::save()
 {
-    if (_aliasesModel.configChanged())
+    if (_aliasesModel.hasConfigChanged())
         _aliasesModel.commit();
 }
-
 
 void AliasesSettingsPage::enableDialog(bool enabled)
 {
@@ -76,7 +72,6 @@ void AliasesSettingsPage::enableDialog(bool enabled)
     ui.deleteAliasButton->setEnabled(enabled);
     setEnabled(enabled);
 }
-
 
 void AliasesSettingsPage::deleteSelectedAlias()
 {

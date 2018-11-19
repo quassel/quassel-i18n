@@ -20,13 +20,15 @@
 
 #pragma once
 
+#include "common-export.h"
+
 #include "syncableobject.h"
 
 /*
  * gather various information about the core.
  */
 
-class CoreInfo : public SyncableObject
+class COMMON_EXPORT CoreInfo : public SyncableObject
 {
     Q_OBJECT
     SYNCABLE_OBJECT
@@ -34,8 +36,8 @@ class CoreInfo : public SyncableObject
     Q_PROPERTY(QVariantMap coreData READ coreData WRITE setCoreData)
 
 public:
-    explicit CoreInfo(QObject *parent = nullptr);
-    inline QVariant &at(const QString &key) { return _coreData[key]; }
+    explicit CoreInfo(QObject* parent = nullptr);
+    inline QVariant& at(const QString& key) { return _coreData[key]; }
 
     void setConnectedClientData(int, QVariantList);
 
@@ -52,7 +54,7 @@ signals:
 
 public slots:
     QVariantMap coreData() const;
-    void setCoreData(const QVariantMap &);
+    void setCoreData(const QVariantMap&);
 
 private:
     QVariantMap _coreData;

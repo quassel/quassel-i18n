@@ -44,12 +44,12 @@ class KeySequenceWidget : public QWidget
 {
     Q_OBJECT
 public:
-    KeySequenceWidget(QWidget *parent = 0);
+    KeySequenceWidget(QWidget* parent = nullptr);
 
-    void setModel(ShortcutsModel *model);
+    void setModel(ShortcutsModel* model);
 
 public slots:
-    void setKeySequence(const QKeySequence &seq);
+    void setKeySequence(const QKeySequence& seq);
 
 signals:
     /**
@@ -58,7 +58,7 @@ signals:
      * \param conflicting The index of an action that needs to have its shortcut removed. The user has already been
      *                    asked to agree (if he declines, this signal won't be emitted at all).
      */
-    void keySequenceChanged(const QKeySequence &seq, const QModelIndex &conflicting = QModelIndex());
+    void keySequenceChanged(const QKeySequence& seq, const QModelIndex& conflicting = QModelIndex());
 
     void clicked();
 
@@ -74,20 +74,19 @@ private:
 
     bool isOkWhenModifierless(int keyQt) const;
     bool isShiftAsModifierAllowed(int keyQt) const;
-    bool isKeySequenceAvailable(const QKeySequence &seq);
+    bool isKeySequenceAvailable(const QKeySequence& seq);
 
-    ShortcutsModel *_shortcutsModel;
-    bool _isRecording;
+    ShortcutsModel* _shortcutsModel{nullptr};
+    bool _isRecording{false};
     QKeySequence _keySequence, _oldKeySequence;
-    uint _modifierKeys;
+    uint _modifierKeys{0};
     QModelIndex _conflictingIndex;
 
-    KeySequenceButton *_keyButton;
-    QToolButton *_clearButton;
+    KeySequenceButton* _keyButton;
+    QToolButton* _clearButton;
 
     friend class KeySequenceButton;
 };
-
 
 /*****************************************************************************/
 
@@ -95,16 +94,15 @@ class KeySequenceButton : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit KeySequenceButton(KeySequenceWidget *d, QWidget *parent = 0);
+    explicit KeySequenceButton(KeySequenceWidget* d, QWidget* parent = nullptr);
 
 protected:
-    virtual bool event(QEvent *event);
-    virtual void keyPressEvent(QKeyEvent *event);
-    virtual void keyReleaseEvent(QKeyEvent *event);
+    bool event(QEvent* event) override;
+    void keyPressEvent(QKeyEvent* event) override;
+    void keyReleaseEvent(QKeyEvent* event) override;
 
 private:
-    KeySequenceWidget *d;
+    KeySequenceWidget* d;
 };
 
-
-#endif // KEYSEQUENCEWIDGET_H
+#endif  // KEYSEQUENCEWIDGET_H

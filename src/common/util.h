@@ -20,22 +20,24 @@
 
 #pragma once
 
+#include "common-export.h"
+
 #include <QList>
 #include <QString>
 #include <QVariant>
 
-QString nickFromMask(const QString &mask);
-QString userFromMask(const QString &mask);
-QString hostFromMask(const QString &mask);
-bool isChannelName(const QString &str);
+COMMON_EXPORT QString nickFromMask(const QString& mask);
+COMMON_EXPORT QString userFromMask(const QString& mask);
+COMMON_EXPORT QString hostFromMask(const QString& mask);
+COMMON_EXPORT bool isChannelName(const QString& str);
 
 //! Strip mIRC format codes
-QString stripFormatCodes(QString);
+COMMON_EXPORT QString stripFormatCodes(QString);
 
 //! Remove accelerator markers (&) from the string
-QString stripAcceleratorMarkers(const QString &);
+COMMON_EXPORT QString stripAcceleratorMarkers(const QString&);
 
-QString secondsToString(int timeInSeconds);
+COMMON_EXPORT QString secondsToString(int timeInSeconds);
 
 //! Take a string and decode it using the specified text codec, recognizing utf8.
 /** This function takes a string and first checks if it is encoded in utf8, in which case it is
@@ -44,12 +46,12 @@ QString secondsToString(int timeInSeconds);
  *  \param codec The text codec we use if the input is not utf8
  *  \return The decoded string.
  */
-QString decodeString(const QByteArray &input, QTextCodec *codec = 0);
+COMMON_EXPORT QString decodeString(const QByteArray& input, QTextCodec* codec = nullptr);
 
-uint editingDistance(const QString &s1, const QString &s2);
+COMMON_EXPORT uint editingDistance(const QString& s1, const QString& s2);
 
 template<typename T>
-QVariantList toVariantList(const QList<T> &list)
+QVariantList toVariantList(const QList<T>& list)
 {
     QVariantList variants;
     for (int i = 0; i < list.count(); i++) {
@@ -58,9 +60,8 @@ QVariantList toVariantList(const QList<T> &list)
     return variants;
 }
 
-
 template<typename T>
-QList<T> fromVariantList(const QVariantList &variants)
+QList<T> fromVariantList(const QVariantList& variants)
 {
     QList<T> list;
     for (int i = 0; i < variants.count(); i++) {
@@ -69,8 +70,7 @@ QList<T> fromVariantList(const QVariantList &variants)
     return list;
 }
 
-
-QByteArray prettyDigest(const QByteArray &digest);
+COMMON_EXPORT QByteArray prettyDigest(const QByteArray& digest);
 
 /**
  * Format a string with %%<text>%% to current date/timestamp via QDateTime.
@@ -78,7 +78,7 @@ QByteArray prettyDigest(const QByteArray &digest);
  * @param[in] formatStr String with format codes
  * @return String with current date/time substituted in via formatting codes
  */
-QString formatCurrentDateTimeInString(const QString &formatStr);
+COMMON_EXPORT QString formatCurrentDateTimeInString(const QString& formatStr);
 
 /**
  * Try to localize a given date/time in seconds from Unix epoch, pass through string if invalid
@@ -91,10 +91,9 @@ QString formatCurrentDateTimeInString(const QString &formatStr);
  * @param useUTC            If true, use UTC timezone, otherwise use local time
  * @return Localized date/time if parse succeeded, otherwise the source string
  */
-QString tryFormatUnixEpoch(const QString &possibleEpochDate,
-                           Qt::DateFormat dateFormat = Qt::DateFormat::TextDate,
-                           bool useUTC = false);
-
+COMMON_EXPORT QString tryFormatUnixEpoch(const QString& possibleEpochDate,
+                                         Qt::DateFormat dateFormat = Qt::DateFormat::TextDate,
+                                         bool useUTC = false);
 
 /**
  * Format the given date/time in ISO 8601 format with timezone offset
@@ -102,4 +101,31 @@ QString tryFormatUnixEpoch(const QString &possibleEpochDate,
  * @param dateTime Date/time of interest
  * @return Date/time in ISO 8601 format with timezone offset
  */
-QString formatDateTimeToOffsetISO(const QDateTime &dateTime);
+COMMON_EXPORT QString formatDateTimeToOffsetISO(const QDateTime& dateTime);
+
+namespace detail {
+
+template<typename... Args>
+struct SelectOverloadHelper
+{
+    template<typename R, typename C>
+    constexpr auto operator()(R (C::*func)(Args...)) const noexcept -> decltype(func)
+    {
+        return func;
+    }
+};
+
+}  // namespace detail
+
+/**
+ * Helper for resolving ambiguous overloads when using the member function-based connect syntax.
+ *
+ * Example usage:
+ * @code
+ * connect(this, selectOverload<int, QString>(&MyClass::mySignal), other, &Other::mySlot);
+ * @endcode
+ *
+ * @tparam Args Argument types of the desired signature
+ */
+template<typename... Args>
+constexpr Q_DECL_UNUSED detail::SelectOverloadHelper<Args...> selectOverload = {};

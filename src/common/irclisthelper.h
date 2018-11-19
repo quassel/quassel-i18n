@@ -18,8 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef IRCLISTHELPER_H
-#define IRCLISTHELPER_H
+#pragma once
+
+#include "common-export.h"
+
+#include <utility>
 
 #include "syncableobject.h"
 #include "types.h"
@@ -32,27 +35,36 @@
  *      when RPL_LISTEND is received the clients will be informed, that they can pull the data
  *  3.) client pulls the data by calling requestChannelList again. receiving the data in receiveChannelList
  */
-class IrcListHelper : public SyncableObject
+class COMMON_EXPORT IrcListHelper : public SyncableObject
 {
+    Q_OBJECT
     SYNCABLE_OBJECT
-        Q_OBJECT
 
 public:
-    inline IrcListHelper(QObject *parent = 0) : SyncableObject(parent) { setInitialized(); };
+    inline IrcListHelper(QObject* parent = nullptr)
+        : SyncableObject(parent)
+    {
+        setInitialized();
+    };
 
-    struct ChannelDescription {
+    struct ChannelDescription
+    {
         QString channelName;
         quint32 userCount;
         QString topic;
-        ChannelDescription(const QString &channelName_, quint32 userCount_, const QString &topic_) : channelName(channelName_), userCount(userCount_), topic(topic_) {};
+        ChannelDescription(QString channelName_, quint32 userCount_, QString topic_)
+            : channelName(std::move(channelName_))
+            , userCount(userCount_)
+            , topic(std::move(topic_)){};
     };
 
 public slots:
-    inline virtual QVariantList requestChannelList(const NetworkId &netId, const QStringList &channelFilters) { REQUEST(ARG(netId), ARG(channelFilters)); return QVariantList(); }
-    inline virtual void receiveChannelList(const NetworkId &, const QStringList &, const QVariantList &) {};
-    inline virtual void reportFinishedList(const NetworkId &netId) { SYNC(ARG(netId)) }
-    inline virtual void reportError(const QString &error) { SYNC(ARG(error)) }
+    inline virtual QVariantList requestChannelList(const NetworkId& netId, const QStringList& channelFilters)
+    {
+        REQUEST(ARG(netId), ARG(channelFilters));
+        return QVariantList();
+    }
+    inline virtual void receiveChannelList(const NetworkId&, const QStringList&, const QVariantList&){};
+    inline virtual void reportFinishedList(const NetworkId& netId) { SYNC(ARG(netId)) }
+    inline virtual void reportError(const QString& error) { SYNC(ARG(error)) }
 };
-
-
-#endif //IRCLISTHELPER_H

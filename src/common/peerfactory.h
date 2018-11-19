@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef PEERFACTORY_H
-#define PEERFACTORY_H
+#pragma once
+
+#include "common-export.h"
 
 #include <QPair>
 
@@ -32,19 +33,23 @@ class QTcpSocket;
 class AuthHandler;
 class RemotePeer;
 
-class PeerFactory
+class COMMON_EXPORT PeerFactory
 {
-
 public:
     // second value is the protocol-specific features
-    typedef QPair<Protocol::Type, quint16> ProtoDescriptor;
-    typedef QVector<ProtoDescriptor> ProtoList;
+    using ProtoDescriptor = QPair<Protocol::Type, quint16>;
+    using ProtoList = QVector<ProtoDescriptor>;
 
     static ProtoList supportedProtocols();
 
-    static RemotePeer *createPeer(const ProtoDescriptor &protocol, AuthHandler *authHandler, QTcpSocket *socket, Compressor::CompressionLevel level, QObject *parent = 0);
-    static RemotePeer *createPeer(const ProtoList &protocols, AuthHandler *authHandler, QTcpSocket *socket, Compressor::CompressionLevel level, QObject *parent = 0);
-
+    static RemotePeer* createPeer(const ProtoDescriptor& protocol,
+                                  AuthHandler* authHandler,
+                                  QTcpSocket* socket,
+                                  Compressor::CompressionLevel level,
+                                  QObject* parent = nullptr);
+    static RemotePeer* createPeer(const ProtoList& protocols,
+                                  AuthHandler* authHandler,
+                                  QTcpSocket* socket,
+                                  Compressor::CompressionLevel level,
+                                  QObject* parent = nullptr);
 };
-
-#endif

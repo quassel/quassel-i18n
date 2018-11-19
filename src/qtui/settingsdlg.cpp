@@ -26,9 +26,8 @@
 #include "client.h"
 #include "icon.h"
 
-SettingsDlg::SettingsDlg(QWidget *parent)
-    : QDialog(parent),
-    _currentPage(0)
+SettingsDlg::SettingsDlg(QWidget* parent)
+    : QDialog(parent)
 {
     ui.setupUi(this);
     setModal(true);
@@ -39,47 +38,44 @@ SettingsDlg::SettingsDlg(QWidget *parent)
 
     ui.settingsTree->setRootIsDecorated(false);
 
-    connect(ui.settingsTree, SIGNAL(itemSelectionChanged()), this, SLOT(itemSelected()));
-    connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(buttonClicked(QAbstractButton *)));
+    connect(ui.settingsTree, &QTreeWidget::itemSelectionChanged, this, &SettingsDlg::itemSelected);
+    connect(ui.buttonBox, &QDialogButtonBox::clicked, this, &SettingsDlg::buttonClicked);
 
-    connect(Client::instance(), SIGNAL(coreConnectionStateChanged(bool)), SLOT(coreConnectionStateChanged()));
+    connect(Client::instance(), &Client::coreConnectionStateChanged, this, &SettingsDlg::coreConnectionStateChanged);
 
     setButtonStates();
 }
 
-
 void SettingsDlg::coreConnectionStateChanged()
 {
     for (int i = 0; i < ui.settingsTree->topLevelItemCount(); i++) {
-        QTreeWidgetItem *catItem = ui.settingsTree->topLevelItem(i);
+        QTreeWidgetItem* catItem = ui.settingsTree->topLevelItem(i);
         for (int j = 0; j < catItem->childCount(); j++) {
-            QTreeWidgetItem *item = catItem->child(j);
+            QTreeWidgetItem* item = catItem->child(j);
             setItemState(item);
         }
         setItemState(catItem);
     }
 }
 
-
-void SettingsDlg::setItemState(QTreeWidgetItem *item)
+void SettingsDlg::setItemState(QTreeWidgetItem* item)
 {
-    SettingsPage *sp = qobject_cast<SettingsPage *>(item->data(0, SettingsPageRole).value<QObject *>());
+    auto* sp = qobject_cast<SettingsPage*>(item->data(0, SettingsPageRole).value<QObject*>());
     Q_ASSERT(sp);
     bool disabledDueToConnection = !Client::isConnected() && sp->needsCoreConnection();
     bool disabledDueToOwnChoice = !sp->isSelectable();
     item->setDisabled(disabledDueToConnection || disabledDueToOwnChoice);
 }
 
-
-void SettingsDlg::registerSettingsPage(SettingsPage *sp)
+void SettingsDlg::registerSettingsPage(SettingsPage* sp)
 {
     sp->setParent(ui.settingsStack);
     ui.settingsStack->addWidget(sp);
 
-    connect(sp, SIGNAL(changed(bool)), this, SLOT(setButtonStates()));
+    connect(sp, &SettingsPage::changed, this, &SettingsDlg::setButtonStates);
 
-    QTreeWidgetItem *cat;
-    QList<QTreeWidgetItem *> cats = ui.settingsTree->findItems(sp->category(), Qt::MatchExactly);
+    QTreeWidgetItem* cat;
+    QList<QTreeWidgetItem*> cats = ui.settingsTree->findItems(sp->category(), Qt::MatchExactly);
     if (!cats.count()) {
         cat = new QTreeWidgetItem(ui.settingsTree, QStringList(sp->category()));
         cat->setExpanded(true);
@@ -89,13 +85,13 @@ void SettingsDlg::registerSettingsPage(SettingsPage *sp)
         cat = cats[0];
     }
 
-    QTreeWidgetItem *item;
+    QTreeWidgetItem* item;
     if (sp->title().isEmpty())
         item = cat;
     else
         item = new QTreeWidgetItem(cat, QStringList(sp->title()));
 
-    item->setData(0, SettingsPageRole, QVariant::fromValue<QObject *>(sp));
+    item->setData(0, SettingsPageRole, QVariant::fromValue<QObject*>(sp));
     pageIsLoaded[sp] = false;
     if (!ui.settingsTree->selectedItems().count())
         ui.settingsTree->setCurrentItem(item);
@@ -103,11 +99,10 @@ void SettingsDlg::registerSettingsPage(SettingsPage *sp)
     setItemState(item);
 }
 
-
-void SettingsDlg::selectPage(SettingsPage *sp)
+void SettingsDlg::selectPage(SettingsPage* sp)
 {
     if (!sp) {
-        _currentPage = 0;
+        _currentPage = nullptr;
         ui.settingsStack->setCurrentIndex(0);
         ui.pageTitle->setText(tr("Settings"));
         return;
@@ -118,17 +113,22 @@ void SettingsDlg::selectPage(SettingsPage *sp)
         pageIsLoaded[sp] = true;
     }
 
-    if (sp != currentPage() && currentPage() != 0 && currentPage()->hasChanged()) {
-        int ret = QMessageBox::warning(this, tr("Save changes"),
-            tr("There are unsaved changes on the current configuration page. Would you like to apply your changes now?"),
-            QMessageBox::Discard|QMessageBox::Save|QMessageBox::Cancel, QMessageBox::Cancel);
+    if (sp != currentPage() && currentPage() != nullptr && currentPage()->hasChanged()) {
+        int ret = QMessageBox::
+            warning(this,
+                    tr("Save changes"),
+                    tr("There are unsaved changes on the current configuration page. Would you like to apply your changes now?"),
+                    QMessageBox::Discard | QMessageBox::Save | QMessageBox::Cancel,
+                    QMessageBox::Cancel);
         if (ret == QMessageBox::Save) {
-            if (!applyChanges()) sp = currentPage();
+            if (!applyChanges())
+                sp = currentPage();
         }
         else if (ret == QMessageBox::Discard) {
             undoChanges();
         }
-        else sp = currentPage();
+        else
+            sp = currentPage();
     }
 
     if (sp != currentPage()) {
@@ -147,35 +147,34 @@ void SettingsDlg::selectPage(SettingsPage *sp)
     setButtonStates();
 }
 
-
 void SettingsDlg::itemSelected()
 {
-    QList<QTreeWidgetItem *> items = ui.settingsTree->selectedItems();
-    SettingsPage *sp = 0;
+    QList<QTreeWidgetItem*> items = ui.settingsTree->selectedItems();
+    SettingsPage* sp = nullptr;
     if (!items.isEmpty()) {
-        sp = qobject_cast<SettingsPage *>(items[0]->data(0, SettingsPageRole).value<QObject *>());
+        sp = qobject_cast<SettingsPage*>(items[0]->data(0, SettingsPageRole).value<QObject*>());
     }
     selectPage(sp);
 }
 
-
 void SettingsDlg::setButtonStates()
 {
-    SettingsPage *sp = currentPage();
+    SettingsPage* sp = currentPage();
     ui.buttonBox->button(QDialogButtonBox::Apply)->setEnabled(sp && sp->hasChanged());
     ui.buttonBox->button(QDialogButtonBox::Reset)->setEnabled(sp && sp->hasChanged());
     ui.buttonBox->button(QDialogButtonBox::RestoreDefaults)->setEnabled(sp && sp->hasDefaults());
 }
 
-
-void SettingsDlg::buttonClicked(QAbstractButton *button)
+void SettingsDlg::buttonClicked(QAbstractButton* button)
 {
     switch (ui.buttonBox->standardButton(button)) {
     case QDialogButtonBox::Ok:
         if (currentPage() && currentPage()->hasChanged()) {
-            if (applyChanges()) accept();
+            if (applyChanges())
+                accept();
         }
-        else accept();
+        else
+            accept();
         break;
     case QDialogButtonBox::Apply:
         applyChanges();
@@ -195,17 +194,16 @@ void SettingsDlg::buttonClicked(QAbstractButton *button)
     }
 }
 
-
 bool SettingsDlg::applyChanges()
 {
-    if (!currentPage()) return false;
+    if (!currentPage())
+        return false;
     if (currentPage()->aboutToSave()) {
         currentPage()->save();
         return true;
     }
     return false;
 }
-
 
 void SettingsDlg::undoChanges()
 {
@@ -214,23 +212,29 @@ void SettingsDlg::undoChanges()
     }
 }
 
-
 void SettingsDlg::reload()
 {
-    if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Reload Settings"), tr("Do you like to reload the settings, undoing your changes on this page?"),
-        QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+    if (!currentPage())
+        return;
+    int ret = QMessageBox::question(this,
+                                    tr("Reload Settings"),
+                                    tr("Do you like to reload the settings, undoing your changes on this page?"),
+                                    QMessageBox::Yes | QMessageBox::No,
+                                    QMessageBox::No);
     if (ret == QMessageBox::Yes) {
         currentPage()->load();
     }
 }
 
-
 void SettingsDlg::loadDefaults()
 {
-    if (!currentPage()) return;
-    int ret = QMessageBox::question(this, tr("Restore Defaults"), tr("Do you like to restore the default values for this page?"),
-        QMessageBox::RestoreDefaults|QMessageBox::Cancel, QMessageBox::Cancel);
+    if (!currentPage())
+        return;
+    int ret = QMessageBox::question(this,
+                                    tr("Restore Defaults"),
+                                    tr("Do you like to restore the default values for this page?"),
+                                    QMessageBox::RestoreDefaults | QMessageBox::Cancel,
+                                    QMessageBox::Cancel);
     if (ret == QMessageBox::RestoreDefaults) {
         currentPage()->defaults();
     }

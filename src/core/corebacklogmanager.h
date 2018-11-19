@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREBACKLOGMANAGER_H
-#define COREBACKLOGMANAGER_H
+#pragma once
 
 #include "backlogmanager.h"
 
@@ -27,25 +26,21 @@ class CoreSession;
 
 class CoreBacklogManager : public BacklogManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    CoreBacklogManager(CoreSession *coreSession = 0);
+    CoreBacklogManager(CoreSession* coreSession = nullptr);
 
-    CoreSession *coreSession() { return _coreSession; }
+    CoreSession* coreSession() { return _coreSession; }
 
 public slots:
     QVariantList requestBacklog(BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0) override;
-    QVariantList requestBacklogFiltered(BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1,
-                                        int additional = 0, int type = -1, int flags = -1) override;
+    QVariantList requestBacklogFiltered(
+        BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0, int type = -1, int flags = -1) override;
     QVariantList requestBacklogAll(MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0) override;
-    QVariantList requestBacklogAllFiltered(MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0,
-                                           int type = -1, int flags = -1) override;
+    QVariantList requestBacklogAllFiltered(
+        MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0, int type = -1, int flags = -1) override;
 
 private:
-    CoreSession *_coreSession;
+    CoreSession* _coreSession;
 };
-
-
-#endif // COREBACKLOGMANAGER_H

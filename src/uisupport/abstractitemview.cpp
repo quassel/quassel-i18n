@@ -20,37 +20,29 @@
 
 #include "abstractitemview.h"
 
-AbstractItemView::AbstractItemView(QWidget *parent)
-    : QWidget(parent),
-    _model(0),
-    _selectionModel(0)
-{
-}
+AbstractItemView::AbstractItemView(QWidget* parent)
+    : QWidget(parent)
+    , _model(nullptr)
+    , _selectionModel(nullptr)
+{}
 
-
-void AbstractItemView::setModel(QAbstractItemModel *model)
+void AbstractItemView::setModel(QAbstractItemModel* model)
 {
     if (_model) {
-        disconnect(_model, 0, this, 0);
+        disconnect(_model, nullptr, this, nullptr);
     }
     _model = model;
-    connect(model, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
-        this, SLOT(dataChanged(QModelIndex, QModelIndex)));
-    connect(model, SIGNAL(rowsAboutToBeRemoved(QModelIndex, int, int)),
-        this, SLOT(rowsAboutToBeRemoved(QModelIndex, int, int)));
-    connect(model, SIGNAL(rowsInserted(QModelIndex, int, int)),
-        this, SLOT(rowsInserted(QModelIndex, int, int)));
+    connect(model, &QAbstractItemModel::dataChanged, this, &AbstractItemView::dataChanged);
+    connect(model, &QAbstractItemModel::rowsAboutToBeRemoved, this, &AbstractItemView::rowsAboutToBeRemoved);
+    connect(model, &QAbstractItemModel::rowsInserted, this, &AbstractItemView::rowsInserted);
 }
 
-
-void AbstractItemView::setSelectionModel(QItemSelectionModel *selectionModel)
+void AbstractItemView::setSelectionModel(QItemSelectionModel* selectionModel)
 {
     if (_selectionModel) {
-        disconnect(_selectionModel, 0, this, 0);
+        disconnect(_selectionModel, nullptr, this, nullptr);
     }
     _selectionModel = selectionModel;
-    connect(selectionModel, SIGNAL(currentChanged(QModelIndex, QModelIndex)),
-        this, SLOT(currentChanged(QModelIndex, QModelIndex)));
-    connect(selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)),
-        this, SLOT(selectionChanged(QItemSelection, QItemSelection)));
+    connect(selectionModel, &QItemSelectionModel::currentChanged, this, &AbstractItemView::currentChanged);
+    connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &AbstractItemView::selectionChanged);
 }

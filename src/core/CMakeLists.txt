@@ -1,6 +1,6 @@
-# Builds the core module
+quassel_add_module(Core EXPORT)
 
-set(SOURCES
+target_sources(${TARGET} PRIVATE
     abstractsqlstorage.cpp
     authenticator.cpp
     core.cpp
@@ -44,44 +44,34 @@ set(SOURCES
     coreeventmanager.h
 )
 
-set(LIBS )
+target_link_libraries(${TARGET}
+    PUBLIC
+        Qt5::Core
+        Qt5::Network
+        Qt5::Script
+        Qt5::Sql
+        Quassel::Common
+)
 
-if(HAVE_SSL)
-  set(SOURCES ${SOURCES} sslserver.cpp)
-  include_directories(${OPENSSL_INCLUDE_DIR})
+if (HAVE_UMASK)
+    set_property(SOURCE oidentdconfiggenerator.cpp APPEND PROPERTY COMPILE_DEFINITIONS HAVE_UMASK)
 endif()
 
-if (QCA2_FOUND)
-    add_definitions(-DHAVE_QCA2)
-    include_directories(${QCA2_INCLUDE_DIR})
-    list(APPEND SOURCES cipher.cpp)
-    list(APPEND LIBS ${QCA2_LIBRARIES})
+if (HAVE_SSL)
+    target_sources(${TARGET} PRIVATE sslserver.cpp)
 endif()
 
-if (QCA2-QT5_FOUND)
-    add_definitions(-DHAVE_QCA2)
-    include_directories(${QCA2-QT5_INCLUDE_DIR})
-    list(APPEND SOURCES cipher.cpp)
-    list(APPEND LIBS ${QCA2-QT5_LIBRARIES})
+if (Ldap_FOUND)
+    target_sources(${TARGET} PRIVATE ldapauthenticator.cpp)
+    target_link_libraries(${TARGET} PRIVATE Ldap::Ldap)
+    set_property(SOURCE core.cpp APPEND PROPERTY COMPILE_DEFINITIONS HAVE_LDAP)
 endif()
 
-# Build with LDAP if told to do so.
-if(HAVE_LDAP)
-    include_directories(${LDAP_INCLUDE_DIR})
-    set(SOURCES ${SOURCES} ldapauthenticator.cpp)
-    set(MOC_HDRS ${MOC_HDRS} ldapauthenticator.h)
-endif(HAVE_LDAP)
+if (Qca-qt5_FOUND)
+    target_sources(${TARGET} PRIVATE cipher.cpp keyevent.cpp)
+    target_link_libraries(${TARGET} PUBLIC qca-qt5)
+    target_compile_definitions(${TARGET} PUBLIC -DHAVE_QCA2)
+endif()
 
-include_directories(${CMAKE_SOURCE_DIR}/src/common)
-
-set(CORE_RCS ${CORE_RCS} ${CMAKE_CURRENT_SOURCE_DIR}/sql.qrc)
-qt_add_resources(SOURCES ${CORE_RCS})
-
-add_library(mod_core STATIC ${SOURCES})
-qt_use_modules(mod_core Core Network Script Sql)
-
-target_link_libraries(mod_core mod_common ${LIBS})
-
-if(HAVE_LDAP)
-    target_link_libraries(mod_core ${LDAP_LIBRARIES})
-endif(HAVE_LDAP)
+quassel_add_resource(Sql PATTERNS SQL/*.sql)
+target_link_libraries(${TARGET} PUBLIC Quassel::Resource::Sql)

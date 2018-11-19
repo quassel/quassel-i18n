@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef BUFFERVIEWOVERLAY_H
-#define BUFFERVIEWOVERLAY_H
+#pragma once
+
+#include "client-export.h"
 
 #include <QObject>
 
@@ -28,20 +29,20 @@
 class BufferViewConfig;
 class ClientBufferViewConfig;
 
-class BufferViewOverlay : public QObject
+class CLIENT_EXPORT BufferViewOverlay : public QObject
 {
     Q_OBJECT
 
 public:
-    BufferViewOverlay(QObject *parent = 0);
+    BufferViewOverlay(QObject* parent = nullptr);
 
-    inline const QSet<int> &bufferViewIds() { return _bufferViewIds; }
+    inline const QSet<int>& bufferViewIds() { return _bufferViewIds; }
     bool allNetworks();
 
-    const QSet<NetworkId> &networkIds();
-    const QSet<BufferId> &bufferIds();
-    const QSet<BufferId> &removedBufferIds();
-    const QSet<BufferId> &tempRemovedBufferIds();
+    const QSet<NetworkId>& networkIds();
+    const QSet<BufferId>& bufferIds();
+    const QSet<BufferId>& removedBufferIds();
+    const QSet<BufferId>& tempRemovedBufferIds();
 
     int allowedBufferTypes();
     int minimumActivity();
@@ -64,24 +65,24 @@ signals:
     void initDone();
 
 protected:
-    virtual void customEvent(QEvent *event);
+    void customEvent(QEvent* event) override;
 
 private slots:
     void viewInitialized();
-    void viewInitialized(BufferViewConfig *config);
+    void viewInitialized(BufferViewConfig* config);
 
 private:
     void updateHelper();
-    QSet<BufferId> filterBuffersByConfig(const QList<BufferId> &buffers, const BufferViewConfig *config);
+    QSet<BufferId> filterBuffersByConfig(const QList<BufferId>& buffers, const BufferViewConfig* config);
 
-    bool _aboutToUpdate;
+    bool _aboutToUpdate{false};
 
     QSet<int> _bufferViewIds;
-    int _uninitializedViewCount;
+    int _uninitializedViewCount{0};
 
     QSet<NetworkId> _networkIds;
-    int _allowedBufferTypes;
-    int _minimumActivity;
+    int _allowedBufferTypes{0};
+    int _minimumActivity{0};
 
     QSet<BufferId> _buffers;
     QSet<BufferId> _removedBuffers;
@@ -89,6 +90,3 @@ private:
 
     static const int _updateEventId;
 };
-
-
-#endif //BUFFERVIEWOVERLAY_H

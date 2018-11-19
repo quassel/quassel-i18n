@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef BUFFERVIEWOVERLAYFILTER_H_
-#define BUFFERVIEWOVERLAYFILTER_H_
+#pragma once
+
+#include "uisupport-export.h"
 
 #include <QSortFilterProxyModel>
 
@@ -27,24 +28,21 @@
 
 class BufferViewOverlay;
 
-class BufferViewOverlayFilter : public QSortFilterProxyModel
+class UISUPPORT_EXPORT BufferViewOverlayFilter : public QSortFilterProxyModel
 {
     Q_OBJECT
 
 public:
-    BufferViewOverlayFilter(QAbstractItemModel *model, BufferViewOverlay *overlay = 0);
+    BufferViewOverlayFilter(QAbstractItemModel* model, BufferViewOverlay* overlay = nullptr);
 
-    void setOverlay(BufferViewOverlay *overlay);
+    void setOverlay(BufferViewOverlay* overlay);
 
 protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 
 private slots:
     void overlayDestroyed();
 
 private:
-    BufferViewOverlay *_overlay;
+    BufferViewOverlay* _overlay;
 };
-
-
-#endif // BUFFERVIEWOVERLAYFILTER_H_

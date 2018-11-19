@@ -22,53 +22,42 @@
 
 #include "quassel.h"
 
-CoreSettings::CoreSettings(const QString group) : Settings(group, Quassel::buildInfo().coreApplicationName)
-{
-}
+CoreSettings::CoreSettings(QString group)
+    : Settings(std::move(group), Quassel::buildInfo().coreApplicationName)
+{}
 
-
-CoreSettings::~CoreSettings()
-{
-}
-
-
-void CoreSettings::setStorageSettings(const QVariant &data)
+void CoreSettings::setStorageSettings(const QVariant& data)
 {
     setLocalValue("StorageSettings", data);
 }
 
-
-QVariant CoreSettings::storageSettings(const QVariant &def)
+QVariant CoreSettings::storageSettings(const QVariant& def) const
 {
     return localValue("StorageSettings", def);
 }
 
-
-QVariant CoreSettings::authSettings(const QVariant &def)
-{
-    return localValue("AuthSettings", def);
-}
-
-
-void CoreSettings::setAuthSettings(const QVariant &data)
+void CoreSettings::setAuthSettings(const QVariant& data)
 {
     setLocalValue("AuthSettings", data);
 }
 
+QVariant CoreSettings::authSettings(const QVariant& def) const
+{
+    return localValue("AuthSettings", def);
+}
+
 // FIXME remove
-QVariant CoreSettings::oldDbSettings()
+QVariant CoreSettings::oldDbSettings() const
 {
     return localValue("DatabaseSettings");
 }
 
-
-void CoreSettings::setCoreState(const QVariant &data)
+void CoreSettings::setCoreState(const QVariant& data)
 {
     setLocalValue("CoreState", data);
 }
 
-
-QVariant CoreSettings::coreState(const QVariant &def)
+QVariant CoreSettings::coreState(const QVariant& def) const
 {
     return localValue("CoreState", def);
 }

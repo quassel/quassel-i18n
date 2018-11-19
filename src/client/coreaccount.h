@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREACCOUNT_H_
-#define COREACCOUNT_H_
+#pragma once
+
+#include "client-export.h"
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -28,13 +29,14 @@
 #include <QVariantMap>
 
 #include "types.h"
-class CoreAccount
+
+class CLIENT_EXPORT CoreAccount
 {
     Q_DECLARE_TR_FUNCTIONS(CoreAccount)
 
 public:
     CoreAccount(AccountId accountId = 0);
-    virtual ~CoreAccount() {};
+    virtual ~CoreAccount() = default;
 
     inline bool isValid() const { return accountId().isValid(); }
     inline AccountId accountId() const { return _accountId; }
@@ -54,32 +56,32 @@ public:
     inline uint proxyPort() const { return _proxyPort; }
 
     void setAccountId(AccountId id);
-    void setAccountName(const QString &accountName);
-    void setUuid(const QUuid &uuid);
+    void setAccountName(const QString& accountName);
+    void setUuid(const QUuid& uuid);
     void setInternal(bool);
 
-    void setUser(const QString &user);
+    void setUser(const QString& user);
     void setStorePassword(bool);
-    void setHostName(const QString &hostname);
+    void setHostName(const QString& hostname);
     void setPort(uint port);
     void setUseSsl(bool);
 
     void setProxyType(QNetworkProxy::ProxyType);
-    void setProxyUser(const QString &);
-    void setProxyHostName(const QString &);
+    void setProxyUser(const QString&);
+    void setProxyHostName(const QString&);
     void setProxyPort(uint);
 
     /* These might be overridden for KWallet/QtKeychain support */
     virtual inline QString password() const { return _password; }
-    virtual void setPassword(const QString &password);
+    virtual void setPassword(const QString& password);
     virtual inline QString proxyPassword() const { return _proxyPassword; }
-    virtual void setProxyPassword(const QString &);
+    virtual void setProxyPassword(const QString&);
 
     virtual QVariantMap toVariantMap(bool forcePassword = false) const;
-    virtual void fromVariantMap(const QVariantMap &);
+    virtual void fromVariantMap(const QVariantMap&);
 
-    bool operator==(const CoreAccount &other) const;
-    bool operator!=(const CoreAccount &other) const;
+    bool operator==(const CoreAccount& other) const;
+    bool operator!=(const CoreAccount& other) const;
 
 private:
     AccountId _accountId;
@@ -94,6 +96,4 @@ private:
     uint _proxyPort;
 };
 
-QDebug operator<<(QDebug dbg, const CoreAccount &msg);
-
-#endif
+QDebug operator<<(QDebug dbg, const CoreAccount& msg);

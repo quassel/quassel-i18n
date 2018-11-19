@@ -18,31 +18,33 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREACCOUNTMODEL_H_
-#define COREACCOUNTMODEL_H_
+#pragma once
+
+#include "client-export.h"
 
 #include <QAbstractListModel>
 #include <QUuid>
 
 #include "coreaccount.h"
 
-class CoreAccountModel : public QAbstractListModel
+class CLIENT_EXPORT CoreAccountModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    enum {
+    enum
+    {
         AccountIdRole = Qt::UserRole,
         UuidRole
     };
 
-    CoreAccountModel(QObject *parent = 0);
-    CoreAccountModel(const CoreAccountModel *other, QObject *parent = 0);
+    CoreAccountModel(QObject* parent = nullptr);
+    CoreAccountModel(const CoreAccountModel* other, QObject* parent = nullptr);
 
-    inline int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    inline int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 
-    CoreAccount account(const QModelIndex &) const;
+    CoreAccount account(const QModelIndex&) const;
     CoreAccount account(AccountId) const;
     QList<CoreAccount> accounts() const;
     QList<AccountId> accountIds() const;
@@ -50,14 +52,14 @@ public:
 
     inline AccountId internalAccount() const;
 
-    AccountId createOrUpdateAccount(const CoreAccount &newAccountData);
+    AccountId createOrUpdateAccount(const CoreAccount& newAccountData);
     CoreAccount takeAccount(AccountId);
     void removeAccount(AccountId);
 
-    void update(const CoreAccountModel *other);
+    void update(const CoreAccountModel* other);
 
-    bool operator==(const CoreAccountModel &other) const;
-    bool operator!=(const CoreAccountModel &other) const;
+    bool operator==(const CoreAccountModel& other) const;
+    bool operator!=(const CoreAccountModel& other) const;
 
 public slots:
     void save();
@@ -65,7 +67,7 @@ public slots:
     void clear();
 
 protected:
-    void insertAccount(const CoreAccount &);
+    void insertAccount(const CoreAccount&);
     int findAccountIdx(AccountId) const;
 
 private:
@@ -76,18 +78,13 @@ private:
     AccountId _internalAccount;
 };
 
-
 // Inlines
-int CoreAccountModel::rowCount(const QModelIndex &) const
+int CoreAccountModel::rowCount(const QModelIndex&) const
 {
     return _accounts.count();
 }
-
 
 AccountId CoreAccountModel::internalAccount() const
 {
     return _internalAccount;
 }
-
-
-#endif

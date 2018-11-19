@@ -20,6 +20,8 @@
 
 #include "qtui.h"
 
+#include <memory>
+
 #include <QApplication>
 #include <QFile>
 #include <QFileInfo>
@@ -40,15 +42,13 @@
 #include "types.h"
 #include "util.h"
 
-QList<AbstractNotificationBackend *> QtUi::_notificationBackends;
+QList<AbstractNotificationBackend*> QtUi::_notificationBackends;
 QList<AbstractNotificationBackend::Notification> QtUi::_notifications;
 
-
-QtUi *QtUi::instance()
+QtUi* QtUi::instance()
 {
     return static_cast<QtUi*>(GraphicalUi::instance());
 }
-
 
 QtUi::QtUi()
     : GraphicalUi()
@@ -67,51 +67,45 @@ QtUi::QtUi()
     setUiStyle(new QtUiStyle(this));
 }
 
-
 QtUi::~QtUi()
 {
     unregisterAllNotificationBackends();
 }
-
 
 void QtUi::init()
 {
     setContextMenuActionProvider(new ContextMenuActionProvider(this));
     setToolBarActionProvider(new ToolBarActionProvider(this));
 
-    _mainWin.reset(new MainWin());  // TODO C++14: std::make_unique
+    _mainWin = std::make_unique<MainWin>();
     setMainWidget(_mainWin.get());
 
-    connect(_mainWin.get(), SIGNAL(connectToCore(const QVariantMap &)), this, SIGNAL(connectToCore(const QVariantMap &)));
-    connect(_mainWin.get(), SIGNAL(disconnectFromCore()), this, SIGNAL(disconnectFromCore()));
-    connect(Client::instance(), SIGNAL(bufferMarkedAsRead(BufferId)), SLOT(closeNotifications(BufferId)));
+    connect(_mainWin.get(), &MainWin::connectToCore, this, &QtUi::connectToCore);
+    connect(_mainWin.get(), &MainWin::disconnectFromCore, this, &QtUi::disconnectFromCore);
+    connect(Client::instance(), &Client::bufferMarkedAsRead, this, &QtUi::closeNotifications);
 
     _mainWin->init();
 
     QtUiSettings uiSettings;
-    uiSettings.initAndNotify("UseSystemTrayIcon", this, SLOT(useSystemTrayChanged(QVariant)), true);
+    uiSettings.initAndNotify("UseSystemTrayIcon", this, &QtUi::useSystemTrayChanged, true);
 
-    GraphicalUi::init(); // needs to be called after the mainWin is initialized
+    GraphicalUi::init();  // needs to be called after the mainWin is initialized
 }
 
-
-MessageModel *QtUi::createMessageModel(QObject *parent)
+MessageModel* QtUi::createMessageModel(QObject* parent)
 {
     return new ChatLineModel(parent);
 }
 
-
-AbstractMessageProcessor *QtUi::createMessageProcessor(QObject *parent)
+AbstractMessageProcessor* QtUi::createMessageProcessor(QObject* parent)
 {
     return new QtUiMessageProcessor(parent);
 }
-
 
 void QtUi::connectedToCore()
 {
     _mainWin->connectedToCore();
 }
-
 
 void QtUi::disconnectedFromCore()
 {
@@ -119,11 +113,10 @@ void QtUi::disconnectedFromCore()
     GraphicalUi::disconnectedFromCore();
 }
 
-
-void QtUi::useSystemTrayChanged(const QVariant &v)
+void QtUi::useSystemTrayChanged(const QVariant& v)
 {
     _useSystemTray = v.toBool();
-    SystemTray *tray = mainWindow()->systemTray();
+    SystemTray* tray = mainWindow()->systemTray();
     if (_useSystemTray) {
         if (tray->isSystemTrayAvailable())
             tray->setVisible(true);
@@ -134,22 +127,19 @@ void QtUi::useSystemTrayChanged(const QVariant &v)
     }
 }
 
-
 bool QtUi::haveSystemTray()
 {
     return mainWindow()->systemTray()->isSystemTrayAvailable() && instance()->_useSystemTray;
 }
-
 
 bool QtUi::isHidingMainWidgetAllowed() const
 {
     return haveSystemTray();
 }
 
-
 void QtUi::minimizeRestore(bool show)
 {
-    SystemTray *tray = mainWindow()->systemTray();
+    SystemTray* tray = mainWindow()->systemTray();
     if (show) {
         if (tray && !_useSystemTray)
             tray->setVisible(false);
@@ -161,79 +151,72 @@ void QtUi::minimizeRestore(bool show)
     GraphicalUi::minimizeRestore(show);
 }
 
-
-void QtUi::registerNotificationBackend(AbstractNotificationBackend *backend)
+void QtUi::registerNotificationBackend(AbstractNotificationBackend* backend)
 {
     if (!_notificationBackends.contains(backend)) {
         _notificationBackends.append(backend);
-        instance()->connect(backend, SIGNAL(activated(uint)), SLOT(notificationActivated(uint)));
+        connect(backend, &AbstractNotificationBackend::activated, instance(), &QtUi::notificationActivated);
     }
 }
 
-
-void QtUi::unregisterNotificationBackend(AbstractNotificationBackend *backend)
+void QtUi::unregisterNotificationBackend(AbstractNotificationBackend* backend)
 {
     _notificationBackends.removeAll(backend);
 }
-
 
 void QtUi::unregisterAllNotificationBackends()
 {
     _notificationBackends.clear();
 }
 
-
-const QList<AbstractNotificationBackend *> &QtUi::notificationBackends()
+const QList<AbstractNotificationBackend*>& QtUi::notificationBackends()
 {
     return _notificationBackends;
 }
 
-
-uint QtUi::invokeNotification(BufferId bufId, AbstractNotificationBackend::NotificationType type, const QString &sender, const QString &text)
+uint QtUi::invokeNotification(BufferId bufId, AbstractNotificationBackend::NotificationType type, const QString& sender, const QString& text)
 {
     static int notificationId = 0;
 
     AbstractNotificationBackend::Notification notification(++notificationId, bufId, type, sender, text);
     _notifications.append(notification);
-    foreach(AbstractNotificationBackend *backend, _notificationBackends)
-    backend->notify(notification);
+    foreach (AbstractNotificationBackend* backend, _notificationBackends)
+        backend->notify(notification);
     return notificationId;
 }
-
 
 void QtUi::closeNotification(uint notificationId)
 {
     QList<AbstractNotificationBackend::Notification>::iterator i = _notifications.begin();
     while (i != _notifications.end()) {
         if (i->notificationId == notificationId) {
-            foreach(AbstractNotificationBackend *backend, _notificationBackends)
-            backend->close(notificationId);
+            foreach (AbstractNotificationBackend* backend, _notificationBackends)
+                backend->close(notificationId);
             i = _notifications.erase(i);
         }
-        else ++i;
+        else
+            ++i;
     }
 }
-
 
 void QtUi::closeNotifications(BufferId bufferId)
 {
     QList<AbstractNotificationBackend::Notification>::iterator i = _notifications.begin();
     while (i != _notifications.end()) {
         if (!bufferId.isValid() || i->bufferId == bufferId) {
-            foreach(AbstractNotificationBackend *backend, _notificationBackends)
-            backend->close(i->notificationId);
+            foreach (AbstractNotificationBackend* backend, _notificationBackends)
+                backend->close(i->notificationId);
             i = _notifications.erase(i);
         }
-        else ++i;
+        else
+            ++i;
     }
 }
 
-
-const QList<AbstractNotificationBackend::Notification> &QtUi::activeNotifications()
+const QList<AbstractNotificationBackend::Notification>& QtUi::activeNotifications()
 {
     return _notifications;
 }
-
 
 void QtUi::notificationActivated(uint notificationId)
 {
@@ -254,7 +237,6 @@ void QtUi::notificationActivated(uint notificationId)
     activateMainWidget();
 }
 
-
 void QtUi::bufferMarkedAsRead(BufferId bufferId)
 {
     if (bufferId.isValid()) {
@@ -262,21 +244,19 @@ void QtUi::bufferMarkedAsRead(BufferId bufferId)
     }
 }
 
-
 std::vector<std::pair<QString, QString>> QtUi::availableIconThemes() const
 {
     //: Supported icon theme names
-    static const std::vector<std::pair<QString, QString>> supported {
-        { "breeze", tr("Breeze") },
-        { "breeze-dark", tr("Breeze Dark") },
+    static const std::vector<std::pair<QString, QString>> supported{{"breeze", tr("Breeze")},
+                                                                    {"breeze-dark", tr("Breeze Dark")},
 #ifdef WITH_OXYGEN_ICONS
-        { "oxygen", tr("Oxygen") }
+                                                                    {"oxygen", tr("Oxygen")}
 #endif
     };
 
     std::vector<std::pair<QString, QString>> result;
-    for (auto &&themePair : supported) {
-        for (auto &&dir : QIcon::themeSearchPaths()) {
+    for (auto&& themePair : supported) {
+        for (auto&& dir : QIcon::themeSearchPaths()) {
             if (QFileInfo{dir + "/" + themePair.first + "/index.theme"}.exists()) {
                 result.push_back(themePair);
                 break;
@@ -287,19 +267,17 @@ std::vector<std::pair<QString, QString>> QtUi::availableIconThemes() const
     return result;
 }
 
-
 QString QtUi::systemIconTheme() const
 {
     return _systemIconTheme;
 }
-
 
 void QtUi::setupIconTheme()
 {
     // Add paths to our own icon sets to the theme search paths
     QStringList themePaths = QIcon::themeSearchPaths();
     themePaths.removeAll(":/icons");  // this should come last
-    for (auto &&dataDir : Quassel::dataDirPaths()) {
+    for (auto&& dataDir : Quassel::dataDirPaths()) {
         QString iconDir{dataDir + "icons"};
         if (QFileInfo{iconDir}.isDir()) {
             themePaths << iconDir;
@@ -311,12 +289,11 @@ void QtUi::setupIconTheme()
     refreshIconTheme();
 }
 
-
 void QtUi::refreshIconTheme()
 {
     // List of available fallback themes
     QStringList availableThemes;
-    for (auto &&themePair : availableIconThemes()) {
+    for (auto&& themePair : availableIconThemes()) {
         availableThemes << themePair.first;
     }
 
@@ -324,7 +301,8 @@ void QtUi::refreshIconTheme()
         // We could probably introduce a more sophisticated fallback handling, such as putting the "most important" icons into hicolor,
         // but this just gets complex for no good reason. We really rely on a supported theme to be installed, if not system-wide, then
         // as part of the Quassel installation (which is enabled by default anyway).
-        qWarning() << tr("No supported icon theme installed, you'll lack icons! Supported are the KDE/Plasma themes Breeze, Breeze Dark and Oxygen.");
+        qWarning() << tr(
+            "No supported icon theme installed, you'll lack icons! Supported are the KDE/Plasma themes Breeze, Breeze Dark and Oxygen.");
         return;
     }
 
@@ -347,7 +325,6 @@ void QtUi::refreshIconTheme()
         return;
     }
 
-#if QT_VERSION >= 0x050000
     // At this point, we have a system theme that we don't want to override, but that may not contain all
     // required icons.
     // We create a dummy theme that inherits first from the system theme, then from the supported fallback.
@@ -356,7 +333,7 @@ void QtUi::refreshIconTheme()
     // Since we can't get notified when the system theme changes, this means that a restart may be required
     // to apply a theme change... but you can't have everything, I guess.
     if (!_dummyThemeDir) {
-        _dummyThemeDir.reset(new QTemporaryDir{});
+        _dummyThemeDir = std::make_unique<QTemporaryDir>();
         if (!_dummyThemeDir->isValid() || !QDir{_dummyThemeDir->path()}.mkpath("icons/quassel-icon-proxy/apps/32")) {
             qWarning() << "Could not create temporary directory for proxying the system icon theme, using fallback";
             QIcon::setThemeName(fallbackTheme);
@@ -374,7 +351,7 @@ void QtUi::refreshIconTheme()
     }
 
     QFile indexFile{_dummyThemeDir->path() + "/icons/quassel-icon-proxy/index.theme"};
-    if (!indexFile.open(QFile::WriteOnly|QFile::Truncate)) {
+    if (!indexFile.open(QFile::WriteOnly | QFile::Truncate)) {
         qWarning() << "Could not create index file for proxying the system icon theme, using fallback";
         QIcon::setThemeName(fallbackTheme);
         emit iconThemeRefreshed();
@@ -382,13 +359,12 @@ void QtUi::refreshIconTheme()
     }
 
     // Write a dummy index file that is sufficient to make QIconLoader happy
-    auto indexContents = QString{
-            "[Icon Theme]\n"
-            "Name=quassel-icon-proxy\n"
-            "Inherits=%1,%2\n"
-            "Directories=apps/32\n"
-            "[apps/32]\nSize=32\nType=Fixed\n"
-    }.arg(_systemIconTheme, fallbackTheme);
+    auto indexContents = QString{"[Icon Theme]\n"
+                                 "Name=quassel-icon-proxy\n"
+                                 "Inherits=%1,%2\n"
+                                 "Directories=apps/32\n"
+                                 "[apps/32]\nSize=32\nType=Fixed\n"}
+                             .arg(_systemIconTheme, fallbackTheme);
     if (indexFile.write(indexContents.toLatin1()) < 0) {
         qWarning() << "Could not write index file for proxying the system icon theme, using fallback";
         QIcon::setThemeName(fallbackTheme);
@@ -397,10 +373,4 @@ void QtUi::refreshIconTheme()
     }
     indexFile.close();
     QIcon::setThemeName("quassel-icon-proxy");
-#else
-    // Qt4 doesn't support QTemporaryDir. Since it's deprecated and slated to be removed soon anyway, we don't bother
-    // writing a replacement and simply don't support not overriding the system theme.
-    QIcon::setThemeName(fallbackTheme);
-    emit iconThemeRefreshed();
-#endif
 }

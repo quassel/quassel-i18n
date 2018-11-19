@@ -34,54 +34,43 @@
 
 #include "protocols/legacy/legacypeer.h"
 
-CoreConnection::CoreConnection(QObject *parent)
-    : QObject(parent),
-    _authHandler(0),
-    _state(Disconnected),
-    _wantReconnect(false),
-    _wasReconnect(false),
-    _progressMinimum(0),
-    _progressMaximum(-1),
-    _progressValue(-1),
-    _resetting(false)
+CoreConnection::CoreConnection(QObject* parent)
+    : QObject(parent)
+    , _authHandler(nullptr)
 {
     qRegisterMetaType<ConnectionState>("CoreConnection::ConnectionState");
 }
 
-
 void CoreConnection::init()
 {
     Client::signalProxy()->setHeartBeatInterval(30);
-    connect(Client::signalProxy(), SIGNAL(lagUpdated(int)), SIGNAL(lagUpdated(int)));
+    connect(Client::signalProxy(), &SignalProxy::lagUpdated, this, &CoreConnection::lagUpdated);
 
     _reconnectTimer.setSingleShot(true);
-    connect(&_reconnectTimer, SIGNAL(timeout()), SLOT(reconnectTimeout()));
+    connect(&_reconnectTimer, &QTimer::timeout, this, &CoreConnection::reconnectTimeout);
 
     _qNetworkConfigurationManager = new QNetworkConfigurationManager(this);
-    connect(_qNetworkConfigurationManager, SIGNAL(onlineStateChanged(bool)), SLOT(onlineStateChanged(bool)));
+    connect(_qNetworkConfigurationManager.data(), &QNetworkConfigurationManager::onlineStateChanged, this, &CoreConnection::onlineStateChanged);
 
     CoreConnectionSettings s;
-    s.initAndNotify("PingTimeoutInterval", this, SLOT(pingTimeoutIntervalChanged(QVariant)), 60);
-    s.initAndNotify("ReconnectInterval", this, SLOT(reconnectIntervalChanged(QVariant)), 60);
-    s.notify("NetworkDetectionMode", this, SLOT(networkDetectionModeChanged(QVariant)));
+    s.initAndNotify("PingTimeoutInterval", this, &CoreConnection::pingTimeoutIntervalChanged, 60);
+    s.initAndNotify("ReconnectInterval", this, &CoreConnection::reconnectIntervalChanged, 60);
+    s.notify("NetworkDetectionMode", this, &CoreConnection::networkDetectionModeChanged);
     networkDetectionModeChanged(s.networkDetectionMode());
 }
 
-
-CoreAccountModel *CoreConnection::accountModel() const
+CoreAccountModel* CoreConnection::accountModel() const
 {
     return Client::coreAccountModel();
 }
 
-
-void CoreConnection::setProgressText(const QString &text)
+void CoreConnection::setProgressText(const QString& text)
 {
     if (_progressText != text) {
         _progressText = text;
         emit progressTextChanged(text);
     }
 }
-
 
 void CoreConnection::setProgressValue(int value)
 {
@@ -91,7 +80,6 @@ void CoreConnection::setProgressValue(int value)
     }
 }
 
-
 void CoreConnection::setProgressMinimum(int minimum)
 {
     if (_progressMinimum != minimum) {
@@ -100,7 +88,6 @@ void CoreConnection::setProgressMinimum(int minimum)
     }
 }
 
-
 void CoreConnection::setProgressMaximum(int maximum)
 {
     if (_progressMaximum != maximum) {
@@ -108,7 +95,6 @@ void CoreConnection::setProgressMaximum(int maximum)
         emit progressRangeChanged(_progressMinimum, maximum);
     }
 }
-
 
 void CoreConnection::updateProgress(int value, int max)
 {
@@ -119,7 +105,6 @@ void CoreConnection::updateProgress(int value, int max)
     setProgressValue(value);
 }
 
-
 void CoreConnection::reconnectTimeout()
 {
     if (!_peer) {
@@ -127,20 +112,19 @@ void CoreConnection::reconnectTimeout()
         if (_wantReconnect && s.autoReconnect()) {
             // If using QNetworkConfigurationManager, we don't want to reconnect if we're offline
             if (s.networkDetectionMode() == CoreConnectionSettings::UseQNetworkConfigurationManager) {
-               if (!_qNetworkConfigurationManager->isOnline()) {
+                if (!_qNetworkConfigurationManager->isOnline()) {
                     return;
-               }
+                }
             }
             reconnectToCore();
         }
     }
 }
 
-
-void CoreConnection::networkDetectionModeChanged(const QVariant &vmode)
+void CoreConnection::networkDetectionModeChanged(const QVariant& vmode)
 {
     CoreConnectionSettings s;
-    CoreConnectionSettings::NetworkDetectionMode mode = (CoreConnectionSettings::NetworkDetectionMode)vmode.toInt();
+    auto mode = (CoreConnectionSettings::NetworkDetectionMode)vmode.toInt();
     if (mode == CoreConnectionSettings::UsePingTimeout)
         Client::signalProxy()->setMaxHeartBeatCount(s.pingTimeoutInterval() / 30);
     else {
@@ -148,20 +132,17 @@ void CoreConnection::networkDetectionModeChanged(const QVariant &vmode)
     }
 }
 
-
-void CoreConnection::pingTimeoutIntervalChanged(const QVariant &interval)
+void CoreConnection::pingTimeoutIntervalChanged(const QVariant& interval)
 {
     CoreConnectionSettings s;
     if (s.networkDetectionMode() == CoreConnectionSettings::UsePingTimeout)
         Client::signalProxy()->setMaxHeartBeatCount(interval.toInt() / 30);  // interval is 30 seconds
 }
 
-
-void CoreConnection::reconnectIntervalChanged(const QVariant &interval)
+void CoreConnection::reconnectIntervalChanged(const QVariant& interval)
 {
     _reconnectTimer.setInterval(interval.toInt() * 1000);
 }
-
 
 void CoreConnection::onlineStateChanged(bool isOnline)
 {
@@ -169,20 +150,20 @@ void CoreConnection::onlineStateChanged(bool isOnline)
     if (s.networkDetectionMode() != CoreConnectionSettings::UseQNetworkConfigurationManager)
         return;
 
-    if(isOnline) {
+    if (isOnline) {
         // qDebug() << "QNetworkConfigurationManager reports Online";
         if (state() == Disconnected) {
             if (_wantReconnect && s.autoReconnect()) {
                 reconnectToCore();
             }
         }
-    } else {
+    }
+    else {
         // qDebug() << "QNetworkConfigurationManager reports Offline";
         if (state() != Disconnected && !isLocalConnection())
             disconnectFromCore(tr("Network is down"), true);
     }
 }
-
 
 QPointer<Peer> CoreConnection::peer() const
 {
@@ -192,12 +173,10 @@ QPointer<Peer> CoreConnection::peer() const
     return _authHandler ? _authHandler->peer() : nullptr;
 }
 
-
 bool CoreConnection::isEncrypted() const
 {
     return _peer && _peer->isSecure();
 }
-
 
 bool CoreConnection::isLocalConnection() const
 {
@@ -213,12 +192,10 @@ bool CoreConnection::isLocalConnection() const
     return false;
 }
 
-
 void CoreConnection::onConnectionReady()
 {
     setState(Connected);
 }
-
 
 void CoreConnection::setState(ConnectionState state)
 {
@@ -232,14 +209,12 @@ void CoreConnection::setState(ConnectionState state)
     }
 }
 
-
-void CoreConnection::coreSocketError(QAbstractSocket::SocketError error, const QString &errorString)
+void CoreConnection::coreSocketError(QAbstractSocket::SocketError error, const QString& errorString)
 {
     Q_UNUSED(error)
 
     disconnectFromCore(errorString, true);
 }
-
 
 void CoreConnection::coreSocketDisconnected()
 {
@@ -248,26 +223,24 @@ void CoreConnection::coreSocketDisconnected()
     resetConnection(_wantReconnect);
 }
 
-
 void CoreConnection::disconnectFromCore()
 {
-    disconnectFromCore(QString(), false); // requested disconnect, so don't try to reconnect
+    disconnectFromCore(QString(), false);  // requested disconnect, so don't try to reconnect
 }
 
-
-void CoreConnection::disconnectFromCore(const QString &errorString, bool wantReconnect)
+void CoreConnection::disconnectFromCore(const QString& errorString, bool wantReconnect)
 {
     if (wantReconnect)
         _reconnectTimer.start();
     else
         _reconnectTimer.stop();
 
-    _wantReconnect = wantReconnect; // store if disconnect was requested
+    _wantReconnect = wantReconnect;  // store if disconnect was requested
     _wasReconnect = false;
 
     if (_authHandler)
         _authHandler->close();
-    else if(_peer)
+    else if (_peer)
         _peer->close();
 
     if (errorString.isEmpty())
@@ -275,7 +248,6 @@ void CoreConnection::disconnectFromCore(const QString &errorString, bool wantRec
     else
         emit connectionError(errorString);
 }
-
 
 void CoreConnection::resetConnection(bool wantReconnect)
 {
@@ -286,23 +258,23 @@ void CoreConnection::resetConnection(bool wantReconnect)
     _wantReconnect = wantReconnect;
 
     if (_authHandler) {
-        disconnect(_authHandler, 0, this, 0);
+        disconnect(_authHandler, nullptr, this, nullptr);
         _authHandler->close();
         _authHandler->deleteLater();
-        _authHandler = 0;
+        _authHandler = nullptr;
     }
 
     if (_peer) {
-        disconnect(_peer, 0, this, 0);
+        disconnect(_peer, nullptr, this, nullptr);
         // peer belongs to the sigproxy and thus gets deleted by it
         _peer->close();
-        _peer = 0;
+        _peer = nullptr;
     }
 
     _netsToSync.clear();
     _numNetsToSync = 0;
 
-    setProgressMaximum(-1); // disable
+    setProgressMaximum(-1);  // disable
     setState(Disconnected);
     emit lagUpdated(-1);
 
@@ -319,7 +291,6 @@ void CoreConnection::resetConnection(bool wantReconnect)
     _resetting = false;
 }
 
-
 void CoreConnection::reconnectToCore()
 {
     if (currentAccount().isValid()) {
@@ -327,7 +298,6 @@ void CoreConnection::reconnectToCore()
         connectToCore(currentAccount().accountId());
     }
 }
-
 
 bool CoreConnection::connectToCore(AccountId accId)
 {
@@ -368,7 +338,6 @@ bool CoreConnection::connectToCore(AccountId accId)
     return true;
 }
 
-
 void CoreConnection::connectToCurrentAccount()
 {
     if (_authHandler) {
@@ -382,9 +351,9 @@ void CoreConnection::connectToCurrentAccount()
             return;
         }
 
-        InternalPeer *peer = new InternalPeer();
+        auto* peer = new InternalPeer();
         _peer = peer;
-        Client::instance()->signalProxy()->addPeer(peer); // sigproxy will take ownership
+        Client::instance()->signalProxy()->addPeer(peer);  // sigproxy will take ownership
         emit connectionMsg(tr("Initializing..."));
         emit connectToInternalCore(peer);
         setState(Connected);
@@ -393,47 +362,46 @@ void CoreConnection::connectToCurrentAccount()
 
     _authHandler = new ClientAuthHandler(currentAccount(), this);
 
-    connect(_authHandler, SIGNAL(disconnected()), SLOT(coreSocketDisconnected()));
-    connect(_authHandler, SIGNAL(connectionReady()), SLOT(onConnectionReady()));
-    connect(_authHandler, SIGNAL(socketError(QAbstractSocket::SocketError,QString)), SLOT(coreSocketError(QAbstractSocket::SocketError,QString)));
-    connect(_authHandler, SIGNAL(transferProgress(int,int)), SLOT(updateProgress(int,int)));
-    connect(_authHandler, SIGNAL(requestDisconnect(QString,bool)), SLOT(disconnectFromCore(QString,bool)));
+    connect(_authHandler, &ClientAuthHandler::disconnected, this, &CoreConnection::coreSocketDisconnected);
+    connect(_authHandler, &ClientAuthHandler::connectionReady, this, &CoreConnection::onConnectionReady);
+    connect(_authHandler, &ClientAuthHandler::socketError, this, &CoreConnection::coreSocketError);
+    connect(_authHandler, &ClientAuthHandler::transferProgress, this, &CoreConnection::updateProgress);
+    connect(_authHandler,
+            &ClientAuthHandler::requestDisconnect,
+            this,
+            selectOverload<const QString&, bool>(&CoreConnection::disconnectFromCore));
 
-    connect(_authHandler, SIGNAL(errorMessage(QString)), SIGNAL(connectionError(QString)));
-    connect(_authHandler, SIGNAL(errorPopup(QString)), SIGNAL(connectionErrorPopup(QString)), Qt::QueuedConnection);
-    connect(_authHandler, SIGNAL(statusMessage(QString)), SIGNAL(connectionMsg(QString)));
-    connect(_authHandler, SIGNAL(encrypted(bool)), SIGNAL(encrypted(bool)));
-    connect(_authHandler, SIGNAL(startCoreSetup(QVariantList, QVariantList)), SIGNAL(startCoreSetup(QVariantList, QVariantList)));
-    connect(_authHandler, SIGNAL(coreSetupFailed(QString)), SIGNAL(coreSetupFailed(QString)));
-    connect(_authHandler, SIGNAL(coreSetupSuccessful()), SIGNAL(coreSetupSuccess()));
-    connect(_authHandler, SIGNAL(userAuthenticationRequired(CoreAccount*,bool*,QString)), SIGNAL(userAuthenticationRequired(CoreAccount*,bool*,QString)));
-    connect(_authHandler, SIGNAL(handleNoSslInClient(bool*)), SIGNAL(handleNoSslInClient(bool*)));
-    connect(_authHandler, SIGNAL(handleNoSslInCore(bool*)), SIGNAL(handleNoSslInCore(bool*)));
+    connect(_authHandler, &ClientAuthHandler::errorMessage, this, &CoreConnection::connectionError);
+    connect(_authHandler, &ClientAuthHandler::errorPopup, this, &CoreConnection::connectionErrorPopup, Qt::QueuedConnection);
+    connect(_authHandler, &ClientAuthHandler::statusMessage, this, &CoreConnection::connectionMsg);
+    connect(_authHandler, &ClientAuthHandler::encrypted, this, &CoreConnection::encrypted);
+    connect(_authHandler, &ClientAuthHandler::startCoreSetup, this, &CoreConnection::startCoreSetup);
+    connect(_authHandler, &ClientAuthHandler::coreSetupFailed, this, &CoreConnection::coreSetupFailed);
+    connect(_authHandler, &ClientAuthHandler::coreSetupSuccessful, this, &CoreConnection::coreSetupSuccess);
+    connect(_authHandler, &ClientAuthHandler::userAuthenticationRequired, this, &CoreConnection::userAuthenticationRequired);
+    connect(_authHandler, &ClientAuthHandler::handleNoSslInClient, this, &CoreConnection::handleNoSslInClient);
+    connect(_authHandler, &ClientAuthHandler::handleNoSslInCore, this, &CoreConnection::handleNoSslInCore);
 #ifdef HAVE_SSL
-    connect(_authHandler, SIGNAL(handleSslErrors(const QSslSocket*,bool*,bool*)), SIGNAL(handleSslErrors(const QSslSocket*,bool*,bool*)));
+    connect(_authHandler, &ClientAuthHandler::handleSslErrors, this, &CoreConnection::handleSslErrors);
 #endif
-
-    connect(_authHandler, SIGNAL(loginSuccessful(CoreAccount)), SLOT(onLoginSuccessful(CoreAccount)));
-    connect(_authHandler, SIGNAL(handshakeComplete(RemotePeer*,Protocol::SessionState)), SLOT(onHandshakeComplete(RemotePeer*,Protocol::SessionState)));
+    connect(_authHandler, &ClientAuthHandler::loginSuccessful, this, &CoreConnection::onLoginSuccessful);
+    connect(_authHandler, &ClientAuthHandler::handshakeComplete, this, &CoreConnection::onHandshakeComplete);
 
     setState(Connecting);
     _authHandler->connectToCore();
 }
 
-
-void CoreConnection::setupCore(const Protocol::SetupData &setupData)
+void CoreConnection::setupCore(const Protocol::SetupData& setupData)
 {
     _authHandler->setupCore(setupData);
 }
 
-
-void CoreConnection::loginToCore(const QString &user, const QString &password, bool remember)
+void CoreConnection::loginToCore(const QString& user, const QString& password, bool remember)
 {
     _authHandler->login(user, password, remember);
 }
 
-
-void CoreConnection::onLoginSuccessful(const CoreAccount &account)
+void CoreConnection::onLoginSuccessful(const CoreAccount& account)
 {
     updateProgress(0, 0);
 
@@ -448,49 +416,46 @@ void CoreConnection::onLoginSuccessful(const CoreAccount &account)
     emit connectionMsg(tr("Synchronizing to %1...").arg(account.accountName()));
 }
 
-
-void CoreConnection::onHandshakeComplete(RemotePeer *peer, const Protocol::SessionState &sessionState)
+void CoreConnection::onHandshakeComplete(RemotePeer* peer, const Protocol::SessionState& sessionState)
 {
     updateProgress(100, 100);
 
-    disconnect(_authHandler, 0, this, 0);
+    disconnect(_authHandler, nullptr, this, nullptr);
     _authHandler->deleteLater();
-    _authHandler = 0;
+    _authHandler = nullptr;
 
     _peer = peer;
-    connect(peer, SIGNAL(disconnected()), SLOT(coreSocketDisconnected()));
-    connect(peer, SIGNAL(statusMessage(QString)), SIGNAL(connectionMsg(QString)));
-    connect(peer, SIGNAL(socketError(QAbstractSocket::SocketError,QString)), SLOT(coreSocketError(QAbstractSocket::SocketError,QString)));
+    connect(peer, &Peer::disconnected, this, &CoreConnection::coreSocketDisconnected);
+    connect(peer, &RemotePeer::statusMessage, this, &CoreConnection::connectionMsg);
+    connect(peer, &RemotePeer::socketError, this, &CoreConnection::coreSocketError);
 
     Client::signalProxy()->addPeer(_peer);  // sigproxy takes ownership of the peer!
 
     syncToCore(sessionState);
 }
 
-
-void CoreConnection::internalSessionStateReceived(const Protocol::SessionState &sessionState)
+void CoreConnection::internalSessionStateReceived(const Protocol::SessionState& sessionState)
 {
     updateProgress(100, 100);
     setState(Synchronizing);
     syncToCore(sessionState);
 }
 
-
-void CoreConnection::syncToCore(const Protocol::SessionState &sessionState)
+void CoreConnection::syncToCore(const Protocol::SessionState& sessionState)
 {
     setProgressText(tr("Receiving network states"));
     updateProgress(0, 100);
 
     // create identities
-    foreach(const QVariant &vid, sessionState.identities) {
+    foreach (const QVariant& vid, sessionState.identities) {
         Client::instance()->coreIdentityCreated(vid.value<Identity>());
     }
 
     // create buffers
     // FIXME: get rid of this crap -- why?
-    NetworkModel *networkModel = Client::networkModel();
+    NetworkModel* networkModel = Client::networkModel();
     Q_ASSERT(networkModel);
-    foreach(const QVariant &vinfo, sessionState.bufferInfos)
+    foreach (const QVariant& vinfo, sessionState.bufferInfos)
         networkModel->bufferUpdated(vinfo.value<BufferInfo>());  // create BufferItems
 
     // prepare sync progress thingys...
@@ -499,31 +464,29 @@ void CoreConnection::syncToCore(const Protocol::SessionState &sessionState)
     updateProgress(0, _numNetsToSync);
 
     // create network objects
-    foreach(const QVariant &networkid, sessionState.networkIds) {
+    foreach (const QVariant& networkid, sessionState.networkIds) {
         NetworkId netid = networkid.value<NetworkId>();
         if (Client::network(netid))
             continue;
-        Network *net = new Network(netid, Client::instance());
+        auto* net = new Network(netid, Client::instance());
         _netsToSync.insert(net);
-        connect(net, SIGNAL(initDone()), SLOT(networkInitDone()));
-        connect(net, SIGNAL(destroyed()), SLOT(networkInitDone()));
+        connect(net, &SyncableObject::initDone, this, &CoreConnection::networkInitDone);
+        connect(net, &QObject::destroyed, this, &CoreConnection::networkInitDone);
         Client::addNetwork(net);
     }
     checkSyncState();
 }
 
-
 // this is also called for destroyed networks!
 void CoreConnection::networkInitDone()
 {
-    QObject *net = sender();
+    QObject* net = sender();
     Q_ASSERT(net);
-    disconnect(net, 0, this, 0);
+    disconnect(net, nullptr, this, nullptr);
     _netsToSync.remove(net);
     updateProgress(_numNetsToSync - _netsToSync.count(), _numNetsToSync);
     checkSyncState();
 }
-
 
 void CoreConnection::checkSyncState()
 {

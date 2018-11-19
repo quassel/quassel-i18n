@@ -20,21 +20,22 @@
 
 #include "mainpage.h"
 
-#include <QPushButton>
 #include <QImage>
 #include <QLabel>
 #include <QLayout>
 #include <QPainter>
+#include <QPushButton>
 
 #include "client.h"
 #include "coreconnectdlg.h"
 #include "icon.h"
 
-MainPage::MainPage(QWidget *parent) : QWidget(parent)
+MainPage::MainPage(QWidget* parent)
+    : QWidget(parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto* layout = new QVBoxLayout(this);
     layout->setAlignment(Qt::AlignCenter);
-    QLabel *label = new QLabel(this);
+    QLabel* label = new QLabel(this);
     label->setPixmap(QPixmap(":/pics/quassel-logo.png"));
     layout->addWidget(label);
 
@@ -42,8 +43,8 @@ MainPage::MainPage(QWidget *parent) : QWidget(parent)
         _connectButton = new QPushButton(icon::get("network-connect"), tr("Connect to Core..."));
         _connectButton->setEnabled(Client::coreConnection()->state() == CoreConnection::Disconnected);
 
-        connect(Client::coreConnection(), SIGNAL(stateChanged(CoreConnection::ConnectionState)), this, SLOT(coreConnectionStateChanged()));
-        connect(_connectButton, SIGNAL(clicked(bool)), this, SLOT(showCoreConnectionDlg()));
+        connect(Client::coreConnection(), &CoreConnection::stateChanged, this, &MainPage::coreConnectionStateChanged);
+        connect(_connectButton, &QAbstractButton::clicked, this, &MainPage::showCoreConnectionDlg);
         layout->addWidget(_connectButton);
     }
 }
@@ -62,7 +63,8 @@ void MainPage::coreConnectionStateChanged()
 {
     if (Client::coreConnection()->state() == CoreConnection::Disconnected) {
         _connectButton->setEnabled(true);
-    } else {
+    }
+    else {
         _connectButton->setDisabled(true);
     }
 }

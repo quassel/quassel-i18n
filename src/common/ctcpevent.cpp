@@ -20,16 +20,15 @@
 
 #include "ctcpevent.h"
 
-Event *CtcpEvent::create(EventManager::EventType type, QVariantMap &map, Network *network)
+Event* CtcpEvent::create(EventManager::EventType type, QVariantMap& map, Network* network)
 {
     if (type == EventManager::CtcpEvent || type == EventManager::CtcpEventFlush)
         return new CtcpEvent(type, map, network);
 
-    return 0;
+    return nullptr;
 }
 
-
-CtcpEvent::CtcpEvent(EventManager::EventType type, QVariantMap &map, Network *network)
+CtcpEvent::CtcpEvent(EventManager::EventType type, QVariantMap& map, Network* network)
     : IrcEvent(type, map, network)
 {
     _ctcpType = static_cast<CtcpType>(map.take("ctcpType").toInt());
@@ -40,8 +39,7 @@ CtcpEvent::CtcpEvent(EventManager::EventType type, QVariantMap &map, Network *ne
     _uuid = map.take("uuid").toString();
 }
 
-
-void CtcpEvent::toVariantMap(QVariantMap &map) const
+void CtcpEvent::toVariantMap(QVariantMap& map) const
 {
     IrcEvent::toVariantMap(map);
     map["ctcpType"] = ctcpType();

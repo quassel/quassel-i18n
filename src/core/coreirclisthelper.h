@@ -18,52 +18,46 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREIRCLISTHELPER_H
-#define COREIRCLISTHELPER_H
+#pragma once
 
 #include <memory>
 
-#include "irclisthelper.h"
-
 #include "coresession.h"
+#include "irclisthelper.h"
 
 class QBasicTimer;
 class QTimerEvent;
 
 class CoreIrcListHelper : public IrcListHelper
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    inline CoreIrcListHelper(CoreSession *coreSession) : IrcListHelper(coreSession), _coreSession(coreSession) {};
+    inline CoreIrcListHelper(CoreSession* coreSession)
+        : IrcListHelper(coreSession)
+        , _coreSession(coreSession){};
 
-    inline virtual const QMetaObject *syncMetaObject() const { return &IrcListHelper::staticMetaObject; }
+    inline CoreSession* coreSession() const { return _coreSession; }
 
-    inline CoreSession *coreSession() const { return _coreSession; }
-
-    inline bool requestInProgress(const NetworkId &netId) const { return _channelLists.contains(netId); }
+    inline bool requestInProgress(const NetworkId& netId) const { return _channelLists.contains(netId); }
 
 public slots:
-    virtual QVariantList requestChannelList(const NetworkId &netId, const QStringList &channelFilters);
-    bool addChannel(const NetworkId &netId, const QString &channelName, quint32 userCount, const QString &topic);
-    bool endOfChannelList(const NetworkId &netId);
+    QVariantList requestChannelList(const NetworkId& netId, const QStringList& channelFilters) override;
+    bool addChannel(const NetworkId& netId, const QString& channelName, quint32 userCount, const QString& topic);
+    bool endOfChannelList(const NetworkId& netId);
 
 protected:
-    void timerEvent(QTimerEvent *event);
+    void timerEvent(QTimerEvent* event) override;
 
 private:
-    bool dispatchQuery(const NetworkId &netId, const QString &query);
+    bool dispatchQuery(const NetworkId& netId, const QString& query);
 
 private:
-    CoreSession *_coreSession;
+    CoreSession* _coreSession;
 
     QHash<NetworkId, QString> _queuedQuery;
-    QHash<NetworkId, QList<ChannelDescription> > _channelLists;
+    QHash<NetworkId, QList<ChannelDescription>> _channelLists;
     QHash<NetworkId, QVariantList> _finishedChannelLists;
     QHash<int, NetworkId> _queryTimeoutByTimerId;
     QHash<NetworkId, std::shared_ptr<QBasicTimer>> _queryTimeoutByNetId;
 };
-
-
-#endif //COREIRCLISTHELPER_H

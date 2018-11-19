@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef BUFFERVIEWFILTER_H_
-#define BUFFERVIEWFILTER_H_
+#pragma once
+
+#include "uisupport-export.h"
 
 #include <QAction>
 #include <QDropEvent>
@@ -28,18 +29,19 @@
 #include <QSet>
 #include <QSortFilterProxyModel>
 
-#include "types.h"
 #include "bufferviewconfig.h"
+#include "types.h"
 
 /*****************************************
  * Buffer View Filter
  *****************************************/
-class BufferViewFilter : public QSortFilterProxyModel
+class UISUPPORT_EXPORT BufferViewFilter : public QSortFilterProxyModel
 {
     Q_OBJECT
 
 public:
-    enum Mode {
+    enum Mode
+    {
         NoActive = 0x01,
         NoInactive = 0x02,
         SomeNets = 0x04,
@@ -51,31 +53,31 @@ public:
     };
     Q_DECLARE_FLAGS(Modes, Mode)
 
-    BufferViewFilter(QAbstractItemModel *model, BufferViewConfig *config = 0);
+    BufferViewFilter(QAbstractItemModel* model, BufferViewConfig* config = nullptr);
 
-    virtual Qt::ItemFlags flags(const QModelIndex &index) const;
-    virtual bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+    Qt::ItemFlags flags(const QModelIndex& index) const override;
+    bool dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column, const QModelIndex& parent) override;
 
-    QVariant data(const QModelIndex &index, int role) const;
-    QVariant checkedState(const QModelIndex &index) const;
+    QVariant data(const QModelIndex& index, int role) const override;
+    QVariant checkedState(const QModelIndex& index) const;
 
-    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
-    bool setCheckedState(const QModelIndex &index, Qt::CheckState state);
+    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+    bool setCheckedState(const QModelIndex& index, Qt::CheckState state);
 
-    void setConfig(BufferViewConfig *config);
-    inline BufferViewConfig *config() const { return _config; }
+    void setConfig(BufferViewConfig* config);
+    inline BufferViewConfig* config() const { return _config; }
 
-    virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 
-    QList<QAction *> actions(const QModelIndex &index);
+    QList<QAction*> actions(const QModelIndex& index);
 
     void setFilterString(const QString string);
 
 protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
-    bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const;
-    bool bufferLessThan(const QModelIndex &source_left, const QModelIndex &source_right) const;
-    bool networkLessThan(const QModelIndex &source_left, const QModelIndex &source_right) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    bool lessThan(const QModelIndex& source_left, const QModelIndex& source_right) const override;
+    bool bufferLessThan(const QModelIndex& source_left, const QModelIndex& source_right) const;
+    bool networkLessThan(const QModelIndex& source_left, const QModelIndex& source_right) const;
 
 signals:
     void configChanged();
@@ -97,14 +99,11 @@ private:
     QSet<BufferId> _toRemove;
     QString _filterString;
 
-    bool filterAcceptBuffer(const QModelIndex &) const;
-    bool filterAcceptNetwork(const QModelIndex &) const;
-    void addBuffer(const BufferId &bufferId) const;
-    void addBuffers(const QList<BufferId> &bufferIds) const;
-    static bool bufferIdLessThan(const BufferId &, const BufferId &);
+    bool filterAcceptBuffer(const QModelIndex&) const;
+    bool filterAcceptNetwork(const QModelIndex&) const;
+    void addBuffer(const BufferId& bufferId) const;
+    void addBuffers(const QList<BufferId>& bufferIds) const;
+    static bool bufferIdLessThan(const BufferId&, const BufferId&);
 };
 
-
 Q_DECLARE_OPERATORS_FOR_FLAGS(BufferViewFilter::Modes)
-
-#endif // BUFFERVIEWFILTER_H_

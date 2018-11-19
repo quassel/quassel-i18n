@@ -18,8 +18,7 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREIGNORELISTMANAGER_H
-#define COREIGNORELISTMANAGER_H
+#pragma once
 
 #include "ignorelistmanager.h"
 
@@ -28,32 +27,25 @@ struct RawMessage;
 
 class CoreIgnoreListManager : public IgnoreListManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit CoreIgnoreListManager(CoreSession *parent);
+    explicit CoreIgnoreListManager(CoreSession* parent);
 
-    inline virtual const QMetaObject *syncMetaObject() const { return &IgnoreListManager::staticMetaObject; }
-
-    StrictnessType match(const RawMessage &rawMsg, const QString &networkName);
+    StrictnessType match(const RawMessage& rawMsg, const QString& networkName);
 
 public slots:
-    virtual inline void requestToggleIgnoreRule(const QString &ignoreRule) { toggleIgnoreRule(ignoreRule); }
-    virtual inline void requestRemoveIgnoreListItem(const QString &ignoreRule) { removeIgnoreListItem(ignoreRule); }
-    virtual inline void requestAddIgnoreListItem(int type, const QString &ignoreRule, bool isRegEx, int strictness,
-        int scope, const QString &scopeRule, bool isActive)
+    inline void requestToggleIgnoreRule(const QString& ignoreRule) override { toggleIgnoreRule(ignoreRule); }
+    inline void requestRemoveIgnoreListItem(const QString& ignoreRule) override { removeIgnoreListItem(ignoreRule); }
+    inline void requestAddIgnoreListItem(
+        int type, const QString& ignoreRule, bool isRegEx, int strictness, int scope, const QString& scopeRule, bool isActive) override
     {
         addIgnoreListItem(type, ignoreRule, isRegEx, strictness, scope, scopeRule, isActive);
     }
 
-
 private slots:
     void save() const;
 
-//private:
-//  void loadDefaults();
+    // private:
+    //  void loadDefaults();
 };
-
-
-#endif //COREIGNORELISTMANAGER_H

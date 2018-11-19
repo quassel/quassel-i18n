@@ -20,10 +20,10 @@
 
 #include "posixsignalwatcher.h"
 
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/time.h>
 #include <sys/resource.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #include <cerrno>
@@ -32,11 +32,9 @@
 #include <QDebug>
 #include <QSocketNotifier>
 
-#include "logmessage.h"
-
 int PosixSignalWatcher::_sockpair[2];
 
-PosixSignalWatcher::PosixSignalWatcher(QObject *parent)
+PosixSignalWatcher::PosixSignalWatcher(QObject* parent)
     : AbstractSignalWatcher{parent}
 {
     if (::socketpair(AF_UNIX, SOCK_STREAM, 0, _sockpair)) {
@@ -45,16 +43,16 @@ PosixSignalWatcher::PosixSignalWatcher(QObject *parent)
     }
 
     _notifier = new QSocketNotifier(_sockpair[1], QSocketNotifier::Read, this);
-    connect(_notifier, SIGNAL(activated(int)), this, SLOT(onNotify(int)));
+    connect(_notifier, &QSocketNotifier::activated, this, &PosixSignalWatcher::onNotify);
     _notifier->setEnabled(true);
 
     registerSignal(SIGINT);
     registerSignal(SIGTERM);
     registerSignal(SIGHUP);
 
-#ifdef HAVE_EXECINFO
+#ifdef HAVE_BACKTRACE
     // we only handle crashes ourselves if coredumps are disabled
-    struct rlimit *limit = (rlimit *)malloc(sizeof(struct rlimit));
+    struct rlimit* limit = (rlimit*)malloc(sizeof(struct rlimit));
     int rc = getrlimit(RLIMIT_CORE, limit);
     if (rc == -1 || !((long)limit->rlim_cur > 0 || limit->rlim_cur == RLIM_INFINITY)) {
         registerSignal(SIGABRT);
@@ -88,7 +86,7 @@ void PosixSignalWatcher::onNotify(int sockfd)
     int signal;
     auto bytes = ::read(sockfd, &signal, sizeof(signal));
     Q_UNUSED(bytes)
-    quInfo() << "Caught signal" << signal;
+    qInfo() << "Caught signal" << signal;
 
     switch (signal) {
     case SIGHUP:

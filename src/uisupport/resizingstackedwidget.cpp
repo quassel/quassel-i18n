@@ -20,20 +20,19 @@
 
 #include "resizingstackedwidget.h"
 
-ResizingStackedWidget::ResizingStackedWidget(QWidget *parent) : QStackedWidget(parent)
+ResizingStackedWidget::ResizingStackedWidget(QWidget* parent)
+    : QStackedWidget(parent)
 {
-    connect(this, SIGNAL(currentChanged(int)), SLOT(indexChanged(int)));
+    connect(this, &QStackedWidget::currentChanged, this, &ResizingStackedWidget::indexChanged);
 }
-
 
 QSize ResizingStackedWidget::sizeHint() const
 {
-    QWidget *widget = currentWidget();
+    QWidget* widget = currentWidget();
     if (!widget)
-        return QSize();
+        return {};
     return widget->sizeHint();
 }
-
 
 void ResizingStackedWidget::indexChanged(int index)
 {

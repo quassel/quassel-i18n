@@ -18,6 +18,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
+#include "sessionthread.h"
+
 #include <QPointer>
 #include <QTimer>
 
@@ -25,7 +27,6 @@
 #include "coresession.h"
 #include "internalpeer.h"
 #include "remotepeer.h"
-#include "sessionthread.h"
 #include "signalproxy.h"
 
 namespace {
@@ -39,15 +40,14 @@ public:
         : _userId{userId}
         , _restoreState{restoreState}
         , _strictIdentEnabled{strictIdentEnabled}
-    {
-    }
+    {}
 
 public slots:
     void initialize()
     {
         _session = new CoreSession{_userId, _restoreState, _strictIdentEnabled, this};
-        connect(_session, SIGNAL(destroyed()), QThread::currentThread(), SLOT(quit()));
-        connect(_session, SIGNAL(sessionState(Protocol::SessionState)), Core::instance(), SIGNAL(sessionState(Protocol::SessionState)));
+        connect(_session, &QObject::destroyed, QThread::currentThread(), &QThread::quit);
+        connect(_session, &CoreSession::sessionStateReceived, Core::instance(), &Core::sessionStateReceived);
         emit initialized();
     }
 
@@ -58,7 +58,7 @@ public slots:
         }
     }
 
-    void addClient(Peer *peer)
+    void addClient(Peer* peer)
     {
         if (!_session) {
             qWarning() << "Session not initialized!";
@@ -89,25 +89,24 @@ private:
     QPointer<CoreSession> _session;
 };
 
-}  // anon
+}  // namespace
 
-SessionThread::SessionThread(UserId uid, bool restoreState, bool strictIdentEnabled, QObject *parent)
+SessionThread::SessionThread(UserId uid, bool restoreState, bool strictIdentEnabled, QObject* parent)
     : QObject(parent)
 {
     auto worker = new Worker(uid, restoreState, strictIdentEnabled);
     worker->moveToThread(&_sessionThread);
-    connect(&_sessionThread, SIGNAL(started()), worker, SLOT(initialize()));
-    connect(&_sessionThread, SIGNAL(finished()), worker, SLOT(deleteLater()));
-    connect(worker, SIGNAL(initialized()), this, SLOT(onSessionInitialized()));
-    connect(worker, SIGNAL(destroyed()), this, SLOT(onSessionDestroyed()));
+    connect(&_sessionThread, &QThread::started, worker, &Worker::initialize);
+    connect(&_sessionThread, &QThread::finished, worker, &QObject::deleteLater);
+    connect(worker, &Worker::initialized, this, &SessionThread::onSessionInitialized);
+    connect(worker, &QObject::destroyed, this, &SessionThread::onSessionDestroyed);
 
-    connect(this, SIGNAL(addClientToWorker(Peer*)), worker, SLOT(addClient(Peer*)));
-    connect(this, SIGNAL(shutdownSession()), worker, SLOT(shutdown()));
+    connect(this, &SessionThread::addClientToWorker, worker, &Worker::addClient);
+    connect(this, &SessionThread::shutdownSession, worker, &Worker::shutdown);
 
     // Defer thread start through the event loop, so the SessionThread instance is fully constructed before
     QTimer::singleShot(0, &_sessionThread, SLOT(start()));
 }
-
 
 SessionThread::~SessionThread()
 {
@@ -116,17 +115,15 @@ SessionThread::~SessionThread()
     _sessionThread.wait(30000);
 }
 
-
 void SessionThread::shutdown()
 {
     emit shutdownSession();
 }
 
-
 void SessionThread::onSessionInitialized()
 {
     _sessionInitialized = true;
-    for (auto &&peer : _clientQueue) {
+    for (auto&& peer : _clientQueue) {
         peer->setParent(nullptr);
         peer->moveToThread(&_sessionThread);
         emit addClientToWorker(peer);
@@ -134,13 +131,12 @@ void SessionThread::onSessionInitialized()
     _clientQueue.clear();
 }
 
-
 void SessionThread::onSessionDestroyed()
 {
     emit shutdownComplete(this);
 }
 
-void SessionThread::addClient(Peer *peer)
+void SessionThread::addClient(Peer* peer)
 {
     if (_sessionInitialized) {
         peer->setParent(nullptr);

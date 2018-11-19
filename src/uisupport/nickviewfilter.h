@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef NICKVIEWFILTER_H
-#define NICKVIEWFILTER_H
+#pragma once
+
+#include "uisupport-export.h"
 
 #include <QSortFilterProxyModel>
 
@@ -28,23 +29,20 @@
 class NetworkModel;
 
 // This is proxymodel is purely for the sorting right now
-class NickViewFilter : public QSortFilterProxyModel
+class UISUPPORT_EXPORT NickViewFilter : public QSortFilterProxyModel
 {
     Q_OBJECT
 
 public:
-    NickViewFilter(const BufferId &bufferId, NetworkModel *parent = 0);
+    NickViewFilter(const BufferId& bufferId, NetworkModel* parent = nullptr);
 
-    virtual QVariant data(const QModelIndex &index, int role) const;
-    QVariant icon(const QModelIndex &index) const;
+    QVariant data(const QModelIndex& index, int role) const override;
+    QVariant icon(const QModelIndex& index) const;
 
 protected:
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
-    QVariant styleData(const QModelIndex &index, int role) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    QVariant styleData(const QModelIndex& index, int role) const;
 
 private:
     BufferId _bufferId;
 };
-
-
-#endif

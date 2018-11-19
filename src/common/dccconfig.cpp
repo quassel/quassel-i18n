@@ -24,10 +24,8 @@
 
 #include "types.h"
 
-INIT_SYNCABLE_OBJECT(DccConfig)
-
-DccConfig::DccConfig(QObject *parent)
-    : SyncableObject(parent)
+DccConfig::DccConfig(QObject* parent)
+    : SyncableObject("DccConfig", parent)
 {
     static auto regTypes = []() -> bool {
         qRegisterMetaTypeStreamOperators<IpDetectionMode>("DccConfig::IpDetectionMode");
@@ -36,12 +34,10 @@ DccConfig::DccConfig(QObject *parent)
     }();
     Q_UNUSED(regTypes);
 
-    renameObject("DccConfig");
     setAllowClientUpdates(true);
 }
 
-
-DccConfig &DccConfig::operator=(const DccConfig &other)
+DccConfig& DccConfig::operator=(const DccConfig& other)
 {
     if (this == &other)
         return *this;
@@ -57,8 +53,7 @@ DccConfig &DccConfig::operator=(const DccConfig &other)
     return *this;
 }
 
-
-bool DccConfig::operator==(const DccConfig &other)
+bool DccConfig::operator==(const DccConfig& other)
 {
     // NOTE: We don't compare the SyncableObject attributes (isInitialized, clientUpdatesAllowed())
     static auto propCount = staticMetaObject.propertyCount();
@@ -72,125 +67,105 @@ bool DccConfig::operator==(const DccConfig &other)
                 return false;
         }
         else if (property(propName) != other.property(propName))
-                return false;
+            return false;
     }
     return true;
 }
-
 
 bool DccConfig::isDccEnabled() const
 {
     return _dccEnabled;
 }
 
-
 void DccConfig::setDccEnabled(bool enabled)
 {
     _dccEnabled = enabled;
 }
-
 
 QHostAddress DccConfig::outgoingIp() const
 {
     return _outgoingIp;
 }
 
-
-void DccConfig::setOutgoingIp(const QHostAddress &outgoingIp)
+void DccConfig::setOutgoingIp(const QHostAddress& outgoingIp)
 {
     _outgoingIp = outgoingIp;
 }
-
 
 DccConfig::IpDetectionMode DccConfig::ipDetectionMode() const
 {
     return _ipDetectionMode;
 }
 
-
 void DccConfig::setIpDetectionMode(DccConfig::IpDetectionMode detectionMode)
 {
     _ipDetectionMode = detectionMode;
 }
-
 
 DccConfig::PortSelectionMode DccConfig::portSelectionMode() const
 {
     return _portSelectionMode;
 }
 
-
 void DccConfig::setPortSelectionMode(DccConfig::PortSelectionMode portSelectionMode)
 {
     _portSelectionMode = portSelectionMode;
 }
-
 
 quint16 DccConfig::minPort() const
 {
     return _minPort;
 }
 
-
 void DccConfig::setMinPort(quint16 port)
 {
     _minPort = port;
 }
-
 
 quint16 DccConfig::maxPort() const
 {
     return _maxPort;
 }
 
-
 void DccConfig::setMaxPort(quint16 port)
 {
     _maxPort = port;
 }
-
 
 int DccConfig::chunkSize() const
 {
     return _chunkSize;
 }
 
-
 void DccConfig::setChunkSize(int chunkSize)
 {
     _chunkSize = chunkSize;
 }
-
 
 int DccConfig::sendTimeout() const
 {
     return _sendTimeout;
 }
 
-
 void DccConfig::setSendTimeout(int timeout)
 {
     _sendTimeout = timeout;
 }
-
 
 bool DccConfig::usePassiveDcc() const
 {
     return _usePassiveDcc;
 }
 
-
 void DccConfig::setUsePassiveDcc(bool use)
 {
     _usePassiveDcc = use;
 }
 
-
 bool DccConfig::useFastSend() const
 {
     return _useFastSend;
 }
-
 
 void DccConfig::setUseFastSend(bool use)
 {

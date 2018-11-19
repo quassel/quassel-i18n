@@ -18,61 +18,57 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTBACKLOGMANAGER_H
-#define CLIENTBACKLOGMANAGER_H
+#pragma once
+
+#include "client-export.h"
 
 #include "backlogmanager.h"
 #include "message.h"
 
 class BacklogRequester;
 
-class ClientBacklogManager : public BacklogManager
+class CLIENT_EXPORT ClientBacklogManager : public BacklogManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    ClientBacklogManager(QObject *parent = 0);
+    ClientBacklogManager(QObject* parent = nullptr);
 
     // helper for the backlogRequester, as it isn't a QObject and can't emit itself
-    inline void emitMessagesRequested(const QString &msg) const { emit messagesRequested(msg); }
+    inline void emitMessagesRequested(const QString& msg) const { emit messagesRequested(msg); }
 
     void reset();
 
 public slots:
-    virtual QVariantList requestBacklog(BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0);
-    virtual void receiveBacklog(BufferId bufferId, MsgId first, MsgId last, int limit, int additional, QVariantList msgs);
-    virtual void receiveBacklogAll(MsgId first, MsgId last, int limit, int additional, QVariantList msgs);
+    QVariantList requestBacklog(BufferId bufferId, MsgId first = -1, MsgId last = -1, int limit = -1, int additional = 0) override;
+    void receiveBacklog(BufferId bufferId, MsgId first, MsgId last, int limit, int additional, QVariantList msgs) override;
+    void receiveBacklogAll(MsgId first, MsgId last, int limit, int additional, QVariantList msgs) override;
 
     void requestInitialBacklog();
 
     void checkForBacklog(BufferId bufferId);
-    void checkForBacklog(const BufferIdList &bufferIds);
+    void checkForBacklog(const BufferIdList& bufferIds);
 
 signals:
     void messagesReceived(BufferId bufferId, int count) const;
-    void messagesRequested(const QString &) const;
-    void messagesProcessed(const QString &) const;
+    void messagesRequested(const QString&) const;
+    void messagesProcessed(const QString&) const;
 
     void updateProgress(int, int);
 
 private:
     bool isBuffering();
-    BufferIdList filterNewBufferIds(const BufferIdList &bufferIds);
+    BufferIdList filterNewBufferIds(const BufferIdList& bufferIds);
 
-    void dispatchMessages(const MessageList &messages, bool sort = false);
+    void dispatchMessages(const MessageList& messages, bool sort = false);
 
-    BacklogRequester *_requester;
-    bool _initBacklogRequested;
+    BacklogRequester* _requester{nullptr};
+    bool _initBacklogRequested{false};
     QSet<BufferId> _buffersRequested;
 };
-
 
 // inlines
 inline void ClientBacklogManager::checkForBacklog(BufferId bufferId)
 {
     checkForBacklog(BufferIdList() << bufferId);
 }
-
-
-#endif // CLIENTBACKLOGMANAGER_H

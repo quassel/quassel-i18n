@@ -18,14 +18,15 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QLayout>
+#include "bufferwidget.h"
+
 #include <QKeyEvent>
+#include <QLayout>
 #include <QMenu>
 #include <QScrollBar>
 
 #include "action.h"
 #include "actioncollection.h"
-#include "bufferwidget.h"
 #include "chatline.h"
 #include "chatview.h"
 #include "chatviewsearchbar.h"
@@ -37,11 +38,11 @@
 #include "qtui.h"
 #include "settings.h"
 
-BufferWidget::BufferWidget(QWidget *parent)
-    : AbstractBufferContainer(parent),
-    _chatViewSearchController(new ChatViewSearchController(this)),
-    _autoMarkerLine(true),
-    _autoMarkerLineOnLostFocus(true)
+BufferWidget::BufferWidget(QWidget* parent)
+    : AbstractBufferContainer(parent)
+    , _chatViewSearchController(new ChatViewSearchController(this))
+    , _autoMarkerLine(true)
+    , _autoMarkerLineOnLostFocus(true)
 {
     ui.setupUi(this);
     layout()->setContentsMargins(0, 0, 0, 0);
@@ -53,78 +54,56 @@ BufferWidget::BufferWidget(QWidget *parent)
     _chatViewSearchController->setSearchMsgs(ui.searchBar->searchMsgsBox()->isChecked());
     _chatViewSearchController->setSearchOnlyRegularMsgs(ui.searchBar->searchOnlyRegularMsgsBox()->isChecked());
 
-    connect(ui.searchBar, SIGNAL(searchChanged(const QString &)),
-        _chatViewSearchController, SLOT(setSearchString(const QString &)));
-    connect(ui.searchBar->caseSensitiveBox(), SIGNAL(toggled(bool)),
-        _chatViewSearchController, SLOT(setCaseSensitive(bool)));
-    connect(ui.searchBar->searchSendersBox(), SIGNAL(toggled(bool)),
-        _chatViewSearchController, SLOT(setSearchSenders(bool)));
-    connect(ui.searchBar->searchMsgsBox(), SIGNAL(toggled(bool)),
-        _chatViewSearchController, SLOT(setSearchMsgs(bool)));
-    connect(ui.searchBar->searchOnlyRegularMsgsBox(), SIGNAL(toggled(bool)),
-        _chatViewSearchController, SLOT(setSearchOnlyRegularMsgs(bool)));
-    connect(ui.searchBar->searchUpButton(), SIGNAL(clicked()),
-        _chatViewSearchController, SLOT(highlightPrev()));
-    connect(ui.searchBar->searchDownButton(), SIGNAL(clicked()),
-        _chatViewSearchController, SLOT(highlightNext()));
+    connect(ui.searchBar, &ChatViewSearchBar::searchChanged, _chatViewSearchController, &ChatViewSearchController::setSearchString);
+    connect(ui.searchBar->caseSensitiveBox(), &QAbstractButton::toggled, _chatViewSearchController, &ChatViewSearchController::setCaseSensitive);
+    connect(ui.searchBar->searchSendersBox(), &QAbstractButton::toggled, _chatViewSearchController, &ChatViewSearchController::setSearchSenders);
+    connect(ui.searchBar->searchMsgsBox(), &QAbstractButton::toggled, _chatViewSearchController, &ChatViewSearchController::setSearchMsgs);
+    connect(ui.searchBar->searchOnlyRegularMsgsBox(),
+            &QAbstractButton::toggled,
+            _chatViewSearchController,
+            &ChatViewSearchController::setSearchOnlyRegularMsgs);
+    connect(ui.searchBar->searchUpButton(), &QAbstractButton::clicked, _chatViewSearchController, &ChatViewSearchController::highlightPrev);
+    connect(ui.searchBar->searchDownButton(), &QAbstractButton::clicked, _chatViewSearchController, &ChatViewSearchController::highlightNext);
 
-    connect(ui.searchBar, SIGNAL(hidden()), this, SLOT(setFocus()));
+    connect(ui.searchBar, &ChatViewSearchBar::hidden, this, selectOverload<>(&QWidget::setFocus));
 
-    connect(_chatViewSearchController, SIGNAL(newCurrentHighlight(QGraphicsItem *)),
-        this, SLOT(scrollToHighlight(QGraphicsItem *)));
+    connect(_chatViewSearchController, &ChatViewSearchController::newCurrentHighlight, this, &BufferWidget::scrollToHighlight);
 
-    ActionCollection *coll = QtUi::actionCollection();
-
-    Action *zoomInChatview = coll->add<Action>("ZoomInChatView", this, SLOT(zoomIn()));
-    zoomInChatview->setText(tr("Zoom In"));
-    zoomInChatview->setIcon(icon::get("zoom-in"));
-    zoomInChatview->setShortcut(QKeySequence::ZoomIn);
-
-    Action *zoomOutChatview = coll->add<Action>("ZoomOutChatView", this, SLOT(zoomOut()));
-    zoomOutChatview->setIcon(icon::get("zoom-out"));
-    zoomOutChatview->setText(tr("Zoom Out"));
-    zoomOutChatview->setShortcut(QKeySequence::ZoomOut);
-
-    Action *zoomOriginalChatview = coll->add<Action>("ZoomOriginalChatView", this, SLOT(zoomOriginal()));
-    zoomOriginalChatview->setIcon(icon::get("zoom-original"));
-    zoomOriginalChatview->setText(tr("Actual Size"));
-    //zoomOriginalChatview->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0)); // used for RTS switching
-
-    Action *setMarkerLine = coll->add<Action>("SetMarkerLineToBottom", this, SLOT(setMarkerLine()));
-    setMarkerLine->setText(tr("Set Marker Line"));
-    setMarkerLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
-
-    Action *jumpToMarkerLine = QtUi::actionCollection("Navigation")->add<Action>("JumpToMarkerLine", this, SLOT(jumpToMarkerLine()));
-    jumpToMarkerLine->setText(tr("Go to Marker Line"));
-    jumpToMarkerLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_K));
+    ActionCollection* coll = QtUi::actionCollection();
+    coll->addActions(
+        {{"ZoomInChatView", new Action{icon::get("zoom-in"), tr("Zoom In"), coll, this, &BufferWidget::zoomIn, QKeySequence::ZoomIn}},
+         {"ZoomOutChatView", new Action{icon::get("zoom-out"), tr("Zoom Out"), coll, this, &BufferWidget::zoomOut, QKeySequence::ZoomOut}},
+         {"ZoomOriginalChatView", new Action{icon::get("zoom-original"), tr("Actual Size"), coll, this, &BufferWidget::zoomOriginal}},
+         {"SetMarkerLineToBottom",
+          new Action{tr("Set Marker Line"), coll, this, [this]() { setMarkerLine(); }, QKeySequence(Qt::CTRL + Qt::Key_R)}}});
+    coll = QtUi::actionCollection("Navigation");
+    coll->addAction("JumpToMarkerLine",
+                    new Action{tr("Go to Marker Line"), coll, this, [this]() { jumpToMarkerLine(); }, QKeySequence(Qt::CTRL + Qt::Key_K)});
 
     ChatViewSettings s;
-    s.initAndNotify("AutoMarkerLine", this, SLOT(setAutoMarkerLine(QVariant)), true);
-    s.initAndNotify("AutoMarkerLineOnLostFocus", this, SLOT(setAutoMarkerLineOnLostFocus(QVariant)), true);
+    s.initAndNotify("AutoMarkerLine", this, &BufferWidget::setAutoMarkerLine, true);
+    s.initAndNotify("AutoMarkerLineOnLostFocus", this, &BufferWidget::setAutoMarkerLineOnLostFocus, true);
 }
-
 
 BufferWidget::~BufferWidget()
 {
     delete _chatViewSearchController;
-    _chatViewSearchController = 0;
+    _chatViewSearchController = nullptr;
 }
 
-
-void BufferWidget::setAutoMarkerLine(const QVariant &v)
+void BufferWidget::setAutoMarkerLine(const QVariant& v)
 {
     _autoMarkerLine = v.toBool();
 }
 
-void BufferWidget::setAutoMarkerLineOnLostFocus(const QVariant &v)
+void BufferWidget::setAutoMarkerLineOnLostFocus(const QVariant& v)
 {
     _autoMarkerLineOnLostFocus = v.toBool();
 }
 
-
-AbstractChatView *BufferWidget::createChatView(BufferId id)
+AbstractChatView* BufferWidget::createChatView(BufferId id)
 {
-    ChatView *chatView;
+    ChatView* chatView;
     chatView = new ChatView(id, this);
     chatView->setBufferContainer(this);
     _chatViews[id] = chatView;
@@ -133,16 +112,15 @@ AbstractChatView *BufferWidget::createChatView(BufferId id)
     return chatView;
 }
 
-
 void BufferWidget::removeChatView(BufferId id)
 {
-    QWidget *view = _chatViews.value(id, 0);
-    if (!view) return;
+    QWidget* view = _chatViews.value(id, 0);
+    if (!view)
+        return;
     ui.stackedWidget->removeWidget(view);
     view->deleteLater();
     _chatViews.take(id);
 }
-
 
 void BufferWidget::showChatView(BufferId id)
 {
@@ -150,66 +128,60 @@ void BufferWidget::showChatView(BufferId id)
         ui.stackedWidget->setCurrentWidget(ui.page);
     }
     else {
-        ChatView *view = qobject_cast<ChatView *>(_chatViews.value(id));
+        auto* view = qobject_cast<ChatView*>(_chatViews.value(id));
         Q_ASSERT(view);
         ui.stackedWidget->setCurrentWidget(view);
         _chatViewSearchController->setScene(view->scene());
     }
 }
 
-
-void BufferWidget::scrollToHighlight(QGraphicsItem *highlightItem)
+void BufferWidget::scrollToHighlight(QGraphicsItem* highlightItem)
 {
-    ChatView *view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (view) {
         view->centerOn(highlightItem);
     }
 }
 
-
 void BufferWidget::zoomIn()
 {
-    ChatView *view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (view)
         view->zoomIn();
 }
 
-
 void BufferWidget::zoomOut()
 {
-    ChatView *view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (view)
         view->zoomOut();
 }
 
-
 void BufferWidget::zoomOriginal()
 {
-    ChatView *view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (view)
         view->zoomOriginal();
 }
 
-
-void BufferWidget::addActionsToMenu(QMenu *menu, const QPointF &pos)
+void BufferWidget::addActionsToMenu(QMenu* menu, const QPointF& pos)
 {
     Q_UNUSED(pos);
-    ActionCollection *coll = QtUi::actionCollection();
+    ActionCollection* coll = QtUi::actionCollection();
     menu->addSeparator();
     menu->addAction(coll->action("ZoomInChatView"));
     menu->addAction(coll->action("ZoomOutChatView"));
     menu->addAction(coll->action("ZoomOriginalChatView"));
 }
 
-
-bool BufferWidget::eventFilter(QObject *watched, QEvent *event)
+bool BufferWidget::eventFilter(QObject* watched, QEvent* event)
 {
     if (event->type() != QEvent::KeyPress)
         return false;
 
-    QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+    auto* keyEvent = static_cast<QKeyEvent*>(event);
 
-    MultiLineEdit *inputLine = qobject_cast<MultiLineEdit *>(watched);
+    auto* inputLine = qobject_cast<MultiLineEdit*>(watched);
     if (!inputLine)
         return false;
 
@@ -217,7 +189,7 @@ bool BufferWidget::eventFilter(QObject *watched, QEvent *event)
     if (keyEvent == QKeySequence::Copy) {
         if (inputLine->hasSelectedText())
             return false;
-        ChatView *view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+        auto* view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
         if (view)
             view->scene()->selectionToClipboard();
         return true;
@@ -236,21 +208,20 @@ bool BufferWidget::eventFilter(QObject *watched, QEvent *event)
     case Qt::Key_PageUp:
     case Qt::Key_PageDown:
         // static cast to access public qobject::event
-        return static_cast<QObject *>(ui.stackedWidget->currentWidget())->event(event);
+        return static_cast<QObject*>(ui.stackedWidget->currentWidget())->event(event);
     default:
         return false;
     }
 }
 
-
-void BufferWidget::currentChanged(const QModelIndex &current, const QModelIndex &previous)
+void BufferWidget::currentChanged(const QModelIndex& current, const QModelIndex& previous)
 {
-    ChatView *prevView = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* prevView = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
 
-    AbstractBufferContainer::currentChanged(current, previous); // switch first to avoid a redraw
+    AbstractBufferContainer::currentChanged(current, previous);  // switch first to avoid a redraw
 
     // we need to hide the marker line if it's already/still at the bottom of the view (and not scrolled up)
-    ChatView *curView = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+    auto* curView = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (curView) {
         BufferId curBufferId = current.data(NetworkModel::BufferIdRole).value<BufferId>();
         if (curBufferId.isValid()) {
@@ -266,15 +237,14 @@ void BufferWidget::currentChanged(const QModelIndex &current, const QModelIndex 
         setMarkerLine(prevView, false);
 }
 
-
-void BufferWidget::setMarkerLine(ChatView *view, bool allowGoingBack)
+void BufferWidget::setMarkerLine(ChatView* view, bool allowGoingBack)
 {
     if (!view)
-        view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+        view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (!view)
         return;
 
-    ChatLine *lastLine = view->lastVisibleChatLine();
+    ChatLine* lastLine = view->lastVisibleChatLine();
     if (lastLine) {
         QModelIndex idx = lastLine->index();
         MsgId msgId = idx.data(MessageModel::MsgIdRole).value<MsgId>();
@@ -289,11 +259,10 @@ void BufferWidget::setMarkerLine(ChatView *view, bool allowGoingBack)
     }
 }
 
-
-void BufferWidget::jumpToMarkerLine(ChatView *view, bool requestBacklog)
+void BufferWidget::jumpToMarkerLine(ChatView* view, bool requestBacklog)
 {
     if (!view)
-        view = qobject_cast<ChatView *>(ui.stackedWidget->currentWidget());
+        view = qobject_cast<ChatView*>(ui.stackedWidget->currentWidget());
     if (!view)
         return;
 

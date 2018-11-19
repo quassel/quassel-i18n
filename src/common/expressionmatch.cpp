@@ -25,15 +25,7 @@
 #include <QString>
 #include <QStringList>
 
-#if QT_VERSION >= 0x050000
-#include <QRegularExpression>
-#else
-#include <QRegExp>
-#endif
-
-#include "logmessage.h"
-
-ExpressionMatch::ExpressionMatch(const QString &expression, MatchMode mode, bool caseSensitive)
+ExpressionMatch::ExpressionMatch(const QString& expression, MatchMode mode, bool caseSensitive)
 {
     // Store the original parameters for later reference
     _sourceExpression = expression;
@@ -47,8 +39,7 @@ ExpressionMatch::ExpressionMatch(const QString &expression, MatchMode mode, bool
     cacheRegEx();
 }
 
-
-bool ExpressionMatch::match(const QString &string, bool matchEmpty) const
+bool ExpressionMatch::match(const QString& string, bool matchEmpty) const
 {
     // Handle empty expression strings
     if (_sourceExpressionEmpty) {
@@ -66,15 +57,7 @@ bool ExpressionMatch::match(const QString &string, bool matchEmpty) const
     // If specified, first check inverted rules
     if (_matchInvertRegExActive && _matchInvertRegEx.isValid()) {
         // Check inverted match rule
-
-        // See _matchRegEx section below for explanations of QRegExp vs. QRegularExpression
-        if (
-#if QT_VERSION >= 0x050000
-                _matchInvertRegEx.match(string).hasMatch()
-#else
-                _matchInvertRegEx.indexIn(string) != -1
-#endif
-                ) {
+        if (_matchInvertRegEx.match(string).hasMatch()) {
             // Inverted rule matched, the rest of the rule cannot match
             return false;
         }
@@ -82,25 +65,16 @@ bool ExpressionMatch::match(const QString &string, bool matchEmpty) const
 
     if (_matchRegExActive && _matchRegEx.isValid()) {
         // Check regular match rule
-    #if QT_VERSION >= 0x050000
-        // QRegularExpression does partial matching by default (exact matching requires anchoring
-        // expressions to be added)
-        // See https://doc.qt.io/qt-5/qregularexpression.html#porting-from-qregexp-exactmatch
         return _matchRegEx.match(string).hasMatch();
-    #else
-        // QRegExp partial matching is done via indexIn
-        // See https://doc.qt.io/qt-5/qregexp.html#indexIn
-        return (_matchRegEx.indexIn(string) != -1);
-    #endif
-    } else {
+    }
+    else {
         // If no valid regular rules exist, due to the isValid() check there must be valid inverted
         // rules that did not match.  Count this as properly matching (implicit wildcard).
         return true;
     }
 }
 
-
-QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule)
+QString ExpressionMatch::trimMultiWildcardWhitespace(const QString& originalRule)
 {
     // This gets handled in two steps:
     //
@@ -229,10 +203,9 @@ QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                           << "character!";
                 break;
             }
             consecutiveSlashes = 0;
@@ -250,10 +223,9 @@ QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule
             }
             else if (consecutiveSlashes > 3) {
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                           << "character!";
                 break;
             }
             break;
@@ -276,10 +248,8 @@ QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), applying newline split anyways!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), applying newline split anyways!";
                 break;
             }
 
@@ -310,10 +280,9 @@ QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring " << curChar << "char escape!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring " << curChar
+                           << "char escape!";
                 break;
             }
             consecutiveSlashes = 0;
@@ -329,7 +298,6 @@ QString ExpressionMatch::trimMultiWildcardWhitespace(const QString &originalRule
     // Remove any trailing whitespace
     return result.trimmed();
 }
-
 
 void ExpressionMatch::cacheRegEx()
 {
@@ -348,8 +316,7 @@ void ExpressionMatch::cacheRegEx()
         // Match entire phrase, noninverted
         // Don't trim whitespace for phrase matching as someone might want to match on " word ", a
         // more-specific request than "word".
-        _matchRegEx = regExFactory("(?:^|\\W)" + regExEscape(_sourceExpression) + "(?:\\W|$)",
-                                   _sourceCaseSensitive);
+        _matchRegEx = regExFactory("(?:^|\\W)" + regExEscape(_sourceExpression) + "(?:\\W|$)", _sourceCaseSensitive);
         _matchRegExActive = true;
         break;
     case MatchMode::MatchMultiPhrase:
@@ -364,19 +331,16 @@ void ExpressionMatch::cacheRegEx()
         if (_sourceExpression.startsWith("!")) {
             // Inverted rule: take the remainder of the string
             // "^" + invertComponents.at(0) + "$"
-            _matchInvertRegEx = regExFactory("^" + wildcardToRegEx(_sourceExpression.mid(1)) + "$",
-                                             _sourceCaseSensitive);
+            _matchInvertRegEx = regExFactory("^" + wildcardToRegEx(_sourceExpression.mid(1)) + "$", _sourceCaseSensitive);
             _matchInvertRegExActive = true;
         }
         else {
             // Normal rule: take the whole string
             // Account for any escaped "!" (i.e. "\!") by skipping past the "\", but don't skip past
             // escaped "\" (i.e. "\\!")
-            _matchRegEx =
-                    regExFactory("^" + wildcardToRegEx(_sourceExpression.startsWith("\\!")
-                                                       ? _sourceExpression.mid(1)
-                                                       : _sourceExpression) + "$",
-                                 _sourceCaseSensitive);
+            _matchRegEx = regExFactory("^" + wildcardToRegEx(_sourceExpression.startsWith("\\!") ? _sourceExpression.mid(1) : _sourceExpression)
+                                           + "$",
+                                       _sourceCaseSensitive);
             _matchRegExActive = true;
         }
         break;
@@ -397,10 +361,8 @@ void ExpressionMatch::cacheRegEx()
             // Normal rule: take the whole string
             // Account for any escaped "!" (i.e. "\!") by skipping past the "\", but don't skip past
             // escaped "\" (i.e. "\\!")
-            _matchRegEx =
-                    regExFactory(_sourceExpression.startsWith("\\!") ? _sourceExpression.mid(1)
-                                                                     : _sourceExpression,
-                                 _sourceCaseSensitive);
+            _matchRegEx = regExFactory(_sourceExpression.startsWith("\\!") ? _sourceExpression.mid(1) : _sourceExpression,
+                                       _sourceCaseSensitive);
             _matchRegExActive = true;
         }
         break;
@@ -415,42 +377,27 @@ void ExpressionMatch::cacheRegEx()
         // level as ideally someone's not just going to leave a broken match rule around.  For
         // MatchRegEx, they probably need to fix their regex rule.  For the other modes, there's
         // probably a bug in the parsing routines (which should also be fixed).
-        quInfo() << "Could not parse expression match rule"
-                 << _sourceExpression << "(match mode:" << (int)_sourceMode
+        qInfo() << "Could not parse expression match rule" << _sourceExpression << "(match mode:" << (int)_sourceMode
                  << "), this rule will be ignored";
     }
 }
 
-
-#if QT_VERSION >= 0x050000
-QRegularExpression ExpressionMatch::regExFactory(const QString &regExString,
-                                                 bool caseSensitive)
-#else
-QRegExp ExpressionMatch::regExFactory(const QString &regExString, bool caseSensitive)
-#endif
+QRegularExpression ExpressionMatch::regExFactory(const QString& regExString, bool caseSensitive)
 {
     // Construct the regular expression object, setting case sensitivity as appropriate
-#if QT_VERSION >= 0x050000
-    QRegularExpression newRegEx =
-            QRegularExpression(regExString, caseSensitive ?
-                                   QRegularExpression::PatternOption::NoPatternOption
-                                 : QRegularExpression::PatternOption::CaseInsensitiveOption );
-#else
-    QRegExp newRegEx = QRegExp(regExString, caseSensitive ?
-                                   Qt::CaseSensitivity::CaseSensitive
-                                 : Qt::CaseSensitivity::CaseInsensitive);
-#endif
+    QRegularExpression newRegEx = QRegularExpression(regExString,
+                                                     caseSensitive ? QRegularExpression::PatternOption::NoPatternOption
+                                                                   : QRegularExpression::PatternOption::CaseInsensitiveOption);
 
     // Check if rule is valid
     if (!newRegEx.isValid()) {
         // This can happen with invalid regex, so make it a bit more user-friendly.  Keep this
         // distinct from the main info-level message for easier debugging in case a regex component
         // in Wildcard or Phrase mode breaks.
-        qDebug() << "Internal regular expression component" << regExString
-                 << "is invalid and will be ignored";
+        qDebug() << "Internal regular expression component" << regExString << "is invalid and will be ignored";
     }
-    // Qt 5.4 (QT_VERSION >= 0x050400) offers explicit control over when QRegularExpression objects
-    // get optimized.  By default, patterns are only optimized after some number of uses as defined
+    // Qt offers explicit control over when QRegularExpression objects get optimized.
+    // By default, patterns are only optimized after some number of uses as defined
     // within Qt internals.
     //
     // In the context of ExpressionMatch, some regular expressions might go unused, e.g. a highlight
@@ -465,10 +412,7 @@ QRegExp ExpressionMatch::regExFactory(const QString &regExString, bool caseSensi
     //
     // else {
     //     // Optimize regex now
-    // #if QT_VERSION >= 0x050400
     //     newRegEx.optimize();
-    // #endif
-    //
     // }
     //
     // NOTE: This should only be called if the expression is valid!  Apply within an "else" of the
@@ -479,26 +423,20 @@ QRegExp ExpressionMatch::regExFactory(const QString &regExString, bool caseSensi
     return newRegEx;
 }
 
-
-QString ExpressionMatch::regExEscape(const QString &phrase)
+QString ExpressionMatch::regExEscape(const QString& phrase)
 {
     // Escape the given phrase of any special regular expression characters
-#if QT_VERSION >= 0x050000
     return QRegularExpression::escape(phrase);
-#else
-    return QRegExp::escape(phrase);
-#endif
 }
 
-
-QString ExpressionMatch::convertFromMultiPhrase(const QString &originalRule)
+QString ExpressionMatch::convertFromMultiPhrase(const QString& originalRule)
 {
     // Convert the multi-phrase rule into regular expression format
     // Split apart the original rule into components
     // Use QStringList instead of std::vector<QString> to make use of Qt's built-in .join() method
     QStringList components = {};
     // Split on "\n"
-    for (auto &&component : originalRule.split("\n", QString::SkipEmptyParts)) {
+    for (auto&& component : originalRule.split("\n", QString::SkipEmptyParts)) {
         // Don't trim whitespace to maintain consistency with single phrase matching
         // As trimming is not performed, empty components will already be skipped.  This means " "
         // is considered a valid matching phrase.
@@ -523,8 +461,7 @@ QString ExpressionMatch::convertFromMultiPhrase(const QString &originalRule)
     }
 }
 
-
-void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, bool caseSensitive)
+void ExpressionMatch::generateFromMultiWildcard(const QString& originalRule, bool caseSensitive)
 {
     // Convert the wildcard rule into regular expression format
     // First, reset the existing match expressions
@@ -572,7 +509,6 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
 
     // "\\" and "\" are not downconverted to allow for other escape codes to be detected in
     // ExpressionMatch::wildcardToRegex
-
 
     // Example:
     //
@@ -719,10 +655,9 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                           << "character!";
                 isRuleStart = false;
                 break;
             }
@@ -748,10 +683,9 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
                     break;
                 default:
                     // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                    qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                             << rule << "resulted in rule component"
-                             << curString << "with unexpected count of consecutive '\\' ("
-                             << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                    qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                               << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                               << "character!";
                     break;
                 }
             }
@@ -764,16 +698,15 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
                     break;
                 case 1:
                 case 2:
-                     // "\!"  -> Elsewhere: keep as "\!"
-                     // "\\!" -> Elsewhere: keep as "\\!"
+                    // "\!"  -> Elsewhere: keep as "\!"
+                    // "\\!" -> Elsewhere: keep as "\\!"
                     curString.append(QString(R"(\)").repeated(consecutiveSlashes) + "!");
                     break;
                 default:
                     // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                    qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                               << rule << "resulted in rule component"
-                               << curString << "with unexpected count of consecutive '\\' ("
-                               << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                    qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                               << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                               << "character!";
                     break;
                 }
             }
@@ -795,10 +728,9 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
             }
             else if (consecutiveSlashes > 3) {
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring" << curChar
+                           << "character!";
                 break;
             }
             // Don't set "isRuleStart" here as "\" is used in escape sequences
@@ -822,10 +754,8 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), applying newline split anyways!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), applying newline split anyways!";
                 break;
             }
 
@@ -863,10 +793,9 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << rule << "resulted in rule component"
-                           << curString << "with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring " << curChar << "char escape!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << rule << "resulted in rule component" << curString
+                           << "with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring " << curChar
+                           << "char escape!";
                 break;
             }
             // Don't mark as past rule start for whitespace (whitespace gets trimmed)
@@ -912,15 +841,13 @@ void ExpressionMatch::generateFromMultiWildcard(const QString &originalRule, boo
             _matchInvertRegEx = regExFactory("^" + invertComponents.at(0) + "$", caseSensitive);
         }
         else {
-            _matchInvertRegEx =
-                    regExFactory("^(?:" + invertComponents.join("|") + ")$", caseSensitive);
+            _matchInvertRegEx = regExFactory("^(?:" + invertComponents.join("|") + ")$", caseSensitive);
         }
         _matchInvertRegExActive = true;
     }
 }
 
-
-QString ExpressionMatch::wildcardToRegEx(const QString &expression)
+QString ExpressionMatch::wildcardToRegEx(const QString& expression)
 {
     // Convert the wildcard expression into regular expression format
 
@@ -1033,10 +960,9 @@ QString ExpressionMatch::wildcardToRegEx(const QString &expression)
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << expression << "resulted in escaped regular expression string"
-                           << regExEscaped << " with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << expression << "resulted in escaped regular expression string"
+                           << regExEscaped << " with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring"
+                           << curChar << "character!";
                 break;
             }
             consecutiveSlashes = 0;
@@ -1056,10 +982,9 @@ QString ExpressionMatch::wildcardToRegEx(const QString &expression)
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << expression << "resulted in escaped regular expression string"
-                           << regExEscaped << " with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "character!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << expression << "resulted in escaped regular expression string"
+                           << regExEscaped << " with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring"
+                           << curChar << "character!";
                 break;
             }
             consecutiveSlashes = 0;
@@ -1099,10 +1024,9 @@ QString ExpressionMatch::wildcardToRegEx(const QString &expression)
                 break;
             default:
                 // This shouldn't ever happen (even with invalid wildcard rules), log a warning
-                qWarning() << Q_FUNC_INFO << "Wildcard rule"
-                           << expression << "resulted in escaped regular expression string"
-                           << regExEscaped << " with unexpected count of consecutive '\\' ("
-                           << consecutiveSlashes << "), ignoring" << curChar << "char escape!";
+                qWarning() << Q_FUNC_INFO << "Wildcard rule" << expression << "resulted in escaped regular expression string"
+                           << regExEscaped << " with unexpected count of consecutive '\\' (" << consecutiveSlashes << "), ignoring"
+                           << curChar << "char escape!";
                 break;
             }
             consecutiveSlashes = 0;

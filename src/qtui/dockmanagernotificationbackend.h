@@ -34,14 +34,14 @@ class DockManagerNotificationBackend : public AbstractNotificationBackend
     Q_OBJECT
 
 public:
-    DockManagerNotificationBackend(QObject *parent = 0);
+    DockManagerNotificationBackend(QObject* parent = nullptr);
 
-    void notify(const Notification &);
-    void close(uint notificationId);
-    virtual SettingsPage *createConfigWidget() const;
+    void notify(const Notification&) override;
+    void close(uint notificationId) override;
+    SettingsPage* createConfigWidget() const override;
 
 private slots:
-    void enabledChanged(const QVariant &);
+    void enabledChanged(const QVariant&);
     void updateProgress(int progress);
     void updateProgress(int done, int total);
     void itemAdded(QDBusObjectPath);
@@ -52,31 +52,29 @@ private:
     bool _enabled;
     bool _available;
     QDBusConnection _bus;
-    QDBusInterface *_dock;
-    QDBusInterface *_item;
-    int _count;
+    QDBusInterface* _dock{nullptr};
+    QDBusInterface* _item{nullptr};
+    int _count{0};
 };
-
 
 class DockManagerNotificationBackend::ConfigWidget : public SettingsPage
 {
     Q_OBJECT
 
 public:
-    ConfigWidget(bool enabled, QWidget *parent = 0);
+    ConfigWidget(bool enabled, QWidget* parent = nullptr);
 
-    void save();
-    void load();
-    bool hasDefaults() const;
-    void defaults();
+    void save() override;
+    void load() override;
+    bool hasDefaults() const override;
+    void defaults() override;
 
 private slots:
     void widgetChanged();
 
 private:
-    QCheckBox *enabledBox;
+    QCheckBox* enabledBox;
     bool enabled;
 };
-
 
 #endif

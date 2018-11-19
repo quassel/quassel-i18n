@@ -20,6 +20,8 @@
 
 #pragma once
 
+#include "common-export.h"
+
 #include <QHash>
 #include <QString>
 #include <QStringList>
@@ -30,18 +32,15 @@
 /**
  * Nickname matcher with automatic caching for performance
  */
-class NickHighlightMatcher
+class COMMON_EXPORT NickHighlightMatcher
 {
 public:
     /// Nickname highlighting mode
-#if QT_VERSION >= 0x050000
-    enum class HighlightNickType {
-#else
-    enum HighlightNickType {
-#endif
-        NoNick = 0x00,      ///< Don't match any nickname
-        CurrentNick = 0x01, ///< Match the current nickname
-        AllNicks = 0x02     ///< Match all configured nicknames in the chosen identity
+    enum class HighlightNickType
+    {
+        NoNick = 0x00,       ///< Don't match any nickname
+        CurrentNick = 0x01,  ///< Match the current nickname
+        AllNicks = 0x02      ///< Match all configured nicknames in the chosen identity
     };
     // NOTE: Keep this in sync with HighlightRuleManager::HighlightNickType and
     // NotificationSettings::HighlightNickType!
@@ -49,7 +48,7 @@ public:
     /**
      * Construct an empty NicknameMatcher
      */
-    NickHighlightMatcher() {}
+    NickHighlightMatcher() = default;
 
     /**
      * Construct a configured NicknameMatcher
@@ -58,8 +57,9 @@ public:
      * @param isCaseSensitive  If true, nick matching is case-sensitive, otherwise case-insensitive
      */
     NickHighlightMatcher(HighlightNickType highlightMode, bool isCaseSensitive)
-        : _highlightMode(highlightMode),
-          _isCaseSensitive(isCaseSensitive) {}
+        : _highlightMode(highlightMode)
+        , _isCaseSensitive(isCaseSensitive)
+    {}
 
     /**
      * Gets the nickname highlighting policy
@@ -73,7 +73,8 @@ public:
      *
      * @param highlightMode Nickname highlighting mode
      */
-    void setHighlightMode(HighlightNickType highlightMode) {
+    void setHighlightMode(HighlightNickType highlightMode)
+    {
         if (_highlightMode != highlightMode) {
             _highlightMode = highlightMode;
             invalidateNickCache();
@@ -92,7 +93,8 @@ public:
      *
      * @param isCaseSensitive If true, nick matching is case-sensitive, otherwise case-insensitive
      */
-    void setCaseSensitive(bool isCaseSensitive) {
+    void setCaseSensitive(bool isCaseSensitive)
+    {
         if (_isCaseSensitive != isCaseSensitive) {
             _isCaseSensitive = isCaseSensitive;
             invalidateNickCache();
@@ -110,8 +112,7 @@ public:
      * @param identityNicks  All nicknames configured for the current identity
      * @return True if match found, otherwise false
      */
-    bool match(const QString &string, const NetworkId &netId, const QString &currentNick,
-               const QStringList &identityNicks) const;
+    bool match(const QString& string, const NetworkId& netId, const QString& currentNick, const QStringList& identityNicks) const;
 
 public slots:
     /**
@@ -119,7 +120,8 @@ public slots:
      *
      * @param netId Network ID of source network
      */
-    void removeNetwork(const NetworkId &netId) {
+    void removeNetwork(const NetworkId& netId)
+    {
         // Remove the network from the cache list
         if (_nickMatchCache.remove(netId) > 0) {
             qDebug() << "Cleared nickname matching cache for removed network ID" << netId;
@@ -127,7 +129,8 @@ public slots:
     }
 
 private:
-    struct NickMatchCache {
+    struct NickMatchCache
+    {
         // These represent internal cache and should be safe to mutate in 'const' functions
         QString nickCurrent = {};        ///< Last cached current nick
         QStringList identityNicks = {};  ///< Last cached identity nicks
@@ -141,15 +144,15 @@ private:
      * @param currentNick    Current nickname
      * @param identityNicks  All nicknames configured for the current identity
      */
-    void determineExpressions(const NetworkId &netId, const QString &currentNick,
-                              const QStringList &identityNicks) const;
+    void determineExpressions(const NetworkId& netId, const QString& currentNick, const QStringList& identityNicks) const;
 
     /**
      * Invalidate all nickname match caches
      *
      * Use this after changing global configuration.
      */
-    inline void invalidateNickCache() {
+    inline void invalidateNickCache()
+    {
         // Mark all as invalid
         if (_nickMatchCache.size() > 0) {
             _nickMatchCache.clear();
@@ -163,6 +166,5 @@ private:
     bool _isCaseSensitive = false;  ///< If true, match nicknames with exact case
 
     // These represent internal cache and should be safe to mutate in 'const' functions
-    mutable QHash<NetworkId, NickMatchCache> _nickMatchCache; ///< Per-network nick matching cache
-
+    mutable QHash<NetworkId, NickMatchCache> _nickMatchCache;  ///< Per-network nick matching cache
 };

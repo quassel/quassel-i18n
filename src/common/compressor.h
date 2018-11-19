@@ -18,51 +18,49 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COMPRESSOR_H
-#define COMPRESSOR_H
+#pragma once
 
 #include <QObject>
 
-class QTcpSocket;
+#include <zlib.h>
 
-#ifdef HAVE_ZLIB
-    typedef struct z_stream_s *z_streamp;
-#else
-    typedef struct mz_stream_s *z_streamp;
-#endif
+class QTcpSocket;
 
 class Compressor : public QObject
 {
     Q_OBJECT
 
 public:
-    enum CompressionLevel {
+    enum CompressionLevel
+    {
         NoCompression,
         DefaultCompression,
         BestCompression,
         BestSpeed
     };
 
-    enum Error {
+    enum Error
+    {
         NoError,
         StreamError,
         DeviceError
     };
 
-    enum WriteBufferHint {
+    enum WriteBufferHint
+    {
         NoFlush,
         Flush
     };
 
-    Compressor(QTcpSocket *socket, CompressionLevel level, QObject *parent = 0);
-    ~Compressor();
+    Compressor(QTcpSocket* socket, CompressionLevel level, QObject* parent = nullptr);
+    ~Compressor() override;
 
     CompressionLevel compressionLevel() const { return _level; }
 
     qint64 bytesAvailable() const;
 
-    qint64 read(char *data, qint64 maxSize);
-    qint64 write(const char *data, qint64 count, WriteBufferHint flush = Flush);
+    qint64 read(char* data, qint64 maxSize);
+    qint64 write(const char* data, qint64 count, WriteBufferHint flush = Flush);
 
     void flush();
 
@@ -78,7 +76,7 @@ private:
     void writeData();
 
 private:
-    QTcpSocket *_socket;
+    QTcpSocket* _socket;
     CompressionLevel _level;
 
     QByteArray _readBuffer;
@@ -90,5 +88,3 @@ private:
     z_streamp _inflater;
     z_streamp _deflater;
 };
-
-#endif

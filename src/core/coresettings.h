@@ -18,28 +18,23 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef _CORESETTINGS_H_
-#define _CORESETTINGS_H_
+#pragma once
 
 #include "settings.h"
 
 class CoreSettings : public Settings
 {
 public:
-    virtual ~CoreSettings();
-    CoreSettings(const QString group = "Core");
+    CoreSettings(QString group = "Core");
 
-    void setStorageSettings(const QVariant &data);
-    QVariant storageSettings(const QVariant &def = QVariant());
+    void setStorageSettings(const QVariant& data);
+    QVariant storageSettings(const QVariant& def = {}) const;
 
-    void setAuthSettings(const QVariant &data);
-    QVariant authSettings(const QVariant &def = QVariant());
+    void setAuthSettings(const QVariant& data);
+    QVariant authSettings(const QVariant& def = {}) const;
 
-    QVariant oldDbSettings();  // FIXME remove
+    QVariant oldDbSettings() const;  // FIXME remove
 
-    void setCoreState(const QVariant &data);
-    QVariant coreState(const QVariant &def = QVariant());
+    void setCoreState(const QVariant& data);
+    QVariant coreState(const QVariant& def = {}) const;
 };
-
-
-#endif /*_CORESETTINGS_H_*/

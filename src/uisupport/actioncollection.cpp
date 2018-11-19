@@ -20,27 +20,33 @@
  * Parts of this implementation are based on KDE's KActionCollection.      *
  ***************************************************************************/
 
-#ifndef HAVE_KDE
+#include "actioncollection.h"
 
 #include <QAction>
 #include <QDebug>
 #include <QMetaMethod>
 
-#include "actioncollection.h"
-
 #include "action.h"
 #include "uisettings.h"
 
-ActionCollection::ActionCollection(QObject *parent) : QObject(parent)
+void ActionCollection::addActions(const std::vector<std::pair<QString, Action*>>& actions)
 {
-    _connectTriggered = _connectHovered = false;
+    for (auto&& p : actions) {
+        addAction(p.first, p.second);
+    }
 }
 
+#ifndef HAVE_KDE
 
-ActionCollection::~ActionCollection()
+int ActionCollection::count() const
 {
+    return actions().count();
 }
 
+bool ActionCollection::isEmpty() const
+{
+    return actions().count();
+}
 
 void ActionCollection::clear()
 {
@@ -49,38 +55,17 @@ void ActionCollection::clear()
     _actions.clear();
 }
 
-
-QAction *ActionCollection::action(const QString &name) const
+QAction* ActionCollection::action(const QString& name) const
 {
     return _actionByName.value(name, 0);
 }
 
-
-QList<QAction *> ActionCollection::actions() const
+QList<QAction*> ActionCollection::actions() const
 {
     return _actions;
 }
 
-
-Action *ActionCollection::addAction(const QString &name, Action *action)
-{
-    QAction *act = addAction(name, static_cast<QAction *>(action));
-    Q_UNUSED(act);
-    Q_ASSERT(act == action);
-    return action;
-}
-
-
-Action *ActionCollection::addAction(const QString &name, const QObject *receiver, const char *member)
-{
-    Action *a = new Action(this);
-    if (receiver && member)
-        connect(a, SIGNAL(triggered(bool)), receiver, member);
-    return addAction(name, a);
-}
-
-
-QAction *ActionCollection::addAction(const QString &name, QAction *action)
+QAction* ActionCollection::addAction(const QString& name, QAction* action)
 {
     if (!action)
         return action;
@@ -93,13 +78,13 @@ QAction *ActionCollection::addAction(const QString &name, QAction *action)
     else
         action->setObjectName(indexName);
     if (indexName.isEmpty())
-        indexName = indexName.sprintf("unnamed-%p", (void *)action);
+        indexName = indexName.sprintf("unnamed-%p", (void*)action);
 
     // do we already have this action?
     if (_actionByName.value(indexName, 0) == action)
         return action;
     // or maybe another action under this name?
-    if (QAction *oldAction = _actionByName.value(indexName))
+    if (QAction* oldAction = _actionByName.value(indexName))
         takeAction(oldAction);
 
     // do we already have this action under a different name?
@@ -113,33 +98,31 @@ QAction *ActionCollection::addAction(const QString &name, QAction *action)
     _actionByName.insert(indexName, action);
     _actions.append(action);
 
-    foreach(QWidget *widget, _associatedWidgets) {
+    foreach (QWidget* widget, _associatedWidgets) {
         widget->addAction(action);
     }
 
-    connect(action, SIGNAL(destroyed(QObject *)), SLOT(actionDestroyed(QObject *)));
+    connect(action, &QObject::destroyed, this, &ActionCollection::actionDestroyed);
     if (_connectHovered)
-        connect(action, SIGNAL(hovered()), SLOT(slotActionHovered()));
+        connect(action, &QAction::hovered, this, &ActionCollection::slotActionHovered);
     if (_connectTriggered)
-        connect(action, SIGNAL(triggered(bool)), SLOT(slotActionTriggered()));
+        connect(action, &QAction::triggered, this, &ActionCollection::slotActionTriggered);
 
     emit inserted(action);
     return action;
 }
 
-
-void ActionCollection::removeAction(QAction *action)
+void ActionCollection::removeAction(QAction* action)
 {
     delete takeAction(action);
 }
 
-
-QAction *ActionCollection::takeAction(QAction *action)
+QAction* ActionCollection::takeAction(QAction* action)
 {
     if (!unlistAction(action))
-        return 0;
+        return nullptr;
 
-    foreach(QWidget *widget, _associatedWidgets) {
+    foreach (QWidget* widget, _associatedWidgets) {
         widget->removeAction(action);
     }
 
@@ -147,27 +130,25 @@ QAction *ActionCollection::takeAction(QAction *action)
     return action;
 }
 
-
 void ActionCollection::readSettings()
 {
     ShortcutSettings s;
     QStringList savedShortcuts = s.savedShortcuts();
 
-    foreach(const QString &name, _actionByName.keys()) {
+    foreach (const QString& name, _actionByName.keys()) {
         if (!savedShortcuts.contains(name))
             continue;
-        Action *action = qobject_cast<Action *>(_actionByName.value(name));
+        auto* action = qobject_cast<Action*>(_actionByName.value(name));
         if (action)
             action->setShortcut(s.loadShortcut(name), Action::ActiveShortcut);
     }
 }
 
-
 void ActionCollection::writeSettings() const
 {
     ShortcutSettings s;
-    foreach(const QString &name, _actionByName.keys()) {
-        Action *action = qobject_cast<Action *>(_actionByName.value(name));
+    foreach (const QString& name, _actionByName.keys()) {
+        auto* action = qobject_cast<Action*>(_actionByName.value(name));
         if (!action)
             continue;
         if (!action->isShortcutConfigurable())
@@ -178,123 +159,102 @@ void ActionCollection::writeSettings() const
     }
 }
 
-
 void ActionCollection::slotActionTriggered()
 {
-    QAction *action = qobject_cast<QAction *>(sender());
+    auto* action = qobject_cast<QAction*>(sender());
     if (action)
         emit actionTriggered(action);
 }
 
-
 void ActionCollection::slotActionHovered()
 {
-    QAction *action = qobject_cast<QAction *>(sender());
+    auto* action = qobject_cast<QAction*>(sender());
     if (action)
         emit actionHovered(action);
 }
 
-
-void ActionCollection::actionDestroyed(QObject *obj)
+void ActionCollection::actionDestroyed(QObject* obj)
 {
     // remember that this is not an QAction anymore at this point
-    QAction *action = static_cast<QAction *>(obj);
+    auto* action = static_cast<QAction*>(obj);
 
     unlistAction(action);
 }
 
-#if QT_VERSION >= 0x050000
-void ActionCollection::connectNotify(const QMetaMethod &signal)
-#else
-void ActionCollection::connectNotify(const char *signal)
-#endif
+void ActionCollection::connectNotify(const QMetaMethod& signal)
 {
     if (_connectHovered && _connectTriggered)
         return;
 
-#if QT_VERSION >= 0x050000
     if (QMetaMethod::fromSignal(&ActionCollection::actionHovered) == signal) {
-#else
-    if (QMetaObject::normalizedSignature(SIGNAL(actionHovered(QAction *))) == signal) {
-#endif
         if (!_connectHovered) {
             _connectHovered = true;
-            foreach(QAction* action, actions())
-            connect(action, SIGNAL(hovered()), SLOT(slotActionHovered()));
+            foreach (QAction* action, actions())
+                connect(action, &QAction::hovered, this, &ActionCollection::slotActionHovered);
         }
     }
-#if QT_VERSION >= 0x050000
     else if (QMetaMethod::fromSignal(&ActionCollection::actionTriggered) == signal) {
-#else
-    else if (QMetaObject::normalizedSignature(SIGNAL(actionTriggered(QAction *))) == signal) {
-#endif
         if (!_connectTriggered) {
             _connectTriggered = true;
-            foreach(QAction* action, actions())
-            connect(action, SIGNAL(triggered(bool)), SLOT(slotActionTriggered()));
+            foreach (QAction* action, actions())
+                connect(action, &QAction::triggered, this, &ActionCollection::slotActionTriggered);
         }
     }
 
     QObject::connectNotify(signal);
 }
 
-
-void ActionCollection::associateWidget(QWidget *widget) const
+void ActionCollection::associateWidget(QWidget* widget) const
 {
-    foreach(QAction *action, actions()) {
+    foreach (QAction* action, actions()) {
         if (!widget->actions().contains(action))
             widget->addAction(action);
     }
 }
 
-
-void ActionCollection::addAssociatedWidget(QWidget *widget)
+void ActionCollection::addAssociatedWidget(QWidget* widget)
 {
     if (!_associatedWidgets.contains(widget)) {
         widget->addActions(actions());
         _associatedWidgets.append(widget);
-        connect(widget, SIGNAL(destroyed(QObject *)), SLOT(associatedWidgetDestroyed(QObject *)));
+        connect(widget, &QObject::destroyed, this, &ActionCollection::associatedWidgetDestroyed);
     }
 }
 
-
-void ActionCollection::removeAssociatedWidget(QWidget *widget)
+void ActionCollection::removeAssociatedWidget(QWidget* widget)
 {
-    foreach(QAction *action, actions())
-    widget->removeAction(action);
+    foreach (QAction* action, actions())
+        widget->removeAction(action);
     _associatedWidgets.removeAll(widget);
-    disconnect(widget, SIGNAL(destroyed(QObject *)), this, SLOT(associatedWidgetDestroyed(QObject *)));
+    disconnect(widget, &QObject::destroyed, this, &ActionCollection::associatedWidgetDestroyed);
 }
 
-
-QList<QWidget *> ActionCollection::associatedWidgets() const
+QList<QWidget*> ActionCollection::associatedWidgets() const
 {
     return _associatedWidgets;
 }
 
-
 void ActionCollection::clearAssociatedWidgets()
 {
-    foreach(QWidget *widget, _associatedWidgets)
-    foreach(QAction *action, actions())
-    widget->removeAction(action);
+    foreach (QWidget* widget, _associatedWidgets)
+        foreach (QAction* action, actions())
+            widget->removeAction(action);
 
     _associatedWidgets.clear();
 }
 
-
-void ActionCollection::associatedWidgetDestroyed(QObject *obj)
+void ActionCollection::associatedWidgetDestroyed(QObject* obj)
 {
-    _associatedWidgets.removeAll(static_cast<QWidget *>(obj));
+    _associatedWidgets.removeAll(static_cast<QWidget*>(obj));
 }
 
-
-bool ActionCollection::unlistAction(QAction *action)
+bool ActionCollection::unlistAction(QAction* action)
 {
     // This might be called with a partly destroyed QAction!
 
     int index = _actions.indexOf(action);
-    if (index == -1) return false;
+    if (index == -1)
+        return false;
 
     QString name = action->objectName();
     _actionByName.remove(name);
@@ -304,6 +264,5 @@ bool ActionCollection::unlistAction(QAction *action)
 
     return true;
 }
-
 
 #endif /* HAVE_KDE */

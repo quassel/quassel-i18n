@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef REMOTEPEER_H
-#define REMOTEPEER_H
+#pragma once
+
+#include "common-export.h"
 
 #include <QDateTime>
 
@@ -32,56 +33,59 @@ class QTimer;
 
 class AuthHandler;
 
-class RemotePeer : public Peer
+class COMMON_EXPORT RemotePeer : public Peer
 {
     Q_OBJECT
 
 public:
     // import the virtuals from the baseclass
-    using Peer::handle;
     using Peer::dispatch;
+    using Peer::handle;
 
-    RemotePeer(AuthHandler *authHandler, QTcpSocket *socket, Compressor::CompressionLevel level, QObject *parent = 0);
+    RemotePeer(AuthHandler* authHandler, QTcpSocket* socket, Compressor::CompressionLevel level, QObject* parent = nullptr);
 
-    void setSignalProxy(SignalProxy *proxy);
+    void setSignalProxy(SignalProxy* proxy) override;
 
     virtual QString protocolName() const = 0;
-    virtual QString description() const;
+    QString description() const override;
     virtual quint16 enabledFeatures() const { return 0; }
 
-    virtual QString address() const;
-    virtual quint16 port() const;
+    QString address() const override;
+    quint16 port() const override;
 
-    bool isOpen() const;
-    bool isSecure() const;
-    bool isLocal() const;
+    bool isOpen() const override;
+    bool isSecure() const override;
+    bool isLocal() const override;
 
-    int lag() const;
+    int lag() const override;
 
     bool compressionEnabled() const;
     void setCompressionEnabled(bool enabled);
 
-    QTcpSocket *socket() const;
+    QTcpSocket* socket() const;
 
 public slots:
-    void close(const QString &reason = QString());
+    void close(const QString& reason = QString()) override;
 
 signals:
     void transferProgress(int current, int max);
-    void socketError(QAbstractSocket::SocketError error, const QString &errorString);
-    void statusMessage(const QString &msg);
+    void socketError(QAbstractSocket::SocketError error, const QString& errorString);
+    void statusMessage(const QString& msg);
+
+    // Only used by LegacyPeer
+    void protocolVersionMismatch(int actual, int expected);
 
 protected:
-    SignalProxy *signalProxy() const;
+    SignalProxy* signalProxy() const override;
 
-    void writeMessage(const QByteArray &msg);
-    virtual void processMessage(const QByteArray &msg) = 0;
+    void writeMessage(const QByteArray& msg);
+    virtual void processMessage(const QByteArray& msg) = 0;
 
     // These protocol messages get handled internally and won't reach SignalProxy
-    void handle(const Protocol::HeartBeat &heartBeat);
-    void handle(const Protocol::HeartBeatReply &heartBeatReply);
-    virtual void dispatch(const Protocol::HeartBeat &msg) = 0;
-    virtual void dispatch(const Protocol::HeartBeatReply &msg) = 0;
+    void handle(const Protocol::HeartBeat& heartBeat);
+    void handle(const Protocol::HeartBeatReply& heartBeatReply);
+    virtual void dispatch(const Protocol::HeartBeat& msg) = 0;
+    virtual void dispatch(const Protocol::HeartBeatReply& msg) = 0;
 
 protected slots:
     virtual void onSocketStateChanged(QAbstractSocket::SocketState state);
@@ -95,16 +99,14 @@ private slots:
     void changeHeartBeatInterval(int secs);
 
 private:
-    bool readMessage(QByteArray &msg);
+    bool readMessage(QByteArray& msg);
 
 private:
-    QTcpSocket *_socket;
-    Compressor *_compressor;
-    SignalProxy *_signalProxy;
-    QTimer *_heartBeatTimer;
+    QTcpSocket* _socket;
+    Compressor* _compressor;
+    SignalProxy* _signalProxy;
+    QTimer* _heartBeatTimer;
     int _heartBeatCount;
     int _lag;
     quint32 _msgSize;
 };
-
-#endif

@@ -18,50 +18,51 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QtEndian>
-
 #include <QHostAddress>
 #include <QTimer>
+#include <QtEndian>
 
 #ifdef HAVE_SSL
-#  include <QSslSocket>
+#    include <QSslSocket>
 #else
-#  include <QTcpSocket>
+#    include <QTcpSocket>
 #endif
 
 #include "remotepeer.h"
+#include "util.h"
 
 using namespace Protocol;
 
-const quint32 maxMessageSize = 64 * 1024 * 1024; // This is uncompressed size. 64 MB should be enough for any sort of initData or backlog chunk
+const quint32 maxMessageSize = 64 * 1024
+                               * 1024;  // This is uncompressed size. 64 MB should be enough for any sort of initData or backlog chunk
 
-RemotePeer::RemotePeer(::AuthHandler *authHandler, QTcpSocket *socket, Compressor::CompressionLevel level, QObject *parent)
-    : Peer(authHandler, parent),
-    _socket(socket),
-    _compressor(new Compressor(socket, level, this)),
-    _signalProxy(0),
-    _heartBeatTimer(new QTimer(this)),
-    _heartBeatCount(0),
-    _lag(0),
-    _msgSize(0)
+RemotePeer::RemotePeer(::AuthHandler* authHandler, QTcpSocket* socket, Compressor::CompressionLevel level, QObject* parent)
+    : Peer(authHandler, parent)
+    , _socket(socket)
+    , _compressor(new Compressor(socket, level, this))
+    , _signalProxy(nullptr)
+    , _heartBeatTimer(new QTimer(this))
+    , _heartBeatCount(0)
+    , _lag(0)
+    , _msgSize(0)
 {
     socket->setParent(this);
-    connect(socket, SIGNAL(stateChanged(QAbstractSocket::SocketState)), SLOT(onSocketStateChanged(QAbstractSocket::SocketState)));
-    connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(onSocketError(QAbstractSocket::SocketError)));
-    connect(socket, SIGNAL(disconnected()), SIGNAL(disconnected()));
+    connect(socket, &QAbstractSocket::stateChanged, this, &RemotePeer::onSocketStateChanged);
+    connect(socket, selectOverload<QAbstractSocket::SocketError>(&QAbstractSocket::error), this, &RemotePeer::onSocketError);
+    connect(socket, &QAbstractSocket::disconnected, this, &Peer::disconnected);
 
 #ifdef HAVE_SSL
-    QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket);
-    if (sslSocket)
-        connect(sslSocket, SIGNAL(encrypted()), SIGNAL(secureStateChanged()));
+    auto* sslSocket = qobject_cast<QSslSocket*>(socket);
+    if (sslSocket) {
+        connect(sslSocket, &QSslSocket::encrypted, this, [this]() { emit secureStateChanged(true); });
+    }
 #endif
 
-    connect(_compressor, SIGNAL(readyRead()), SLOT(onReadyRead()));
-    connect(_compressor, SIGNAL(error(Compressor::Error)), SLOT(onCompressionError(Compressor::Error)));
+    connect(_compressor, &Compressor::readyRead, this, &RemotePeer::onReadyRead);
+    connect(_compressor, &Compressor::error, this, &RemotePeer::onCompressionError);
 
-    connect(_heartBeatTimer, SIGNAL(timeout()), SLOT(sendHeartBeat()));
+    connect(_heartBeatTimer, &QTimer::timeout, this, &RemotePeer::sendHeartBeat);
 }
-
 
 void RemotePeer::onSocketStateChanged(QAbstractSocket::SocketState state)
 {
@@ -70,18 +71,15 @@ void RemotePeer::onSocketStateChanged(QAbstractSocket::SocketState state)
     }
 }
 
-
 void RemotePeer::onSocketError(QAbstractSocket::SocketError error)
 {
     emit socketError(error, socket()->errorString());
 }
 
-
 void RemotePeer::onCompressionError(Compressor::Error error)
 {
     close(QString("Compression error %1").arg(error));
 }
-
 
 QString RemotePeer::description() const
 {
@@ -107,22 +105,20 @@ quint16 RemotePeer::port() const
     return 0;
 }
 
-
-::SignalProxy *RemotePeer::signalProxy() const
+::SignalProxy* RemotePeer::signalProxy() const
 {
     return _signalProxy;
 }
 
-
-void RemotePeer::setSignalProxy(::SignalProxy *proxy)
+void RemotePeer::setSignalProxy(::SignalProxy* proxy)
 {
     if (proxy == _signalProxy)
         return;
 
     if (!proxy) {
         _heartBeatTimer->stop();
-        disconnect(signalProxy(), 0, this, 0);
-        _signalProxy = 0;
+        disconnect(signalProxy(), nullptr, this, nullptr);
+        _signalProxy = nullptr;
         if (isOpen())
             close();
     }
@@ -132,16 +128,15 @@ void RemotePeer::setSignalProxy(::SignalProxy *proxy)
             return;
         }
         _signalProxy = proxy;
-        connect(proxy, SIGNAL(heartBeatIntervalChanged(int)), SLOT(changeHeartBeatInterval(int)));
+        connect(proxy, &SignalProxy::heartBeatIntervalChanged, this, &RemotePeer::changeHeartBeatInterval);
         _heartBeatTimer->setInterval(proxy->heartBeatInterval() * 1000);
         _heartBeatTimer->start();
     }
 }
 
-
 void RemotePeer::changeHeartBeatInterval(int secs)
 {
-    if(secs <= 0)
+    if (secs <= 0)
         _heartBeatTimer->stop();
     else {
         _heartBeatTimer->setInterval(secs * 1000);
@@ -149,18 +144,15 @@ void RemotePeer::changeHeartBeatInterval(int secs)
     }
 }
 
-
 int RemotePeer::lag() const
 {
     return _lag;
 }
 
-
-QTcpSocket *RemotePeer::socket() const
+QTcpSocket* RemotePeer::socket() const
 {
     return _socket;
 }
-
 
 bool RemotePeer::isSecure() const
 {
@@ -168,14 +160,13 @@ bool RemotePeer::isSecure() const
         if (isLocal())
             return true;
 #ifdef HAVE_SSL
-        QSslSocket *sslSocket = qobject_cast<QSslSocket *>(socket());
+        auto* sslSocket = qobject_cast<QSslSocket*>(socket());
         if (sslSocket && sslSocket->isEncrypted())
             return true;
 #endif
     }
     return false;
 }
-
 
 bool RemotePeer::isLocal() const
 {
@@ -186,14 +177,12 @@ bool RemotePeer::isLocal() const
     return false;
 }
 
-
 bool RemotePeer::isOpen() const
 {
     return socket() && socket()->state() == QTcpSocket::ConnectedState;
 }
 
-
-void RemotePeer::close(const QString &reason)
+void RemotePeer::close(const QString& reason)
 {
     if (!reason.isEmpty()) {
         qWarning() << "Disconnecting:" << reason;
@@ -203,7 +192,6 @@ void RemotePeer::close(const QString &reason)
         socket()->disconnectFromHost();
     }
 }
-
 
 void RemotePeer::onReadyRead()
 {
@@ -219,8 +207,7 @@ void RemotePeer::onReadyRead()
     }
 }
 
-
-bool RemotePeer::readMessage(QByteArray &msg)
+bool RemotePeer::readMessage(QByteArray& msg)
 {
     if (_msgSize == 0) {
         if (_compressor->bytesAvailable() < 4)
@@ -257,33 +244,29 @@ bool RemotePeer::readMessage(QByteArray &msg)
     return true;
 }
 
-
-void RemotePeer::writeMessage(const QByteArray &msg)
+void RemotePeer::writeMessage(const QByteArray& msg)
 {
-    quint32 size = qToBigEndian<quint32>(msg.size());
+    auto size = qToBigEndian<quint32>(msg.size());
     _compressor->write((const char*)&size, 4, Compressor::NoFlush);
     _compressor->write(msg.constData(), msg.size());
 }
 
-
-void RemotePeer::handle(const HeartBeat &heartBeat)
+void RemotePeer::handle(const HeartBeat& heartBeat)
 {
     dispatch(HeartBeatReply(heartBeat.timestamp));
 }
 
-
-void RemotePeer::handle(const HeartBeatReply &heartBeatReply)
+void RemotePeer::handle(const HeartBeatReply& heartBeatReply)
 {
     _heartBeatCount = 0;
     emit lagUpdated(heartBeatReply.timestamp.msecsTo(QDateTime::currentDateTime().toUTC()) / 2);
 }
 
-
 void RemotePeer::sendHeartBeat()
 {
     if (signalProxy()->maxHeartBeatCount() > 0 && _heartBeatCount >= signalProxy()->maxHeartBeatCount()) {
-        qWarning() << "Disconnecting peer:" << description()
-                   << "(didn't receive a heartbeat for over" << _heartBeatCount *_heartBeatTimer->interval() / 1000 << "seconds)";
+        qWarning() << "Disconnecting peer:" << description() << "(didn't receive a heartbeat for over"
+                   << _heartBeatCount * _heartBeatTimer->interval() / 1000 << "seconds)";
         socket()->close();
         _heartBeatTimer->stop();
         return;

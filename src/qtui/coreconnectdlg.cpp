@@ -27,7 +27,8 @@
 #include "coreaccountsettingspage.h"
 #include "icon.h"
 
-CoreConnectDlg::CoreConnectDlg(QWidget *parent) : QDialog(parent)
+CoreConnectDlg::CoreConnectDlg(QWidget* parent)
+    : QDialog(parent)
 {
     _settingsPage = new CoreAccountSettingsPage(this);
     _settingsPage->setStandAlone(true);
@@ -41,24 +42,22 @@ CoreConnectDlg::CoreConnectDlg(QWidget *parent) : QDialog(parent)
     setWindowTitle(tr("Connect to Core"));
     setWindowIcon(icon::get("network-disconnect"));
 
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto* layout = new QVBoxLayout(this);
     layout->addWidget(_settingsPage);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
-    buttonBox->setStandardButtons(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    auto* buttonBox = new QDialogButtonBox(this);
+    buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     layout->addWidget(buttonBox);
 
-    connect(_settingsPage, SIGNAL(connectToCore(AccountId)), SLOT(accept()));
-    connect(buttonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), SLOT(reject()));
+    connect(_settingsPage, &CoreAccountSettingsPage::connectToCore, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
-
 
 AccountId CoreConnectDlg::selectedAccount() const
 {
     return _settingsPage->selectedAccount();
 }
-
 
 void CoreConnectDlg::accept()
 {
@@ -66,17 +65,16 @@ void CoreConnectDlg::accept()
     QDialog::accept();
 }
 
-
 /******** CoreConnectAuthDlg ****************************************************************/
 
-CoreConnectAuthDlg::CoreConnectAuthDlg(CoreAccount *account, QWidget *parent)
-    : QDialog(parent),
-    _account(account)
+CoreConnectAuthDlg::CoreConnectAuthDlg(CoreAccount* account, QWidget* parent)
+    : QDialog(parent)
+    , _account(account)
 {
     ui.setupUi(this);
 
-    connect(ui.user, SIGNAL(textChanged(QString)), SLOT(setButtonStates()));
-    connect(ui.password, SIGNAL(textChanged(QString)), SLOT(setButtonStates()));
+    connect(ui.user, &QLineEdit::textChanged, this, &CoreConnectAuthDlg::setButtonStates);
+    connect(ui.password, &QLineEdit::textChanged, this, &CoreConnectAuthDlg::setButtonStates);
 
     ui.label->setText(tr("Please enter your credentials for %1:").arg(account->accountName()));
     ui.user->setText(account->user());
@@ -89,7 +87,6 @@ CoreConnectAuthDlg::CoreConnectAuthDlg(CoreAccount *account, QWidget *parent)
         ui.password->setFocus();
 }
 
-
 void CoreConnectAuthDlg::accept()
 {
     _account->setUser(ui.user->text());
@@ -98,7 +95,6 @@ void CoreConnectAuthDlg::accept()
 
     QDialog::accept();
 }
-
 
 void CoreConnectAuthDlg::setButtonStates()
 {

@@ -18,28 +18,24 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef COREIRCCHANNEL_H
-#define COREIRCCHANNEL_H
+#pragma once
 
 #include "ircchannel.h"
 
 #ifdef HAVE_QCA2
-#  include "cipher.h"
+#    include "cipher.h"
 #endif
 
 class CoreIrcChannel : public IrcChannel
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    CoreIrcChannel(const QString &channelname, Network *network);
-    virtual ~CoreIrcChannel();
-
-    inline virtual const QMetaObject *syncMetaObject() const { return &IrcChannel::staticMetaObject; }
+    CoreIrcChannel(const QString& channelname, Network* network);
+    ~CoreIrcChannel() override;
 
 #ifdef HAVE_QCA2
-    Cipher *cipher() const;
+    Cipher* cipher() const;
     void setEncrypted(bool);
 #endif
 
@@ -50,9 +46,6 @@ private:
     bool _receivedWelcomeMsg;
 
 #ifdef HAVE_QCA2
-    mutable Cipher *_cipher;
+    mutable Cipher* _cipher;
 #endif
 };
-
-
-#endif //COREIRCCHANNEL_H

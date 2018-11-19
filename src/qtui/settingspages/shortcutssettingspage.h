@@ -34,43 +34,41 @@ class ShortcutsFilter : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    ShortcutsFilter(QObject *parent = 0);
+    ShortcutsFilter(QObject* parent = nullptr);
 
 public slots:
-    void setFilterString(const QString &filterString);
+    void setFilterString(const QString& filterString);
 
 protected:
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
 
 private:
     QString _filterString;
 };
 
-
 class ShortcutsSettingsPage : public SettingsPage
 {
     Q_OBJECT
 public:
-    ShortcutsSettingsPage(const QHash<QString, ActionCollection *> &actionCollections, QWidget *parent = 0);
+    ShortcutsSettingsPage(const QHash<QString, ActionCollection*>& actionCollections, QWidget* parent = nullptr);
 
-    inline bool hasDefaults() const { return true; }
+    inline bool hasDefaults() const override { return true; }
 
 public slots:
-    void save();
-    void load();
-    void defaults();
+    void save() override;
+    void load() override;
+    void defaults() override;
 
 private slots:
-    void on_searchEdit_textChanged(const QString &text);
-    void keySequenceChanged(const QKeySequence &seq, const QModelIndex &conflicting);
+    void on_searchEdit_textChanged(const QString& text);
+    void keySequenceChanged(const QKeySequence& seq, const QModelIndex& conflicting);
     void setWidgetStates();
     void toggledCustomOrDefault();
 
 private:
     Ui::ShortcutsSettingsPage ui;
-    ShortcutsModel *_shortcutsModel;
-    ShortcutsFilter *_shortcutsFilter;
+    ShortcutsModel* _shortcutsModel;
+    ShortcutsFilter* _shortcutsFilter;
 };
 
-
-#endif // SHORTCUTSSETTINGSPAGE_H
+#endif  // SHORTCUTSSETTINGSPAGE_H

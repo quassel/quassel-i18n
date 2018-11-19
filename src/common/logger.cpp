@@ -21,7 +21,7 @@
 #include <iostream>
 
 #ifdef HAVE_SYSLOG
-#  include <syslog.h>
+#    include <syslog.h>
 #endif
 
 #include <QByteArray>
@@ -31,18 +31,18 @@
 
 #include "logger.h"
 #include "quassel.h"
+#include "types.h"
 
 namespace {
 
-QByteArray msgWithTime(const Logger::LogEntry &msg)
+QByteArray msgWithTime(const Logger::LogEntry& msg)
 {
     return (msg.timeStamp.toString("yyyy-MM-dd hh:mm:ss ") + msg.message + "\n").toUtf8();
-};
-
 }
 
+}  // namespace
 
-Logger::Logger(QObject *parent)
+Logger::Logger(QObject* parent)
     : QObject(parent)
 {
     static bool registered = []() {
@@ -51,34 +51,27 @@ Logger::Logger(QObject *parent)
     }();
     Q_UNUSED(registered)
 
-    connect(this, SIGNAL(messageLogged(Logger::LogEntry)), this, SLOT(onMessageLogged(Logger::LogEntry)));
+    connect(this, &Logger::messageLogged, this, &Logger::onMessageLogged);
 
-#if QT_VERSION < 0x050000
-    qInstallMsgHandler(Logger::messageHandler);
-#else
     qInstallMessageHandler(Logger::messageHandler);
-#endif
 }
-
 
 Logger::~Logger()
 {
     // If we're not initialized yet, output pending messages so they don't get lost
     if (!_initialized) {
-        for (auto &&message : _messages) {
+        for (auto&& message : _messages) {
             std::cerr << msgWithTime(message).constData();
         }
     }
 }
-
 
 std::vector<Logger::LogEntry> Logger::messages() const
 {
     return _messages;
 }
 
-
-bool Logger::setup(bool keepMessages)
+void Logger::setup(bool keepMessages)
 {
     _keepMessages = keepMessages;
 
@@ -94,20 +87,19 @@ bool Logger::setup(bool keepMessages)
         else if (level == "error")
             _outputLevel = LogLevel::Error;
         else {
-            qCritical() << qPrintable(tr("Invalid log level %1; supported are Debug|Info|Warning|Error").arg(level));
-            return false;
+            throw ExitException{EXIT_FAILURE, qPrintable(tr("Invalid log level %1; supported are Debug|Info|Warning|Error").arg(level))};
         }
     }
 
     QString logfilename = Quassel::optionValue("logfile");
     if (!logfilename.isEmpty()) {
         _logFile.setFileName(logfilename);
-        if (!_logFile.open(QFile::Append|QFile::Unbuffered|QFile::Text)) {
+        if (!_logFile.open(QFile::Append | QFile::Unbuffered | QFile::Text)) {
             qCritical() << qPrintable(tr("Could not open log file \"%1\": %2").arg(logfilename, _logFile.errorString()));
         }
     }
     if (!_logFile.isOpen()) {
-        if (!_logFile.open(stderr, QFile::WriteOnly|QFile::Unbuffered|QFile::Text)) {
+        if (!_logFile.open(stderr, QFile::WriteOnly | QFile::Unbuffered | QFile::Text)) {
             qCritical() << qPrintable(tr("Cannot write to stderr: %1").arg(_logFile.errorString()));
         }
     }
@@ -119,38 +111,28 @@ bool Logger::setup(bool keepMessages)
     _initialized = true;
 
     // Now that we've setup our logging backends, output pending messages
-    for (auto &&message : _messages) {
+    for (auto&& message : _messages) {
         outputMessage(message);
     }
     if (!_keepMessages) {
         _messages.clear();
     }
-
-    return true;
 }
 
-
-#if QT_VERSION < 0x050000
-void Logger::messageHandler(QtMsgType type, const char *message)
-#else
-void Logger::messageHandler(QtMsgType type, const QMessageLogContext &, const QString &message)
-#endif
+void Logger::messageHandler(QtMsgType type, const QMessageLogContext&, const QString& message)
 {
     Quassel::instance()->logger()->handleMessage(type, message);
 }
 
-
-void Logger::handleMessage(QtMsgType type, const QString &msg)
+void Logger::handleMessage(QtMsgType type, const QString& msg)
 {
     switch (type) {
     case QtDebugMsg:
         handleMessage(LogLevel::Debug, msg);
         break;
-#if QT_VERSION >= 0x050500
     case QtInfoMsg:
         handleMessage(LogLevel::Info, msg);
         break;
-#endif
     case QtWarningMsg:
         handleMessage(LogLevel::Warning, msg);
         break;
@@ -163,8 +145,7 @@ void Logger::handleMessage(QtMsgType type, const QString &msg)
     }
 }
 
-
-void Logger::handleMessage(LogLevel level, const QString &msg)
+void Logger::handleMessage(LogLevel level, const QString& msg)
 {
     QString logString;
 
@@ -190,8 +171,7 @@ void Logger::handleMessage(LogLevel level, const QString &msg)
     emit messageLogged({QDateTime::currentDateTime(), level, logString += msg});
 }
 
-
-void Logger::onMessageLogged(const LogEntry &message)
+void Logger::onMessageLogged(const LogEntry& message)
 {
     if (_keepMessages) {
         _messages.push_back(message);
@@ -203,8 +183,7 @@ void Logger::onMessageLogged(const LogEntry &message)
     }
 }
 
-
-void Logger::outputMessage(const LogEntry &message)
+void Logger::outputMessage(const LogEntry& message)
 {
     if (message.logLevel < _outputLevel) {
         return;
@@ -229,7 +208,7 @@ void Logger::outputMessage(const LogEntry &message)
         case LogLevel::Fatal:
             prio = LOG_CRIT;
         }
-        syslog(prio|LOG_USER, "%s", qPrintable(message.message));
+        syslog(prio | LOG_USER, "%s", qPrintable(message.message));
     }
 #endif
 
@@ -247,5 +226,4 @@ void Logger::outputMessage(const LogEntry &message)
         }
     }
 #endif
-
 }

@@ -18,24 +18,19 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTALIASMANAGER_H
-#define CLIENTALIASMANAGER_H
+#pragma once
+
+#include "client-export.h"
 
 #include "aliasmanager.h"
 
-class ClientAliasManager : public AliasManager
+class CLIENT_EXPORT ClientAliasManager : public AliasManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit ClientAliasManager(QObject *parent = 0);
-
-    inline virtual const QMetaObject *syncMetaObject() const { return &AliasManager::staticMetaObject; }
+    explicit ClientAliasManager(QObject* parent = nullptr);
 
 protected:
-    const Network *network(NetworkId) const;
+    const Network* network(NetworkId) const override;
 };
-
-
-#endif //CLIENTALIASMANAGER_H

@@ -20,48 +20,34 @@
 
 #pragma once
 
+#include "qtui-export.h"
+
 #include <memory>
 
-#ifdef HAVE_KDE4
-#  include <KApplication>
-#else
-#  include <QApplication>
-#endif
-
+#include <QApplication>
 #include <QSessionManager>
 
 #include "client.h"
+#include "qtuisettings.h"
 #include "quassel.h"
 #include "uisettings.h"
-#include "qtuisettings.h"
 
 class QtUi;
 
-#ifdef HAVE_KDE4
-class QtUiApplication : public KApplication
+class QTUI_EXPORT QtUiApplication : public QApplication
 {
-#else
-class QtUiApplication : public QApplication
-{
-#endif
-
     Q_OBJECT
 
 public:
-    QtUiApplication(int &, char **);
+    QtUiApplication(int&, char**);
 
     virtual void init();
 
     void resumeSessionIfPossible();
     inline bool isAboutToQuit() const { return _aboutToQuit; }
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 0, 0))
-    void commitData(QSessionManager &manager) override;
-    void saveState(QSessionManager &manager) override;
-#else
-    void commitData(QSessionManager &manager);
-    void saveState(QSessionManager &manager);
-#endif
+    void commitData(QSessionManager& manager);
+    void saveState(QSessionManager& manager);
 
 protected:
     virtual Quassel::QuitHandler quitHandler();
@@ -88,9 +74,6 @@ private:
      * @return True if minor revision of settings successfully migrated, otherwise false
      */
     bool applySettingsMigration(QtUiSettings settings, const uint newVersion);
-
-private slots:
-    void initUi();
 
 protected:
     std::unique_ptr<Client> _client;

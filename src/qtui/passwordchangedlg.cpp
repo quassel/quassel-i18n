@@ -25,25 +25,25 @@
 
 #include "client.h"
 
-PasswordChangeDlg::PasswordChangeDlg(QWidget *parent) : QDialog(parent)
+PasswordChangeDlg::PasswordChangeDlg(QWidget* parent)
+    : QDialog(parent)
 {
     ui.setupUi(this);
 
     CoreAccount account = Client::currentCoreAccount();
     ui.infoLabel->setText(tr("This changes the password for your username <b>%1</b> "
                              "on the Quassel Core running at <b>%2</b>.")
-                          .arg(account.user(), account.hostName()));
+                              .arg(account.user(), account.hostName()));
 
-    connect(ui.oldPasswordEdit, SIGNAL(textChanged(QString)), SLOT(inputChanged()));
-    connect(ui.newPasswordEdit, SIGNAL(textChanged(QString)), SLOT(inputChanged()));
-    connect(ui.confirmPasswordEdit, SIGNAL(textChanged(QString)), SLOT(inputChanged()));
-    connect(ui.buttonBox, SIGNAL(accepted()), SLOT(changePassword()));
+    connect(ui.oldPasswordEdit, &QLineEdit::textChanged, this, &PasswordChangeDlg::inputChanged);
+    connect(ui.newPasswordEdit, &QLineEdit::textChanged, this, &PasswordChangeDlg::inputChanged);
+    connect(ui.confirmPasswordEdit, &QLineEdit::textChanged, this, &PasswordChangeDlg::inputChanged);
+    connect(ui.buttonBox, &QDialogButtonBox::accepted, this, &PasswordChangeDlg::changePassword);
 
-    connect(Client::instance(), SIGNAL(passwordChanged(bool)), SLOT(passwordChanged(bool)));
+    connect(Client::instance(), &Client::passwordChanged, this, &PasswordChangeDlg::passwordChanged);
 
     ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 }
-
 
 void PasswordChangeDlg::inputChanged()
 {
@@ -52,21 +52,18 @@ void PasswordChangeDlg::inputChanged()
     ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(ok);
 }
 
-
 void PasswordChangeDlg::changePassword()
 {
     ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     Client::changePassword(ui.oldPasswordEdit->text(), ui.newPasswordEdit->text());
 }
 
-
 void PasswordChangeDlg::passwordChanged(bool success)
 {
     if (!success) {
-        QMessageBox box(QMessageBox::Warning, tr("Password Not Changed"),
-                        tr("<b>Password change failed</b>"),
-                        QMessageBox::Ok, this);
-        box.setInformativeText(tr("The core reported an error when trying to change your password. Make sure you entered your old password correctly!"));
+        QMessageBox box(QMessageBox::Warning, tr("Password Not Changed"), tr("<b>Password change failed</b>"), QMessageBox::Ok, this);
+        box.setInformativeText(
+            tr("The core reported an error when trying to change your password. Make sure you entered your old password correctly!"));
         box.exec();
     }
     else {

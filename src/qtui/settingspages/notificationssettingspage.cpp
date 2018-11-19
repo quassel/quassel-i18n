@@ -18,24 +18,23 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#include <QVBoxLayout>
-
 #include "notificationssettingspage.h"
+
+#include <QVBoxLayout>
 
 #include "qtui.h"
 
-NotificationsSettingsPage::NotificationsSettingsPage(QWidget *parent)
-    : SettingsPage(tr("Interface"), tr("Notifications"), parent),
-    _hasDefaults(false)
+NotificationsSettingsPage::NotificationsSettingsPage(QWidget* parent)
+    : SettingsPage(tr("Interface"), tr("Notifications"), parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    foreach(AbstractNotificationBackend *backend, QtUi::notificationBackends()) {
-        SettingsPage *cw = backend->createConfigWidget();
+    auto* layout = new QVBoxLayout(this);
+    foreach (AbstractNotificationBackend* backend, QtUi::notificationBackends()) {
+        SettingsPage* cw = backend->createConfigWidget();
         if (cw) {
             cw->setParent(this);
             _configWidgets.append(cw);
             layout->addWidget(cw);
-            connect(cw, SIGNAL(changed(bool)), SLOT(widgetHasChanged()));
+            connect(cw, &SettingsPage::changed, this, &NotificationsSettingsPage::widgetHasChanged);
             _hasDefaults |= cw->hasDefaults();
         }
     }
@@ -43,45 +42,41 @@ NotificationsSettingsPage::NotificationsSettingsPage(QWidget *parent)
     load();
 }
 
-
 bool NotificationsSettingsPage::hasDefaults() const
 {
     return _hasDefaults;
 }
 
-
 void NotificationsSettingsPage::defaults()
 {
-    foreach(SettingsPage *cw, _configWidgets)
-    cw->defaults();
+    foreach (SettingsPage* cw, _configWidgets)
+        cw->defaults();
     widgetHasChanged();
 }
 
-
 void NotificationsSettingsPage::load()
 {
-    foreach(SettingsPage *cw, _configWidgets)
-    cw->load();
+    foreach (SettingsPage* cw, _configWidgets)
+        cw->load();
     setChangedState(false);
 }
-
 
 void NotificationsSettingsPage::save()
 {
-    foreach(SettingsPage *cw, _configWidgets)
-    cw->save();
+    foreach (SettingsPage* cw, _configWidgets)
+        cw->save();
     setChangedState(false);
 }
-
 
 void NotificationsSettingsPage::widgetHasChanged()
 {
     bool changed = false;
-    foreach(SettingsPage *cw, _configWidgets) {
+    foreach (SettingsPage* cw, _configWidgets) {
         if (cw->hasChanged()) {
             changed = true;
             break;
         }
     }
-    if (changed != hasChanged()) setChangedState(changed);
+    if (changed != hasChanged())
+        setChangedState(changed);
 }

@@ -18,8 +18,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef ABSTRACTNOTIFICATIONBACKEND_H_
-#define ABSTRACTNOTIFICATIONBACKEND_H_
+#pragma once
+
+#include "uisupport-export.h"
+
+#include <utility>
 
 #include <QObject>
 #include <QString>
@@ -28,33 +31,39 @@
 
 class SettingsPage;
 
-class AbstractNotificationBackend : public QObject
+class UISUPPORT_EXPORT AbstractNotificationBackend : public QObject
 {
     Q_OBJECT
 
 public:
-    enum NotificationType {
+    enum NotificationType
+    {
         Highlight = 0x01,
         PrivMsg = 0x02,
         HighlightFocused = 0x11,
         PrivMsgFocused = 0x12
     };
 
-    struct Notification {
+    struct Notification
+    {
         uint notificationId;
         BufferId bufferId;
         NotificationType type;
         QString sender;
         QString message;
 
-        Notification(uint id_, BufferId buf_, NotificationType type_, const QString &sender_, const QString &msg_)
-            : notificationId(id_), bufferId(buf_), type(type_), sender(sender_), message(msg_) {};
+        Notification(uint id_, BufferId buf_, NotificationType type_, QString sender_, QString msg_)
+            : notificationId(id_)
+            , bufferId(buf_)
+            , type(type_)
+            , sender(std::move(sender_))
+            , message(std::move(msg_))
+        {}
     };
 
-    inline AbstractNotificationBackend(QObject *parent) : QObject(parent) {};
-    virtual ~AbstractNotificationBackend() {};
+    using QObject::QObject;
 
-    virtual void notify(const Notification &) = 0;
+    virtual void notify(const Notification&) = 0;
     virtual void close(uint notificationId) { Q_UNUSED(notificationId); }
 
     //! Factory to create a configuration widget suitable for a specific notification backend
@@ -62,12 +71,9 @@ public:
      * AbstractNotification will not take ownership of that configWidget!
      * In case you need to communicate with the configWidget directly, make your connections here
      */
-    virtual SettingsPage *createConfigWidget() const = 0;
+    virtual SettingsPage* createConfigWidget() const = 0;
 
 signals:
     //! May be emitted by the notification to tell the MainWin to raise itself
     void activated(uint notificationId = 0);
 };
-
-
-#endif

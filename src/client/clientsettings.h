@@ -18,25 +18,21 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTSETTINGS_H
-#define CLIENTSETTINGS_H
+#pragma once
+
+#include "client-export.h"
 
 #include "settings.h"
-
 #include "types.h"
 
 class QHostAddress;
 class QSslSocket;
 
-class ClientSettings : public Settings
+class CLIENT_EXPORT ClientSettings : public Settings
 {
-public:
-    virtual ~ClientSettings();
-
 protected:
     ClientSettings(QString group = "General");
 };
-
 
 // ========================================
 //  CoreAccountSettings
@@ -49,51 +45,52 @@ protected:
 //
 // Note that you'll get invalid data (and setting is ignored) if you are not connected to a core!
 
-class CoreAccountSettings : public ClientSettings
+class CLIENT_EXPORT CoreAccountSettings : public ClientSettings
 {
 public:
     // stores account-specific data in CoreAccounts/$ACCID/$SUBGROUP/$KEY)
-    CoreAccountSettings(const QString &subgroup = "General");
+    CoreAccountSettings(QString subgroup = "General");
 
-    virtual void notify(const QString &key, QObject *receiver, const char *slot);
-
-    QList<AccountId> knownAccounts();
-    AccountId lastAccount();
+    QList<AccountId> knownAccounts() const;
+    AccountId lastAccount() const;
     void setLastAccount(AccountId);
-    AccountId autoConnectAccount();
+    AccountId autoConnectAccount() const;
     void setAutoConnectAccount(AccountId);
-    bool autoConnectOnStartup();
+    bool autoConnectOnStartup() const;
     void setAutoConnectOnStartup(bool);
-    bool autoConnectToFixedAccount();
+    bool autoConnectToFixedAccount() const;
     void setAutoConnectToFixedAccount(bool);
 
     void clearAccounts();
 
-    void storeAccountData(AccountId id, const QVariantMap &data);
-    QVariantMap retrieveAccountData(AccountId);
+    void storeAccountData(AccountId id, const QVariantMap& data);
+    QVariantMap retrieveAccountData(AccountId) const;
     void removeAccount(AccountId);
 
-    void setJumpKeyMap(const QHash<int, BufferId> &keyMap);
-    QHash<int, BufferId> jumpKeyMap();
+    void setJumpKeyMap(const QHash<int, BufferId>& keyMap);
+    QHash<int, BufferId> jumpKeyMap() const;
 
-    void setBufferViewOverlay(const QSet<int> &viewIds);
-    QSet<int> bufferViewOverlay();
+    void setBufferViewOverlay(const QSet<int>& viewIds);
+    QSet<int> bufferViewOverlay() const;
 
-    void setAccountValue(const QString &key, const QVariant &data);
-    QVariant accountValue(const QString &key, const QVariant &def = QVariant());
+    void setAccountValue(const QString& key, const QVariant& data);
+    QVariant accountValue(const QString& key, const QVariant& def = QVariant()) const;
+
+protected:
+    QString keyForNotify(const QString& key) const override;
 
 private:
     QString _subgroup;
 };
 
-
 // ========================================
 //  NotificationSettings
 // ========================================
-class NotificationSettings : public ClientSettings
+class CLIENT_EXPORT NotificationSettings : public ClientSettings
 {
 public:
-    enum HighlightNickType {
+    enum HighlightNickType
+    {
         NoNick = 0x00,
         CurrentNick = 0x01,
         AllNicks = 0x02
@@ -101,30 +98,30 @@ public:
 
     NotificationSettings();
 
-    inline void setValue(const QString &key, const QVariant &data) { setLocalValue(key, data); }
-    inline QVariant value(const QString &key, const QVariant &def = QVariant()) { return localValue(key, def); }
-    inline void remove(const QString &key) { removeLocalKey(key); }
+    void setValue(const QString& key, const QVariant& data);
+    QVariant value(const QString& key, const QVariant& def = {}) const;
+    void remove(const QString& key);
 
-    void setHighlightList(const QVariantList &highlightList);
-    QVariantList highlightList();
+    void setHighlightList(const QVariantList& highlightList);
+    QVariantList highlightList() const;
 
     void setHighlightNick(HighlightNickType);
-    HighlightNickType highlightNick();
+    HighlightNickType highlightNick() const;
 
     void setNicksCaseSensitive(bool);
-    bool nicksCaseSensitive();
+    bool nicksCaseSensitive() const;
 };
-
 
 // ========================================
 // CoreConnectionSettings
 // ========================================
 
-class CoreConnectionSettings : public ClientSettings
+class CLIENT_EXPORT CoreConnectionSettings : public ClientSettings
 {
 public:
-    enum NetworkDetectionMode {
-        UseQNetworkConfigurationManager = 1, // UseSolid is gone
+    enum NetworkDetectionMode
+    {
+        UseQNetworkConfigurationManager = 1,  // UseSolid is gone
         UsePingTimeout,
         NoActiveDetection
     };
@@ -132,61 +129,57 @@ public:
     CoreConnectionSettings();
 
     void setNetworkDetectionMode(NetworkDetectionMode mode);
-    NetworkDetectionMode networkDetectionMode();
+    NetworkDetectionMode networkDetectionMode() const;
 
     void setAutoReconnect(bool autoReconnect);
-    bool autoReconnect();
+    bool autoReconnect() const;
 
     void setPingTimeoutInterval(int interval);
-    int pingTimeoutInterval();
+    int pingTimeoutInterval() const;
 
     void setReconnectInterval(int interval);
-    int reconnectInterval();
+    int reconnectInterval() const;
 };
-
 
 // ========================================
 // TabCompletionSettings
 // ========================================
 
-class TabCompletionSettings : public ClientSettings
+class CLIENT_EXPORT TabCompletionSettings : public ClientSettings
 {
 public:
-    enum SortMode {
+    enum SortMode
+    {
         Alphabetical,
         LastActivity
     };
 
     TabCompletionSettings();
 
-    void setCompletionSuffix(const QString &);
-    QString completionSuffix();
+    void setCompletionSuffix(const QString&);
+    QString completionSuffix() const;
 
     void setAddSpaceMidSentence(bool);
-    bool addSpaceMidSentence();
+    bool addSpaceMidSentence() const;
 
     void setSortMode(SortMode);
-    SortMode sortMode();
+    SortMode sortMode() const;
 
     void setCaseSensitivity(Qt::CaseSensitivity);
-    Qt::CaseSensitivity caseSensitivity();
+    Qt::CaseSensitivity caseSensitivity() const;
 
     void setUseLastSpokenTo(bool);
-    bool useLastSpokenTo();
+    bool useLastSpokenTo() const;
 };
-
 
 // ========================================
 // ItemViewSettings
 // ========================================
-class ItemViewSettings : public ClientSettings
+class CLIENT_EXPORT ItemViewSettings : public ClientSettings
 {
 public:
-    ItemViewSettings(const QString &group = "ItemViews");
+    ItemViewSettings(const QString& group = "ItemViews");
 
-    bool displayTopicInTooltip();
-    bool mouseWheelChangesBuffer();
+    bool displayTopicInTooltip() const;
+    bool mouseWheelChangesBuffer() const;
 };
-
-
-#endif

@@ -23,44 +23,28 @@
 #include <QApplication>
 #include <QMenu>
 
-#ifdef HAVE_KDE4
-#  include <KMenu>
-#  include <KWindowInfo>
-#  include <KWindowSystem>
-#endif
-
 #include "action.h"
 #include "actioncollection.h"
 #include "client.h"
 #include "icon.h"
 #include "qtui.h"
 
-SystemTray::SystemTray(QWidget *parent)
-    : QObject(parent),
-    _associatedWidget(parent)
+SystemTray::SystemTray(QWidget* parent)
+    : QObject(parent)
+    , _associatedWidget(parent)
 {
     Q_ASSERT(parent);
 
-    NotificationSettings{}.initAndNotify("Systray/ChangeColor", this, SLOT(enableChangeColorChanged(QVariant)), true);
-    NotificationSettings{}.initAndNotify("Systray/Animate", this, SLOT(enableBlinkChanged(QVariant)), false);
-    UiStyleSettings{}.initAndNotify("Icons/InvertTray", this, SLOT(invertTrayIconChanged(QVariant)), false);
+    NotificationSettings{}.initAndNotify("Systray/ChangeColor", this, &SystemTray::enableChangeColorChanged, true);
+    NotificationSettings{}.initAndNotify("Systray/Animate", this, &SystemTray::enableBlinkChanged, false);
+    UiStyleSettings{}.initAndNotify("Icons/InvertTray", this, &SystemTray::invertTrayIconChanged, false);
 
-    ActionCollection *coll = QtUi::actionCollection("General");
-    _minimizeRestoreAction = new Action(tr("&Minimize"), this, this, SLOT(minimizeRestore()));
+    ActionCollection* coll = QtUi::actionCollection("General");
+    _minimizeRestoreAction = new Action(tr("&Minimize"), this, this, &SystemTray::minimizeRestore);
 
-#ifdef HAVE_KDE4
-    KMenu *kmenu;
-    _trayMenu = kmenu = new KMenu();
-    kmenu->addTitle(icon::get(iconName(State::Active)), "Quassel IRC");
-#else
     _trayMenu = new QMenu(associatedWidget());
-#endif
-
     _trayMenu->setTitle("Quassel IRC");
-
-#ifndef HAVE_KDE4
     _trayMenu->setAttribute(Qt::WA_Hover);
-#endif
 
     _trayMenu->addAction(coll->action("ConnectCore"));
     _trayMenu->addAction(coll->action("DisconnectCore"));
@@ -68,39 +52,34 @@ SystemTray::SystemTray(QWidget *parent)
     _trayMenu->addSeparator();
     _trayMenu->addAction(_minimizeRestoreAction);
     _trayMenu->addAction(coll->action("Quit"));
-    connect(_trayMenu, SIGNAL(aboutToShow()), SLOT(trayMenuAboutToShow()));
+    connect(_trayMenu, &QMenu::aboutToShow, this, &SystemTray::trayMenuAboutToShow);
 
-    connect(QtUi::instance(), SIGNAL(iconThemeRefreshed()), this, SIGNAL(iconsChanged()));
+    connect(QtUi::instance(), &QtUi::iconThemeRefreshed, this, &SystemTray::iconsChanged);
 
     _blinkTimer.setInterval(1000);
     _blinkTimer.setSingleShot(false);
-    connect(&_blinkTimer, SIGNAL(timeout()), SLOT(onBlinkTimeout()));
+    connect(&_blinkTimer, &QTimer::timeout, this, &SystemTray::onBlinkTimeout);
 }
-
 
 SystemTray::~SystemTray()
 {
     _trayMenu->deleteLater();
 }
 
-
-QWidget *SystemTray::associatedWidget() const
+QWidget* SystemTray::associatedWidget() const
 {
     return _associatedWidget;
 }
-
 
 bool SystemTray::isSystemTrayAvailable() const
 {
     return false;
 }
 
-
 bool SystemTray::isVisible() const
 {
     return _isVisible;
 }
-
 
 void SystemTray::setVisible(bool visible)
 {
@@ -110,37 +89,23 @@ void SystemTray::setVisible(bool visible)
     }
 }
 
-
 SystemTray::Mode SystemTray::mode() const
 {
     return _mode;
 }
 
-
 void SystemTray::setMode(Mode mode)
 {
     if (mode != _mode) {
         _mode = mode;
-#ifdef HAVE_KDE4
-        if (_trayMenu) {
-            if (mode == Mode::Legacy) {
-                _trayMenu->setWindowFlags(Qt::Popup);
-            }
-            else {
-                _trayMenu->setWindowFlags(Qt::Window);
-            }
-        }
-#endif
         emit modeChanged(mode);
     }
 }
-
 
 SystemTray::State SystemTray::state() const
 {
     return _state;
 }
-
 
 void SystemTray::setState(State state)
 {
@@ -159,7 +124,6 @@ void SystemTray::setState(State state)
         emit currentIconNameChanged();
     }
 }
-
 
 QString SystemTray::iconName(State state) const
 {
@@ -183,7 +147,6 @@ QString SystemTray::iconName(State state) const
     return name;
 }
 
-
 QString SystemTray::currentIconName() const
 {
     if (state() == State::NeedsAttention) {
@@ -200,7 +163,6 @@ QString SystemTray::currentIconName() const
     }
 }
 
-
 QString SystemTray::currentAttentionIconName() const
 {
     if (state() == State::NeedsAttention && _attentionBehavior == AttentionBehavior::Blink && !_blinkState) {
@@ -209,12 +171,10 @@ QString SystemTray::currentAttentionIconName() const
     return iconName(State::NeedsAttention);
 }
 
-
 bool SystemTray::isAlerted() const
 {
     return state() == State::NeedsAttention;
 }
-
 
 void SystemTray::setAlert(bool alerted)
 {
@@ -226,19 +186,16 @@ void SystemTray::setAlert(bool alerted)
     }
 }
 
-
 void SystemTray::onBlinkTimeout()
 {
     _blinkState = !_blinkState;
     emit currentIconNameChanged();
 }
 
-
-QMenu *SystemTray::trayMenu() const
+QMenu* SystemTray::trayMenu() const
 {
     return _trayMenu;
 }
-
 
 void SystemTray::trayMenuAboutToShow()
 {
@@ -248,8 +205,7 @@ void SystemTray::trayMenuAboutToShow()
         _minimizeRestoreAction->setText(tr("&Restore"));
 }
 
-
-void SystemTray::enableChangeColorChanged(const QVariant &v)
+void SystemTray::enableChangeColorChanged(const QVariant& v)
 {
     if (v.toBool()) {
         _attentionBehavior = AttentionBehavior::ChangeColor;
@@ -262,8 +218,7 @@ void SystemTray::enableChangeColorChanged(const QVariant &v)
     emit currentIconNameChanged();
 }
 
-
-void SystemTray::enableBlinkChanged(const QVariant &v)
+void SystemTray::enableBlinkChanged(const QVariant& v)
 {
     if (v.toBool()) {
         _attentionBehavior = AttentionBehavior::Blink;
@@ -276,35 +231,30 @@ void SystemTray::enableBlinkChanged(const QVariant &v)
     emit currentIconNameChanged();
 }
 
-
-void SystemTray::invertTrayIconChanged(const QVariant &v)
+void SystemTray::invertTrayIconChanged(const QVariant& v)
 {
     _trayIconInverted = v.toBool();
     emit iconsChanged();
 }
-
 
 QString SystemTray::toolTipTitle() const
 {
     return _toolTipTitle;
 }
 
-
 QString SystemTray::toolTipSubTitle() const
 {
     return _toolTipSubTitle;
 }
 
-
-void SystemTray::setToolTip(const QString &title, const QString &subtitle)
+void SystemTray::setToolTip(const QString& title, const QString& subtitle)
 {
     _toolTipTitle = title;
     _toolTipSubTitle = subtitle;
     emit toolTipChanged(title, subtitle);
 }
 
-
-void SystemTray::showMessage(const QString &title, const QString &message, MessageIcon icon, int millisecondsTimeoutHint, uint id)
+void SystemTray::showMessage(const QString& title, const QString& message, MessageIcon icon, int millisecondsTimeoutHint, uint id)
 {
     Q_UNUSED(title)
     Q_UNUSED(message)
@@ -313,18 +263,15 @@ void SystemTray::showMessage(const QString &title, const QString &message, Messa
     Q_UNUSED(id)
 }
 
-
 void SystemTray::closeMessage(uint notificationId)
 {
     Q_UNUSED(notificationId)
 }
 
-
 void SystemTray::activate(SystemTray::ActivationReason reason)
 {
     emit activated(reason);
 }
-
 
 void SystemTray::minimizeRestore()
 {

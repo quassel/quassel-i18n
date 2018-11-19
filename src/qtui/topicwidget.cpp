@@ -21,13 +21,14 @@
 #include "topicwidget.h"
 
 #include "client.h"
+#include "graphicalui.h"
 #include "icon.h"
 #include "networkmodel.h"
 #include "uisettings.h"
-#include "graphicalui.h"
 #include "uistyle.h"
+#include "util.h"
 
-TopicWidget::TopicWidget(QWidget *parent)
+TopicWidget::TopicWidget(QWidget* parent)
     : AbstractItemView(parent)
 {
     ui.setupUi(this);
@@ -35,17 +36,17 @@ TopicWidget::TopicWidget(QWidget *parent)
     ui.topicLineEdit->setLineWrapEnabled(true);
     ui.topicLineEdit->installEventFilter(this);
 
-    connect(ui.topicLabel, SIGNAL(clickableActivated(Clickable)), SLOT(clickableActivated(Clickable)));
-    connect(ui.topicLineEdit, SIGNAL(noTextEntered()), SLOT(on_topicLineEdit_textEntered()));
+    connect(ui.topicLabel, &StyledLabel::clickableActivated, this, &TopicWidget::clickableActivated);
+    connect(ui.topicLineEdit, &MultiLineEdit::noTextEntered, this, &TopicWidget::on_topicLineEdit_textEntered);
 
     UiSettings s("TopicWidget");
-    s.notify("DynamicResize", this, SLOT(updateResizeMode()));
-    s.notify("ResizeOnHover", this, SLOT(updateResizeMode()));
+    s.notify("DynamicResize", this, &TopicWidget::updateResizeMode);
+    s.notify("ResizeOnHover", this, &TopicWidget::updateResizeMode);
     updateResizeMode();
 
     UiStyleSettings fs("Fonts");
-    fs.notify("UseCustomTopicWidgetFont", this, SLOT(setUseCustomFont(QVariant)));
-    fs.notify("TopicWidget", this, SLOT(setCustomFont(QVariant)));
+    fs.notify("UseCustomTopicWidgetFont", this, &TopicWidget::setUseCustomFont);
+    fs.notify("TopicWidget", this, selectOverload<const QVariant&>(&TopicWidget::setCustomFont));
     if (fs.value("UseCustomTopicWidgetFont", false).toBool())
         setCustomFont(fs.value("TopicWidget", QFont()));
 
@@ -53,23 +54,21 @@ TopicWidget::TopicWidget(QWidget *parent)
     _readonly = false;
 }
 
-
-void TopicWidget::currentChanged(const QModelIndex &current, const QModelIndex &previous)
+void TopicWidget::currentChanged(const QModelIndex& current, const QModelIndex& previous)
 {
     Q_UNUSED(previous);
     setTopic(current);
 }
 
-
-void TopicWidget::dataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
+void TopicWidget::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
     QItemSelectionRange changedArea(topLeft, bottomRight);
     QModelIndex currentTopicIndex = selectionModel()->currentIndex().sibling(selectionModel()->currentIndex().row(), 1);
     if (changedArea.contains(currentTopicIndex))
         setTopic(selectionModel()->currentIndex());
-};
+}
 
-void TopicWidget::setUseCustomFont(const QVariant &v)
+void TopicWidget::setUseCustomFont(const QVariant& v)
 {
     if (v.toBool()) {
         UiStyleSettings fs("Fonts");
@@ -79,8 +78,7 @@ void TopicWidget::setUseCustomFont(const QVariant &v)
         setCustomFont(QFont());
 }
 
-
-void TopicWidget::setCustomFont(const QVariant &v)
+void TopicWidget::setCustomFont(const QVariant& v)
 {
     UiStyleSettings fs("Fonts");
     if (!fs.value("UseCustomTopicWidgetFont", false).toBool())
@@ -89,8 +87,7 @@ void TopicWidget::setCustomFont(const QVariant &v)
     setCustomFont(v.value<QFont>());
 }
 
-
-void TopicWidget::setCustomFont(const QFont &f)
+void TopicWidget::setCustomFont(const QFont& f)
 {
     QFont font = f;
     if (font.family().isEmpty())
@@ -100,8 +97,7 @@ void TopicWidget::setCustomFont(const QFont &f)
     ui.topicLabel->setCustomFont(font);
 }
 
-
-void TopicWidget::setTopic(const QModelIndex &index)
+void TopicWidget::setTopic(const QModelIndex& index)
 {
     QString newtopic;
     bool readonly = true;
@@ -109,24 +105,16 @@ void TopicWidget::setTopic(const QModelIndex &index)
     BufferId id = index.data(NetworkModel::BufferIdRole).value<BufferId>();
     if (id.isValid()) {
         QModelIndex index0 = index.sibling(index.row(), 0);
-        const Network *network = Client::network(Client::networkModel()->networkId(id));
+        const Network* network = Client::network(Client::networkModel()->networkId(id));
 
         switch (Client::networkModel()->bufferType(id)) {
         case BufferInfo::StatusBuffer:
             if (network) {
-#if QT_VERSION < 0x050000
                 newtopic = QString("%1 (%2) | %3 | %4")
-                           .arg(Qt::escape(network->networkName()))
-                           .arg(Qt::escape(network->currentServer()))
-                           .arg(tr("Users: %1").arg(network->ircUsers().count()))
-                           .arg(tr("Lag: %1 msecs").arg(network->latency()));
-#else
-                newtopic = QString("%1 (%2) | %3 | %4")
-                           .arg(network->networkName().toHtmlEscaped())
-                           .arg(network->currentServer().toHtmlEscaped())
-                           .arg(tr("Users: %1").arg(network->ircUsers().count()))
-                           .arg(tr("Lag: %1 msecs").arg(network->latency()));
-#endif
+                               .arg(network->networkName().toHtmlEscaped())
+                               .arg(network->currentServer().toHtmlEscaped())
+                               .arg(tr("Users: %1").arg(network->ircUsers().count()))
+                               .arg(tr("Lag: %1 msecs").arg(network->latency()));
             }
             else {
                 newtopic = index0.data(Qt::DisplayRole).toString();
@@ -138,23 +126,23 @@ void TopicWidget::setTopic(const QModelIndex &index)
             readonly = false;
             break;
 
-        case BufferInfo::QueryBuffer:
-        {
+        case BufferInfo::QueryBuffer: {
             QString nickname = index0.data(Qt::DisplayRole).toString();
             if (network) {
-                const IrcUser *user = network->ircUser(nickname);
+                const IrcUser* user = network->ircUser(nickname);
                 if (user) {
-                    newtopic = QString("%1%2%3 | %4@%5").arg(nickname)
-                               .arg(user->userModes().isEmpty() ? QString() : QString(" (+%1)").arg(user->userModes()))
-                               .arg(user->realName().isEmpty() ? QString() : QString(" | %1").arg(user->realName()))
-                               .arg(user->user())
-                               .arg(user->host());
+                    newtopic = QString("%1%2%3 | %4@%5")
+                                   .arg(nickname)
+                                   .arg(user->userModes().isEmpty() ? QString() : QString(" (+%1)").arg(user->userModes()))
+                                   .arg(user->realName().isEmpty() ? QString() : QString(" | %1").arg(user->realName()))
+                                   .arg(user->user())
+                                   .arg(user->host());
                 }
-                else { // no such user
+                else {  // no such user
                     newtopic = nickname;
                 }
             }
-            else { // no valid Network-Obj.
+            else {  // no valid Network-Obj.
                 newtopic = nickname;
             }
             break;
@@ -173,15 +161,13 @@ void TopicWidget::setTopic(const QModelIndex &index)
     switchPlain();
 }
 
-
-void TopicWidget::setReadOnly(const bool &readonly)
+void TopicWidget::setReadOnly(const bool& readonly)
 {
     if (_readonly == readonly)
         return;
 
     _readonly = readonly;
 }
-
 
 void TopicWidget::updateResizeMode()
 {
@@ -197,14 +183,13 @@ void TopicWidget::updateResizeMode()
     ui.topicLabel->setResizeMode(mode);
 }
 
-
-void TopicWidget::clickableActivated(const Clickable &click)
+void TopicWidget::clickableActivated(const Clickable& click)
 {
     NetworkId networkId = selectionModel()->currentIndex().data(NetworkModel::NetworkIdRole).value<NetworkId>();
-    UiStyle::StyledString sstr = GraphicalUi::uiStyle()->styleString(GraphicalUi::uiStyle()->mircToInternal(_topic), UiStyle::FormatType::PlainMsg);
+    UiStyle::StyledString sstr = GraphicalUi::uiStyle()->styleString(GraphicalUi::uiStyle()->mircToInternal(_topic),
+                                                                     UiStyle::FormatType::PlainMsg);
     click.activate(networkId, sstr.plainText);
 }
-
 
 void TopicWidget::on_topicLineEdit_textEntered()
 {
@@ -219,12 +204,10 @@ void TopicWidget::on_topicLineEdit_textEntered()
     switchPlain();
 }
 
-
 void TopicWidget::on_topicEditButton_clicked()
 {
     switchEditable();
 }
-
 
 void TopicWidget::switchEditable()
 {
@@ -234,7 +217,6 @@ void TopicWidget::switchEditable()
     updateGeometry();
 }
 
-
 void TopicWidget::switchPlain()
 {
     ui.stackedWidget->setCurrentIndex(0);
@@ -243,9 +225,8 @@ void TopicWidget::switchPlain()
     emit switchedPlain();
 }
 
-
 // filter for the input widget to switch back to normal mode
-bool TopicWidget::eventFilter(QObject *obj, QEvent *event)
+bool TopicWidget::eventFilter(QObject* obj, QEvent* event)
 {
     if (event->type() == QEvent::FocusOut && !_mouseEntered) {
         switchPlain();
@@ -263,7 +244,7 @@ bool TopicWidget::eventFilter(QObject *obj, QEvent *event)
     if (event->type() != QEvent::KeyRelease)
         return QObject::eventFilter(obj, event);
 
-    QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+    auto* keyEvent = static_cast<QKeyEvent*>(event);
 
     if (keyEvent->key() == Qt::Key_Escape) {
         switchPlain();
@@ -280,9 +261,7 @@ QString TopicWidget::sanitizeTopic(const QString& topic)
     // some unicode characters with a new line, which then triggers
     // a stack overflow later
     QString result(topic);
-#if QT_VERSION >= 0x050000
     result.replace(QChar::CarriageReturn, " ");
-#endif
     result.replace(QChar::ParagraphSeparator, " ");
     result.replace(QChar::LineSeparator, " ");
 

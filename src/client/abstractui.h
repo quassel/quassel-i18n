@@ -18,12 +18,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef ABSTRACTUI_H
-#define ABSTRACTUI_H
+#pragma once
+
+#include "client-export.h"
 
 #include <QObject>
 #include <QVariantMap>
-//#include "message.h"
 
 class MessageFilter;
 class MessageModel;
@@ -33,25 +33,23 @@ class AbstractActionProvider;
 class QAction;
 class QMenu;
 
-class AbstractUi : public QObject
+class CLIENT_EXPORT AbstractUi : public QObject
 {
     Q_OBJECT
 
 public:
-    AbstractUi(QObject *parent = 0) : QObject(parent) {}
-    virtual ~AbstractUi() {}
-    virtual void init() = 0; // called after the client is initialized
-    virtual MessageModel *createMessageModel(QObject *parent) = 0;
-    virtual AbstractMessageProcessor *createMessageProcessor(QObject *parent) = 0;
+    AbstractUi(QObject* parent = nullptr)
+        : QObject(parent)
+    {}
+    virtual void init() = 0;  // called after the client is initialized
+    virtual MessageModel* createMessageModel(QObject* parent) = 0;
+    virtual AbstractMessageProcessor* createMessageProcessor(QObject* parent) = 0;
 
-protected slots:
+public slots:
     virtual void connectedToCore() {}
     virtual void disconnectedFromCore() {}
 
 signals:
-    void connectToCore(const QVariantMap &connInfo);
+    void connectToCore(const QVariantMap& connInfo);
     void disconnectFromCore();
 };
-
-
-#endif

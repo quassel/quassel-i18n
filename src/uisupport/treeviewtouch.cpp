@@ -24,20 +24,15 @@
 #include <QScrollBar>
 #include <QTouchEvent>
 
-
-TreeViewTouch::TreeViewTouch(QWidget *parent)
+TreeViewTouch::TreeViewTouch(QWidget* parent)
     : QTreeView(parent)
 {
     setAttribute(Qt::WA_AcceptTouchEvents);
 }
 
-
-bool TreeViewTouch::event(QEvent *event) {
-#if QT_VERSION >= 0x050000
-    if (event->type() == QEvent::TouchBegin && ((QTouchEvent*)event)->device()->type()==QTouchDevice::TouchScreen) {
-#else
-    if (event->type() == QEvent::TouchBegin && ((QTouchEvent*)event)->deviceType()==QTouchEvent::TouchScreen) {
-#endif
+bool TreeViewTouch::event(QEvent* event)
+{
+    if (event->type() == QEvent::TouchBegin && ((QTouchEvent*)event)->device()->type() == QTouchDevice::TouchScreen) {
         // Register that we may be scrolling, set the scroll mode to scroll-per-pixel
         // and accept the event (return true) so that we will receive TouchUpdate and TouchEnd/TouchCancel
         _touchScrollInProgress = true;
@@ -62,11 +57,7 @@ bool TreeViewTouch::event(QEvent *event) {
         return true;
     }
 
-#if QT_VERSION >= 0x050000
     if (event->type() == QEvent::TouchEnd || event->type() == QEvent::TouchCancel) {
-#else
-    if (event->type() == QEvent::TouchEnd) {
-#endif
         // End scroll and reset variables
         _touchScrollInProgress = false;
         _firstTouchUpdateHappened = false;
@@ -76,14 +67,14 @@ bool TreeViewTouch::event(QEvent *event) {
     return QTreeView::event(event);
 }
 
-
-void TreeViewTouch::mousePressEvent(QMouseEvent *event) {
+void TreeViewTouch::mousePressEvent(QMouseEvent* event)
+{
     if (!_touchScrollInProgress)
         QTreeView::mousePressEvent(event);
 }
 
-
-void TreeViewTouch::mouseMoveEvent(QMouseEvent *event) {
+void TreeViewTouch::mouseMoveEvent(QMouseEvent* event)
+{
     if (!_touchScrollInProgress)
         QTreeView::mouseMoveEvent(event);
-};
+}

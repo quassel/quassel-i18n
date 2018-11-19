@@ -28,7 +28,6 @@
 
 #include "ldapauthenticator.h"
 
-#include "logmessage.h"
 #include "network.h"
 #include "quassel.h"
 
@@ -41,27 +40,23 @@
 #include <ldap.h>
 //#endif
 
-LdapAuthenticator::LdapAuthenticator(QObject *parent)
-    : Authenticator(parent),
-    _connection(0)
-{
-}
-
+LdapAuthenticator::LdapAuthenticator(QObject* parent)
+    : Authenticator(parent)
+    , _connection(nullptr)
+{}
 
 LdapAuthenticator::~LdapAuthenticator()
 {
-    if (_connection != 0) {
-        ldap_unbind_ext(_connection, 0, 0);
+    if (_connection != nullptr) {
+        ldap_unbind_ext(_connection, nullptr, nullptr);
     }
 }
-
 
 bool LdapAuthenticator::isAvailable() const
 {
     // FIXME: probably this should test if we can speak to the LDAP server.
     return true;
 }
-
 
 QString LdapAuthenticator::backendId() const
 {
@@ -71,38 +66,27 @@ QString LdapAuthenticator::backendId() const
     return QString("LDAP");
 }
 
-
 QString LdapAuthenticator::displayName() const
 {
     return tr("LDAP");
 }
-
 
 QString LdapAuthenticator::description() const
 {
     return tr("Authenticate users using an LDAP server.");
 }
 
-
 QVariantList LdapAuthenticator::setupData() const
 {
     // The parameters needed for LDAP.
     QVariantList data;
-    data << "Hostname"     << tr("Hostname")      << QString{"ldap://localhost"}
-         << "Port"         << tr("Port")          << DEFAULT_LDAP_PORT
-         << "BindDN"       << tr("Bind DN")       << QString{}
-         << "BindPassword" << tr("Bind Password") << QString{}
-         << "BaseDN"       << tr("Base DN")       << QString{}
-         << "Filter"       << tr("Filter")        << QString{}
-         << "UidAttribute" << tr("UID Attribute") << QString{"uid"}
-         ;
+    data << "Hostname" << tr("Hostname") << QString{"ldap://localhost"} << "Port" << tr("Port") << DEFAULT_LDAP_PORT << "BindDN"
+         << tr("Bind DN") << QString{} << "BindPassword" << tr("Bind Password") << QString{} << "BaseDN" << tr("Base DN") << QString{}
+         << "Filter" << tr("Filter") << QString{} << "UidAttribute" << tr("UID Attribute") << QString{"uid"};
     return data;
 }
 
-
-void LdapAuthenticator::setAuthProperties(const QVariantMap &properties,
-                                          const QProcessEnvironment &environment,
-                                          bool loadFromEnvironment)
+void LdapAuthenticator::setAuthProperties(const QVariantMap& properties, const QProcessEnvironment& environment, bool loadFromEnvironment)
 {
     if (loadFromEnvironment) {
         _hostName = environment.value("AUTH_LDAP_HOSTNAME");
@@ -112,7 +96,8 @@ void LdapAuthenticator::setAuthProperties(const QVariantMap &properties,
         _baseDN = environment.value("AUTH_LDAP_BASE_DN");
         _filter = environment.value("AUTH_LDAP_FILTER");
         _uidAttribute = environment.value("AUTH_LDAP_UID_ATTRIBUTE");
-    } else {
+    }
+    else {
         _hostName = properties["Hostname"].toString();
         _port = properties["Port"].toInt();
         _bindDN = properties["BindDN"].toString();
@@ -127,11 +112,11 @@ void LdapAuthenticator::setAuthProperties(const QVariantMap &properties,
 // class should be created implementing it.
 // i.e. a provider that does its own thing and then pokes at the current storage
 // through the default core method.
-UserId LdapAuthenticator::validateUser(const QString &username, const QString &password)
+UserId LdapAuthenticator::validateUser(const QString& username, const QString& password)
 {
     bool result = ldapAuth(username, password);
     if (!result) {
-        return UserId();
+        return {};
     }
 
     // LDAP is case-insensitive, thus we will lowercase the username, in spite of
@@ -153,37 +138,31 @@ UserId LdapAuthenticator::validateUser(const QString &username, const QString &p
     return quasselId;
 }
 
-
-bool LdapAuthenticator::setup(const QVariantMap &settings,
-                              const QProcessEnvironment &environment,
-                              bool loadFromEnvironment)
+bool LdapAuthenticator::setup(const QVariantMap& settings, const QProcessEnvironment& environment, bool loadFromEnvironment)
 {
     setAuthProperties(settings, environment, loadFromEnvironment);
     bool status = ldapConnect();
     return status;
 }
 
-
-Authenticator::State LdapAuthenticator::init(const QVariantMap &settings,
-                                             const QProcessEnvironment &environment,
-                                             bool loadFromEnvironment)
+Authenticator::State LdapAuthenticator::init(const QVariantMap& settings, const QProcessEnvironment& environment, bool loadFromEnvironment)
 {
     setAuthProperties(settings, environment, loadFromEnvironment);
 
     bool status = ldapConnect();
     if (!status) {
-        quInfo() << qPrintable(backendId()) << "authenticator cannot connect.";
+        qInfo() << qPrintable(backendId()) << "authenticator cannot connect.";
         return NotAvailable;
     }
 
-    quInfo() << qPrintable(backendId()) << "authenticator is ready.";
+    qInfo() << qPrintable(backendId()) << "authenticator is ready.";
     return IsReady;
 }
 
 // Method based on abustany LDAP quassel patch.
 bool LdapAuthenticator::ldapConnect()
 {
-    if (_connection != 0) {
+    if (_connection != nullptr) {
         ldapDisconnect();
     }
 
@@ -197,7 +176,7 @@ bool LdapAuthenticator::ldapConnect()
     serverURIArray = serverURI.toLocal8Bit();
     res = ldap_initialize(&_connection, serverURIArray);
 
-    quInfo() << "LDAP: Connecting to" << serverURI;
+    qInfo() << "LDAP: Connecting to" << serverURI;
 
     if (res != LDAP_SUCCESS) {
         qWarning() << "Could not connect to LDAP server:" << ldap_err2string(res);
@@ -208,27 +187,25 @@ bool LdapAuthenticator::ldapConnect()
 
     if (res != LDAP_SUCCESS) {
         qWarning() << "Could not set LDAP protocol version to v3:" << ldap_err2string(res);
-        ldap_unbind_ext(_connection, 0, 0);
-        _connection = 0;
+        ldap_unbind_ext(_connection, nullptr, nullptr);
+        _connection = nullptr;
         return false;
     }
 
     return true;
 }
 
-
 void LdapAuthenticator::ldapDisconnect()
 {
-    if (_connection == 0) {
+    if (_connection == nullptr) {
         return;
     }
 
-    ldap_unbind_ext(_connection, 0, 0);
-    _connection = 0;
+    ldap_unbind_ext(_connection, nullptr, nullptr);
+    _connection = nullptr;
 }
 
-
-bool LdapAuthenticator::ldapAuth(const QString &username, const QString &password)
+bool LdapAuthenticator::ldapAuth(const QString& username, const QString& password)
 {
     if (password.isEmpty()) {
         return false;
@@ -237,7 +214,7 @@ bool LdapAuthenticator::ldapAuth(const QString &username, const QString &passwor
     int res;
 
     // Attempt to establish a connection.
-    if (_connection == 0) {
+    if (_connection == nullptr) {
         if (!ldapConnect()) {
             return false;
         }
@@ -251,10 +228,10 @@ bool LdapAuthenticator::ldapAuth(const QString &username, const QString &passwor
     QByteArray baseDN = _baseDN.toLocal8Bit();
     QByteArray uidAttribute = _uidAttribute.toLocal8Bit();
 
-    cred.bv_val = (bindPassword.size() > 0 ? bindPassword.data() : NULL);
+    cred.bv_val = (bindPassword.size() > 0 ? bindPassword.data() : nullptr);
     cred.bv_len = bindPassword.size();
 
-    res = ldap_sasl_bind_s(_connection, bindDN.size() > 0 ? bindDN.constData() : 0, LDAP_SASL_SIMPLE, &cred, 0, 0, 0);
+    res = ldap_sasl_bind_s(_connection, bindDN.size() > 0 ? bindDN.constData() : nullptr, LDAP_SASL_SIMPLE, &cred, nullptr, nullptr, nullptr);
 
     if (res != LDAP_SUCCESS) {
         qWarning() << "Refusing connection from" << username << "(LDAP bind failed:" << ldap_err2string(res) << ")";
@@ -262,11 +239,21 @@ bool LdapAuthenticator::ldapAuth(const QString &username, const QString &passwor
         return false;
     }
 
-    LDAPMessage *msg = NULL, *entry = NULL;
+    LDAPMessage *msg = nullptr, *entry = nullptr;
 
     const QByteArray ldapQuery = "(&(" + uidAttribute + '=' + username.toLocal8Bit() + ")" + _filter.toLocal8Bit() + ")";
 
-    res = ldap_search_ext_s(_connection, baseDN.constData(), LDAP_SCOPE_SUBTREE, ldapQuery.constData(), 0, 0, 0, 0, 0, 0, &msg);
+    res = ldap_search_ext_s(_connection,
+                            baseDN.constData(),
+                            LDAP_SCOPE_SUBTREE,
+                            ldapQuery.constData(),
+                            nullptr,
+                            0,
+                            nullptr,
+                            nullptr,
+                            nullptr,
+                            0,
+                            &msg);
 
     if (res != LDAP_SUCCESS) {
         qWarning() << "Refusing connection from" << username << "(LDAP search failed:" << ldap_err2string(res) << ")";
@@ -281,7 +268,7 @@ bool LdapAuthenticator::ldapAuth(const QString &username, const QString &passwor
 
     entry = ldap_first_entry(_connection, msg);
 
-    if (entry == 0) {
+    if (entry == nullptr) {
         qWarning() << "Refusing connection from" << username << "(LDAP search returned no results)";
         ldap_msgfree(msg);
         return false;
@@ -291,9 +278,9 @@ bool LdapAuthenticator::ldapAuth(const QString &username, const QString &passwor
     cred.bv_val = passwordArray.data();
     cred.bv_len = password.size();
 
-    char *userDN = ldap_get_dn(_connection, entry);
+    char* userDN = ldap_get_dn(_connection, entry);
 
-    res = ldap_sasl_bind_s(_connection, userDN, LDAP_SASL_SIMPLE, &cred, 0, 0, 0);
+    res = ldap_sasl_bind_s(_connection, userDN, LDAP_SASL_SIMPLE, &cred, nullptr, nullptr, nullptr);
 
     if (res != LDAP_SUCCESS) {
         qWarning() << "Refusing connection from" << username << "(LDAP authentication failed)";

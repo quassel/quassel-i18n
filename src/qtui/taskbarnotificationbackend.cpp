@@ -30,55 +30,50 @@
 #include "mainwin.h"
 #include "qtui.h"
 
-TaskbarNotificationBackend::TaskbarNotificationBackend(QObject *parent)
+TaskbarNotificationBackend::TaskbarNotificationBackend(QObject* parent)
     : AbstractNotificationBackend(parent)
 {
     NotificationSettings notificationSettings;
     _enabled = notificationSettings.value("Taskbar/Enabled", true).toBool();
     _timeout = notificationSettings.value("Taskbar/Timeout", 0).toInt();
 
-    notificationSettings.notify("Taskbar/Enabled", this, SLOT(enabledChanged(const QVariant &)));
-    notificationSettings.notify("Taskbar/Timeout", this, SLOT(timeoutChanged(const QVariant &)));
+    notificationSettings.notify("Taskbar/Enabled", this, &TaskbarNotificationBackend::enabledChanged);
+    notificationSettings.notify("Taskbar/Timeout", this, &TaskbarNotificationBackend::timeoutChanged);
 }
 
-
-void TaskbarNotificationBackend::notify(const Notification &notification)
+void TaskbarNotificationBackend::notify(const Notification& notification)
 {
     if (_enabled && (notification.type == Highlight || notification.type == PrivMsg)) {
         QApplication::alert(QtUi::mainWindow(), _timeout);
     }
 }
 
-
 void TaskbarNotificationBackend::close(uint notificationId)
 {
     Q_UNUSED(notificationId);
 }
 
-
-void TaskbarNotificationBackend::enabledChanged(const QVariant &v)
+void TaskbarNotificationBackend::enabledChanged(const QVariant& v)
 {
     _enabled = v.toBool();
 }
 
-
-void TaskbarNotificationBackend::timeoutChanged(const QVariant &v)
+void TaskbarNotificationBackend::timeoutChanged(const QVariant& v)
 {
     _timeout = v.toInt();
 }
 
-
-SettingsPage *TaskbarNotificationBackend::createConfigWidget() const
+SettingsPage* TaskbarNotificationBackend::createConfigWidget() const
 {
     return new ConfigWidget();
 }
 
-
 /***************************************************************************/
 
-TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : SettingsPage("Internal", "TaskbarNotification", parent)
+TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget* parent)
+    : SettingsPage("Internal", "TaskbarNotification", parent)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    auto* layout = new QHBoxLayout(this);
 #ifdef Q_OS_MAC
     layout->addWidget(enabledBox = new QCheckBox(tr("Activate dock entry, timeout:"), this));
 #else
@@ -95,24 +90,22 @@ TaskbarNotificationBackend::ConfigWidget::ConfigWidget(QWidget *parent) : Settin
     layout->addWidget(timeoutBox);
     layout->addStretch(20);
 
-    connect(enabledBox, SIGNAL(toggled(bool)), SLOT(widgetChanged()));
-    connect(enabledBox, SIGNAL(toggled(bool)), timeoutBox, SLOT(setEnabled(bool)));
-    connect(timeoutBox, SIGNAL(valueChanged(int)), SLOT(widgetChanged()));
+    connect(enabledBox, &QAbstractButton::toggled, this, &ConfigWidget::widgetChanged);
+    connect(enabledBox, &QAbstractButton::toggled, timeoutBox, &QWidget::setEnabled);
+    connect(timeoutBox, selectOverload<int>(&QSpinBox::valueChanged), this, &ConfigWidget::widgetChanged);
 }
-
 
 void TaskbarNotificationBackend::ConfigWidget::widgetChanged()
 {
-    bool changed = (enabled != enabledBox->isChecked() || timeout/1000 != timeoutBox->value());
-    if (changed != hasChanged()) setChangedState(changed);
+    bool changed = (enabled != enabledBox->isChecked() || timeout / 1000 != timeoutBox->value());
+    if (changed != hasChanged())
+        setChangedState(changed);
 }
-
 
 bool TaskbarNotificationBackend::ConfigWidget::hasDefaults() const
 {
     return true;
 }
-
 
 void TaskbarNotificationBackend::ConfigWidget::defaults()
 {
@@ -121,7 +114,6 @@ void TaskbarNotificationBackend::ConfigWidget::defaults()
     widgetChanged();
 }
 
-
 void TaskbarNotificationBackend::ConfigWidget::load()
 {
     NotificationSettings s;
@@ -129,11 +121,10 @@ void TaskbarNotificationBackend::ConfigWidget::load()
     timeout = s.value("Taskbar/Timeout", 0).toInt();
 
     enabledBox->setChecked(enabled);
-    timeoutBox->setValue(timeout/1000);
+    timeoutBox->setValue(timeout / 1000);
 
     setChangedState(false);
 }
-
 
 void TaskbarNotificationBackend::ConfigWidget::save()
 {

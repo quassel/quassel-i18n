@@ -20,21 +20,17 @@
 
 #include "ctcpevent.h"
 #include "ircevent.h"
-#include "networkevent.h"
 #include "messageevent.h"
+#include "networkevent.h"
 #include "peer.h"
 #include "signalproxy.h"
 
 Event::Event(EventManager::EventType type)
     : _type(type)
-    , _valid(true)
-{
-}
+{}
 
-
-Event::Event(EventManager::EventType type, QVariantMap &map)
+Event::Event(EventManager::EventType type, QVariantMap& map)
     : _type(type)
-    , _valid(true)
 {
     if (!map.contains("flags") || !map.contains("timestamp")) {
         qWarning() << "Received invalid serialized event:" << map;
@@ -45,18 +41,18 @@ Event::Event(EventManager::EventType type, QVariantMap &map)
     Q_ASSERT(SignalProxy::current());
     Q_ASSERT(SignalProxy::current()->sourcePeer());
 
-    setFlags(static_cast<EventManager::EventFlags>(map.take("flags").toInt())); // TODO sanity check?
+    setFlags(static_cast<EventManager::EventFlags>(map.take("flags").toInt()));  // TODO sanity check?
 
     if (SignalProxy::current()->sourcePeer()->hasFeature(Quassel::Feature::LongTime)) {
         // timestamp is a qint64, signed rather than unsigned
         setTimestamp(QDateTime::fromMSecsSinceEpoch(map.take("timestamp").toLongLong()));
-    } else {
+    }
+    else {
         setTimestamp(QDateTime::fromTime_t(map.take("timestamp").toUInt()));
     }
 }
 
-
-void Event::toVariantMap(QVariantMap &map) const
+void Event::toVariantMap(QVariantMap& map) const
 {
     Q_ASSERT(SignalProxy::current());
     Q_ASSERT(SignalProxy::current()->targetPeer());
@@ -66,11 +62,11 @@ void Event::toVariantMap(QVariantMap &map) const
     if (SignalProxy::current()->targetPeer()->hasFeature(Quassel::Feature::LongTime)) {
         // toMSecs returns a qint64, signed rather than unsigned
         map["timestamp"] = timestamp().toMSecsSinceEpoch();
-    } else {
+    }
+    else {
         map["timestamp"] = timestamp().toTime_t();
     }
 }
-
 
 QVariantMap Event::toVariantMap() const
 {
@@ -79,23 +75,22 @@ QVariantMap Event::toVariantMap() const
     return map;
 }
 
-
-Event *Event::fromVariantMap(QVariantMap &map, Network *network)
+Event* Event::fromVariantMap(QVariantMap& map, Network* network)
 {
     int inttype = map.take("type").toInt();
     // sanity check if we have a valid enum value
     if (EventManager::enumName(inttype).isEmpty()) {
         qWarning() << "Received a serialized event with unknown type" << inttype;
-        return 0;
+        return nullptr;
     }
 
-    EventManager::EventType type = static_cast<EventManager::EventType>(inttype);
+    auto type = static_cast<EventManager::EventType>(inttype);
     if (type == EventManager::Invalid || type == EventManager::GenericEvent)
-        return 0;
+        return nullptr;
 
-    EventManager::EventType group = static_cast<EventManager::EventType>(type & EventManager::EventGroupMask);
+    auto group = static_cast<EventManager::EventType>(type & EventManager::EventGroupMask);
 
-    Event *e = 0;
+    Event* e = nullptr;
 
     // we use static create() functions to keep group-specific special cases in the files they belong
     // e.g. IrcEventRawMessage
@@ -121,7 +116,7 @@ Event *Event::fromVariantMap(QVariantMap &map, Network *network)
 
     if (!e) {
         qWarning() << "Can't create event of type" << type;
-        return 0;
+        return nullptr;
     }
 
     if (!map.isEmpty()) {
@@ -131,14 +126,12 @@ Event *Event::fromVariantMap(QVariantMap &map, Network *network)
     return e;
 }
 
-
-QDebug operator<<(QDebug dbg, Event *e)
+QDebug operator<<(QDebug dbg, Event* e)
 {
     dbg.nospace() << qPrintable(e->className()) << "("
-    << "type = 0x" << qPrintable(QString::number(e->type(), 16));
+                  << "type = 0x" << qPrintable(QString::number(e->type(), 16));
     e->debugInfo(dbg);
     //<< ", data = " << e->data(); // we don't use data anywhere yet
-    dbg.nospace() << ", flags = 0x" << qPrintable(QString::number(e->flags(), 16))
-    << ")";
+    dbg.nospace() << ", flags = 0x" << qPrintable(QString::number(e->flags(), 16)) << ")";
     return dbg.space();
 }

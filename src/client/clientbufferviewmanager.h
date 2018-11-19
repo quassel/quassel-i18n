@@ -18,31 +18,28 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef CLIENTBUFFERVIEWMANAGER_H
-#define CLIENTBUFFERVIEWMANAGER_H
+#pragma once
+
+#include "client-export.h"
 
 #include "bufferviewmanager.h"
 
 class ClientBufferViewConfig;
 class BufferViewOverlay;
 
-class ClientBufferViewManager : public BufferViewManager
+class CLIENT_EXPORT ClientBufferViewManager : public BufferViewManager
 {
-    SYNCABLE_OBJECT
-        Q_OBJECT
+    Q_OBJECT
 
 public:
-    ClientBufferViewManager(SignalProxy *proxy, QObject *parent = 0);
+    ClientBufferViewManager(SignalProxy* proxy, QObject* parent = nullptr);
 
-    QList<ClientBufferViewConfig *> clientBufferViewConfigs() const;
-    ClientBufferViewConfig *clientBufferViewConfig(int bufferViewId) const;
+    QList<ClientBufferViewConfig*> clientBufferViewConfigs() const;
+    ClientBufferViewConfig* clientBufferViewConfig(int bufferViewId) const;
 
 public slots:
-    virtual void setInitialized();
+    void setInitialized() override;
 
 protected:
-    virtual BufferViewConfig *bufferViewConfigFactory(int bufferViewConfigId);
+    BufferViewConfig* bufferViewConfigFactory(int bufferViewConfigId) override;
 };
-
-
-#endif //CLIENTBUFFERVIEWMANAGER_H

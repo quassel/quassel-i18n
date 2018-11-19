@@ -21,6 +21,7 @@
 #pragma once
 
 #include "settingspage.h"
+
 #include "ui_chatviewcolorsettingspage.h"
 
 class ColorButton;
@@ -35,20 +36,20 @@ public:
      *
      * @param parent Parent QWidget object, such as the settings dialog
      */
-    explicit ChatViewColorSettingsPage(QWidget *parent = 0);
+    explicit ChatViewColorSettingsPage(QWidget* parent = nullptr);
 
     /**
      * Gets whether or not this settings page has defaults
      *
      * @return True if defaults available, otherwise false
      */
-    inline bool hasDefaults() const { return true; }
+    inline bool hasDefaults() const override { return true; }
 
 public slots:
     /**
      * Save and apply current settings
      */
-    void save();
+    void save() override;
 
 private:
     Ui::ChatViewColorSettingsPage ui;  /// Reference to the Qt settings page UI
@@ -58,5 +59,5 @@ private:
      *
      * @return QString pointing to settings group and key for configuration values
      */
-    inline QString settingsKey() const { return QString("QtUi/ChatView/__default__"); }
+    inline QString settingsKey() const override { return QString("QtUi/ChatView/__default__"); }
 };

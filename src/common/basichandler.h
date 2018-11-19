@@ -18,39 +18,42 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.         *
  ***************************************************************************/
 
-#ifndef BASICHANDLER_H
-#define BASICHANDLER_H
+#pragma once
 
+#include "common-export.h"
+
+#include <QGenericArgument>
+#include <QHash>
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include <QHash>
-#include <QGenericArgument>
 
-class BasicHandler : public QObject
+class COMMON_EXPORT BasicHandler : public QObject
 {
     Q_OBJECT
 
 public:
-    BasicHandler(QObject *parent = 0);
-    BasicHandler(const QString &methodPrefix, QObject *parent = 0);
+    BasicHandler(QObject* parent = nullptr);
+    BasicHandler(QString methodPrefix, QObject* parent = nullptr);
 
     QStringList providesHandlers();
 
 protected:
-    virtual void handle(const QString &member, QGenericArgument val0 = QGenericArgument(0),
-        QGenericArgument val1 = QGenericArgument(), QGenericArgument val2 = QGenericArgument(),
-        QGenericArgument val3 = QGenericArgument(), QGenericArgument val4 = QGenericArgument(),
-        QGenericArgument val5 = QGenericArgument(), QGenericArgument val6 = QGenericArgument(),
-        QGenericArgument val7 = QGenericArgument(), QGenericArgument val8 = QGenericArgument());
+    virtual void handle(const QString& member,
+                        QGenericArgument val0 = QGenericArgument(nullptr),
+                        QGenericArgument val1 = QGenericArgument(),
+                        QGenericArgument val2 = QGenericArgument(),
+                        QGenericArgument val3 = QGenericArgument(),
+                        QGenericArgument val4 = QGenericArgument(),
+                        QGenericArgument val5 = QGenericArgument(),
+                        QGenericArgument val6 = QGenericArgument(),
+                        QGenericArgument val7 = QGenericArgument(),
+                        QGenericArgument val8 = QGenericArgument());
 
 private:
-    const QHash<QString, int> &handlerHash();
+    const QHash<QString, int>& handlerHash();
     QHash<QString, int> _handlerHash;
-    int _defaultHandler;
-    bool _initDone;
+    int _defaultHandler{-1};
+    bool _initDone{false};
     QString _methodPrefix;
 };
-
-
-#endif

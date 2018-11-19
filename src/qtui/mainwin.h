@@ -22,12 +22,10 @@
 
 #include <QUuid>
 
-#ifdef HAVE_KDE4
-#  include <KMainWindow>
-#elif defined HAVE_KF5
-#  include <KXmlGui/KMainWindow>
+#ifdef HAVE_KF5
+#    include <KXmlGui/KMainWindow>
 #else
-#  include <QMainWindow>
+#    include <QMainWindow>
 #endif
 
 #include "qtui.h"
@@ -60,51 +58,53 @@ class KHelpMenu;
 //!\brief The main window of Quassel's QtUi.
 class MainWin
 #ifdef HAVE_KDE
-    : public KMainWindow {
+    : public KMainWindow
+{
 #else
-    : public QMainWindow {
+    : public QMainWindow
+{
 #endif
     Q_OBJECT
 
 public:
-    MainWin(QWidget *parent = 0);
+    MainWin(QWidget* parent = nullptr);
 
     void init();
 
-    void addBufferView(ClientBufferViewConfig *config);
-    BufferView *allBuffersView() const;
-    BufferView *activeBufferView() const;
+    void addBufferView(ClientBufferViewConfig* config);
+    BufferView* allBuffersView() const;
+    BufferView* activeBufferView() const;
 
-    inline BufferWidget *bufferWidget() const { return _bufferWidget; }
-    inline SystemTray *systemTray() const { return _systemTray; }
+    inline BufferWidget* bufferWidget() const { return _bufferWidget; }
+    inline SystemTray* systemTray() const { return _systemTray; }
 
-    bool event(QEvent *event);
+    bool event(QEvent* event) override;
 
-    static void flagRemoteCoreOnly(QObject *object) { object->setProperty("REMOTE_CORE_ONLY", true); }
-    static bool isRemoteCoreOnly(QObject *object) { return object->property("REMOTE_CORE_ONLY").toBool(); }
+    static void flagRemoteCoreOnly(QObject* object) { object->setProperty("REMOTE_CORE_ONLY", true); }
+    static bool isRemoteCoreOnly(QObject* object) { return object->property("REMOTE_CORE_ONLY").toBool(); }
 
-    void saveStateToSettings(UiSettings &);
-    void restoreStateFromSettings(UiSettings &);
+    void saveStateToSettings(UiSettings&);
+    void restoreStateFromSettings(UiSettings&);
 
     // We need to override this to add the show/hide menu bar option
-    virtual QMenu *createPopupMenu();
+    QMenu* createPopupMenu() override;
 
 public slots:
-    void showStatusBarMessage(const QString &message);
+    void showStatusBarMessage(const QString& message);
     void hideCurrentBuffer();
-    void nextBufferView();     //!< Activate the next bufferview
-    void previousBufferView(); //!< Activate the previous bufferview
+    void nextBufferView();      //!< Activate the next bufferview
+    void previousBufferView();  //!< Activate the previous bufferview
     void nextBuffer();
     void previousBuffer();
 
     void showMigrationWarning(bool show);
 
-    void onExitRequested(const QString &reason);
+    void onExitRequested(const QString& reason);
 
 protected:
-    void closeEvent(QCloseEvent *event);
-    void moveEvent(QMoveEvent *event);
-    void resizeEvent(QResizeEvent *event);
+    void closeEvent(QCloseEvent* event) override;
+    void moveEvent(QMoveEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
 protected slots:
     void connectedToCore();
@@ -117,7 +117,7 @@ private slots:
     void awayLogDestroyed();
     void removeBufferView(int bufferViewConfigId);
     void currentBufferChanged(BufferId);
-    void messagesInserted(const QModelIndex &parent, int start, int end);
+    void messagesInserted(const QModelIndex& parent, int start, int end);
     void showAboutDlg();
 
     /**
@@ -127,12 +127,11 @@ private slots:
      * @param channelFilters   Partial channel name to search for, or empty to show all
      * @param listImmediately  If true, immediately list channels, otherwise just show dialog
      */
-    void showChannelList(NetworkId netId = {}, const QString &channelFilters = {},
-                         bool listImmediately = false);
+    void showChannelList(NetworkId netId = {}, const QString& channelFilters = {}, bool listImmediately = false);
 
     void showNetworkConfig(NetworkId netId = NetworkId());
     void showCoreConnectionDlg();
-    void showCoreConfigWizard(const QVariantList &, const QVariantList &);
+    void showCoreConfigWizard(const QVariantList&, const QVariantList&);
     void showCoreInfoDlg();
     void showAwayLog();
     void showSettingsDlg();
@@ -140,72 +139,73 @@ private slots:
     void showIgnoreList(QString newRule = QString());
     void showShortcutsDlg();
     void showPasswordChangeDlg();
-    void showNewTransferDlg(const QUuid &transferId);
+    void showNewTransferDlg(const QUuid& transferId);
     void onFullScreenToggled();
 
     void doAutoConnect();
 
-    void handleCoreConnectionError(const QString &errorMsg);
-    void userAuthenticationRequired(CoreAccount *, bool *valid, const QString &errorMessage);
-    void handleNoSslInClient(bool *accepted);
-    void handleNoSslInCore(bool *accepted);
+    void handleCoreConnectionError(const QString& errorMsg);
+    void userAuthenticationRequired(CoreAccount*, bool* valid, const QString& errorMessage);
+    void handleNoSslInClient(bool* accepted);
+    void handleNoSslInCore(bool* accepted);
 #ifdef HAVE_SSL
-    void handleSslErrors(const QSslSocket *socket, bool *accepted, bool *permanently);
+    void handleSslErrors(const QSslSocket* socket, bool* accepted, bool* permanently);
 #endif
 
-    void on_actionConfigureNetworks_triggered();
-    void on_actionConfigureViews_triggered();
-    void on_actionLockLayout_toggled(bool lock);
+    void onConfigureNetworksTriggered();
+    void onConfigureViewsTriggered();
+    void onLockLayoutToggled(bool lock);
 
     /**
      * Apply the active color to the input widget selected or typed text
      *
      * @seealso InputWidget::applyFormatActiveColor()
      */
-    void on_inputFormatApplyColor_triggered();
+    void onFormatApplyColorTriggered();
 
     /**
      * Apply the active fill color to the input widget selected or typed text background
      *
      * @seealso InputWidget::applyFormatActiveColorFill()
      */
-    void on_inputFormatApplyColorFill_triggered();
+    void onFormatApplyColorFillTriggered();
 
     /**
      * Toggle the boldness of the input widget selected or typed text
      *
      * @seealso InputWidget::toggleFormatBold()
      */
-    void on_inputFormatBold_triggered();
+    void onFormatBoldTriggered();
 
     /**
      * Toggle the italicness of the input widget selected or typed text
      *
      * @seealso InputWidget::toggleFormatItalic()
      */
-    void on_inputFormatItalic_triggered();
+    void onFormatItalicTriggered();
 
     /**
      * Toggle the underlining of the input widget selected or typed text
      *
      * @seealso InputWidget::toggleFormatUnderline()
      */
-    void on_inputFormatUnderline_triggered();
+    void onFormatUnderlineTriggered();
 
     /**
      * Clear the formatting of the input widget selected or typed text
      *
      * @seealso InputWidget::clearFormat()
      */
-    void on_inputFormatClear_triggered();
+    void onFormatClearTriggered();
 
-    void on_jumpHotBuffer_triggered();
-    void on_bufferSearch_triggered();
-    void on_actionDebugNetworkModel_triggered();
-    void on_actionDebugBufferViewOverlay_triggered();
-    void on_actionDebugMessageModel_triggered();
-    void on_actionDebugHotList_triggered();
-    void on_actionDebugLog_triggered();
+    void onJumpHotBufferTriggered();
+    void onBufferSearchTriggered();
+    void onDebugNetworkModelTriggered();
+    void onDebugBufferViewOverlayTriggered();
+    void onDebugMessageModelTriggered();
+    void onDebugHotListTriggered();
+    void onDebugLogTriggered();
+    void onShowResourceTreeTriggered();
 
     void bindJumpKey();
     void onJumpKey();
@@ -228,17 +228,17 @@ private slots:
     void changeActiveBufferView(int bufferViewId);
 
 signals:
-    void connectToCore(const QVariantMap &connInfo);
+    void connectToCore(const QVariantMap& connInfo);
     void disconnectFromCore();
 
 private:
 #ifdef HAVE_KDE
-    KHelpMenu *_kHelpMenu;
+    KHelpMenu* _kHelpMenu;
 #endif
 
-    MsgProcessorStatusWidget *_msgProcessorStatusWidget;
-    CoreConnectionStatusWidget *_coreConnectionStatusWidget;
-    SystemTray *_systemTray;
+    MsgProcessorStatusWidget* _msgProcessorStatusWidget;
+    CoreConnectionStatusWidget* _coreConnectionStatusWidget;
+    SystemTray* _systemTray;
 
     TitleSetter _titleSetter;
 
@@ -260,32 +260,32 @@ private:
     void updateIcon();
     void enableMenus();
 
-    QList<BufferViewDock *> _bufferViews;
-    BufferWidget *_bufferWidget;
-    NickListWidget *_nickListWidget;
-    InputWidget *_inputWidget;
-    ChatMonitorView *_chatMonitorView;
-    TopicWidget *_topicWidget;
+    QList<BufferViewDock*> _bufferViews;
+    BufferWidget* _bufferWidget;
+    NickListWidget* _nickListWidget;
+    InputWidget* _inputWidget;
+    ChatMonitorView* _chatMonitorView;
+    TopicWidget* _topicWidget;
 
-    QAction *_fullScreenAction;
+    QAction* _fullScreenAction{nullptr};
     QMenu *_fileMenu, *_networksMenu, *_viewMenu, *_bufferViewsMenu, *_settingsMenu, *_helpMenu, *_helpDebugMenu;
-    QMenu *_toolbarMenu;
+    QMenu* _toolbarMenu;
     QToolBar *_mainToolBar, *_chatViewToolBar, *_nickToolBar;
 
-    QWidget *_awayLog;
+    QWidget* _awayLog{nullptr};
 
     QMessageBox* _migrationWarning{nullptr};
 
-    bool _layoutLoaded;
+    bool _layoutLoaded{false};
 
-    QSize _normalSize; //!< Size of the non-maximized window
-    QPoint _normalPos; //!< Position of the non-maximized window
+    QSize _normalSize;  //!< Size of the non-maximized window
+    QPoint _normalPos;  //!< Position of the non-maximized window
 
-    BufferHotListFilter *_bufferHotList;
+    BufferHotListFilter* _bufferHotList;
     QHash<int, BufferId> _jumpKeyMap;
-    int _activeBufferViewIndex;
+    int _activeBufferViewIndex{-1};
 
-    bool _aboutToQuit; //closeEvent can occur multiple times on OSX
+    bool _aboutToQuit{false};  // closeEvent can occur multiple times on OSX
 
     friend class QtUi;
 };

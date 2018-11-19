@@ -31,20 +31,20 @@ class SystrayNotificationBackend : public AbstractNotificationBackend
     Q_OBJECT
 
 public:
-    SystrayNotificationBackend(QObject *parent = 0);
+    SystrayNotificationBackend(QObject* parent = nullptr);
 
-    void notify(const Notification &);
-    void close(uint notificationId);
-    virtual SettingsPage *createConfigWidget() const;
+    void notify(const Notification&) override;
+    void close(uint notificationId) override;
+    SettingsPage* createConfigWidget() const override;
 
 protected:
-    virtual bool eventFilter(QObject *obj, QEvent *event);
+    bool eventFilter(QObject* obj, QEvent* event) override;
 
 private slots:
-    void notificationActivated(uint notificationId);
-    void notificationActivated(SystemTray::ActivationReason);
+    void onNotificationActivated(uint notificationId);
+    void onNotificationActivated(SystemTray::ActivationReason);
 
-    void showBubbleChanged(const QVariant &);
+    void showBubbleChanged(const QVariant&);
     void updateToolTip();
 
 private:
@@ -52,25 +52,24 @@ private:
 
     bool _showBubble;
     QList<Notification> _notifications;
-    bool _blockActivation;
+    bool _blockActivation{false};
 };
-
 
 class SystrayNotificationBackend::ConfigWidget : public SettingsPage
 {
     Q_OBJECT
 
 public:
-    ConfigWidget(QWidget *parent = 0);
-    void save();
-    void load();
-    bool hasDefaults() const;
-    void defaults();
+    ConfigWidget(QWidget* parent = nullptr);
+    void save() override;
+    void load() override;
+    bool hasDefaults() const override;
+    void defaults() override;
 
 private slots:
     void widgetChanged();
 
 private:
-    QCheckBox *_showBubbleBox;
+    QCheckBox* _showBubbleBox;
     bool _showBubble;
 };
