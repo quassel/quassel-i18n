@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-09-11 15:04+0000\n"
+"PO-Revision-Date: 2018-11-26 14:05+0000\n"
 "Last-Translator: Crystal RainSlide\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/quassel/quassel/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Quassel IRC"
 #: ../src/uisupport/aboutdata.cpp:141
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "一个现代的分布式 IRC 客户端"
 
 #: ../src/uisupport/aboutdata.cpp:174
 msgctxt "AboutData|"
@@ -2714,7 +2714,7 @@ msgstr ""
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:144
 msgctxt "CoreAccountEditDlg|"
 msgid "SOCKS 5"
-msgstr ""
+msgstr "SOCKS 5"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:149
 msgctxt "CoreAccountEditDlg|"
@@ -6727,12 +6727,12 @@ msgstr "服务器密码："
 #: ../src/qtui/settingspages/networkadddlg.ui:131
 msgctxt "NetworkAddDlg|"
 msgid "Try to use an encrypted connection (e.g. SSL/TLS)"
-msgstr ""
+msgstr "尝试使用加密连接（例如 SSL 或 TLS）"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:134
 msgctxt "NetworkAddDlg|"
 msgid "Use encrypted connection"
-msgstr ""
+msgstr "使用加密连接"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:144
 msgctxt "NetworkAddDlg|"
@@ -6740,12 +6740,12 @@ msgid ""
 "<p>Verify the encrypted connection provides a valid certificate, increasing "
 "security.<br/>Uncheck if the IRC server uses a self-signed or invalid "
 "certificate.</p>"
-msgstr ""
+msgstr "验证加密连接是否使用了有效的安全证书，保证安全性。\n若该 IRC 服务器使用了自签发或无效的证书，建议您更换服务器，否则取消勾选此项目。"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:147
 msgctxt "NetworkAddDlg|"
 msgid "Verify connection security"
-msgstr ""
+msgstr "验证链接安全性"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1056
 msgctxt "NetworkAddDlg|"
@@ -7865,7 +7865,7 @@ msgstr ""
 #: ../src/common/remotepeer.cpp:69
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
-msgstr ""
+msgstr "正在断开连接…"
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
@@ -7885,7 +7885,7 @@ msgstr "中止"
 #: ../src/qtui/settingspages/servereditdlg.ui:14
 msgctxt "ServerEditDlg|"
 msgid "Edit Server"
-msgstr ""
+msgstr "编辑服务器"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:30
 msgctxt "ServerEditDlg|"
@@ -7911,12 +7911,12 @@ msgstr "密码："
 #: ../src/qtui/settingspages/servereditdlg.ui:94
 msgctxt "ServerEditDlg|"
 msgid "Try to use an encrypted connection (e.g. SSL/TLS)"
-msgstr ""
+msgstr "尝试使用加密连接（例如 SSL 或 TLS）"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:97
 msgctxt "ServerEditDlg|"
 msgid "Use encrypted connection"
-msgstr ""
+msgstr "使用加密连接"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:111
 msgctxt "ServerEditDlg|"
@@ -7924,12 +7924,12 @@ msgid ""
 "<p>Verify the encrypted connection provides a valid certificate, increasing "
 "security.<br/>Uncheck if the IRC server uses a self-signed or invalid "
 "certificate.</p>"
-msgstr ""
+msgstr "<p>验证加密连接是否使用了有效的安全证书，保证安全性。<br/>若该 IRC 服务器使用了自签发或无效的证书，建议您更换服务器，否则取消勾选此项目。</p>"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:114
 msgctxt "ServerEditDlg|"
 msgid "Verify connection security"
-msgstr ""
+msgstr "验证链接安全性"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:138
 msgctxt "ServerEditDlg|"
@@ -7944,17 +7944,17 @@ msgstr "SSL 版本："
 #: ../src/qtui/settingspages/servereditdlg.ui:166
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "除非您知道其他选项意味着什么，请仅使用 TLSv1！"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:170
 msgctxt "ServerEditDlg|"
 msgid "SSLv3 (insecure)"
-msgstr ""
+msgstr "SSLv3 （不安全）"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:175
 msgctxt "ServerEditDlg|"
 msgid "SSLv2 (insecure)"
-msgstr ""
+msgstr "SSLv2 （不安全）"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:180
 msgctxt "ServerEditDlg|"
@@ -7974,7 +7974,7 @@ msgstr "代理类型："
 #: ../src/qtui/settingspages/servereditdlg.ui:215
 msgctxt "ServerEditDlg|"
 msgid "SOCKS 5"
-msgstr ""
+msgstr "SOCKS 5"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:220
 msgctxt "ServerEditDlg|"
@@ -8871,7 +8871,7 @@ msgstr[0] "%n 位用户"
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
 msgid_plural "%n Half-Op(s)"
-msgstr[0] ""
+msgstr[0] "%n 位副管理员"
 
 #: ../src/client/networkmodel.cpp:1039
 #, qt-format
