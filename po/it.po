@@ -2,13 +2,14 @@
 # Translators:
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
+# Francesco <rbrfnc@ymail.com>, 2019
 # Marco Paolone <marcopaolone@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-11-27 13:59+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2019-01-27 11:28+0000\n"
+"Last-Translator: Francesco <rbrfnc@ymail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,27 +21,27 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:117
 msgctxt "AboutData|"
 msgid "Quassel IRC"
-msgstr ""
+msgstr "Quassel IRC"
 
 #: ../src/uisupport/aboutdata.cpp:120
 msgctxt "AboutData|"
 msgid "A modern, distributed IRC client"
-msgstr ""
+msgstr "Un client moderno e distribuito per IRC"
 
 #: ../src/uisupport/aboutdata.cpp:152
 msgctxt "AboutData|"
 msgid "Project founder, lead developer"
-msgstr ""
+msgstr "Fondatore del progetto, capo sviluppatore"
 
 #: ../src/uisupport/aboutdata.cpp:153
 msgctxt "AboutData|"
 msgid "Project motivator, lead developer"
-msgstr ""
+msgstr "Motivatore del progetto, capo sviluppatore"
 
 #: ../src/uisupport/aboutdata.cpp:154
 msgctxt "AboutData|"
 msgid "Former lead developer"
-msgstr ""
+msgstr "Capo sviluppatore precedente"
 
 #: ../src/uisupport/aboutdata.cpp:155
 msgctxt "AboutData|"
@@ -649,14 +650,14 @@ msgstr "&Grazie a"
 #: ../src/qtui/aboutdlg.cpp:44
 msgctxt "AboutDlg|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Data sconosciuta"
 
 #: ../src/qtui/aboutdlg.cpp:49
 #, qt-format
 msgctxt "AboutDlg|"
 msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
-msgstr ""
+msgstr "<b>Versione:</b> %1<br><b>Data versione:</b> %2<br><b>Versione protocollo:</b> %3"
 
 #: ../src/qtui/aboutdlg.cpp:65
 #, qt-format
@@ -678,7 +679,7 @@ msgid ""
 "icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Please use <a "
 "href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>Un client moderno e distribuito per IRC</b><br><br>&copy;%1 di Quassel Project<br><a href=\"https://quassel-irc.org\">https://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> su <a href=\"https://www.freenode.net\">Freenode</a><br><br>Quassel IRC &egrave; rilasciato sotto licenze <a href=\"https://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> e <a href=\"https://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a href=\"https://api.kde.org/frameworks/breeze-icons/html\">Tema Breeze per le icone</a> &copy; Uri Herrera ed altri, rilasciato sotto licenza <a href=\"https://github.com/KDE/breeze-icons/blob/21ffd9b/COPYING-ICONS\">LGPLv3</a>.<br><a href=\"https://api.kde.org/frameworks/oxygen-icons5/html\">Tema Oxygen per le icone</a> &copy; Nuno Pinheiro ed altri, rilasciato sotto licenza <a href=\"https://github.com/KDE/oxygen-icons/blob/master/COPYING\">LGPLv3</a>.Per favore utilizza <a href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> per segnalare malfunzionamenti."
 
 #: ../src/qtui/aboutdlg.cpp:85
 msgctxt "AboutDlg|"
@@ -702,22 +703,22 @@ msgstr ""
 #: ../src/qtui/aboutdlg.cpp:110
 msgctxt "AboutDlg|"
 msgid "Special thanks goes to:"
-msgstr ""
+msgstr "Ringraziamenti speciali:"
 
 #: ../src/qtui/aboutdlg.cpp:116
 msgctxt "AboutDlg|"
 msgid "for the original Quassel logo - The All-Seeing Eye"
-msgstr ""
+msgstr "per l'originale logo Quassel - The All-Seeing Eye"
 
 #: ../src/qtui/aboutdlg.cpp:122
 msgctxt "AboutDlg|"
 msgid "for the Oxygen Quassel logo"
-msgstr ""
+msgstr "per il logo Oxygen di Quassel"
 
 #: ../src/qtui/aboutdlg.cpp:128
 msgctxt "AboutDlg|"
 msgid "for the amazing Breeze and Oxygen icon themes"
-msgstr ""
+msgstr "per i fantastici temi icona Breeze ed Oxygen"
 
 #: ../src/qtui/aboutdlg.cpp:134
 msgctxt "AboutDlg|"
@@ -3574,7 +3575,7 @@ msgstr ""
 #: ../src/qtui/coreinfodlg.cpp:101
 msgctxt "CoreInfoDlg|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Data sconosciuta"
 
 #: ../src/qtui/coreinfodlg.cpp:174
 #, qt-format
@@ -3808,7 +3809,7 @@ msgstr ""
 #: ../src/qtui/coresessionwidget.cpp:41
 msgctxt "CoreSessionWidget|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Data sconosciuta"
 
 #: ../src/qtui/coresessionwidget.cpp:51
 msgctxt "CoreSessionWidget|"
