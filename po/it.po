@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-02-01 02:27+0000\n"
+"PO-Revision-Date: 2019-02-02 00:10+0000\n"
 "Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -2029,13 +2029,13 @@ msgstr "Il core ha rifiutato la connessione da questo client"
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Core does not support the following features: %1"
-msgstr "Il core non supporta le seguenti funzionalità: %1"
+msgstr "Il core non supporta le seguenti funzioni: %1"
 
 #: ../src/client/clientauthhandler.cpp:327
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Core supports unknown features: %1"
-msgstr "Il core supporta funzionalità sconosciute: %1"
+msgstr "Il core supporta funzioni sconosciute: %1"
 
 #: ../src/client/clientauthhandler.cpp:368
 msgctxt "ClientAuthHandler|"
@@ -2882,7 +2882,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
-msgstr "Il client supporta funzionalità sconosciute: %1"
+msgstr "Il client supporta funzioni sconosciute: %1"
 
 #: ../src/core/coreauthhandler.cpp:276
 msgctxt "CoreAuthHandler|"
@@ -5725,22 +5725,22 @@ msgstr "Nome reale"
 #: ../src/client/networkmodel.cpp:1114
 msgctxt "IrcUserItem|"
 msgid "Help status"
-msgstr ""
+msgstr "Stato di aiuto"
 
 #: ../src/client/networkmodel.cpp:1114
 msgctxt "IrcUserItem|"
 msgid "Available for help"
-msgstr ""
+msgstr "Disponibile per aiuto"
 
 #: ../src/client/networkmodel.cpp:1117
 msgctxt "IrcUserItem|"
 msgid "Service status"
-msgstr ""
+msgstr "Stato del servizio"
 
 #: ../src/client/networkmodel.cpp:1127
 msgctxt "IrcUserItem|"
 msgid "Not logged in"
-msgstr ""
+msgstr "Accesso non effettuato"
 
 #: ../src/client/networkmodel.cpp:1133 ../src/client/networkmodel.cpp:1140
 msgctxt "IrcUserItem|"
@@ -5755,27 +5755,27 @@ msgstr "Identificato per questo nick"
 #: ../src/client/networkmodel.cpp:1146
 msgctxt "IrcUserItem|"
 msgid "Service Reply"
-msgstr ""
+msgstr "Risposta del servizio"
 
 #: ../src/client/networkmodel.cpp:1150
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
-msgstr ""
+msgstr "Maschera host"
 
 #: ../src/client/networkmodel.cpp:1154
 msgctxt "IrcUserItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operatore"
 
 #: ../src/client/networkmodel.cpp:1162
 msgctxt "IrcUserItem|"
 msgid "Idling since"
-msgstr ""
+msgstr "Inattivo da"
 
 #: ../src/client/networkmodel.cpp:1166
 msgctxt "IrcUserItem|"
 msgid "Login time"
-msgstr ""
+msgstr "Data accesso"
 
 #: ../src/client/networkmodel.cpp:1169
 msgctxt "IrcUserItem|"
@@ -6422,12 +6422,12 @@ msgstr "Debug"
 #: ../src/qtui/mainwin.cpp:815
 msgctxt "MainWin|"
 msgid "Feature Not Supported"
-msgstr "Funzionalità non supportata"
+msgstr "Funzione non supportata"
 
 #: ../src/qtui/mainwin.cpp:816
 msgctxt "MainWin|"
 msgid "<b>Your Quassel Core does not support this feature</b>"
-msgstr "<b>Il tuo core Quassel non supporta questa funzionalità</b>"
+msgstr "<b>Il tuo core Quassel non supporta questa funzione</b>"
 
 #: ../src/qtui/mainwin.cpp:818
 msgctxt "MainWin|"
@@ -6709,7 +6709,7 @@ msgid ""
 "<p>Verify the encrypted connection provides a valid certificate, increasing "
 "security.<br/>Uncheck if the IRC server uses a self-signed or invalid "
 "certificate.</p>"
-msgstr ""
+msgstr "<p>Verifica che la connessione crittografata fornisca un certificato valido, aumentando la sicurezza. Togli la spunta se il server IRC utilizza un certificato auto-firmato o non valido.</p>"
 
 #: ../src/qtui/settingspages/networkadddlg.ui:147
 msgctxt "NetworkAddDlg|"
@@ -6719,14 +6719,14 @@ msgstr "Verifica la sicurezza della connessione"
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1037
 msgctxt "NetworkAddDlg|"
 msgid "Your Quassel core does not support this feature"
-msgstr "Il tuo core Quassel non supporta questa funzionalità"
+msgstr "Il tuo core Quassel non supporta questa funzione"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1038
 msgctxt "NetworkAddDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
 "security."
-msgstr ""
+msgstr "Devi avere un core Quassel v0.13.0 o superiore per poter verificare la sicurezza della connessione."
 
 #: ../src/qtui/settingspages/networkeditdlg.ui:13
 msgctxt "NetworkEditDlg|"
@@ -6913,12 +6913,12 @@ msgstr "&Modifica..."
 #: ../src/qtui/settingspages/networkssettingspage.ui:277
 msgctxt "NetworksSettingsPage|"
 msgid "Move upwards in list"
-msgstr "Sposta in alto nella lista"
+msgstr "Sposta in alto nell'elenco"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:291
 msgctxt "NetworksSettingsPage|"
 msgid "Move downwards in list"
-msgstr "Sposta in basso nella lista"
+msgstr "Sposta in basso nell'elenco"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:336
 msgctxt "NetworksSettingsPage|"
@@ -6930,7 +6930,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Configure automatic identification or misc. commands to be executed after "
 "connecting to a server"
-msgstr "Configura automaticamente l'identificazione o i vari comandi da essere eseguiti dopo che la connessione al server è stata stabilita"
+msgstr "Configura l'identificazione automatica oppure i vari comandi da eseguire dopo la connessione al server"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:345
 msgctxt "NetworksSettingsPage|"
@@ -6942,7 +6942,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Specify a list of IRC commands to be executed upon connect.\n"
 "Note that Quassel IRC automatically rejoins channels, so /join will rarely be needed here!"
-msgstr "Specifica una lista di comandi IRC da essere eseguiti una volta connessi.\nNota che Quassel IRC si riconnette automaticamente ai canali, dunque qui avrai raramente bisogno del comando /join!"
+msgstr "Specifica una lista di comandi IRC da essere eseguiti una volta connessi.\nNota che Quassel IRC rientra automaticamente nei canali, quindi avrai raramente bisogno del comando /join!"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:373
 msgctxt "NetworksSettingsPage|"
@@ -6985,7 +6985,7 @@ msgstr "Numero di tentativi:"
 #: ../src/qtui/settingspages/networkssettingspage.ui:547
 msgctxt "NetworksSettingsPage|"
 msgid "Unlimited"
-msgstr "Illimitato"
+msgstr "Illimitati"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:488
 msgctxt "NetworksSettingsPage|"
@@ -6995,36 +6995,36 @@ msgstr "Rientra in tutti i canali dopo la riconnessione"
 #: ../src/qtui/settingspages/networkssettingspage.ui:507
 msgctxt "NetworksSettingsPage|"
 msgid "Use Custom Rate Limits"
-msgstr ""
+msgstr "Usa limiti di velocità personalizzati"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:521
 msgctxt "NetworksSettingsPage|"
 msgid "Max. messages at once:"
-msgstr ""
+msgstr "Messaggi massimi per volta:"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:528
 msgctxt "NetworksSettingsPage|"
 msgid "Maximum number of messages to send without any delays"
-msgstr ""
+msgstr "Numero massimo di messaggi da inviare senza ritardi"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:544
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "<html><head/><body><p>Disable all rate limiting, e.g. for IRC "
 "bridges.</p><p>Don't use with most normal networks.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Disabilita tutti i limiti di velocità, e.g. per bridge IRC.</p><p>Da non usare con la maggior parte delle normali reti.</p></body></html>"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:602
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "<html><head/><body><p>Delay between messages after the maximum number of "
 "undelayed messages have been sent.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Ritardo tra i messaggi dopo che è stato inviato il numero massimo di messaggi non ritardati.</p></body></html>"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:621
 msgctxt "NetworksSettingsPage|"
 msgid "between future messages"
-msgstr ""
+msgstr "tra i messaggi futuri"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:663
 #: ../src/qtui/settingspages/networkssettingspage.ui:814
@@ -7036,7 +7036,7 @@ msgstr "Identificazione automatica"
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Authenticate using your nickname and password before joining any channels"
-msgstr ""
+msgstr "Autenticati usando il nick e la password prima di entrare in qualsiasi canale"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:675
 msgctxt "NetworksSettingsPage|"
@@ -7046,7 +7046,7 @@ msgstr "Usa autenticazione SASL"
 #: ../src/qtui/settingspages/networkssettingspage.ui:716
 msgctxt "NetworksSettingsPage|"
 msgid "Account name, often the same as your nickname"
-msgstr ""
+msgstr "Nome account, spesso uguale al tuo nickname"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:729
 msgctxt "NetworksSettingsPage|"
@@ -7068,7 +7068,7 @@ msgstr "Password:"
 #: ../src/qtui/settingspages/networkssettingspage.ui:776
 msgctxt "NetworksSettingsPage|"
 msgid "Could not detect if supported by server"
-msgstr ""
+msgstr "Impossibile rilevare se supportato dal server"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:783
 msgctxt "NetworksSettingsPage|"
@@ -7081,19 +7081,19 @@ msgid ""
 "<html><head/><body><p><span style=\" font-weight:600;\">Note:</span> because"
 " the identity has an ssl certificate set, SASL EXTERNAL will be "
 "used.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p><span style=\" font-weight:600;\">Nota:</span> poiché l'identità ha un certificato ssl impostato, verrà utilizzato SASL EXTERNAL.</p></body></html>"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:811
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Authenticate to services using your password.  Use SASL instead to identify "
 "before joining channels."
-msgstr ""
+msgstr "Autenticati ai servizi usando la password.  Utilizza invece SASL per identificarti prima di entrare nei canali."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:829
 msgctxt "NetworksSettingsPage|"
 msgid "Service user to send your password to, usually NickServ"
-msgstr ""
+msgstr "Servizio a cui inviare la password, di solito NickServ"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:832
 msgctxt "NetworksSettingsPage|"
@@ -7146,7 +7146,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Incoming messages encoded in UTF-8 will always be treated as such.\n"
 "This setting defines the encoding for messages that are not UTF-8."
-msgstr ""
+msgstr "I messaggi in entrata codificati in UTF-8 saranno sempre trattati come tali.\nQuesta impostazione definisce la codifica per i messaggi che non sono UTF-8."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:947
 msgctxt "NetworksSettingsPage|"
@@ -7161,12 +7161,12 @@ msgid ""
 "encoded.</p><p><b>UTF-8</b> should be fine for modern networks.  On other "
 "networks, you may need to use <b>ISO-8859-1</b> to avoid errors with illegal"
 " characters and invalid encoding.</p></qt>"
-msgstr ""
+msgstr "<qt><p>Specifica come vengono codificati i messaggi di controlli, i nick ed i nomi dei server.</p><p><b>UTF-8</b> dovrebbe andar bene per le reti moderne.  Su altre reti, potrebbe essere necessario utilizzare <b>ISO-8859-1</b> per evitare errori legati a caratteri illegali e codifica non valida.</p></qt>"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:977
 msgctxt "NetworksSettingsPage|"
 msgid "Server encoding:"
-msgstr "Codifica server:"
+msgstr "Codifica del server:"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:44
 msgctxt "NetworksSettingsPage|"
@@ -7184,7 +7184,7 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "<p>Override default message rate limiting.</p><p><b>Setting limits too low "
 "may get you disconnected from the server!</b></p>"
-msgstr ""
+msgstr "<p>Sovrascrivi la limitazione della frequenza di messaggi predefinita.</p><p><b>Impostando un limite troppo basso potresti essere disconnesso dal server!</b></p>"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:178
 msgctxt "NetworksSettingsPage|"
@@ -7223,17 +7223,17 @@ msgstr "Impostazioni di rete non valide"
 #: ../src/qtui/settingspages/networkssettingspage.cpp:717
 msgctxt "NetworksSettingsPage|"
 msgid "Could not check if supported by network"
-msgstr ""
+msgstr "Impossibile verificare se supportato dalla rete"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:722
 msgctxt "NetworksSettingsPage|"
 msgid "Cannot check if supported when disconnected"
-msgstr ""
+msgstr "Impossibile verificare se supportato quando disconnesso"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:727
 msgctxt "NetworksSettingsPage|"
 msgid "Not currently supported by network"
-msgstr ""
+msgstr "Attualmente non supportato dalla rete"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:733
 msgctxt "NetworksSettingsPage|"
@@ -7251,12 +7251,12 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Do you really want to delete the network \"%1\" and all related settings, "
 "including the backlog?"
-msgstr "Vuoi davvero eliminare la rete «%1» e tutte le impostazioni correlate, includendo lo storico del registro?"
+msgstr "Sei sicuro di voler davvero eliminare la rete \"%1\" e tutte le impostazioni correlate, incluso il registro storico?"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:948
 msgctxt "NetworksSettingsPage|"
 msgid "Could not check if SASL supported by network"
-msgstr ""
+msgstr "Impossibile verificare se SASL è supportato dalla rete"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:949
 #, qt-format
@@ -7264,12 +7264,12 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Quassel could not check if \"%1\" supports SASL.  This may be due to unsaved"
 " changes or an older Quassel core.  You can still try using SASL."
-msgstr ""
+msgstr "Quassel non ha potuto verificare se \"%1\" supporta SASL.  Ciò potrebbe essere dovuto a modifiche non salvate oppure ad un core Quassel vecchio.  Puoi comunque provare ad utilizzare SASL."
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:955
 msgctxt "NetworksSettingsPage|"
 msgid "Cannot check if SASL supported when disconnected"
-msgstr ""
+msgstr "Impossibile verificare se SASL è supportato quando disconnesso"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:956
 #, qt-format
@@ -7277,12 +7277,12 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "Quassel cannot check if \"%1\" supports SASL when disconnected.  Connect to "
 "the network, or try using SASL anyways."
-msgstr ""
+msgstr "Quassel non può verificare se \"%1\" supporta SASL quando disconnesso.  Connettiti alla rete o prova comunque ad usare SASL."
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:962
 msgctxt "NetworksSettingsPage|"
 msgid "SASL not currently supported by network"
-msgstr ""
+msgstr "SASL attualmente non supportato dalla rete"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:963
 #, qt-format
@@ -7290,12 +7290,12 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "The network \"%1\" does not currently support SASL.  However, support might "
 "be added later on."
-msgstr ""
+msgstr "La rete \"%1\" attualmente non supporta SASL.  Tuttavia, il supporto potrebbe essere aggiunto in seguito."
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:969
 msgctxt "NetworksSettingsPage|"
 msgid "SASL supported by network"
-msgstr ""
+msgstr "SASL supportato dalla rete"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:970
 #, qt-format
@@ -7303,24 +7303,24 @@ msgctxt "NetworksSettingsPage|"
 msgid ""
 "The network \"%1\" supports SASL.  In most cases, you should use SASL "
 "instead of NickServ identification."
-msgstr ""
+msgstr "La rete \"%1\" supporta SASL.  Nella maggior parte dei casi, dovresti usare SASL anziché l'identificazione con NickServ."
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:977
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid "SASL support for \"%1\""
-msgstr ""
+msgstr "Supporto SASL per \"%1\""
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:981
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "SASL is a standardized way to log in and identify yourself to IRC servers."
-msgstr ""
+msgstr "SASL è un metodo standard per accedere ed identificarsi ai server IRC."
 
 #: ../src/qtui/settingspages/nickeditdlg.ui:13
 msgctxt "NickEditDlg|"
 msgid "Edit Nickname"
-msgstr "Modifica nickname"
+msgstr "Modifica nick"
 
 #: ../src/qtui/settingspages/nickeditdlg.ui:19
 msgctxt "NickEditDlg|"
@@ -7375,7 +7375,7 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "This changes the password for your username <b>%1</b> on the Quassel Core "
 "running at <b>%2</b>."
-msgstr ""
+msgstr "Quest'operazione cambia la password per il nome utente <b>%1</b> sul core Quassel in esecuzione su <b>%2</b>."
 
 #: ../src/qtui/passwordchangedlg.cpp:64
 msgctxt "PasswordChangeDlg|"
@@ -7392,12 +7392,12 @@ msgctxt "PasswordChangeDlg|"
 msgid ""
 "The core reported an error when trying to change your password. Make sure "
 "you entered your old password correctly!"
-msgstr ""
+msgstr "Il core ha segnalato un errore durante il tentativo di modificare la password. Assicurati di aver inserito correttamente la vecchia password!"
 
 #: ../src/core/postgresqlstorage.cpp:48
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL driver plugin not available for Qt. Installed drivers:"
-msgstr ""
+msgstr "Il plugin del driver PostgreSQL non è disponibile per Qt. Driver installati:"
 
 #: ../src/core/postgresqlstorage.cpp:68
 msgctxt "PostgreSqlStorage|"
@@ -7451,7 +7451,7 @@ msgstr "Prelevo un totale di %1 messaggi non letti dallo storico del registro pe
 #: ../src/qtui/ircconnectionwizard.cpp:53
 msgctxt "QObject|"
 msgid "Welcome to Quassel IRC"
-msgstr "Benvenuto/a in Quassel IRC"
+msgstr "Benvenuto in Quassel IRC"
 
 #: ../src/qtui/ircconnectionwizard.cpp:56
 msgctxt "QObject|"
@@ -7459,7 +7459,7 @@ msgid ""
 "This wizard will help you to set up your default identity and your IRC "
 "network connection.<br>This only covers basic settings. You can cancel this "
 "wizard any time and use the settings dialog for more detailed changes."
-msgstr "Questa procedura guidata ti aiuterà ad impostare la tua identità predefinita e la tua connessione alla rete IRC.<br>Essa comprende solo le impostazioni dibase. Puoi annullare la presente procedura in qualunque momento e utilizzare la finestra di dialogo delle impostazioni per maggiori dettagli."
+msgstr "Questa procedura guidata ti aiuterà ad impostare la tua identità predefinita e la tua connessione alla rete IRC.<br>Essa comprende solo le impostazioni di base. Puoi annullare la presente procedura in qualunque momento e utilizzare la finestra di dialogo delle impostazioni per maggiori dettagli."
 
 #: ../src/uisupport/qssparser.cpp:147 ../src/uisupport/qssparser.cpp:201
 #: ../src/uisupport/qssparser.cpp:359
@@ -7478,7 +7478,7 @@ msgstr "Assegnazione della regola della tavolozza non valida: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette role name: %1"
-msgstr "Nome regola della tavolozza sconosciuto: %1"
+msgstr "Nome regola della tavolozza sconosciuta: %1"
 
 #: ../src/uisupport/qssparser.cpp:228
 #, qt-format
@@ -7502,30 +7502,30 @@ msgstr "Condizione %1 non valida"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid message label: %1"
-msgstr "Etichetta messaggio non valida: %1"
+msgstr "Etichetta del messaggio non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:305
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid senderhash specification: %1"
-msgstr "Specifica hash del mittente non valida: %1"
+msgstr "Specifica relativa all'hash del mittente non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:309
 msgctxt "QssParser|"
 msgid "Senderhash can be at most \"0x0f\"!"
-msgstr "L'hash del mittente può essere al massimo «0x0f»!"
+msgstr "L'hash del mittente può essere al massimo \"0x0f\"!"
 
 #: ../src/uisupport/qssparser.cpp:325
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid format name: %1"
-msgstr "Nome formato non valido: %1"
+msgstr "Nome del formato non valido: %1"
 
 #: ../src/uisupport/qssparser.cpp:333
 #, qt-format
 msgctxt "QssParser|"
 msgid "Illegal IRC color specification (must be between 00 and 0f): %1"
-msgstr "Specifica del colore IRC illegale (deve essere compresa tra 00 e 0f): %1"
+msgstr "Specifica relativa al colore IRC illegale (deve essere compresa tra 00 e 0f): %1"
 
 #: ../src/uisupport/qssparser.cpp:342
 #, qt-format
@@ -7555,13 +7555,13 @@ msgstr "Stato lista chat %1 non valido"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid property declaration: %1"
-msgstr "Dichiarazione proprietà non valida: %1"
+msgstr "Dichiarazione relativa alla proprietà non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:476
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font property: %1"
-msgstr "Proprietà carattere non valida: %1"
+msgstr "Proprietà del tipo di carattere non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:482
 #, qt-format
@@ -7573,26 +7573,26 @@ msgstr "Proprietà ChatLine sconosciuta: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid boolean value: %1"
-msgstr ""
+msgstr "Valore booleano non valido: %1"
 
 #: ../src/uisupport/qssparser.cpp:537
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid palette color role specification: %1"
-msgstr "Specifica regola della tavolozza colore non valida: %1"
+msgstr "Specifica relativa alla regola della tavolozza del colore non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:544
 #, qt-format
 msgctxt "QssParser|"
 msgid "Unknown palette color role: %1"
-msgstr "Regola tavolozza colore non valida: %1"
+msgstr "Regola relativa alla tavolozza del colore sconosciuta: %1"
 
 #: ../src/uisupport/qssparser.cpp:551 ../src/uisupport/qssparser.cpp:574
 #: ../src/uisupport/qssparser.cpp:596
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid gradient declaration: %1"
-msgstr "Dichiarazione gradiente non valida: %1"
+msgstr "Dichiarazione relativa al gradiente non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:560 ../src/uisupport/qssparser.cpp:582
 #: ../src/uisupport/qssparser.cpp:606
@@ -7605,30 +7605,30 @@ msgstr "Gradiente non valido ferma la lista: %1"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font specification: %1"
-msgstr "Specifica carattere non valida: %1"
+msgstr "Specifica relativa al tipo di carattere non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:762
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font style specification: %1"
-msgstr "Specifica stile carattere non valida: %1"
+msgstr "Specifica relativa allo stile del carattere non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:776
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font weight specification: %1"
-msgstr "Specifica peso carattere non valida: %1"
+msgstr "Specifica relativa al peso del carattere non valida: %1"
 
 #: ../src/uisupport/qssparser.cpp:787
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid font size specification: %1"
-msgstr "Specifica dimensione font non valida: %1"
+msgstr "Specifica relativa alla dimensione del carattere non valida: %1"
 
 #: ../src/qtui/qtmultimedianotificationbackend.cpp:156
 msgctxt "QtMultimediaNotificationBackend::ConfigWidget|"
 msgid "Select Audio File"
-msgstr "Seleziona file audio"
+msgstr "Scegli file audio"
 
 #: ../src/qtui/qtmultimedianotificationconfigwidget.ui:14
 msgctxt "QtMultimediaNotificationConfigWidget|"
@@ -7649,7 +7649,7 @@ msgstr "Ascolta il suono selezionato"
 #: ../src/qtui/qtmultimedianotificationconfigwidget.ui:69
 msgctxt "QtMultimediaNotificationConfigWidget|"
 msgid "Select the sound file to play"
-msgstr "Seleziona il suono da riprodurre"
+msgstr "Scegli il suono da riprodurre"
 
 #. Supported icon theme names
 #: ../src/qtui/qtui.cpp:250
@@ -7672,17 +7672,17 @@ msgctxt "QtUi|"
 msgid ""
 "No supported icon theme installed, you'll lack icons! Supported are the "
 "KDE/Plasma themes Breeze, Breeze Dark and Oxygen."
-msgstr ""
+msgstr "Non è installato alcun tema per le icone, ti mancheranno le icone! Sono supportati i temi KDE/Plasma, Breeze, Breeze scuro e Oxygen."
 
 #: ../src/qtui/qtuiapplication.cpp:45
 msgctxt "QtUiApplication|"
 msgid "Could not load or upgrade client settings!"
-msgstr ""
+msgstr "Impossibile caricare o aggiornare le impostazioni del client!"
 
 #: ../src/common/quassel.cpp:325
 msgctxt "Quassel|"
 msgid "Specify the directory holding the client configuration."
-msgstr ""
+msgstr "Specifica la cartella contenente i file di configurazione del client."
 
 #: ../src/common/quassel.cpp:325 ../src/common/quassel.cpp:330
 #: ../src/common/quassel.cpp:365 ../src/common/quassel.cpp:366
@@ -7695,12 +7695,12 @@ msgctxt "Quassel|"
 msgid ""
 "Specify the directory holding configuration files, the SQlite database and "
 "the SSL certificate."
-msgstr ""
+msgstr "Specifica la cartella contenente i file di configurazione, la banca dati SQlite ed il certificato SSL."
 
 #: ../src/common/quassel.cpp:336
 msgctxt "Quassel|"
 msgid "Override the system icon theme ('breeze' is recommended)."
-msgstr ""
+msgstr "Sovrascrivi il tema delle icone di sistema ('breeze' è raccomandato)."
 
 #: ../src/common/quassel.cpp:336
 msgctxt "Quassel|"
@@ -7710,32 +7710,32 @@ msgstr "tema"
 #: ../src/common/quassel.cpp:337
 msgctxt "Quassel|"
 msgid "Load a custom application stylesheet."
-msgstr ""
+msgstr "Carica un foglio di stile personalizzato per l'applicazione."
 
 #: ../src/common/quassel.cpp:337
 msgctxt "Quassel|"
 msgid "file.qss"
-msgstr ""
+msgstr "file.qss"
 
 #: ../src/common/quassel.cpp:338
 msgctxt "Quassel|"
 msgid "Start the client minimized to the system tray."
-msgstr ""
+msgstr "Avvia il client minimizzato nell'area di notifica."
 
 #: ../src/common/quassel.cpp:345
 msgctxt "Quassel|"
 msgid "The address(es) quasselcore will listen on."
-msgstr ""
+msgstr "Indirizzi sul quale il core di Quassel resterà in ascolto."
 
 #: ../src/common/quassel.cpp:345
 msgctxt "Quassel|"
 msgid "<address>[,<address>[,...]]"
-msgstr ""
+msgstr "<address>[,<address>[,...]]"
 
 #: ../src/common/quassel.cpp:346
 msgctxt "Quassel|"
 msgid "The port quasselcore will listen at."
-msgstr ""
+msgstr "La porta sulla quale il core di Quassel resterà in ascolto."
 
 #: ../src/common/quassel.cpp:346 ../src/common/quassel.cpp:359
 msgctxt "Quassel|"
@@ -7745,44 +7745,44 @@ msgstr "porta"
 #: ../src/common/quassel.cpp:347
 msgctxt "Quassel|"
 msgid "Don't restore last core's state."
-msgstr ""
+msgstr "Non ripristinare l'ultimo stato del core."
 
 #: ../src/common/quassel.cpp:348
 msgctxt "Quassel|"
 msgid "Load configuration from environment variables."
-msgstr ""
+msgstr "Carica configurazione da variabili d'ambiente."
 
 #: ../src/common/quassel.cpp:349
 msgctxt "Quassel|"
 msgid "Switch storage backend (migrating data if possible)."
-msgstr ""
+msgstr "Cambia il motore di archiviazione (migrando i dati se possibile)."
 
 #: ../src/common/quassel.cpp:349
 msgctxt "Quassel|"
 msgid "backendidentifier"
-msgstr ""
+msgstr "identificatore del motore"
 
 #: ../src/common/quassel.cpp:350
 msgctxt "Quassel|"
 msgid "Select authentication backend."
-msgstr ""
+msgstr "Seleziona motore di autenticazione."
 
 #: ../src/common/quassel.cpp:350
 msgctxt "Quassel|"
 msgid "authidentifier"
-msgstr ""
+msgstr "identificatore d'autenticazione"
 
 #: ../src/common/quassel.cpp:351
 msgctxt "Quassel|"
 msgid "Starts an interactive session to add a new core user."
-msgstr ""
+msgstr "Avvia una sessione interattiva per aggiungere un nuovo utente al core."
 
 #: ../src/common/quassel.cpp:353
 msgctxt "Quassel|"
 msgid ""
 "Starts an interactive session to change the password of the user identified "
 "by <username>."
-msgstr ""
+msgstr "Avvia una sessione interattiva per cambiare la password dell'utente identificato come <username>."
 
 #: ../src/common/quassel.cpp:354
 msgctxt "Quassel|"
@@ -7794,31 +7794,31 @@ msgctxt "Quassel|"
 msgid ""
 "Use users' quasselcore username as ident reply. Ignores each user's "
 "configured ident setting."
-msgstr ""
+msgstr "Utilizza il nome utente del profilo sul core Quassel come risposta ident. Ignora le impostazioni per l'ident configurate da ciascun utente."
 
 #: ../src/common/quassel.cpp:356
 msgctxt "Quassel|"
 msgid "Enable internal ident daemon."
-msgstr ""
+msgstr "Abilita il demone ident interno."
 
 #: ../src/common/quassel.cpp:358
 msgctxt "Quassel|"
 msgid ""
 "The port quasselcore will listen at for ident requests. Only meaningful with"
 " --ident-daemon."
-msgstr ""
+msgstr "La porta sulla quale il core di Quassel resterà in ascolto per le richieste ident. Significativo solo con --ident-daemon."
 
 #: ../src/common/quassel.cpp:361
 msgctxt "Quassel|"
 msgid ""
 "Enable oidentd integration. In most cases you should also enable --strict-"
 "ident."
-msgstr ""
+msgstr "Abilita l'integrazione con oidentd. Nella maggior parte dei casi è necessario abilitare anche --strict-ident."
 
 #: ../src/common/quassel.cpp:362
 msgctxt "Quassel|"
 msgid "Set path to oidentd configuration file."
-msgstr ""
+msgstr "Imposta il percorso del file di configurazione di oidentd."
 
 #: ../src/common/quassel.cpp:362
 msgctxt "Quassel|"
@@ -7828,22 +7828,22 @@ msgstr "file"
 #: ../src/common/quassel.cpp:364
 msgctxt "Quassel|"
 msgid "Require SSL for remote (non-loopback) client connections."
-msgstr ""
+msgstr "Richiedi SSL per le connessioni client remote (non loopback)."
 
 #: ../src/common/quassel.cpp:365
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL certificate."
-msgstr ""
+msgstr "Specifica il percorso del certificato SSL."
 
 #: ../src/common/quassel.cpp:366
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL key."
-msgstr ""
+msgstr "Specifica il percorso della chiave SSL."
 
 #: ../src/common/quassel.cpp:373
 msgctxt "Quassel|"
 msgid "Supports one of Debug|Info|Warning|Error; default is Info."
-msgstr ""
+msgstr "Supporta solo uno di Debug|Info|Warning|Error; l'impostazione predefinita è Info."
 
 #: ../src/common/quassel.cpp:373
 msgctxt "Quassel|"
@@ -7853,49 +7853,49 @@ msgstr "livello"
 #: ../src/common/quassel.cpp:374
 msgctxt "Quassel|"
 msgid "Log to a file."
-msgstr ""
+msgstr "Registra su un file."
 
 #: ../src/common/quassel.cpp:376
 msgctxt "Quassel|"
 msgid "Log to syslog."
-msgstr ""
+msgstr "Registra su syslog."
 
 #: ../src/common/quassel.cpp:381
 msgctxt "Quassel|"
 msgid "Enable debug output."
-msgstr ""
+msgstr "Abilita output del debug."
 
 #: ../src/common/quassel.cpp:384
 msgctxt "Quassel|"
 msgid "Enables debugging for bufferswitches."
-msgstr ""
+msgstr "Abilita il debug per i cambi di finestra."
 
 #: ../src/common/quassel.cpp:385
 msgctxt "Quassel|"
 msgid "Enables debugging for models."
-msgstr ""
+msgstr "Abilita il debug per i modelli."
 
 #: ../src/common/quassel.cpp:390
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all raw IRC messages to debug log, including passwords!  "
 "In most cases you should also set --loglevel Debug"
-msgstr ""
+msgstr "Abilita la registrazione di tutti i messaggi IRC nel registro log, incluse le password! Nella maggior parte dei casi dovresti anche impostare --loglevel Debug"
 
 #: ../src/common/quassel.cpp:391
 msgctxt "Quassel|"
 msgid "Limit raw IRC logging to this network ID.  Implies --debug-irc"
-msgstr ""
+msgstr "Limita la registrazione dei messaggi IRC per l'ID di questa rete.  Implica --debug-irc"
 
 #: ../src/common/quassel.cpp:391
 msgctxt "Quassel|"
 msgid "database network ID"
-msgstr ""
+msgstr "ID rete nella banca dati"
 
 #: ../src/common/quassel.cpp:398
 msgctxt "Quassel|"
 msgid "Quassel IRC is a modern, distributed IRC client."
-msgstr ""
+msgstr "Quassel IRC è un client IRC moderno e distribuito."
 
 #: ../src/common/util.cpp:180
 msgctxt "Quassel::secondsToString()|"
@@ -7946,22 +7946,22 @@ msgstr "Nome reale"
 #: ../src/client/networkmodel.cpp:577
 msgctxt "QueryBufferItem|"
 msgid "Help status"
-msgstr ""
+msgstr "Stato di aiuto"
 
 #: ../src/client/networkmodel.cpp:577
 msgctxt "QueryBufferItem|"
 msgid "Available for help"
-msgstr ""
+msgstr "Disponibile per aiuto"
 
 #: ../src/client/networkmodel.cpp:580
 msgctxt "QueryBufferItem|"
 msgid "Service status"
-msgstr ""
+msgstr "Stato del servizio"
 
 #: ../src/client/networkmodel.cpp:590
 msgctxt "QueryBufferItem|"
 msgid "Not logged in"
-msgstr ""
+msgstr "Accesso non effettuato"
 
 #: ../src/client/networkmodel.cpp:596 ../src/client/networkmodel.cpp:603
 msgctxt "QueryBufferItem|"
@@ -7976,27 +7976,27 @@ msgstr "Identificato per questo nick"
 #: ../src/client/networkmodel.cpp:609
 msgctxt "QueryBufferItem|"
 msgid "Service Reply"
-msgstr ""
+msgstr "Risposta del servizio"
 
 #: ../src/client/networkmodel.cpp:613
 msgctxt "QueryBufferItem|"
 msgid "Hostmask"
-msgstr ""
+msgstr "Maschera host"
 
 #: ../src/client/networkmodel.cpp:617
 msgctxt "QueryBufferItem|"
 msgid "Operator"
-msgstr ""
+msgstr "Operatore"
 
 #: ../src/client/networkmodel.cpp:625
 msgctxt "QueryBufferItem|"
 msgid "Idling since"
-msgstr ""
+msgstr "Inattivo da"
 
 #: ../src/client/networkmodel.cpp:629
 msgctxt "QueryBufferItem|"
 msgid "Login time"
-msgstr ""
+msgstr "Data accesso"
 
 #: ../src/client/networkmodel.cpp:632
 msgctxt "QueryBufferItem|"
@@ -8027,12 +8027,12 @@ msgstr "Disconnessione..."
 #: ../src/qtui/resourcetreedlg.ui:14
 msgctxt "ResourceTreeDlg|"
 msgid "Resource Tree"
-msgstr ""
+msgstr "Albero delle risorse"
 
 #: ../src/qtui/resourcetreedlg.ui:20
 msgctxt "ResourceTreeDlg|"
 msgid "Shows the contents of the compiled-in resource tree."
-msgstr ""
+msgstr "Mostra il contenuto dell'albero delle risorse compilato."
 
 #: ../src/qtui/resourcetreedlg.cpp:53
 msgctxt "ResourceTreeDlg|"
@@ -8047,12 +8047,12 @@ msgstr "Dimensione"
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:13
 msgctxt "SaveIdentitiesDlg|"
 msgid "Sync With Core"
-msgstr "Sincronizzazione col core"
+msgstr "Sincronizzazione con il core"
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:21
 msgctxt "SaveIdentitiesDlg|"
 msgid "Syncing data with core, please wait..."
-msgstr "Sincronizzazione dei dati col core, attendere..."
+msgstr "Sincronizzazione dei dati con il core, attendere..."
 
 #: ../src/qtui/settingspages/saveidentitiesdlg.ui:81
 msgctxt "SaveIdentitiesDlg|"
@@ -8101,7 +8101,7 @@ msgid ""
 "<p>Verify the encrypted connection provides a valid certificate, increasing "
 "security.<br/>Uncheck if the IRC server uses a self-signed or invalid "
 "certificate.</p>"
-msgstr ""
+msgstr "<p>Verifica che la connessione crittografata fornisca un certificato valido, aumentando la sicurezza. Togli la spunta se il server IRC utilizza un certificato auto-firmato o non valido.</p>"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:114
 msgctxt "ServerEditDlg|"
@@ -8121,7 +8121,7 @@ msgstr "Versione SSL:"
 #: ../src/qtui/settingspages/servereditdlg.ui:166
 msgctxt "ServerEditDlg|"
 msgid "Use only TLSv1 unless you know what you are doing!"
-msgstr ""
+msgstr "Utilizza solo TLSv1 a meno che tu non sappia cosa stai facendo!"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:170
 msgctxt "ServerEditDlg|"
@@ -8146,7 +8146,7 @@ msgstr "Utilizza un proxy"
 #: ../src/qtui/settingspages/servereditdlg.ui:207
 msgctxt "ServerEditDlg|"
 msgid "Proxy Type:"
-msgstr "Tipo di proxy:"
+msgstr "Tipo proxy:"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:215
 msgctxt "ServerEditDlg|"
@@ -8188,7 +8188,7 @@ msgctxt "ServerEditDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
 "security."
-msgstr ""
+msgstr "Devi avere un core Quassel v0.13.0 o superiore per poter verificare la sicurezza della connessione."
 
 #: ../src/qtui/settingsdlg.ui:14
 msgctxt "SettingsDlg|"
@@ -8211,7 +8211,7 @@ msgctxt "SettingsDlg|"
 msgid ""
 "There are unsaved changes on the current configuration page. Would you like "
 "to apply your changes now?"
-msgstr "Ci sono delle modifiche non salvate nella pagina corrente. Vuoi salvare le impostazioni ora?"
+msgstr "Ci sono delle modifiche non salvate nella pagina corrente. Vuoi salvare le modifiche apportate alle impostazioni?"
 
 #: ../src/qtui/settingsdlg.cpp:137 ../src/qtui/settingsdlg.cpp:141
 #, qt-format
@@ -8227,7 +8227,7 @@ msgstr "Ricarica impostazioni"
 #: ../src/qtui/settingsdlg.cpp:221
 msgctxt "SettingsDlg|"
 msgid "Do you like to reload the settings, undoing your changes on this page?"
-msgstr "Si desidera ricaricare le impostazioni, annullando le modifiche su questa pagina?"
+msgstr "Vuoi davvero ricaricare le impostazioni, annullando le modifiche apportate a questa pagina?"
 
 #: ../src/qtui/settingsdlg.cpp:234
 msgctxt "SettingsDlg|"
@@ -8237,7 +8237,7 @@ msgstr "Ripristina predefiniti"
 #: ../src/qtui/settingsdlg.cpp:235
 msgctxt "SettingsDlg|"
 msgid "Do you like to restore the default values for this page?"
-msgstr "Si desidera ripristinare i valori predefiniti per questa pagina?"
+msgstr "Vuoi davvero ripristinare i valori predefiniti per questa pagina?"
 
 #: ../src/qtui/settingspagedlg.ui:14
 msgctxt "SettingsPageDlg|"
@@ -8263,7 +8263,7 @@ msgstr "Ricarica impostazioni"
 #: ../src/qtui/settingspagedlg.cpp:120
 msgctxt "SettingsPageDlg|"
 msgid "Do you like to reload the settings, undoing your changes on this page?"
-msgstr "Si desidera ricaricare le impostazioni, annullando le modifiche su questa pagina?"
+msgstr "Vuoi davvero ricaricare le impostazioni, annullando le modifiche apportate a questa pagina?"
 
 #: ../src/qtui/settingspagedlg.cpp:133
 msgctxt "SettingsPageDlg|"
@@ -8273,7 +8273,7 @@ msgstr "Ripristina predefiniti"
 #: ../src/qtui/settingspagedlg.cpp:134
 msgctxt "SettingsPageDlg|"
 msgid "Do you like to restore the default values for this page?"
-msgstr "Si desidera ripristinare i valori predefiniti per questa pagina?"
+msgstr "Vuoi davvero ripristinare i valori predefiniti per questa pagina?"
 
 #: ../src/qtui/settingspages/shortcutsmodel.cpp:105
 msgctxt "ShortcutsModel|"
@@ -8310,7 +8310,7 @@ msgstr "Predefinito:"
 #: ../src/qtui/settingspages/shortcutssettingspage.cpp:108
 msgctxt "ShortcutsSettingsPage|"
 msgid "None"
-msgstr "Nessuno"
+msgstr "Niente"
 
 #: ../src/qtui/settingspages/shortcutssettingspage.ui:82
 msgctxt "ShortcutsSettingsPage|"
@@ -8350,12 +8350,12 @@ msgstr "Server"
 #: ../src/qtui/simplenetworkeditor.ui:81
 msgctxt "SimpleNetworkEditor|"
 msgid "A list of IRC servers belonging to this network"
-msgstr "Una lista di server IRC che appartengono a questa rete"
+msgstr "Un elenco di server IRC che appartengono a questa rete"
 
 #: ../src/qtui/simplenetworkeditor.ui:96
 msgctxt "SimpleNetworkEditor|"
 msgid "Edit this server entry"
-msgstr "Modifica questa voce del server"
+msgstr "Modifica la voce relativa al server"
 
 #: ../src/qtui/simplenetworkeditor.ui:99
 msgctxt "SimpleNetworkEditor|"
@@ -8375,17 +8375,17 @@ msgstr "&Aggiungi..."
 #: ../src/qtui/simplenetworkeditor.ui:136
 msgctxt "SimpleNetworkEditor|"
 msgid "Remove this server entry from the list"
-msgstr "Rimuovi questa voce del server dalla lista"
+msgstr "Rimuove la voce relativa al server dall'elenco"
 
 #: ../src/qtui/simplenetworkeditor.ui:139
 msgctxt "SimpleNetworkEditor|"
 msgid "De&lete"
-msgstr "El&imina"
+msgstr "E&limina"
 
 #: ../src/qtui/simplenetworkeditor.ui:165
 msgctxt "SimpleNetworkEditor|"
 msgid "Move upwards in list"
-msgstr "Sposta in alto nella lista"
+msgstr "Sposta in alto nell'elenco"
 
 #: ../src/qtui/simplenetworkeditor.ui:168
 #: ../src/qtui/simplenetworkeditor.ui:182
@@ -8396,19 +8396,19 @@ msgstr "..."
 #: ../src/qtui/simplenetworkeditor.ui:179
 msgctxt "SimpleNetworkEditor|"
 msgid "Move downwards in list"
-msgstr "Sposta in basso nella lista"
+msgstr "Sposta in basso nell'elenco"
 
 #: ../src/qtui/simplenetworkeditor.ui:226
 msgctxt "SimpleNetworkEditor|"
 msgid "Join Channels Automatically"
-msgstr "Connetti automaticamente ai canali"
+msgstr "Entra automaticamente nei canali"
 
 #: ../src/qtui/simplenetworkeditor.ui:250
 msgctxt "SimpleNetworkEditor|"
 msgid ""
 "A list of IRC channels you will join automatically after connecting to the "
 "network"
-msgstr "Una lista di canali IRC a cui verrai connesso automaticamente dopo la connessione alla rete"
+msgstr "Un elenco di canali IRC nei quali entrerai automaticamente dopo la connessione alla rete"
 
 #: ../src/qtui/snorenotificationbackend.cpp:53
 msgctxt "SnoreNotificationBackend|"
@@ -8450,7 +8450,7 @@ msgctxt "SqlAuthenticator|"
 msgid ""
 "Do not authenticate against any remote service, but instead save a hashed "
 "and salted password in the database selected in the next step."
-msgstr ""
+msgstr "Non eseguire l'autenticazione in alcun servizio remoto ma salva solo l'hash con sale della password nella banca dati selezionata nel passaggio successivo."
 
 #: ../src/core/sqlitestorage.cpp:57
 msgctxt "SqliteStorage|"
@@ -8460,7 +8460,7 @@ msgid ""
 "via network. Use SQLite if your Quassel Core should store its data on the "
 "same machine it is running on, and if you only expect a few users to use "
 "your core."
-msgstr "SQLite è un database basato su file che non richiede alcuna impostazione. Si adatta egregiamente per database di piccole/medie dimensioni che non richiedono accesso tramite rete. Usa SQLite se il tuo core di Quassel deve archiviare i dati sulla stessa macchina in cui gira e solo se pensi che un basso numero di utenti usi il tuo core."
+msgstr "SQLite è un tipo di banca dati che non richiede alcuna impostazione. Si adatta egregiamente per banche dati di piccole e medie dimensioni che non hanno bisogno di accesso alla rete. Utilizza SQLite se il tuo core Quassel deve archiviare i dati sulla stessa macchina su cui gira e solo se prevedi un basso numero di utenti sul tuo core."
 
 #: ../src/qtui/sslinfodlg.ui:14
 msgctxt "SslInfoDlg|"
@@ -8475,7 +8475,7 @@ msgstr "<b>Nome host:</b>"
 #: ../src/qtui/sslinfodlg.ui:39
 msgctxt "SslInfoDlg|"
 msgid "<b>IP address:</b>"
-msgstr "<b>Indirizzo IP:</b> %1"
+msgstr "<b>Indirizzo IP:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:56
 msgctxt "SslInfoDlg|"
@@ -8485,12 +8485,12 @@ msgstr "<b>Cifratura:</b>"
 #: ../src/qtui/sslinfodlg.ui:73
 msgctxt "SslInfoDlg|"
 msgid "<b>Protocol:</b>"
-msgstr "<b>Protocollo:</b> %1"
+msgstr "<b>Protocollo:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:90
 msgctxt "SslInfoDlg|"
 msgid "<b>Certificate chain:</b>"
-msgstr "<b>Catena del certificato:</b>"
+msgstr "<b>Percorso certificazione:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:120
 msgctxt "SslInfoDlg|"
@@ -8515,17 +8515,17 @@ msgstr "<b>Unità organizzativa:</b>"
 #: ../src/qtui/sslinfodlg.ui:177 ../src/qtui/sslinfodlg.ui:299
 msgctxt "SslInfoDlg|"
 msgid "<b>Country:</b>"
-msgstr "<b>Paese:</b> %1"
+msgstr "<b>Paese:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:194 ../src/qtui/sslinfodlg.ui:316
 msgctxt "SslInfoDlg|"
 msgid "<b>State or province:</b>"
-msgstr "<b>Stato o provincia</b>"
+msgstr "<b>Stato o provincia:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:231 ../src/qtui/sslinfodlg.ui:353
 msgctxt "SslInfoDlg|"
 msgid "<b>Locality:</b>"
-msgstr "<b>Località:</b> %1"
+msgstr "<b>Località:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:242
 msgctxt "SslInfoDlg|"
@@ -8540,17 +8540,17 @@ msgstr "<b>Periodo di validità:</b>"
 #: ../src/qtui/sslinfodlg.ui:384
 msgctxt "SslInfoDlg|"
 msgid "<b>MD5 digest:</b>"
-msgstr "<b>Digest MD5:</b>"
+msgstr "<b>Impronta MD5:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:401
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA1 digest:</b>"
-msgstr "<b>Digest SHA1:</b>"
+msgstr "<b>Impronta SHA1:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:418
 msgctxt "SslInfoDlg|"
 msgid "<b>SHA256 digest:</b>"
-msgstr ""
+msgstr "<b>Impronta SHA256:</b>"
 
 #: ../src/qtui/sslinfodlg.ui:448
 msgctxt "SslInfoDlg|"
@@ -8576,7 +8576,7 @@ msgstr "%1 a %2"
 #: ../src/client/networkmodel.h:169
 msgctxt "StatusBufferItem|"
 msgid "Status Buffer"
-msgstr "Buffer di stato"
+msgstr "Finestra di stato"
 
 #: ../src/qtui/systemtray.cpp:43 ../src/qtui/systemtray.cpp:203
 msgctxt "SystemTray|"
@@ -8602,12 +8602,12 @@ msgid ""
 "will change the icon's color. You may choose to forcefully change color or "
 "even letting the icon blink, if desired.</p><p>Note that not all icon themes"
 " support changing the color of the tray icon.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Se abilitato, mostra un avviso nell'area di notifica o nel dock in caso di notifica.</p><p>L'avviso viene mostrato in modo differente a seconda dell'ambiente desktop che utilizzi. Ad esempio, Plasma fa lampeggiare l'icona nella barra di notifica mentre Windows cambia il colore dell'icona. Puoi scegliere di forzare il cambio di colore oppure lasciar lampeggiare l'icona, se preferisci.</p><p>Tieni presente che non tutti i temi supportano il cambio colore nell'area di notifica.</p></body></html>"
 
 #: ../src/qtui/systrayanimationconfigwidget.ui:31
 msgctxt "SystrayAnimationConfigWidget|"
 msgid "Alert tray icon and"
-msgstr ""
+msgstr "Icona di avviso nell'area di notifica e"
 
 #: ../src/qtui/systrayanimationconfigwidget.ui:54
 msgctxt "SystrayAnimationConfigWidget|"
@@ -8730,7 +8730,7 @@ msgstr "Whois"
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
 msgid "Request user information"
-msgstr "Richiedi informazioni utente"
+msgstr "Richiede informazioni utente"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:42
 msgctxt "ToolBarActionProvider|"
@@ -8800,7 +8800,7 @@ msgstr "Espelli/Bandisci"
 #: ../src/uisupport/toolbaractionprovider.cpp:48
 msgctxt "ToolBarActionProvider|"
 msgid "Remove and ban user from channel"
-msgstr "Espelle e bandisce l'utente dal canale"
+msgstr "Rimuove e bandisce l'utente dal canale"
 
 #: ../src/qtui/topicwidget.ui:32
 msgctxt "TopicWidget|"
@@ -8852,7 +8852,7 @@ msgstr "Interfaccia"
 #: ../src/qtui/settingspages/topicwidgetsettingspage.cpp:24
 msgctxt "TopicWidgetSettingsPage|"
 msgid "Topic Widget"
-msgstr "Elemento dell'argomento"
+msgstr "Widget argomento"
 
 #: ../src/common/transfer.cpp:92
 msgctxt "Transfer|"
@@ -9021,7 +9021,7 @@ msgstr "%DN%1%DN (ancora %2)"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
-msgstr "Netsplit tra %DH%1%DH e %DH%2%DH. Utenti usciti: "
+msgstr "Netsplit tra %DH%1%DH e %DH%2%DH. Utenti disconnessi: "
 
 #: ../src/client/networkmodel.cpp:953
 #, qt-format
