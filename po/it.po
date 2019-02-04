@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-02-03 01:51+0000\n"
+"PO-Revision-Date: 2019-02-03 23:19+0000\n"
 "Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -292,7 +292,7 @@ msgstr "Miglioramenti nel sistema di compilazione"
 #: ../src/uisupport/aboutdata.cpp:210
 msgctxt "AboutData|"
 msgid "Formatting support and other input line improvements, many other fixes"
-msgstr "Supporto alla formattazione ed a miglioramenti nella riga di digitazione, molte altre correzioni"
+msgstr "Supporto alla formattazione e miglioramenti nel campo per la digitazione del testo, molte altre correzioni"
 
 #: ../src/uisupport/aboutdata.cpp:212
 msgctxt "AboutData|"
@@ -506,7 +506,7 @@ msgstr "Tra i primi beta tester e scovatore di malfunzionamenti"
 #: ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Linewrap for input line"
-msgstr "Interruzione di linea per la riga di digitazione"
+msgstr "Ritorno a capo nel campo per la digitazione del testo"
 
 #: ../src/uisupport/aboutdata.cpp:281
 msgctxt "AboutData|"
@@ -1323,7 +1323,7 @@ msgstr "Nuovo messaggio"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:193
 msgctxt "BufferViewSettingsPage|"
 msgid "Highlight"
-msgstr "Evento"
+msgstr "Menzione"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:219
 msgctxt "BufferViewSettingsPage|"
@@ -1349,7 +1349,7 @@ msgstr "Eliminare la lista chat?"
 #, qt-format
 msgctxt "BufferViewSettingsPage|"
 msgid "Do you really want to delete the chat list \"%1\"?"
-msgstr "Vuoi davvero eliminare la lista chat «%1»?"
+msgstr "Sei sicuro di voler eliminare la lista chat \"%1\"?"
 
 #: ../src/qtui/bufferviewwidget.ui:26
 msgctxt "BufferViewWidget|"
@@ -1374,12 +1374,12 @@ msgstr "Dimensioni originali"
 #: ../src/qtui/bufferwidget.cpp:78
 msgctxt "BufferWidget|"
 msgid "Set Marker Line"
-msgstr "Imposta evidenziatore"
+msgstr "Imposta linea di demarcazione"
 
 #: ../src/qtui/bufferwidget.cpp:81
 msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
-msgstr "Vai all'evidenziatore"
+msgstr "Vai alla linea di demarcazione"
 
 #: ../src/client/networkmodel.cpp:719
 #, qt-format
@@ -1410,7 +1410,7 @@ msgstr "Non attivo, doppio clic per entrare"
 #: ../src/qtui/channellistdlg.ui:14
 msgctxt "ChannelListDlg|"
 msgid "Channel List"
-msgstr "Lista canali"
+msgstr "Elenco canali"
 
 #: ../src/qtui/channellistdlg.ui:38
 msgctxt "ChannelListDlg|"
@@ -1422,7 +1422,7 @@ msgctxt "ChannelListDlg|"
 msgid ""
 "Toggle between simple and advanced mode.\n"
 "Advanced mode allows one to pass search strings to the IRC Server."
-msgstr "Passa dalla modalità semplice a quella avanzata.\nLa modalità avanzata permette di passare stringhe di ricerca al server IRC."
+msgstr "Commuta tra la modalità semplice e quella avanzata.\nLa modalità avanzata permette di passare stringhe di ricerca al server IRC."
 
 #: ../src/qtui/channellistdlg.ui:62
 msgctxt "ChannelListDlg|"
@@ -1448,7 +1448,7 @@ msgid ""
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Lucida Grande'; font-size:13pt;\">SUPER EVIL CATASTROPHIC ERROR!!11</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lucida Grande'; font-size:13pt;\"></p></body></html>"
-msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Lucida Grande'; font-size:13pt;\">SUPER ERRORE DEMONIACO CATASTROFICO!!11</span></p>\n<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lucida Grande'; font-size:13pt;\"></p></body></html>"
+msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Lucida Grande'; font-size:13pt;\">SUPER INFERNALE ERRORE CATASTROFICO!!11</span></p>\n<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Lucida Grande'; font-size:13pt;\"></p></body></html>"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:14
 msgctxt "ChatMonitorSettingsPage|"
@@ -1497,7 +1497,7 @@ msgstr "Mostra:"
 msgctxt "ChatMonitorSettingsPage|"
 msgid ""
 "Show highlights in chatmonitor even if the originating buffer is ignored"
-msgstr "Mostra eventi nel monitor di chat anche se è stato ignorato il buffer da cui provengono"
+msgstr "Mostra le menzioni nel monitoraggio chat anche se questi sono originariamente ignorati"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:150
 msgctxt "ChatMonitorSettingsPage|"
@@ -1507,7 +1507,7 @@ msgstr "Mostra sempre i messaggi evidenziati"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:157
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show own messages"
-msgstr "Mostra i propri messaggi"
+msgstr "Mostra i miei messaggi"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:182
 msgctxt "ChatMonitorSettingsPage|"
@@ -1548,7 +1548,7 @@ msgstr "Interfaccia"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
-msgstr "Monitor di chat"
+msgstr "Monitoraggio chat"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
 msgctxt "ChatMonitorSettingsPage|"
@@ -1578,7 +1578,7 @@ msgstr "Mostra nome della rete"
 #: ../src/qtui/chatmonitorview.cpp:72
 msgctxt "ChatMonitorView|"
 msgid "Show Buffer Name"
-msgstr "Mostra nome del buffer"
+msgstr "Mostra nome del canale"
 
 #: ../src/qtui/chatmonitorview.cpp:80
 msgctxt "ChatMonitorView|"
@@ -1670,7 +1670,7 @@ msgstr "Messaggio canale:"
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:148
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Highlight foreground:"
-msgstr "Colore di primo piano per l'evento:"
+msgstr "Colore di primo piano per la menzione:"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:172
 msgctxt "ChatViewColorSettingsPage|"
@@ -1680,7 +1680,7 @@ msgstr "Messaggio comando:"
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:196
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Highlight background:"
-msgstr "Colore di sfondo per l'evento:"
+msgstr "Colore di sfondo per la menzione:"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:203
 msgctxt "ChatViewColorSettingsPage|"
@@ -1690,7 +1690,7 @@ msgstr "Messaggio server:"
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:227
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Marker line:"
-msgstr "Evidenziatore:"
+msgstr "Linea di demarcazione:"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:251
 msgctxt "ChatViewColorSettingsPage|"
@@ -1710,12 +1710,12 @@ msgstr "Colorat i mittenti nella chat in base al nick"
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:335
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Use Sender Coloring"
-msgstr "Usa colorazione del mittente"
+msgstr "Usa la colorazione del mittente"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:650
 msgctxt "ChatViewColorSettingsPage|"
 msgid "Own messages:"
-msgstr "Propri messaggi:"
+msgstr "Miei messaggi:"
 
 #: ../src/qtui/settingspages/chatviewcolorsettingspage.ui:689
 msgctxt "ChatViewColorSettingsPage|"
@@ -1765,7 +1765,7 @@ msgstr "..."
 #: ../src/qtui/chatviewsearchbar.ui:55
 msgctxt "ChatViewSearchBar|"
 msgid "case sensitive"
-msgstr "Maiuscole/minuscole"
+msgstr "distingui tra maiuscole e minuscole"
 
 #: ../src/qtui/chatviewsearchbar.ui:62
 msgctxt "ChatViewSearchBar|"
@@ -1780,7 +1780,7 @@ msgstr "cerca messaggio"
 #: ../src/qtui/chatviewsearchbar.ui:82
 msgctxt "ChatViewSearchBar|"
 msgid "ignore joins, parts, etc."
-msgstr "Ignora messaggi di entrata, uscita, ecc."
+msgstr "ignora messaggi di entrata, uscita, ecc."
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:14
 msgctxt "ChatViewSettingsPage|"
@@ -1818,12 +1818,12 @@ msgstr " hh:mm:ss"
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:79
 msgctxt "ChatViewSettingsPage|"
 msgid "Shows <brackets> around the names of senders"
-msgstr ""
+msgstr "Mostra <parentesi> intorno al nome del mittente"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:82
 msgctxt "ChatViewSettingsPage|"
 msgid "Show brackets around sender names"
-msgstr ""
+msgstr "Mostra parentesi intorno al nome del mittente"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:100
 msgctxt "ChatViewSettingsPage|"
@@ -1862,24 +1862,24 @@ msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when selecting "
 "another channel"
-msgstr "Imposta l'evidenziatore in basso nella finestra di chat corrente quando viene selezionato un altro canale"
+msgstr "Imposta la linea di demarcazione nella parte bassa della finestra di chat in uso quando viene selezionato un altro canale"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:197
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
-msgstr "Imposta evidenziatore automaticamente al passaggio tra le chat"
+msgstr "Imposta la linea di demarcazione automaticamente al passaggio tra le chat"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:213
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
-msgstr ""
+msgstr "Imposta la linea di demarcazione nella parte bassa della finestra di chat in uso quando Quassel perde il primo piano."
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:216
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
-msgstr ""
+msgstr "Imposta la linea di demarcazione automaticamente quando Quassel perde il primo piano"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:234
 msgctxt "ChatViewSettingsPage|"
@@ -2071,7 +2071,7 @@ msgstr "/JOIN attende un canale"
 #: ../src/client/clientuserinputhandler.cpp:106
 msgctxt "ClientUserInputHandler|"
 msgid "/QUERY expects at least a nick"
-msgstr "/QUERY attende come minimo un nick"
+msgstr "/QUERY attende almeno un nick"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:14
 msgctxt "ConnectionSettingsPage|"
@@ -2081,7 +2081,7 @@ msgstr "Configura la connessione IRC"
 #: ../src/qtui/settingspages/connectionsettingspage.ui:20
 msgctxt "ConnectionSettingsPage|"
 msgid "Enable Ping Timeout Detection"
-msgstr "Abilita rilevamento timeout del ping"
+msgstr "Abilita rilevamento scadenza del ping"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:37
 msgctxt "ConnectionSettingsPage|"
@@ -2190,7 +2190,7 @@ msgstr "Entrate/Uscite/Disconnessioni"
 #: ../src/uisupport/contextmenuactionprovider.cpp:48
 msgctxt "ContextMenuActionProvider|"
 msgid "Joins"
-msgstr "Ingressi"
+msgstr "Entrate"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:49
 msgctxt "ContextMenuActionProvider|"
@@ -2205,22 +2205,22 @@ msgstr "Disconnessioni"
 #: ../src/uisupport/contextmenuactionprovider.cpp:51
 msgctxt "ContextMenuActionProvider|"
 msgid "Nick Changes"
-msgstr "Cambio di nick"
+msgstr "Cambi di nick"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:52
 msgctxt "ContextMenuActionProvider|"
 msgid "Mode Changes"
-msgstr "Cambio di modi"
+msgstr "Cambi di modi"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:53
 msgctxt "ContextMenuActionProvider|"
 msgid "Day Changes"
-msgstr "Cambio del giorno"
+msgstr "Cambi del giorno"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:54
 msgctxt "ContextMenuActionProvider|"
 msgid "Topic Changes"
-msgstr "Cambio di argomenti"
+msgstr "Cambi di argomento"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:55
 msgctxt "ContextMenuActionProvider|"
@@ -2290,12 +2290,12 @@ msgstr "Revoca stato di operatore"
 #: ../src/uisupport/contextmenuactionprovider.cpp:82
 msgctxt "ContextMenuActionProvider|"
 msgid "Give Half-Operator Status"
-msgstr ""
+msgstr "Assegno stato di semi-operatore"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:83
 msgctxt "ContextMenuActionProvider|"
 msgid "Take Half-Operator Status"
-msgstr ""
+msgstr "Revoca stato di semi-operatore"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:84
 msgctxt "ContextMenuActionProvider|"
@@ -2335,7 +2335,7 @@ msgstr "Nascondi definitivamente chat"
 #: ../src/uisupport/contextmenuactionprovider.cpp:92
 msgctxt "ContextMenuActionProvider|"
 msgid "Show Channel List"
-msgstr "Mostra lista canali"
+msgstr "Mostra elenco canali"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:93
 msgctxt "ContextMenuActionProvider|"
@@ -2420,7 +2420,7 @@ msgstr "Impossibile ripristinare uno stato per un core non configurato!"
 #: ../src/core/core.cpp:307
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
-msgstr "Sto eseguendo restoreState() anche se le sessioni attive esistono!"
+msgstr "Sto eseguendo restoreState() anche se esistono sessioni attive!"
 
 #: ../src/core/core.cpp:352
 msgctxt "Core|"
@@ -2435,7 +2435,7 @@ msgstr "Utente o password dell'amministratore non impostati."
 #: ../src/core/core.cpp:359
 msgctxt "Core|"
 msgid "Could not setup storage!"
-msgstr "Impossibile configurare la memorizzazione!"
+msgstr "Impossibile configurare l'archiviazione!"
 
 #: ../src/core/core.cpp:364
 msgctxt "Core|"
@@ -2826,7 +2826,7 @@ msgstr "<b>Client non inizializzato!</b><br>È necessario inviare un messaggio d
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
-msgstr "SSL è obbligatorio ma è stato fatto un tentativo di connessione non SSL da %1"
+msgstr "È richiesto SSL ma è stato fatto un tentativo di connessione non SSL da %1"
 
 #: ../src/core/coreauthhandler.cpp:168
 msgctxt "CoreAuthHandler|"
@@ -3015,7 +3015,7 @@ msgstr "Impostazioni archiviazione"
 #: ../src/qtui/coreconfigwizard.cpp:458
 msgctxt "CoreConfigWizardPages::SyncPage|"
 msgid "Storing Your Settings"
-msgstr "Salvataggio delle impostazioni"
+msgstr "Archiviazione delle impostazioni"
 
 #: ../src/qtui/coreconfigwizard.cpp:459
 msgctxt "CoreConfigWizardPages::SyncPage|"
@@ -3123,7 +3123,7 @@ msgstr "Inizializzazione..."
 #: ../src/client/coreconnection.cpp:414
 msgctxt "CoreConnection|"
 msgid "Receiving session state"
-msgstr "Ricezione dello stato sessione"
+msgstr "Ricezione stato della sessione"
 
 #: ../src/client/coreconnection.cpp:416
 #, qt-format
@@ -3134,7 +3134,7 @@ msgstr "Sincronizzazione con %1..."
 #: ../src/client/coreconnection.cpp:446
 msgctxt "CoreConnection|"
 msgid "Receiving network states"
-msgstr "Ricezione degli stati della rete"
+msgstr "Ricezione stato delle reti"
 
 #: ../src/client/coreconnection.cpp:495
 #, qt-format
@@ -3173,7 +3173,7 @@ msgstr "Effettua ping verso il core remoto e si disconnette se non riceviamo una
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:44
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Ping timeout after"
-msgstr "Timeout del ping dopo"
+msgstr "Scadenza del ping dopo"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:60
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:157
@@ -3186,12 +3186,12 @@ msgctxt "CoreConnectionSettingsPage|"
 msgid ""
 "Only disconnect if the network socket gets closed by the operating system. "
 "This may take a long time after actually losing connectivity"
-msgstr "Disconnette solo se il socket di rete viene chiuso dal sistema operativo. Potrebbe richiedere molto tempo dopo la perdita effettiva della connettività"
+msgstr "Disconnette solo se la sessione di rete viene chiusa dal sistema operativo. Potrebbe richiedere molto tempo dopo l'effettiva perdita della connettività"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:103
 msgctxt "CoreConnectionSettingsPage|"
 msgid "Never time out actively"
-msgstr "Nessun time out attivo"
+msgstr "Nessuna scadenza attiva"
 
 #: ../src/qtui/settingspages/coreconnectionsettingspage.ui:113
 msgctxt "CoreConnectionSettingsPage|"
@@ -3273,22 +3273,22 @@ msgstr "Dettagli..."
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:93
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Rules"
-msgstr "Regole menzioni"
+msgstr "Regole per le menzioni"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:99
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Nicks"
-msgstr "Evidenzia nick"
+msgstr "Menzioni dei nick"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:127
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Case sensitive"
-msgstr "Maiuscole/minuscole"
+msgstr "Distingui tra maiuscole e minuscole"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:153
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Custom Highlights"
-msgstr "Eventi personalizzati"
+msgstr "Menzioni personalizzate"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:166
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:269
@@ -3346,7 +3346,7 @@ msgstr "Regole per ignorare le menzioni"
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:256
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Never Highlight For"
-msgstr ""
+msgstr "Non menzionare mai"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:33
 msgctxt "CoreHighlightSettingsPage|"
@@ -3388,7 +3388,7 @@ msgstr ""
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import highlight rules configured in <i>%1</i>."
-msgstr ""
+msgstr "Importa le regole per le menzioni configurate in <i>%1</i>."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:89
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:707
@@ -3399,7 +3399,7 @@ msgstr ""
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:95
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import Local"
-msgstr ""
+msgstr "Importa locali"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:684
@@ -3424,14 +3424,14 @@ msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, "
 "and <i>Channel</i> should be interpreted as <b>regular expressions</b> or "
 "just as keywords."
-msgstr ""
+msgstr "<b>RegEx</b>: Questa opzione determina se la regola per la menzione, il <i>mittente</i> ed il <i>canale</i> devono essere interpretati come <b>espressione regolare</b> o solo come parole chiave."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:150
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
 "<i>Channel</i> should be interpreted <b>case sensitive</b>."
-msgstr ""
+msgstr "<b>CS</b>: Questa opzione determina se la regola per la menzione, il <i>mittente</i> ed il <i>canale</i> devono tener conto della <b>differenza tra maiuscole e minuscole</b>."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:154
 msgctxt "CoreHighlightSettingsPage|"
@@ -3446,7 +3446,7 @@ msgid ""
 "!Wheatley!aperture@*</i><br />would match anything except for "
 "<i>Wheatley</i> with ident <i>aperture</i> or any nickname starting with "
 "<i>Announce</i></p>"
-msgstr ""
+msgstr "<p><b>Mittente</b>: Una lista di nomi nel formato <i>nick!ident@host</i> separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nick.</p><p><i>Esempio:</i><br /><i>Alice!*; Bob!*@example.com; Carol*!*; !Caroline!*</i><br />trova corrispondenza con <i>Alice</i>, <i>Bob</i> con maschera host <i>example.com</i> e qualsiasi nick inizi con <i>Carol</i> ad eccezione di <i>Caroline</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!Announce*!*; !Wheatley!aperture@*</i><br />troverà corrispondenza con tutto ad eccezione di <i>Wheatley</i> con ident <i>aperture</i> o qualsiasi nick inizi con <i>Announce</i></p>"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:168
 msgctxt "CoreHighlightSettingsPage|"
@@ -3459,7 +3459,7 @@ msgid ""
 "specified (implicit wildcard).</p><p><i>Example:</i><br /><i>!#quassel*; "
 "!#foobar</i><br />would match anything except for <i>#foobar</i> or any "
 "channel starting with <i>#quassel</i></p>"
-msgstr ""
+msgstr "<p><b>Canale</b>: Una lista canali/privati separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nome.</p><p><i>Esempio:</i><br /><i>#quassel*; #foobar; !#quasseldroid</i><br />trova corrispondenza con <i>#foobar</i> e qualsiasi canale inizi con <i>#quassel</i> ad eccezione di <i>#quasseldroid</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!#quassel*; !#foobar</i><br />troverà corrispondenza con tutto ad eccezione di <i>#foobar</i> o qualsiasi canale il cui nome inizi con <i>#quassel</i></p>"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:688
 msgctxt "CoreHighlightSettingsPage|"
@@ -3471,7 +3471,7 @@ msgstr "Devi avere un core Quassel v0.13.0 o superiore per configurare le menzio
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "You can still configure highlights for this device only in <i>%1</i>."
-msgstr ""
+msgstr "È ancora possibile configurare le menzioni solo per questo dispositivo in <i>%1</i>."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:694
 msgctxt "CoreHighlightSettingsPage|"
@@ -3487,7 +3487,7 @@ msgstr "Nessuna menzione da importare"
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlight rules in <i>%1</i>."
-msgstr ""
+msgstr "Nessuna regola per menzione in <i>%1</i>."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:720
 msgctxt "CoreHighlightSettingsPage|"
@@ -3498,7 +3498,7 @@ msgstr "Importare menzioni?"
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import all highlight rules from <i>%1</i>?"
-msgstr ""
+msgstr "Importare tutte le regole per le menzioni da <i>%1</i>?"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:757
 msgctxt "CoreHighlightSettingsPage|"
@@ -3509,13 +3509,13 @@ msgstr "Menzioni importate"
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "%1 highlight rules successfully imported."
-msgstr ""
+msgstr "%1 regole per le menzioni importate con successo."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.h:54
 #: ../src/qtui/settingspages/corehighlightsettingspage.h:62
 msgctxt "CoreHighlightSettingsPage|"
 msgid "highlight rule"
-msgstr "regola evidenziazione"
+msgstr "regola menzione"
 
 #: ../src/qtui/coreinfodlg.ui:14
 msgctxt "CoreInfoDlg|"
@@ -3641,28 +3641,28 @@ msgstr "Connessione non riuscita: %1"
 #: ../src/core/corenetwork.cpp:582
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
-msgstr ""
+msgstr "Richiesta dell'elenco delle funzionalità..."
 
 #: ../src/core/corenetwork.cpp:1093
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
-msgstr ""
+msgstr "Autenticazione SASL EXTERNAL non supportata"
 
 #: ../src/core/corenetwork.cpp:1105
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
-msgstr ""
+msgstr "Autenticazione SASL PLAIN non supportata"
 
 #: ../src/core/corenetwork.cpp:1217
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
-msgstr ""
+msgstr "Impossibile negoziare alcune funzionalità, riprovo singolarmente (%1)..."
 
 #: ../src/core/corenetwork.cpp:1231
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
-msgstr ""
+msgstr "Nessuna funzionalità disponibile"
 
 #: ../src/core/corenetwork.cpp:1237
 #, qt-format
@@ -3738,7 +3738,7 @@ msgctxt "CoreSessionEventProcessor|"
 msgid ""
 "No free and valid nicks in nicklist found. use: /nick <othernick> to "
 "continue"
-msgstr "Nessun nick libero e valido trovato nella lista dei nick. Utilizza: /nick <altronick> per continuare"
+msgstr "Nessun nick libero e valido trovato nella lista dei nick. Usa: /nick <altronick> per continuare"
 
 #: ../src/core/coresessioneventprocessor.cpp:800
 msgctxt "CoreSessionEventProcessor|"
@@ -3840,7 +3840,7 @@ msgstr "Termino la sessione..."
 #: ../src/core/coretransfer.cpp:64
 msgctxt "CoreTransfer|"
 msgid "Socket closed while still transferring!"
-msgstr "Il socket è stato chiuso durante il trasferimento!"
+msgstr "La sessione è stata chiusa durante il trasferimento!"
 
 #: ../src/core/coretransfer.cpp:75
 #, qt-format
@@ -3851,7 +3851,7 @@ msgstr "Errore di connessione DCC: %1"
 #: ../src/core/coretransfer.cpp:115
 msgctxt "CoreTransfer|"
 msgid "Reverse DCC not supported yet!"
-msgstr "Reverse DCC non è ancora supportato!"
+msgstr "DCC inverso non è ancora supportato!"
 
 #: ../src/core/coretransfer.cpp:160
 msgctxt "CoreTransfer|"
@@ -3882,14 +3882,14 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
 " plugin."
-msgstr ""
+msgstr "Errore: il plugin del fornitore QCA non è stato trovato. Di solito è fornito dal plugin qca-ossl."
 
 #: ../src/core/coreuserinputhandler.cpp:203
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /delkey <nick|channel> deletes the encryption key for nick or "
 "channel or just /delkey when in a channel or query."
-msgstr "[uso] /delkey <nick|channel> elimina la chiave di cifratura per il nick o il canale, oppure solo /delkey se in un canale o durante una ricerca."
+msgstr "[uso] /delkey <nick|channel> elimina la chiave di cifratura per il nick o il canale oppure soltanto /delkey quando in un canale o in una conversazione privata."
 
 #: ../src/core/coreuserinputhandler.cpp:211
 #: ../src/core/coreuserinputhandler.cpp:728
@@ -3918,18 +3918,18 @@ msgstr "Errore: l'impostazione di una chiave di cifratura richiede che Quassel s
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
-msgstr ""
+msgstr "[utilizzo] /keyx [<nick>] Avvia uno scambio di chiavi DH1080 con il destinatario."
 
 #: ../src/core/coreuserinputhandler.cpp:390
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
-msgstr ""
+msgstr "È possibile scambiare le chiavi solo in una finestra privata."
 
 #: ../src/core/coreuserinputhandler.cpp:400
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Failed to initiate key exchange with %1."
-msgstr ""
+msgstr "Impossibile avviare lo scambio di chiavi con %1."
 
 #: ../src/core/coreuserinputhandler.cpp:405
 #, qt-format
@@ -3964,7 +3964,7 @@ msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
 "channel. /setkey <key> when in a channel or query buffer sets the key for "
 "it."
-msgstr "[uso] /setkey <nick|channel> <key> imposta la chiave di cifratura per il nick o il canale. /setkey <key> se in un canale, o durante il buffer di ricerca, imposta la chiave per esso."
+msgstr "[uso] /setkey <nick|channel> <key> imposta la chiave di cifratura per il nick o il canale. /setkey <key> imposta la chiave anche senza specificare il canale/privato quando è la finestra attiva."
 
 #: ../src/core/coreuserinputhandler.cpp:682
 #, qt-format
@@ -3977,7 +3977,7 @@ msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
-msgstr "[uso] /delkey <nick|channel> elimina la chiave di cifratura per il nick o il canale, oppure solo /delkey se in un canale o durante una ricerca."
+msgstr "[uso] /delkey <nick|channel> mostra la chiave di cifratura per il nick o il canale oppure soltanto /delkey quando in un canale o in una conversazione privata."
 
 #: ../src/core/coreuserinputhandler.cpp:735
 #, qt-format
@@ -4056,7 +4056,7 @@ msgstr "IP in uscita:"
 #: ../src/qtui/settingspages/dccsettingspage.ui:164
 msgctxt "DccSettingsPage|"
 msgid "DCC send timeout:"
-msgstr "Scadenza invio DCC:"
+msgstr "Scadenza per invio DCC:"
 
 #: ../src/qtui/settingspages/dccsettingspage.ui:171
 msgctxt "DccSettingsPage|"
@@ -4206,7 +4206,7 @@ msgstr "Registro di debug"
 #: ../src/qtui/dockmanagernotificationbackend.cpp:196
 msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
-msgstr ""
+msgstr "Contrassegna la voce dockmanager"
 
 #: ../src/core/eventstringifier.cpp:232 ../src/core/eventstringifier.cpp:431
 msgctxt "EventStringifier|"
@@ -4223,7 +4223,7 @@ msgstr "%1 ti ha invitato nel canale %2"
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
-msgstr "%1 ha cambiato argomento per il canale %2 in: \"%3\""
+msgstr "%1 ha cambiato argomento di %2 in: \"%3\""
 
 #: ../src/core/eventstringifier.cpp:405
 msgctxt "EventStringifier|"
@@ -4333,7 +4333,7 @@ msgstr "Il canale %1 ha %2 utenti. L'argomento è: \"%3\""
 #: ../src/core/eventstringifier.cpp:611
 msgctxt "EventStringifier|"
 msgid "End of channel list"
-msgstr "Lista canali terminata"
+msgstr "Elenco canali terminato"
 
 #: ../src/core/eventstringifier.cpp:627
 #, qt-format
@@ -4490,7 +4490,7 @@ msgstr "Modulo"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:20
 msgctxt "HighlightSettingsPage|"
 msgid "Custom Highlights"
-msgstr "Eventi personalizzati"
+msgstr "Menzioni personalizzate"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:33
 msgctxt "HighlightSettingsPage|"
@@ -4500,7 +4500,7 @@ msgstr "Abilitato"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:38
 msgctxt "HighlightSettingsPage|"
 msgid "Highlight"
-msgstr "Evento"
+msgstr "Menzione"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:43
 msgctxt "HighlightSettingsPage|"
@@ -4530,7 +4530,7 @@ msgstr "Rimuovi"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:101
 msgctxt "HighlightSettingsPage|"
 msgid "Highlight Nicks"
-msgstr "Evidenzia nick"
+msgstr "Menzioni dei nick"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:107
 msgctxt "HighlightSettingsPage|"
@@ -4550,7 +4550,7 @@ msgstr "Nessuno"
 #: ../src/qtui/settingspages/highlightsettingspage.ui:131
 msgctxt "HighlightSettingsPage|"
 msgid "Case sensitive"
-msgstr "Maiuscole/minuscole"
+msgstr "Distingui tra maiuscole e minuscole"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:156
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:94
@@ -4598,7 +4598,7 @@ msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule and "
 "<i>Channel</i> should be interpreted as <b>regular expressions</b> or just "
 "as keywords."
-msgstr ""
+msgstr "<b>RegEx</b>: Questa opzione determina se la regola per la menzione ed il <i>canale</i> devono essere interpretati come <b>espressione regolare</b> o solo come parole chiave."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:56
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:158
@@ -4606,7 +4606,7 @@ msgctxt "HighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule and <i>Channel</i> "
 "should be interpreted <b>case sensitive</b>."
-msgstr ""
+msgstr "<b>CS</b>: Questa opzione determina se la regola per la menzione ed il <i>canale</i> deve <b>distinguere tra maiuscole e minuscole</b>."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:62
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:160
@@ -4620,7 +4620,7 @@ msgid ""
 "specified (implicit wildcard).</p><p><i>Example:</i><br /><i>!#quassel*; "
 "!#foobar</i><br />would match anything except for <i>#foobar</i> or any "
 "channel starting with <i>#quassel</i></p>"
-msgstr ""
+msgstr "<p><b>Canale</b>: Una lista canali/privati separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nome.</p><p><i>Esempio:</i><br /><i>#quassel*; #foobar; !#quasseldroid</i><br />trova corrispondenza con <i>#foobar</i> e qualsiasi canale inizi con <i>#quassel</i> ad eccezione di <i>#quasseldroid</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!#quassel*; !#foobar</i><br />troverà corrispondenza con tutto ad eccezione di <i>#foobar</i> o qualsiasi canale il cui nome inizi con <i>#quassel</i></p>"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:90
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:273
@@ -4643,13 +4643,13 @@ msgctxt "HighlightSettingsPage|"
 msgid ""
 "These highlights will keep working for now, but you should move to the "
 "improved highlight rules when you can."
-msgstr ""
+msgstr "Queste menzioni continueranno a funzionare per ora, ma dovresti passare al migliorato sistema di menzione appena possibile."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:276
 #, qt-format
 msgctxt "HighlightSettingsPage|"
 msgid "Configure the new style of highlights in <i>%1</i>."
-msgstr ""
+msgstr "Configura il nuovo stile per le menzioni in <i>%1</i>."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:278
 msgctxt "HighlightSettingsPage|"
@@ -4659,18 +4659,18 @@ msgstr "Menzioni"
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:283
 msgctxt "HighlightSettingsPage|"
 msgid "Local Highlights vs. Remote Highlights"
-msgstr ""
+msgstr "Menzioni locali vs. menzioni remote"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:286
 msgctxt "HighlightSettingsPage|"
 msgid "Highlights configured on this page only apply to your current device."
-msgstr ""
+msgstr "Le menzioni configurate in questa pagina si applicano solo all'attuale dispositivo ."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:288
 #, qt-format
 msgctxt "HighlightSettingsPage|"
 msgid "Configure highlights for all of your devices in <i>%1</i>."
-msgstr ""
+msgstr "Configura le menzioni per tutti i tuoi dispositivi in <i>%1</i>."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:290
 msgctxt "HighlightSettingsPage|"
@@ -4680,7 +4680,7 @@ msgstr "Menzioni remote"
 #: ../src/qtui/settingspages/highlightsettingspage.h:47
 msgctxt "HighlightSettingsPage|"
 msgid "highlight rule"
-msgstr "regola evidenziazione"
+msgstr "regola menzione"
 
 #: ../src/core/identserver.cpp:40
 #, qt-format
@@ -4805,27 +4805,27 @@ msgstr "<vuoto>"
 #: ../src/common/identity.cpp:176
 msgctxt "Identity|"
 msgid "Gone fishing."
-msgstr "Sono a pescare."
+msgstr "Sono andato a pescare."
 
 #: ../src/common/identity.cpp:180
 msgctxt "Identity|"
 msgid "Not here. No, really. not here!"
-msgstr "Non qui. No, davvero, non qui!"
+msgstr "Non sono qui. No, davvero. Non sono qui!"
 
 #: ../src/common/identity.cpp:183
 msgctxt "Identity|"
 msgid "All Quassel clients vanished from the face of the earth..."
-msgstr "Tutti i client Quassel sono magicamente spariti dalla faccia della Terra..."
+msgstr "Tutti i client Quassel sono spariti dalla faccia della Terra..."
 
 #: ../src/common/identity.cpp:186
 msgctxt "Identity|"
 msgid "Kindergarten is elsewhere!"
-msgstr "Qui non siamo all'asilo!"
+msgstr "Non siamo all'asilo!"
 
 #: ../src/common/identity.cpp:187 ../src/common/identity.cpp:188
 msgctxt "Identity|"
 msgid "https://quassel-irc.org - Chat comfortably. Anywhere."
-msgstr "https://quassel-irc.org - Chat confortevole. Ovunque."
+msgstr "https://quassel-irc.org - La chat diventa comoda. Ovunque."
 
 #: ../src/qtui/settingspages/identityeditwidget.ui:30
 msgctxt "IdentityEditWidget|"
@@ -5332,7 +5332,7 @@ msgid ""
 "<i>!#quassel*; !#foobar</i>\n"
 "<br />\n"
 "would match anything except for <i>#foobar</i> or any channel starting with <i>#quassel</i></p>"
-msgstr ""
+msgstr "<p><b>Regola per l'ambito:</b></p>\n<p>Una regola per l'ambito è una lista separata da punto e virgola dei nomi delle <i>reti</i> o dei <i>canali</i>.</p>\n<p><i>Esempio:</i>\n<br />\n<i>#quassel*; #foobar; !#quasseldroid</i>\n<br />\ntrova corrispondenza con <i>#foobar</i> e qualsiasi canale il cui nome inizi con <i>#quassel</i> ad eccezione di <i>#quasseldroid</i>\n<br />\n<p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p>\n<p><i>Esempio:</i>\n<br />\n<i>!#quassel*; !#foobar</i>\n<br />\ntroverà corrispondenza con tutto ad eccezione di <i>#foobar</i> o qualsiasi canale il cui nome inizi con <i>#quassel</i></p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:221
 msgctxt "IgnoreListEditDlg|"
@@ -5353,7 +5353,7 @@ msgctxt "IgnoreListModel|"
 msgid ""
 "<b>Enable / Disable:</b><br />Only enabled rules are filtered.<br />For "
 "dynamic rules, disabling actually shows the filtered messages again"
-msgstr "<b>Abilita / Disabilita:</b><br />Vengono filtrate solo le regole abilitate.<br />Se vengono disabilitate le regole dinamiche, i messaggi filtrati sono nuovamente visibili."
+msgstr "<b>Abilita / Disabilita:</b><br />Vengono filtrate solo le regole abilitate.<br />Se vengono disabilitate le regole dinamiche, i messaggi filtrati sono nuovamente visibili"
 
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:72
 msgctxt "IgnoreListModel|"
@@ -5366,7 +5366,7 @@ msgid ""
 "\"*@foobar.com\" matches any sender from host foobar.com<br />    "
 "\"stupid!.+\" (RegEx) matches any sender with nickname \"stupid\" from any "
 "host<br />"
-msgstr "<b>Regola di ignore:</b><br />A seconda del tipo di regola, il testo viene confrontato con:<br /><br />- <u>il contenuto del messaggio:</u><br /><i>Esempio:<i><br />    «*foobar*» coincide a qualsiasi testo contenente  la parola\"foobar\"<br /><br />- <u>la stringa del mittente <i>nick!ident@host.name<i></u><br /><i>Esempio:</i><br />     «*@foobar.com» coincide con ogni mittente dall'host foobar.com<br />    «stupido!.+» (RegEx) coincide con ogni mittente il cui nick è «stupido» da ogni host<br />"
+msgstr "<b>Regola per ignorare:</b><br />A seconda del tipo di regola, il testo viene confrontato con:<br /><br />- <u>il contenuto del messaggio:</u><br /><i>Esempio:<i><br />    \"*foobar*\" trova corrispondenza con qualsiasi testo contenente la parola \"foobar\"<br /><br />- <u>la stringa del mittente <i>nick!ident@host.name<i></u><br /><i>Esempio:</i><br />     \"*@foobar.com\" trova corrispondenza con ogni mittente dall'host foobar.com<br />    \"stupido!.+\" (RegEx) trova corrispondenza con ogni mittente il cui nick è \"stupido\" da qualunque host<br />"
 
 #: ../src/qtui/settingspages/ignorelistmodel.cpp:88
 msgctxt "IgnoreListModel|"
@@ -5565,7 +5565,7 @@ msgstr "Elimina colore"
 #: ../src/qtui/inputwidget.cpp:133
 msgctxt "InputWidget|"
 msgid "Focus Input Line"
-msgstr "Seleziona campo digitazione del testo"
+msgstr "Seleziona campo per la digitazione del testo"
 
 #: ../src/qtui/inputwidget.cpp:585
 msgctxt "InputWidget|"
@@ -5605,7 +5605,7 @@ msgstr "Mostra pulsanti per lo stile"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:98
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables (limited) Emacs key bindings in the input field."
-msgstr "Abilita associazione tasti (limitata) di Emacs nella barra di input."
+msgstr "Abilita associazione tasti (limitata) di Emacs nel campo per la digitazione del testo."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:101
 msgctxt "InputWidgetSettingsPage|"
@@ -5615,12 +5615,12 @@ msgstr "Associazioni tasti Emacs"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:114
 msgctxt "InputWidgetSettingsPage|"
 msgid "Enables line wrapping for input."
-msgstr ""
+msgstr "Abilita il ritorno a capo nel campo per la digitazione del testo."
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:117
 msgctxt "InputWidgetSettingsPage|"
 msgid "Line wrapping"
-msgstr ""
+msgstr "Ritorno a capo"
 
 #: ../src/qtui/settingspages/inputwidgetsettingspage.ui:130
 msgctxt "InputWidgetSettingsPage|"
@@ -5670,7 +5670,7 @@ msgstr "Interfaccia"
 #: ../src/qtui/settingspages/inputwidgetsettingspage.cpp:24
 msgctxt "InputWidgetSettingsPage|"
 msgid "Input Widget"
-msgstr "Oggetto per l'input"
+msgstr "Elemento per la digitazione"
 
 #: ../src/common/internalpeer.cpp:52 ../src/common/internalpeer.cpp:57
 msgctxt "InternalPeer|"
@@ -5851,7 +5851,7 @@ msgstr "Messaggi non letti:"
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:193
 msgctxt "ItemViewSettingsPage|"
 msgid "Highlight:"
-msgstr "Evento:"
+msgstr "Menzione:"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.ui:217
 msgctxt "ItemViewSettingsPage|"
@@ -5906,7 +5906,7 @@ msgstr "Messaggi non letti"
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:41
 msgctxt "ItemViewSettingsPage|"
 msgid "Highlight"
-msgstr "Evento"
+msgstr "Menzione"
 
 #: ../src/qtui/settingspages/itemviewsettingspage.cpp:42
 msgctxt "ItemViewSettingsPage|"
@@ -5918,8 +5918,8 @@ msgstr "Altra attività"
 msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
-msgstr[0] "%n evento in attesa"
-msgstr[1] "%n eventi in attesa"
+msgstr[0] "%n menzione in attesa"
+msgstr[1] "%n menzioni in attesa"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:76
 msgctxt "KeySequenceButton|"
@@ -5962,7 +5962,7 @@ msgstr "Maiusc"
 msgctxt ""
 "KeySequenceWidget|What the user inputs now will be taken as the new shortcut"
 msgid "Input"
-msgstr "Input"
+msgstr "Riga di digitazione"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:283
 msgctxt "KeySequenceWidget|No shortcut defined"
@@ -6023,17 +6023,17 @@ msgstr "Porta"
 #: ../src/core/ldapauthenticator.cpp:84
 msgctxt "LdapAuthenticator|"
 msgid "Bind DN"
-msgstr ""
+msgstr "DN bind"
 
 #: ../src/core/ldapauthenticator.cpp:84
 msgctxt "LdapAuthenticator|"
 msgid "Bind Password"
-msgstr ""
+msgstr "Password bind"
 
 #: ../src/core/ldapauthenticator.cpp:84
 msgctxt "LdapAuthenticator|"
 msgid "Base DN"
-msgstr ""
+msgstr "DN base"
 
 #: ../src/core/ldapauthenticator.cpp:85
 msgctxt "LdapAuthenticator|"
@@ -7138,7 +7138,7 @@ msgstr "Specifica con quale codifica i tuoi messaggi verranno inviati.\nUTF-8 do
 #: ../src/qtui/settingspages/networkssettingspage.ui:916
 msgctxt "NetworksSettingsPage|"
 msgid "Send messages in:"
-msgstr "Invia messaggi utilizzando:"
+msgstr "Invia messaggi in:"
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:943
 #: ../src/qtui/settingspages/networkssettingspage.ui:963
@@ -7543,13 +7543,13 @@ msgstr "Proplist %1 non valida"
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist item type %1"
-msgstr "Tipo elemento della lista chat non valido: %1"
+msgstr "Tipo elemento della lista chat non valido %1"
 
 #: ../src/uisupport/qssparser.cpp:409
 #, qt-format
 msgctxt "QssParser|"
 msgid "Invalid chatlist state %1"
-msgstr "Stato lista chat %1 non valido"
+msgstr "Stato lista chat non valido %1"
 
 #: ../src/uisupport/qssparser.cpp:438
 #, qt-format
@@ -8423,12 +8423,12 @@ msgstr "Modulo"
 #: ../src/qtui/snorentificationconfigwidget.ui:29
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Snore"
-msgstr ""
+msgstr "Snore"
 
 #: ../src/qtui/snorentificationconfigwidget.ui:40
 msgctxt "SnoreNotificationConfigWidget|"
 msgid "Enable Snore"
-msgstr ""
+msgstr "Abilita Snore"
 
 #: ../src/qtui/settingspages/sonnetsettingspage.cpp:28
 msgctxt "SonnetSettingsPage|"
@@ -9052,8 +9052,8 @@ msgstr[1] "%n operatori"
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
 msgid_plural "%n Half-Op(s)"
-msgstr[0] "%n half-op"
-msgstr[1] "%n half-op"
+msgstr[0] "%n semi-operatore"
+msgstr[1] "%n semi-operatori"
 
 #: ../src/client/networkmodel.cpp:961
 #, qt-format
