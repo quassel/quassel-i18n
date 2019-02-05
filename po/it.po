@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-02-03 23:19+0000\n"
+"PO-Revision-Date: 2019-02-04 13:18+0000\n"
 "Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -1182,7 +1182,7 @@ msgstr "<p> %1 - %2 </p>"
 #: ../src/uisupport/bufferview.cpp:257
 msgctxt "BufferView|"
 msgid "Merge buffers permanently?"
-msgstr "Unire definitivamente i buffer?"
+msgstr "Unire definitivamente le finestre?"
 
 #: ../src/uisupport/bufferview.cpp:258
 #, qt-format
@@ -1190,7 +1190,7 @@ msgctxt "BufferView|"
 msgid ""
 "Do you want to merge the buffer \"%1\" permanently into buffer \"%2\"?\n"
 " This cannot be reversed!"
-msgstr "Vuoi unire definitivamente il buffer «%1» al buffer «%2»?\n Questa operazione non può essere annullata."
+msgstr "Sei sicuro di voler unire definitivamente il contenuto della finestra \"%1\" con quello di \"%2\"?\n Questa operazione non può essere annullata."
 
 #: ../src/uisupport/bufferview.cpp:715
 msgctxt "BufferViewDock|"
@@ -1258,7 +1258,7 @@ msgctxt "BufferViewSettingsPage|"
 msgid ""
 "This option is not available when all Networks are visible.\n"
 "In this mode no separate status buffer is displayed."
-msgstr "Questa opzione non è disponibile quando 'Reti' è impostato su 'Tutte'.\nIn questa modalità non verrà mostrato alcun buffer di stato."
+msgstr "Questa opzione non è disponibile quando 'Reti' è impostato su 'Tutte'.\nIn questa modalità non vengono visualizzate le finestre di stato separatamente."
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:114
 msgctxt "BufferViewSettingsPage|"
@@ -1354,7 +1354,7 @@ msgstr "Sei sicuro di voler eliminare la lista chat \"%1\"?"
 #: ../src/qtui/bufferviewwidget.ui:26
 msgctxt "BufferViewWidget|"
 msgid "BufferView"
-msgstr "VistaBuffer"
+msgstr "Vista finestra"
 
 #: ../src/qtui/bufferwidget.cpp:74
 msgctxt "BufferWidget|"
@@ -1470,7 +1470,7 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Operation modes:</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; text-decoration: underline;\">Opt-In:</span> <span style=\" font-weight:400;\">Only buffers on the right side are shown in chatmonitor</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Opt-Out:</span> Buffers on the right side will be ignored in chatmonitor</p></body></html>"
-msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\"><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Modalità operative:</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; text-decoration: underline;\">Permetti:</span> <span style=\" font-weight:400;\">solo i buffer sulla destra verranno mostrati nel monitor di chat</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Escludi:</span> i buffer sulla destra verranno ignorati nel monitor di chat</p></body></html>"
+msgstr "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Modalità operative:</span></p>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; text-decoration: underline;\">Includi:</span> <span style=\" font-weight:400;\">solo il contenuto delle finestre sul lato destro verrà mostrato nel monitoraggio chat</span></p>\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Escludi:</span> il contenuto delle finestre sul lato destro verrà ignorato nel monitoraggio chat</p></body></html>"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:61
 msgctxt "ChatMonitorSettingsPage|"
@@ -1480,12 +1480,12 @@ msgstr "Disponibile:"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:88
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Move selected buffers to the left"
-msgstr "Sposta il buffer selezionato a sinistra"
+msgstr "Sposta le finestre selezionate a sinistra"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:102
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Move selected buffers to the right"
-msgstr "Sposta il buffer selezionato a destra"
+msgstr "Sposta le finestre selezionate a destra"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:133
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:274
@@ -1502,7 +1502,7 @@ msgstr "Mostra le menzioni nel monitoraggio chat anche se questi sono originaria
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:150
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Always show highlighted messages"
-msgstr "Mostra sempre i messaggi evidenziati"
+msgstr "Mostra sempre i messaggi in cui c'è una menzione"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:157
 msgctxt "ChatMonitorSettingsPage|"
@@ -1553,7 +1553,7 @@ msgstr "Monitoraggio chat"
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
-msgstr "Permetti"
+msgstr "Includi"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
@@ -3381,7 +3381,7 @@ msgstr "Nessuno"
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:87
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import Legacy"
-msgstr ""
+msgstr "Importa dal sistema precedente"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:89
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
@@ -3394,7 +3394,7 @@ msgstr "Importa le regole per le menzioni configurate in <i>%1</i>."
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:707
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Legacy Highlights"
-msgstr ""
+msgstr "Menzioni del sistema precedente"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:95
 msgctxt "CoreHighlightSettingsPage|"
@@ -4121,22 +4121,22 @@ msgstr "DCC"
 #: ../src/qtui/debugbufferviewoverlay.ui:13
 msgctxt "DebugBufferViewOverlay|"
 msgid "Debug BufferView Overlay"
-msgstr "Sovrapposizione VistaBuffer di debug"
+msgstr "Vista della finestra di debug in evidenza"
 
 #: ../src/qtui/debugbufferviewoverlay.ui:26
 msgctxt "DebugBufferViewOverlay|"
 msgid "Overlay View"
-msgstr "Vista sovrapposizione"
+msgstr "Vista in evidenza"
 
 #: ../src/qtui/debugbufferviewoverlay.ui:39
 msgctxt "DebugBufferViewOverlay|"
 msgid "Overlay Properties"
-msgstr "Proprietà sovrapposizione"
+msgstr "Proprietà evidenza"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:50
 msgctxt "DebugBufferViewOverlay|"
 msgid "BufferViews:"
-msgstr "VisteBuffer:"
+msgstr "Viste finestre:"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:51
 msgctxt "DebugBufferViewOverlay|"
@@ -4151,22 +4151,22 @@ msgstr "Reti:"
 #: ../src/qtui/debugbufferviewoverlay.cpp:53
 msgctxt "DebugBufferViewOverlay|"
 msgid "Buffers:"
-msgstr "Buffer:"
+msgstr "Finestre:"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:54
 msgctxt "DebugBufferViewOverlay|"
 msgid "Removed buffers:"
-msgstr "Buffer rimossi:"
+msgstr "Finestre rimosse:"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:55
 msgctxt "DebugBufferViewOverlay|"
 msgid "Temp. removed buffers:"
-msgstr "Buffer rimossi temporan.:"
+msgstr "Finestre rimosse temporan.:"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:57
 msgctxt "DebugBufferViewOverlay|"
 msgid "Allowed buffer types:"
-msgstr "Tipi di buffer consentiti:"
+msgstr "Tipi di finestre consentite:"
 
 #: ../src/qtui/debugbufferviewoverlay.cpp:58
 msgctxt "DebugBufferViewOverlay|"
@@ -4572,7 +4572,7 @@ msgstr "Interfaccia"
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:34
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights"
-msgstr ""
+msgstr "Menzioni del sistema precedente"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:34
 msgctxt "HighlightSettingsPage|"
@@ -4626,7 +4626,7 @@ msgstr "<p><b>Canale</b>: Una lista canali/privati separati da punto e virgola, 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:273
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights are replaced by Highlights"
-msgstr ""
+msgstr "Le 'menzioni del sistema precedente' sono state sostituite da 'Menzioni'"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:245
 msgctxt "HighlightSettingsPage|"
@@ -4636,7 +4636,7 @@ msgstr "non dovrebbe essere vuoto"
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:271
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights vs. Highlights"
-msgstr ""
+msgstr "Menzioni del protocollo sistema vs. menzioni"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:274
 msgctxt "HighlightSettingsPage|"
@@ -5197,7 +5197,7 @@ msgid ""
 "Whenever you disable/delete the ignore rule, the messages are shown again.</p>\n"
 "<p><u>Permanent:</u></p>\n"
 "<p>Messages are filtered before they get stored in the database.</p>"
-msgstr "<p><b>Severità:</b></p>\n<p><u>Dinamica:</u></p>\n<p>I messaggi sono filtrati «al volo».\nNel momento in cui vengono disabilitate/ignorate le regole per ignorare, i messaggi vengono nuovamente visualizzati.</p>\n<p><u>Permanente:</u></p>\n<p>I messaggi vengono filtrati prima di essere salvati nel database.</p>"
+msgstr "<p><b>Severità:</b></p>\n<p><u>Dinamica:</u></p>\n<p>I messaggi sono filtrati \"al volo\".\nNel momento in cui vengono disabilitate/ignorate le regole per ignorare, i messaggi vengono nuovamente visualizzati.</p>\n<p><u>Permanente:</u></p>\n<p>I messaggi vengono filtrati prima di essere salvati nel database.</p>"
 
 #: ../src/qtui/settingspages/ignorelisteditdlg.ui:35
 msgctxt "IgnoreListEditDlg|"
@@ -6172,22 +6172,22 @@ msgstr "Informazioni su &Qt"
 #: ../src/qtui/mainwin.cpp:420
 msgctxt "MainWin|"
 msgid "Debug &NetworkModel"
-msgstr "Debug &ModelloRete"
+msgstr "Debug modello &rete"
 
 #: ../src/qtui/mainwin.cpp:422
 msgctxt "MainWin|"
 msgid "Debug &BufferViewOverlay"
-msgstr "Debug &SovrapposizioneVistaBuffer"
+msgstr "Vista della fine&stra di debug in evidenza"
 
 #: ../src/qtui/mainwin.cpp:424
 msgctxt "MainWin|"
 msgid "Debug &MessageModel"
-msgstr "Debug &ModelloMessaggio"
+msgstr "Debug &modello messaggio"
 
 #: ../src/qtui/mainwin.cpp:425
 msgctxt "MainWin|"
 msgid "Debug &HotList"
-msgstr "Debug &Hotlist"
+msgstr "Debug &hotList"
 
 #: ../src/qtui/mainwin.cpp:426
 msgctxt "MainWin|"
@@ -6207,7 +6207,7 @@ msgstr "Ricarica fogli di stile"
 #: ../src/qtui/mainwin.cpp:438
 msgctxt "MainWin|"
 msgid "Hide Current Buffer"
-msgstr "Nascondi buffer corrente"
+msgstr "Nascondi finestra corrente"
 
 #: ../src/qtui/mainwin.cpp:441
 msgctxt "MainWin|"
@@ -6257,7 +6257,7 @@ msgstr "Passa alla chat attiva"
 #: ../src/qtui/mainwin.cpp:484
 msgctxt "MainWin|"
 msgid "Activate the buffer search"
-msgstr "Attiva il buffer di ricerca"
+msgstr "Attiva la finestra di ricerca"
 
 #: ../src/qtui/mainwin.cpp:496
 msgctxt "MainWin|"
@@ -6623,7 +6623,7 @@ msgstr "Scegliere una rete prima di provare a visualizzare l'elenco dei canali."
 #, qt-format
 msgctxt "MessageModel|"
 msgid "Requesting %1 messages from backlog for buffer %2:%3"
-msgstr "Recupero di %1 messaggi dal registro storico per il buffer %2:%3"
+msgstr "Recupero di %1 messaggi dal registro storico per la finestra %2:%3"
 
 #: ../src/qtui/msgprocessorstatuswidget.ui:19
 msgctxt "MsgProcessorStatusWidget|"
@@ -6788,8 +6788,8 @@ msgstr "Numero nick"
 msgctxt "NetworkModelController|"
 msgid "Do you want to delete the following buffer(s) permanently?"
 msgid_plural "Do you want to delete the following buffer(s) permanently?"
-msgstr[0] "Si desidera eliminare il seguente buffer permanentemente?"
-msgstr[1] "Si desidera eliminare i seguenti buffer permanentemente?"
+msgstr[0] "Sei sicuro di voler eliminare il contenuto della finestra scelta per sempre?"
+msgstr[1] "Sei sicuro di voler eliminare il contenuto delle finestre scelte per sempre?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:169
 #, qt-format
@@ -6808,12 +6808,12 @@ msgstr "<b>Attenzione:</b> questa operazione comporterà l'eliminazione totale d
 msgctxt "NetworkModelController|"
 msgid ""
 "<br>Active channel buffers cannot be deleted, please part the channel first."
-msgstr "<br>I buffer di canale attivi non possono essere eliminati. Devi prima uscire dal canale."
+msgstr "<br>Il contenuto delle finestre dei canali attivi non può essere eliminato. Devi prima uscire dal canale."
 
 #: ../src/uisupport/networkmodelcontroller.cpp:175
 msgctxt "NetworkModelController|"
 msgid "Remove buffers permanently?"
-msgstr "Rimuovere definitivamente i buffer?"
+msgstr "Rimuovere per sempre il contenuto delle finestre?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:220
 #: ../src/uisupport/networkmodelcontroller.cpp:228
@@ -7433,7 +7433,7 @@ msgstr "Database"
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 backlog messages for %2 buffers"
-msgstr "Prelevo un totale di %1 messaggi dal registro storico per i buffer %2"
+msgstr "Prelevo un totale di %1 messaggi dal registro storico per il canale %2"
 
 #: ../src/client/backlogrequester.cpp:115
 #, qt-format
@@ -7446,7 +7446,7 @@ msgstr "Prelevo fino a %1 messaggi da quelli non letti dal registro storico (pi�
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 unread backlog messages for %2 buffers"
-msgstr "Prelevo un totale di %1 messaggi non letti dal registro storico per i buffer %2"
+msgstr "Prelevo un totale di %1 messaggi non letti dal registro storico per il canale %2"
 
 #: ../src/qtui/ircconnectionwizard.cpp:53
 msgctxt "QObject|"
@@ -7976,7 +7976,7 @@ msgstr "Identificato per questo nick"
 #: ../src/client/networkmodel.cpp:609
 msgctxt "QueryBufferItem|"
 msgid "Service Reply"
-msgstr "Risposta del servizio"
+msgstr "Risposta dai servizi"
 
 #: ../src/client/networkmodel.cpp:613
 msgctxt "QueryBufferItem|"
@@ -8629,8 +8629,8 @@ msgstr "lampeggia"
 msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
-msgstr[0] "%n evento in attesa"
-msgstr[1] "%n eventi in attesa"
+msgstr[0] "%n menzione in attesa"
+msgstr[1] "%n menzioni in attesa"
 
 #: ../src/qtui/systraynotificationbackend.cpp:145
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
