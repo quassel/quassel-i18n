@@ -50,11 +50,18 @@ public:
         Fatal
     };
 
-    struct LogEntry
+    struct COMMON_EXPORT LogEntry
     {
         QDateTime timeStamp;
         LogLevel logLevel;
         QString message;
+
+        /**
+         * Gets this log entry in a printable format, with timestamp and log level
+         *
+         * @return the log entry, formatted with timestamp and log level
+         */
+        QString toString() const;
     };
 
     /**
@@ -111,6 +118,7 @@ private:
     std::vector<LogEntry> _messages;
     bool _keepMessages{true};
     bool _initialized{false};
+    QByteArray _prgname;
 };
 
 Q_DECLARE_METATYPE(Logger::LogEntry)
