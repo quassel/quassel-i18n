@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2018-11-27 13:59+0000\n"
+"PO-Revision-Date: 2019-03-14 12:16+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Hindi (http://www.transifex.com/quassel/quassel/language/hi/)\n"
 "MIME-Version: 1.0\n"
@@ -2404,233 +2404,233 @@ msgctxt "Core|"
 msgid "Cannot write quasselcore configuration; probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:232
+#: ../src/core/core.cpp:234
 msgctxt "Core|"
 msgid "Cannot open port for listening!"
 msgstr ""
 
-#: ../src/core/core.cpp:303
+#: ../src/core/core.cpp:305
 msgctxt "Core|"
 msgid "Cannot restore a state for an unconfigured core!"
 msgstr ""
 
-#: ../src/core/core.cpp:307
+#: ../src/core/core.cpp:309
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:352
+#: ../src/core/core.cpp:354
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:355
+#: ../src/core/core.cpp:357
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr ""
 
-#: ../src/core/core.cpp:359
+#: ../src/core/core.cpp:361
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:364
+#: ../src/core/core.cpp:366
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:370
+#: ../src/core/core.cpp:372
 msgctxt "Core|"
 msgid "Fatal failure while trying to setup, terminating"
 msgstr ""
 
-#: ../src/core/core.cpp:374
+#: ../src/core/core.cpp:376
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:378
+#: ../src/core/core.cpp:380
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr ""
 
-#: ../src/core/core.cpp:456
+#: ../src/core/core.cpp:458
 #, qt-format
 msgctxt "Core|"
 msgid "Selected storage backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:549
+#: ../src/core/core.cpp:551
 #, qt-format
 msgctxt "Core|"
 msgid "Selected auth backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:632
+#: ../src/core/core.cpp:634
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/core.cpp:638
+#: ../src/core/core.cpp:640
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:645
+#: ../src/core/core.cpp:647
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:649
+#: ../src/core/core.cpp:651
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:658
+#: ../src/core/core.cpp:660
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:662
+#: ../src/core/core.cpp:664
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:669
+#: ../src/core/core.cpp:671
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:715
+#: ../src/core/core.cpp:717
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr ""
 
-#: ../src/core/core.cpp:718
+#: ../src/core/core.cpp:720
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:729
+#: ../src/core/core.cpp:731
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:803
+#: ../src/core/core.cpp:805
 msgctxt "Core|"
 msgid "Cannot setup storage backend."
 msgstr ""
 
-#: ../src/core/core.cpp:892
+#: ../src/core/core.cpp:894
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:893
+#: ../src/core/core.cpp:895
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:905 ../src/core/core.cpp:925
+#: ../src/core/core.cpp:907 ../src/core/core.cpp:927
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:906
+#: ../src/core/core.cpp:908
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:909
+#: ../src/core/core.cpp:911
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:913
+#: ../src/core/core.cpp:915
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:918
+#: ../src/core/core.cpp:920
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:933
+#: ../src/core/core.cpp:935
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:938
+#: ../src/core/core.cpp:940
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:945
+#: ../src/core/core.cpp:947
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:951
+#: ../src/core/core.cpp:953
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:954
+#: ../src/core/core.cpp:956
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:957
+#: ../src/core/core.cpp:959
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:979
+#: ../src/core/core.cpp:981
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:980
+#: ../src/core/core.cpp:982
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:990 ../src/core/core.cpp:1007
+#: ../src/core/core.cpp:992 ../src/core/core.cpp:1009
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:993
+#: ../src/core/core.cpp:995
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:997
+#: ../src/core/core.cpp:999
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1002
+#: ../src/core/core.cpp:1004
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -4679,19 +4679,43 @@ msgctxt "HighlightSettingsPage|"
 msgid "highlight rule"
 msgstr ""
 
-#: ../src/core/identserver.cpp:40
-#, qt-format
-msgctxt "IdentServer|"
-msgid "Listening for identd clients on IPv6 %1 port %2"
-msgstr ""
-
 #: ../src/core/identserver.cpp:46
 #, qt-format
 msgctxt "IdentServer|"
-msgid "Listening for identd clients on IPv4 %1 port %2"
+msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/identserver.cpp:52
+#: ../src/core/identserver.cpp:55
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Listening for identd requests on IPv6 %1 port %2"
+msgstr ""
+
+#: ../src/core/identserver.cpp:63
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Could not open IPv6 interface %1:%2: %3"
+msgstr ""
+
+#: ../src/core/identserver.cpp:71
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Listening for identd requests on IPv4 %1 port %2"
+msgstr ""
+
+#: ../src/core/identserver.cpp:81
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Could not open IPv4 interface %1:%2: %3"
+msgstr ""
+
+#: ../src/core/identserver.cpp:89
+#, qt-format
+msgctxt "IdentServer|"
+msgid "Invalid listen address %1, unknown network protocol"
+msgstr ""
+
+#: ../src/core/identserver.cpp:98
 msgctxt "IdentServer|"
 msgid ""
 "Identd could not open any network interfaces to listen on! No identd "
@@ -5439,37 +5463,37 @@ msgctxt "InputWidget|"
 msgid "Form"
 msgstr "फार्म"
 
-#: ../src/qtui/inputwidget.ui:59
+#: ../src/qtui/inputwidget.ui:89
 msgctxt "InputWidget|"
 msgid "View and change nick"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:139
+#: ../src/qtui/inputwidget.ui:175
 msgctxt "InputWidget|"
 msgid "Bold"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:179
+#: ../src/qtui/inputwidget.ui:215
 msgctxt "InputWidget|"
 msgid "Italic"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:222
+#: ../src/qtui/inputwidget.ui:258
 msgctxt "InputWidget|"
 msgid "Underline"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:262
+#: ../src/qtui/inputwidget.ui:298
 msgctxt "InputWidget|"
 msgid "Set foreground color"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:293
+#: ../src/qtui/inputwidget.ui:329
 msgctxt "InputWidget|"
 msgid "Set background color"
 msgstr ""
 
-#: ../src/qtui/inputwidget.ui:327
+#: ../src/qtui/inputwidget.ui:363
 msgctxt "InputWidget|"
 msgid "Clear formatting"
 msgstr ""
@@ -7682,7 +7706,7 @@ msgid "Specify the directory holding the client configuration."
 msgstr ""
 
 #: ../src/common/quassel.cpp:325 ../src/common/quassel.cpp:330
-#: ../src/common/quassel.cpp:365 ../src/common/quassel.cpp:366
+#: ../src/common/quassel.cpp:366 ../src/common/quassel.cpp:367
 msgctxt "Quassel|"
 msgid "path"
 msgstr ""
@@ -7808,88 +7832,100 @@ msgstr ""
 #: ../src/common/quassel.cpp:361
 msgctxt "Quassel|"
 msgid ""
+"The address(es) quasselcore will listen on for ident requests. Same format "
+"as --listen."
+msgstr ""
+
+#: ../src/common/quassel.cpp:361
+msgctxt "Quassel|"
+msgid "<address>[,...]"
+msgstr ""
+
+#: ../src/common/quassel.cpp:362
+msgctxt "Quassel|"
+msgid ""
 "Enable oidentd integration. In most cases you should also enable --strict-"
 "ident."
 msgstr ""
 
-#: ../src/common/quassel.cpp:362
+#: ../src/common/quassel.cpp:363
 msgctxt "Quassel|"
 msgid "Set path to oidentd configuration file."
 msgstr ""
 
-#: ../src/common/quassel.cpp:362
+#: ../src/common/quassel.cpp:363
 msgctxt "Quassel|"
 msgid "file"
 msgstr ""
 
-#: ../src/common/quassel.cpp:364
+#: ../src/common/quassel.cpp:365
 msgctxt "Quassel|"
 msgid "Require SSL for remote (non-loopback) client connections."
 msgstr ""
 
-#: ../src/common/quassel.cpp:365
+#: ../src/common/quassel.cpp:366
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL certificate."
 msgstr ""
 
-#: ../src/common/quassel.cpp:366
+#: ../src/common/quassel.cpp:367
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL key."
 msgstr ""
 
-#: ../src/common/quassel.cpp:373
+#: ../src/common/quassel.cpp:374
 msgctxt "Quassel|"
 msgid "Supports one of Debug|Info|Warning|Error; default is Info."
 msgstr ""
 
-#: ../src/common/quassel.cpp:373
+#: ../src/common/quassel.cpp:374
 msgctxt "Quassel|"
 msgid "level"
 msgstr ""
 
-#: ../src/common/quassel.cpp:374
+#: ../src/common/quassel.cpp:375
 msgctxt "Quassel|"
 msgid "Log to a file."
 msgstr ""
 
-#: ../src/common/quassel.cpp:376
+#: ../src/common/quassel.cpp:377
 msgctxt "Quassel|"
 msgid "Log to syslog."
 msgstr ""
 
-#: ../src/common/quassel.cpp:381
+#: ../src/common/quassel.cpp:382
 msgctxt "Quassel|"
 msgid "Enable debug output."
 msgstr ""
 
-#: ../src/common/quassel.cpp:384
+#: ../src/common/quassel.cpp:385
 msgctxt "Quassel|"
 msgid "Enables debugging for bufferswitches."
 msgstr ""
 
-#: ../src/common/quassel.cpp:385
+#: ../src/common/quassel.cpp:386
 msgctxt "Quassel|"
 msgid "Enables debugging for models."
 msgstr ""
 
-#: ../src/common/quassel.cpp:390
+#: ../src/common/quassel.cpp:391
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all raw IRC messages to debug log, including passwords!  "
 "In most cases you should also set --loglevel Debug"
 msgstr ""
 
-#: ../src/common/quassel.cpp:391
+#: ../src/common/quassel.cpp:392
 msgctxt "Quassel|"
 msgid "Limit raw IRC logging to this network ID.  Implies --debug-irc"
 msgstr ""
 
-#: ../src/common/quassel.cpp:391
+#: ../src/common/quassel.cpp:392
 msgctxt "Quassel|"
 msgid "database network ID"
 msgstr ""
 
-#: ../src/common/quassel.cpp:398
+#: ../src/common/quassel.cpp:399
 msgctxt "Quassel|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr ""
