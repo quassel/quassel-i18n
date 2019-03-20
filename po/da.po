@@ -5,7 +5,7 @@
 # Daniel Albers <daniel@lbers.com>, 2011
 # Jens True <frazzer@hotmail.com>, 2013
 # Jens True <frazzer@hotmail.com>, 2013
-# Joe Hansen <joedalton2@yahoo.dk>, 2014,2016-2017
+# Joe Hansen <joedalton2@yahoo.dk>, 2014,2016-2017,2019
 # Jonas Benthin Thyssen, 2015
 # Jonas Benthin Thyssen, 2015
 # Per Nielsen <>, 2012
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-03-14 12:16+0000\n"
+"PO-Revision-Date: 2019-03-19 20:09+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/quassel/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -38,22 +38,22 @@ msgstr "En moderne, distribueret IRC-klient"
 #: ../src/uisupport/aboutdata.cpp:152
 msgctxt "AboutData|"
 msgid "Project founder, lead developer"
-msgstr ""
+msgstr "Projektgrundlægger, hovedudvilker"
 
 #: ../src/uisupport/aboutdata.cpp:153
 msgctxt "AboutData|"
 msgid "Project motivator, lead developer"
-msgstr ""
+msgstr "Projektmotivator, hovedudvikler"
 
 #: ../src/uisupport/aboutdata.cpp:154
 msgctxt "AboutData|"
 msgid "Former lead developer"
-msgstr ""
+msgstr "Tidligere hovedudvikler"
 
 #: ../src/uisupport/aboutdata.cpp:155
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements, Travis support"
-msgstr ""
+msgstr "Hovedoversætter, mange rettelser og forbedringer, Travisunderstøttelse"
 
 #: ../src/uisupport/aboutdata.cpp:156
 msgctxt "AboutData|"
@@ -70,19 +70,19 @@ msgctxt "AboutData|"
 msgid ""
 "IRCv3 support, documentation, many other improvements, testing, outstanding "
 "PRs"
-msgstr ""
+msgstr "IRCv3-understøttelse, dokumentation, mange andre forbedringer, test, enestående PR"
 
 #: ../src/uisupport/aboutdata.cpp:159
 msgctxt "AboutData|"
 msgid ""
 "Quasseldroid, architecture, (mobile) performance, many other improvements "
 "and fixes, testing"
-msgstr ""
+msgstr "Quasseldroid, arkitektur, (mobil) ydelse, mange andre forbedringer og rettelser, test"
 
 #: ../src/uisupport/aboutdata.cpp:163
 msgctxt "AboutData|"
 msgid "OSX UI improvements"
-msgstr ""
+msgstr "OSX-brugerfladeforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:164 ../src/uisupport/aboutdata.cpp:179
 msgctxt "AboutData|"
@@ -108,12 +108,12 @@ msgstr "Rettelser for byggesystem"
 #: ../src/uisupport/aboutdata.cpp:168 ../src/uisupport/aboutdata.cpp:308
 msgctxt "AboutData|"
 msgid "Database performance improvements"
-msgstr ""
+msgstr "Ydelsesforbedringer af databasen"
 
 #: ../src/uisupport/aboutdata.cpp:169
 msgctxt "AboutData|"
 msgid "Tray icon fix"
-msgstr "Rettelse af bakkeikon"
+msgstr "Rettelse af statusikon"
 
 #: ../src/uisupport/aboutdata.cpp:170
 msgctxt "AboutData|"
@@ -128,7 +128,7 @@ msgstr "Dokumentationsforbedringer"
 #: ../src/uisupport/aboutdata.cpp:172 ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Brazilian translation"
-msgstr ""
+msgstr "Brasiliansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:173 ../src/uisupport/aboutdata.cpp:247
 msgctxt "AboutData|"
@@ -152,7 +152,7 @@ msgstr "Rumænsk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Punjabi translation"
-msgstr ""
+msgstr "Punjabi oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:177 ../src/uisupport/aboutdata.cpp:239
 #: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:255
@@ -179,12 +179,12 @@ msgstr "Rettelser til Windowsbyggesystemet"
 #: ../src/uisupport/aboutdata.cpp:183
 msgctxt "AboutData|"
 msgid "AppData metadata, LDAP support"
-msgstr ""
+msgstr "AppData-metadata, LDAP-understøttelse"
 
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
 msgid "Nicer tooltips, spell check and other improvements"
-msgstr ""
+msgstr "Pænere værktøjsfif, stavekontrol og andre forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:185
 msgctxt "AboutData|"
@@ -200,7 +200,7 @@ msgstr "Fransk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Occitan translation"
-msgstr ""
+msgstr "Occitansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
@@ -226,7 +226,7 @@ msgstr "Diverse rettelser og forbedringer"
 #: ../src/uisupport/aboutdata.cpp:193
 msgctxt "AboutData|"
 msgid "Settings fixes"
-msgstr ""
+msgstr "Indstillingsrettelser"
 
 #: ../src/uisupport/aboutdata.cpp:194 ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
@@ -326,7 +326,7 @@ msgstr "Tysk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:217
 msgctxt "AboutData|"
 msgid "Sanitize topic handling, twitch.tv support"
-msgstr ""
+msgstr "Ryd op i håndtering af emne, twitch.tv-understøttelse"
 
 #: ../src/uisupport/aboutdata.cpp:218
 msgctxt "AboutData|"
@@ -361,7 +361,7 @@ msgstr "{Ku|U}buntu-pakker, motivator, promoter"
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
 msgid "Various features and improvements"
-msgstr ""
+msgstr "Diverse funktioner og forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:227 ../src/uisupport/aboutdata.cpp:228
 #: ../src/uisupport/aboutdata.cpp:238 ../src/uisupport/aboutdata.cpp:245
@@ -392,7 +392,7 @@ msgstr "Pythonforbedringer"
 #: ../src/uisupport/aboutdata.cpp:234
 msgctxt "AboutData|"
 msgid "Proxy improvements, Spanish translation"
-msgstr ""
+msgstr "Proxyforbedringer, spansk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:235
 msgctxt "AboutData|"
@@ -472,7 +472,7 @@ msgstr "Dokumentationsrettelser"
 #: ../src/uisupport/aboutdata.cpp:261 ../src/uisupport/aboutdata.cpp:294
 msgctxt "AboutData|"
 msgid "Improvements"
-msgstr ""
+msgstr "Forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:262
 msgctxt "AboutData|"
@@ -482,7 +482,7 @@ msgstr "Ideer, hacking, opstartsmotivation"
 #: ../src/uisupport/aboutdata.cpp:265
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
-msgstr ""
+msgstr "Mange rettelser og forbedringer, Sonnetunderstøttelse, QuasselDroid"
 
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
@@ -492,7 +492,7 @@ msgstr "Tysk oversættelse, rettelser"
 #: ../src/uisupport/aboutdata.cpp:271
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu PPAs"
-msgstr ""
+msgstr "Mange rettelser og forbedringer; Ubuntu PPA'er"
 
 #: ../src/uisupport/aboutdata.cpp:274
 msgctxt "AboutData|"
@@ -532,13 +532,13 @@ msgstr "Ydelsesforbedringer"
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
 msgid "Hindi and Marathi translations"
-msgstr ""
+msgstr "Hindi og marathi oversættelser"
 
 #: ../src/uisupport/aboutdata.cpp:291
 msgctxt "AboutData|"
 msgid ""
 "Windows build support, automated OSX builds in Travis, various improvements"
-msgstr ""
+msgstr "Windowsbyggeunderstøttelse, automatiseret OSX-bygninger i Travis, diverse forbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
@@ -553,12 +553,12 @@ msgstr "Fremhæv konfigurationsforbedringer"
 #: ../src/uisupport/aboutdata.cpp:297
 msgctxt "AboutData|"
 msgid "Debian/Kubuntu packager, (packaging/build system) bughunter"
-msgstr ""
+msgstr "Debian/Kubuntu-pakning, (paknings-/byggesystem), fejljæger"
 
 #: ../src/uisupport/aboutdata.cpp:298
 msgctxt "AboutData|"
 msgid "Bugfixes, German translation"
-msgstr ""
+msgstr "Fejlrettelser, tysk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
@@ -568,7 +568,7 @@ msgstr "Forbedringer af lydmotor"
 #: ../src/uisupport/aboutdata.cpp:302
 msgctxt "AboutData|"
 msgid "Chinese translation"
-msgstr ""
+msgstr "Kinesisk oversættelse"
 
 #: ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
@@ -583,7 +583,7 @@ msgstr "Koreansk oversættelse"
 #: ../src/uisupport/aboutdata.cpp:309
 msgctxt "AboutData|"
 msgid "Alias improvements"
-msgstr ""
+msgstr "Aliasforbedringer"
 
 #: ../src/uisupport/aboutdata.cpp:311
 msgctxt "AboutData|"
@@ -657,14 +657,14 @@ msgstr "&Tak til"
 #: ../src/qtui/aboutdlg.cpp:44
 msgctxt "AboutDlg|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Ukendt dato"
 
 #: ../src/qtui/aboutdlg.cpp:49
 #, qt-format
 msgctxt "AboutDlg|"
 msgid ""
 "<b>Version:</b> %1<br><b>Version date:</b> %2<br><b>Protocol version:</b> %3"
-msgstr ""
+msgstr "<b>Version:</b> %1<br><b>Versionsdato:</b> %2<br><b>Protokolversion:</b> %3"
 
 #: ../src/qtui/aboutdlg.cpp:65
 #, qt-format
@@ -686,7 +686,7 @@ msgid ""
 "icons/blob/master/COPYING\">LGPLv3</a>.<br><br>Please use <a "
 "href=\"https://bugs.quassel-irc.org\">https://bugs.quassel-irc.org</a> to "
 "report bugs."
-msgstr ""
+msgstr "<b>En moderne, distribuerede IRC-klient</b><br><br> &copy;%1  af Quasselprojektet<br><a href=\"https://quassel-irc.org\">http://quassel-irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\"> #quassel</a> på <a href=\"https://www.freenode.net\">Freenode</a><br><br>Quassel IRC har en dobbelt licens <a href=\"https://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> og <a href=\"https://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>. <br><a href=\"https://api.kde.org/frameworks/breeze-icons/html\">Breeze - ikontema</a> &copy; Uri Herrera andre, udgivet under <a href=\"https://github.com/KDE/breeze-icons/blob/21ffd9b/COPYING-ICONS\">LGPLv3</a>.<br><a href=\"https://api.kde.org/frameworks/oxygen-icons5/html\">Oxygen - ikontema</a>  og &copy; Nuno Pinheiro, udgivet under <a href=\"https://github.com/KDE/oxygen-icons/blob/master/COPYING\">GPLv3</a>.<br><br>Venligst Brug <a href=\"https://bugs.quassel-irc.org\">http://bugs.quassel-irc.org</a> til at rapportere fejl."
 
 #: ../src/qtui/aboutdlg.cpp:85
 msgctxt "AboutDlg|"
@@ -710,22 +710,22 @@ msgstr "... og enhver anden, der finder og rapporterer fejl, giver feedback, hj�
 #: ../src/qtui/aboutdlg.cpp:110
 msgctxt "AboutDlg|"
 msgid "Special thanks goes to:"
-msgstr ""
+msgstr "Speciel tak går til:"
 
 #: ../src/qtui/aboutdlg.cpp:116
 msgctxt "AboutDlg|"
 msgid "for the original Quassel logo - The All-Seeing Eye"
-msgstr ""
+msgstr "for det originale Quassellogo - Det Altseende Øje"
 
 #: ../src/qtui/aboutdlg.cpp:122
 msgctxt "AboutDlg|"
 msgid "for the Oxygen Quassel logo"
-msgstr ""
+msgstr "for Oxygen Quassel-logoet"
 
 #: ../src/qtui/aboutdlg.cpp:128
 msgctxt "AboutDlg|"
 msgid "for the amazing Breeze and Oxygen icon themes"
-msgstr ""
+msgstr "for de imponerende Breeze og Oxygenikontemaer"
 
 #: ../src/qtui/aboutdlg.cpp:134
 msgctxt "AboutDlg|"
@@ -740,18 +740,18 @@ msgctxt "AbstractSqlStorage|"
 msgid ""
 "Installed database schema (version %1) is not up to date. Upgrading to "
 "version %2...  This may take a while for major upgrades."
-msgstr ""
+msgstr "Det installerede databaseskema (version %1) er ikke nyeste version. Opgraderer til version %2 ... Dette kan tage et stykke tid for væsentlige opgraderinger."
 
 #: ../src/core/abstractsqlstorage.cpp:141
 msgctxt "AbstractSqlStorage|"
 msgid "Upgrade failed..."
-msgstr "Opgradering mislykkedes..."
+msgstr "Opgradering mislykkedes ..."
 
 #: ../src/core/abstractsqlstorage.cpp:146
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid "Installed database schema successfully upgraded to version %1."
-msgstr ""
+msgstr "Installeret databaseskema opgraderet til version %1."
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:54
 msgctxt "AliasesModel|"
@@ -3582,7 +3582,7 @@ msgstr ""
 #: ../src/qtui/coreinfodlg.cpp:101
 msgctxt "CoreInfoDlg|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Ukendt dato"
 
 #: ../src/qtui/coreinfodlg.cpp:174
 #, qt-format
@@ -3816,7 +3816,7 @@ msgstr ""
 #: ../src/qtui/coresessionwidget.cpp:41
 msgctxt "CoreSessionWidget|"
 msgid "Unknown date"
-msgstr ""
+msgstr "Ukendt dato"
 
 #: ../src/qtui/coresessionwidget.cpp:51
 msgctxt "CoreSessionWidget|"
