@@ -52,7 +52,6 @@ class EventStringifier;
 class InternalPeer;
 class IrcParser;
 class MessageEvent;
-class NetworkConnection;
 class RemotePeer;
 class SignalProxy;
 
@@ -83,7 +82,6 @@ public:
     const QString strictCompliantIdent(const CoreIdentity* identity);
 
     inline CoreNetworkConfig* networkConfig() const { return _networkConfig; }
-    NetworkConnection* networkConnection(NetworkId) const;
 
     Protocol::SessionState sessionState() const;
 
@@ -164,7 +162,7 @@ public slots:
      * @param[in] msg             Away message, or blank to set unaway
      * @param[in] skipFormatting  If true, skip timestamp formatting codes (e.g. if already done)
      */
-    void globalAway(const QString& msg = QString(), const bool skipFormatting = false);
+    void globalAway(const QString& msg = QString(), bool skipFormatting = false);
 
 signals:
     void initialized();
@@ -203,13 +201,7 @@ private slots:
     void removeClient(Peer* peer);
 
     void recvStatusMsgFromServer(QString msg);
-    void recvMessageFromServer(NetworkId networkId,
-                               Message::Type,
-                               BufferInfo::Type,
-                               const QString& target,
-                               const QString& text,
-                               const QString& sender = "",
-                               Message::Flags flags = Message::None);
+    void recvMessageFromServer(RawMessage msg);
 
     void destroyNetwork(NetworkId);
 
@@ -289,8 +281,32 @@ private:
     CoreHighlightRuleManager _highlightRuleManager;
 };
 
+struct NetworkInternalMessage
+{
+    Message::Type type;
+    BufferInfo::Type bufferType;
+    QString target;
+    QString text;
+    QString sender;
+    Message::Flags flags;
+    NetworkInternalMessage(Message::Type type,
+                           BufferInfo::Type bufferType,
+                           QString target,
+                           QString text,
+                           QString sender = "",
+                           Message::Flags flags = Message::None)
+        : type(type)
+        , bufferType(bufferType)
+        , target(std::move(target))
+        , text(std::move(text))
+        , sender(std::move(sender))
+        , flags(flags)
+    {}
+};
+
 struct RawMessage
 {
+    QDateTime timestamp;
     NetworkId networkId;
     Message::Type type;
     BufferInfo::Type bufferType;
@@ -298,14 +314,34 @@ struct RawMessage
     QString text;
     QString sender;
     Message::Flags flags;
-    RawMessage(
-        NetworkId networkId, Message::Type type, BufferInfo::Type bufferType, QString target, QString text, QString sender, Message::Flags flags)
-        : networkId(networkId)
+
+    RawMessage(QDateTime timestamp,
+               NetworkId networkId,
+               Message::Type type,
+               BufferInfo::Type bufferType,
+               QString target,
+               QString text,
+               QString sender,
+               Message::Flags flags)
+        : timestamp(std::move(timestamp))
+        , networkId(networkId)
         , type(type)
         , bufferType(bufferType)
         , target(std::move(target))
         , text(std::move(text))
         , sender(std::move(sender))
         , flags(flags)
+    {}
+
+    RawMessage(NetworkId networkId,
+               const NetworkInternalMessage& msg)
+        : timestamp(QDateTime::currentDateTimeUtc())
+        , networkId(networkId)
+        , type(msg.type)
+        , bufferType(msg.bufferType)
+        , target(msg.target)
+        , text(msg.text)
+        , sender(msg.sender)
+        , flags(msg.flags)
     {}
 };

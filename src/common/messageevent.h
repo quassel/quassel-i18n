@@ -34,10 +34,10 @@ public:
     explicit MessageEvent(Message::Type msgType,
                           Network* network,
                           QString msg,
-                          const QString& sender = QString(),
-                          QString target = QString(),
+                          QString sender = {},
+                          QString target = {},
                           Message::Flags msgFlags = Message::None,
-                          const QDateTime& timestamp = QDateTime());
+                          const QDateTime& timestamp = {});
 
     inline Message::Type msgType() const { return _msgType; }
     inline void setMsgType(Message::Type type) { _msgType = type; }
@@ -63,7 +63,9 @@ protected:
     inline void debugInfo(QDebug& dbg) const override
     {
         NetworkEvent::debugInfo(dbg);
-        dbg.nospace() << ", sender = " << qPrintable(sender()) << ", target = " << qPrintable(target()) << ", text = " << text()
+        dbg.nospace() << ", sender = " << qPrintable(sender())
+                      << ", target = " << qPrintable(target())
+                      << ", text = " << text()
                       << ", msgtype = " << qPrintable(QString::number(msgType(), 16))
                       << ", buffertype = " << qPrintable(QString::number(bufferType(), 16))
                       << ", msgflags = " << qPrintable(QString::number(msgFlags(), 16));

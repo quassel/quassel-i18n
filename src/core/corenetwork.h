@@ -20,14 +20,9 @@
 
 #pragma once
 
-#include "coreircchannel.h"
-#include "coreircuser.h"
-#include "network.h"
+#include <functional>
 
-// IRCv3 capabilities
 #include <QTimer>
-
-#include "irccap.h"
 
 #ifdef HAVE_SSL
 #    include <QSslError>
@@ -40,9 +35,12 @@
 #    include "cipher.h"
 #endif
 
-#include <functional>
-
+#include "coreircchannel.h"
+#include "coreircuser.h"
 #include "coresession.h"
+#include "irccap.h"
+#include "irctag.h"
+#include "network.h"
 
 class CoreIdentity;
 class CoreUserInputHandler;
@@ -280,7 +278,7 @@ public slots:
      * maintain PING/PONG replies, the other side will close the connection.
      * @endparmblock
      */
-    void putCmd(const QString& cmd, const QList<QByteArray>& params, const QByteArray& prefix = {}, bool prepend = false);
+    void putCmd(const QString& cmd, const QList<QByteArray>& params, const QByteArray& prefix = {}, const QHash<IrcTagKey, QString> &tags = {}, bool prepend = false);
 
     /**
      * Sends the command for each set of encoded parameters, with optional prefix or high priority.
@@ -299,7 +297,7 @@ public slots:
      * cannot maintain PING/PONG replies, the other side will close the connection.
      * @endparmblock
      */
-    void putCmd(const QString& cmd, const QList<QList<QByteArray>>& params, const QByteArray& prefix = {}, bool prependAll = false);
+    void putCmd(const QString& cmd, const QList<QList<QByteArray>>& params, const QByteArray& prefix = {}, const QHash<IrcTagKey, QString> &tags = {}, bool prependAll = false);
 
     void setChannelJoined(const QString& channel);
     void setChannelParted(const QString& channel);
@@ -337,7 +335,7 @@ public slots:
      * set by the user.  Use with caution and remember to re-enable configured limits when done.
      * @endparmblock
      */
-    void updateRateLimiting(const bool forceUnlimited = false);
+    void updateRateLimiting(bool forceUnlimited = false);
 
     /**
      * Resets the token bucket up to the maximum
@@ -420,21 +418,15 @@ public slots:
      */
     inline void resetPongReplyPending() { _pongReplyPending = false; }
 
-    void onDisplayMsg(Message::Type msgType,
-                      BufferInfo::Type bufferType,
-                      const QString& target,
-                      const QString& text,
-                      const QString& sender,
-                      Message::Flags flags)
+    void onDisplayMsg(const NetworkInternalMessage& msg)
     {
-        emit displayMsg(networkId(), msgType, bufferType, target, text, sender, flags);
+        emit displayMsg(RawMessage(networkId(), msg));
     }
 
 signals:
-    void recvRawServerMsg(QString);
-    void displayStatusMsg(QString);
-    void displayMsg(
-        NetworkId, Message::Type, BufferInfo::Type, const QString& target, const QString& text, const QString& sender, Message::Flags flags);
+    void recvRawServerMsg(const QString&);
+    void displayStatusMsg(const QString&);
+    void displayMsg(const RawMessage& msg);
     void disconnected(NetworkId networkId);
     void connectionError(const QString& errorMsg);
 
@@ -510,14 +502,9 @@ private slots:
     void writeToSocket(const QByteArray& data);
 
 private:
-    void showMessage(Message::Type msgType,
-                     BufferInfo::Type bufferType,
-                     const QString& target,
-                     const QString& text,
-                     const QString& sender = "",
-                     Message::Flags flags = Message::None)
+    void showMessage(const NetworkInternalMessage& msg)
     {
-        emit displayMsg(networkId(), msgType, bufferType, target, text, sender, flags);
+        emit displayMsg(RawMessage(networkId(), msg));
     }
 
 private:
