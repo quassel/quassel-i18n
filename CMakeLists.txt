@@ -330,7 +330,7 @@ endif()
 # Non-Qt-based packages
 #####################################################################
 
-find_package(Boost 1.56 REQUIRED)
+find_package(Boost 1.54 REQUIRED)
 set_package_properties(Boost PROPERTIES TYPE REQUIRED
     URL "https://www.boost.org/"
     DESCRIPTION "Boost libraries for C++"
@@ -359,6 +359,12 @@ if (NOT WIN32)
         PURPOSE "Used for generating backtraces in case of a crash"
     )
 endif()
+
+# Shared library support
+#####################################################################
+
+option(ENABLE_SHARED "Build modules as shared libraries" ON)
+add_feature_info(ENABLE_SHARED ENABLE_SHARED "Build modules as shared libraries")
 
 # Setup unit testing
 #####################################################################

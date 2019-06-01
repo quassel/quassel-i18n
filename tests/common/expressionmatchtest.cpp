@@ -425,7 +425,7 @@ TEST(ExpressionMatchTest, trimMultiWildcardWhitespace)
     QString result;
     for (auto&& patternPair : patterns) {
         // Make sure data is valid
-        EXPECT_TRUE(patternPair.size() == 2);
+        ASSERT_TRUE(patternPair.size() == 2);
         // Run transformation
         result = ExpressionMatch::trimMultiWildcardWhitespace(patternPair[PATTERN_SOURCE]);
         // Assert that source trims into expected pattern
@@ -433,4 +433,23 @@ TEST(ExpressionMatchTest, trimMultiWildcardWhitespace)
         // Assert that re-trimming expected pattern gives the same result
         EXPECT_EQ(ExpressionMatch::trimMultiWildcardWhitespace(result), result);
     }
+}
+
+
+TEST(ExpressionMatchTest, testInvalidRegEx)
+{
+    // Invalid regular expression pattern
+    ExpressionMatch invalidRegExMatch =
+            ExpressionMatch("*network", ExpressionMatch::MatchMode::MatchRegEx, false);
+
+    // Assert not valid
+    ASSERT_FALSE(invalidRegExMatch.isValid());
+    // Assert not empty
+    EXPECT_FALSE(invalidRegExMatch.isEmpty());
+    // Assert default match fails
+    EXPECT_FALSE(invalidRegExMatch.match(""));
+    // Assert wildcard match fails
+    EXPECT_FALSE(invalidRegExMatch.match("network"));
+    // Assert literal match fails
+    EXPECT_FALSE(invalidRegExMatch.match("*network"));
 }
