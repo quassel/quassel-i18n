@@ -2873,44 +2873,44 @@ msgid ""
 "configured before attempting to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:237
+#: ../src/core/coreauthhandler.cpp:247
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:238
+#: ../src/core/coreauthhandler.cpp:248
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:244
+#: ../src/core/coreauthhandler.cpp:254
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:251
+#: ../src/core/coreauthhandler.cpp:261
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:253
+#: ../src/core/coreauthhandler.cpp:263
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:257
+#: ../src/core/coreauthhandler.cpp:267
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:276
+#: ../src/core/coreauthhandler.cpp:286
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
