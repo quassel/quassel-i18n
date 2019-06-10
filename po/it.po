@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-05-01 08:47+0000\n"
+"PO-Revision-Date: 2019-06-10 01:05+0000\n"
 "Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -6136,7 +6136,7 @@ msgstr "Configura &reti..."
 #: ../src/qtui/mainwin.cpp:374
 msgctxt "MainWin|"
 msgid "&Quit"
-msgstr "Disc&onnetti"
+msgstr "&Esci"
 
 #: ../src/qtui/mainwin.cpp:377
 msgctxt "MainWin|"

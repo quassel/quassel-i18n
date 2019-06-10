@@ -1,14 +1,14 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
-# A S Alam <alam.yellow@gmail.com>, 2018
+# A S Alam <alam.yellow@gmail.com>, 2018-2019
 # A S Alam <alam.yellow@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-03-14 12:16+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2019-06-10 00:49+0000\n"
+"Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/quassel/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -984,7 +984,7 @@ msgstr ""
 #: ../src/qtui/settingspages/appearancesettingspage.ui:257
 msgctxt "AppearanceSettingsPage|"
 msgid "User Notices:"
-msgstr "ਯੂਜ਼ਰ ਸੂਚਨਾਵਾਂ:"
+msgstr "ਵਰਤੋਂਕਾਰ ਸੂਚਨਾਵਾਂ:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:300
 msgctxt "AppearanceSettingsPage|"
@@ -1388,7 +1388,7 @@ msgstr "ਚੈਨਲ %1"
 #: ../src/client/networkmodel.cpp:723
 msgctxt "ChannelBufferItem|"
 msgid "Users"
-msgstr "ਯੂਜ਼ਰ"
+msgstr "ਵਰਤੋਂਕਾਰ"
 
 #: ../src/client/networkmodel.cpp:728
 msgctxt "ChannelBufferItem|"
@@ -2128,7 +2128,7 @@ msgstr ""
 #: ../src/qtui/settingspages/connectionsettingspage.ui:184
 msgctxt "ConnectionSettingsPage|"
 msgid " users"
-msgstr "ਯੂਜ਼ਰ"
+msgstr "ਵਰਤੋਂਕਾਰ"
 
 #: ../src/qtui/settingspages/connectionsettingspage.ui:206
 msgctxt "ConnectionSettingsPage|"
@@ -2428,7 +2428,7 @@ msgstr ""
 #: ../src/core/core.cpp:357
 msgctxt "Core|"
 msgid "Admin user or password not set."
-msgstr "ਐਡਮਿਨ ਯੂਜ਼ਰ ਜਾਂ ਪਾਸਵਰਡ ਸੈੱਟ ਨਹੀਂ ਹੈ।"
+msgstr "ਐਡਮਿਨ ਵਰਤੋਂਕਾਰ ਜਾਂ ਪਾਸਵਰਡ ਸੈੱਟ ਨਹੀਂ ਹੈ।"
 
 #: ../src/core/core.cpp:361
 msgctxt "Core|"
@@ -2453,7 +2453,7 @@ msgstr ""
 #: ../src/core/core.cpp:380
 msgctxt "Core|"
 msgid "Creating admin user..."
-msgstr "...ਐਡਮਿਨ ਯੂਜ਼ਰ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
+msgstr "...ਐਡਮਿਨ ਵਰਤੋਂਕਾਰ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../src/core/core.cpp:458
 #, qt-format
@@ -2685,7 +2685,7 @@ msgstr "ਪੋਰਟ:"
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:229
 msgctxt "CoreAccountEditDlg|"
 msgid "User:"
-msgstr "ਯੂਜ਼ਰ:"
+msgstr "ਵਰਤੋਂਕਾਰ:"
 
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:103
 #: ../src/qtui/settingspages/coreaccounteditdlg.ui:236
@@ -2918,7 +2918,7 @@ msgstr "ਫਾਰਮ"
 #: ../src/qtui/coreconfigwizardadminuserpage.ui:25
 msgctxt "CoreConfigWizardAdminUserPage|"
 msgid "Username:"
-msgstr "ਯੂਜ਼ਰ ਨਾਂ:"
+msgstr "ਵਰਤੋਂਕਾਰ ਨਾਂ:"
 
 #: ../src/qtui/coreconfigwizardadminuserpage.ui:35
 msgctxt "CoreConfigWizardAdminUserPage|"
@@ -3080,7 +3080,7 @@ msgstr "ਪਾਸਵਰਡ:"
 #: ../src/qtui/coreconnectauthdlg.ui:49
 msgctxt "CoreConnectAuthDlg|"
 msgid "Username:"
-msgstr "ਯੂਜ਼ਰ ਨਾਂ:"
+msgstr "ਵਰਤੋਂਕਾਰ ਨਾਂ:"
 
 #: ../src/qtui/coreconnectauthdlg.ui:58
 msgctxt "CoreConnectAuthDlg|"
@@ -4817,7 +4817,7 @@ msgstr ""
 #: ../src/common/identity.cpp:141
 msgctxt "Identity|"
 msgid "Quassel IRC User"
-msgstr "ਕੁਅੱਸੇਲ ਆਈਆਰਸੀ ਯੂਜ਼ਰ"
+msgstr "ਕੁਅੱਸੇਲ IRC ਵਰਤੋਂਕਾਰ"
 
 #: ../src/common/identity.cpp:170
 msgctxt "Identity|"
@@ -5712,7 +5712,7 @@ msgstr "ਚੈਨਲ"
 #: ../src/client/irclistmodel.cpp:61
 msgctxt "IrcListModel|"
 msgid "Users"
-msgstr "ਯੂਜ਼ਰ"
+msgstr "ਵਰਤੋਂਕਾਰ"
 
 #: ../src/client/irclistmodel.cpp:61
 msgctxt "IrcListModel|"
@@ -6434,7 +6434,7 @@ msgstr "ਸੈਟਿੰਗ(&S)"
 #: ../src/qtui/mainwin.cpp:634
 msgctxt "MainWin|"
 msgid "&Help"
-msgstr "ਮੱਦਦ(&H)"
+msgstr "ਮਦਦ(&H)"
 
 #: ../src/qtui/mainwin.cpp:647
 msgctxt "MainWin|"
@@ -6773,7 +6773,7 @@ msgstr "ਸਰਵਰ"
 #: ../src/client/networkmodel.cpp:230
 msgctxt "NetworkItem|"
 msgid "Users"
-msgstr "ਯੂਜ਼ਰ"
+msgstr "ਵਰਤੋਂਕਾਰ"
 
 #: ../src/client/networkmodel.cpp:232
 msgctxt "NetworkItem|"
@@ -7429,7 +7429,7 @@ msgstr ""
 #: ../src/core/postgresqlstorage.cpp:74
 msgctxt "PostgreSqlStorage|"
 msgid "Username"
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ"
 
 #: ../src/core/postgresqlstorage.cpp:74
 msgctxt "PostgreSqlStorage|"
@@ -7809,7 +7809,7 @@ msgstr ""
 #: ../src/common/quassel.cpp:354
 msgctxt "Quassel|"
 msgid "username"
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ"
 
 #: ../src/common/quassel.cpp:355
 msgctxt "Quassel|"
@@ -8205,7 +8205,7 @@ msgstr "ਲੋਕਲ-ਹੋਸਟ"
 #: ../src/qtui/settingspages/servereditdlg.ui:270
 msgctxt "ServerEditDlg|"
 msgid "Proxy Username:"
-msgstr "ਪਰਾਕਸੀ ਯੂਜ਼ਰ ਨਾਂ:"
+msgstr "ਪਰਾਕਸੀ ਵਰਤੋਂਕਾਰ ਨਾਂ:"
 
 #: ../src/qtui/settingspages/servereditdlg.ui:280
 msgctxt "ServerEditDlg|"
@@ -8764,7 +8764,7 @@ msgstr "ਕੌਣ ਹੈ"
 #: ../src/uisupport/toolbaractionprovider.cpp:40
 msgctxt "ToolBarActionProvider|"
 msgid "Request user information"
-msgstr "ਯੂਜ਼ਰ ਜਾਣਕਾਰੀ ਦੀ ਮੰਗ ਕਰੋ"
+msgstr "ਵਰਤੋਂਕਾਰ ਜਾਣਕਾਰੀ ਦੀ ਮੰਗ ਕਰੋ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:42
 msgctxt "ToolBarActionProvider|"
@@ -8814,7 +8814,7 @@ msgstr "ਕਿੱਕ"
 #: ../src/uisupport/toolbaractionprovider.cpp:46
 msgctxt "ToolBarActionProvider|"
 msgid "Remove user from channel"
-msgstr "ਯੂਜ਼ਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ"
+msgstr "ਵਰਤੋਂਕਾਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:47
 msgctxt "ToolBarActionProvider|"
@@ -8824,7 +8824,7 @@ msgstr "ਪਾਬੰਦੀ"
 #: ../src/uisupport/toolbaractionprovider.cpp:47
 msgctxt "ToolBarActionProvider|"
 msgid "Ban user from channel"
-msgstr "ਚੈਨਲ ਤੋਂ ਯੂਜ਼ਰ ਉੱਤੇ ਪਾਬੰਦੀ"
+msgstr "ਚੈਨਲ ਤੋਂ ਵਰਤੋਂਕਾਰ ਉੱਤੇ ਪਾਬੰਦੀ"
 
 #: ../src/uisupport/toolbaractionprovider.cpp:48
 msgctxt "ToolBarActionProvider|"
@@ -8834,7 +8834,7 @@ msgstr "ਠੁੱਡਾ/ਪਾਬੰਦੀ"
 #: ../src/uisupport/toolbaractionprovider.cpp:48
 msgctxt "ToolBarActionProvider|"
 msgid "Remove and ban user from channel"
-msgstr "ਯੂਜ਼ਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ ਅਤੇ ਪਾਬੰਦੀ ਲਗਾਓ"
+msgstr "ਵਰਤੋਂਕਾਰ ਨੂੰ ਚੈਨਲ ਤੋਂ ਹਟਾਓ ਅਤੇ ਪਾਬੰਦੀ ਲਗਾਓ"
 
 #: ../src/qtui/topicwidget.ui:32
 msgctxt "TopicWidget|"
@@ -8850,7 +8850,7 @@ msgstr "..."
 #, qt-format
 msgctxt "TopicWidget|"
 msgid "Users: %1"
-msgstr "ਯੂਜ਼ਰ: %1"
+msgstr "ਵਰਤੋਂਕਾਰ: %1"
 
 #: ../src/qtui/topicwidget.cpp:117
 #, qt-format
@@ -8996,7 +8996,7 @@ msgstr ""
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "User mode: %DM%1%DM"
-msgstr "ਯੂਜ਼ਰ ਮੋਡ: %DM%1%DM"
+msgstr "ਵਰਤੋਂਕਾਰ ਮੋਡ: %DM%1%DM"
 
 #: ../src/uisupport/uistyle.cpp:924
 #, qt-format
@@ -9103,4 +9103,4 @@ msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
 msgid_plural "%n User(s)"
 msgstr[0] "%n ਯੂਜ਼ਰ"
-msgstr[1] "%n ਯੂਜ਼ਰ"
+msgstr[1] "%n ਵਰਤੋਂਕਾਰ"
