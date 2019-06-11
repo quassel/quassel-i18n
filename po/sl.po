@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-03-14 12:16+0000\n"
+"PO-Revision-Date: 2019-06-10 13:42+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Slovenian (http://www.transifex.com/quassel/quassel/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -2845,44 +2845,44 @@ msgid ""
 "configured before attempting to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:237
+#: ../src/core/coreauthhandler.cpp:247
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr "Neveljaven poskus prijave od %1 kot »%2«"
 
-#: ../src/core/coreauthhandler.cpp:238
+#: ../src/core/coreauthhandler.cpp:248
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr "<b>Neveljavno uporabniško ime ali geslo.</b><br>Podane kombinacije uporabniškega imena in gesla ni mogoče najti v podatkovni zbirki."
 
-#: ../src/core/coreauthhandler.cpp:244
+#: ../src/core/coreauthhandler.cpp:254
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr "Odjemalec %1 je bil uspešno začet in pooblaščen kot »%2« (ID uporabnika: %3)."
 
-#: ../src/core/coreauthhandler.cpp:251
+#: ../src/core/coreauthhandler.cpp:261
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:253
+#: ../src/core/coreauthhandler.cpp:263
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:257
+#: ../src/core/coreauthhandler.cpp:267
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:276
+#: ../src/core/coreauthhandler.cpp:286
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr "Začenjanje šifriranja za odjemalec:"
@@ -3606,119 +3606,119 @@ msgstr ""
 
 #: ../src/core/corenetwork.cpp:225
 msgctxt "CoreNetwork|"
-msgid "Connection failed. Cycling to next Server"
-msgstr "Povezava ni uspela. Prehajanje na naslednji strežnik"
+msgid "Connection failed. Cycling to next server..."
+msgstr ""
 
-#: ../src/core/corenetwork.cpp:236 ../src/core/corenetwork.cpp:237
+#: ../src/core/corenetwork.cpp:237 ../src/core/corenetwork.cpp:242
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Povezovanje z %1:%2 ..."
 
-#: ../src/core/corenetwork.cpp:304
+#: ../src/core/corenetwork.cpp:311
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Prekinjanje povezave ... (%1)"
 
-#: ../src/core/corenetwork.cpp:304
+#: ../src/core/corenetwork.cpp:311
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Izklop jedra"
 
-#: ../src/core/corenetwork.cpp:533
+#: ../src/core/corenetwork.cpp:526
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Ni se bilo mogoče povezati z %1 (%2)"
 
-#: ../src/core/corenetwork.cpp:535
+#: ../src/core/corenetwork.cpp:532
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Napaka povezave: %1"
 
-#: ../src/core/corenetwork.cpp:582
+#: ../src/core/corenetwork.cpp:584
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1093
+#: ../src/core/corenetwork.cpp:1106
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1105
+#: ../src/core/corenetwork.cpp:1123
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
-msgstr ""
-
-#: ../src/core/corenetwork.cpp:1217
-#, qt-format
-msgctxt "CoreNetwork|"
-msgid "Could not negotiate some capabilities, retrying individually (%1)..."
-msgstr ""
-
-#: ../src/core/corenetwork.cpp:1231
-msgctxt "CoreNetwork|"
-msgid "No capabilities available"
 msgstr ""
 
 #: ../src/core/corenetwork.cpp:1237
 #, qt-format
 msgctxt "CoreNetwork|"
+msgid "Could not negotiate some capabilities, retrying individually (%1)..."
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:1256
+msgctxt "CoreNetwork|"
+msgid "No capabilities available"
+msgstr ""
+
+#: ../src/core/corenetwork.cpp:1267
+#, qt-format
+msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1244
+#: ../src/core/corenetwork.cpp:1279
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1259
+#: ../src/core/corenetwork.cpp:1299
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1265
+#: ../src/core/corenetwork.cpp:1307
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1397
+#: ../src/core/corenetwork.cpp:1442
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1401 ../src/core/corenetwork.cpp:1415
+#: ../src/core/corenetwork.cpp:1446 ../src/core/corenetwork.cpp:1465
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1411
+#: ../src/core/corenetwork.cpp:1461
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:270
+#: ../src/core/coresession.cpp:272
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr "Odjemalec"
 
-#: ../src/core/coresession.cpp:270
+#: ../src/core/coresession.cpp:272
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr "je prekinil povezavo (ID uporabnika: %1)."
 
-#: ../src/core/coresession.cpp:604
+#: ../src/core/coresession.cpp:607
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3726,7 +3726,7 @@ msgid ""
 " create network %1!"
 msgstr "CoreSession::createNetwork(): med poskusom ustvarjanja omrežja %1 je bil od jedra prejet neveljaven networkId!"
 
-#: ../src/core/coresession.cpp:635
+#: ../src/core/coresession.cpp:638
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -3761,12 +3761,12 @@ msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr "Ni bilo mogoče razčleniti DH1080_FINISH. Izmenjava ključa je spodletela."
 
-#: ../src/core/coresessioneventprocessor.cpp:1582
+#: ../src/core/coresessioneventprocessor.cpp:1581
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr "Obratni DCC SEND ni podprt"
 
-#: ../src/core/coresessioneventprocessor.cpp:1605
+#: ../src/core/coresessioneventprocessor.cpp:1604
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -3868,44 +3868,44 @@ msgctxt "CoreUserInputHandler|"
 msgid "away"
 msgstr "odsoten"
 
-#: ../src/core/coreuserinputhandler.cpp:168
+#: ../src/core/coreuserinputhandler.cpp:178
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "sending CTCP-%1 request to %2"
 msgstr "pošiljanje zahteve CTCP-%1 do %2"
 
-#: ../src/core/coreuserinputhandler.cpp:190
-#: ../src/core/coreuserinputhandler.cpp:371
-#: ../src/core/coreuserinputhandler.cpp:661
-#: ../src/core/coreuserinputhandler.cpp:706
+#: ../src/core/coreuserinputhandler.cpp:208
+#: ../src/core/coreuserinputhandler.cpp:404
+#: ../src/core/coreuserinputhandler.cpp:757
+#: ../src/core/coreuserinputhandler.cpp:813
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl"
 " plugin."
 msgstr "Napaka: ponudnik za vstavek QCA ni bil najden. Običajno ga vsebuje vstavek qca-ossl."
 
-#: ../src/core/coreuserinputhandler.cpp:203
+#: ../src/core/coreuserinputhandler.cpp:223
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /delkey <nick|channel> deletes the encryption key for nick or "
 "channel or just /delkey when in a channel or query."
 msgstr "[uporaba] /delkey <vzdevek|kanal> izbriše šifrirni ključ za vzdevek ali kanal, v kanalu ali poizvedbi lahko uporabite samo /delkey."
 
-#: ../src/core/coreuserinputhandler.cpp:211
-#: ../src/core/coreuserinputhandler.cpp:728
+#: ../src/core/coreuserinputhandler.cpp:236
+#: ../src/core/coreuserinputhandler.cpp:842
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
 msgstr "Za %1 ni bil nastavljen noben ključ."
 
-#: ../src/core/coreuserinputhandler.cpp:216
+#: ../src/core/coreuserinputhandler.cpp:246
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been deleted."
 msgstr "Ključ za %1 je bil izbrisan."
 
-#: ../src/core/coreuserinputhandler.cpp:223
-#: ../src/core/coreuserinputhandler.cpp:742
+#: ../src/core/coreuserinputhandler.cpp:255
+#: ../src/core/coreuserinputhandler.cpp:860
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3914,31 +3914,31 @@ msgid ""
 "with QCA2 present."
 msgstr "Napaka: nastavljanje šifrirnega ključa zahteva vgrajeno podporo knjižnici Šifrirna arhitektura Qt (QCA2). Stopite v stik z avtorjem vaše distribucije za to podporo ali pa Quassel izgradite sami s prisotnim QCA2."
 
-#: ../src/core/coreuserinputhandler.cpp:383
+#: ../src/core/coreuserinputhandler.cpp:418
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /keyx [<nick>] Initiates a DH1080 key exchange with the target."
 msgstr "[usage] /keyx [<vzdevek>] začne izmenjavo ključev DH1080 s ciljem."
 
-#: ../src/core/coreuserinputhandler.cpp:390
+#: ../src/core/coreuserinputhandler.cpp:430
 msgctxt "CoreUserInputHandler|"
 msgid "It is only possible to exchange keys in a query buffer."
 msgstr "Ključe je mogoče izmenjati le v prikazu poizvedbe."
 
-#: ../src/core/coreuserinputhandler.cpp:400
+#: ../src/core/coreuserinputhandler.cpp:445
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Failed to initiate key exchange with %1."
 msgstr "Ni bilo mogoče začeti izmenjave ključa z %1."
 
-#: ../src/core/coreuserinputhandler.cpp:405
+#: ../src/core/coreuserinputhandler.cpp:455
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Initiated key exchange with %1."
 msgstr "Začeta izmenjava ključa z %1."
 
-#: ../src/core/coreuserinputhandler.cpp:412
-#: ../src/core/coreuserinputhandler.cpp:688
+#: ../src/core/coreuserinputhandler.cpp:464
+#: ../src/core/coreuserinputhandler.cpp:793
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -3947,18 +3947,18 @@ msgid ""
 "with QCA present."
 msgstr "Napaka: nastavljanje šifrirnega ključa zahteva vgrajeno podporo knjižnici Šifrirna arhitektura Qt (QCA). Stopite v stik z avtorjem vaše distribucije za to podporo ali pa Quassel izgradite sami s prisotnim QCA."
 
-#: ../src/core/coreuserinputhandler.cpp:472
+#: ../src/core/coreuserinputhandler.cpp:536
 msgctxt "CoreUserInputHandler|"
 msgid "Your persistent modes have been reset."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:596
+#: ../src/core/coreuserinputhandler.cpp:676
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "Starting query with %1"
 msgstr "Začenjanje poizvedbe z %1"
 
-#: ../src/core/coreuserinputhandler.cpp:673
+#: ../src/core/coreuserinputhandler.cpp:771
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
@@ -3966,20 +3966,20 @@ msgid ""
 "it."
 msgstr "[uporaba] /setkey <vzdevek|kanal> <ključ> nastavi šifrirni ključ za vzdevek ali kanal, v kanalu ali poizvedbi lahko uporabite samo /setkey <ključ>"
 
-#: ../src/core/coreuserinputhandler.cpp:682
+#: ../src/core/coreuserinputhandler.cpp:785
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr "Ključ za %1 je bil nastavljen."
 
-#: ../src/core/coreuserinputhandler.cpp:719
+#: ../src/core/coreuserinputhandler.cpp:828
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel"
 " or just /showkey when in a channel or query."
 msgstr "[uporaba] /showkey <vzdevek|kanal> pokaže šifrirni ključ za vzdevek ali kanal, v kanalu ali poizvedbi lahko uporabite samo /showkey."
 
-#: ../src/core/coreuserinputhandler.cpp:735
+#: ../src/core/coreuserinputhandler.cpp:851
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
@@ -4208,240 +4208,240 @@ msgctxt "DockManagerNotificationBackend::ConfigWidget|"
 msgid "Mark dockmanager entry"
 msgstr "Označi vnos upravljalnika sidrišča"
 
-#: ../src/core/eventstringifier.cpp:232 ../src/core/eventstringifier.cpp:431
+#: ../src/core/eventstringifier.cpp:240 ../src/core/eventstringifier.cpp:439
 msgctxt "EventStringifier|"
 msgid "[Whois] "
 msgstr "[Whois] "
 
-#: ../src/core/eventstringifier.cpp:246
+#: ../src/core/eventstringifier.cpp:254
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 invited you to channel %2"
 msgstr "%1 vas je povabil v kanal %2"
 
-#: ../src/core/eventstringifier.cpp:393
+#: ../src/core/eventstringifier.cpp:401
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has changed topic for %2 to: \"%3\""
 msgstr "%1 je spremenil temo za %2 v: »%3«"
 
-#: ../src/core/eventstringifier.cpp:405
+#: ../src/core/eventstringifier.cpp:413
 msgctxt "EventStringifier|"
 msgid "Error from server: "
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:410
+#: ../src/core/eventstringifier.cpp:418
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Operwall] %1: %2"
 msgstr "[Operwall] %1: %2"
 
-#: ../src/core/eventstringifier.cpp:417
+#: ../src/core/eventstringifier.cpp:425
 msgctxt "EventStringifier|"
 msgid ""
 "Received non-RFC-compliant RPL_ISUPPORT: this can lead to unexpected "
 "behavior!"
 msgstr "Prejet je bil RPL_ISUPPORT, ki ni skladen z RFC: to lahko vodi do nepredvidenega obnašanja!"
 
-#: ../src/core/eventstringifier.cpp:454
+#: ../src/core/eventstringifier.cpp:462
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 is away: \"%2\""
 msgstr "%1 je odsoten: »%2«"
 
-#: ../src/core/eventstringifier.cpp:460
+#: ../src/core/eventstringifier.cpp:468
 msgctxt "EventStringifier|"
 msgid "You are no longer marked as being away"
 msgstr "Niste več označeni kot odsotni"
 
-#: ../src/core/eventstringifier.cpp:467
+#: ../src/core/eventstringifier.cpp:475
 msgctxt "EventStringifier|"
 msgid "You have been marked as being away"
 msgstr "Sedaj ste označeni kot odsotni"
 
-#: ../src/core/eventstringifier.cpp:488
+#: ../src/core/eventstringifier.cpp:496
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is %2 (%3)"
 msgstr "[Whois] %1 je %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:503
+#: ../src/core/eventstringifier.cpp:511
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is online via %2 (%3)"
 msgstr "[Whois] %1 je povezan prek %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:505
+#: ../src/core/eventstringifier.cpp:513
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was online via %2 (%3)"
 msgstr "[Whowas] %1 je bil povezan prek %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:514
+#: ../src/core/eventstringifier.cpp:522
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was %2@%3 (%4)"
 msgstr "[Whowas] %1 je bil %2@%3 (%4)"
 
-#: ../src/core/eventstringifier.cpp:522
+#: ../src/core/eventstringifier.cpp:530
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] End of /WHO list for %1"
 msgstr "[Who] Konec seznama /WHO za %1"
 
-#: ../src/core/eventstringifier.cpp:543
+#: ../src/core/eventstringifier.cpp:552
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is logged in since %2"
 msgstr "[Whois] %1 je prijavljen od %2"
 
-#: ../src/core/eventstringifier.cpp:548
+#: ../src/core/eventstringifier.cpp:557
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is idling for %2 (since %3)"
 msgstr "[Whois] %1 je nedejaven od %2 (%3)"
 
-#: ../src/core/eventstringifier.cpp:556
+#: ../src/core/eventstringifier.cpp:565
 msgctxt "EventStringifier|"
 msgid "[Whois] End of /WHOIS list"
 msgstr "[Whois] Konec seznama /WHOIS"
 
-#: ../src/core/eventstringifier.cpp:578
+#: ../src/core/eventstringifier.cpp:587
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is a user on channels: %2"
 msgstr "[Whois] %1 je uporabnik na kanalih: %2"
 
-#: ../src/core/eventstringifier.cpp:580
+#: ../src/core/eventstringifier.cpp:589
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 has voice on channels: %2"
 msgstr "[Whois] %1 ima glas na kanalih: %2"
 
-#: ../src/core/eventstringifier.cpp:582
+#: ../src/core/eventstringifier.cpp:591
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is an operator on channels: %2"
 msgstr "[Whois] %1 je operater na kanalih: %2"
 
-#: ../src/core/eventstringifier.cpp:605
+#: ../src/core/eventstringifier.cpp:614
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 has %2 users. Topic is: \"%3\""
 msgstr "Kanal %1 ima %2 uporabnikov. Tema je: %3"
 
-#: ../src/core/eventstringifier.cpp:611
+#: ../src/core/eventstringifier.cpp:620
 msgctxt "EventStringifier|"
 msgid "End of channel list"
 msgstr "Konec seznama kanalov"
 
-#: ../src/core/eventstringifier.cpp:627
+#: ../src/core/eventstringifier.cpp:636
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Homepage for %1 is %2"
 msgstr "Domača stran za %1 je %2"
 
-#: ../src/core/eventstringifier.cpp:652
+#: ../src/core/eventstringifier.cpp:661
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Channel %1 created on %2"
 msgstr "Kanal %1 je bil ustvarjen %2"
 
-#: ../src/core/eventstringifier.cpp:663
+#: ../src/core/eventstringifier.cpp:672
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whois] %1 is authed as %2"
 msgstr "[Whois] %1 je pooblaščen kot %2"
 
-#: ../src/core/eventstringifier.cpp:666
+#: ../src/core/eventstringifier.cpp:675
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Whowas] %1 was authed as %2"
 msgstr "[Whowas] %1 je bil pooblaščen kot %2"
 
-#: ../src/core/eventstringifier.cpp:674
+#: ../src/core/eventstringifier.cpp:683
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "No topic is set for %1."
 msgstr "Za %1 ni nastavljene nobene teme."
 
-#: ../src/core/eventstringifier.cpp:681
+#: ../src/core/eventstringifier.cpp:690
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic for %1 is \"%2\""
 msgstr "Tema za %1 je »%2«"
 
-#: ../src/core/eventstringifier.cpp:702
+#: ../src/core/eventstringifier.cpp:711
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Topic set by %1 on %2"
 msgstr "Temo za %2 je nastavil %1"
 
-#: ../src/core/eventstringifier.cpp:714
+#: ../src/core/eventstringifier.cpp:723
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "%1 has been invited to %2"
 msgstr "%1 je bil povabljen v %2"
 
-#: ../src/core/eventstringifier.cpp:721
+#: ../src/core/eventstringifier.cpp:730
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[Who] %1"
 msgstr "[Who] %1"
 
-#: ../src/core/eventstringifier.cpp:730
+#: ../src/core/eventstringifier.cpp:739
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "[WhoX] %1"
 msgstr ""
 
-#: ../src/core/eventstringifier.cpp:736
+#: ../src/core/eventstringifier.cpp:745
 msgctxt "EventStringifier|"
 msgid "End of /WHOWAS"
 msgstr "Konec /WHOWAS"
 
-#: ../src/core/eventstringifier.cpp:745
+#: ../src/core/eventstringifier.cpp:754
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick %1 contains illegal characters"
 msgstr "Vzdevek %1 vsebuje neveljavne znake"
 
-#: ../src/core/eventstringifier.cpp:754
+#: ../src/core/eventstringifier.cpp:763
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick already in use: %1"
 msgstr "Vzdevek je že v uporabi: %1"
 
-#: ../src/core/eventstringifier.cpp:763
+#: ../src/core/eventstringifier.cpp:772
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Nick/channel is temporarily unavailable: %1"
 msgstr "Vzdevek ali kanal začasno ni dosegljiv: %1"
 
-#: ../src/core/eventstringifier.cpp:787
+#: ../src/core/eventstringifier.cpp:796
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr "pošiljanje zahteve CTCP-%1 na %2"
 
-#: ../src/core/eventstringifier.cpp:804
+#: ../src/core/eventstringifier.cpp:813
 msgctxt "EventStringifier|"
 msgid "unknown"
 msgstr "neznano"
 
-#: ../src/core/eventstringifier.cpp:805
+#: ../src/core/eventstringifier.cpp:814
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received %1CTCP-%2 request by %3"
 msgstr "Prejeta zahteva %1CTCP-%2 od %3"
 
-#: ../src/core/eventstringifier.cpp:808
+#: ../src/core/eventstringifier.cpp:817
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-%1 answer from %2: %3"
 msgstr "Prejet odgovor CTCP-%1 od %2: %3"
 
-#: ../src/core/eventstringifier.cpp:823
+#: ../src/core/eventstringifier.cpp:832
 #, qt-format
 msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
@@ -5721,7 +5721,7 @@ msgctxt "IrcListModel|"
 msgid "Topic"
 msgstr "Tema"
 
-#: ../src/core/ircparser.cpp:378
+#: ../src/core/ircparser.cpp:391
 msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr ""
@@ -7929,12 +7929,25 @@ msgctxt "Quassel|"
 msgid "Limit raw IRC logging to this network ID.  Implies --debug-irc"
 msgstr ""
 
-#: ../src/common/quassel.cpp:392
+#: ../src/common/quassel.cpp:392 ../src/common/quassel.cpp:394
 msgctxt "Quassel|"
 msgid "database network ID"
 msgstr ""
 
-#: ../src/common/quassel.cpp:399
+#: ../src/common/quassel.cpp:393
+msgctxt "Quassel|"
+msgid ""
+"Enable logging of all parsed IRC messages to debug log, including passwords!"
+"  In most cases you should also set --loglevel Debug"
+msgstr ""
+
+#: ../src/common/quassel.cpp:394
+msgctxt "Quassel|"
+msgid ""
+"Limit parsed IRC logging to this network ID.  Implies --debug-irc-parsed"
+msgstr ""
+
+#: ../src/common/quassel.cpp:401
 msgctxt "Quassel|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr "Quassel IRC je moderen, porazdeljen odjemalec za IRC"
