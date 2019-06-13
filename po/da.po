@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-06-10 13:42+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2019-06-12 13:08+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/quassel/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -732,7 +732,7 @@ msgctxt "AboutDlg|"
 msgid ""
 "for creating an awesome framework, and for sponsoring development with "
 "Greenphones, N810s, N950s and more"
-msgstr ""
+msgstr "for oprettelse af en imponerende ramme og for at sponsorere udvikling med Greenphones, N810'er, N950'er med mere"
 
 #: ../src/core/abstractsqlstorage.cpp:133
 #, qt-format
@@ -763,17 +763,17 @@ msgstr "<b>Genvej til alias</b><br />Det kan bruges som en almindelig skråstreg
 #: ../src/qtui/settingspages/aliasesmodel.cpp:75
 msgctxt "AliasesModel|"
 msgid "The string the shortcut will be expanded to"
-msgstr ""
+msgstr "Strengen genvejen vil blive udvidet til"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:77
 msgctxt "AliasesModel|"
 msgid "Special variables"
-msgstr ""
+msgstr "Specielle variabler"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:83
 msgctxt "AliasesModel|"
 msgid "Parameter variables"
-msgstr ""
+msgstr "Parametervariabler"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:84
 msgctxt "AliasesModel|"
@@ -822,32 +822,32 @@ msgstr ""
 #: ../src/qtui/settingspages/aliasesmodel.cpp:100
 msgctxt "AliasesModel|"
 msgid "General variables"
-msgstr ""
+msgstr "Generelle variabler"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:101
 msgctxt "AliasesModel|"
 msgid "the whole string"
-msgstr ""
+msgstr "hele strengen"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:102
 msgctxt "AliasesModel|"
 msgid "your current nickname"
-msgstr ""
+msgstr "dit nuværende navn"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:103
 msgctxt "AliasesModel|"
 msgid "the name of the selected channel"
-msgstr ""
+msgstr "navn på den valgte kanal"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:109
 msgctxt "AliasesModel|"
 msgid "Multiple commands can be separated with semicolons"
-msgstr ""
+msgstr "Flere kommandoer kan adskilles med semikolonner"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:112
 msgctxt "AliasesModel|"
 msgid "Example:"
-msgstr ""
+msgstr "Eksempel:"
 
 #: ../src/qtui/settingspages/aliasesmodel.cpp:112
 msgctxt "AliasesModel|"
@@ -925,7 +925,7 @@ msgstr "<Systemets standard>"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:59
 msgctxt "AppearanceSettingsPage|"
 msgid "Widget style:"
-msgstr ""
+msgstr "Kontrolstil:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:66
 msgctxt "AppearanceSettingsPage|"
@@ -935,7 +935,7 @@ msgstr "Angiv programstil"
 #: ../src/qtui/settingspages/appearancesettingspage.ui:73
 msgctxt "AppearanceSettingsPage|"
 msgid "Fallback icon theme:"
-msgstr ""
+msgstr "Reservetema for ikoner:"
 
 #: ../src/qtui/settingspages/appearancesettingspage.ui:80
 msgctxt "AppearanceSettingsPage|"
@@ -1201,7 +1201,7 @@ msgstr "Vil du flette buffer \"%1\" permanent i buffer \"%2\"?\n Dette kan ikke 
 #: ../src/uisupport/bufferview.cpp:715
 msgctxt "BufferViewDock|"
 msgid "Search..."
-msgstr ""
+msgstr "Søg ..."
 
 #: ../src/qtui/settingspages/buffervieweditdlg.ui:14
 msgctxt "BufferViewEditDlg|"
@@ -1304,7 +1304,7 @@ msgstr "Sorter alfabetisk"
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:163
 msgctxt "BufferViewSettingsPage|"
 msgid "Show search"
-msgstr ""
+msgstr "Vis søgning"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:170
 msgctxt "BufferViewSettingsPage|"
@@ -1391,7 +1391,7 @@ msgstr "Gå til markeringslinje"
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
-msgstr ""
+msgstr "Kanal %1"
 
 #: ../src/client/networkmodel.cpp:723
 msgctxt "ChannelBufferItem|"
@@ -1401,7 +1401,7 @@ msgstr "Brugere"
 #: ../src/client/networkmodel.cpp:728
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
-msgstr ""
+msgstr "Tilstand"
 
 #: ../src/client/networkmodel.cpp:738
 msgctxt "ChannelBufferItem|"
@@ -1819,7 +1819,7 @@ msgstr "<html><head/> <body><p>Skik eksempler:</p>\n<table cellpadding=\"2\">\n<
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:54
 msgctxt "ChatViewSettingsPage|"
 msgid " hh:mm:ss"
-msgstr ""
+msgstr " tt:mm:ss"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:79
 msgctxt "ChatViewSettingsPage|"
@@ -1920,12 +1920,12 @@ msgstr "Chatvisning"
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:44
 msgctxt "ChatViewSettingsPage|"
 msgid "You need at least version 0.6 of Quassel Core to use this feature"
-msgstr ""
+msgstr "Du skal bruge mindst version 0.6 af Quassel Core for at bruge denne funktion"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:54
 msgctxt "ChatViewSettingsPage|"
 msgid "Your Quassel core does not support this feature"
-msgstr ""
+msgstr "Din Quassel-kerne understøtter ikke denne funktion"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:55
 msgctxt "ChatViewSettingsPage|"
@@ -1937,17 +1937,17 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:67
 msgctxt "ChatViewSettingsPage|"
 msgid "No modes"
-msgstr ""
+msgstr "Ingen tilstande"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:68
 msgctxt "ChatViewSettingsPage|"
 msgid "Highest mode"
-msgstr ""
+msgstr "Højeste tilstand"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.cpp:69
 msgctxt "ChatViewSettingsPage|"
 msgid "All modes"
-msgstr ""
+msgstr "Alle tilstande"
 
 #: ../src/client/client.cpp:276
 msgctxt "Client|"
@@ -2035,13 +2035,13 @@ msgstr "Kernen afviste forbindelsen fra denne klient"
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Core does not support the following features: %1"
-msgstr ""
+msgstr "Kernen understøtter ikke de følgende funktioner: %1"
 
 #: ../src/client/clientauthhandler.cpp:327
 #, qt-format
 msgctxt "ClientAuthHandler|"
 msgid "Core supports unknown features: %1"
-msgstr ""
+msgstr "Kernen understøtter ukendte funktioner: %1"
 
 #: ../src/client/clientauthhandler.cpp:368
 msgctxt "ClientAuthHandler|"
@@ -2346,7 +2346,7 @@ msgstr "Vis kanalliste"
 #: ../src/uisupport/contextmenuactionprovider.cpp:93
 msgctxt "ContextMenuActionProvider|"
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurer"
 
 #: ../src/uisupport/contextmenuactionprovider.cpp:94
 msgctxt "ContextMenuActionProvider|"
@@ -2392,12 +2392,12 @@ msgstr ""
 #, qt-format
 msgctxt "Core|"
 msgid "Cannot configure from environment: %1"
-msgstr ""
+msgstr "Kan ikke konfigurere fra miljø: %1"
 
 #: ../src/core/core.cpp:171
 msgctxt "Core|"
 msgid "Cannot configure from environment!"
-msgstr ""
+msgstr "Kan ikke konfigurere fra miljø!"
 
 #: ../src/core/core.cpp:177
 msgctxt "Core|"
@@ -2421,7 +2421,7 @@ msgstr ""
 #: ../src/core/core.cpp:305
 msgctxt "Core|"
 msgid "Cannot restore a state for an unconfigured core!"
-msgstr ""
+msgstr "Kan ikke gendanne en tilstand for en kerne uden konfiguration!"
 
 #: ../src/core/core.cpp:309
 msgctxt "Core|"
@@ -2446,7 +2446,7 @@ msgstr "Kunne ikke opsætte lager!"
 #: ../src/core/core.cpp:366
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
-msgstr ""
+msgstr "Kunne ikke opsætte godkender!"
 
 #: ../src/core/core.cpp:372
 msgctxt "Core|"
@@ -2958,7 +2958,7 @@ msgstr "Formular"
 #: ../src/qtui/coreconfigwizardauthenticationselectionpage.ui:25
 msgctxt "CoreConfigWizardAuthenticationSelectionPage|"
 msgid "Authentication Backend:"
-msgstr ""
+msgstr "Godkendelsesmotor:"
 
 #: ../src/qtui/coreconfigwizardintropage.ui:13
 msgctxt "CoreConfigWizardIntroPage|"
@@ -2996,7 +2996,7 @@ msgstr ""
 #: ../src/qtui/coreconfigwizard.cpp:314
 msgctxt "CoreConfigWizardPages::AuthenticationSelectionPage|"
 msgid "Authentication Settings"
-msgstr ""
+msgstr "Godkendelsesindstillinger"
 
 #: ../src/qtui/coreconfigwizard.cpp:244
 msgctxt "CoreConfigWizardPages::IntroPage|"
@@ -3016,7 +3016,7 @@ msgstr ""
 #: ../src/qtui/coreconfigwizard.cpp:407
 msgctxt "CoreConfigWizardPages::StorageSelectionPage|"
 msgid "Storage Settings"
-msgstr ""
+msgstr "Lagerindstillinger"
 
 #: ../src/qtui/coreconfigwizard.cpp:458
 msgctxt "CoreConfigWizardPages::SyncPage|"
@@ -3063,7 +3063,7 @@ msgstr "Lagermotor:"
 #: ../src/qtui/coreconfigwizardsyncpage.ui:76
 msgctxt "CoreConfigWizardSyncPage|"
 msgid "Authentication Backend:"
-msgstr ""
+msgstr "Godkendelsesmotor:"
 
 #: ../src/qtui/coreconfigwizardsyncpage.ui:110
 msgctxt "CoreConfigWizardSyncPage|"
@@ -3124,7 +3124,7 @@ msgstr "Afbryd fra kerne."
 #: ../src/client/coreconnection.cpp:357
 msgctxt "CoreConnection|"
 msgid "Initializing..."
-msgstr ""
+msgstr "Initialiserer ..."
 
 #: ../src/client/coreconnection.cpp:414
 msgctxt "CoreConnection|"
@@ -3274,12 +3274,12 @@ msgstr ""
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:64
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Details..."
-msgstr ""
+msgstr "Detaljer ..."
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:93
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Rules"
-msgstr ""
+msgstr "Marker regler"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:99
 msgctxt "CoreHighlightSettingsPage|"
@@ -3306,7 +3306,7 @@ msgstr "Aktiveret"
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:274
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Rule"
-msgstr ""
+msgstr "Regel"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:176
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:279
@@ -3347,12 +3347,12 @@ msgstr "Fjern"
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:250
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlight Ignore Rules"
-msgstr ""
+msgstr "Marker ignorer regler"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:256
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Never Highlight For"
-msgstr ""
+msgstr "Nyere markering for"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:33
 msgctxt "CoreHighlightSettingsPage|"
@@ -3362,12 +3362,12 @@ msgstr "Grænseflade"
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:35
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlights"
-msgstr ""
+msgstr "Markeringer"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:35
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remote Highlights"
-msgstr ""
+msgstr "Eksterne markeringer"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:43
 msgctxt "CoreHighlightSettingsPage|"
@@ -3377,7 +3377,7 @@ msgstr ""
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:44
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Current Nick"
-msgstr ""
+msgstr "Nuværende navn"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.cpp:45
 msgctxt "CoreHighlightSettingsPage|"
@@ -3556,7 +3556,7 @@ msgstr ""
 #: ../src/qtui/coreinfodlg.ui:124
 msgctxt "CoreInfoDlg|"
 msgid "Details..."
-msgstr ""
+msgstr "Detaljer ..."
 
 #: ../src/qtui/coreinfodlg.ui:200
 msgctxt "CoreInfoDlg|"
@@ -4568,7 +4568,7 @@ msgstr ""
 #: ../src/qtui/settingspages/highlightsettingspage.ui:163
 msgctxt "HighlightSettingsPage|"
 msgid "Details..."
-msgstr ""
+msgstr "Detaljer ..."
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:32
 msgctxt "HighlightSettingsPage|"
@@ -4660,7 +4660,7 @@ msgstr ""
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:278
 msgctxt "HighlightSettingsPage|"
 msgid "Highlights"
-msgstr ""
+msgstr "Markeringer"
 
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:283
 msgctxt "HighlightSettingsPage|"
@@ -4681,7 +4681,7 @@ msgstr ""
 #: ../src/qtui/settingspages/highlightsettingspage.cpp:290
 msgctxt "HighlightSettingsPage|"
 msgid "Remote Highlights"
-msgstr ""
+msgstr "Eksterne markeringer"
 
 #: ../src/qtui/settingspages/highlightsettingspage.h:47
 msgctxt "HighlightSettingsPage|"
@@ -5180,7 +5180,7 @@ msgstr "RSA"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:412
 msgctxt "IdentityEditWidget|"
 msgid "ECDSA"
-msgstr ""
+msgstr "ECDSA"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:415
 msgctxt "IdentityEditWidget|"
@@ -5190,7 +5190,7 @@ msgstr "DSA"
 #: ../src/qtui/settingspages/identityeditwidget.cpp:418
 msgctxt "IdentityEditWidget|"
 msgid "Invalid key or no key loaded"
-msgstr ""
+msgstr "Ugyldig nøgle eller ingen nøgle indlæst"
 
 #: ../src/qtui/settingspages/identityeditwidget.cpp:420
 #: ../src/qtui/settingspages/identityeditwidget.cpp:463
@@ -6749,7 +6749,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1037
 msgctxt "NetworkAddDlg|"
 msgid "Your Quassel core does not support this feature"
-msgstr ""
+msgstr "Din Quassel-kerne understøtter ikke denne funktion"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1038
 msgctxt "NetworkAddDlg|"
@@ -7103,7 +7103,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.ui:783
 msgctxt "NetworksSettingsPage|"
 msgid "Details..."
-msgstr ""
+msgstr "Detaljer ..."
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:798
 msgctxt "NetworksSettingsPage|"
@@ -7219,7 +7219,7 @@ msgstr ""
 #: ../src/qtui/settingspages/networkssettingspage.cpp:178
 msgctxt "NetworksSettingsPage|"
 msgid "Your Quassel core does not support this feature"
-msgstr ""
+msgstr "Din Quassel-kerne understøtter ikke denne funktion"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:179
 msgctxt "NetworksSettingsPage|"
@@ -8236,7 +8236,7 @@ msgstr "Proxy password:"
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1187
 msgctxt "ServerEditDlg|"
 msgid "Your Quassel core does not support this feature"
-msgstr ""
+msgstr "Din Quassel-kerne understøtter ikke denne funktion"
 
 #: ../src/qtui/settingspages/networkssettingspage.cpp:1188
 msgctxt "ServerEditDlg|"
