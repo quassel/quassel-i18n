@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-06-10 13:42+0000\n"
+"PO-Revision-Date: 2019-08-06 13:33+0000\n"
 "Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/quassel/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -2405,233 +2405,233 @@ msgctxt "Core|"
 msgid "Cannot write quasselcore configuration; probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:234
+#: ../src/core/core.cpp:242
 msgctxt "Core|"
 msgid "Cannot open port for listening!"
 msgstr ""
 
-#: ../src/core/core.cpp:305
+#: ../src/core/core.cpp:313
 msgctxt "Core|"
 msgid "Cannot restore a state for an unconfigured core!"
 msgstr ""
 
-#: ../src/core/core.cpp:309
+#: ../src/core/core.cpp:317
 msgctxt "Core|"
 msgid "Calling restoreState() even though active sessions exist!"
 msgstr ""
 
-#: ../src/core/core.cpp:354
+#: ../src/core/core.cpp:362
 msgctxt "Core|"
 msgid "Core is already configured! Not configuring again..."
 msgstr ""
 
-#: ../src/core/core.cpp:357
+#: ../src/core/core.cpp:365
 msgctxt "Core|"
 msgid "Admin user or password not set."
 msgstr "ਐਡਮਿਨ ਵਰਤੋਂਕਾਰ ਜਾਂ ਪਾਸਵਰਡ ਸੈੱਟ ਨਹੀਂ ਹੈ।"
 
-#: ../src/core/core.cpp:361
+#: ../src/core/core.cpp:369
 msgctxt "Core|"
 msgid "Could not setup storage!"
 msgstr ""
 
-#: ../src/core/core.cpp:366
+#: ../src/core/core.cpp:374
 msgctxt "Core|"
 msgid "Could not setup authenticator!"
 msgstr ""
 
-#: ../src/core/core.cpp:372
+#: ../src/core/core.cpp:380
 msgctxt "Core|"
 msgid "Fatal failure while trying to setup, terminating"
 msgstr ""
 
-#: ../src/core/core.cpp:376
+#: ../src/core/core.cpp:384
 msgctxt "Core|"
 msgid "Could not save backend settings, probably a permission problem."
 msgstr ""
 
-#: ../src/core/core.cpp:380
+#: ../src/core/core.cpp:388
 msgctxt "Core|"
 msgid "Creating admin user..."
 msgstr "...ਐਡਮਿਨ ਵਰਤੋਂਕਾਰ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ../src/core/core.cpp:458
+#: ../src/core/core.cpp:466
 #, qt-format
 msgctxt "Core|"
 msgid "Selected storage backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:551
+#: ../src/core/core.cpp:559
 #, qt-format
 msgctxt "Core|"
 msgid "Selected auth backend %1 is not available."
 msgstr ""
 
-#: ../src/core/core.cpp:634
+#: ../src/core/core.cpp:642
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1"
 msgstr ""
 
-#: ../src/core/core.cpp:640
+#: ../src/core/core.cpp:648
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv6 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:647
+#: ../src/core/core.cpp:655
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv6 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:651
+#: ../src/core/core.cpp:659
 #, qt-format
 msgctxt "Core|"
 msgid "Listening for GUI clients on IPv4 %1 port %2 using protocol version %3"
 msgstr ""
 
-#: ../src/core/core.cpp:660
+#: ../src/core/core.cpp:668
 #, qt-format
 msgctxt "Core|"
 msgid "Could not open IPv4 interface %1:%2: %3"
 msgstr ""
 
-#: ../src/core/core.cpp:664
+#: ../src/core/core.cpp:672
 #, qt-format
 msgctxt "Core|"
 msgid "Invalid listen address %1, unknown network protocol"
 msgstr ""
 
-#: ../src/core/core.cpp:671
+#: ../src/core/core.cpp:679
 msgctxt "Core|"
 msgid "Could not open any network interfaces to listen on!"
 msgstr ""
 
-#: ../src/core/core.cpp:717
+#: ../src/core/core.cpp:733
 msgctxt "Core|"
 msgid "Client connected from"
 msgstr "ਕਲਾਂਇਟ ਇਸ ਤੋਂ ਕੁਨੈਕਟ ਹੈ"
 
-#: ../src/core/core.cpp:720
+#: ../src/core/core.cpp:736
 msgctxt "Core|"
 msgid "Closing server for basic setup."
 msgstr ""
 
-#: ../src/core/core.cpp:731
+#: ../src/core/core.cpp:747
 msgctxt "Core|"
 msgid "Non-authed client disconnected:"
 msgstr ""
 
-#: ../src/core/core.cpp:805
+#: ../src/core/core.cpp:821
 msgctxt "Core|"
 msgid "Cannot setup storage backend."
 msgstr ""
 
-#: ../src/core/core.cpp:894
+#: ../src/core/core.cpp:910
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:895
+#: ../src/core/core.cpp:911
 msgctxt "Core|"
 msgid "Supported backends are:"
 msgstr ""
 
-#: ../src/core/core.cpp:907 ../src/core/core.cpp:927
+#: ../src/core/core.cpp:923 ../src/core/core.cpp:943
 #, qt-format
 msgctxt "Core|"
 msgid "Switched storage backend to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:908
+#: ../src/core/core.cpp:924
 msgctxt "Core|"
 msgid "Backend already initialized. Skipping Migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:911
+#: ../src/core/core.cpp:927
 #, qt-format
 msgctxt "Core|"
 msgid "Storage backend is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:915
+#: ../src/core/core.cpp:931
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:920
+#: ../src/core/core.cpp:936
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize storage backend: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:935
+#: ../src/core/core.cpp:951
 #, qt-format
 msgctxt "Core|"
 msgid "Migrating storage backend %1 to %2..."
 msgstr ""
 
-#: ../src/core/core.cpp:940
+#: ../src/core/core.cpp:956
 msgctxt "Core|"
 msgid "Migration finished!"
 msgstr ""
 
-#: ../src/core/core.cpp:947
+#: ../src/core/core.cpp:963
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to migrate storage backend! (No migration writer for %1)"
 msgstr ""
 
-#: ../src/core/core.cpp:953
+#: ../src/core/core.cpp:969
 msgctxt "Core|"
 msgid "No currently active storage backend. Skipping migration..."
 msgstr ""
 
-#: ../src/core/core.cpp:956
+#: ../src/core/core.cpp:972
 #, qt-format
 msgctxt "Core|"
 msgid "Currently active storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:959
+#: ../src/core/core.cpp:975
 #, qt-format
 msgctxt "Core|"
 msgid "New storage backend does not support migration: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:981
+#: ../src/core/core.cpp:997
 #, qt-format
 msgctxt "Core|"
 msgid "Unsupported authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:982
+#: ../src/core/core.cpp:998
 msgctxt "Core|"
 msgid "Supported authenticators are:"
 msgstr ""
 
-#: ../src/core/core.cpp:992 ../src/core/core.cpp:1009
+#: ../src/core/core.cpp:1008 ../src/core/core.cpp:1025
 #, qt-format
 msgctxt "Core|"
 msgid "Switched authenticator to: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:995
+#: ../src/core/core.cpp:1011
 #, qt-format
 msgctxt "Core|"
 msgid "Authenticator is not available: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:999
+#: ../src/core/core.cpp:1015
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to setup authenticator: %1"
 msgstr ""
 
-#: ../src/core/core.cpp:1004
+#: ../src/core/core.cpp:1020
 #, qt-format
 msgctxt "Core|"
 msgid "Unable to initialize authenticator: %1"
@@ -2788,18 +2788,18 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr "ਰਿਮੋਟ ਕੋਰਾਂ"
 
-#: ../src/core/coreauthhandler.cpp:136 ../src/core/coreauthhandler.cpp:148
-#: ../src/core/coreauthhandler.cpp:222
+#: ../src/core/coreauthhandler.cpp:137 ../src/core/coreauthhandler.cpp:149
+#: ../src/core/coreauthhandler.cpp:223
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr "ਕਲਾਇਟ"
 
-#: ../src/core/coreauthhandler.cpp:136
+#: ../src/core/coreauthhandler.cpp:137
 msgctxt "CoreAuthHandler|"
 msgid "too old, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:137
+#: ../src/core/coreauthhandler.cpp:138
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
@@ -2808,81 +2808,81 @@ msgid ""
 " client."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:149
+#: ../src/core/coreauthhandler.cpp:150
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:151
+#: ../src/core/coreauthhandler.cpp:152
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:167
+#: ../src/core/coreauthhandler.cpp:168
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:168
+#: ../src/core/coreauthhandler.cpp:169
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:223
+#: ../src/core/coreauthhandler.cpp:224
 msgctxt "CoreAuthHandler|"
 msgid "attempted to login before the core was configured, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:225
+#: ../src/core/coreauthhandler.cpp:226
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Attempted to login before core was configured!</b><br>The core must be "
 "configured before attempting to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:247
+#: ../src/core/coreauthhandler.cpp:248
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:248
+#: ../src/core/coreauthhandler.cpp:249
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:254
+#: ../src/core/coreauthhandler.cpp:261
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:261
+#: ../src/core/coreauthhandler.cpp:268
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:263
+#: ../src/core/coreauthhandler.cpp:270
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:267
+#: ../src/core/coreauthhandler.cpp:274
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:286
+#: ../src/core/coreauthhandler.cpp:293
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -3602,121 +3602,121 @@ msgid ""
 "connected clients."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:225
+#: ../src/core/corenetwork.cpp:230
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next server..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:237 ../src/core/corenetwork.cpp:242
+#: ../src/core/corenetwork.cpp:242 ../src/core/corenetwork.cpp:247
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "....%1:%2 ਨਾਲ ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ../src/core/corenetwork.cpp:311
+#: ../src/core/corenetwork.cpp:319
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "ਡਿਸ-ਕੁਨੈਕਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ (%1)"
 
-#: ../src/core/corenetwork.cpp:311
+#: ../src/core/corenetwork.cpp:319
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:526
+#: ../src/core/corenetwork.cpp:540
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:532
+#: ../src/core/corenetwork.cpp:546
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "ਕੁਨੈਕਸ਼ਨ ਫੇਲ੍ਹ ਹੋਇਆ: %1"
 
-#: ../src/core/corenetwork.cpp:584
+#: ../src/core/corenetwork.cpp:598
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1106
+#: ../src/core/corenetwork.cpp:1127
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1123
+#: ../src/core/corenetwork.cpp:1144
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1237
+#: ../src/core/corenetwork.cpp:1258
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1256
+#: ../src/core/corenetwork.cpp:1277
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1267
+#: ../src/core/corenetwork.cpp:1288
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1279
+#: ../src/core/corenetwork.cpp:1300
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1299
+#: ../src/core/corenetwork.cpp:1320
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1307
+#: ../src/core/corenetwork.cpp:1328
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1442
+#: ../src/core/corenetwork.cpp:1463
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1446 ../src/core/corenetwork.cpp:1465
+#: ../src/core/corenetwork.cpp:1467 ../src/core/corenetwork.cpp:1486
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1461
+#: ../src/core/corenetwork.cpp:1482
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:272
+#: ../src/core/coresession.cpp:285
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr "ਕਲਾਇਟ"
 
-#: ../src/core/coresession.cpp:272
+#: ../src/core/coresession.cpp:285
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:607
+#: ../src/core/coresession.cpp:624
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3724,7 +3724,7 @@ msgid ""
 " create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:638
+#: ../src/core/coresession.cpp:655
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -5935,7 +5935,13 @@ msgctxt "ItemViewSettingsPage|"
 msgid "Other activity"
 msgstr "ਹੋਰ ਸਰਗਰਮੀਆਂ"
 
-#: ../src/qtui/knotificationbackend.cpp:133
+#: ../src/qtui/knotificationbackend.cpp:78
+#: ../src/qtui/knotificationbackend.cpp:80
+msgctxt "KNotificationBackend|"
+msgid "View"
+msgstr ""
+
+#: ../src/qtui/knotificationbackend.cpp:138
 #, qt-format
 msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
@@ -6555,44 +6561,44 @@ msgctxt "MainWin|"
 msgid "Nick Toolbar"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1249
+#: ../src/qtui/mainwin.cpp:1250
 msgctxt "MainWin|"
 msgid "Connected to core."
 msgstr "ਕੋਰ ਨਾਲ ਕੁਨੈਕਟਡ"
 
-#: ../src/qtui/mainwin.cpp:1345
+#: ../src/qtui/mainwin.cpp:1346
 msgctxt "MainWin|"
 msgid "Not connected to core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1363 ../src/qtui/mainwin.cpp:1374
+#: ../src/qtui/mainwin.cpp:1364 ../src/qtui/mainwin.cpp:1375
 msgctxt "MainWin|"
 msgid "Unencrypted Connection"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1364
+#: ../src/qtui/mainwin.cpp:1365
 msgctxt "MainWin|"
 msgid "<b>Your client does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1366 ../src/qtui/mainwin.cpp:1377
+#: ../src/qtui/mainwin.cpp:1367 ../src/qtui/mainwin.cpp:1378
 msgctxt "MainWin|"
 msgid ""
 "Sensitive data, like passwords, will be transmitted unencrypted to your "
 "Quassel core."
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1375
+#: ../src/qtui/mainwin.cpp:1376
 msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1392 ../src/qtui/mainwin.cpp:1412
+#: ../src/qtui/mainwin.cpp:1393 ../src/qtui/mainwin.cpp:1413
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1393
+#: ../src/qtui/mainwin.cpp:1394
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6600,43 +6606,43 @@ msgid ""
 "following reasons:</b>"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1396
+#: ../src/qtui/mainwin.cpp:1397
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "ਜਾਰੀ ਰੱਖੋ"
 
-#: ../src/qtui/mainwin.cpp:1397
+#: ../src/qtui/mainwin.cpp:1398
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1414
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "ਕੀ ਤੁਸੀਂ ਸਰਟੀਫਿਕੇਟ ਹਮੇਸ਼ਾ ਲਈ ਬਿਨਾਂ ਪੁੱਛੇ ਹੀ ਸਵੀਕਾਰ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: ../src/qtui/mainwin.cpp:1415
+#: ../src/qtui/mainwin.cpp:1416
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "ਕੇਵਲ ਮੌਜੂਦਾ ਸ਼ੈਸ਼ਨ ਲਈ"
 
-#: ../src/qtui/mainwin.cpp:1416
+#: ../src/qtui/mainwin.cpp:1417
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "ਹਮੇਸ਼ਾ"
 
-#: ../src/qtui/mainwin.cpp:1426
+#: ../src/qtui/mainwin.cpp:1427
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1456 ../src/qtui/mainwin.cpp:1457
+#: ../src/qtui/mainwin.cpp:1457 ../src/qtui/mainwin.cpp:1458
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1459
+#: ../src/qtui/mainwin.cpp:1460
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
@@ -6645,6 +6651,49 @@ msgstr ""
 #, qt-format
 msgctxt "MessageModel|"
 msgid "Requesting %1 messages from backlog for buffer %2:%3"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:53
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Invalid listen address %1"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:62
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Listening for metrics requests on IPv6 %1 port %2"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:70
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Could not open IPv6 interface %1:%2: %3"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:78
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Listening for metrics requests on IPv4 %1 port %2"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:88
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Could not open IPv4 interface %1:%2: %3"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:96
+#, qt-format
+msgctxt "MetricsServer|"
+msgid "Invalid listen address %1, unknown network protocol"
+msgstr ""
+
+#: ../src/core/metricsserver.cpp:105
+msgctxt "MetricsServer|"
+msgid ""
+"Metrics could not open any network interfaces to listen on! No metrics "
+"functionality will be available"
 msgstr ""
 
 #: ../src/qtui/msgprocessorstatuswidget.ui:19
@@ -7696,7 +7745,7 @@ msgid ""
 "KDE/Plasma themes Breeze, Breeze Dark and Oxygen."
 msgstr ""
 
-#: ../src/qtui/qtuiapplication.cpp:45
+#: ../src/qtui/qtuiapplication.cpp:48
 msgctxt "QtUiApplication|"
 msgid "Could not load or upgrade client settings!"
 msgstr ""
@@ -7707,7 +7756,7 @@ msgid "Specify the directory holding the client configuration."
 msgstr ""
 
 #: ../src/common/quassel.cpp:325 ../src/common/quassel.cpp:330
-#: ../src/common/quassel.cpp:366 ../src/common/quassel.cpp:367
+#: ../src/common/quassel.cpp:367 ../src/common/quassel.cpp:368
 msgctxt "Quassel|"
 msgid "path"
 msgstr ""
@@ -7744,227 +7793,257 @@ msgctxt "Quassel|"
 msgid "Start the client minimized to the system tray."
 msgstr ""
 
-#: ../src/common/quassel.cpp:345
+#: ../src/common/quassel.cpp:339
 msgctxt "Quassel|"
-msgid "The address(es) quasselcore will listen on."
+msgid "Account id to connect to on startup."
 msgstr ""
 
-#: ../src/common/quassel.cpp:345
+#: ../src/common/quassel.cpp:339
 msgctxt "Quassel|"
-msgid "<address>[,<address>[,...]]"
+msgid "account"
 msgstr ""
 
 #: ../src/common/quassel.cpp:346
 msgctxt "Quassel|"
-msgid "The port quasselcore will listen at."
+msgid "The address(es) quasselcore will listen on."
 msgstr ""
 
-#: ../src/common/quassel.cpp:346 ../src/common/quassel.cpp:359
+#: ../src/common/quassel.cpp:346
 msgctxt "Quassel|"
-msgid "port"
+msgid "<address>[,<address>[,...]]"
 msgstr ""
 
 #: ../src/common/quassel.cpp:347
 msgctxt "Quassel|"
-msgid "Don't restore last core's state."
+msgid "The port quasselcore will listen at."
+msgstr ""
+
+#: ../src/common/quassel.cpp:347 ../src/common/quassel.cpp:360
+#: ../src/common/quassel.cpp:370
+msgctxt "Quassel|"
+msgid "port"
 msgstr ""
 
 #: ../src/common/quassel.cpp:348
 msgctxt "Quassel|"
-msgid "Load configuration from environment variables."
+msgid "Don't restore last core's state."
 msgstr ""
 
 #: ../src/common/quassel.cpp:349
+msgctxt "Quassel|"
+msgid "Load configuration from environment variables."
+msgstr ""
+
+#: ../src/common/quassel.cpp:350
 msgctxt "Quassel|"
 msgid "Switch storage backend (migrating data if possible)."
 msgstr ""
 
-#: ../src/common/quassel.cpp:349
+#: ../src/common/quassel.cpp:350
 msgctxt "Quassel|"
 msgid "backendidentifier"
 msgstr ""
 
-#: ../src/common/quassel.cpp:350
+#: ../src/common/quassel.cpp:351
 msgctxt "Quassel|"
 msgid "Select authentication backend."
 msgstr ""
 
-#: ../src/common/quassel.cpp:350
+#: ../src/common/quassel.cpp:351
 msgctxt "Quassel|"
 msgid "authidentifier"
 msgstr ""
 
-#: ../src/common/quassel.cpp:351
+#: ../src/common/quassel.cpp:352
 msgctxt "Quassel|"
 msgid "Starts an interactive session to add a new core user."
 msgstr ""
 
-#: ../src/common/quassel.cpp:353
+#: ../src/common/quassel.cpp:354
 msgctxt "Quassel|"
 msgid ""
 "Starts an interactive session to change the password of the user identified "
 "by <username>."
 msgstr ""
 
-#: ../src/common/quassel.cpp:354
+#: ../src/common/quassel.cpp:355
 msgctxt "Quassel|"
 msgid "username"
 msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ"
 
-#: ../src/common/quassel.cpp:355
+#: ../src/common/quassel.cpp:356
 msgctxt "Quassel|"
 msgid ""
 "Use users' quasselcore username as ident reply. Ignores each user's "
 "configured ident setting."
 msgstr ""
 
-#: ../src/common/quassel.cpp:356
+#: ../src/common/quassel.cpp:357
 msgctxt "Quassel|"
 msgid "Enable internal ident daemon."
 msgstr ""
 
-#: ../src/common/quassel.cpp:358
+#: ../src/common/quassel.cpp:359
 msgctxt "Quassel|"
 msgid ""
 "The port quasselcore will listen at for ident requests. Only meaningful with"
 " --ident-daemon."
 msgstr ""
 
-#: ../src/common/quassel.cpp:361
+#: ../src/common/quassel.cpp:362
 msgctxt "Quassel|"
 msgid ""
 "The address(es) quasselcore will listen on for ident requests. Same format "
 "as --listen."
 msgstr ""
 
-#: ../src/common/quassel.cpp:361
+#: ../src/common/quassel.cpp:362 ../src/common/quassel.cpp:371
 msgctxt "Quassel|"
 msgid "<address>[,...]"
 msgstr ""
 
-#: ../src/common/quassel.cpp:362
+#: ../src/common/quassel.cpp:363
 msgctxt "Quassel|"
 msgid ""
 "Enable oidentd integration. In most cases you should also enable --strict-"
 "ident."
 msgstr ""
 
-#: ../src/common/quassel.cpp:363
+#: ../src/common/quassel.cpp:364
 msgctxt "Quassel|"
 msgid "Set path to oidentd configuration file."
 msgstr ""
 
-#: ../src/common/quassel.cpp:363
+#: ../src/common/quassel.cpp:364
 msgctxt "Quassel|"
 msgid "file"
 msgstr ""
 
-#: ../src/common/quassel.cpp:365
+#: ../src/common/quassel.cpp:366
 msgctxt "Quassel|"
 msgid "Require SSL for remote (non-loopback) client connections."
 msgstr ""
 
-#: ../src/common/quassel.cpp:366
+#: ../src/common/quassel.cpp:367
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL certificate."
 msgstr ""
 
-#: ../src/common/quassel.cpp:367
+#: ../src/common/quassel.cpp:368
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL key."
 msgstr ""
 
-#: ../src/common/quassel.cpp:374
+#: ../src/common/quassel.cpp:369
+msgctxt "Quassel|"
+msgid "Enable metrics API."
+msgstr ""
+
+#: ../src/common/quassel.cpp:370
+msgctxt "Quassel|"
+msgid ""
+"The port quasselcore will listen at for metrics requests. Only meaningful "
+"with --metrics-daemon."
+msgstr ""
+
+#: ../src/common/quassel.cpp:371
+msgctxt "Quassel|"
+msgid ""
+"The address(es) quasselcore will listen on for metrics requests. Same format"
+" as --listen."
+msgstr ""
+
+#: ../src/common/quassel.cpp:378
 msgctxt "Quassel|"
 msgid "Supports one of Debug|Info|Warning|Error; default is Info."
 msgstr ""
 
-#: ../src/common/quassel.cpp:374
+#: ../src/common/quassel.cpp:378
 msgctxt "Quassel|"
 msgid "level"
 msgstr ""
 
-#: ../src/common/quassel.cpp:375
+#: ../src/common/quassel.cpp:379
 msgctxt "Quassel|"
 msgid "Log to a file."
 msgstr ""
 
-#: ../src/common/quassel.cpp:377
+#: ../src/common/quassel.cpp:381
 msgctxt "Quassel|"
 msgid "Log to syslog."
 msgstr ""
 
-#: ../src/common/quassel.cpp:382
+#: ../src/common/quassel.cpp:386
 msgctxt "Quassel|"
 msgid "Enable debug output."
 msgstr ""
 
-#: ../src/common/quassel.cpp:385
+#: ../src/common/quassel.cpp:389
 msgctxt "Quassel|"
 msgid "Enables debugging for bufferswitches."
 msgstr ""
 
-#: ../src/common/quassel.cpp:386
+#: ../src/common/quassel.cpp:390
 msgctxt "Quassel|"
 msgid "Enables debugging for models."
 msgstr ""
 
-#: ../src/common/quassel.cpp:391
+#: ../src/common/quassel.cpp:395
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all raw IRC messages to debug log, including passwords!  "
 "In most cases you should also set --loglevel Debug"
 msgstr ""
 
-#: ../src/common/quassel.cpp:392
+#: ../src/common/quassel.cpp:396
 msgctxt "Quassel|"
 msgid "Limit raw IRC logging to this network ID.  Implies --debug-irc"
 msgstr ""
 
-#: ../src/common/quassel.cpp:392 ../src/common/quassel.cpp:394
+#: ../src/common/quassel.cpp:396 ../src/common/quassel.cpp:398
 msgctxt "Quassel|"
 msgid "database network ID"
 msgstr ""
 
-#: ../src/common/quassel.cpp:393
+#: ../src/common/quassel.cpp:397
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all parsed IRC messages to debug log, including passwords!"
 "  In most cases you should also set --loglevel Debug"
 msgstr ""
 
-#: ../src/common/quassel.cpp:394
+#: ../src/common/quassel.cpp:398
 msgctxt "Quassel|"
 msgid ""
 "Limit parsed IRC logging to this network ID.  Implies --debug-irc-parsed"
 msgstr ""
 
-#: ../src/common/quassel.cpp:401
+#: ../src/common/quassel.cpp:405
 msgctxt "Quassel|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr "ਕੁਅੱਸੇਲ IRC ਮਾਡਰਨ, ਸਾਂਝਾ ਕੀਤਾ IRC ਕਲਾਂਇਟ ਹੈ।"
 
-#: ../src/common/util.cpp:180
+#: ../src/common/util.cpp:181
 msgctxt "Quassel::secondsToString()|"
 msgid "year"
 msgstr "ਸਾਲ"
 
-#: ../src/common/util.cpp:182
+#: ../src/common/util.cpp:183
 msgctxt "Quassel::secondsToString()|"
 msgid "day"
 msgstr "ਦਿਨ"
 
-#: ../src/common/util.cpp:183
+#: ../src/common/util.cpp:184
 msgctxt "Quassel::secondsToString()|"
 msgid "h"
 msgstr "h"
 
-#: ../src/common/util.cpp:184
+#: ../src/common/util.cpp:185
 msgctxt "Quassel::secondsToString()|"
 msgid "min"
 msgstr "ਮਿੰਟ"
 
-#: ../src/common/util.cpp:185
+#: ../src/common/util.cpp:186
 msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr "ਸਕਿੰਟ"
