@@ -7,7 +7,7 @@
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # enjolras <yo@miguelrevilla.com>, 2012
-# Javier Llorente <javier@opensuse.org>, 2011,2016-2018
+# Javier Llorente <javier@opensuse.org>, 2011,2016-2019
 # Javier Llorente <javier@opensuse.org>, 2011
 # Jonathan Farnham <jonathan@haitu-yu.com>, 2013
 # Rafael Belmonte <EagleScreen@gmail.com>, 2009,2011
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-08-06 13:33+0000\n"
+"PO-Revision-Date: 2019-08-24 21:56+0000\n"
 "Last-Translator: Javier Llorente <javier@opensuse.org>\n"
 "Language-Team: Spanish (http://www.transifex.com/quassel/quassel/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -9131,7 +9131,7 @@ msgstr "%DN%1%DN %DH(%2@%3)%DH ha salido"
 #, qt-format
 msgctxt "UiStyle::StyledMessage|"
 msgid "%DN%1%DN has kicked %DN%2%DN from %DC%3%DC"
-msgstr "%DN%1%DN ha sido expulsado %DN%2%DN de %DC%3%DC"
+msgstr "%DN%1%DN ha expulsado a %DN%2%DN de %DC%3%DC"
 
 #. Day Change Message
 #: ../src/uisupport/uistyle.cpp:963
