@@ -20,6 +20,7 @@
 
 #include "networkmodel.h"
 
+#include <algorithm>
 #include <utility>
 
 #include <QAbstractItemView>
@@ -1520,7 +1521,7 @@ void NetworkModel::checkForRemovedBuffers(const QModelIndex& parent, int start, 
         return;
 
     for (int row = start; row <= end; row++) {
-        _bufferItemCache.remove(parent.child(row, 0).data(BufferIdRole).value<BufferId>());
+        _bufferItemCache.remove(index(row, 0, parent).data(BufferIdRole).value<BufferId>());
     }
 }
 
@@ -1530,7 +1531,7 @@ void NetworkModel::checkForNewBuffers(const QModelIndex& parent, int start, int 
         return;
 
     for (int row = start; row <= end; row++) {
-        QModelIndex child = parent.child(row, 0);
+        QModelIndex child = parent.model()->index(row, 0, parent);
         _bufferItemCache[child.data(BufferIdRole).value<BufferId>()] = static_cast<BufferItem*>(child.internalPointer());
     }
 }
@@ -1605,7 +1606,7 @@ void NetworkModel::sortBufferIds(QList<BufferId>& bufferIds) const
             bufferItems << _bufferItemCache[bufferId];
     }
 
-    qSort(bufferItems.begin(), bufferItems.end(), bufferItemLessThan);
+    std::sort(bufferItems.begin(), bufferItems.end(), bufferItemLessThan);
 
     bufferIds.clear();
     foreach (BufferItem* bufferItem, bufferItems) {

@@ -20,6 +20,8 @@
 
 #include "coresessioneventprocessor.h"
 
+#include <algorithm>
+
 #include "coreirclisthelper.h"
 #include "corenetwork.h"
 #include "coresession.h"
@@ -1536,7 +1538,7 @@ void CoreSessionEventProcessor::handleCtcpClientinfo(CtcpEvent* e)
     QStringList supportedHandlers;
     for (const QString& handler : providesHandlers())
         supportedHandlers << handler.toUpper();
-    qSort(supportedHandlers);
+    std::sort(supportedHandlers.begin(), supportedHandlers.end());
     e->setReply(supportedHandlers.join(" "));
 }
 

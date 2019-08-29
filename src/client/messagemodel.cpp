@@ -20,6 +20,8 @@
 
 #include "messagemodel.h"
 
+#include <algorithm>
+
 #include <QEvent>
 
 #include "backlogsettings.h"
@@ -105,13 +107,13 @@ void MessageModel::insertMessages(const QList<Message>& msglist)
             else {
                 _messageBuffer = msglist.mid(processedMsgs);
             }
-            qSort(_messageBuffer);
+            std::sort(_messageBuffer.begin(), _messageBuffer.end());
             QCoreApplication::postEvent(this, new ProcessBufferEvent());
         }
     }
     else {
         _messageBuffer << msglist;
-        qSort(_messageBuffer);
+        std::sort(_messageBuffer.begin(), _messageBuffer.end());
     }
 }
 

@@ -20,6 +20,8 @@
 
 #include "chatview.h"
 
+#include <algorithm>
+
 #include <QGraphicsTextItem>
 #include <QKeyEvent>
 #include <QMenu>
@@ -292,7 +294,7 @@ QSet<ChatLine*> ChatView::visibleChatLines(Qt::ItemSelectionMode mode) const
 QList<ChatLine*> ChatView::visibleChatLinesSorted(Qt::ItemSelectionMode mode) const
 {
     QList<ChatLine*> result = visibleChatLines(mode).toList();
-    qSort(result.begin(), result.end(), chatLinePtrLessThan);
+    std::sort(result.begin(), result.end(), chatLinePtrLessThan);
     return result;
 }
 
