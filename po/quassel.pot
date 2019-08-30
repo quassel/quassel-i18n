@@ -3733,18 +3733,18 @@ msgid ""
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:285
+#: ../src/core/coresession.cpp:281
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr ""
 
-#: ../src/core/coresession.cpp:285
+#: ../src/core/coresession.cpp:281
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:624
+#: ../src/core/coresession.cpp:605
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3752,7 +3752,7 @@ msgid ""
 "create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:655
+#: ../src/core/coresession.cpp:636
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -4199,26 +4199,6 @@ msgstr ""
 #: ../src/qtui/debugbufferviewoverlay.cpp:60
 msgctxt "DebugBufferViewOverlay|"
 msgid "Is initialized:"
-msgstr ""
-
-#: ../src/qtui/debugconsole.ui:14
-msgctxt "DebugConsole|"
-msgid "Debug Console"
-msgstr ""
-
-#: ../src/qtui/debugconsole.ui:44
-msgctxt "DebugConsole|"
-msgid "local"
-msgstr ""
-
-#: ../src/qtui/debugconsole.ui:54
-msgctxt "DebugConsole|"
-msgid "core"
-msgstr ""
-
-#: ../src/qtui/debugconsole.ui:82
-msgctxt "DebugConsole|"
-msgid "Evaluate!"
 msgstr ""
 
 #: ../src/qtui/debuglogdlg.ui:14
