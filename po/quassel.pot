@@ -723,7 +723,7 @@ msgid ""
 "Greenphones, N810s, N950s and more"
 msgstr ""
 
-#: ../src/core/abstractsqlstorage.cpp:133
+#: ../src/core/abstractsqlstorage.cpp:136
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid ""
@@ -731,12 +731,12 @@ msgid ""
 "version %2...  This may take a while for major upgrades."
 msgstr ""
 
-#: ../src/core/abstractsqlstorage.cpp:141
+#: ../src/core/abstractsqlstorage.cpp:144
 msgctxt "AbstractSqlStorage|"
 msgid "Upgrade failed..."
 msgstr ""
 
-#: ../src/core/abstractsqlstorage.cpp:146
+#: ../src/core/abstractsqlstorage.cpp:149
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid "Installed database schema successfully upgraded to version %1."
@@ -2817,18 +2817,18 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:137 ../src/core/coreauthhandler.cpp:149
-#: ../src/core/coreauthhandler.cpp:223
+#: ../src/core/coreauthhandler.cpp:139 ../src/core/coreauthhandler.cpp:151
+#: ../src/core/coreauthhandler.cpp:225
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:137
+#: ../src/core/coreauthhandler.cpp:139
 msgctxt "CoreAuthHandler|"
 msgid "too old, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:138
+#: ../src/core/coreauthhandler.cpp:140
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
@@ -2836,81 +2836,81 @@ msgid ""
 "core protocol version %1 (got: %2).<br>Please consider upgrading your client."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:150
+#: ../src/core/coreauthhandler.cpp:152
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:152
+#: ../src/core/coreauthhandler.cpp:154
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:168
+#: ../src/core/coreauthhandler.cpp:170
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:169
+#: ../src/core/coreauthhandler.cpp:171
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:224
+#: ../src/core/coreauthhandler.cpp:226
 msgctxt "CoreAuthHandler|"
 msgid "attempted to login before the core was configured, rejecting."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:226
+#: ../src/core/coreauthhandler.cpp:228
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Attempted to login before core was configured!</b><br>The core must be "
 "configured before attempting to login."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:248
+#: ../src/core/coreauthhandler.cpp:250
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:249
+#: ../src/core/coreauthhandler.cpp:251
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:261
+#: ../src/core/coreauthhandler.cpp:263
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:268
+#: ../src/core/coreauthhandler.cpp:270
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:270
+#: ../src/core/coreauthhandler.cpp:272
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:274
+#: ../src/core/coreauthhandler.cpp:276
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr ""
 
-#: ../src/core/coreauthhandler.cpp:293
+#: ../src/core/coreauthhandler.cpp:295
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr ""
@@ -3630,121 +3630,121 @@ msgid ""
 "connected clients."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:230
+#: ../src/core/corenetwork.cpp:231
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next server..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:242 ../src/core/corenetwork.cpp:247
+#: ../src/core/corenetwork.cpp:243 ../src/core/corenetwork.cpp:248
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:319
+#: ../src/core/corenetwork.cpp:320
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:319
+#: ../src/core/corenetwork.cpp:320
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:540
+#: ../src/core/corenetwork.cpp:541
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:546
+#: ../src/core/corenetwork.cpp:547
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:598
+#: ../src/core/corenetwork.cpp:599
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1127
+#: ../src/core/corenetwork.cpp:1128
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1144
+#: ../src/core/corenetwork.cpp:1145
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1258
+#: ../src/core/corenetwork.cpp:1259
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1277
+#: ../src/core/corenetwork.cpp:1278
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1288
+#: ../src/core/corenetwork.cpp:1289
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1300
+#: ../src/core/corenetwork.cpp:1301
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1320
+#: ../src/core/corenetwork.cpp:1321
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1328
+#: ../src/core/corenetwork.cpp:1329
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1463
+#: ../src/core/corenetwork.cpp:1464
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1467 ../src/core/corenetwork.cpp:1486
+#: ../src/core/corenetwork.cpp:1468 ../src/core/corenetwork.cpp:1487
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr ""
 
-#: ../src/core/corenetwork.cpp:1482
+#: ../src/core/corenetwork.cpp:1483
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr ""
 
-#: ../src/core/coresession.cpp:281
+#: ../src/core/coresession.cpp:279
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr ""
 
-#: ../src/core/coresession.cpp:281
+#: ../src/core/coresession.cpp:279
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr ""
 
-#: ../src/core/coresession.cpp:605
+#: ../src/core/coresession.cpp:603
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3752,7 +3752,7 @@ msgid ""
 "create network %1!"
 msgstr ""
 
-#: ../src/core/coresession.cpp:636
+#: ../src/core/coresession.cpp:634
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
@@ -7480,37 +7480,37 @@ msgid ""
 "you entered your old password correctly!"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:48
+#: ../src/core/postgresqlstorage.cpp:51
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL driver plugin not available for Qt. Installed drivers:"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:68
+#: ../src/core/postgresqlstorage.cpp:71
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL Turbo Bomber HD!"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Username"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Password"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Hostname"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:75
+#: ../src/core/postgresqlstorage.cpp:78
 msgctxt "PostgreSqlStorage|"
 msgid "Port"
 msgstr ""
 
-#: ../src/core/postgresqlstorage.cpp:75
+#: ../src/core/postgresqlstorage.cpp:78
 msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr ""
@@ -8592,7 +8592,7 @@ msgid ""
 "and salted password in the database selected in the next step."
 msgstr ""
 
-#: ../src/core/sqlitestorage.cpp:59
+#: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
 msgid ""
 "SQLite is a file-based database engine that does not require any setup. It "
