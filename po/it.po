@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-08-11 15:14+0000\n"
-"Last-Translator: Francis\n"
+"PO-Revision-Date: 2019-09-30 12:38+0000\n"
+"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -728,7 +728,7 @@ msgid ""
 "Greenphones, N810s, N950s and more"
 msgstr "per aver creato un fantastico framework e sponsorizzare lo sviluppo con Greenphone, N810, N950 ed altri"
 
-#: ../src/core/abstractsqlstorage.cpp:133
+#: ../src/core/abstractsqlstorage.cpp:136
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid ""
@@ -736,12 +736,12 @@ msgid ""
 "version %2...  This may take a while for major upgrades."
 msgstr "Lo schema del database installato (versione %1) non è aggiornato. Aggiornamento alla versione %2... Potrebbe richiedere del tempo per aggiornamenti più importanti."
 
-#: ../src/core/abstractsqlstorage.cpp:141
+#: ../src/core/abstractsqlstorage.cpp:144
 msgctxt "AbstractSqlStorage|"
 msgid "Upgrade failed..."
 msgstr "Aggiornamento non riuscito..."
 
-#: ../src/core/abstractsqlstorage.cpp:146
+#: ../src/core/abstractsqlstorage.cpp:149
 #, qt-format
 msgctxt "AbstractSqlStorage|"
 msgid "Installed database schema successfully upgraded to version %1."
@@ -1173,7 +1173,7 @@ msgctxt "BacklogSettingsPage|"
 msgid "Backlog Fetching"
 msgstr "Recupero del registro storico"
 
-#: ../src/client/networkmodel.cpp:443
+#: ../src/client/networkmodel.cpp:444
 #, qt-format
 msgctxt "BufferItem|"
 msgid "<p> %1 - %2 </p>"
@@ -1207,7 +1207,7 @@ msgctxt "BufferViewEditDlg|"
 msgid "Please enter a name for the chat list:"
 msgstr "Inserisci un nome per la lista chat:"
 
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:568
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:569
 msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
 msgstr "Aggiungi lista chat"
@@ -1248,7 +1248,7 @@ msgid "Network:"
 msgstr "Rete:"
 
 #: ../src/qtui/settingspages/bufferviewsettingspage.ui:100
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:127
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:128
 msgctxt "BufferViewSettingsPage|"
 msgid "All"
 msgstr "Tutte"
@@ -1330,22 +1330,22 @@ msgctxt "BufferViewSettingsPage|"
 msgid "Preview:"
 msgstr "Anteprima:"
 
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:38
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:39
 msgctxt "BufferViewSettingsPage|"
 msgid "Interface"
 msgstr "Interfaccia"
 
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:38
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:39
 msgctxt "BufferViewSettingsPage|"
 msgid "Custom Chat Lists"
 msgstr "Liste chat personalizzate"
 
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:372
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:373
 msgctxt "BufferViewSettingsPage|"
 msgid "Delete Chat List?"
 msgstr "Eliminare la lista chat?"
 
-#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:373
+#: ../src/qtui/settingspages/bufferviewsettingspage.cpp:374
 #, qt-format
 msgctxt "BufferViewSettingsPage|"
 msgid "Do you really want to delete the chat list \"%1\"?"
@@ -1381,28 +1381,28 @@ msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr "Vai alla linea di demarcazione"
 
-#: ../src/client/networkmodel.cpp:719
+#: ../src/client/networkmodel.cpp:720
 #, qt-format
 msgctxt "ChannelBufferItem|"
 msgid "Channel %1"
 msgstr "Canale %1"
 
-#: ../src/client/networkmodel.cpp:723
+#: ../src/client/networkmodel.cpp:724
 msgctxt "ChannelBufferItem|"
 msgid "Users"
 msgstr "Utenti"
 
-#: ../src/client/networkmodel.cpp:728
+#: ../src/client/networkmodel.cpp:729
 msgctxt "ChannelBufferItem|"
 msgid "Mode"
 msgstr "Modo"
 
-#: ../src/client/networkmodel.cpp:738
+#: ../src/client/networkmodel.cpp:739
 msgctxt "ChannelBufferItem|"
 msgid "Topic"
 msgstr "Argomento"
 
-#: ../src/client/networkmodel.cpp:745
+#: ../src/client/networkmodel.cpp:746
 msgctxt "ChannelBufferItem|"
 msgid "Not active, double-click to join"
 msgstr "Non attivo, doppio clic per entrare"
@@ -2052,7 +2052,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Connessione non crittografata annullata"
 
-#: ../src/client/clientbacklogmanager.cpp:171
+#: ../src/client/clientbacklogmanager.cpp:172
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
@@ -2147,7 +2147,7 @@ msgctxt "ConnectionSettingsPage|"
 msgid "IRC"
 msgstr "IRC"
 
-#: ../src/qtui/chatitem.cpp:825
+#: ../src/qtui/chatitem.cpp:826
 msgctxt "ContentsChatItem|"
 msgid "Copy Link Address"
 msgstr "Copia indirizzo del collegamento"
@@ -2790,18 +2790,18 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr "Core remoti"
 
-#: ../src/core/coreauthhandler.cpp:137 ../src/core/coreauthhandler.cpp:149
-#: ../src/core/coreauthhandler.cpp:223
+#: ../src/core/coreauthhandler.cpp:139 ../src/core/coreauthhandler.cpp:151
+#: ../src/core/coreauthhandler.cpp:225
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr "Client"
 
-#: ../src/core/coreauthhandler.cpp:137
+#: ../src/core/coreauthhandler.cpp:139
 msgctxt "CoreAuthHandler|"
 msgid "too old, rejecting."
 msgstr "troppo vecchio, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:138
+#: ../src/core/coreauthhandler.cpp:140
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
@@ -2810,81 +2810,81 @@ msgid ""
 " client."
 msgstr "<b>Il tuo client Quassel è troppo vecchio!</b><br>Questo core richiede almeno la versione  client/core del protocollo %1 (ho: %2).<br>Prendi in considerazione di aggiornare il tuo client."
 
-#: ../src/core/coreauthhandler.cpp:150
+#: ../src/core/coreauthhandler.cpp:152
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
 msgstr "non ha inviato un messaggio di registrazione prima di tentare l'accesso, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:152
+#: ../src/core/coreauthhandler.cpp:154
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
 msgstr "<b>Client non inizializzato!</b><br>È necessario inviare un messaggio di registrazione prima di tentare l'accesso."
 
-#: ../src/core/coreauthhandler.cpp:168
+#: ../src/core/coreauthhandler.cpp:170
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
 msgstr "È richiesto SSL ma è stato fatto un tentativo di connessione non SSL da %1"
 
-#: ../src/core/coreauthhandler.cpp:169
+#: ../src/core/coreauthhandler.cpp:171
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
 msgstr "<b>È richiesto SSL!</b><br>Devi utilizzare SSL per effettuare la connessione a questo core."
 
-#: ../src/core/coreauthhandler.cpp:224
+#: ../src/core/coreauthhandler.cpp:226
 msgctxt "CoreAuthHandler|"
 msgid "attempted to login before the core was configured, rejecting."
 msgstr "ha tentato l'accesso prima che il core fosse configurato, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:226
+#: ../src/core/coreauthhandler.cpp:228
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Attempted to login before core was configured!</b><br>The core must be "
 "configured before attempting to login."
 msgstr "<b>Tentativo di accesso prima che il core fosse configurato!</b><br>Il core deve essere configurato prima di tentare l'accesso."
 
-#: ../src/core/coreauthhandler.cpp:248
+#: ../src/core/coreauthhandler.cpp:250
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr "Tentativo di accesso non valido da %1 come \"%2\""
 
-#: ../src/core/coreauthhandler.cpp:249
+#: ../src/core/coreauthhandler.cpp:251
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr "<b>Nome utente o password non validi!</b><br>Le credenziali fornite non sono state trovate nel database."
 
-#: ../src/core/coreauthhandler.cpp:261
+#: ../src/core/coreauthhandler.cpp:263
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr "Client %1 inizializzato ed autenticato correttamente come \"%2\" (UserId: %3)."
 
-#: ../src/core/coreauthhandler.cpp:268
+#: ../src/core/coreauthhandler.cpp:270
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr "Il client non supporta le funzionalità estese."
 
-#: ../src/core/coreauthhandler.cpp:270
+#: ../src/core/coreauthhandler.cpp:272
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr "Il client non supporta le seguenti funzioni: %1"
 
-#: ../src/core/coreauthhandler.cpp:274
+#: ../src/core/coreauthhandler.cpp:276
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr "Il client supporta funzioni sconosciute: %1"
 
-#: ../src/core/coreauthhandler.cpp:293
+#: ../src/core/coreauthhandler.cpp:295
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr "Avvio crittografia per il client:"
@@ -3260,7 +3260,7 @@ msgid "Form"
 msgstr "Modulo"
 
 #: ../src/qtui/settingspages/corehighlightsettingspage.ui:57
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:687
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:689
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Your Quassel core is too old to support remote highlights"
 msgstr "Il tuo core Quassel è troppo vecchio per supportare le menzioni remote"
@@ -3348,77 +3348,77 @@ msgctxt "CoreHighlightSettingsPage|"
 msgid "Never Highlight For"
 msgstr "Non menzionare mai"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:33
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:35
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Interface"
 msgstr "Interfaccia"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:35
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:37
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Highlights"
 msgstr "Menzioni"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:35
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:37
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remote Highlights"
 msgstr "Menzioni remote"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:43
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:45
 msgctxt "CoreHighlightSettingsPage|"
 msgid "All Nicks from Identity"
 msgstr "Tutti i nick dall'identità"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:44
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:46
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Current Nick"
 msgstr "Nick attuale"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:45
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:47
 msgctxt "CoreHighlightSettingsPage|"
 msgid "None"
 msgstr "Nessuno"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:87
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:89
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import Legacy"
 msgstr "Importa dal sistema precedente"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:89
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:91
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:99
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import highlight rules configured in <i>%1</i>."
 msgstr "Importa le regole per le menzioni configurate in <i>%1</i>."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:89
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:707
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:91
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:709
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Legacy Highlights"
 msgstr "Menzioni del sistema precedente"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:95
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import Local"
 msgstr "Importa locali"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:97
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:684
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:710
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:99
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:686
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:712
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Local Highlights"
 msgstr "Menzioni locali"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:139
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:141
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Enable/disable this rule"
 msgstr "Abilita/disabilita questa regola"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:142
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:144
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Phrase to match, leave blank to match any message"
 msgstr "Frase cui trovare corrispondenza, lascia vuoto per far corrispondere qualsiasi messaggio"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:145
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:147
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule, <i>Sender</i>, "
@@ -3426,14 +3426,14 @@ msgid ""
 "just as keywords."
 msgstr "<b>RegEx</b>: Questa opzione determina se la regola per la menzione, il <i>mittente</i> ed il <i>canale</i> devono essere interpretati come <b>espressione regolare</b> o solo come parole chiave."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:150
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:152
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule, <i>Sender</i>, and "
 "<i>Channel</i> should be interpreted <b>case sensitive</b>."
 msgstr "<b>CS</b>: Questa opzione determina se la regola per la menzione, il <i>mittente</i> ed il <i>canale</i> devono tener conto della <b>differenza tra maiuscole e minuscole</b>."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:154
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:156
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Sender</b>: Semicolon separated list of <i>nick!ident@host</i> names, "
@@ -3448,7 +3448,7 @@ msgid ""
 "<i>Announce</i></p>"
 msgstr "<p><b>Mittente</b>: Una lista di nomi nel formato <i>nick!ident@host</i> separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nick.</p><p><i>Esempio:</i><br /><i>Alice!*; Bob!*@example.com; Carol*!*; !Caroline!*</i><br />trova corrispondenza con <i>Alice</i>, <i>Bob</i> con maschera host <i>example.com</i> e qualsiasi nick inizi con <i>Carol</i> ad eccezione di <i>Caroline</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!Announce*!*; !Wheatley!aperture@*</i><br />troverà corrispondenza con tutto ad eccezione di <i>Wheatley</i> con ident <i>aperture</i> o qualsiasi nick inizi con <i>Announce</i></p>"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:168
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:170
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel/query names, leave "
@@ -3461,51 +3461,51 @@ msgid ""
 "channel starting with <i>#quassel</i></p>"
 msgstr "<p><b>Canale</b>: Una lista canali/privati separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nome.</p><p><i>Esempio:</i><br /><i>#quassel*; #foobar; !#quasseldroid</i><br />trova corrispondenza con <i>#foobar</i> e qualsiasi canale inizi con <i>#quassel</i> ad eccezione di <i>#quasseldroid</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!#quassel*; !#foobar</i><br />troverà corrispondenza con tutto ad eccezione di <i>#foobar</i> o qualsiasi canale il cui nome inizi con <i>#quassel</i></p>"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:688
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:690
 msgctxt "CoreHighlightSettingsPage|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer to configure remote highlights."
 msgstr "Devi avere un core Quassel v0.13.0 o superiore per configurare le menzioni remote."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:690
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:692
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "You can still configure highlights for this device only in <i>%1</i>."
 msgstr "È ancora possibile configurare le menzioni solo per questo dispositivo in <i>%1</i>."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:694
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:696
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Remote Highlights unsupported"
 msgstr "Menzioni remote non supportate"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:715
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:717
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlights to import"
 msgstr "Nessuna menzione da importare"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:715
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:717
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "No highlight rules in <i>%1</i>."
 msgstr "Nessuna regola per menzione in <i>%1</i>."
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:720
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:722
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import highlights?"
 msgstr "Importare menzioni?"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:721
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:723
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Import all highlight rules from <i>%1</i>?"
 msgstr "Importare tutte le regole per le menzioni da <i>%1</i>?"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:757
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:759
 msgctxt "CoreHighlightSettingsPage|"
 msgid "Imported highlights"
 msgstr "Menzioni importate"
 
-#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:758
+#: ../src/qtui/settingspages/corehighlightsettingspage.cpp:760
 #, qt-format
 msgctxt "CoreHighlightSettingsPage|"
 msgid "%1 highlight rules successfully imported."
@@ -3604,121 +3604,121 @@ msgid ""
 "connected clients."
 msgstr "Devi avere un core Quassel v0.13.0 o superiore per visualizzare e disconnettere gli altri client connessi."
 
-#: ../src/core/corenetwork.cpp:230
+#: ../src/core/corenetwork.cpp:231
 msgctxt "CoreNetwork|"
 msgid "Connection failed. Cycling to next server..."
 msgstr "Connessione fallita. Passo al server successivo..."
 
-#: ../src/core/corenetwork.cpp:242 ../src/core/corenetwork.cpp:247
+#: ../src/core/corenetwork.cpp:243 ../src/core/corenetwork.cpp:248
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connecting to %1:%2..."
 msgstr "Connessione in corso a %1:%2..."
 
-#: ../src/core/corenetwork.cpp:319
+#: ../src/core/corenetwork.cpp:320
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Disconnecting. (%1)"
 msgstr "Disconnessione in corso. (%1)"
 
-#: ../src/core/corenetwork.cpp:319
+#: ../src/core/corenetwork.cpp:320
 msgctxt "CoreNetwork|"
 msgid "Core Shutdown"
 msgstr "Spegni il core"
 
-#: ../src/core/corenetwork.cpp:540
+#: ../src/core/corenetwork.cpp:541
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not connect to %1 (%2)"
 msgstr "Impossibile connettersi a %1 (%2)"
 
-#: ../src/core/corenetwork.cpp:546
+#: ../src/core/corenetwork.cpp:547
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Connection failure: %1"
 msgstr "Connessione non riuscita: %1"
 
-#: ../src/core/corenetwork.cpp:598
+#: ../src/core/corenetwork.cpp:599
 msgctxt "CoreNetwork|"
 msgid "Requesting capability list..."
 msgstr "Richiesta dell'elenco delle funzionalità..."
 
-#: ../src/core/corenetwork.cpp:1127
+#: ../src/core/corenetwork.cpp:1128
 msgctxt "CoreNetwork|"
 msgid "SASL EXTERNAL authentication not supported"
 msgstr "Autenticazione SASL EXTERNAL non supportata"
 
-#: ../src/core/corenetwork.cpp:1144
+#: ../src/core/corenetwork.cpp:1145
 msgctxt "CoreNetwork|"
 msgid "SASL PLAIN authentication not supported"
 msgstr "Autenticazione SASL PLAIN non supportata"
 
-#: ../src/core/corenetwork.cpp:1258
+#: ../src/core/corenetwork.cpp:1259
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr "Impossibile negoziare alcune funzionalità, riprovo singolarmente (%1)..."
 
-#: ../src/core/corenetwork.cpp:1277
+#: ../src/core/corenetwork.cpp:1278
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr "Nessuna funzionalità disponibile"
 
-#: ../src/core/corenetwork.cpp:1288
+#: ../src/core/corenetwork.cpp:1289
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr "Pronto a negoziare (trovato: %1)"
 
-#: ../src/core/corenetwork.cpp:1300
+#: ../src/core/corenetwork.cpp:1301
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr "Negoziazione funzionalità (è stato richiesto: %1)..."
 
-#: ../src/core/corenetwork.cpp:1320
+#: ../src/core/corenetwork.cpp:1321
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr "L'autenticazione SASL non è al momento supportata dal server"
 
-#: ../src/core/corenetwork.cpp:1328
+#: ../src/core/corenetwork.cpp:1329
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr "Negoziazione funzionalità terminata (è stato abilitato: %1)"
 
-#: ../src/core/corenetwork.cpp:1463
+#: ../src/core/corenetwork.cpp:1464
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr "Non è stato possibile verificare la connessione crittografata, effettuo la disconnessione poiché la verifica è obbligatoria"
 
-#: ../src/core/corenetwork.cpp:1467 ../src/core/corenetwork.cpp:1486
+#: ../src/core/corenetwork.cpp:1468 ../src/core/corenetwork.cpp:1487
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr " (Motivo: %1)"
 
-#: ../src/core/corenetwork.cpp:1482
+#: ../src/core/corenetwork.cpp:1483
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
 "not required"
 msgstr "Non è stato possibile verificare la connessione crittografata, continuo poiché la verifica non è obbligatoria"
 
-#: ../src/core/coresession.cpp:285
+#: ../src/core/coresession.cpp:279
 msgctxt "CoreSession|"
 msgid "Client"
 msgstr "Client"
 
-#: ../src/core/coresession.cpp:285
+#: ../src/core/coresession.cpp:279
 #, qt-format
 msgctxt "CoreSession|"
 msgid "disconnected (UserId: %1)."
 msgstr "disconnesso (UserId: %1)."
 
-#: ../src/core/coresession.cpp:624
+#: ../src/core/coresession.cpp:603
 #, qt-format
 msgctxt "CoreSession|"
 msgid ""
@@ -3726,47 +3726,47 @@ msgid ""
 " create network %1!"
 msgstr "CoreSession::createNetwork(): ricevuto networkId non valido dal core al momento della creazione della rete %1!"
 
-#: ../src/core/coresession.cpp:655
+#: ../src/core/coresession.cpp:634
 msgctxt "CoreSession|"
 msgid ""
 "CoreSession::createNetwork(): Trying to create a network that already "
 "exists, updating instead!"
 msgstr "CoreSession::createNetwork(): tentativo di creare una rete già esistente, aggiornamento in corso!"
 
-#: ../src/core/coresessioneventprocessor.cpp:80
+#: ../src/core/coresessioneventprocessor.cpp:82
 msgctxt "CoreSessionEventProcessor|"
 msgid ""
 "No free and valid nicks in nicklist found. use: /nick <othernick> to "
 "continue"
 msgstr "Nessun nick libero e valido trovato nella lista dei nick. Usa: /nick <altronick> per continuare"
 
-#: ../src/core/coresessioneventprocessor.cpp:800
+#: ../src/core/coresessioneventprocessor.cpp:802
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to perform key exchange, missing qca-ossl plugin."
 msgstr "Impossibile eseguire lo scambio di chiavi, manca il plugin qca-ossl."
 
-#: ../src/core/coresessioneventprocessor.cpp:817
+#: ../src/core/coresessioneventprocessor.cpp:819
 msgctxt "CoreSessionEventProcessor|"
 msgid "Unable to parse the DH1080_INIT. Key exchange failed."
 msgstr "Impossibile analizzare DH1080_INIT. Scambio chiavi fallito."
 
-#: ../src/core/coresessioneventprocessor.cpp:828
-#: ../src/core/coresessioneventprocessor.cpp:843
+#: ../src/core/coresessioneventprocessor.cpp:830
+#: ../src/core/coresessioneventprocessor.cpp:845
 msgctxt "CoreSessionEventProcessor|"
 msgid "Your key is set and messages will be encrypted."
 msgstr "La tua chiave è impostata ed i messaggi saranno crittografati."
 
-#: ../src/core/coresessioneventprocessor.cpp:852
+#: ../src/core/coresessioneventprocessor.cpp:854
 msgctxt "CoreSessionEventProcessor|"
 msgid "Failed to parse DH1080_FINISH. Key exchange failed."
 msgstr "Fallita analisi di DH1080_FINISH. Scambio chiavi fallito."
 
-#: ../src/core/coresessioneventprocessor.cpp:1581
+#: ../src/core/coresessioneventprocessor.cpp:1583
 msgctxt "CoreSessionEventProcessor|"
 msgid "Reverse DCC SEND not supported"
 msgstr "Invio DCC inverso non supportato"
 
-#: ../src/core/coresessioneventprocessor.cpp:1604
+#: ../src/core/coresessioneventprocessor.cpp:1606
 #, qt-format
 msgctxt "CoreSessionEventProcessor|"
 msgid "DCC %1 not supported"
@@ -4178,26 +4178,6 @@ msgctxt "DebugBufferViewOverlay|"
 msgid "Is initialized:"
 msgstr "È inizializzato:"
 
-#: ../src/qtui/debugconsole.ui:14
-msgctxt "DebugConsole|"
-msgid "Debug Console"
-msgstr "Console di debug"
-
-#: ../src/qtui/debugconsole.ui:44
-msgctxt "DebugConsole|"
-msgid "local"
-msgstr "locale"
-
-#: ../src/qtui/debugconsole.ui:54
-msgctxt "DebugConsole|"
-msgid "core"
-msgstr "core"
-
-#: ../src/qtui/debugconsole.ui:82
-msgctxt "DebugConsole|"
-msgid "Evaluate!"
-msgstr "Valuta!"
-
 #: ../src/qtui/debuglogdlg.ui:14
 msgctxt "DebugLogDlg|"
 msgid "Debug Log"
@@ -4553,8 +4533,8 @@ msgid "Case sensitive"
 msgstr "Distingui tra maiuscole e minuscole"
 
 #: ../src/qtui/settingspages/highlightsettingspage.ui:156
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:94
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:285
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:96
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:287
 msgctxt "HighlightSettingsPage|"
 msgid "Local Highlights apply to this device only"
 msgstr "Le menzioni locali si applicano solo a questo dispositivo"
@@ -4564,35 +4544,35 @@ msgctxt "HighlightSettingsPage|"
 msgid "Details..."
 msgstr "Dettagli..."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:32
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:34
 msgctxt "HighlightSettingsPage|"
 msgid "Interface"
 msgstr "Interfaccia"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:34
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:36
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights"
 msgstr "Menzioni del sistema precedente"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:34
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:36
 msgctxt "HighlightSettingsPage|"
 msgid "Local Highlights"
 msgstr "Menzioni locali"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:41
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:154
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:43
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:156
 msgctxt "HighlightSettingsPage|"
 msgid "Enable/disable this rule"
 msgstr "Abilita/disabilita questa regola"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:45
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:155
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:47
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:157
 msgctxt "HighlightSettingsPage|"
 msgid "Phrase to match"
 msgstr "Frase cui trovare corrispondenza"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:50
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:156
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:52
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:158
 msgctxt "HighlightSettingsPage|"
 msgid ""
 "<b>RegEx</b>: This option determines if the highlight rule and "
@@ -4600,16 +4580,16 @@ msgid ""
 "as keywords."
 msgstr "<b>RegEx</b>: Questa opzione determina se la regola per la menzione ed il <i>canale</i> devono essere interpretati come <b>espressione regolare</b> o solo come parole chiave."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:56
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:158
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:58
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:160
 msgctxt "HighlightSettingsPage|"
 msgid ""
 "<b>CS</b>: This option determines if the highlight rule and <i>Channel</i> "
 "should be interpreted <b>case sensitive</b>."
 msgstr "<b>CS</b>: Questa opzione determina se la regola per la menzione ed il <i>canale</i> deve <b>distinguere tra maiuscole e minuscole</b>."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:62
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:160
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:64
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:162
 msgctxt "HighlightSettingsPage|"
 msgid ""
 "<p><b>Channel</b>: Semicolon separated list of channel/query names, leave "
@@ -4622,57 +4602,57 @@ msgid ""
 "channel starting with <i>#quassel</i></p>"
 msgstr "<p><b>Canale</b>: Una lista canali/privati separati da punto e virgola, lascia vuoto per far corrispondere a qualsiasi nome.</p><p><i>Esempio:</i><br /><i>#quassel*; #foobar; !#quasseldroid</i><br />trova corrispondenza con <i>#foobar</i> e qualsiasi canale inizi con <i>#quassel</i> ad eccezione di <i>#quasseldroid</i><br /><p>Se vengono specificati soltanto i nomi in modo inverso, si avrà corrispondenza con tutto tranne ciò che è stato specificato (carattere jolly implicito).</p><p><i>Esempio:</i><br /><i>!#quassel*; !#foobar</i><br />troverà corrispondenza con tutto ad eccezione di <i>#foobar</i> o qualsiasi canale il cui nome inizi con <i>#quassel</i></p>"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:90
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:273
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:92
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:275
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights are replaced by Highlights"
 msgstr "Le 'menzioni del sistema precedente' sono state sostituite da 'Menzioni'"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:245
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:247
 msgctxt "HighlightSettingsPage|"
 msgid "this shouldn't be empty"
 msgstr "non dovrebbe essere vuoto"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:271
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:273
 msgctxt "HighlightSettingsPage|"
 msgid "Legacy Highlights vs. Highlights"
 msgstr "Menzioni del protocollo sistema vs. menzioni"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:274
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:276
 msgctxt "HighlightSettingsPage|"
 msgid ""
 "These highlights will keep working for now, but you should move to the "
 "improved highlight rules when you can."
 msgstr "Queste menzioni continueranno a funzionare per ora, ma dovresti passare al migliorato sistema di menzione appena possibile."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:276
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:278
 #, qt-format
 msgctxt "HighlightSettingsPage|"
 msgid "Configure the new style of highlights in <i>%1</i>."
 msgstr "Configura il nuovo stile per le menzioni in <i>%1</i>."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:278
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:280
 msgctxt "HighlightSettingsPage|"
 msgid "Highlights"
 msgstr "Menzioni"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:283
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:285
 msgctxt "HighlightSettingsPage|"
 msgid "Local Highlights vs. Remote Highlights"
 msgstr "Menzioni locali vs. menzioni remote"
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:286
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:288
 msgctxt "HighlightSettingsPage|"
 msgid "Highlights configured on this page only apply to your current device."
 msgstr "Le menzioni configurate in questa pagina si applicano solo all'attuale dispositivo ."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:288
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:290
 #, qt-format
 msgctxt "HighlightSettingsPage|"
 msgid "Configure highlights for all of your devices in <i>%1</i>."
 msgstr "Configura le menzioni per tutti i tuoi dispositivi in <i>%1</i>."
 
-#: ../src/qtui/settingspages/highlightsettingspage.cpp:290
+#: ../src/qtui/settingspages/highlightsettingspage.cpp:292
 msgctxt "HighlightSettingsPage|"
 msgid "Remote Highlights"
 msgstr "Menzioni remote"
@@ -5726,87 +5706,87 @@ msgctxt "IrcParser|"
 msgid "Capability negotiation not supported"
 msgstr "Negoziazione delle funzionalità non supportata."
 
-#: ../src/client/networkmodel.cpp:1099
+#: ../src/client/networkmodel.cpp:1100
 msgctxt "IrcUserItem|"
 msgid "Modes"
 msgstr "Modi"
 
-#: ../src/client/networkmodel.cpp:1101
+#: ../src/client/networkmodel.cpp:1102
 msgctxt "IrcUserItem|"
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: ../src/client/networkmodel.cpp:1107
+#: ../src/client/networkmodel.cpp:1108
 msgctxt "IrcUserItem|"
 msgid "Away message"
 msgstr "Messaggio d'assenza"
 
-#: ../src/client/networkmodel.cpp:1109
+#: ../src/client/networkmodel.cpp:1110
 msgctxt "IrcUserItem|"
 msgid "Realname"
 msgstr "Nome reale"
 
-#: ../src/client/networkmodel.cpp:1114
+#: ../src/client/networkmodel.cpp:1115
 msgctxt "IrcUserItem|"
 msgid "Help status"
 msgstr "Stato di aiuto"
 
-#: ../src/client/networkmodel.cpp:1114
+#: ../src/client/networkmodel.cpp:1115
 msgctxt "IrcUserItem|"
 msgid "Available for help"
 msgstr "Disponibile per aiuto"
 
-#: ../src/client/networkmodel.cpp:1117
+#: ../src/client/networkmodel.cpp:1118
 msgctxt "IrcUserItem|"
 msgid "Service status"
 msgstr "Stato del servizio"
 
-#: ../src/client/networkmodel.cpp:1127
+#: ../src/client/networkmodel.cpp:1128
 msgctxt "IrcUserItem|"
 msgid "Not logged in"
 msgstr "Accesso non effettuato"
 
-#: ../src/client/networkmodel.cpp:1133 ../src/client/networkmodel.cpp:1140
+#: ../src/client/networkmodel.cpp:1134 ../src/client/networkmodel.cpp:1141
 msgctxt "IrcUserItem|"
 msgid "Account"
 msgstr "Account"
 
-#: ../src/client/networkmodel.cpp:1140
+#: ../src/client/networkmodel.cpp:1141
 msgctxt "IrcUserItem|"
 msgid "Identified for this nick"
 msgstr "Identificato per questo nick"
 
-#: ../src/client/networkmodel.cpp:1146
+#: ../src/client/networkmodel.cpp:1147
 msgctxt "IrcUserItem|"
 msgid "Service Reply"
 msgstr "Risposta del servizio"
 
-#: ../src/client/networkmodel.cpp:1150
+#: ../src/client/networkmodel.cpp:1151
 msgctxt "IrcUserItem|"
 msgid "Hostmask"
 msgstr "Maschera host"
 
-#: ../src/client/networkmodel.cpp:1154
+#: ../src/client/networkmodel.cpp:1155
 msgctxt "IrcUserItem|"
 msgid "Operator"
 msgstr "Operatore"
 
-#: ../src/client/networkmodel.cpp:1162
+#: ../src/client/networkmodel.cpp:1163
 msgctxt "IrcUserItem|"
 msgid "Idling since"
 msgstr "Inattivo da"
 
-#: ../src/client/networkmodel.cpp:1166
+#: ../src/client/networkmodel.cpp:1167
 msgctxt "IrcUserItem|"
 msgid "Login time"
 msgstr "Data accesso"
 
-#: ../src/client/networkmodel.cpp:1169
+#: ../src/client/networkmodel.cpp:1170
 msgctxt "IrcUserItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:1174
+#: ../src/client/networkmodel.cpp:1175
 msgctxt "IrcUserItem|"
 msgid "No information available"
 msgstr "Nessuna informazione disponibile"
@@ -5907,32 +5887,32 @@ msgctxt "ItemViewSettingsPage|"
 msgid "Chat & Nick Lists"
 msgstr "Liste chat e nick"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:35
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:34
 msgctxt "ItemViewSettingsPage|"
 msgid "Network"
 msgstr "Rete"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:38
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:37
 msgctxt "ItemViewSettingsPage|"
 msgid "Inactive"
 msgstr "Inattivo"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:39
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:38
 msgctxt "ItemViewSettingsPage|"
 msgid "Normal"
 msgstr "Normale"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:40
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:39
 msgctxt "ItemViewSettingsPage|"
 msgid "Unread messages"
 msgstr "Messaggi non letti"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:41
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:40
 msgctxt "ItemViewSettingsPage|"
 msgid "Highlight"
 msgstr "Menzione"
 
-#: ../src/qtui/settingspages/itemviewsettingspage.cpp:42
+#: ../src/qtui/settingspages/itemviewsettingspage.cpp:41
 msgctxt "ItemViewSettingsPage|"
 msgid "Other activity"
 msgstr "Altra attività"
@@ -6649,7 +6629,7 @@ msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr "Scegliere una rete prima di provare a visualizzare l'elenco dei canali."
 
-#: ../src/client/messagemodel.cpp:397
+#: ../src/client/messagemodel.cpp:399
 #, qt-format
 msgctxt "MessageModel|"
 msgid "Requesting %1 messages from backlog for buffer %2:%3"
@@ -6816,43 +6796,43 @@ msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr "Aggiungi rete"
 
-#: ../src/client/networkmodel.cpp:229
+#: ../src/client/networkmodel.cpp:230
 msgctxt "NetworkItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:230
+#: ../src/client/networkmodel.cpp:231
 msgctxt "NetworkItem|"
 msgid "Users"
 msgstr "Utenti"
 
-#: ../src/client/networkmodel.cpp:232
+#: ../src/client/networkmodel.cpp:233
 msgctxt "NetworkItem|"
 msgid "Lag"
 msgstr "Latenza"
 
-#: ../src/client/networkmodel.cpp:232
+#: ../src/client/networkmodel.cpp:233
 #, qt-format
 msgctxt "NetworkItem|"
 msgid "%1 msecs"
 msgstr "%1 msecs"
 
-#: ../src/client/networkmodel.cpp:237
+#: ../src/client/networkmodel.cpp:238
 msgctxt "NetworkItem|"
 msgid "Not connected"
 msgstr "Non connesso"
 
-#: ../src/client/networkmodel.cpp:1214
+#: ../src/client/networkmodel.cpp:1215
 msgctxt "NetworkModel|"
 msgid "Chat"
 msgstr "Chat"
 
-#: ../src/client/networkmodel.cpp:1214
+#: ../src/client/networkmodel.cpp:1215
 msgctxt "NetworkModel|"
 msgid "Topic"
 msgstr "Argomento"
 
-#: ../src/client/networkmodel.cpp:1214
+#: ../src/client/networkmodel.cpp:1215
 msgctxt "NetworkModel|"
 msgid "Nick Count"
 msgstr "Numero nick"
@@ -7467,37 +7447,37 @@ msgid ""
 "you entered your old password correctly!"
 msgstr "Il core ha segnalato un errore durante il tentativo di modificare la password. Assicurati di aver inserito correttamente la vecchia password!"
 
-#: ../src/core/postgresqlstorage.cpp:48
+#: ../src/core/postgresqlstorage.cpp:51
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL driver plugin not available for Qt. Installed drivers:"
 msgstr "Il plugin del driver PostgreSQL non è disponibile per Qt. Driver installati:"
 
-#: ../src/core/postgresqlstorage.cpp:68
+#: ../src/core/postgresqlstorage.cpp:71
 msgctxt "PostgreSqlStorage|"
 msgid "PostgreSQL Turbo Bomber HD!"
 msgstr "PostgreSQL Turbo Bomber HD!"
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Username"
 msgstr "Nome utente"
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Password"
 msgstr "Password"
 
-#: ../src/core/postgresqlstorage.cpp:74
+#: ../src/core/postgresqlstorage.cpp:77
 msgctxt "PostgreSqlStorage|"
 msgid "Hostname"
 msgstr "Nome host"
 
-#: ../src/core/postgresqlstorage.cpp:75
+#: ../src/core/postgresqlstorage.cpp:78
 msgctxt "PostgreSqlStorage|"
 msgid "Port"
 msgstr "Porta"
 
-#: ../src/core/postgresqlstorage.cpp:75
+#: ../src/core/postgresqlstorage.cpp:78
 msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr "Database"
@@ -8050,88 +8030,88 @@ msgctxt "Quassel::secondsToString()|"
 msgid "sec"
 msgstr "sec"
 
-#: ../src/client/networkmodel.cpp:542
+#: ../src/client/networkmodel.cpp:543
 #, qt-format
 msgctxt "QueryBufferItem|"
 msgid "Query with %1"
 msgstr "Privato con %1"
 
-#: ../src/client/networkmodel.cpp:565
+#: ../src/client/networkmodel.cpp:566
 msgctxt "QueryBufferItem|"
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: ../src/client/networkmodel.cpp:571
+#: ../src/client/networkmodel.cpp:572
 msgctxt "QueryBufferItem|"
 msgid "Away message"
 msgstr "Messaggio d'assenza"
 
-#: ../src/client/networkmodel.cpp:573
+#: ../src/client/networkmodel.cpp:574
 msgctxt "QueryBufferItem|"
 msgid "Realname"
 msgstr "Nome reale"
 
-#: ../src/client/networkmodel.cpp:577
+#: ../src/client/networkmodel.cpp:578
 msgctxt "QueryBufferItem|"
 msgid "Help status"
 msgstr "Stato di aiuto"
 
-#: ../src/client/networkmodel.cpp:577
+#: ../src/client/networkmodel.cpp:578
 msgctxt "QueryBufferItem|"
 msgid "Available for help"
 msgstr "Disponibile per aiuto"
 
-#: ../src/client/networkmodel.cpp:580
+#: ../src/client/networkmodel.cpp:581
 msgctxt "QueryBufferItem|"
 msgid "Service status"
 msgstr "Stato del servizio"
 
-#: ../src/client/networkmodel.cpp:590
+#: ../src/client/networkmodel.cpp:591
 msgctxt "QueryBufferItem|"
 msgid "Not logged in"
 msgstr "Accesso non effettuato"
 
-#: ../src/client/networkmodel.cpp:596 ../src/client/networkmodel.cpp:603
+#: ../src/client/networkmodel.cpp:597 ../src/client/networkmodel.cpp:604
 msgctxt "QueryBufferItem|"
 msgid "Account"
 msgstr "Account"
 
-#: ../src/client/networkmodel.cpp:603
+#: ../src/client/networkmodel.cpp:604
 msgctxt "QueryBufferItem|"
 msgid "Identified for this nick"
 msgstr "Identificato per questo nick"
 
-#: ../src/client/networkmodel.cpp:609
+#: ../src/client/networkmodel.cpp:610
 msgctxt "QueryBufferItem|"
 msgid "Service Reply"
 msgstr "Risposta dai servizi"
 
-#: ../src/client/networkmodel.cpp:613
+#: ../src/client/networkmodel.cpp:614
 msgctxt "QueryBufferItem|"
 msgid "Hostmask"
 msgstr "Maschera host"
 
-#: ../src/client/networkmodel.cpp:617
+#: ../src/client/networkmodel.cpp:618
 msgctxt "QueryBufferItem|"
 msgid "Operator"
 msgstr "Operatore"
 
-#: ../src/client/networkmodel.cpp:625
+#: ../src/client/networkmodel.cpp:626
 msgctxt "QueryBufferItem|"
 msgid "Idling since"
 msgstr "Inattivo da"
 
-#: ../src/client/networkmodel.cpp:629
+#: ../src/client/networkmodel.cpp:630
 msgctxt "QueryBufferItem|"
 msgid "Login time"
 msgstr "Data accesso"
 
-#: ../src/client/networkmodel.cpp:632
+#: ../src/client/networkmodel.cpp:633
 msgctxt "QueryBufferItem|"
 msgid "Server"
 msgstr "Server"
 
-#: ../src/client/networkmodel.cpp:638
+#: ../src/client/networkmodel.cpp:639
 msgctxt "QueryBufferItem|"
 msgid "No information available"
 msgstr "Nessuna informazione disponibile"
@@ -8580,7 +8560,7 @@ msgid ""
 "and salted password in the database selected in the next step."
 msgstr "Non eseguire l'autenticazione in alcun servizio remoto ma salva solo l'hash con sale della password nel database scelto nel passaggio successivo."
 
-#: ../src/core/sqlitestorage.cpp:57
+#: ../src/core/sqlitestorage.cpp:60
 msgctxt "SqliteStorage|"
 msgid ""
 "SQLite is a file-based database engine that does not require any setup. It "
@@ -9151,7 +9131,7 @@ msgctxt "UiStyle::StyledMessage|"
 msgid "Netsplit between %DH%1%DH and %DH%2%DH. Users quit: "
 msgstr "Netsplit tra %DH%1%DH e %DH%2%DH. Utenti disconnessi: "
 
-#: ../src/client/networkmodel.cpp:953
+#: ../src/client/networkmodel.cpp:954
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
@@ -9159,7 +9139,7 @@ msgid_plural "%n Owner(s)"
 msgstr[0] "%n proprietario"
 msgstr[1] "%n proprietari"
 
-#: ../src/client/networkmodel.cpp:955
+#: ../src/client/networkmodel.cpp:956
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
@@ -9167,7 +9147,7 @@ msgid_plural "%n Admin(s)"
 msgstr[0] "%n amministratore"
 msgstr[1] "%n amministratori"
 
-#: ../src/client/networkmodel.cpp:957
+#: ../src/client/networkmodel.cpp:958
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
@@ -9175,7 +9155,7 @@ msgid_plural "%n Operator(s)"
 msgstr[0] "%n operatore"
 msgstr[1] "%n operatori"
 
-#: ../src/client/networkmodel.cpp:959
+#: ../src/client/networkmodel.cpp:960
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
@@ -9183,7 +9163,7 @@ msgid_plural "%n Half-Op(s)"
 msgstr[0] "%n semi-operatore"
 msgstr[1] "%n semi-operatori"
 
-#: ../src/client/networkmodel.cpp:961
+#: ../src/client/networkmodel.cpp:962
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
@@ -9191,7 +9171,7 @@ msgid_plural "%n Voiced"
 msgstr[0] "%n interlocutore"
 msgstr[1] "%n interlocutori"
 
-#: ../src/client/networkmodel.cpp:963
+#: ../src/client/networkmodel.cpp:964
 #, qt-format
 msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
