@@ -12,7 +12,7 @@
 # Kostas Koudaras <warlordfff@gmail.com>, 2012
 # Kostas Koudaras <warlordfff@gmail.com>, 2012
 # Γιάννης Ανθυμίδης, 2013
-# Γιάννης Ανθυμίδης, 2013
+# Yannis Anthymidis, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
