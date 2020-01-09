@@ -4,6 +4,7 @@
 # contradictioned <contradictioned@googlemail.com>, 2014
 # Daniel Albers <daniel@lbe.rs>, 2012-2013
 # Daniel Albers <daniel@lbers.com>, 2011-2012
+# David Roden, 2020
 # Felix Kaechele <felix@fetzig.org>, 2013
 # Felix Kaechele <felix@fetzig.org>, 2013
 # Felix Kaechele <felix@fetzig.org>, 2013
@@ -20,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-09-30 12:38+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2020-01-08 21:40+0000\n"
+"Last-Translator: David Roden\n"
 "Language-Team: German (http://www.transifex.com/quassel/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +49,7 @@ msgstr "Projektgründer, Hauptentwickler"
 #: ../src/uisupport/aboutdata.cpp:153
 msgctxt "AboutData|"
 msgid "Project motivator, lead developer"
-msgstr ""
+msgstr "Projektteiber, Hauptentwickler"
 
 #: ../src/uisupport/aboutdata.cpp:154
 msgctxt "AboutData|"
@@ -58,7 +59,7 @@ msgstr "Frühere Hauptentwickler"
 #: ../src/uisupport/aboutdata.cpp:155
 msgctxt "AboutData|"
 msgid "Master of Translation, many fixes and enhancements, Travis support"
-msgstr ""
+msgstr "Herrscher der Übersetzungen, viele Fehlerbehebungen und Erweiterungen, Travis-Support"
 
 #: ../src/uisupport/aboutdata.cpp:156
 msgctxt "AboutData|"
@@ -68,7 +69,7 @@ msgstr "Viele Leistungsmerkmale, Fixes und Verbesserungen"
 #: ../src/uisupport/aboutdata.cpp:157
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug and patch triaging, community support"
-msgstr ""
+msgstr "Viele Fehlerbehebungen und Verbesserungen, initiale Fehler- und Patch-Analyse, Community-Support"
 
 #: ../src/uisupport/aboutdata.cpp:158
 msgctxt "AboutData|"
@@ -82,7 +83,7 @@ msgctxt "AboutData|"
 msgid ""
 "Quasseldroid, architecture, (mobile) performance, many other improvements "
 "and fixes, testing"
-msgstr ""
+msgstr "Quasseldroid, Architektur, Effizienz (für Mobilgeräte), viele andere Fehlerbehebungen und Verbesserungen, Testen"
 
 #: ../src/uisupport/aboutdata.cpp:163
 msgctxt "AboutData|"
@@ -97,7 +98,7 @@ msgstr "Chat-Ansicht Verbesserungen"
 #: ../src/uisupport/aboutdata.cpp:165
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter, Danish translation"
-msgstr ""
+msgstr "Früher Betatester und Fehlerjäger, dänische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:166 ../src/uisupport/aboutdata.cpp:244
 #: ../src/uisupport/aboutdata.cpp:273 ../src/uisupport/aboutdata.cpp:285
@@ -157,7 +158,7 @@ msgstr "Rumänische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:176
 msgctxt "AboutData|"
 msgid "Punjabi translation"
-msgstr ""
+msgstr "Panjabisprachige Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:177 ../src/uisupport/aboutdata.cpp:239
 #: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:255
@@ -168,18 +169,18 @@ msgstr "Finnische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:178
 msgctxt "AboutData|"
 msgid "Message indicator support"
-msgstr ""
+msgstr "Nachrichtenhinweisunterstützung"
 
 #: ../src/uisupport/aboutdata.cpp:180 ../src/uisupport/aboutdata.cpp:181
 #: ../src/uisupport/aboutdata.cpp:324
 msgctxt "AboutData|"
 msgid "Build system fix"
-msgstr ""
+msgstr "Verbesserungen am Build-System"
 
 #: ../src/uisupport/aboutdata.cpp:182
 msgctxt "AboutData|"
 msgid "Windows build system fixes"
-msgstr ""
+msgstr "Verbesserungen am Build-System für Windows"
 
 #: ../src/uisupport/aboutdata.cpp:183
 msgctxt "AboutData|"
@@ -189,12 +190,12 @@ msgstr "AppData Metadaten, LDAP-Unterstützung"
 #: ../src/uisupport/aboutdata.cpp:184
 msgctxt "AboutData|"
 msgid "Nicer tooltips, spell check and other improvements"
-msgstr ""
+msgstr "Schickere Tooltips, Rechtschreibprüfung und andere Verbesserungen"
 
 #: ../src/uisupport/aboutdata.cpp:185
 msgctxt "AboutData|"
 msgid "Crash fixes"
-msgstr ""
+msgstr "Beseitigung von Abstürzen"
 
 #: ../src/uisupport/aboutdata.cpp:186 ../src/uisupport/aboutdata.cpp:211
 #: ../src/uisupport/aboutdata.cpp:289
@@ -205,12 +206,12 @@ msgstr "Französische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:187
 msgctxt "AboutData|"
 msgid "Occitan translation"
-msgstr ""
+msgstr "Okzitanische Übersetzung"
 
 #: ../src/uisupport/aboutdata.cpp:188
 msgctxt "AboutData|"
 msgid "Usability review"
-msgstr ""
+msgstr "Benutzbarkeitsüberprüfung"
 
 #: ../src/uisupport/aboutdata.cpp:189
 msgctxt "AboutData|"
@@ -251,7 +252,7 @@ msgstr "Japanische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:198 ../src/uisupport/aboutdata.cpp:275
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
-msgstr ""
+msgstr "Gentoo-Maintainer"
 
 #: ../src/uisupport/aboutdata.cpp:199 ../src/uisupport/aboutdata.cpp:215
 #: ../src/uisupport/aboutdata.cpp:320
@@ -262,7 +263,7 @@ msgstr "Verbesserungen im Umgang mit Zertifikaten"
 #: ../src/uisupport/aboutdata.cpp:201
 msgctxt "AboutData|"
 msgid "Early beta tester and bughunter (on Vista™!)"
-msgstr ""
+msgstr "Früher Betatester und Fehlerjäger (für Vista™!)"
 
 #: ../src/uisupport/aboutdata.cpp:202
 msgctxt "AboutData|"
@@ -298,7 +299,7 @@ msgstr "Polnische Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
 msgid "Build system improvements"
-msgstr ""
+msgstr "Verbesserungen am Build-System"
 
 #: ../src/uisupport/aboutdata.cpp:210
 msgctxt "AboutData|"
@@ -331,7 +332,7 @@ msgstr "Deutsche Übersetzung"
 #: ../src/uisupport/aboutdata.cpp:217
 msgctxt "AboutData|"
 msgid "Sanitize topic handling, twitch.tv support"
-msgstr ""
+msgstr "Themenbehandlung aufgeräumt, twitch.tv-Support"
 
 #: ../src/uisupport/aboutdata.cpp:218
 msgctxt "AboutData|"
@@ -351,7 +352,7 @@ msgstr "IRC Parser Verbesserungen"
 #: ../src/uisupport/aboutdata.cpp:223
 msgctxt "AboutData|"
 msgid "Windows build support and Appveyor maintenance, snorenotify backend"
-msgstr ""
+msgstr "Windows Build-System-Support, Appveyor-Wartung, snorenotify-Anbindung"
 
 #: ../src/uisupport/aboutdata.cpp:224
 msgctxt "AboutData|"
@@ -361,7 +362,7 @@ msgstr "Initiale Qt5 Unterstützung"
 #: ../src/uisupport/aboutdata.cpp:225
 msgctxt "AboutData|"
 msgid "{Ku|U}buntu packager, motivator, promoter"
-msgstr ""
+msgstr "{Ku|U}buntu-Paketersteller, -Antreiber, -Förderer"
 
 #: ../src/uisupport/aboutdata.cpp:226
 msgctxt "AboutData|"
@@ -418,12 +419,12 @@ msgstr "Kontextmenükorrekturen"
 #: ../src/uisupport/aboutdata.cpp:241
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, bug triaging"
-msgstr ""
+msgstr "Viele Fehlerbehebungen und Verbesserungen, initiale Fehleranalyse"
 
 #: ../src/uisupport/aboutdata.cpp:242
 msgctxt "AboutData|"
 msgid "Original \"All-Seeing Eye\" logo"
-msgstr ""
+msgstr "Ursprüngliches „Allsehendes Auge“ Logo"
 
 #: ../src/uisupport/aboutdata.cpp:243
 msgctxt "AboutData|"
@@ -440,7 +441,7 @@ msgctxt "AboutData|"
 msgid ""
 "Tireless tester, {Ku|U}buntu tester and lobbyist, liters of delicious "
 "Finnish alcohol"
-msgstr ""
+msgstr "Unermüdlicher Tester, {Ku|U}buntu-Tester und -Lobbyist, literweise wohlschmeckender finnischer Alkohol"
 
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
