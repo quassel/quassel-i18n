@@ -140,7 +140,7 @@ struct UserId : public SignedId
     inline UserId(int _id = 0)
         : SignedId(_id)
     {}
-    // inline operator QVariant() const { return QVariant::fromValue<UserId>(*this); }  // no automatic conversion!
+    // inline operator QVariant() const { return QVariant::fromValue(*this); }  // no automatic conversion!
 };
 
 struct MsgId : public SignedId64
@@ -148,7 +148,7 @@ struct MsgId : public SignedId64
     inline MsgId(qint64 _id = 0)
         : SignedId64(_id)
     {}
-    // inline operator QVariant() const { return QVariant::fromValue<MsgId>(*this); }
+    // inline operator QVariant() const { return QVariant::fromValue(*this); }
 };
 
 struct BufferId : public SignedId
@@ -156,7 +156,7 @@ struct BufferId : public SignedId
     inline BufferId(int _id = 0)
         : SignedId(_id)
     {}
-    // inline operator QVariant() const { return QVariant::fromValue<BufferId>(*this); }
+    // inline operator QVariant() const { return QVariant::fromValue(*this); }
 };
 
 struct NetworkId : public SignedId
@@ -164,7 +164,7 @@ struct NetworkId : public SignedId
     inline NetworkId(int _id = 0)
         : SignedId(_id)
     {}
-    // inline operator QVariant() const { return QVariant::fromValue<NetworkId>(*this); }
+    // inline operator QVariant() const { return QVariant::fromValue(*this); }
 };
 
 struct IdentityId : public SignedId
@@ -172,7 +172,7 @@ struct IdentityId : public SignedId
     inline IdentityId(int _id = 0)
         : SignedId(_id)
     {}
-    // inline operator QVariant() const { return QVariant::fromValue<IdentityId>(*this); }
+    // inline operator QVariant() const { return QVariant::fromValue(*this); }
 };
 
 struct AccountId : public SignedId
@@ -195,6 +195,7 @@ Q_DECLARE_METATYPE(QHostAddress)
 using MsgIdList = QList<MsgId>;
 using BufferIdList = QList<BufferId>;
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
 /**
  * Catch-all stream serialization operator for enum types.
  *
@@ -224,6 +225,7 @@ QDataStream& operator>>(QDataStream& in, T& value)
     value = static_cast<T>(v);
     return in;
 }
+#endif
 
 // STL-compliant hash functor for Qt types
 template<typename T>

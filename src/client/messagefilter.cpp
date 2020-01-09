@@ -28,6 +28,7 @@
 #include "clientignorelistmanager.h"
 #include "messagemodel.h"
 #include "networkmodel.h"
+#include "util.h"
 
 MessageFilter::MessageFilter(QAbstractItemModel* source, QObject* parent)
     : QSortFilterProxyModel(parent)
@@ -39,7 +40,7 @@ MessageFilter::MessageFilter(QAbstractItemModel* source, QObject* parent)
 
 MessageFilter::MessageFilter(MessageModel* source, const QList<BufferId>& buffers, QObject* parent)
     : QSortFilterProxyModel(parent)
-    , _validBuffers(buffers.toSet())
+    , _validBuffers(toQSet(buffers))
     , _messageTypeFilter(0)
 {
     init();
@@ -114,7 +115,7 @@ QString MessageFilter::idString() const
     if (_validBuffers.isEmpty())
         return "*";
 
-    QList<BufferId> bufferIds = _validBuffers.toList();
+    QList<BufferId> bufferIds = _validBuffers.values();
     std::sort(bufferIds.begin(), bufferIds.end());
 
     QStringList bufferIdStrings;
@@ -186,7 +187,7 @@ bool MessageFilter::filterAcceptsRow(int sourceRow, const QModelIndex& sourcePar
             if (!redirectedTo.isValid()) {
                 BufferId redirectedTo = Client::bufferModel()->currentIndex().data(NetworkModel::BufferIdRole).value<BufferId>();
                 if (redirectedTo.isValid())
-                    sourceModel()->setData(sourceIdx, QVariant::fromValue<BufferId>(redirectedTo), MessageModel::RedirectedToRole);
+                    sourceModel()->setData(sourceIdx, QVariant::fromValue(redirectedTo), MessageModel::RedirectedToRole);
             }
 
             if (_validBuffers.contains(redirectedTo))
