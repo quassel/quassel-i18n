@@ -1218,7 +1218,7 @@ msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
 msgstr "Tilføj chatliste"
 
-#: ../src/uisupport/bufferviewfilter.cpp:45
+#: ../src/uisupport/bufferviewfilter.cpp:46
 msgctxt "BufferViewFilter|"
 msgid "Show / Hide Chats"
 msgstr "Vis kanaler"
@@ -1494,7 +1494,7 @@ msgid "Move selected buffers to the right"
 msgstr "Fly valgte buffere til højre"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:133
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:274
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:275
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show:"
 msgstr "Vis:"
@@ -1546,27 +1546,27 @@ msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
 msgstr "Omfatte læste beskeder"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Interface"
 msgstr "Grænseflade"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
 msgstr "Vis chat monitor"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
 msgstr "Opt-In"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:61
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
 msgstr "Fravalg"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:277
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:278
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Ignore:"
 msgstr "Ignorer:"
@@ -2058,7 +2058,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Ikke-krypteret forbindelse aflyst"
 
-#: ../src/client/clientbacklogmanager.cpp:172
+#: ../src/client/clientbacklogmanager.cpp:173
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
@@ -4433,31 +4433,31 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr "Modtog CTCP-PING-svar fra %1 med %2 millisekunders rundturstid"
 
-#: ../src/client/execwrapper.cpp:50
+#: ../src/client/execwrapper.cpp:54
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Invalid kommando streng for /exec: %1"
 
-#: ../src/client/execwrapper.cpp:70
+#: ../src/client/execwrapper.cpp:74
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "Kunne ikke finde skriptet »%1«"
 
-#: ../src/client/execwrapper.cpp:91
+#: ../src/client/execwrapper.cpp:95
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "Scriptet \"%1\" holdt op med at virke med afslutningskode %2."
 
-#: ../src/client/execwrapper.cpp:108
+#: ../src/client/execwrapper.cpp:112
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "Skriptet »%1« kunne ikke starte."
 
-#: ../src/client/execwrapper.cpp:110
+#: ../src/client/execwrapper.cpp:114
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -7488,20 +7488,20 @@ msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr ""
 
-#: ../src/client/backlogrequester.cpp:87
+#: ../src/client/backlogrequester.cpp:81
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 backlog messages for %2 buffers"
 msgstr "Henter op til %1 beskeder fra bagkatalog til %2 buffere"
 
-#: ../src/client/backlogrequester.cpp:115
+#: ../src/client/backlogrequester.cpp:109
 #, qt-format
 msgctxt "QObject|"
 msgid ""
 "Requesting up to %1 of all unread backlog messages (plus additional %2)"
 msgstr "Henter op til %1 beskeder fra bagkatalog til %2 buffere"
 
-#: ../src/client/backlogrequester.cpp:133
+#: ../src/client/backlogrequester.cpp:127
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 unread backlog messages for %2 buffers"

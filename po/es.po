@@ -1219,7 +1219,7 @@ msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
 msgstr "Añadir lista de conversaciones"
 
-#: ../src/uisupport/bufferviewfilter.cpp:45
+#: ../src/uisupport/bufferviewfilter.cpp:46
 msgctxt "BufferViewFilter|"
 msgid "Show / Hide Chats"
 msgstr "Mostrar / Ocultar conversaciones"
@@ -1495,7 +1495,7 @@ msgid "Move selected buffers to the right"
 msgstr "Mover las conversaciones seleccionadas a la derecha"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:133
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:274
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:275
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show:"
 msgstr "Mostrar:"
@@ -1547,27 +1547,27 @@ msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
 msgstr "Incluir mensajes leídos"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Interface"
 msgstr "Interfaz"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
 msgstr "Monitor de conversación"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
 msgstr "Adherirse"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:61
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
 msgstr "Excluirse"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:277
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:278
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Ignore:"
 msgstr "Ignorar:"
@@ -2059,7 +2059,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Conexión no cifrada cancelada"
 
-#: ../src/client/clientbacklogmanager.cpp:172
+#: ../src/client/clientbacklogmanager.cpp:173
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
@@ -4434,31 +4434,31 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr ""
 
-#: ../src/client/execwrapper.cpp:50
+#: ../src/client/execwrapper.cpp:54
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Cadena de comando no válida para /exec: %1"
 
-#: ../src/client/execwrapper.cpp:70
+#: ../src/client/execwrapper.cpp:74
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "No se pudo encontrar el script \"%1\""
 
-#: ../src/client/execwrapper.cpp:91
+#: ../src/client/execwrapper.cpp:95
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "La ejecución del script \"%1\" se rompió con el código de salida %2."
 
-#: ../src/client/execwrapper.cpp:108
+#: ../src/client/execwrapper.cpp:112
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "El script \"%1\" no ha podido iniciarse."
 
-#: ../src/client/execwrapper.cpp:110
+#: ../src/client/execwrapper.cpp:114
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -7489,20 +7489,20 @@ msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr "Base de datos"
 
-#: ../src/client/backlogrequester.cpp:87
+#: ../src/client/backlogrequester.cpp:81
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 backlog messages for %2 buffers"
 msgstr "Solicitando un total de %1 mensajes al registro desde %2 canales en memoria"
 
-#: ../src/client/backlogrequester.cpp:115
+#: ../src/client/backlogrequester.cpp:109
 #, qt-format
 msgctxt "QObject|"
 msgid ""
 "Requesting up to %1 of all unread backlog messages (plus additional %2)"
 msgstr "Solicitando hasta %1 de todos los mensajes sin leer del registro (más %2 adicionales)"
 
-#: ../src/client/backlogrequester.cpp:133
+#: ../src/client/backlogrequester.cpp:127
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 unread backlog messages for %2 buffers"

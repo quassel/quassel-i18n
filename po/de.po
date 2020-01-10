@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2020-01-08 21:40+0000\n"
+"PO-Revision-Date: 2020-01-09 06:51+0000\n"
 "Last-Translator: David Roden\n"
 "Language-Team: German (http://www.transifex.com/quassel/quassel/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -446,12 +446,12 @@ msgstr "Unermüdlicher Tester, {Ku|U}buntu-Tester und -Lobbyist, literweise wohl
 #: ../src/uisupport/aboutdata.cpp:249
 msgctxt "AboutData|"
 msgid "Qt5 porting help, Travis CI setup"
-msgstr ""
+msgstr "Hilfe bei der Portierung auf Qt5, Travis CI Setup"
 
 #: ../src/uisupport/aboutdata.cpp:251
 msgctxt "AboutData|"
 msgid "Buffer merge improvements"
-msgstr ""
+msgstr "Verbesserungen beim Zusammenführen von Fenstern"
 
 #: ../src/uisupport/aboutdata.cpp:253 ../src/uisupport/aboutdata.cpp:305
 #: ../src/uisupport/aboutdata.cpp:306 ../src/uisupport/aboutdata.cpp:312
@@ -1109,7 +1109,7 @@ msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages per buffer that are requested after the core connection "
 "has been established."
-msgstr ""
+msgstr "Anzahl der Nachrichten pro Fenster, die bei Verbindungsaufbau angefordert werden."
 
 #: ../src/qtui/settingspages/backlogsettingspage.ui:141
 msgctxt "BacklogSettingsPage|"
@@ -1224,7 +1224,7 @@ msgctxt "BufferViewEditDlg|"
 msgid "Add Chat List"
 msgstr "Eine Chat-Liste hinzufügen"
 
-#: ../src/uisupport/bufferviewfilter.cpp:45
+#: ../src/uisupport/bufferviewfilter.cpp:46
 msgctxt "BufferViewFilter|"
 msgid "Show / Hide Chats"
 msgstr "Chats zeigen/verstecken"
@@ -1500,7 +1500,7 @@ msgid "Move selected buffers to the right"
 msgstr "Verschiebe ausgewählte Fenster nach rechts"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:133
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:274
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:275
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show:"
 msgstr "Anzeigen:"
@@ -1525,7 +1525,7 @@ msgstr "Eigene Nachrichten anzeigen"
 msgctxt "ChatMonitorSettingsPage|"
 msgid ""
 "Show own messages in chatmonitor even if the originating buffer is ignored"
-msgstr ""
+msgstr "Eigene Nachrichten im Verlaufsfenster zeigen, obwohl das Ursprungsfenster ignoriert wird"
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:185
 msgctxt "ChatMonitorSettingsPage|"
@@ -1552,27 +1552,27 @@ msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
 msgstr "Gelesene Nachrichten einbinden."
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Interface"
 msgstr "Oberfläche"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:35
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
 msgstr "Chatmonitor"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:59
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
 msgstr "Ausgewählte zulassen"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:61
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
 msgstr "Ausgewählte ignorieren"
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:277
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:278
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Ignore:"
 msgstr "Ignorieren:"
@@ -2064,7 +2064,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Unverschlüsselte Verbindung abgebrochen."
 
-#: ../src/client/clientbacklogmanager.cpp:172
+#: ../src/client/clientbacklogmanager.cpp:173
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
@@ -4439,31 +4439,31 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr "CTCP PING-Antwort von %1 mit einer Verzögerung von %2 Millisekunden erhalten"
 
-#: ../src/client/execwrapper.cpp:50
+#: ../src/client/execwrapper.cpp:54
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Ungültiger Befehl für /exec: %1"
 
-#: ../src/client/execwrapper.cpp:70
+#: ../src/client/execwrapper.cpp:74
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "Konnte Script \"%1\" nicht finden"
 
-#: ../src/client/execwrapper.cpp:91
+#: ../src/client/execwrapper.cpp:95
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "Script \"%1\" ist abgestürzt mit dem Exit-Code %2."
 
-#: ../src/client/execwrapper.cpp:108
+#: ../src/client/execwrapper.cpp:112
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "Script \"%1\" konnte nicht starten."
 
-#: ../src/client/execwrapper.cpp:110
+#: ../src/client/execwrapper.cpp:114
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -7494,20 +7494,20 @@ msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr "Datenbank"
 
-#: ../src/client/backlogrequester.cpp:87
+#: ../src/client/backlogrequester.cpp:81
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 backlog messages for %2 buffers"
 msgstr "Lade insgesamt %1 Nachrichten vom Verlauf von %2 Fenstern"
 
-#: ../src/client/backlogrequester.cpp:115
+#: ../src/client/backlogrequester.cpp:109
 #, qt-format
 msgctxt "QObject|"
 msgid ""
 "Requesting up to %1 of all unread backlog messages (plus additional %2)"
 msgstr "Lade insgesamt %1 ungelesene Nachrichten (und weitere %2)"
 
-#: ../src/client/backlogrequester.cpp:133
+#: ../src/client/backlogrequester.cpp:127
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 unread backlog messages for %2 buffers"
