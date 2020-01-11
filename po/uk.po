@@ -6695,7 +6695,7 @@ msgctxt "MultiLineEdit|"
 msgid "Auto Spell Check"
 msgstr ""
 
-#: ../src/uisupport/multilineedit.cpp:698
+#: ../src/uisupport/multilineedit.cpp:702
 #, qt-format
 msgctxt "MultiLineEdit|"
 msgid "Do you really want to paste %n line(s)?"
@@ -6705,7 +6705,7 @@ msgstr[1] "Справді бажаєте вставити %n рядки?"
 msgstr[2] "Справді бажаєте вставити %n рядків?"
 msgstr[3] "Справді бажаєте вставити %n рядків?"
 
-#: ../src/uisupport/multilineedit.cpp:707
+#: ../src/uisupport/multilineedit.cpp:711
 msgctxt "MultiLineEdit|"
 msgid "Paste Protection"
 msgstr "Захист від вставки"

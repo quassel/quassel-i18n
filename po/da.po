@@ -6699,7 +6699,7 @@ msgctxt "MultiLineEdit|"
 msgid "Auto Spell Check"
 msgstr ""
 
-#: ../src/uisupport/multilineedit.cpp:698
+#: ../src/uisupport/multilineedit.cpp:702
 #, qt-format
 msgctxt "MultiLineEdit|"
 msgid "Do you really want to paste %n line(s)?"
@@ -6707,7 +6707,7 @@ msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] "Ønsker du virkelig at sende %n linje?"
 msgstr[1] "Ønsker du virkelig at sende %n linjer?"
 
-#: ../src/uisupport/multilineedit.cpp:707
+#: ../src/uisupport/multilineedit.cpp:711
 msgctxt "MultiLineEdit|"
 msgid "Paste Protection"
 msgstr "Indsæt-beskyttelse"
