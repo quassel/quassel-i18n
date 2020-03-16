@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2019 by the Quassel Project                        *
+ *   Copyright (C) 2005-2020 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -39,7 +39,8 @@ public:
 };
 
 CoreBufferSyncer::CoreBufferSyncer(CoreSession* parent)
-    : BufferSyncer(Core::bufferLastSeenMsgIds(parent->user()),
+    : BufferSyncer(Core::bufferLastMsgIds(parent->user()),
+                   Core::bufferLastSeenMsgIds(parent->user()),
                    Core::bufferMarkerLineMsgIds(parent->user()),
                    Core::bufferActivities(parent->user()),
                    Core::highlightCounts(parent->user()),

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2019 by the Quassel Project                        *
+ *   Copyright (C) 2005-2020 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -49,7 +49,7 @@ void LegacyPeer::setSignalProxy(::SignalProxy* proxy)
         // enable compression now if requested - the initial handshake is uncompressed in the legacy protocol!
         _useCompression = socket()->property("UseCompression").toBool();
         if (_useCompression)
-            qDebug() << "Using compression for peer:" << qPrintable(socket()->peerAddress().toString());
+            qDebug() << "Using compression for peer:" << qPrintable(address());
     }
 }
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2019 by the Quassel Project                        *
+ *   Copyright (C) 2005-2020 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -96,6 +96,7 @@ public slots:
     bool removeBuffer(const UserId& user, const BufferId& bufferId) override;
     bool renameBuffer(const UserId& user, const BufferId& bufferId, const QString& newName) override;
     bool mergeBuffersPermanently(const UserId& user, const BufferId& bufferId1, const BufferId& bufferId2) override;
+    QHash<BufferId, MsgId> bufferLastMsgIds(UserId user) override;
     void setBufferLastSeenMsg(UserId user, const BufferId& bufferId, const MsgId& msgId) override;
     QHash<BufferId, MsgId> bufferLastSeenMsgIds(UserId user) override;
     void setBufferMarkerLineMsg(UserId user, const BufferId& bufferId, const MsgId& msgId) override;

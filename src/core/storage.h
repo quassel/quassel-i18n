@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2019 by the Quassel Project                        *
+ *   Copyright (C) 2005-2020 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -385,6 +385,12 @@ public slots:
      * \param MsgId     The Message id of the message that has been just seen
      */
     virtual void setBufferLastSeenMsg(UserId user, const BufferId& bufferId, const MsgId& msgId) = 0;
+
+    //! Get a Hash of all last message ids
+    /** This Method is called when the Quassel Core is started to restore the lastMsgIds
+     * \param user      The Owner of the buffers
+     */
+    virtual QHash<BufferId, MsgId> bufferLastMsgIds(UserId user) = 0;
 
     //! Get a Hash of all last seen message ids
     /** This Method is called when the Quassel Core is started to restore the lastSeenMsgIds

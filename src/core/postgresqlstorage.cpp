@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2005-2019 by the Quassel Project                        *
+ *   Copyright (C) 2005-2020 by the Quassel Project                        *
  *   devel@quassel-irc.org                                                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -1383,6 +1383,34 @@ bool PostgreSqlStorage::mergeBuffersPermanently(const UserId& user, const Buffer
 
     db.commit();
     return true;
+}
+
+QHash<BufferId, MsgId> PostgreSqlStorage::bufferLastMsgIds(UserId user)
+{
+    QHash<BufferId, MsgId> lastMsgHash;
+
+    QSqlDatabase db = logDb();
+    if (!beginReadOnlyTransaction(db)) {
+        qWarning() << "PostgreSqlStorage::bufferLastMsgIds(): cannot start read only transaction!";
+        qWarning() << " -" << qPrintable(db.lastError().text());
+        return lastMsgHash;
+    }
+
+    QSqlQuery query(db);
+    query.prepare(queryString("select_buffer_last_messages"));
+    query.bindValue(":userid", user.toInt());
+    safeExec(query);
+    if (!watchQuery(query)) {
+        db.rollback();
+        return lastMsgHash;
+    }
+
+    while (query.next()) {
+        lastMsgHash[query.value(0).toInt()] = query.value(1).toLongLong();
+    }
+
+    db.commit();
+    return lastMsgHash;
 }
 
 void PostgreSqlStorage::setBufferLastSeenMsg(UserId user, const BufferId& bufferId, const MsgId& msgId)
