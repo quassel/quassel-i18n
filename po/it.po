@@ -3,14 +3,14 @@
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # Francis, 2019
-# Francis, 2019
+# Francis, 2019-2020
 # Marco Paolone <marcopaolone@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2019-09-30 12:38+0000\n"
-"Last-Translator: Daniel Albers <daniel@lbe.rs>\n"
+"PO-Revision-Date: 2020-04-10 11:18+0000\n"
+"Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2790,18 +2790,18 @@ msgctxt "CoreAccountSettingsPage|"
 msgid "Remote Cores"
 msgstr "Core remoti"
 
-#: ../src/core/coreauthhandler.cpp:139 ../src/core/coreauthhandler.cpp:151
-#: ../src/core/coreauthhandler.cpp:225
+#: ../src/core/coreauthhandler.cpp:169 ../src/core/coreauthhandler.cpp:181
+#: ../src/core/coreauthhandler.cpp:255
 msgctxt "CoreAuthHandler|"
 msgid "Client"
 msgstr "Client"
 
-#: ../src/core/coreauthhandler.cpp:139
+#: ../src/core/coreauthhandler.cpp:169
 msgctxt "CoreAuthHandler|"
 msgid "too old, rejecting."
 msgstr "troppo vecchio, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:140
+#: ../src/core/coreauthhandler.cpp:170
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
@@ -2810,81 +2810,81 @@ msgid ""
 " client."
 msgstr "<b>Il tuo client Quassel è troppo vecchio!</b><br>Questo core richiede almeno la versione  client/core del protocollo %1 (ho: %2).<br>Prendi in considerazione di aggiornare il tuo client."
 
-#: ../src/core/coreauthhandler.cpp:152
+#: ../src/core/coreauthhandler.cpp:182
 msgctxt "CoreAuthHandler|"
 msgid "did not send a registration message before trying to login, rejecting."
 msgstr "non ha inviato un messaggio di registrazione prima di tentare l'accesso, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:154
+#: ../src/core/coreauthhandler.cpp:184
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Client not initialized!</b><br>You need to send a registration message "
 "before trying to login."
 msgstr "<b>Client non inizializzato!</b><br>È necessario inviare un messaggio di registrazione prima di tentare l'accesso."
 
-#: ../src/core/coreauthhandler.cpp:170
+#: ../src/core/coreauthhandler.cpp:200
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "SSL required but non-SSL connection attempt from %1"
 msgstr "È richiesto SSL ma è stato fatto un tentativo di connessione non SSL da %1"
 
-#: ../src/core/coreauthhandler.cpp:171
+#: ../src/core/coreauthhandler.cpp:201
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>SSL is required!</b><br>You need to use SSL in order to connect to this "
 "core."
 msgstr "<b>È richiesto SSL!</b><br>Devi utilizzare SSL per effettuare la connessione a questo core."
 
-#: ../src/core/coreauthhandler.cpp:226
+#: ../src/core/coreauthhandler.cpp:256
 msgctxt "CoreAuthHandler|"
 msgid "attempted to login before the core was configured, rejecting."
 msgstr "ha tentato l'accesso prima che il core fosse configurato, rifiutato."
 
-#: ../src/core/coreauthhandler.cpp:228
+#: ../src/core/coreauthhandler.cpp:258
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Attempted to login before core was configured!</b><br>The core must be "
 "configured before attempting to login."
 msgstr "<b>Tentativo di accesso prima che il core fosse configurato!</b><br>Il core deve essere configurato prima di tentare l'accesso."
 
-#: ../src/core/coreauthhandler.cpp:250
+#: ../src/core/coreauthhandler.cpp:280
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Invalid login attempt from %1 as \"%2\""
 msgstr "Tentativo di accesso non valido da %1 come \"%2\""
 
-#: ../src/core/coreauthhandler.cpp:251
+#: ../src/core/coreauthhandler.cpp:281
 msgctxt "CoreAuthHandler|"
 msgid ""
 "<b>Invalid username or password!</b><br>The username/password combination "
 "you supplied could not be found in the database."
 msgstr "<b>Nome utente o password non validi!</b><br>Le credenziali fornite non sono state trovate nel database."
 
-#: ../src/core/coreauthhandler.cpp:263
+#: ../src/core/coreauthhandler.cpp:293
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid ""
 "Client %1 initialized and authenticated successfully as \"%2\" (UserId: %3)."
 msgstr "Client %1 inizializzato ed autenticato correttamente come \"%2\" (UserId: %3)."
 
-#: ../src/core/coreauthhandler.cpp:270
+#: ../src/core/coreauthhandler.cpp:300
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support extended features."
 msgstr "Il client non supporta le funzionalità estese."
 
-#: ../src/core/coreauthhandler.cpp:272
+#: ../src/core/coreauthhandler.cpp:302
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client does not support the following features: %1"
 msgstr "Il client non supporta le seguenti funzioni: %1"
 
-#: ../src/core/coreauthhandler.cpp:276
+#: ../src/core/coreauthhandler.cpp:306
 #, qt-format
 msgctxt "CoreAuthHandler|"
 msgid "Client supports unknown features: %1"
 msgstr "Il client supporta funzioni sconosciute: %1"
 
-#: ../src/core/coreauthhandler.cpp:295
+#: ../src/core/coreauthhandler.cpp:343
 msgctxt "CoreAuthHandler|"
 msgid "Starting encryption for Client:"
 msgstr "Avvio crittografia per il client:"
@@ -4404,6 +4404,7 @@ msgctxt "EventStringifier|"
 msgid "sending CTCP-%1 request to %2"
 msgstr "invio richiesta CTCP-%1 a %2"
 
+#. Optional "unknown" in "Received unknown CTCP-FOO request by bar"
 #: ../src/core/eventstringifier.cpp:813
 msgctxt "EventStringifier|"
 msgid "unknown"
@@ -4432,6 +4433,12 @@ msgstr "Ricevuta risposta CTCP-PING da %1 con tempo di andata e ritorno di %2 mi
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Stringa di comando non valida per /exec: %1"
+
+#: ../src/client/execwrapper.cpp:63
+#, qt-format
+msgctxt "ExecWrapper|"
+msgid "Name \"%1\" is invalid: ../ or ..\\ are not allowed!"
+msgstr "Nome \"%1\" non valido: ../ o ..\\ non sono ammessi!"
 
 #: ../src/client/execwrapper.cpp:74
 #, qt-format
@@ -7738,7 +7745,7 @@ msgid "Specify the directory holding the client configuration."
 msgstr "Specifica la cartella contenente i file di configurazione del client."
 
 #: ../src/common/quassel.cpp:325 ../src/common/quassel.cpp:330
-#: ../src/common/quassel.cpp:367 ../src/common/quassel.cpp:368
+#: ../src/common/quassel.cpp:368 ../src/common/quassel.cpp:369
 msgctxt "Quassel|"
 msgid "path"
 msgstr "percorso"
@@ -7801,7 +7808,7 @@ msgid "The port quasselcore will listen at."
 msgstr "La porta sulla quale il core di Quassel resterà in ascolto."
 
 #: ../src/common/quassel.cpp:347 ../src/common/quassel.cpp:360
-#: ../src/common/quassel.cpp:370
+#: ../src/common/quassel.cpp:371
 msgctxt "Quassel|"
 msgid "port"
 msgstr "porta"
@@ -7879,7 +7886,8 @@ msgid ""
 "as --listen."
 msgstr "Indirizzi sui quali il core di Quassel resterà in ascolto per le richieste identd. Stesso formato di --listen."
 
-#: ../src/common/quassel.cpp:362 ../src/common/quassel.cpp:371
+#: ../src/common/quassel.cpp:362 ../src/common/quassel.cpp:365
+#: ../src/common/quassel.cpp:372
 msgctxt "Quassel|"
 msgid "<address>[,...]"
 msgstr "<indirizzo>[,...]"
@@ -7901,106 +7909,111 @@ msgctxt "Quassel|"
 msgid "file"
 msgstr "file"
 
-#: ../src/common/quassel.cpp:366
+#: ../src/common/quassel.cpp:365
+msgctxt "Quassel|"
+msgid "Set IP range from which proxy protocol definitions are allowed"
+msgstr "Imposta l'intervallo IP da cui è consentita la definizione del protocollo proxy"
+
+#: ../src/common/quassel.cpp:367
 msgctxt "Quassel|"
 msgid "Require SSL for remote (non-loopback) client connections."
 msgstr "Richiedi SSL per le connessioni client remote (non loopback)."
 
-#: ../src/common/quassel.cpp:367
+#: ../src/common/quassel.cpp:368
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL certificate."
 msgstr "Specifica il percorso del certificato SSL."
 
-#: ../src/common/quassel.cpp:368
+#: ../src/common/quassel.cpp:369
 msgctxt "Quassel|"
 msgid "Specify the path to the SSL key."
 msgstr "Specifica il percorso della chiave SSL."
 
-#: ../src/common/quassel.cpp:369
+#: ../src/common/quassel.cpp:370
 msgctxt "Quassel|"
 msgid "Enable metrics API."
 msgstr "Abilita API metriche."
 
-#: ../src/common/quassel.cpp:370
+#: ../src/common/quassel.cpp:371
 msgctxt "Quassel|"
 msgid ""
 "The port quasselcore will listen at for metrics requests. Only meaningful "
 "with --metrics-daemon."
 msgstr "La porta sulla quale il core di Quassel resterà in ascolto per le richieste metriche. Significativo solo con --metrics-daemon."
 
-#: ../src/common/quassel.cpp:371
+#: ../src/common/quassel.cpp:372
 msgctxt "Quassel|"
 msgid ""
 "The address(es) quasselcore will listen on for metrics requests. Same format"
 " as --listen."
 msgstr "Indirizzi sui quali il core di Quassel  resterà in ascolto per le richieste metriche. Stesso formato di --listen."
 
-#: ../src/common/quassel.cpp:378
+#: ../src/common/quassel.cpp:379
 msgctxt "Quassel|"
 msgid "Supports one of Debug|Info|Warning|Error; default is Info."
 msgstr "Supporta solo uno di Debug|Info|Warning|Error; l'impostazione predefinita è Info."
 
-#: ../src/common/quassel.cpp:378
+#: ../src/common/quassel.cpp:379
 msgctxt "Quassel|"
 msgid "level"
 msgstr "livello"
 
-#: ../src/common/quassel.cpp:379
+#: ../src/common/quassel.cpp:380
 msgctxt "Quassel|"
 msgid "Log to a file."
 msgstr "Registra su un file."
 
-#: ../src/common/quassel.cpp:381
+#: ../src/common/quassel.cpp:382
 msgctxt "Quassel|"
 msgid "Log to syslog."
 msgstr "Registra su syslog."
 
-#: ../src/common/quassel.cpp:386
+#: ../src/common/quassel.cpp:387
 msgctxt "Quassel|"
 msgid "Enable debug output."
 msgstr "Abilita output del debug."
 
-#: ../src/common/quassel.cpp:389
+#: ../src/common/quassel.cpp:390
 msgctxt "Quassel|"
 msgid "Enables debugging for bufferswitches."
 msgstr "Abilita il debug per i cambi di finestra."
 
-#: ../src/common/quassel.cpp:390
+#: ../src/common/quassel.cpp:391
 msgctxt "Quassel|"
 msgid "Enables debugging for models."
 msgstr "Abilita il debug per i modelli."
 
-#: ../src/common/quassel.cpp:395
+#: ../src/common/quassel.cpp:396
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all raw IRC messages to debug log, including passwords!  "
 "In most cases you should also set --loglevel Debug"
 msgstr "Abilita la registrazione di tutti i messaggi IRC nel registro log, incluse le password! Nella maggior parte dei casi dovresti anche impostare --loglevel Debug"
 
-#: ../src/common/quassel.cpp:396
+#: ../src/common/quassel.cpp:397
 msgctxt "Quassel|"
 msgid "Limit raw IRC logging to this network ID.  Implies --debug-irc"
 msgstr "Limita la registrazione del protocollo IRC a questo ID di rete.  Implica --debug-irc"
 
-#: ../src/common/quassel.cpp:396 ../src/common/quassel.cpp:398
+#: ../src/common/quassel.cpp:397 ../src/common/quassel.cpp:399
 msgctxt "Quassel|"
 msgid "database network ID"
 msgstr "ID rete nel database"
 
-#: ../src/common/quassel.cpp:397
+#: ../src/common/quassel.cpp:398
 msgctxt "Quassel|"
 msgid ""
 "Enable logging of all parsed IRC messages to debug log, including passwords!"
 "  In most cases you should also set --loglevel Debug"
 msgstr "Abilita la registrazione di tutti i messaggi IRC analizzati nel registro di debug, comprese le password! Nella maggior parte dei casi dovresti impostare anche --loglevel Debug"
 
-#: ../src/common/quassel.cpp:398
+#: ../src/common/quassel.cpp:399
 msgctxt "Quassel|"
 msgid ""
 "Limit parsed IRC logging to this network ID.  Implies --debug-irc-parsed"
 msgstr "Limita la registrazione del protocollo IRC analizzato a questo ID di rete. Implica --debug-irc-parsed"
 
-#: ../src/common/quassel.cpp:405
+#: ../src/common/quassel.cpp:406
 msgctxt "Quassel|"
 msgid "Quassel IRC is a modern, distributed IRC client."
 msgstr "Quassel IRC è un client IRC moderno e distribuito."
@@ -8127,7 +8140,7 @@ msgctxt "ReceiveFileDlg|"
 msgid "<b>%1</b> wants to send you a file:<br>%2 (%3 bytes)"
 msgstr "<b>%1</b> vuole inviarti un file:<br>%2 (%3 bytes)"
 
-#: ../src/common/remotepeer.cpp:70
+#: ../src/common/remotepeer.cpp:76
 msgctxt "RemotePeer|"
 msgid "Disconnecting..."
 msgstr "Disconnessione..."
