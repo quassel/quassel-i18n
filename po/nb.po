@@ -4,8 +4,8 @@
 # Chris <chris@chrisegeland.com>, 2018
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
-# sandsmark <inactive+sandsmark@transifex.com>, 2013
-# sandsmark <inactive+sandsmark@transifex.com>, 2012
+# 0ca8ff35e68b0ecb6c6e2230ee7ab252_d6ddd56 <5e347fca6cb5bc9bda75b49f353783f3_10603>, 2013
+# 0ca8ff35e68b0ecb6c6e2230ee7ab252_d6ddd56 <5e347fca6cb5bc9bda75b49f353783f3_10603>, 2012
 # Terje Andersen <terander@guard.zapto.org>, 2009
 # Terje Andersen <teranders@gmail.com>, 2009,2011
 # Thorbjørn Bruarøy, 2014,2017
