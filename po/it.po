@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2020-04-10 11:18+0000\n"
+"PO-Revision-Date: 2020-05-26 10:55+0000\n"
 "Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -3659,48 +3659,62 @@ msgctxt "CoreNetwork|"
 msgid "Could not negotiate some capabilities, retrying individually (%1)..."
 msgstr "Impossibile negoziare alcune funzionalità, riprovo singolarmente (%1)..."
 
-#: ../src/core/corenetwork.cpp:1278
+#: ../src/core/corenetwork.cpp:1275
 msgctxt "CoreNetwork|"
 msgid "No capabilities available"
 msgstr "Nessuna funzionalità disponibile"
 
+#: ../src/core/corenetwork.cpp:1281
+#, qt-format
+msgctxt "CoreNetwork|"
+msgid ""
+"None of the capabilities provided by the server are supported (found: %1)"
+msgstr "Nessuna delle funzionalità fornite dal server è supportata (trovato: %1)"
+
 #: ../src/core/corenetwork.cpp:1289
+#, qt-format
+msgctxt "CoreNetwork|"
+msgid ""
+"No additional capabilities are supported (found: %1; currently enabled: %2)"
+msgstr "Nessuna funzionalità aggiuntiva supportata (trovato: %1; attualmente abilitato: %2)"
+
+#: ../src/core/corenetwork.cpp:1310
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Ready to negotiate (found: %1)"
 msgstr "Pronto a negoziare (trovato: %1)"
 
-#: ../src/core/corenetwork.cpp:1301
+#: ../src/core/corenetwork.cpp:1322
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Negotiating capabilities (requesting: %1)..."
 msgstr "Negoziazione funzionalità (è stato richiesto: %1)..."
 
-#: ../src/core/corenetwork.cpp:1321
+#: ../src/core/corenetwork.cpp:1342
 msgctxt "CoreNetwork|"
 msgid "SASL authentication currently not supported by server"
 msgstr "L'autenticazione SASL non è al momento supportata dal server"
 
-#: ../src/core/corenetwork.cpp:1329
+#: ../src/core/corenetwork.cpp:1350
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid "Capability negotiation finished (enabled: %1)"
 msgstr "Negoziazione funzionalità terminata (è stato abilitato: %1)"
 
-#: ../src/core/corenetwork.cpp:1464
+#: ../src/core/corenetwork.cpp:1485
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, disconnecting since verification "
 "is required"
 msgstr "Non è stato possibile verificare la connessione crittografata, effettuo la disconnessione poiché la verifica è obbligatoria"
 
-#: ../src/core/corenetwork.cpp:1468 ../src/core/corenetwork.cpp:1487
+#: ../src/core/corenetwork.cpp:1489 ../src/core/corenetwork.cpp:1508
 #, qt-format
 msgctxt "CoreNetwork|"
 msgid " (Reason: %1)"
 msgstr " (Motivo: %1)"
 
-#: ../src/core/corenetwork.cpp:1483
+#: ../src/core/corenetwork.cpp:1504
 msgctxt "CoreNetwork|"
 msgid ""
 "Encrypted connection couldn't be verified, continuing since verification is "
