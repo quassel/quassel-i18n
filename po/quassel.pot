@@ -5436,17 +5436,17 @@ msgctxt "IgnoreListModel|"
 msgid "By Message"
 msgstr ""
 
-#: ../src/qtui/settingspages/ignorelistmodel.cpp:200
+#: ../src/qtui/settingspages/ignorelistmodel.cpp:199
 msgctxt "IgnoreListModel|"
 msgid "Enabled"
 msgstr ""
 
-#: ../src/qtui/settingspages/ignorelistmodel.cpp:200
+#: ../src/qtui/settingspages/ignorelistmodel.cpp:199
 msgctxt "IgnoreListModel|"
 msgid "Type"
 msgstr ""
 
-#: ../src/qtui/settingspages/ignorelistmodel.cpp:200
+#: ../src/qtui/settingspages/ignorelistmodel.cpp:199
 msgctxt "IgnoreListModel|"
 msgid "Ignore Rule"
 msgstr ""
