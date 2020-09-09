@@ -1,6 +1,6 @@
 # 
 # Translators:
-# Crystal RainSlide, 2018
+# RainSlide, 2018
 # Daniel Albers <daniel@lbers.com>, 2011
 # Feng Chao <chaofeng111@qq.com>, 2010
 # Feng Chao <chaofeng111@qq.com>, 2010
