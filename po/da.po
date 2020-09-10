@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2020-05-26 07:21+0000\n"
+"PO-Revision-Date: 2020-09-09 07:15+0000\n"
 "Last-Translator: Transifex Bot <>\n"
 "Language-Team: Danish (http://www.transifex.com/quassel/quassel/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -1806,37 +1806,39 @@ msgstr ""
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:41
 msgctxt "ChatViewSettingsPage|"
 msgid ""
-"<html><head/><body><p>Usage examples:</p>\n"
-"<table cellpadding=\"2\">\n"
-"<tr><td>dd.MM.yyyy</td><td>21.05.2001</td></tr>\n"
-"<tr><td>ddd MMMM d yy</td><td>Tue May 21 01</td></tr>\n"
-"<tr><td>hh:mm:ss.zzz</td><td>14:13:09.042</td></tr>\n"
-"<tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n"
-"</table>\n"
-"</body></html>"
-msgstr "<html><head/> <body><p>Skik eksempler:</p>\n<table cellpadding=\"2\">\n<tr><td>dd.MM.yyyy</td><td>21.05.2001</td></tr>\n<tr><td>ddd MMMM d åå</td><td>Tue 21 maj 01</td></tr>\n<tr><td>hh:mm:ss.zzz</td><td>14:13:09.042</td></tr>\n<tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n</table>\n</body></html>"
+"<html><head/><body>\n"
+"         <p>Accepts Qt QDateTime Format.</p>\n"
+"         <p>Examples:</p>\n"
+"         <table cellpadding=\"2\">\n"
+"         <tr><td>dd.MM.yyyy</td><td>21.05.2001</td></tr>\n"
+"         <tr><td>ddd MMMM d yy</td><td>Tue May 21 01</td></tr>\n"
+"         <tr><td>hh:mm:ss.zzz</td><td>14:13:09.042</td></tr>\n"
+"         <tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n"
+"         </table>\n"
+"         </body></html>"
+msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:54
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:56
 msgctxt "ChatViewSettingsPage|"
 msgid " hh:mm:ss"
 msgstr " tt:mm:ss"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:79
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:81
 msgctxt "ChatViewSettingsPage|"
 msgid "Shows <brackets> around the names of senders"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:82
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:84
 msgctxt "ChatViewSettingsPage|"
 msgid "Show brackets around sender names"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:100
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:102
 msgctxt "ChatViewSettingsPage|"
 msgid "Show sender modes before nicknames:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:107
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:109
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "<qt><style>.bold { font-weight: bold; } .italic { font-style: italic; } .underline { text-decoration: underline; }</style>\n"
@@ -1847,52 +1849,52 @@ msgid ""
 "</qt>"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:142
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:144
 msgctxt "ChatViewSettingsPage|"
 msgid "Custom chat window font:"
 msgstr "Brugerdefinerede chatvinduet skrifttype:"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:175
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:177
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Show a website preview window when hovering the mouse over a web address"
 msgstr "Vis webstedseksempel når musen holdes over en webadresse"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:178
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:180
 msgctxt "ChatViewSettingsPage|"
 msgid "Show previews of webpages on URL hover"
 msgstr "Vis previews af websider på URL hover"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:194
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:196
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when selecting "
 "another channel"
 msgstr "Angive linjen markør til bunden af den aktuelle chatvindue, når du vælger en anden kanal"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:197
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:199
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when switching chats"
 msgstr "Indstille markør linje automatisk, når du skifter chats"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:213
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:215
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "Set the marker line to the bottom of the current chat window when Quassel "
 "loses focus."
 msgstr "Angive linjen markør til bunden af den aktuelle chatvindue, når Quassel mister fokus."
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:216
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:218
 msgctxt "ChatViewSettingsPage|"
 msgid "Set marker line automatically when Quassel loses focus"
 msgstr "Indstille markør linje automatisk, når Quassel mister fokus"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:234
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:236
 msgctxt "ChatViewSettingsPage|"
 msgid "Web Search URL:"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:241
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:243
 msgctxt "ChatViewSettingsPage|"
 msgid ""
 "<html><head/><body><p>The URL to open with the selected text as the "
@@ -1902,7 +1904,7 @@ msgid ""
 "style=\" font-weight:600;\">%s</span></p></body></html>"
 msgstr "<html><head/> <body><p>Den URL til at åbne med den markerede tekst som parameter. Placer <span style=\"font-weight:600;\"> %s</span> hvor markerede tekst bør gå.</p><p>Fx:</p><p>https://www.google.com/search?q= <span style=\"font-weight:600;\"> %s <br/></span> https://duckduckgo.com/?q= <span style=\"font-weight:600;\"> %s</span></p></body></html>"
 
-#: ../src/qtui/settingspages/chatviewsettingspage.ui:247
+#: ../src/qtui/settingspages/chatviewsettingspage.ui:249
 msgctxt "ChatViewSettingsPage|"
 msgid "https://www.google.com/search?q=%s"
 msgstr "https://www.google.com/search?q=%s"
@@ -7509,12 +7511,24 @@ msgid "Database"
 msgstr ""
 
 #: ../src/client/backlogrequester.cpp:81
+#: ../src/client/backlogrequester_BACKUP_31820.cpp:81
+#: ../src/client/backlogrequester_BACKUP_31820.cpp:168
+#: ../src/client/backlogrequester_BASE_31820.cpp:81
+#: ../src/client/backlogrequester_BASE_31820.cpp:155
+#: ../src/client/backlogrequester_LOCAL_31820.cpp:81
+#: ../src/client/backlogrequester_LOCAL_31820.cpp:164
+#: ../src/client/backlogrequester_REMOTE_31820.cpp:81
+#: ../src/client/backlogrequester_REMOTE_31820.cpp:165
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 backlog messages for %2 buffers"
 msgstr "Henter op til %1 beskeder fra bagkatalog til %2 buffere"
 
 #: ../src/client/backlogrequester.cpp:109
+#: ../src/client/backlogrequester_BACKUP_31820.cpp:109
+#: ../src/client/backlogrequester_BASE_31820.cpp:109
+#: ../src/client/backlogrequester_LOCAL_31820.cpp:109
+#: ../src/client/backlogrequester_REMOTE_31820.cpp:109
 #, qt-format
 msgctxt "QObject|"
 msgid ""
@@ -7522,6 +7536,10 @@ msgid ""
 msgstr "Henter op til %1 beskeder fra bagkatalog til %2 buffere"
 
 #: ../src/client/backlogrequester.cpp:127
+#: ../src/client/backlogrequester_BACKUP_31820.cpp:127
+#: ../src/client/backlogrequester_BASE_31820.cpp:127
+#: ../src/client/backlogrequester_LOCAL_31820.cpp:127
+#: ../src/client/backlogrequester_REMOTE_31820.cpp:127
 #, qt-format
 msgctxt "QObject|"
 msgid "Requesting a total of up to %1 unread backlog messages for %2 buffers"
