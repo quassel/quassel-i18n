@@ -466,7 +466,14 @@ void MainWin::setupActions()
                      coll,
                      this,
                      &MainWin::onFormatUnderlineTriggered,
-                     QKeySequence::Underline)}});
+                     QKeySequence::Underline)},
+         {"FormatStrikethrough",
+          new Action(icon::get("format-text-strikethrough"),
+                     tr("Toggle strikethrough"),
+                     coll,
+                     this,
+                     &MainWin::onFormatStrikethroughTriggered,
+                     QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_S))}});
 
     // Navigation
     coll = QtUi::actionCollection("Navigation", tr("Navigation"));
@@ -1520,8 +1527,15 @@ void MainWin::showSettingsDlg()
 #ifdef HAVE_SONNET
     dlg->registerSettingsPage(new SonnetSettingsPage(dlg));
 #endif
-    dlg->registerSettingsPage(new HighlightSettingsPage(dlg));
-    dlg->registerSettingsPage(new CoreHighlightSettingsPage(dlg));
+    auto coreHighlightsPage = new CoreHighlightSettingsPage(dlg);
+    auto localHighlightsPage = new HighlightSettingsPage(dlg);
+    // Let CoreHighlightSettingsPage reload HighlightSettingsPage after doing an import with
+    // cleaning up.  Otherwise, HighlightSettingsPage won't show that the local rules were deleted.
+    connect(coreHighlightsPage, &CoreHighlightSettingsPage::localHighlightsChanged,
+            localHighlightsPage, &HighlightSettingsPage::load);
+    // Put core-side highlights before local/legacy highlights
+    dlg->registerSettingsPage(coreHighlightsPage);
+    dlg->registerSettingsPage(localHighlightsPage);
     dlg->registerSettingsPage(new NotificationsSettingsPage(dlg));
     dlg->registerSettingsPage(new BacklogSettingsPage(dlg));
 
@@ -1833,6 +1847,15 @@ void MainWin::onFormatUnderlineTriggered()
 
     _inputWidget->toggleFormatUnderline();
 }
+
+void MainWin::onFormatStrikethroughTriggered()
+{
+    if (!_inputWidget)
+        return;
+
+    _inputWidget->toggleFormatStrikethrough();
+}
+
 
 void MainWin::onJumpHotBufferTriggered()
 {
