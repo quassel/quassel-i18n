@@ -1060,46 +1060,65 @@ msgctxt "BacklogSettingsPage|"
 msgid "Dynamic backlog amount:"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:75
+#: ../src/qtui/settingspages/backlogsettingspage.ui:66
+msgctxt "BacklogSettingsPage|"
+msgid ""
+"When switching to a chat, more backlog will be fetched if no messages are "
+"shown yet or the scrollbar isn't visible.  Useful when not fetching any "
+"initial backlog."
+msgstr ""
+
+#: ../src/qtui/settingspages/backlogsettingspage.ui:69
+msgctxt "BacklogSettingsPage|"
+msgid "Fetch backlog if needed when switching chats"
+msgstr ""
+
+#: ../src/qtui/settingspages/backlogsettingspage.ui:91
 msgctxt "BacklogSettingsPage|"
 msgid "Backlog request method:"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:83
+#: ../src/qtui/settingspages/backlogsettingspage.ui:102
 msgctxt "BacklogSettingsPage|"
 msgid "Fixed amount per chat"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:88
+#: ../src/qtui/settingspages/backlogsettingspage.ui:107
 msgctxt "BacklogSettingsPage|"
 msgid "Unread messages per chat"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:93
+#: ../src/qtui/settingspages/backlogsettingspage.ui:112
+msgctxt "BacklogSettingsPage|"
+msgid "Only fetch when needed"
+msgstr ""
+
+#: ../src/qtui/settingspages/backlogsettingspage.ui:117
 msgctxt "BacklogSettingsPage|"
 msgid "Globally unread messages"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:123
+#: ../src/qtui/settingspages/backlogsettingspage.ui:147
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "The simplest requester. It fetches a fixed amount of lines for each chat "
 "window from the backlog."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:138
+#: ../src/qtui/settingspages/backlogsettingspage.ui:162
+#: ../src/qtui/settingspages/backlogsettingspage.ui:366
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages per buffer that are requested after the core connection "
 "has been established."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:141
+#: ../src/qtui/settingspages/backlogsettingspage.ui:165
 msgctxt "BacklogSettingsPage|"
 msgid "Initial backlog amount:"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:205
+#: ../src/qtui/settingspages/backlogsettingspage.ui:229
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "This requester fetches unread messages for each chat window individually. "
@@ -1109,42 +1128,58 @@ msgid ""
 "context."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:222
-#: ../src/qtui/settingspages/backlogsettingspage.ui:232
-#: ../src/qtui/settingspages/backlogsettingspage.ui:354
+#: ../src/qtui/settingspages/backlogsettingspage.ui:246
+#: ../src/qtui/settingspages/backlogsettingspage.ui:256
+#: ../src/qtui/settingspages/backlogsettingspage.ui:463
 msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched per buffer."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:225
-#: ../src/qtui/settingspages/backlogsettingspage.ui:347
+#: ../src/qtui/settingspages/backlogsettingspage.ui:249
+#: ../src/qtui/settingspages/backlogsettingspage.ui:456
 msgctxt "BacklogSettingsPage|"
 msgid "Limit:"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:235
-#: ../src/qtui/settingspages/backlogsettingspage.ui:357
+#: ../src/qtui/settingspages/backlogsettingspage.ui:259
+#: ../src/qtui/settingspages/backlogsettingspage.ui:466
 msgctxt "BacklogSettingsPage|"
 msgid "Unlimited"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:260
-#: ../src/qtui/settingspages/backlogsettingspage.ui:270
-#: ../src/qtui/settingspages/backlogsettingspage.ui:382
-#: ../src/qtui/settingspages/backlogsettingspage.ui:392
+#: ../src/qtui/settingspages/backlogsettingspage.ui:284
+#: ../src/qtui/settingspages/backlogsettingspage.ui:294
+#: ../src/qtui/settingspages/backlogsettingspage.ui:491
+#: ../src/qtui/settingspages/backlogsettingspage.ui:501
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "Amount of messages to be fetched in addition to the unread messages. The "
 "Limit does not apply here."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:263
-#: ../src/qtui/settingspages/backlogsettingspage.ui:385
+#: ../src/qtui/settingspages/backlogsettingspage.ui:287
+#: ../src/qtui/settingspages/backlogsettingspage.ui:494
 msgctxt "BacklogSettingsPage|"
 msgid "Additional Messages:"
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:324
+#: ../src/qtui/settingspages/backlogsettingspage.ui:348
+msgctxt "BacklogSettingsPage|"
+msgid ""
+"<p>On modern cores (v0.13.0 or newer), no backlog will be fetched.  The core "
+"keeps track of chat activity automatically.<br/>\n"
+"<i>Note: Chat Monitor won't show past messages.</i>\n"
+"</p>\n"
+"<p>On older cores, this requester fetches a fixed amount of lines for each "
+"chat window from the backlog.</p>"
+msgstr ""
+
+#: ../src/qtui/settingspages/backlogsettingspage.ui:369
+msgctxt "BacklogSettingsPage|"
+msgid "For legacy cores, initial backlog amount:"
+msgstr ""
+
+#: ../src/qtui/settingspages/backlogsettingspage.ui:433
 msgctxt "BacklogSettingsPage|"
 msgid ""
 "This requester fetches all messages newer than the oldest unread message for "
@@ -1159,7 +1194,7 @@ msgid ""
 "context."
 msgstr ""
 
-#: ../src/qtui/settingspages/backlogsettingspage.ui:344
+#: ../src/qtui/settingspages/backlogsettingspage.ui:453
 msgctxt "BacklogSettingsPage|"
 msgid "Maximum amount of messages to be fetched over all buffers."
 msgstr ""
@@ -1193,7 +1228,7 @@ msgid ""
 " This cannot be reversed!"
 msgstr ""
 
-#: ../src/uisupport/bufferview.cpp:715
+#: ../src/uisupport/bufferview.cpp:721
 msgctxt "BufferViewDock|"
 msgid "Search..."
 msgstr ""
@@ -1357,27 +1392,27 @@ msgctxt "BufferViewWidget|"
 msgid "BufferView"
 msgstr ""
 
-#: ../src/qtui/bufferwidget.cpp:74
+#: ../src/qtui/bufferwidget.cpp:75
 msgctxt "BufferWidget|"
 msgid "Zoom In"
 msgstr ""
 
-#: ../src/qtui/bufferwidget.cpp:75
+#: ../src/qtui/bufferwidget.cpp:76
 msgctxt "BufferWidget|"
 msgid "Zoom Out"
 msgstr ""
 
-#: ../src/qtui/bufferwidget.cpp:76
+#: ../src/qtui/bufferwidget.cpp:77
 msgctxt "BufferWidget|"
 msgid "Actual Size"
 msgstr ""
 
-#: ../src/qtui/bufferwidget.cpp:78
+#: ../src/qtui/bufferwidget.cpp:79
 msgctxt "BufferWidget|"
 msgid "Set Marker Line"
 msgstr ""
 
-#: ../src/qtui/bufferwidget.cpp:81
+#: ../src/qtui/bufferwidget.cpp:82
 msgctxt "BufferWidget|"
 msgid "Go to Marker Line"
 msgstr ""
@@ -1509,7 +1544,7 @@ msgid "Move selected buffers to the right"
 msgstr ""
 
 #: ../src/qtui/settingspages/chatmonitorsettingspage.ui:133
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:275
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:282
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show:"
 msgstr ""
@@ -1541,49 +1576,89 @@ msgctxt "ChatMonitorSettingsPage|"
 msgid "Include ignored buffers"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:194
+#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:196
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Display messages from backlog on reconnect"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:197
+#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:199
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:298
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Show messages from backlog"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:222
+#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:212
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Details..."
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:239
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages from backlog on reconnect"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:225
+#: ../src/qtui/settingspages/chatmonitorsettingspage.ui:242
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Include read messages"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:39
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Interface"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:36
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:39
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Chat Monitor"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:60
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:63
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt In"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:61
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:64
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Opt Out"
 msgstr ""
 
-#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:278
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:285
 msgctxt "ChatMonitorSettingsPage|"
 msgid "Ignore:"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:295
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Show messages from backlog (not available)"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:309
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Messages from backlog are not fetched"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:311
+#, qt-format
+msgctxt "ChatMonitorSettingsPage|"
+msgid ""
+"No initial backlog will be fetched when using the backlog request method of "
+"<i>%1</i>."
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:312
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Only fetch when needed"
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:313
+#, qt-format
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Configure this in the <i>%1</i> settings page."
+msgstr ""
+
+#: ../src/qtui/settingspages/chatmonitorsettingspage.cpp:314
+msgctxt "ChatMonitorSettingsPage|"
+msgid "Backlog Fetching"
 msgstr ""
 
 #: ../src/qtui/chatmonitorview.cpp:58
@@ -2079,7 +2154,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr ""
 
-#: ../src/client/clientbacklogmanager.cpp:173
+#: ../src/client/clientbacklogmanager.cpp:177
 #, qt-format
 msgctxt "ClientBacklogManager|"
 msgid "Processed %1 messages in %2 seconds."
@@ -6649,7 +6724,7 @@ msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
 
-#: ../src/client/messagemodel.cpp:399
+#: ../src/client/messagemodel.cpp:410
 #, qt-format
 msgctxt "MessageModel|"
 msgid "Requesting %1 messages from backlog for buffer %2:%3"
@@ -7502,7 +7577,7 @@ msgctxt "PostgreSqlStorage|"
 msgid "Database"
 msgstr ""
 
-#: ../src/client/backlogrequester.cpp:81
+#: ../src/client/backlogrequester.cpp:81 ../src/client/backlogrequester.cpp:154
 #: ../src/client/backlogrequester_BACKUP_31820.cpp:81
 #: ../src/client/backlogrequester_BACKUP_31820.cpp:168
 #: ../src/client/backlogrequester_BASE_31820.cpp:81
