@@ -3980,7 +3980,7 @@ msgstr ""
 #: ../src/core/coreuserinputhandler.cpp:208
 #: ../src/core/coreuserinputhandler.cpp:404
 #: ../src/core/coreuserinputhandler.cpp:757
-#: ../src/core/coreuserinputhandler.cpp:813
+#: ../src/core/coreuserinputhandler.cpp:814
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: QCA provider plugin not found. It is usually provided by the qca-ossl "
@@ -3995,7 +3995,7 @@ msgid ""
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:236
-#: ../src/core/coreuserinputhandler.cpp:842
+#: ../src/core/coreuserinputhandler.cpp:843
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "No key has been set for %1."
@@ -4008,7 +4008,7 @@ msgid "The key for %1 has been deleted."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:255
-#: ../src/core/coreuserinputhandler.cpp:860
+#: ../src/core/coreuserinputhandler.cpp:861
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -4040,7 +4040,7 @@ msgid "Initiated key exchange with %1."
 msgstr ""
 
 #: ../src/core/coreuserinputhandler.cpp:464
-#: ../src/core/coreuserinputhandler.cpp:793
+#: ../src/core/coreuserinputhandler.cpp:794
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "Error: Setting an encryption key requires Quassel to have been built with "
@@ -4064,23 +4064,25 @@ msgstr ""
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /setkey <nick|channel> <key> sets the encryption key for nick or "
-"channel. /setkey <key> when in a channel or query buffer sets the key for it."
+"channel. /setkey <key> when in a channel or query buffer sets the key for "
+"it. Prefix <key> by cbc: or ebc: to explicitly set the encryption mode "
+"respectively. Default is CBC."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:785
+#: ../src/core/coreuserinputhandler.cpp:786
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 has been set."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:828
+#: ../src/core/coreuserinputhandler.cpp:829
 msgctxt "CoreUserInputHandler|"
 msgid ""
 "[usage] /showkey <nick|channel> shows the encryption key for nick or channel "
 "or just /showkey when in a channel or query."
 msgstr ""
 
-#: ../src/core/coreuserinputhandler.cpp:851
+#: ../src/core/coreuserinputhandler.cpp:852
 #, qt-format
 msgctxt "CoreUserInputHandler|"
 msgid "The key for %1 is %2:%3"
