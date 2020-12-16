@@ -6895,12 +6895,12 @@ msgctxt "NetworkAddDlg|"
 msgid "Verify connection security"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1129
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1177
 msgctxt "NetworkAddDlg|"
 msgid "Your Quassel core does not support this feature"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1130
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1178
 msgctxt "NetworkAddDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
@@ -6917,7 +6917,7 @@ msgctxt "NetworkEditDlg|"
 msgid "Please enter a network name:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1204
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1252
 msgctxt "NetworkEditDlg|"
 msgid "Add Network"
 msgstr ""
@@ -7245,23 +7245,23 @@ msgctxt "NetworksSettingsPage|"
 msgid "Password:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.ui:776
-msgctxt "NetworksSettingsPage|"
-msgid "Could not detect if supported by server"
-msgstr ""
-
-#: ../src/qtui/settingspages/networkssettingspage.ui:783
-#: ../src/qtui/settingspages/networkssettingspage.ui:933
-msgctxt "NetworksSettingsPage|"
-msgid "Details..."
-msgstr ""
-
-#: ../src/qtui/settingspages/networkssettingspage.ui:798
+#: ../src/qtui/settingspages/networkssettingspage.ui:764
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "<html><head/><body><p><span style=\" font-weight:600;\">Note:</span> because "
 "the identity has an ssl certificate set, SASL EXTERNAL will be used.</p></"
 "body></html>"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:789
+msgctxt "NetworksSettingsPage|"
+msgid "Could not detect if supported by server"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.ui:796
+#: ../src/qtui/settingspages/networkssettingspage.ui:933
+msgctxt "NetworksSettingsPage|"
+msgid "Details..."
 msgstr ""
 
 #: ../src/qtui/settingspages/networkssettingspage.ui:811
@@ -7450,32 +7450,37 @@ msgctxt "NetworksSettingsPage|"
 msgid "Invalid Network Settings"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:744
+#: ../src/qtui/settingspages/networkssettingspage.cpp:749
 msgctxt "NetworksSettingsPage|"
 msgid "Could not check if supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:749
+#: ../src/qtui/settingspages/networkssettingspage.cpp:754
 msgctxt "NetworksSettingsPage|"
 msgid "Cannot check if supported when disconnected"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:754
+#: ../src/qtui/settingspages/networkssettingspage.cpp:759
 msgctxt "NetworksSettingsPage|"
 msgid "Not currently supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:760
+#: ../src/qtui/settingspages/networkssettingspage.cpp:769
+msgctxt "NetworksSettingsPage|"
+msgid "May be supported by network"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:773
 msgctxt "NetworksSettingsPage|"
 msgid "Supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:842
+#: ../src/qtui/settingspages/networkssettingspage.cpp:860
 msgctxt "NetworksSettingsPage|"
 msgid "Delete Network?"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:843
+#: ../src/qtui/settingspages/networkssettingspage.cpp:861
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -7483,12 +7488,12 @@ msgid ""
 "including the backlog?"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:973
+#: ../src/qtui/settingspages/networkssettingspage.cpp:991
 msgctxt "NetworksSettingsPage|"
 msgid "Could not check if SASL supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:974
+#: ../src/qtui/settingspages/networkssettingspage.cpp:992
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -7496,12 +7501,12 @@ msgid ""
 "changes or an older Quassel core.  You can still try using SASL."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:980
+#: ../src/qtui/settingspages/networkssettingspage.cpp:998
 msgctxt "NetworksSettingsPage|"
 msgid "Cannot check if SASL supported when disconnected"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:981
+#: ../src/qtui/settingspages/networkssettingspage.cpp:999
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -7509,12 +7514,25 @@ msgid ""
 "the network, or try using SASL anyways."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:987
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1007
+msgctxt "NetworksSettingsPage|"
+msgid "SASL EXTERNAL not currently supported by network"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1008
+#, qt-format
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"The network \"%1\" does not currently support SASL EXTERNAL for SSL "
+"certificate authentication.  However, support might be added later on."
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1015
 msgctxt "NetworksSettingsPage|"
 msgid "SASL not currently supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:988
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1016
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -7522,12 +7540,26 @@ msgid ""
 "be added later on."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:994
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1027
+msgctxt "NetworksSettingsPage|"
+msgid "SASL EXTERNAL may be supported by network"
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1028
+#, qt-format
+msgctxt "NetworksSettingsPage|"
+msgid ""
+"The network \"%1\" may support SASL EXTERNAL for SSL certificate "
+"authentication.  In most cases, you should use SASL instead of NickServ "
+"identification."
+msgstr ""
+
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1035
 msgctxt "NetworksSettingsPage|"
 msgid "SASL supported by network"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:995
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1036
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid ""
@@ -7535,54 +7567,54 @@ msgid ""
 "instead of NickServ identification."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1002
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1044
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid "SASL support for \"%1\""
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1006
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1048
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "SASL is a standardized way to log in and identify yourself to IRC servers."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1045
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1087
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "Quassel makes use of newer IRC features when supported by the IRC network.  "
 "If desired, you can disable unwanted or problematic features here."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1047
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1089
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "The <a href=\"https://ircv3.net/irc/\">IRCv3 website</a> provides more "
 "technical details on the IRCv3 capabilities powering these features."
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1058
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1100
 #, qt-format
 msgctxt "NetworksSettingsPage|"
 msgid "Currently enabled IRCv3 capabilities for this network: %1"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1062
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1104
 msgctxt "NetworksSettingsPage|"
 msgid "Configuring network features"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1066
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1108
 msgctxt "NetworksSettingsPage|"
 msgid "Configuring network features unsupported"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1068
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1110
 msgctxt "NetworksSettingsPage|"
 msgid "Your Quassel core is too old to configure IRCv3 network features"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1069
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1111
 msgctxt "NetworksSettingsPage|"
 msgid ""
 "You need a Quassel core v0.14.0 or newer to control what network features "
@@ -8526,12 +8558,12 @@ msgctxt "ServerEditDlg|"
 msgid "Proxy Password:"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1279
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1327
 msgctxt "ServerEditDlg|"
 msgid "Your Quassel core does not support this feature"
 msgstr ""
 
-#: ../src/qtui/settingspages/networkssettingspage.cpp:1280
+#: ../src/qtui/settingspages/networkssettingspage.cpp:1328
 msgctxt "ServerEditDlg|"
 msgid ""
 "You need a Quassel core v0.13.0 or newer in order to verify connection "
