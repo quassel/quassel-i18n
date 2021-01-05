@@ -93,6 +93,10 @@ if (APPLE)
     find_library(CARBON_LIBRARY Carbon)
     mark_as_advanced(CARBON_LIBRARY)
     link_libraries(${CARBON_LIBRARY})
+
+    # Whether to enable the creation of bundles and DMG images
+    cmake_dependent_option(BUNDLE "Create bundles and DMG images" OFF "APPLE" OFF)
+    add_feature_info(BUNDLE BUNDLE "Create bundles and DMG images")
 endif()
 
 # Always embed on Windows or OSX; never embed when enabling KDE integration
@@ -101,14 +105,13 @@ if (WIN32 OR APPLE)
     set(EMBED_DEFAULT ON)
 endif()
 cmake_dependent_option(EMBED_DATA "Embed icons and translations into the binaries instead of installing them" ${EMBED_DEFAULT}
-                                   "NOT WIN32;NOT WITH_KDE" ${EMBED_DEFAULT})
+                                  "NOT WIN32;NOT WITH_KDE" ${EMBED_DEFAULT})
 if (NOT EMBED_DEFAULT)
     add_feature_info(EMBED_DATA EMBED_DATA "Embed icons and translations in the binaries instead of installing them")
 endif()
 
-# The following options are not for end-user consumption, so don't list them in the feature summary
+# The following option is not for end-user consumption, so don't list it in the feature summary
 option(FATAL_WARNINGS "Make compile warnings fatal (most useful for CI builds)" OFF)
-cmake_dependent_option(DEPLOY "Add required libs to bundle resources and create a dmg" OFF "APPLE" OFF)
 
 # List of authenticators and the cmake flags to build them
 # (currently that's just LDAP, but more can be added here).
@@ -179,6 +182,33 @@ set_package_properties(Qt5 PROPERTIES TYPE REQUIRED
     DESCRIPTION "the Qt libraries"
 )
 message(STATUS "Found Qt ${Qt5Core_VERSION}")
+
+# Determine minimum deployment target for macOS supported by Qt
+if(APPLE)
+    if(NOT QMAKE_MACOSX_DEPLOYMENT_TARGET)
+        # qmake cannot be queried directly for QMAKE_MACOSX_DEPLOYMENT_TARGET (it is a mkspec, not a property).
+        # Instead, invoke qmake on an empty project file, which causes it to output the relevant keys and their values
+        # for subsequent parsing.
+        # A file named .qmake.stash is always created, so remove it (and empty.pro) afterwards.
+        set(qmakeEmptyProjectFile "${CMAKE_BINARY_DIR}/empty.pro")
+        set(qmakeStashFile "${CMAKE_BINARY_DIR}/.qmake.stash")
+        file(WRITE ${qmakeEmptyProjectFile} "")
+        get_target_property(QMAKE_EXECUTABLE Qt5::qmake IMPORTED_LOCATION)
+        execute_process(
+            COMMAND ${QMAKE_EXECUTABLE} -E ${qmakeEmptyProjectFile}
+            WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+            OUTPUT_VARIABLE qmakeOutput
+        )
+        file(REMOVE ${qmakeEmptyProjectFile} ${qmakeStashFile})
+        string(REGEX MATCH "QMAKE_MACOSX_DEPLOYMENT_TARGET[ ]*=[ ]*([0-9.]+)" foo ${qmakeOutput})
+        if(NOT CMAKE_MATCH_1)
+            message(FATAL_ERROR "Could not determine the deployment target for Qt")
+        endif()
+        set(QMAKE_MACOSX_DEPLOYMENT_TARGET ${CMAKE_MATCH_1} CACHE INTERNAL "")
+        mark_as_advanced(QMAKE_MACOSX_DEPLOYMENT_TARGET)
+    endif()
+    message(STATUS "Minimum macOS version supported by Qt: ${QMAKE_MACOSX_DEPLOYMENT_TARGET}")
+endif()
 
 # Check for SSL support in Qt
 cmake_push_check_state(RESET)
