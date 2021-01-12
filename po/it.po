@@ -3,14 +3,14 @@
 # Daniel Albers <daniel@lbe.rs>, 2012
 # Daniel Albers <daniel@lbers.com>, 2011
 # Francis, 2019
-# Francis, 2019-2020
+# Francis, 2019-2021
 # Marco Paolone <marcopaolone@gmail.com>, 2010
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2020-09-09 07:15+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2021-01-11 07:01+0000\n"
+"Last-Translator: Francis\n"
 "Language-Team: Italian (http://www.transifex.com/quassel/quassel/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1810,7 +1810,7 @@ msgid ""
 "         <tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n"
 "         </table>\n"
 "         </body></html>"
-msgstr ""
+msgstr "<html><head/><body>\n         <p>Accetta il formato QDateTime di Qt.</p>\n         <p>Esempi:</p>\n         <table cellpadding=\"2\">\n         <tr><td>dd.MM.yyyy</td><td>21.05.2001</td></tr>\n         <tr><td>ddd MMMM d yy</td><td>Mar Mag 21 01</td></tr>\n         <tr><td>hh:mm:ss.zzz</td><td>14:13:09.042</td></tr>\n         <tr><td>h:m:s ap</td><td>2:13:9 pm</td></tr>\n         </table>\n         </body></html>"
 
 #: ../src/qtui/settingspages/chatviewsettingspage.ui:56
 msgctxt "ChatViewSettingsPage|"
