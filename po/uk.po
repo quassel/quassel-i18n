@@ -2157,7 +2157,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Скасовано нешифроване з’єднання"
 
-#: ../src/client/clientauthhandler.cpp:456
+#: ../src/client/clientauthhandler.cpp:460
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr "Скасовано нешифроване з’єднання"
@@ -4555,37 +4555,37 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr "Отримано відповідь PING CTCP від %1. Загальний час обробки — %2 мілісекунд."
 
-#: ../src/client/execwrapper.cpp:54
+#: ../src/client/execwrapper.cpp:58
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Некоректний рядок команди у /exec: %1"
 
-#: ../src/client/execwrapper.cpp:63
+#: ../src/client/execwrapper.cpp:68
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Name \"%1\" is invalid: ../ or ..\\ are not allowed!"
 msgstr "Назва «%1» є некоректною: не можна використовувати ../ або ..\\!"
 
-#: ../src/client/execwrapper.cpp:74
+#: ../src/client/execwrapper.cpp:79
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "Не вдалося виявити скрипт «%1»"
 
-#: ../src/client/execwrapper.cpp:95
+#: ../src/client/execwrapper.cpp:100
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "Скрипт «%1» аварійно завершив роботу з кодом виходу %2."
 
-#: ../src/client/execwrapper.cpp:112
+#: ../src/client/execwrapper.cpp:117
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "Не вдалося запустити скрипт «%1»."
 
-#: ../src/client/execwrapper.cpp:114
+#: ../src/client/execwrapper.cpp:119
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -6688,12 +6688,12 @@ msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>У вашому ядрі не передбачено підтримки шифрування SSL</b>"
 
-#: ../src/qtui/mainwin.cpp:1392 ../src/qtui/mainwin.cpp:1412
+#: ../src/qtui/mainwin.cpp:1398 ../src/qtui/mainwin.cpp:1418
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Ненадійний сертифікат безпеки"
 
-#: ../src/qtui/mainwin.cpp:1393
+#: ../src/qtui/mainwin.cpp:1399
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6701,43 +6701,43 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>Сертифікат SSL наданий ядром %1 є ненадійним з таких причин:</b>"
 
-#: ../src/qtui/mainwin.cpp:1396
+#: ../src/qtui/mainwin.cpp:1402
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Продовжити"
 
-#: ../src/qtui/mainwin.cpp:1397
+#: ../src/qtui/mainwin.cpp:1403
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "Показати сертифікат"
 
-#: ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1419
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "Хочете прийняти сертифікат назавжди без попереджень?"
 
-#: ../src/qtui/mainwin.cpp:1415
+#: ../src/qtui/mainwin.cpp:1421
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Тільки на поточний сеанс"
 
-#: ../src/qtui/mainwin.cpp:1416
+#: ../src/qtui/mainwin.cpp:1422
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Завжди"
 
-#: ../src/qtui/mainwin.cpp:1424
+#: ../src/qtui/mainwin.cpp:1430
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Помилка з’єднання з ядром"
 
-#: ../src/qtui/mainwin.cpp:1454 ../src/qtui/mainwin.cpp:1455
+#: ../src/qtui/mainwin.cpp:1460 ../src/qtui/mainwin.cpp:1461
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1457
+#: ../src/qtui/mainwin.cpp:1463
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
@@ -8912,17 +8912,17 @@ msgctxt "SslInfoDlg|"
 msgid "<b>Trusted:</b>"
 msgstr "<b>Надійність:</b>"
 
-#: ../src/qtui/sslinfodlg.cpp:71
+#: ../src/qtui/sslinfodlg.cpp:76
 msgctxt "SslInfoDlg|"
 msgid "Yes"
 msgstr "Так"
 
-#: ../src/qtui/sslinfodlg.cpp:73
+#: ../src/qtui/sslinfodlg.cpp:79
 msgctxt "SslInfoDlg|"
 msgid "No, for the following reasons:<ul>"
 msgstr "Ні, з таких причин:<ul>"
 
-#: ../src/qtui/sslinfodlg.cpp:81
+#: ../src/qtui/sslinfodlg.cpp:88
 #, qt-format
 msgctxt "SslInfoDlg|"
 msgid "%1 to %2"

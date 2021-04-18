@@ -2166,7 +2166,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Conexión no cifrada cancelada"
 
-#: ../src/client/clientauthhandler.cpp:456
+#: ../src/client/clientauthhandler.cpp:460
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr "Conexión sin encriptar cancelada"
@@ -4562,37 +4562,37 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr ""
 
-#: ../src/client/execwrapper.cpp:54
+#: ../src/client/execwrapper.cpp:58
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Cadena de comando no válida para /exec: %1"
 
-#: ../src/client/execwrapper.cpp:63
+#: ../src/client/execwrapper.cpp:68
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Name \"%1\" is invalid: ../ or ..\\ are not allowed!"
 msgstr "Nombre \"%1\" no válido: ../ ó ..\\ no están permitidos!"
 
-#: ../src/client/execwrapper.cpp:74
+#: ../src/client/execwrapper.cpp:79
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "No se pudo encontrar el script \"%1\""
 
-#: ../src/client/execwrapper.cpp:95
+#: ../src/client/execwrapper.cpp:100
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "La ejecución del script \"%1\" se rompió con el código de salida %2."
 
-#: ../src/client/execwrapper.cpp:112
+#: ../src/client/execwrapper.cpp:117
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "El script \"%1\" no ha podido iniciarse."
 
-#: ../src/client/execwrapper.cpp:114
+#: ../src/client/execwrapper.cpp:119
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -6693,12 +6693,12 @@ msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>Su núcleo no admite el cifrado SSL</b>"
 
-#: ../src/qtui/mainwin.cpp:1392 ../src/qtui/mainwin.cpp:1412
+#: ../src/qtui/mainwin.cpp:1398 ../src/qtui/mainwin.cpp:1418
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Certificado de seguridad no confiable"
 
-#: ../src/qtui/mainwin.cpp:1393
+#: ../src/qtui/mainwin.cpp:1399
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6706,43 +6706,43 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>El certificado SSL proporcionado por el núcleo en %1 es inseguro por las razones siguientes:</b>"
 
-#: ../src/qtui/mainwin.cpp:1396
+#: ../src/qtui/mainwin.cpp:1402
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Continuar"
 
-#: ../src/qtui/mainwin.cpp:1397
+#: ../src/qtui/mainwin.cpp:1403
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "Ver certificado"
 
-#: ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1419
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "¿Le gustaría aceptar para siempre este certificado sin que te pregunte?"
 
-#: ../src/qtui/mainwin.cpp:1415
+#: ../src/qtui/mainwin.cpp:1421
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Sólo sesión actual"
 
-#: ../src/qtui/mainwin.cpp:1416
+#: ../src/qtui/mainwin.cpp:1422
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Para siempre"
 
-#: ../src/qtui/mainwin.cpp:1424
+#: ../src/qtui/mainwin.cpp:1430
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Error de conexión de núcleo"
 
-#: ../src/qtui/mainwin.cpp:1454 ../src/qtui/mainwin.cpp:1455
+#: ../src/qtui/mainwin.cpp:1460 ../src/qtui/mainwin.cpp:1461
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1457
+#: ../src/qtui/mainwin.cpp:1463
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
@@ -8913,17 +8913,17 @@ msgctxt "SslInfoDlg|"
 msgid "<b>Trusted:</b>"
 msgstr "<b>Segura:</b>"
 
-#: ../src/qtui/sslinfodlg.cpp:71
+#: ../src/qtui/sslinfodlg.cpp:76
 msgctxt "SslInfoDlg|"
 msgid "Yes"
 msgstr "Sí"
 
-#: ../src/qtui/sslinfodlg.cpp:73
+#: ../src/qtui/sslinfodlg.cpp:79
 msgctxt "SslInfoDlg|"
 msgid "No, for the following reasons:<ul>"
 msgstr "No, por las siguientes razones:<ul>"
 
-#: ../src/qtui/sslinfodlg.cpp:81
+#: ../src/qtui/sslinfodlg.cpp:88
 #, qt-format
 msgctxt "SslInfoDlg|"
 msgid "%1 to %2"

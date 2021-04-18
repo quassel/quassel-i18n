@@ -2157,7 +2157,7 @@ msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection cancelled"
 msgstr "Nešifrirana povezava preklicana"
 
-#: ../src/client/clientauthhandler.cpp:456
+#: ../src/client/clientauthhandler.cpp:460
 msgctxt "ClientAuthHandler|"
 msgid "Unencrypted connection canceled"
 msgstr "Nešifrirana povezava preklicana"
@@ -4555,37 +4555,37 @@ msgctxt "EventStringifier|"
 msgid "Received CTCP-PING answer from %1 with %2 milliseconds round trip time"
 msgstr "Prejet odgovor CTCP-PING od %1 z zamikom %2 milisekund"
 
-#: ../src/client/execwrapper.cpp:54
+#: ../src/client/execwrapper.cpp:58
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Invalid command string for /exec: %1"
 msgstr "Neveljaven ukazni niz za /exec: %1"
 
-#: ../src/client/execwrapper.cpp:63
+#: ../src/client/execwrapper.cpp:68
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Name \"%1\" is invalid: ../ or ..\\ are not allowed!"
 msgstr "Ime »%1« ni veljavno: ../ in ..\\ nista dovoljena!"
 
-#: ../src/client/execwrapper.cpp:74
+#: ../src/client/execwrapper.cpp:79
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Could not find script \"%1\""
 msgstr "Ni bilo mogoče najti skripta »%1«"
 
-#: ../src/client/execwrapper.cpp:95
+#: ../src/client/execwrapper.cpp:100
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" crashed with exit code %2."
 msgstr "Skript »%1« se je sesul z izhodno kodo %2."
 
-#: ../src/client/execwrapper.cpp:112
+#: ../src/client/execwrapper.cpp:117
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" could not start."
 msgstr "Skript »%1« se ni mogel zagnati."
 
-#: ../src/client/execwrapper.cpp:114
+#: ../src/client/execwrapper.cpp:119
 #, qt-format
 msgctxt "ExecWrapper|"
 msgid "Script \"%1\" caused error %2."
@@ -6688,12 +6688,12 @@ msgctxt "MainWin|"
 msgid "<b>Your core does not support SSL encryption</b>"
 msgstr "<b>Vaše jedro ne podpira šifriranja SSL.</b>"
 
-#: ../src/qtui/mainwin.cpp:1392 ../src/qtui/mainwin.cpp:1412
+#: ../src/qtui/mainwin.cpp:1398 ../src/qtui/mainwin.cpp:1418
 msgctxt "MainWin|"
 msgid "Untrusted Security Certificate"
 msgstr "Varnostno potrdilo, ki ni zaupanja vredno"
 
-#: ../src/qtui/mainwin.cpp:1393
+#: ../src/qtui/mainwin.cpp:1399
 #, qt-format
 msgctxt "MainWin|"
 msgid ""
@@ -6701,43 +6701,43 @@ msgid ""
 "following reasons:</b>"
 msgstr "<b>Potrdilo SSL, ki ga je ponudilo jedro na %1, ni zaupanja vredno zaradi naslednjih razlogov:</b>"
 
-#: ../src/qtui/mainwin.cpp:1396
+#: ../src/qtui/mainwin.cpp:1402
 msgctxt "MainWin|"
 msgid "Continue"
 msgstr "Nadaljuj"
 
-#: ../src/qtui/mainwin.cpp:1397
+#: ../src/qtui/mainwin.cpp:1403
 msgctxt "MainWin|"
 msgid "Show Certificate"
 msgstr "Prikaži potrdilo"
 
-#: ../src/qtui/mainwin.cpp:1413
+#: ../src/qtui/mainwin.cpp:1419
 msgctxt "MainWin|"
 msgid ""
 "Would you like to accept this certificate forever without being prompted?"
 msgstr "Ali bi radi trajno sprejeli to potrdilo brez nadaljnjih vprašanj?"
 
-#: ../src/qtui/mainwin.cpp:1415
+#: ../src/qtui/mainwin.cpp:1421
 msgctxt "MainWin|"
 msgid "Current Session Only"
 msgstr "Samo za trenutno sejo"
 
-#: ../src/qtui/mainwin.cpp:1416
+#: ../src/qtui/mainwin.cpp:1422
 msgctxt "MainWin|"
 msgid "Forever"
 msgstr "Trajno"
 
-#: ../src/qtui/mainwin.cpp:1424
+#: ../src/qtui/mainwin.cpp:1430
 msgctxt "MainWin|"
 msgid "Core Connection Error"
 msgstr "Napaka povezave z jedrom"
 
-#: ../src/qtui/mainwin.cpp:1454 ../src/qtui/mainwin.cpp:1455
+#: ../src/qtui/mainwin.cpp:1460 ../src/qtui/mainwin.cpp:1461
 msgctxt "MainWin|"
 msgid "No network selected"
 msgstr ""
 
-#: ../src/qtui/mainwin.cpp:1457
+#: ../src/qtui/mainwin.cpp:1463
 msgctxt "MainWin|"
 msgid "Select a network before trying to view the channel list."
 msgstr ""
@@ -8912,17 +8912,17 @@ msgctxt "SslInfoDlg|"
 msgid "<b>Trusted:</b>"
 msgstr "<b>Zaupano:</b>"
 
-#: ../src/qtui/sslinfodlg.cpp:71
+#: ../src/qtui/sslinfodlg.cpp:76
 msgctxt "SslInfoDlg|"
 msgid "Yes"
 msgstr "Da"
 
-#: ../src/qtui/sslinfodlg.cpp:73
+#: ../src/qtui/sslinfodlg.cpp:79
 msgctxt "SslInfoDlg|"
 msgid "No, for the following reasons:<ul>"
 msgstr "Ne, zaradi naslednjih razlogov:<ul>"
 
-#: ../src/qtui/sslinfodlg.cpp:81
+#: ../src/qtui/sslinfodlg.cpp:88
 #, qt-format
 msgctxt "SslInfoDlg|"
 msgid "%1 to %2"
