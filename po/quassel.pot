@@ -8958,6 +8958,14 @@ msgctxt "SslInfoDlg|"
 msgid "%1 to %2"
 msgstr ""
 
+#: ../src/core/sslserver.cpp:56
+msgctxt "SslServer|"
+msgid ""
+"--require-ssl is set, but no SSL certificate is available. Exiting.\n"
+"Please see https://quassel-irc.org/faq/cert to learn how to enable SSL "
+"support."
+msgstr ""
+
 #: ../src/client/networkmodel.h:169
 msgctxt "StatusBufferItem|"
 msgid "Status Buffer"
