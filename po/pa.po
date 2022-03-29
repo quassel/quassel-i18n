@@ -1,14 +1,14 @@
 # 
 # Translators:
 # A S Alam <aalam@users.sf.net>, 2013
-# A S Alam <alam.yellow@gmail.com>, 2018-2019
-# A S Alam <alam.yellow@gmail.com>, 2014-2016
+# A S Alam, 2018-2019
+# A S Alam, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Quassel IRC\n"
 "Report-Msgid-Bugs-To: http://bugs.quassel-irc.org/\n"
-"PO-Revision-Date: 2021-01-12 04:21+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"PO-Revision-Date: 2010-12-15 16:15+0000\n"
+"Last-Translator: A S Alam, 2018-2019\n"
 "Language-Team: Panjabi (Punjabi) (http://www.transifex.com/quassel/quassel/language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -685,8 +685,8 @@ msgctxt "AboutDlg|"
 msgid ""
 "<b>A modern, distributed IRC Client</b><br><br>&copy;%1 by the Quassel "
 "Project<br><a href=\"https://quassel-irc.org\">https://quassel-"
-"irc.org</a><br><a href=\"irc://irc.freenode.net/quassel\">#quassel</a> on <a"
-" href=\"https://www.freenode.net\">Freenode</a><br><br>Quassel IRC is dual-"
+"irc.org</a><br><a href=\"irc://irc.libera.chat/quassel\">#quassel</a> on <a "
+"href=\"https://libera.chat\">Libera Chat</a><br><br>Quassel IRC is dual-"
 "licensed under <a "
 "href=\"https://www.gnu.org/licenses/gpl-2.0.txt\">GPLv2</a> and <a "
 "href=\"https://www.gnu.org/licenses/gpl-3.0.txt\">GPLv3</a>.<br><a "
@@ -2173,12 +2173,12 @@ msgctxt "ClientBufferViewManager|"
 msgid "All Chats"
 msgstr "ਸਭ ਗੱਲਾਬਾਤਾਂ"
 
-#: ../src/client/clientuserinputhandler.cpp:95
+#: ../src/client/clientuserinputhandler.cpp:99
 msgctxt "ClientUserInputHandler|"
 msgid "/JOIN expects a channel"
 msgstr ""
 
-#: ../src/client/clientuserinputhandler.cpp:106
+#: ../src/client/clientuserinputhandler.cpp:111
 msgctxt "ClientUserInputHandler|"
 msgid "/QUERY expects at least a nick"
 msgstr ""
@@ -8919,6 +8919,13 @@ msgstr ""
 msgctxt "SslInfoDlg|"
 msgid "%1 to %2"
 msgstr "%1 ਤੋਂ %2"
+
+#: ../src/core/sslserver.cpp:56
+msgctxt "SslServer|"
+msgid ""
+"--require-ssl is set, but no SSL certificate is available. Exiting.\n"
+"Please see https://quassel-irc.org/faq/cert to learn how to enable SSL support."
+msgstr ""
 
 #: ../src/client/networkmodel.h:169
 msgctxt "StatusBufferItem|"
