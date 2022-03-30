@@ -86,8 +86,8 @@ msgstr ""
 #: ../src/uisupport/aboutdata.cpp:164 ../src/uisupport/aboutdata.cpp:177
 #: ../src/uisupport/aboutdata.cpp:203 ../src/uisupport/aboutdata.cpp:206
 #: ../src/uisupport/aboutdata.cpp:224 ../src/uisupport/aboutdata.cpp:233
-#: ../src/uisupport/aboutdata.cpp:257 ../src/uisupport/aboutdata.cpp:274
-#: ../src/uisupport/aboutdata.cpp:295 ../src/uisupport/aboutdata.cpp:334
+#: ../src/uisupport/aboutdata.cpp:257 ../src/uisupport/aboutdata.cpp:275
+#: ../src/uisupport/aboutdata.cpp:298 ../src/uisupport/aboutdata.cpp:337
 msgctxt "AboutData|"
 msgid "Fixes"
 msgstr "Rettelser"
@@ -103,7 +103,7 @@ msgid "Early beta tester and bughunter, Danish translation"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:167 ../src/uisupport/aboutdata.cpp:248
-#: ../src/uisupport/aboutdata.cpp:279 ../src/uisupport/aboutdata.cpp:291
+#: ../src/uisupport/aboutdata.cpp:281 ../src/uisupport/aboutdata.cpp:294
 msgctxt "AboutData|"
 msgid "Spanish translation"
 msgstr "Spansk oversettelse"
@@ -113,7 +113,7 @@ msgctxt "AboutData|"
 msgid "Build system fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:169 ../src/uisupport/aboutdata.cpp:316
+#: ../src/uisupport/aboutdata.cpp:169 ../src/uisupport/aboutdata.cpp:319
 msgctxt "AboutData|"
 msgid "Database performance improvements"
 msgstr ""
@@ -133,7 +133,7 @@ msgctxt "AboutData|"
 msgid "Language improvements"
 msgstr "Språkforbedringer"
 
-#: ../src/uisupport/aboutdata.cpp:173 ../src/uisupport/aboutdata.cpp:314
+#: ../src/uisupport/aboutdata.cpp:173 ../src/uisupport/aboutdata.cpp:317
 msgctxt "AboutData|"
 msgid "Documentation improvements"
 msgstr "Dokumentasjon-forbedringer"
@@ -143,7 +143,7 @@ msgctxt "AboutData|"
 msgid "Various improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:175 ../src/uisupport/aboutdata.cpp:284
+#: ../src/uisupport/aboutdata.cpp:175 ../src/uisupport/aboutdata.cpp:287
 msgctxt "AboutData|"
 msgid "Brazilian translation"
 msgstr "Brasiliansk oversettelse"
@@ -153,7 +153,7 @@ msgctxt "AboutData|"
 msgid "Slovenian translation"
 msgstr "Slovensk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:178 ../src/uisupport/aboutdata.cpp:307
+#: ../src/uisupport/aboutdata.cpp:178 ../src/uisupport/aboutdata.cpp:310
 msgctxt "AboutData|"
 msgid "Romanian translation"
 msgstr "Rumensk oversettelse"
@@ -175,7 +175,7 @@ msgid "Message indicator support"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:183 ../src/uisupport/aboutdata.cpp:184
-#: ../src/uisupport/aboutdata.cpp:333
+#: ../src/uisupport/aboutdata.cpp:336
 msgctxt "AboutData|"
 msgid "Build system fix"
 msgstr ""
@@ -201,7 +201,7 @@ msgid "Crash fixes"
 msgstr "Krasjrettelser"
 
 #: ../src/uisupport/aboutdata.cpp:189 ../src/uisupport/aboutdata.cpp:214
-#: ../src/uisupport/aboutdata.cpp:296
+#: ../src/uisupport/aboutdata.cpp:299
 msgctxt "AboutData|"
 msgid "French translation"
 msgstr "Fransk oversettelse"
@@ -232,12 +232,12 @@ msgctxt "AboutData|"
 msgid "Settings fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:197 ../src/uisupport/aboutdata.cpp:278
+#: ../src/uisupport/aboutdata.cpp:197 ../src/uisupport/aboutdata.cpp:280
 msgctxt "AboutData|"
 msgid "Galician translation"
 msgstr "Galisisk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:198 ../src/uisupport/aboutdata.cpp:325
+#: ../src/uisupport/aboutdata.cpp:198 ../src/uisupport/aboutdata.cpp:328
 msgctxt "AboutData|"
 msgid "Esperanto translation"
 msgstr "Esperanto oversettelse"
@@ -247,13 +247,13 @@ msgctxt "AboutData|"
 msgid "Japanese translation"
 msgstr "Japansk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:201 ../src/uisupport/aboutdata.cpp:281
+#: ../src/uisupport/aboutdata.cpp:201 ../src/uisupport/aboutdata.cpp:284
 msgctxt "AboutData|"
 msgid "Gentoo maintainer"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:202 ../src/uisupport/aboutdata.cpp:218
-#: ../src/uisupport/aboutdata.cpp:328
+#: ../src/uisupport/aboutdata.cpp:331
 msgctxt "AboutData|"
 msgid "Certificate handling improvements"
 msgstr ""
@@ -274,12 +274,12 @@ msgid "OSX Notification Center support"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:208 ../src/uisupport/aboutdata.cpp:225
-#: ../src/uisupport/aboutdata.cpp:332 ../src/uisupport/aboutdata.cpp:339
+#: ../src/uisupport/aboutdata.cpp:335 ../src/uisupport/aboutdata.cpp:342
 msgctxt "AboutData|"
 msgid "Turkish translation"
 msgstr "Tyrkisk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:276
+#: ../src/uisupport/aboutdata.cpp:209 ../src/uisupport/aboutdata.cpp:277
 msgctxt "AboutData|"
 msgid "Mac fixes"
 msgstr "Mac-rettelser"
@@ -294,7 +294,7 @@ msgctxt "AboutData|"
 msgid "Polish translation"
 msgstr "Polsk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:212 ../src/uisupport/aboutdata.cpp:297
+#: ../src/uisupport/aboutdata.cpp:212 ../src/uisupport/aboutdata.cpp:300
 msgctxt "AboutData|"
 msgid "Build system improvements"
 msgstr ""
@@ -310,19 +310,19 @@ msgid "BluesTheme stylesheet"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:216 ../src/uisupport/aboutdata.cpp:265
-#: ../src/uisupport/aboutdata.cpp:308 ../src/uisupport/aboutdata.cpp:329
+#: ../src/uisupport/aboutdata.cpp:311 ../src/uisupport/aboutdata.cpp:332
 msgctxt "AboutData|"
 msgid "Russian translation"
 msgstr "Russisk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:217 ../src/uisupport/aboutdata.cpp:269
+#: ../src/uisupport/aboutdata.cpp:217 ../src/uisupport/aboutdata.cpp:270
 msgctxt "AboutData|"
 msgid "Italian translation"
 msgstr "Italiensk oversettelse"
 
 #: ../src/uisupport/aboutdata.cpp:219 ../src/uisupport/aboutdata.cpp:255
-#: ../src/uisupport/aboutdata.cpp:266 ../src/uisupport/aboutdata.cpp:270
-#: ../src/uisupport/aboutdata.cpp:273 ../src/uisupport/aboutdata.cpp:326
+#: ../src/uisupport/aboutdata.cpp:266 ../src/uisupport/aboutdata.cpp:271
+#: ../src/uisupport/aboutdata.cpp:274 ../src/uisupport/aboutdata.cpp:329
 msgctxt "AboutData|"
 msgid "German translation"
 msgstr "Tysk oversettelse"
@@ -369,21 +369,21 @@ msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:230 ../src/uisupport/aboutdata.cpp:231
 #: ../src/uisupport/aboutdata.cpp:242 ../src/uisupport/aboutdata.cpp:249
-#: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:272
-#: ../src/uisupport/aboutdata.cpp:288 ../src/uisupport/aboutdata.cpp:302
+#: ../src/uisupport/aboutdata.cpp:254 ../src/uisupport/aboutdata.cpp:273
+#: ../src/uisupport/aboutdata.cpp:291 ../src/uisupport/aboutdata.cpp:305
 msgctxt "AboutData|"
 msgid "Various fixes"
 msgstr "Diverse rettelser"
 
 #: ../src/uisupport/aboutdata.cpp:232 ../src/uisupport/aboutdata.cpp:236
-#: ../src/uisupport/aboutdata.cpp:294 ../src/uisupport/aboutdata.cpp:299
-#: ../src/uisupport/aboutdata.cpp:311
+#: ../src/uisupport/aboutdata.cpp:297 ../src/uisupport/aboutdata.cpp:302
+#: ../src/uisupport/aboutdata.cpp:314
 msgctxt "AboutData|"
 msgid "Bugfixes"
 msgstr "Feilrettinger"
 
-#: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:327
-#: ../src/uisupport/aboutdata.cpp:330
+#: ../src/uisupport/aboutdata.cpp:234 ../src/uisupport/aboutdata.cpp:330
+#: ../src/uisupport/aboutdata.cpp:333
 msgctxt "AboutData|"
 msgid "Czech translation"
 msgstr "Tjekkisk oversettelse"
@@ -409,7 +409,7 @@ msgid "Postgres migration fixes"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:240 ../src/uisupport/aboutdata.cpp:244
-#: ../src/uisupport/aboutdata.cpp:285
+#: ../src/uisupport/aboutdata.cpp:288
 msgctxt "AboutData|"
 msgid "Danish translation"
 msgstr "Dansk oversettelse"
@@ -456,15 +456,15 @@ msgctxt "AboutData|"
 msgid "Buffer merge improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:258 ../src/uisupport/aboutdata.cpp:312
-#: ../src/uisupport/aboutdata.cpp:313 ../src/uisupport/aboutdata.cpp:320
-#: ../src/uisupport/aboutdata.cpp:321
+#: ../src/uisupport/aboutdata.cpp:258 ../src/uisupport/aboutdata.cpp:315
+#: ../src/uisupport/aboutdata.cpp:316 ../src/uisupport/aboutdata.cpp:323
+#: ../src/uisupport/aboutdata.cpp:324
 msgctxt "AboutData|"
 msgid "Greek translation"
 msgstr "Gresk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:261 ../src/uisupport/aboutdata.cpp:267
-#: ../src/uisupport/aboutdata.cpp:301 ../src/uisupport/aboutdata.cpp:331
+#: ../src/uisupport/aboutdata.cpp:261 ../src/uisupport/aboutdata.cpp:268
+#: ../src/uisupport/aboutdata.cpp:304 ../src/uisupport/aboutdata.cpp:334
 msgctxt "AboutData|"
 msgid "Improvements"
 msgstr ""
@@ -484,158 +484,173 @@ msgctxt "AboutData|"
 msgid "Documentation fixes"
 msgstr "Dokumentasjonrettinger"
 
-#: ../src/uisupport/aboutdata.cpp:268
+#: ../src/uisupport/aboutdata.cpp:267
+msgctxt "AboutData|"
+msgid "IRC network list updates"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
 msgid "Ideas, hacking, initial motivation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:271
+#: ../src/uisupport/aboutdata.cpp:272
 msgctxt "AboutData|"
 msgid "Many fixes and improvements, Sonnet support, QuasselDroid"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:275
+#: ../src/uisupport/aboutdata.cpp:276
 msgctxt "AboutData|"
 msgid "German translation, fixes"
 msgstr "Tysk oversettelse, rettelser"
 
-#: ../src/uisupport/aboutdata.cpp:277
+#: ../src/uisupport/aboutdata.cpp:278
 msgctxt "AboutData|"
 msgid "Many fixes and improvements; Ubuntu PPAs"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:280
+#: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
-msgid "Tons of Oxygen icons including the Quassel logo"
+msgid "SQL improvements"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:282
 msgctxt "AboutData|"
-msgid "Initial design and main window layout"
+msgid "Wayland fixes"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
-msgid "Early beta tester and bughunter"
+msgid "Tons of Oxygen icons including the Quassel logo"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:285
+msgctxt "AboutData|"
+msgid "Initial design and main window layout"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:286
 msgctxt "AboutData|"
-msgid "Linewrap for input line"
-msgstr ""
-
-#: ../src/uisupport/aboutdata.cpp:287
-msgctxt "AboutData|"
-msgid "Performance improvements and cleanups"
+msgid "Early beta tester and bughunter"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:289
 msgctxt "AboutData|"
-msgid "/print command"
+msgid "Linewrap for input line"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:290
 msgctxt "AboutData|"
-msgid "Performance improvements"
-msgstr "Ytelsesforbedringer"
+msgid "Performance improvements and cleanups"
+msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:292
 msgctxt "AboutData|"
-msgid "CMake fixes"
+msgid "/print command"
 msgstr ""
 
 #: ../src/uisupport/aboutdata.cpp:293
 msgctxt "AboutData|"
+msgid "Performance improvements"
+msgstr "Ytelsesforbedringer"
+
+#: ../src/uisupport/aboutdata.cpp:295
+msgctxt "AboutData|"
+msgid "CMake fixes"
+msgstr ""
+
+#: ../src/uisupport/aboutdata.cpp:296
+msgctxt "AboutData|"
 msgid "Hindi and Marathi translations"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:298
+#: ../src/uisupport/aboutdata.cpp:301
 msgctxt "AboutData|"
 msgid ""
 "Windows build support, automated OSX builds in Travis, various improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:300
+#: ../src/uisupport/aboutdata.cpp:303
 msgctxt "AboutData|"
 msgid "Emacs keybindings"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:303
+#: ../src/uisupport/aboutdata.cpp:306
 msgctxt "AboutData|"
 msgid "Highlight configuration improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:304
+#: ../src/uisupport/aboutdata.cpp:307
 msgctxt "AboutData|"
 msgid "Debian/Kubuntu packager, (packaging/build system) bughunter"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:305
+#: ../src/uisupport/aboutdata.cpp:308
 msgctxt "AboutData|"
 msgid "Bugfixes, German translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:306
+#: ../src/uisupport/aboutdata.cpp:309
 msgctxt "AboutData|"
 msgid "Audio backend improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:309
+#: ../src/uisupport/aboutdata.cpp:312
 msgctxt "AboutData|"
 msgid "Chinese translation"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:310
+#: ../src/uisupport/aboutdata.cpp:313
 msgctxt "AboutData|"
 msgid "Dutch translation"
 msgstr "Nederlansk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:315 ../src/uisupport/aboutdata.cpp:318
+#: ../src/uisupport/aboutdata.cpp:318 ../src/uisupport/aboutdata.cpp:321
 msgctxt "AboutData|"
 msgid "Korean translation"
 msgstr "Koreansk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:317
+#: ../src/uisupport/aboutdata.cpp:320
 msgctxt "AboutData|"
 msgid "Alias improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:319
+#: ../src/uisupport/aboutdata.cpp:322
 msgctxt "AboutData|"
 msgid "Norwegian translation, documentation"
 msgstr "Norsk oversettelse, dokumentasjon"
 
-#: ../src/uisupport/aboutdata.cpp:322
+#: ../src/uisupport/aboutdata.cpp:325
 msgctxt "AboutData|"
 msgid "Former Windows builder"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:323
+#: ../src/uisupport/aboutdata.cpp:326
 msgctxt "AboutData|"
 msgid "Fixes, Debian packaging"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:324
+#: ../src/uisupport/aboutdata.cpp:327
 msgctxt "AboutData|"
 msgid "Fixes and feedback"
 msgstr "Rettelser og tilbakemelding"
 
-#: ../src/uisupport/aboutdata.cpp:335
+#: ../src/uisupport/aboutdata.cpp:338
 msgctxt "AboutData|"
 msgid "Logger fixes"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:336
+#: ../src/uisupport/aboutdata.cpp:339
 msgctxt "AboutData|"
 msgid "Network detection improvements"
 msgstr ""
 
-#: ../src/uisupport/aboutdata.cpp:337
+#: ../src/uisupport/aboutdata.cpp:340
 msgctxt "AboutData|"
 msgid "Ukrainian translation"
 msgstr "Ukrainsk oversettelse"
 
-#: ../src/uisupport/aboutdata.cpp:338
+#: ../src/uisupport/aboutdata.cpp:341
 msgctxt "AboutData|"
 msgid "Portuguese translation"
 msgstr "Portugisisk oversettelse"
@@ -6121,47 +6136,47 @@ msgctxt "KeySequenceWidget|"
 msgid "Reassign"
 msgstr "Tilordne på nytt"
 
-#: ../src/core/ldapauthenticator.cpp:71
+#: ../src/core/ldapauthenticator.cpp:72
 msgctxt "LdapAuthenticator|"
 msgid "LDAP"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:76
+#: ../src/core/ldapauthenticator.cpp:77
 msgctxt "LdapAuthenticator|"
 msgid "Authenticate users using an LDAP server."
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:83
+#: ../src/core/ldapauthenticator.cpp:84
 msgctxt "LdapAuthenticator|"
 msgid "Hostname"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:83
+#: ../src/core/ldapauthenticator.cpp:84
 msgctxt "LdapAuthenticator|"
 msgid "Port"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:84
+#: ../src/core/ldapauthenticator.cpp:85
 msgctxt "LdapAuthenticator|"
 msgid "Bind DN"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:84
+#: ../src/core/ldapauthenticator.cpp:85
 msgctxt "LdapAuthenticator|"
 msgid "Bind Password"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:84
+#: ../src/core/ldapauthenticator.cpp:85
 msgctxt "LdapAuthenticator|"
 msgid "Base DN"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:85
+#: ../src/core/ldapauthenticator.cpp:86
 msgctxt "LdapAuthenticator|"
 msgid "Filter"
 msgstr ""
 
-#: ../src/core/ldapauthenticator.cpp:85
+#: ../src/core/ldapauthenticator.cpp:86
 msgctxt "LdapAuthenticator|"
 msgid "UID Attribute"
 msgstr ""
