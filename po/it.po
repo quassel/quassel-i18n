@@ -482,7 +482,7 @@ msgstr "Correzioni documentazione"
 #: ../src/uisupport/aboutdata.cpp:267
 msgctxt "AboutData|"
 msgid "IRC network list updates"
-msgstr ""
+msgstr "Aggiornata lista dei network IRC"
 
 #: ../src/uisupport/aboutdata.cpp:269
 msgctxt "AboutData|"
@@ -507,12 +507,12 @@ msgstr "Molte correzioni e miglioramenti; PPA Ubuntu"
 #: ../src/uisupport/aboutdata.cpp:279
 msgctxt "AboutData|"
 msgid "SQL improvements"
-msgstr ""
+msgstr "Miglioramenti SQL"
 
 #: ../src/uisupport/aboutdata.cpp:282
 msgctxt "AboutData|"
 msgid "Wayland fixes"
-msgstr ""
+msgstr "Fix per wayland"
 
 #: ../src/uisupport/aboutdata.cpp:283
 msgctxt "AboutData|"
