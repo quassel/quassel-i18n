@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n==0 || n==1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 "X-Qt-Contexts: true\n"
 
 #: ../src/uisupport/aboutdata.cpp:117
@@ -3709,7 +3709,8 @@ msgctxt "CoreInfoDlg|"
 msgid "%n Day(s)"
 msgid_plural "%n Day(s)"
 msgstr[0] "%n jour"
-msgstr[1] "%n jours"
+msgstr[1] ""
+msgstr[2] "%n jours"
 
 #: ../src/qtui/coreinfodlg.cpp:175
 #, qt-format
@@ -6060,7 +6061,8 @@ msgctxt "KNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n message surligné en attente"
-msgstr[1] "%n messages surlignés en attente"
+msgstr[1] ""
+msgstr[2] "%n messages surlignés en attente"
 
 #: ../src/qtui/settingspages/keysequencewidget.cpp:76
 msgctxt "KeySequenceButton|"
@@ -6835,7 +6837,8 @@ msgctxt "MultiLineEdit|"
 msgid "Do you really want to paste %n line(s)?"
 msgid_plural "Do you really want to paste %n line(s)?"
 msgstr[0] "Voulez-vous vraiment coller une ligne ?"
-msgstr[1] "Voulez-vous vraiment coller %n lignes ?"
+msgstr[1] ""
+msgstr[2] "Voulez-vous vraiment coller %n lignes ?"
 
 #: ../src/uisupport/multilineedit.cpp:732
 msgctxt "MultiLineEdit|"
@@ -6978,7 +6981,8 @@ msgctxt "NetworkModelController|"
 msgid "Do you want to delete the following buffer(s) permanently?"
 msgid_plural "Do you want to delete the following buffer(s) permanently?"
 msgstr[0] "Voulez-vous supprimer définitivement le tampon suivant ?"
-msgstr[1] "Voulez vous supprimer définitivement les tampons suivants ?"
+msgstr[1] ""
+msgstr[2] "Voulez vous supprimer définitivement les tampons suivants ?"
 
 #: ../src/uisupport/networkmodelcontroller.cpp:169
 #, qt-format
@@ -9011,7 +9015,8 @@ msgctxt "SystrayNotificationBackend|"
 msgid "%n pending highlight(s)"
 msgid_plural "%n pending highlight(s)"
 msgstr[0] "%n message surligné en attente"
-msgstr[1] "%n messages surlignés en attente"
+msgstr[1] ""
+msgstr[2] "%n messages surlignés en attente"
 
 #: ../src/qtui/systraynotificationbackend.cpp:145
 msgctxt "SystrayNotificationBackend::ConfigWidget|"
@@ -9410,7 +9415,8 @@ msgctxt "UserCategoryItem|"
 msgid "%n Owner(s)"
 msgid_plural "%n Owner(s)"
 msgstr[0] "%n propriétaire"
-msgstr[1] "%n propriétaires"
+msgstr[1] ""
+msgstr[2] "%n propriétaires"
 
 #: ../src/client/networkmodel.cpp:956
 #, qt-format
@@ -9418,7 +9424,8 @@ msgctxt "UserCategoryItem|"
 msgid "%n Admin(s)"
 msgid_plural "%n Admin(s)"
 msgstr[0] "%n administrateur"
-msgstr[1] "%n administrateurs"
+msgstr[1] ""
+msgstr[2] "%n administrateurs"
 
 #: ../src/client/networkmodel.cpp:958
 #, qt-format
@@ -9426,7 +9433,8 @@ msgctxt "UserCategoryItem|"
 msgid "%n Operator(s)"
 msgid_plural "%n Operator(s)"
 msgstr[0] "%n opérateur"
-msgstr[1] "%n opérateurs"
+msgstr[1] ""
+msgstr[2] "%n opérateurs"
 
 #: ../src/client/networkmodel.cpp:960
 #, qt-format
@@ -9434,7 +9442,8 @@ msgctxt "UserCategoryItem|"
 msgid "%n Half-Op(s)"
 msgid_plural "%n Half-Op(s)"
 msgstr[0] "%n demi-opérateur"
-msgstr[1] "%n demi-opérateurs"
+msgstr[1] ""
+msgstr[2] "%n demi-opérateurs"
 
 #: ../src/client/networkmodel.cpp:962
 #, qt-format
@@ -9442,7 +9451,8 @@ msgctxt "UserCategoryItem|"
 msgid "%n Voiced"
 msgid_plural "%n Voiced"
 msgstr[0] "%n a la parole"
-msgstr[1] "%n ont la parole"
+msgstr[1] ""
+msgstr[2] "%n ont la parole"
 
 #: ../src/client/networkmodel.cpp:964
 #, qt-format
@@ -9450,4 +9460,5 @@ msgctxt "UserCategoryItem|"
 msgid "%n User(s)"
 msgid_plural "%n User(s)"
 msgstr[0] "%n utilisateur"
-msgstr[1] "%n utilisateurs"
+msgstr[1] ""
+msgstr[2] "%n utilisateurs"
