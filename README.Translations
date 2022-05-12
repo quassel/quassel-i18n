@@ -34,22 +34,19 @@ NOTE: You'll need lupdate, lconvert, lrelease installed with your Qt in
 
 The .pot file is regenerated using `./update-pot.sh` and can be pushed
 to Transifex via `tx push -s`.
-Note that as of Feb 2016 this is done automatically by nightly runs of
-scripts/tx-sync.sh which pushes an updated quassel.pot to a location
-that is fetched by Transifex on regular intervals. This location is
-currently configured as
-<https://github.com/quassel/quassel-i18n/raw/tx-sync/po/quassel.pot> and
-can be updated at https://www.transifex.com/quassel/quassel/content/ →
-"Auto update resources".
+Transifex is configured to read this file from
+<https://github.com/quassel/quassel-i18n/raw/tx-sync/po/quassel.pot> at regular
+intervals. This configuration can be changed at
+https://www.transifex.com/quassel/quassel/content/ → "Auto update resources".
+A manual update can be triggered via `tx push -s`.
 
 == For maintainers ==
 To synchronize the i18n repository with the main repository follow these steps:
 
-$ git remote add origin-i18n git@github.com:quassel/quassel-i18n.git
-$ git fetch origin-i18n
-$ git merge --squash origin-i18n/tx-sync
-$ pushd po && ./update-pot.sh; popd
-$ git add po/quassel.pot
-$ git commit
+$ git submodule update --init
+$ pushd po
+$ ./update-pot.sh
+$ git commit quassel.pot
 $ git push
-$ git push origin-i18n +HEAD:tx-sync
+$ popd
+$ git submodule update --remote
