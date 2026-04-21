@@ -1,6 +1,14 @@
 # Generate translations
 # The LINGUAS environment variable can be used to limit the set of supported languages
 
+if (NOT DEFINED QT_MAJOR_VERSION)
+    if (TARGET Qt6::Core)
+        set(QT_MAJOR_VERSION 6)
+    else()
+        set(QT_MAJOR_VERSION 5)
+    endif()
+endif()
+
 # Generate a .ts file from a .po file
 function(generate_ts basename)
     set(pofile ${CMAKE_CURRENT_SOURCE_DIR}/${basename}.po)
@@ -8,7 +16,7 @@ function(generate_ts basename)
 
     add_custom_command(VERBATIM
         COMMENT "Preparing translation for language '${basename}'"
-        COMMAND $<TARGET_FILE:Qt5::lconvert> -i ${pofile} -target-language ${basename} -of ts -o ${tsfile}
+        COMMAND $<TARGET_FILE:Qt${QT_MAJOR_VERSION}::lconvert> -i ${pofile} -target-language ${basename} -of ts -o ${tsfile}
         DEPENDS ${pofile}
         OUTPUT  ${tsfile}
     )
@@ -19,7 +27,7 @@ set(tsfiles )
 set(qmfiles )
 set(linguas )
 
-if (TARGET Qt5::lconvert)
+if (TARGET Qt${QT_MAJOR_VERSION}::lconvert)
     # LINGUAS can be used to limit the included languages
     set(LINGUAS "$ENV{LINGUAS}")
     # Normalize and convert into list
@@ -48,7 +56,7 @@ if (TARGET Qt5::lconvert)
         # Synchronize the (possibly outdated) .ts files with the current source tree
         add_custom_command(VERBATIM
             COMMENT "Syncing translations"
-            COMMAND $<TARGET_FILE:Qt5::lupdate> -silent ${CMAKE_SOURCE_DIR}/src -ts ${tsfiles}
+            COMMAND $<TARGET_FILE:Qt${QT_MAJOR_VERSION}::lupdate> -silent ${CMAKE_SOURCE_DIR}/src -ts ${tsfiles}
             COMMAND ${CMAKE_COMMAND} -E touch tsfiles.done
             DEPENDS ${tsfiles}
             OUTPUT tsfiles.done
@@ -57,7 +65,7 @@ if (TARGET Qt5::lconvert)
         # Generate the final translation files (.qm) for use by Qt
         add_custom_command(VERBATIM
             COMMENT "Compressing translations"
-            COMMAND $<TARGET_FILE:Qt5::lrelease> -silent ${tsfiles}
+            COMMAND $<TARGET_FILE:Qt${QT_MAJOR_VERSION}::lrelease> -silent ${tsfiles}
             DEPENDS tsfiles.done
             OUTPUT ${qmfiles}
         )
